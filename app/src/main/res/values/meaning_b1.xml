@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="b1_mea0_1">to respect and approve of someone or their behaviour:</string>
+    <string name="b1_mea0_2">to love someone very much, especially in a way that shows a lot of admiration or respect, or to like something very much:</string>
+    <string name="b1_mea0_3">a high-level competition to decide who is the best, especially in a sport:</string>
+    <string name="b1_mea0_4">to get and keep things of one type such as stamps or coins as a hobby:</string>
+    <string name="b1_mea0_5">to (cause to) exist together, or join together to make a single thing or group:</string>
+    <string name="b1_mea0_6">an agreement or an arrangement, especially in business:</string>
+    <string name="b1_mea0_7">very serious or bad:</string>
+    <string name="b1_mea0_8">are protective padded gear worn on the elbows to protect them against injury during a fall or a strike:</string>
+    <string name="b1_mea0_9">to behave in a silly way, especially in a way that might have dangerous results:</string>
+    <string name="b1_mea0_10">very interested, eager, or wanting (to do) something very much:</string>                                           //сомнительно
+    <string name="b1_mea0_11">communicating with someone, usually because they do not live near you now:</string>
+    <string name="b1_mea0_12">having the most recent information, or using the newest methods or tools:</string>
+    <string name="b1_mea0_13">a good understanding of someone and an ability to communicate well with them:</string>
+    <string name="b1_mea0_14">stupid or unreasonable and deserving to be laughed at:</string>
+    <string name="b1_mea0_15">happening soon:</string>
+
+    <string name="b1_mea1_1">to hate a way of behaving or thinking, often because you think it is not moral:</string>
+    <string name="b1_mea1_2">to find someone or something attractive and pleasant to look at:</string>
+    <string name="b1_mea1_3">to love someone very much, especially in a way that shows a lot of admiration or respect, or to like something very much:</string>
+    <string name="b1_mea1_4">to accept, tolerate, or endure something, especially something unpleasant:</string>
+    <string name="b1_mea1_5">If something is believable, it seems possible, real, or true:</string>
+    <string name="b1_mea1_6">a product that is extremely popular and has sold in very large numbers:</string>
+    <string name="b1_mea1_7">to hate someone or something very much:</string>
+    <string name="b1_mea1_8">to not have the same opinion, idea, etc.:</string>
+    <string name="b1_mea1_9">completely:</string>
+    <string name="b1_mea1_10">to give an answer to a particular question when you do not have all the facts and so cannot be certain if you are correct:</string>
+    <string name="b1_mea1_11">a book that has stiff covers:</string>
+    <string name="b1_mea1_12">very, to a large degree, or at a high level:</string>
+    <string name="b1_mea1_13">impossible, or very difficult, to believe:</string>
+    <string name="b1_mea1_14">very interested, eager, or wanting (to do) something very much:</string>                  //сомнительно
+    <string name="b1_mea1_15">to hate someone or something:</string>
+
+
+    <string name="b1_mea2_1">the story with love:</string>
+    <string name="b1_mea2_2">mentally ill, or unable to behave in a reasonable way:</string>
+    <string name="b1_mea2_3">the part of a person that makes it possible for him or her to think, feel emotions, and understand things:</string>
+    <string name="b1_mea2_4">something strange or not known that has not yet been explained or understood:</string>
+    <string name="b1_mea2_5">a long printed story about imaginary characters and events:</string>
+    <string name="b1_mea2_6">in a way that is easy to understand or see:</string>
+    <string name="b1_mea2_7">to like, choose, or want one thing rather than another:</string>
+    <string name="b1_mea2_8">a book of facts, such as a dictionary or an encyclopedia, that you look at to discover particular information:</string>
+    <string name="b1_mea2_9">to answer:</string>
+    <string name="b1_mea2_10">a film or television programme about love that is intended to make you laugh</string>
+    <string name="b1_mea2_11">to appear to be:</string>
+    <string name="b1_mea2_12">a person who secretly collects and reports information about the activities of another country or organization:</string>
+    <string name="b1_mea2_13">certain; without any doubt:</string>
+    <string name="b1_mea2_14">to get rid of something you do not want any more:</string>
+    <string name="b1_mea2_15">showing things and people as they really are, or seeming to be real:</string>
+
+
+    <string name="b1_mea3_1">general agreement that something is satisfactory or right, or that someone should be included in a group:</string>
+    <string name="b1_mea3_2">(of clothes) hanging loosely because of being too big or having been stretched:</string>
+    <string name="b1_mea3_3">to get and keep things of one type such as stamps or coins as a hobby:</string>
+    <string name="b1_mea3_4">to (cause to) exist together, or join together to make a single thing or group:</string>
+    <string name="b1_mea3_5">causing disagreement or discussion:</string>
+    <string name="b1_mea3_6">an illness, injury, or condition that makes it difficult for someone to do the things that other people do:</string>
+    <string name="b1_mea3_7">Something that is distinctive is easy to recognize because it is different from other things:</string>
+    <string name="b1_mea3_8">to get free from something, or to avoid something:</string>
+    <string name="b1_mea3_9">to behave in a silly way, especially in a way that might have dangerous results:</string>
+    <string name="b1_mea3_10">part of a piece of clothing that can be pulled up to cover the top and back of the head:</string>
+    <string name="b1_mea3_11">unfriendly and not liking something:</string>
+    <string name="b1_mea3_12">who a person is, or the qualities of a person or group that make them different from others:</string>
+    <string name="b1_mea3_13">the basic systems and services, such as transport and power supplies, that a country or organization uses in order to work effectively:</string>
+    <string name="b1_mea3_14">the fact that something is not available or that there is not enough of it:</string>
+    <string name="b1_mea3_15">the state of belonging to an organization:</string>
+
+
+    <string name="b1_mea4_1">a small piece of material sewn or stuck over something to cover it:</string>
+    <string name="b1_mea4_2">to come to an opinion about something, or have a belief about something:</string>
+    <string name="b1_mea4_3">to behave as if something is true when you know that it is not, especially in order to deceive people or as a game:</string>
+    <string name="b1_mea4_4">a large, noisy, uncontrolled group of people:</string>
+    <string name="b1_mea4_5">to bring the memory of a past event into your mind, and often to give a description of what you remember:</string>
+    <string name="b1_mea4_6">to understand a situation or someone\'s feelings because you have experienced a similar situation or similar feelings:</string>
+    <string name="b1_mea4_7">to be able to bring back a piece of information into your mind, or to keep a piece of information in your memory:</string>
+    <string name="b1_mea4_8">to make someone think of something they have forgotten or might have forgotten:</string>
+    <string name="b1_mea4_9">(of clothes or fabric) badly torn:</string>
+    <string name="b1_mea4_10">a person who someone admires and whose behaviour they try to copy:</string>
+    <string name="b1_mea4_11">made with metal studs fixed into the surface in a pattern:</string>
+    <string name="b1_mea4_12">a person whose job is to supervise someone or something:</string>
+    <string name="b1_mea4_13">a group of two or more countries that work together or that have the same government:</string>
+    <string name="b1_mea4_14">If things of the same type vary, they are different from each other, and if you vary them, you cause them to be different from each other:</string>
+    <string name="b1_mea4_15">done, made, or given willingly, without being forced or paid to do it:</string>
+
+
+    <string name="b1_mea5_1">to give permission for someone to do something, or to not prevent something from happening:</string>
+    <string name="b1_mea5_2">to risk money on the result of an event or a competition, such as a horse race, in the hope of winning more money:</string>
+    <string name="b1_mea5_3">the organ inside the head that controls thought, memory, feelings, and activity:</string>
+    <string name="b1_mea5_4">to share information with others by speaking, writing, moving your body, or using other signals:</string>
+    <string name="b1_mea5_5">a line on a computer screen that moves to show the point where work is being done:</string>
+    <string name="b1_mea5_6">a decision or arrangement between groups or people:</string>
+    <string name="b1_mea5_7">a choice that you make about something after thinking about several possibilities:</string>
+    <string name="b1_mea5_8">to operate a phone or make a phone call to someone by choosing a particular series of numbers on the phone:</string>
+    <string name="b1_mea5_9">in the end, especially after a long time or a lot of effort, problems, etc.:</string>
+    <string name="b1_mea5_10">exploding or able to explode easily:</string>
+    <string name="b1_mea5_11">extremely interesting:</string>
+    <string name="b1_mea5_12">to repair something:</string>
+    <string name="b1_mea5_13">to stop working especially because of not having electricity:</string>
+    <string name="b1_mea5_14">to wait, esp. for someone to speak:</string>
+    <string name="b1_mea5_15">to communicate with or react to:</string>
+
+
+    <string name="b1_mea6_1">to continue to talk to or write to someone:</string>
+    <string name="b1_mea6_2">to stay informed about the most recent trends or developments:</string>
+    <string name="b1_mea6_3">to continue for a period of time, or to continue to exist:</string>
+    <string name="b1_mea6_4">to think about something that happened in the past:</string>
+    <string name="b1_mea6_5">a book that gives you practical instructions on how to do something or how to use something, such as a machine:</string>
+    <string name="b1_mea6_6">(used to add information) also and more importantly:</string>
+    <string name="b1_mea6_7">not operating because it is broken:</string>
+    <string name="b1_mea6_8">to become connected to a piece of electrical equipment or to the main electricity supply:</string>
+    <string name="b1_mea6_9">to practise a play, a piece of music, etc. in order to prepare it for public performance:</string>
+    <string name="b1_mea6_10">a person, group, etc. competing with others for the same thing or in the same area:</string>
+    <string name="b1_mea6_11">the way in which things are organized or arranged:</string>
+    <string name="b1_mea6_12">to cause something that is thin to break suddenly and quickly with a cracking sound:</string>
+    <string name="b1_mea6_13">the part of a piece of equipment, especially electrical equipment, into which another part fits:</string>
+    <string name="b1_mea6_14">to send someone a text message by phone:</string>
+    <string name="b1_mea6_15">a phone message recorded by someone when you do not answer their call, or a number of these messages:</string>
+
+
+    <string name="b1_mea7_1">to make someone feel worried or upset:</string>
+    <string name="b1_mea7_2">abruptly stop talking:</string>
+    <string name="b1_mea7_3">you secretly have a sexual relationship with someone else:</string>
+    <string name="b1_mea7_4">feeling that you have no hope and are ready to do anything to change the bad situation you are in:</string>
+    <string name="b1_mea7_5">(a feeling of) not being certain about something, especially about how good or true it is:</string>
+    <string name="b1_mea7_6">to cause someone to become very angry:</string>
+    <string name="b1_mea7_7">they agree with each other:</string>
+    <string name="b1_mea7_8">annoyed or disgusted by something that you have experienced for too long:</string>
+    <string name="b1_mea7_9">for all time:</string>
+    <string name="b1_mea7_10">(a situation causing) difficulty or trouble:</string>
+    <string name="b1_mea7_11">feelings of great sadness or disappointment:</string>
+    <string name="b1_mea7_12">to say or write something that is not true in order to deceive someone:</string>
+    <string name="b1_mea7_13">cease to be in communication:</string>
+    <string name="b1_mea7_14">to forgive someone and be friendly with them again after an argument or disagreement:</string>
+    <string name="b1_mea7_15">correspond or cause to correspond in some essential respect:</string>      //сомнительно
+
+
+    <string name="b1_mea8_1">their moods change suddenly and they become angry or unhappy easily:</string>
+    <string name="b1_mea8_2">only considering one opinion in an argument in a way that is unfair:</string>
+    <string name="b1_mea8_3">to cause someone to feel sudden strong emotion:</string>
+    <string name="b1_mea8_4">a good understanding of someone and an ability to communicate well with them:</string>
+    <string name="b1_mea8_5">to stay in the same place or in the same condition:</string>
+    <string name="b1_mea8_6">to force someone or something to stop moving towards you or attacking you:</string>
+    <string name="b1_mea8_7">something given in exchange for good behaviour or good work, etc.:</string>
+    <string name="b1_mea8_8">stupid or unreasonable and deserving to be laughed at:</string>
+    <string name="b1_mea8_9">a usual or fixed way of doing things:</string>
+    <string name="b1_mea8_10">in a way or by some means that is not known or not stated:</string>
+    <string name="b1_mea8_11">happening in a smooth, gradual, and regular way, not suddenly or unexpectedly:</string>
+    <string name="b1_mea8_12">very much or in a very serious way:</string>
+    <string name="b1_mea8_13">to tell someone that you will kill or hurt them or cause problems if they do not do what you want:</string>
+    <string name="b1_mea8_14">likely to deceive people:</string>
+    <string name="b1_mea8_15">used to say that something is sad, disappointing, or has a bad effect:</string>
+
+
+    <string name="b1_mea9_1">the skill or sport of shooting arrows</string>
+    <string name="b1_mea9_2">is a motorsport involving the racing of automobiles for competition</string>
+    <string name="b1_mea9_3">the sport of jumping off a very high bridge, with a long elastic rope tied to your legs, so that the rope pulls you back before you hit the ground</string>
+    <string name="b1_mea9_4">a high-level competition to decide who is the best, especially in a sport:</string>
+    <string name="b1_mea9_5">are protective padded gear worn on the elbows to protect them against injury during a fall or a strike:</string>
+    <string name="b1_mea9_6">to help someone to feel confident and able to do something, or to give advice to someone to do something:</string>
+    <string name="b1_mea9_7">the sport of fighting with long, thin swords:</string>
+    <string name="b1_mea9_8">a part of a fence or outside wall that is fixed at one side and opens and closes like a door, usually made of metal or wooden strips</string>
+    <string name="b1_mea9_9">to stop trying to do something before you have finished, usually because it is too difficult:</string>
+    <string name="b1_mea9_10">a tool consisting of a piece of metal with a flat end that is fixed onto the end of a long, thin, usually wooden handle, used for hitting things</string>
+    <string name="b1_mea9_11">the activity of flying through the air by hanging from a very small aircraft without an engine, consisting of a frame covered in cloth:</string>
+    <string name="b1_mea9_12">a strong, hard hat that covers and protects the head:</string>
+    <string name="b1_mea9_13">a long walk, especially in the countryside</string>
+    <string name="b1_mea9_14">a game played on ice between two teams of eleven players who each have a curved stick with which the player tries to put the puck</string>
+    <string name="b1_mea9_15">the activity of using a Jet Ski to travel across water:</string>
+
+
+    <string name="b1_mea10_1">the activity of running at a slow, regular speed, especially as a form of exercise:</string>
+    <string name="b1_mea10_2">to jump from an aircraft using a:</string>
+    <string name="b1_mea10_3">to delay an event and plan or decide that it should happen at a later date or time:</string>
+    <string name="b1_mea10_4">to keep someone or something safe from injury, damage, or loss:</string>
+    <string name="b1_mea10_5">the sport of climbing on rocks or in mountains:</string>
+    <string name="b1_mea10_6">(a piece of) strong, thick string made of long twisted threads:</string>
+    <string name="b1_mea10_7">to (cause to) go or do something very quickly:</string>
+    <string name="b1_mea10_8">to record the number of points won by competitors:</string>
+    <string name="b1_mea10_9">vehicle for traveling over snow and ice pulled by animals, esp. horses:</string>
+    <string name="b1_mea10_10">to cause something to move easily over a surface, or to move in this way:</string>
+    <string name="b1_mea10_11">a game played between two teams of eleven people, where each team tries to win by kicking a ball into the other team\'s goal</string>
+    <string name="b1_mea10_12">happening soon:</string>
+    <string name="b1_mea10_13">an occasion when you win a game, competition, election, war, etc. or the fact that you have won:</string>
+    <string name="b1_mea10_14">to prepare yourself for a physical activity by doing some gentle exercises and stretches:</string>
+    <string name="b1_mea10_15">to have a heaviness of a stated amount, or to measure the heaviness of an object:</string>
+
+
+    <string name="b1_mea11_1">an arrangement with a bank to keep your money there and to allow you to take it out when you need to:</string>
+    <string name="b1_mea11_2">to be able to buy or do something because you have enough money or time:</string>
+    <string name="b1_mea11_3">unable to pay what you owe, and having control of your financial matters given:</string>
+    <string name="b1_mea11_4">to find an amount or number using mathematics:</string>
+    <string name="b1_mea11_5">a machine, usually in a wall outside a bank, from which you can take money:</string>
+    <string name="b1_mea11_6">something, especially money, that is owed to someone else, or the state of owing something:</string>
+    <string name="b1_mea11_7">to give money or goods to help a person or organization:</string>
+    <string name="b1_mea11_8">to be greater than a number or amount, or to go past an allowed limit:</string>
+    <string name="b1_mea11_9">the rate at which the money of one country can be changed for the money of another country</string>
+    <string name="b1_mea11_10">an amount of money needed or used to do or buy something; cost:</string>
+    <string name="b1_mea11_11">the crime of getting money by deceiving people:</string>
+    <string name="b1_mea11_12">a written promise by a company to repair or change a product that develops a fault within a particular period of time:</string>
+    <string name="b1_mea11_13">having very little money:</string>
+    <string name="b1_mea11_14">to receive money, a house, etc. from someone after they have died:</string>
+    <string name="b1_mea11_15">continuing a long time into the future:</string>
+
+
+    <string name="b1_mea12_1">to have just enough money to pay for the things that you need</string>
+    <string name="b1_mea12_2">unkind or unpleasant:</string>
+    <string name="b1_mea12_3">to borrow money to buy a house:</string>
+    <string name="b1_mea12_4">they have lent money to you, or in exchange for something they have done for you:</string>
+    <string name="b1_mea12_5">income that should have been paid or was expected at an earlier time:</string>
+    <string name="b1_mea12_6">an amount of money paid, or the act of paying:</string>
+    <string name="b1_mea12_7">a sum of money paid regularly to a person who has retired:</string>
+    <string name="b1_mea12_8">to buy something:</string>
+    <string name="b1_mea12_9">to take money or property illegally from a place, organization, or person, often using violence:</string>
+    <string name="b1_mea12_10">(of a supply of something) be used up:</string>
+    <string name="b1_mea12_11">to keep money so that you can buy something with it in the future:</string>
+    <string name="b1_mea12_12">not generous, or unwilling to spend money:</string>
+    <string name="b1_mea12_13">to give someone who has provided you with a service an extra amount of money to thank them:</string>
+    <string name="b1_mea12_14">help given, especially by the state or an organization, to people who need it, especially because they do not have enough money:</string>
+    <string name="b1_mea12_15">to take money out of an account:</string>
+
+
+    <string name="b1_mea13_1">the person who is on trial in a law court:</string>
+    <string name="b1_mea13_2">the act of getting money from people or forcing them to do something by threatening to tell a secret of theirs or to harm them:</string>
+    <string name="b1_mea13_3">a matter to be decided by a judge in a law court:</string>
+    <string name="b1_mea13_4">to do something illegal or something that is considered wrong:</string>
+    <string name="b1_mea13_5">money that is paid to someone in exchange for something that has been lost or damaged or for some problem:</string>
+    <string name="b1_mea13_6">to admit that you have done something wrong or something that you feel guilty or bad about:</string>
+    <string name="b1_mea13_7">having officially been found guilty of a crime in a law court:</string>
+    <string name="b1_mea13_8">illegal activities:</string>
+    <string name="b1_mea13_9">someone who commits a crime:</string>
+    <string name="b1_mea13_10">one or more reasons for believing that something is or is not true:</string>
+    <string name="b1_mea13_11">responsible for breaking a law:</string>
+    <string name="b1_mea13_12">physical harm or damage to someone\'s body caused by an accident or an attack:</string>
+    <string name="b1_mea13_13">(of a person) not guilty of a particular crime:</string>
+    <string name="b1_mea13_14">the action of abducting someone and holding them captive:</string>
+    <string name="b1_mea13_15">to harm moral:</string>
+
+
+    <string name="b1_mea14_1">an act of attacking someone and stealing their money:</string>
+    <string name="b1_mea14_2">the crime of intentionally killing a person:</string>
+    <string name="b1_mea14_3">a building where criminals are forced to live as a punishment:</string>
+    <string name="b1_mea14_4">a punishment given by a judge in court to a person or organization after they have been found guilty of doing something wrong:</string>
+    <string name="b1_mea14_5">a penalty inflicted as retribution for an offence:</string>
+    <string name="b1_mea14_6">the crime of stealing from somewhere or someone:</string>
+    <string name="b1_mea14_7">to decide and say officially what a punishment will be:</string>
+    <string name="b1_mea14_8">not kind or sympathetic; harsh:</string>
+    <string name="b1_mea14_9">the act of making someone take part in sexual activities, against their wishes, or without their agreement:</string>
+    <string name="b1_mea14_10">driving faster than is allowed in a particular area:</string>
+    <string name="b1_mea14_11">to take legal action against a person or organization:</string>
+    <string name="b1_mea14_12">to think that someone has committed a crime or done something wrong:</string>
+    <string name="b1_mea14_13">to stop either temporarily or permanently, from happening or continuing(sentence):</string>
+    <string name="b1_mea14_14">making you feel that something illegal is happening or that something is wrong:</string>
+    <string name="b1_mea14_15">a person who sees an event happening, especially a crime or an accident:</string>
+
+
+    <string name="b1_mea15_1">to change something, usually slightly, or to cause the characteristics of something to change:</string>
+    <string name="b1_mea15_2">close to a particular number or time:</string>
+    <string name="b1_mea15_3">the soft grey or black powder that is left after a substance, especially tobacco, coal, or wood, has burned:</string>
+    <string name="b1_mea15_4">not less than; at the minimum:</string>
+    <string name="b1_mea15_5">to move in a circle, often around something:</string>
+    <string name="b1_mea15_6">a flat, brown or black insect sometimes found in the home:</string>
+    <string name="b1_mea15_7">a result of a particular action or situation, often one that is bad or not convenient:</string>
+    <string name="b1_mea15_8">the act of destroying something, or the fact of being destroyed:</string>
+    <string name="b1_mea15_9">(an event that results in) great harm, damage, or death, or serious difficulty:</string>
+    <string name="b1_mea15_10">a long period when there is little or no rain:</string>
+    <string name="b1_mea15_11">dry dirt in the form of powder that covers surfaces inside a building, or very small dry pieces of soil, sand, or other substances:</string>
+    <string name="b1_mea15_12">a sudden violent movement of the earth\'s surface, sometimes causing great damage:</string>
+    <string name="b1_mea15_13">an occasion when a volcano explodes, and flames and rocks come out of it; (of a volcano) the act of doing this:</string>
+    <string name="b1_mea15_14">to deal with someone when the situation between you is difficult:</string>
+    <string name="b1_mea15_15">a situation in which there is not enough of food:</string>
+
+
+    <string name="b1_mea16_1"></string>
+    <string name="b1_mea16_2"></string>
+    <string name="b1_mea16_3"></string>
+    <string name="b1_mea16_4"></string>
+    <string name="b1_mea16_5"></string>
+    <string name="b1_mea16_6"></string>
+    <string name="b1_mea16_7"></string>
+    <string name="b1_mea16_8"></string>
+    <string name="b1_mea16_9"></string>
+    <string name="b1_mea16_10"></string>
+    <string name="b1_mea16_11"></string>
+    <string name="b1_mea16_12"></string>
+    <string name="b1_mea16_13"></string>
+    <string name="b1_mea16_14"></string>
+    <string name="b1_mea16_15"></string>
+
+
+    <string name="b1_mea17_1"></string>
+    <string name="b1_mea17_2"></string>
+    <string name="b1_mea17_3"></string>
+    <string name="b1_mea17_4"></string>
+    <string name="b1_mea17_5"></string>
+    <string name="b1_mea17_6"></string>
+    <string name="b1_mea17_7"></string>
+    <string name="b1_mea17_8"></string>
+    <string name="b1_mea17_9"></string>
+    <string name="b1_mea17_10"></string>
+    <string name="b1_mea17_11"></string>
+    <string name="b1_mea17_12"></string>
+    <string name="b1_mea17_13"></string>
+    <string name="b1_mea17_14"></string>
+    <string name="b1_mea17_15"></string>
+
+
+    <string name="b1_mea18_1"></string>
+    <string name="b1_mea18_2"></string>
+    <string name="b1_mea18_3"></string>
+    <string name="b1_mea18_4"></string>
+    <string name="b1_mea18_5"></string>
+    <string name="b1_mea18_6"></string>
+    <string name="b1_mea18_7"></string>
+    <string name="b1_mea18_8"></string>
+    <string name="b1_mea18_9"></string>
+    <string name="b1_mea18_10"></string>
+    <string name="b1_mea18_11"></string>
+    <string name="b1_mea18_12"></string>
+    <string name="b1_mea18_13"></string>
+    <string name="b1_mea18_14"></string>
+    <string name="b1_mea18_15"></string>
+
+
+    <string name="b1_mea19_1"></string>
+    <string name="b1_mea19_2"></string>
+    <string name="b1_mea19_3"></string>
+    <string name="b1_mea19_4"></string>
+    <string name="b1_mea19_5"></string>
+    <string name="b1_mea19_6"></string>
+    <string name="b1_mea19_7"></string>
+    <string name="b1_mea19_8"></string>
+    <string name="b1_mea19_9"></string>
+    <string name="b1_mea19_10"></string>
+    <string name="b1_mea19_11"></string>
+    <string name="b1_mea19_12"></string>
+    <string name="b1_mea19_13"></string>
+    <string name="b1_mea19_14"></string>
+    <string name="b1_mea19_15"></string>
+
+
+    <string name="b1_mea20_1"></string>
+    <string name="b1_mea20_2"></string>
+    <string name="b1_mea20_3"></string>
+    <string name="b1_mea20_4"></string>
+    <string name="b1_mea20_5"></string>
+    <string name="b1_mea20_6"></string>
+    <string name="b1_mea20_7"></string>
+    <string name="b1_mea20_8"></string>
+    <string name="b1_mea20_9"></string>
+    <string name="b1_mea20_10"></string>
+    <string name="b1_mea20_11"></string>
+    <string name="b1_mea20_12"></string>
+    <string name="b1_mea20_13"></string>
+    <string name="b1_mea20_14"></string>
+    <string name="b1_mea20_15"></string>
+
+
+    <string name="b1_mea21_1"></string>
+    <string name="b1_mea21_2"></string>
+    <string name="b1_mea21_3"></string>
+    <string name="b1_mea21_4"></string>
+    <string name="b1_mea21_5"></string>
+    <string name="b1_mea21_6"></string>
+    <string name="b1_mea21_7"></string>
+    <string name="b1_mea21_8"></string>
+    <string name="b1_mea21_9"></string>
+    <string name="b1_mea21_10"></string>
+    <string name="b1_mea21_11"></string>
+    <string name="b1_mea21_12"></string>
+    <string name="b1_mea21_13"></string>
+    <string name="b1_mea21_14"></string>
+    <string name="b1_mea21_15"></string>
+
+
+    <string name="b1_mea22_1"></string>
+    <string name="b1_mea22_2"></string>
+    <string name="b1_mea22_3"></string>
+    <string name="b1_mea22_4"></string>
+    <string name="b1_mea22_5"></string>
+    <string name="b1_mea22_6"></string>
+    <string name="b1_mea22_7"></string>
+    <string name="b1_mea22_8"></string>
+    <string name="b1_mea22_9"></string>
+    <string name="b1_mea22_10"></string>
+    <string name="b1_mea22_11"></string>
+    <string name="b1_mea22_12"></string>
+    <string name="b1_mea22_13"></string>
+    <string name="b1_mea22_14"></string>
+    <string name="b1_mea22_15"></string>
+
+
+
+    <string name="b1_mea23_1"></string>
+    <string name="b1_mea23_2"></string>
+    <string name="b1_mea23_3"></string>
+    <string name="b1_mea23_4"></string>
+    <string name="b1_mea23_5"></string>
+    <string name="b1_mea23_6"></string>
+    <string name="b1_mea23_7"></string>
+    <string name="b1_mea23_8"></string>
+    <string name="b1_mea23_9"></string>
+    <string name="b1_mea23_10"></string>
+    <string name="b1_mea23_11"></string>
+    <string name="b1_mea23_12"></string>
+    <string name="b1_mea23_13"></string>
+    <string name="b1_mea23_14"></string>
+    <string name="b1_mea23_15"></string>
+
+
+
+    <string name="b1_mea24_1"></string>
+    <string name="b1_mea24_2"></string>
+    <string name="b1_mea24_3"></string>
+    <string name="b1_mea24_4"></string>
+    <string name="b1_mea24_5"></string>
+    <string name="b1_mea24_6"></string>
+    <string name="b1_mea24_7"></string>
+    <string name="b1_mea24_8"></string>
+    <string name="b1_mea24_9"></string>
+    <string name="b1_mea24_10"></string>
+    <string name="b1_mea24_11"></string>
+    <string name="b1_mea24_12"></string>
+    <string name="b1_mea24_13"></string>
+    <string name="b1_mea24_14"></string>
+    <string name="b1_mea24_15"></string>
+
+
+
+    <string name="b1_mea25_1"></string>
+    <string name="b1_mea25_2"></string>
+    <string name="b1_mea25_3"></string>
+    <string name="b1_mea25_4"></string>
+    <string name="b1_mea25_5"></string>
+    <string name="b1_mea25_6"></string>
+    <string name="b1_mea25_7"></string>
+    <string name="b1_mea25_8"></string>
+    <string name="b1_mea25_9"></string>
+    <string name="b1_mea25_10"></string>
+    <string name="b1_mea25_11"></string>
+    <string name="b1_mea25_12"></string>
+    <string name="b1_mea25_13"></string>
+    <string name="b1_mea25_14"></string>
+    <string name="b1_mea25_15"></string>
+
+
+
+    <string name="b1_mea26_1"></string>
+    <string name="b1_mea26_2"></string>
+    <string name="b1_mea26_3"></string>
+    <string name="b1_mea26_4"></string>
+    <string name="b1_mea26_5"></string>
+    <string name="b1_mea26_6"></string>
+    <string name="b1_mea26_7"></string>
+    <string name="b1_mea26_8"></string>
+    <string name="b1_mea26_9"></string>
+    <string name="b1_mea26_10"></string>
+    <string name="b1_mea26_11"></string>
+    <string name="b1_mea26_12"></string>
+    <string name="b1_mea26_13"></string>
+    <string name="b1_mea26_14"></string>
+    <string name="b1_mea26_15"></string>
+
+
+
+    <string name="b1_mea27_1"></string>
+    <string name="b1_mea27_2"></string>
+    <string name="b1_mea27_3"></string>
+    <string name="b1_mea27_4"></string>
+    <string name="b1_mea27_5"></string>
+    <string name="b1_mea27_6"></string>
+    <string name="b1_mea27_7"></string>
+    <string name="b1_mea27_8"></string>
+    <string name="b1_mea27_9"></string>
+    <string name="b1_mea27_10"></string>
+    <string name="b1_mea27_11"></string>
+    <string name="b1_mea27_12"></string>
+    <string name="b1_mea27_13"></string>
+    <string name="b1_mea27_14"></string>
+    <string name="b1_mea27_15"></string>
+
+
+
+    <string name="b1_mea28_1"></string>
+    <string name="b1_mea28_2"></string>
+    <string name="b1_mea28_3"></string>
+    <string name="b1_mea28_4"></string>
+    <string name="b1_mea28_5"></string>
+    <string name="b1_mea28_6"></string>
+    <string name="b1_mea28_7"></string>
+    <string name="b1_mea28_8"></string>
+    <string name="b1_mea28_9"></string>
+    <string name="b1_mea28_10"></string>
+    <string name="b1_mea28_11"></string>
+    <string name="b1_mea28_12"></string>
+    <string name="b1_mea28_13"></string>
+    <string name="b1_mea28_14"></string>
+    <string name="b1_mea28_15"></string>
+
+
+
+    <string name="b1_mea29_1"></string>
+    <string name="b1_mea29_2"></string>
+    <string name="b1_mea29_3"></string>
+    <string name="b1_mea29_4"></string>
+    <string name="b1_mea29_5"></string>
+    <string name="b1_mea29_6"></string>
+    <string name="b1_mea29_7"></string>
+    <string name="b1_mea29_8"></string>
+    <string name="b1_mea29_9"></string>
+    <string name="b1_mea29_10"></string>
+    <string name="b1_mea29_11"></string>
+    <string name="b1_mea29_12"></string>
+    <string name="b1_mea29_13"></string>
+    <string name="b1_mea29_14"></string>
+    <string name="b1_mea29_15"></string>
+
+
+
+    <string name="b1_mea30_1"></string>
+    <string name="b1_mea30_2"></string>
+    <string name="b1_mea30_3"></string>
+    <string name="b1_mea30_4"></string>
+    <string name="b1_mea30_5"></string>
+    <string name="b1_mea30_6"></string>
+    <string name="b1_mea30_7"></string>
+    <string name="b1_mea30_8"></string>
+    <string name="b1_mea30_9"></string>
+    <string name="b1_mea30_10"></string>
+    <string name="b1_mea30_11"></string>
+    <string name="b1_mea30_12"></string>
+    <string name="b1_mea30_13"></string>
+    <string name="b1_mea30_14"></string>
+    <string name="b1_mea30_15"></string>
+
+
+
+    <string name="b1_mea31_1"></string>
+    <string name="b1_mea31_2"></string>
+    <string name="b1_mea31_3"></string>
+    <string name="b1_mea31_4"></string>
+    <string name="b1_mea31_5"></string>
+    <string name="b1_mea31_6"></string>
+    <string name="b1_mea31_7"></string>
+    <string name="b1_mea31_8"></string>
+    <string name="b1_mea31_9"></string>
+    <string name="b1_mea31_10"></string>
+    <string name="b1_mea31_11"></string>
+    <string name="b1_mea31_12"></string>
+    <string name="b1_mea31_13"></string>
+    <string name="b1_mea31_14"></string>
+    <string name="b1_mea31_15"></string>
+
+
+
+    <string name="b1_mea32_1"></string>
+    <string name="b1_mea32_2"></string>
+    <string name="b1_mea32_3"></string>
+    <string name="b1_mea32_4"></string>
+    <string name="b1_mea32_5"></string>
+    <string name="b1_mea32_6"></string>
+    <string name="b1_mea32_7"></string>
+    <string name="b1_mea32_8"></string>
+    <string name="b1_mea32_9"></string>
+    <string name="b1_mea32_10"></string>
+    <string name="b1_mea32_11"></string>
+    <string name="b1_mea32_12"></string>
+    <string name="b1_mea32_13"></string>
+    <string name="b1_mea32_14"></string>
+    <string name="b1_mea32_15"></string>
+
+
+
+    <string name="b1_mea33_1"></string>
+    <string name="b1_mea33_2"></string>
+    <string name="b1_mea33_3"></string>
+    <string name="b1_mea33_4"></string>
+    <string name="b1_mea33_5"></string>
+    <string name="b1_mea33_6"></string>
+    <string name="b1_mea33_7"></string>
+    <string name="b1_mea33_8"></string>
+    <string name="b1_mea33_9"></string>
+    <string name="b1_mea33_10"></string>
+    <string name="b1_mea33_11"></string>
+    <string name="b1_mea33_12"></string>
+    <string name="b1_mea33_13"></string>
+    <string name="b1_mea33_14"></string>
+    <string name="b1_mea33_15"></string>
+
+
+
+    <string name="b1_mea34_1"></string>
+    <string name="b1_mea34_2"></string>
+    <string name="b1_mea34_3"></string>
+    <string name="b1_mea34_4"></string>
+    <string name="b1_mea34_5"></string>
+    <string name="b1_mea34_6"></string>
+    <string name="b1_mea34_7"></string>
+    <string name="b1_mea34_8"></string>
+    <string name="b1_mea34_9"></string>
+    <string name="b1_mea34_10"></string>
+    <string name="b1_mea34_11"></string>
+    <string name="b1_mea34_12"></string>
+    <string name="b1_mea34_13"></string>
+    <string name="b1_mea34_14"></string>
+    <string name="b1_mea34_15"></string>
+
+
+
+    <string name="b1_mea35_1"></string>
+    <string name="b1_mea35_2"></string>
+    <string name="b1_mea35_3"></string>
+    <string name="b1_mea35_4"></string>
+    <string name="b1_mea35_5"></string>
+    <string name="b1_mea35_6"></string>
+    <string name="b1_mea35_7"></string>
+    <string name="b1_mea35_8"></string>
+    <string name="b1_mea35_9"></string>
+    <string name="b1_mea35_10"></string>
+    <string name="b1_mea35_11"></string>
+    <string name="b1_mea35_12"></string>
+    <string name="b1_mea35_13"></string>
+    <string name="b1_mea35_14"></string>
+    <string name="b1_mea35_15"></string>
+
+
+
+    <string name="b1_mea36_1"></string>
+    <string name="b1_mea36_2"></string>
+    <string name="b1_mea36_3"></string>
+    <string name="b1_mea36_4"></string>
+    <string name="b1_mea36_5"></string>
+    <string name="b1_mea36_6"></string>
+    <string name="b1_mea36_7"></string>
+    <string name="b1_mea36_8"></string>
+    <string name="b1_mea36_9"></string>
+    <string name="b1_mea36_10"></string>
+    <string name="b1_mea36_11"></string>
+    <string name="b1_mea36_12"></string>
+    <string name="b1_mea36_13"></string>
+    <string name="b1_mea36_14"></string>
+    <string name="b1_mea36_15"></string>
+
+
+
+    <string name="b1_mea37_1"></string>
+    <string name="b1_mea37_2"></string>
+    <string name="b1_mea37_3"></string>
+    <string name="b1_mea37_4"></string>
+    <string name="b1_mea37_5"></string>
+    <string name="b1_mea37_6"></string>
+    <string name="b1_mea37_7"></string>
+    <string name="b1_mea37_8"></string>
+    <string name="b1_mea37_9"></string>
+    <string name="b1_mea37_10"></string>
+    <string name="b1_mea37_11"></string>
+    <string name="b1_mea37_12"></string>
+    <string name="b1_mea37_13"></string>
+    <string name="b1_mea37_14"></string>
+    <string name="b1_mea37_15"></string>
+
+
+
+    <string name="b1_mea38_1"></string>
+    <string name="b1_mea38_2"></string>
+    <string name="b1_mea38_3"></string>
+    <string name="b1_mea38_4"></string>
+    <string name="b1_mea38_5"></string>
+    <string name="b1_mea38_6"></string>
+    <string name="b1_mea38_7"></string>
+    <string name="b1_mea38_8"></string>
+    <string name="b1_mea38_9"></string>
+    <string name="b1_mea38_10"></string>
+    <string name="b1_mea38_11"></string>
+    <string name="b1_mea38_12"></string>
+    <string name="b1_mea38_13"></string>
+    <string name="b1_mea38_14"></string>
+    <string name="b1_mea38_15"></string>
+
+
+
+    <string name="b1_mea39_1"></string>
+    <string name="b1_mea39_2"></string>
+    <string name="b1_mea39_3"></string>
+    <string name="b1_mea39_4"></string>
+    <string name="b1_mea39_5"></string>
+    <string name="b1_mea39_6"></string>
+    <string name="b1_mea39_7"></string>
+    <string name="b1_mea39_8"></string>
+    <string name="b1_mea39_9"></string>
+    <string name="b1_mea39_10"></string>
+    <string name="b1_mea39_11"></string>
+    <string name="b1_mea39_12"></string>
+    <string name="b1_mea39_13"></string>
+    <string name="b1_mea39_14"></string>
+    <string name="b1_mea39_15"></string>
+
+
+
+    <string name="b1_mea40_1"></string>
+    <string name="b1_mea40_2"></string>
+    <string name="b1_mea40_3"></string>
+    <string name="b1_mea40_4"></string>
+    <string name="b1_mea40_5"></string>
+    <string name="b1_mea40_6"></string>
+    <string name="b1_mea40_7"></string>
+    <string name="b1_mea40_8"></string>
+    <string name="b1_mea40_9"></string>
+    <string name="b1_mea40_10"></string>
+    <string name="b1_mea40_11"></string>
+    <string name="b1_mea40_12"></string>
+    <string name="b1_mea40_13"></string>
+    <string name="b1_mea40_14"></string>
+    <string name="b1_mea40_15"></string>
+
+
+
+    <string name="b1_mea41_1"></string>
+    <string name="b1_mea41_2"></string>
+    <string name="b1_mea41_3"></string>
+    <string name="b1_mea41_4"></string>
+    <string name="b1_mea41_5"></string>
+    <string name="b1_mea41_6"></string>
+    <string name="b1_mea41_7"></string>
+    <string name="b1_mea41_8"></string>
+    <string name="b1_mea41_9"></string>
+    <string name="b1_mea41_10"></string>
+    <string name="b1_mea41_11"></string>
+    <string name="b1_mea41_12"></string>
+    <string name="b1_mea41_13"></string>
+    <string name="b1_mea41_14"></string>
+    <string name="b1_mea41_15"></string>
+
+
+
+    <string name="b1_mea42_1"></string>
+    <string name="b1_mea42_2"></string>
+    <string name="b1_mea42_3"></string>
+    <string name="b1_mea42_4"></string>
+    <string name="b1_mea42_5"></string>
+    <string name="b1_mea42_6"></string>
+    <string name="b1_mea42_7"></string>
+    <string name="b1_mea42_8"></string>
+    <string name="b1_mea42_9"></string>
+    <string name="b1_mea42_10"></string>
+    <string name="b1_mea42_11"></string>
+    <string name="b1_mea42_12"></string>
+    <string name="b1_mea42_13"></string>
+    <string name="b1_mea42_14"></string>
+    <string name="b1_mea42_15"></string>
+
+
+
+    <string name="b1_mea43_1"></string>
+    <string name="b1_mea43_2"></string>
+    <string name="b1_mea43_3"></string>
+    <string name="b1_mea43_4"></string>
+    <string name="b1_mea43_5"></string>
+    <string name="b1_mea43_6"></string>
+    <string name="b1_mea43_7"></string>
+    <string name="b1_mea43_8"></string>
+    <string name="b1_mea43_9"></string>
+    <string name="b1_mea43_10"></string>
+    <string name="b1_mea43_11"></string>
+    <string name="b1_mea43_12"></string>
+    <string name="b1_mea43_13"></string>
+    <string name="b1_mea43_14"></string>
+    <string name="b1_mea43_15"></string>
+
+
+
+    <string name="b1_mea44_1"></string>
+    <string name="b1_mea44_2"></string>
+    <string name="b1_mea44_3"></string>
+    <string name="b1_mea44_4"></string>
+    <string name="b1_mea44_5"></string>
+    <string name="b1_mea44_6"></string>
+    <string name="b1_mea44_7"></string>
+    <string name="b1_mea44_8"></string>
+    <string name="b1_mea44_9"></string>
+    <string name="b1_mea44_10"></string>
+    <string name="b1_mea44_11"></string>
+    <string name="b1_mea44_12"></string>
+    <string name="b1_mea44_13"></string>
+    <string name="b1_mea44_14"></string>
+    <string name="b1_mea44_15"></string>
+
+
+
+    <string name="b1_mea45_1"></string>
+    <string name="b1_mea45_2"></string>
+    <string name="b1_mea45_3"></string>
+    <string name="b1_mea45_4"></string>
+    <string name="b1_mea45_5"></string>
+    <string name="b1_mea45_6"></string>
+    <string name="b1_mea45_7"></string>
+    <string name="b1_mea45_8"></string>
+    <string name="b1_mea45_9"></string>
+    <string name="b1_mea45_10"></string>
+    <string name="b1_mea45_11"></string>
+    <string name="b1_mea45_12"></string>
+    <string name="b1_mea45_13"></string>
+    <string name="b1_mea45_14"></string>
+    <string name="b1_mea45_15"></string>
+
+
+
+    <string name="b1_mea46_1"></string>
+    <string name="b1_mea46_2"></string>
+    <string name="b1_mea46_3"></string>
+    <string name="b1_mea46_4"></string>
+    <string name="b1_mea46_5"></string>
+    <string name="b1_mea46_6"></string>
+    <string name="b1_mea46_7"></string>
+    <string name="b1_mea46_8"></string>
+    <string name="b1_mea46_9"></string>
+    <string name="b1_mea46_10"></string>
+    <string name="b1_mea46_11"></string>
+    <string name="b1_mea46_12"></string>
+    <string name="b1_mea46_13"></string>
+    <string name="b1_mea46_14"></string>
+    <string name="b1_mea46_15"></string>
+
+
+    <string name="b1_mea47_1"></string>
+    <string name="b1_mea47_2"></string>
+    <string name="b1_mea47_3"></string>
+    <string name="b1_mea47_4"></string>
+    <string name="b1_mea47_5"></string>
+    <string name="b1_mea47_6"></string>
+    <string name="b1_mea47_7"></string>
+    <string name="b1_mea47_8"></string>
+    <string name="b1_mea47_9"></string>
+    <string name="b1_mea47_10"></string>
+    <string name="b1_mea47_11"></string>
+    <string name="b1_mea47_12"></string>
+    <string name="b1_mea47_13"></string>
+    <string name="b1_mea47_14"></string>
+    <string name="b1_mea47_15"></string>
+
+
+
+    <string name="b1_mea48_1"></string>
+    <string name="b1_mea48_2"></string>
+    <string name="b1_mea48_3"></string>
+    <string name="b1_mea48_4"></string>
+    <string name="b1_mea48_5"></string>
+    <string name="b1_mea48_6"></string>
+    <string name="b1_mea48_7"></string>
+    <string name="b1_mea48_8"></string>
+    <string name="b1_mea48_9"></string>
+    <string name="b1_mea48_10"></string>
+    <string name="b1_mea48_11"></string>
+    <string name="b1_mea48_12"></string>
+    <string name="b1_mea48_13"></string>
+    <string name="b1_mea48_14"></string>
+    <string name="b1_mea48_15"></string>
+
+
+
+    <string name="b1_mea49_1"></string>
+    <string name="b1_mea49_2"></string>
+    <string name="b1_mea49_3"></string>
+    <string name="b1_mea49_4"></string>
+    <string name="b1_mea49_5"></string>
+    <string name="b1_mea49_6"></string>
+    <string name="b1_mea49_7"></string>
+    <string name="b1_mea49_8"></string>
+    <string name="b1_mea49_9"></string>
+    <string name="b1_mea49_10"></string>
+    <string name="b1_mea49_11"></string>
+    <string name="b1_mea49_12"></string>
+    <string name="b1_mea49_13"></string>
+    <string name="b1_mea49_14"></string>
+    <string name="b1_mea49_15"></string>
+
+
+    <string name="b1_mea50_1"></string>
+    <string name="b1_mea50_2"></string>
+    <string name="b1_mea50_3"></string>
+    <string name="b1_mea50_4"></string>
+    <string name="b1_mea50_5"></string>
+    <string name="b1_mea50_6"></string>
+    <string name="b1_mea50_7"></string>
+    <string name="b1_mea50_8"></string>
+    <string name="b1_mea50_9"></string>
+    <string name="b1_mea50_10"></string>
+    <string name="b1_mea50_11"></string>
+    <string name="b1_mea50_12"></string>
+    <string name="b1_mea50_13"></string>
+    <string name="b1_mea50_14"></string>
+    <string name="b1_mea50_15"></string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>

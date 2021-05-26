@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="a2_mea0_1">to cause someone to be extremely surprised:</string>
+    <string name="a2_mea0_2">to make someone angry:</string>
+    <string name="a2_mea0_3">to recognize how good someone or something is and to value him, her, or it:</string>
+    <string name="a2_mea0_4">loyal and willing to give your time and energy to something that you believe in:</string>
+    <string name="a2_mea0_5">a person whose job involves producing original ideas or doing artistic work:</string>
+    <string name="a2_mea0_6">having learned a lot at school or university and having a good level of knowledge:</string>
+    <string name="a2_mea0_7">to welcome someone with particular words or a particular action, or to react to something in the stated way:</string>
+    <string name="a2_mea0_8">roll in bed:</string>
+    <string name="a2_mea0_9">a short sleep, especially during the day:</string>
+    <string name="a2_mea0_10">a meal cooked and bought at a shop or restaurant but taken somewhere else, often home, to be eaten, or the shop or restaurant itself:</string>
+    <string name="a2_mea0_11">willing to help, or useful:</string>
+    <string name="a2_mea0_12">telling the truth or able to be trusted and not likely to steal, cheat, or lie:</string>
+    <string name="a2_mea0_13">very interested, eager, or wanting (to do) something very much:</string>
+    <string name="a2_mea0_14">to bring the memory of a past event into your mind, and often to give a description of what you remember:</string>
+    <string name="a2_mea0_15">to try to find or get something, especially something that is not a physical object:</string>
+
+    <string name="a2_mea1_1">unpleasantly proud and behaving as if you are more important than, or know more than, other people:</string>
+    <string name="a2_mea1_2">a person that is part of a band:</string>
+    <string name="a2_mea1_3">praising yourself what you have done:</string>
+    <string name="a2_mea1_4">liking to talk a lot in a friendly, informal way:</string>
+    <string name="a2_mea1_5">silly and immature:</string>
+    <string name="a2_mea1_6">loyal and willing to give your time and energy to something that you believe in:</string>
+    <string name="a2_mea1_7">a person who watches a lot of television and does not have an active life:</string>
+    <string name="a2_mea1_8">a person whose job involves producing original ideas or doing artistic work:</string>
+    <string name="a2_mea1_9">someone who is very interested in music, art, theatre, etc.:</string>
+    <string name="a2_mea1_10">interested in learning about people or things around you:</string>
+    <string name="a2_mea1_11">not honest:</string>
+    <string name="a2_mea1_12">having learned a lot at school or university and having a good level of knowledge:</string>
+    <string name="a2_mea1_13">treating someone in a way that is right or reasonable:</string>
+    <string name="a2_mea1_14">a woman or girl who a person is having a romantic or sexual relationship with:</string>
+    <string name="a2_mea1_15">to complain about someone or something in an annoyed way:</string>
+
+
+    <string name="a2_mea2_1">they are not kind or not able to feel sympathy:</string>
+    <string name="a2_mea2_2">willing to help, or useful:</string>
+    <string name="a2_mea2_3">telling the truth or able to be trusted:</string>
+    <string name="a2_mea2_4">very interested, eager, or wanting (to do) something very much:</string>
+    <string name="a2_mea2_5">willing to consider ideas and opinions that are new or different to your own:</string>
+    <string name="a2_mea2_6">someone who enjoys parties and party activities very much and goes to as many as possible:</string>
+    <string name="a2_mea2_7">enjoyable, attractive, friendly, or easy to like:</string>
+    <string name="a2_mea2_8">behaving in a way that is socially correct and shows understanding of and care for other people\'s feelings:</string>
+    <string name="a2_mea2_9">can be trusted or believed because he, she, or it works or behaves well in the way you expect:</string>
+    <string name="a2_mea2_10">people do not often talk about or show their feelings or thoughts:</string>
+    <string name="a2_mea2_11">not polite; offensive or embarrassing:</string>
+    <string name="a2_mea2_12">used to describe someone who shows, especially by what they say, that they understand and care about someone else\'s suffering:</string>
+    <string name="a2_mea2_13">willing to accept behaviour and beliefs that are different from your own, although you might not agree with or approve of them:</string>
+    <string name="a2_mea2_14">having or showing the ability to make good judgments, based on a deep understanding and experience of life:</string>
+    <string name="a2_mea2_15">a person who works a lot of the time and finds it difficult not to work:</string>
+
+
+    <string name="a2_mea3_1"></string>
+    <string name="a2_mea3_2"></string>
+    <string name="a2_mea3_3"></string>
+    <string name="a2_mea3_4"></string>
+    <string name="a2_mea3_5"></string>
+    <string name="a2_mea3_6"></string>
+    <string name="a2_mea3_7"></string>
+    <string name="a2_mea3_8"></string>
+    <string name="a2_mea3_9"></string>
+    <string name="a2_mea3_10"></string>
+    <string name="a2_mea3_11"></string>
+    <string name="a2_mea3_12"></string>
+    <string name="a2_mea3_13"></string>
+    <string name="a2_mea3_14"></string>
+    <string name="a2_mea3_15"></string>
+
+
+    <string name="a2_mea4_1"></string>
+    <string name="a2_mea4_2"></string>
+    <string name="a2_mea4_3"></string>
+    <string name="a2_mea4_4"></string>
+    <string name="a2_mea4_5"></string>
+    <string name="a2_mea4_6"></string>
+    <string name="a2_mea4_7"></string>
+    <string name="a2_mea4_8"></string>
+    <string name="a2_mea4_9"></string>
+    <string name="a2_mea4_10"></string>
+    <string name="a2_mea4_11"></string>
+    <string name="a2_mea4_12"></string>
+    <string name="a2_mea4_13"></string>
+    <string name="a2_mea4_14"></string>
+    <string name="a2_mea4_15"></string>
+
+
+    <string name="a2_mea5_1"></string>
+    <string name="a2_mea5_2"></string>
+    <string name="a2_mea5_3"></string>
+    <string name="a2_mea5_4"></string>
+    <string name="a2_mea5_5"></string>
+    <string name="a2_mea5_6"></string>
+    <string name="a2_mea5_7"></string>
+    <string name="a2_mea5_8"></string>
+    <string name="a2_mea5_9"></string>
+    <string name="a2_mea5_10"></string>
+    <string name="a2_mea5_11"></string>
+    <string name="a2_mea5_12"></string>
+    <string name="a2_mea5_13"></string>
+    <string name="a2_mea5_14"></string>
+    <string name="a2_mea5_15"></string>
+
+
+    <string name="a2_mea6_1"></string>
+    <string name="a2_mea6_2"></string>
+    <string name="a2_mea6_3"></string>
+    <string name="a2_mea6_4"></string>
+    <string name="a2_mea6_5"></string>
+    <string name="a2_mea6_6"></string>
+    <string name="a2_mea6_7"></string>
+    <string name="a2_mea6_8"></string>
+    <string name="a2_mea6_9"></string>
+    <string name="a2_mea6_10"></string>
+    <string name="a2_mea6_11"></string>
+    <string name="a2_mea6_12"></string>
+    <string name="a2_mea6_13"></string>
+    <string name="a2_mea6_14"></string>
+    <string name="a2_mea6_15"></string>
+
+
+    <string name="a2_mea7_1"></string>
+    <string name="a2_mea7_2"></string>
+    <string name="a2_mea7_3"></string>
+    <string name="a2_mea7_4"></string>
+    <string name="a2_mea7_5"></string>
+    <string name="a2_mea7_6"></string>
+    <string name="a2_mea7_7"></string>
+    <string name="a2_mea7_8"></string>
+    <string name="a2_mea7_9"></string>
+    <string name="a2_mea7_10"></string>
+    <string name="a2_mea7_11"></string>
+    <string name="a2_mea7_12"></string>
+    <string name="a2_mea7_13"></string>
+    <string name="a2_mea7_14"></string>
+    <string name="a2_mea7_15"></string>
+
+
+    <string name="a2_mea8_1"></string>
+    <string name="a2_mea8_2"></string>
+    <string name="a2_mea8_3"></string>
+    <string name="a2_mea8_4"></string>
+    <string name="a2_mea8_5"></string>
+    <string name="a2_mea8_6"></string>
+    <string name="a2_mea8_7"></string>
+    <string name="a2_mea8_8"></string>
+    <string name="a2_mea8_9"></string>
+    <string name="a2_mea8_10"></string>
+    <string name="a2_mea8_11"></string>
+    <string name="a2_mea8_12"></string>
+    <string name="a2_mea8_13"></string>
+    <string name="a2_mea8_14"></string>
+    <string name="a2_mea8_15"></string>
+
+
+    <string name="a2_mea9_1"></string>
+    <string name="a2_mea9_2"></string>
+    <string name="a2_mea9_3"></string>
+    <string name="a2_mea9_4"></string>
+    <string name="a2_mea9_5"></string>
+    <string name="a2_mea9_6"></string>
+    <string name="a2_mea9_7"></string>
+    <string name="a2_mea9_8"></string>
+    <string name="a2_mea9_9"></string>
+    <string name="a2_mea9_10"></string>
+    <string name="a2_mea9_11"></string>
+    <string name="a2_mea9_12"></string>
+    <string name="a2_mea9_13"></string>
+    <string name="a2_mea9_14"></string>
+    <string name="a2_mea9_15"></string>
+
+
+    <string name="a2_mea10_1"></string>
+    <string name="a2_mea10_2"></string>
+    <string name="a2_mea10_3"></string>
+    <string name="a2_mea10_4"></string>
+    <string name="a2_mea10_5"></string>
+    <string name="a2_mea10_6"></string>
+    <string name="a2_mea10_7"></string>
+    <string name="a2_mea10_8"></string>
+    <string name="a2_mea10_9"></string>
+    <string name="a2_mea10_10"></string>
+    <string name="a2_mea10_11"></string>
+    <string name="a2_mea10_12"></string>
+    <string name="a2_mea10_13"></string>
+    <string name="a2_mea10_14"></string>
+    <string name="a2_mea10_15"></string>
+
+
+    <string name="a2_mea11_1"></string>
+    <string name="a2_mea11_2"></string>
+    <string name="a2_mea11_3"></string>
+    <string name="a2_mea11_4"></string>
+    <string name="a2_mea11_5"></string>
+    <string name="a2_mea11_6"></string>
+    <string name="a2_mea11_7"></string>
+    <string name="a2_mea11_8"></string>
+    <string name="a2_mea11_9"></string>
+    <string name="a2_mea11_10"></string>
+    <string name="a2_mea11_11"></string>
+    <string name="a2_mea11_12"></string>
+    <string name="a2_mea11_13"></string>
+    <string name="a2_mea11_14"></string>
+    <string name="a2_mea11_15"></string>
+
+
+    <string name="a2_mea12_1"></string>
+    <string name="a2_mea12_2"></string>
+    <string name="a2_mea12_3"></string>
+    <string name="a2_mea12_4"></string>
+    <string name="a2_mea12_5"></string>
+    <string name="a2_mea12_6"></string>
+    <string name="a2_mea12_7"></string>
+    <string name="a2_mea12_8"></string>
+    <string name="a2_mea12_9"></string>
+    <string name="a2_mea12_10"></string>
+    <string name="a2_mea12_11"></string>
+    <string name="a2_mea12_12"></string>
+    <string name="a2_mea12_13"></string>
+    <string name="a2_mea12_14"></string>
+    <string name="a2_mea12_15"></string>
+
+
+    <string name="a2_mea13_1"></string>
+    <string name="a2_mea13_2"></string>
+    <string name="a2_mea13_3"></string>
+    <string name="a2_mea13_4"></string>
+    <string name="a2_mea13_5"></string>
+    <string name="a2_mea13_6"></string>
+    <string name="a2_mea13_7"></string>
+    <string name="a2_mea13_8"></string>
+    <string name="a2_mea13_9"></string>
+    <string name="a2_mea13_10"></string>
+    <string name="a2_mea13_11"></string>
+    <string name="a2_mea13_12"></string>
+    <string name="a2_mea13_13"></string>
+    <string name="a2_mea13_14"></string>
+    <string name="a2_mea13_15"></string>
+
+
+    <string name="a2_mea14_1"></string>
+    <string name="a2_mea14_2"></string>
+    <string name="a2_mea14_3"></string>
+    <string name="a2_mea14_4"></string>
+    <string name="a2_mea14_5"></string>
+    <string name="a2_mea14_6"></string>
+    <string name="a2_mea14_7"></string>
+    <string name="a2_mea14_8"></string>
+    <string name="a2_mea14_9"></string>
+    <string name="a2_mea14_10"></string>
+    <string name="a2_mea14_11"></string>
+    <string name="a2_mea14_12"></string>
+    <string name="a2_mea14_13"></string>
+    <string name="a2_mea14_14"></string>
+    <string name="a2_mea14_15"></string>
+
+
+    <string name="a2_mea15_1"></string>
+    <string name="a2_mea15_2"></string>
+    <string name="a2_mea15_3"></string>
+    <string name="a2_mea15_4"></string>
+    <string name="a2_mea15_5"></string>
+    <string name="a2_mea15_6"></string>
+    <string name="a2_mea15_7"></string>
+    <string name="a2_mea15_8"></string>
+    <string name="a2_mea15_9"></string>
+    <string name="a2_mea15_10"></string>
+    <string name="a2_mea15_11"></string>
+    <string name="a2_mea15_12"></string>
+    <string name="a2_mea15_13"></string>
+    <string name="a2_mea15_14"></string>
+    <string name="a2_mea15_15"></string>
+
+
+    <string name="a2_mea16_1"></string>
+    <string name="a2_mea16_2"></string>
+    <string name="a2_mea16_3"></string>
+    <string name="a2_mea16_4"></string>
+    <string name="a2_mea16_5"></string>
+    <string name="a2_mea16_6"></string>
+    <string name="a2_mea16_7"></string>
+    <string name="a2_mea16_8"></string>
+    <string name="a2_mea16_9"></string>
+    <string name="a2_mea16_10"></string>
+    <string name="a2_mea16_11"></string>
+    <string name="a2_mea16_12"></string>
+    <string name="a2_mea16_13"></string>
+    <string name="a2_mea16_14"></string>
+    <string name="a2_mea16_15"></string>
+
+
+    <string name="a2_mea17_1"></string>
+    <string name="a2_mea17_2"></string>
+    <string name="a2_mea17_3"></string>
+    <string name="a2_mea17_4"></string>
+    <string name="a2_mea17_5"></string>
+    <string name="a2_mea17_6"></string>
+    <string name="a2_mea17_7"></string>
+    <string name="a2_mea17_8"></string>
+    <string name="a2_mea17_9"></string>
+    <string name="a2_mea17_10"></string>
+    <string name="a2_mea17_11"></string>
+    <string name="a2_mea17_12"></string>
+    <string name="a2_mea17_13"></string>
+    <string name="a2_mea17_14"></string>
+    <string name="a2_mea17_15"></string>
+
+
+    <string name="a2_mea18_1"></string>
+    <string name="a2_mea18_2"></string>
+    <string name="a2_mea18_3"></string>
+    <string name="a2_mea18_4"></string>
+    <string name="a2_mea18_5"></string>
+    <string name="a2_mea18_6"></string>
+    <string name="a2_mea18_7"></string>
+    <string name="a2_mea18_8"></string>
+    <string name="a2_mea18_9"></string>
+    <string name="a2_mea18_10"></string>
+    <string name="a2_mea18_11"></string>
+    <string name="a2_mea18_12"></string>
+    <string name="a2_mea18_13"></string>
+    <string name="a2_mea18_14"></string>
+    <string name="a2_mea18_15"></string>
+
+
+    <string name="a2_mea19_1"></string>
+    <string name="a2_mea19_2"></string>
+    <string name="a2_mea19_3"></string>
+    <string name="a2_mea19_4"></string>
+    <string name="a2_mea19_5"></string>
+    <string name="a2_mea19_6"></string>
+    <string name="a2_mea19_7"></string>
+    <string name="a2_mea19_8"></string>
+    <string name="a2_mea19_9"></string>
+    <string name="a2_mea19_10"></string>
+    <string name="a2_mea19_11"></string>
+    <string name="a2_mea19_12"></string>
+    <string name="a2_mea19_13"></string>
+    <string name="a2_mea19_14"></string>
+    <string name="a2_mea19_15"></string>
+
+
+    <string name="a2_mea20_1"></string>
+    <string name="a2_mea20_2"></string>
+    <string name="a2_mea20_3"></string>
+    <string name="a2_mea20_4"></string>
+    <string name="a2_mea20_5"></string>
+    <string name="a2_mea20_6"></string>
+    <string name="a2_mea20_7"></string>
+    <string name="a2_mea20_8"></string>
+    <string name="a2_mea20_9"></string>
+    <string name="a2_mea20_10"></string>
+    <string name="a2_mea20_11"></string>
+    <string name="a2_mea20_12"></string>
+    <string name="a2_mea20_13"></string>
+    <string name="a2_mea20_14"></string>
+    <string name="a2_mea20_15"></string>
+
+
+    <string name="a2_mea21_1"></string>
+    <string name="a2_mea21_2"></string>
+    <string name="a2_mea21_3"></string>
+    <string name="a2_mea21_4"></string>
+    <string name="a2_mea21_5"></string>
+    <string name="a2_mea21_6"></string>
+    <string name="a2_mea21_7"></string>
+    <string name="a2_mea21_8"></string>
+    <string name="a2_mea21_9"></string>
+    <string name="a2_mea21_10"></string>
+    <string name="a2_mea21_11"></string>
+    <string name="a2_mea21_12"></string>
+    <string name="a2_mea21_13"></string>
+    <string name="a2_mea21_14"></string>
+    <string name="a2_mea21_15"></string>
+
+
+    <string name="a2_mea22_1"></string>
+    <string name="a2_mea22_2"></string>
+    <string name="a2_mea22_3"></string>
+    <string name="a2_mea22_4"></string>
+    <string name="a2_mea22_5"></string>
+    <string name="a2_mea22_6"></string>
+    <string name="a2_mea22_7"></string>
+    <string name="a2_mea22_8"></string>
+    <string name="a2_mea22_9"></string>
+    <string name="a2_mea22_10"></string>
+    <string name="a2_mea22_11"></string>
+    <string name="a2_mea22_12"></string>
+    <string name="a2_mea22_13"></string>
+    <string name="a2_mea22_14"></string>
+    <string name="a2_mea22_15"></string>
+
+
+
+    <string name="a2_mea23_1"></string>
+    <string name="a2_mea23_2"></string>
+    <string name="a2_mea23_3"></string>
+    <string name="a2_mea23_4"></string>
+    <string name="a2_mea23_5"></string>
+    <string name="a2_mea23_6"></string>
+    <string name="a2_mea23_7"></string>
+    <string name="a2_mea23_8"></string>
+    <string name="a2_mea23_9"></string>
+    <string name="a2_mea23_10"></string>
+    <string name="a2_mea23_11"></string>
+    <string name="a2_mea23_12"></string>
+    <string name="a2_mea23_13"></string>
+    <string name="a2_mea23_14"></string>
+    <string name="a2_mea23_15"></string>
+
+
+
+    <string name="a2_mea24_1"></string>
+    <string name="a2_mea24_2"></string>
+    <string name="a2_mea24_3"></string>
+    <string name="a2_mea24_4"></string>
+    <string name="a2_mea24_5"></string>
+    <string name="a2_mea24_6"></string>
+    <string name="a2_mea24_7"></string>
+    <string name="a2_mea24_8"></string>
+    <string name="a2_mea24_9"></string>
+    <string name="a2_mea24_10"></string>
+    <string name="a2_mea24_11"></string>
+    <string name="a2_mea24_12"></string>
+    <string name="a2_mea24_13"></string>
+    <string name="a2_mea24_14"></string>
+    <string name="a2_mea24_15"></string>
+
+
+
+    <string name="a2_mea25_1"></string>
+    <string name="a2_mea25_2"></string>
+    <string name="a2_mea25_3"></string>
+    <string name="a2_mea25_4"></string>
+    <string name="a2_mea25_5"></string>
+    <string name="a2_mea25_6"></string>
+    <string name="a2_mea25_7"></string>
+    <string name="a2_mea25_8"></string>
+    <string name="a2_mea25_9"></string>
+    <string name="a2_mea25_10"></string>
+    <string name="a2_mea25_11"></string>
+    <string name="a2_mea25_12"></string>
+    <string name="a2_mea25_13"></string>
+    <string name="a2_mea25_14"></string>
+    <string name="a2_mea25_15"></string>
+
+
+
+    <string name="a2_mea26_1"></string>
+    <string name="a2_mea26_2"></string>
+    <string name="a2_mea26_3"></string>
+    <string name="a2_mea26_4"></string>
+    <string name="a2_mea26_5"></string>
+    <string name="a2_mea26_6"></string>
+    <string name="a2_mea26_7"></string>
+    <string name="a2_mea26_8"></string>
+    <string name="a2_mea26_9"></string>
+    <string name="a2_mea26_10"></string>
+    <string name="a2_mea26_11"></string>
+    <string name="a2_mea26_12"></string>
+    <string name="a2_mea26_13"></string>
+    <string name="a2_mea26_14"></string>
+    <string name="a2_mea26_15"></string>
+
+
+
+    <string name="a2_mea27_1"></string>
+    <string name="a2_mea27_2"></string>
+    <string name="a2_mea27_3"></string>
+    <string name="a2_mea27_4"></string>
+    <string name="a2_mea27_5"></string>
+    <string name="a2_mea27_6"></string>
+    <string name="a2_mea27_7"></string>
+    <string name="a2_mea27_8"></string>
+    <string name="a2_mea27_9"></string>
+    <string name="a2_mea27_10"></string>
+    <string name="a2_mea27_11"></string>
+    <string name="a2_mea27_12"></string>
+    <string name="a2_mea27_13"></string>
+    <string name="a2_mea27_14"></string>
+    <string name="a2_mea27_15"></string>
+
+
+
+    <string name="a2_mea28_1"></string>
+    <string name="a2_mea28_2"></string>
+    <string name="a2_mea28_3"></string>
+    <string name="a2_mea28_4"></string>
+    <string name="a2_mea28_5"></string>
+    <string name="a2_mea28_6"></string>
+    <string name="a2_mea28_7"></string>
+    <string name="a2_mea28_8"></string>
+    <string name="a2_mea28_9"></string>
+    <string name="a2_mea28_10"></string>
+    <string name="a2_mea28_11"></string>
+    <string name="a2_mea28_12"></string>
+    <string name="a2_mea28_13"></string>
+    <string name="a2_mea28_14"></string>
+    <string name="a2_mea28_15"></string>
+
+
+
+    <string name="a2_mea29_1"></string>
+    <string name="a2_mea29_2"></string>
+    <string name="a2_mea29_3"></string>
+    <string name="a2_mea29_4"></string>
+    <string name="a2_mea29_5"></string>
+    <string name="a2_mea29_6"></string>
+    <string name="a2_mea29_7"></string>
+    <string name="a2_mea29_8"></string>
+    <string name="a2_mea29_9"></string>
+    <string name="a2_mea29_10"></string>
+    <string name="a2_mea29_11"></string>
+    <string name="a2_mea29_12"></string>
+    <string name="a2_mea29_13"></string>
+    <string name="a2_mea29_14"></string>
+    <string name="a2_mea29_15"></string>
+
+
+
+    <string name="a2_mea30_1"></string>
+    <string name="a2_mea30_2"></string>
+    <string name="a2_mea30_3"></string>
+    <string name="a2_mea30_4"></string>
+    <string name="a2_mea30_5"></string>
+    <string name="a2_mea30_6"></string>
+    <string name="a2_mea30_7"></string>
+    <string name="a2_mea30_8"></string>
+    <string name="a2_mea30_9"></string>
+    <string name="a2_mea30_10"></string>
+    <string name="a2_mea30_11"></string>
+    <string name="a2_mea30_12"></string>
+    <string name="a2_mea30_13"></string>
+    <string name="a2_mea30_14"></string>
+    <string name="a2_mea30_15"></string>
+
+
+
+    <string name="a2_mea31_1"></string>
+    <string name="a2_mea31_2"></string>
+    <string name="a2_mea31_3"></string>
+    <string name="a2_mea31_4"></string>
+    <string name="a2_mea31_5"></string>
+    <string name="a2_mea31_6"></string>
+    <string name="a2_mea31_7"></string>
+    <string name="a2_mea31_8"></string>
+    <string name="a2_mea31_9"></string>
+    <string name="a2_mea31_10"></string>
+    <string name="a2_mea31_11"></string>
+    <string name="a2_mea31_12"></string>
+    <string name="a2_mea31_13"></string>
+    <string name="a2_mea31_14"></string>
+    <string name="a2_mea31_15"></string>
+
+
+
+    <string name="a2_mea32_1"></string>
+    <string name="a2_mea32_2"></string>
+    <string name="a2_mea32_3"></string>
+    <string name="a2_mea32_4"></string>
+    <string name="a2_mea32_5"></string>
+    <string name="a2_mea32_6"></string>
+    <string name="a2_mea32_7"></string>
+    <string name="a2_mea32_8"></string>
+    <string name="a2_mea32_9"></string>
+    <string name="a2_mea32_10"></string>
+    <string name="a2_mea32_11"></string>
+    <string name="a2_mea32_12"></string>
+    <string name="a2_mea32_13"></string>
+    <string name="a2_mea32_14"></string>
+    <string name="a2_mea32_15"></string>
+
+
+
+    <string name="a2_mea33_1"></string>
+    <string name="a2_mea33_2"></string>
+    <string name="a2_mea33_3"></string>
+    <string name="a2_mea33_4"></string>
+    <string name="a2_mea33_5"></string>
+    <string name="a2_mea33_6"></string>
+    <string name="a2_mea33_7"></string>
+    <string name="a2_mea33_8"></string>
+    <string name="a2_mea33_9"></string>
+    <string name="a2_mea33_10"></string>
+    <string name="a2_mea33_11"></string>
+    <string name="a2_mea33_12"></string>
+    <string name="a2_mea33_13"></string>
+    <string name="a2_mea33_14"></string>
+    <string name="a2_mea33_15"></string>
+
+
+
+    <string name="a2_mea34_1"></string>
+    <string name="a2_mea34_2"></string>
+    <string name="a2_mea34_3"></string>
+    <string name="a2_mea34_4"></string>
+    <string name="a2_mea34_5"></string>
+    <string name="a2_mea34_6"></string>
+    <string name="a2_mea34_7"></string>
+    <string name="a2_mea34_8"></string>
+    <string name="a2_mea34_9"></string>
+    <string name="a2_mea34_10"></string>
+    <string name="a2_mea34_11"></string>
+    <string name="a2_mea34_12"></string>
+    <string name="a2_mea34_13"></string>
+    <string name="a2_mea34_14"></string>
+    <string name="a2_mea34_15"></string>
+
+
+
+    <string name="a2_mea35_1"></string>
+    <string name="a2_mea35_2"></string>
+    <string name="a2_mea35_3"></string>
+    <string name="a2_mea35_4"></string>
+    <string name="a2_mea35_5"></string>
+    <string name="a2_mea35_6"></string>
+    <string name="a2_mea35_7"></string>
+    <string name="a2_mea35_8"></string>
+    <string name="a2_mea35_9"></string>
+    <string name="a2_mea35_10"></string>
+    <string name="a2_mea35_11"></string>
+    <string name="a2_mea35_12"></string>
+    <string name="a2_mea35_13"></string>
+    <string name="a2_mea35_14"></string>
+    <string name="a2_mea35_15"></string>
+
+
+
+    <string name="a2_mea36_1"></string>
+    <string name="a2_mea36_2"></string>
+    <string name="a2_mea36_3"></string>
+    <string name="a2_mea36_4"></string>
+    <string name="a2_mea36_5"></string>
+    <string name="a2_mea36_6"></string>
+    <string name="a2_mea36_7"></string>
+    <string name="a2_mea36_8"></string>
+    <string name="a2_mea36_9"></string>
+    <string name="a2_mea36_10"></string>
+    <string name="a2_mea36_11"></string>
+    <string name="a2_mea36_12"></string>
+    <string name="a2_mea36_13"></string>
+    <string name="a2_mea36_14"></string>
+    <string name="a2_mea36_15"></string>
+
+
+
+    <string name="a2_mea37_1"></string>
+    <string name="a2_mea37_2"></string>
+    <string name="a2_mea37_3"></string>
+    <string name="a2_mea37_4"></string>
+    <string name="a2_mea37_5"></string>
+    <string name="a2_mea37_6"></string>
+    <string name="a2_mea37_7"></string>
+    <string name="a2_mea37_8"></string>
+    <string name="a2_mea37_9"></string>
+    <string name="a2_mea37_10"></string>
+    <string name="a2_mea37_11"></string>
+    <string name="a2_mea37_12"></string>
+    <string name="a2_mea37_13"></string>
+    <string name="a2_mea37_14"></string>
+    <string name="a2_mea37_15"></string>
+
+
+
+    <string name="a2_mea38_1"></string>
+    <string name="a2_mea38_2"></string>
+    <string name="a2_mea38_3"></string>
+    <string name="a2_mea38_4"></string>
+    <string name="a2_mea38_5"></string>
+    <string name="a2_mea38_6"></string>
+    <string name="a2_mea38_7"></string>
+    <string name="a2_mea38_8"></string>
+    <string name="a2_mea38_9"></string>
+    <string name="a2_mea38_10"></string>
+    <string name="a2_mea38_11"></string>
+    <string name="a2_mea38_12"></string>
+    <string name="a2_mea38_13"></string>
+    <string name="a2_mea38_14"></string>
+    <string name="a2_mea38_15"></string>
+
+
+
+    <string name="a2_mea39_1"></string>
+    <string name="a2_mea39_2"></string>
+    <string name="a2_mea39_3"></string>
+    <string name="a2_mea39_4"></string>
+    <string name="a2_mea39_5"></string>
+    <string name="a2_mea39_6"></string>
+    <string name="a2_mea39_7"></string>
+    <string name="a2_mea39_8"></string>
+    <string name="a2_mea39_9"></string>
+    <string name="a2_mea39_10"></string>
+    <string name="a2_mea39_11"></string>
+    <string name="a2_mea39_12"></string>
+    <string name="a2_mea39_13"></string>
+    <string name="a2_mea39_14"></string>
+    <string name="a2_mea39_15"></string>
+
+
+
+    <string name="a2_mea40_1"></string>
+    <string name="a2_mea40_2"></string>
+    <string name="a2_mea40_3"></string>
+    <string name="a2_mea40_4"></string>
+    <string name="a2_mea40_5"></string>
+    <string name="a2_mea40_6"></string>
+    <string name="a2_mea40_7"></string>
+    <string name="a2_mea40_8"></string>
+    <string name="a2_mea40_9"></string>
+    <string name="a2_mea40_10"></string>
+    <string name="a2_mea40_11"></string>
+    <string name="a2_mea40_12"></string>
+    <string name="a2_mea40_13"></string>
+    <string name="a2_mea40_14"></string>
+    <string name="a2_mea40_15"></string>
+
+
+
+    <string name="a2_mea41_1"></string>
+    <string name="a2_mea41_2"></string>
+    <string name="a2_mea41_3"></string>
+    <string name="a2_mea41_4"></string>
+    <string name="a2_mea41_5"></string>
+    <string name="a2_mea41_6"></string>
+    <string name="a2_mea41_7"></string>
+    <string name="a2_mea41_8"></string>
+    <string name="a2_mea41_9"></string>
+    <string name="a2_mea41_10"></string>
+    <string name="a2_mea41_11"></string>
+    <string name="a2_mea41_12"></string>
+    <string name="a2_mea41_13"></string>
+    <string name="a2_mea41_14"></string>
+    <string name="a2_mea41_15"></string>
+
+
+
+    <string name="a2_mea42_1"></string>
+    <string name="a2_mea42_2"></string>
+    <string name="a2_mea42_3"></string>
+    <string name="a2_mea42_4"></string>
+    <string name="a2_mea42_5"></string>
+    <string name="a2_mea42_6"></string>
+    <string name="a2_mea42_7"></string>
+    <string name="a2_mea42_8"></string>
+    <string name="a2_mea42_9"></string>
+    <string name="a2_mea42_10"></string>
+    <string name="a2_mea42_11"></string>
+    <string name="a2_mea42_12"></string>
+    <string name="a2_mea42_13"></string>
+    <string name="a2_mea42_14"></string>
+    <string name="a2_mea42_15"></string>
+
+
+
+    <string name="a2_mea43_1"></string>
+    <string name="a2_mea43_2"></string>
+    <string name="a2_mea43_3"></string>
+    <string name="a2_mea43_4"></string>
+    <string name="a2_mea43_5"></string>
+    <string name="a2_mea43_6"></string>
+    <string name="a2_mea43_7"></string>
+    <string name="a2_mea43_8"></string>
+    <string name="a2_mea43_9"></string>
+    <string name="a2_mea43_10"></string>
+    <string name="a2_mea43_11"></string>
+    <string name="a2_mea43_12"></string>
+    <string name="a2_mea43_13"></string>
+    <string name="a2_mea43_14"></string>
+    <string name="a2_mea43_15"></string>
+
+
+
+    <string name="a2_mea44_1"></string>
+    <string name="a2_mea44_2"></string>
+    <string name="a2_mea44_3"></string>
+    <string name="a2_mea44_4"></string>
+    <string name="a2_mea44_5"></string>
+    <string name="a2_mea44_6"></string>
+    <string name="a2_mea44_7"></string>
+    <string name="a2_mea44_8"></string>
+    <string name="a2_mea44_9"></string>
+    <string name="a2_mea44_10"></string>
+    <string name="a2_mea44_11"></string>
+    <string name="a2_mea44_12"></string>
+    <string name="a2_mea44_13"></string>
+    <string name="a2_mea44_14"></string>
+    <string name="a2_mea44_15"></string>
+
+
+
+    <string name="a2_mea45_1"></string>
+    <string name="a2_mea45_2"></string>
+    <string name="a2_mea45_3"></string>
+    <string name="a2_mea45_4"></string>
+    <string name="a2_mea45_5"></string>
+    <string name="a2_mea45_6"></string>
+    <string name="a2_mea45_7"></string>
+    <string name="a2_mea45_8"></string>
+    <string name="a2_mea45_9"></string>
+    <string name="a2_mea45_10"></string>
+    <string name="a2_mea45_11"></string>
+    <string name="a2_mea45_12"></string>
+    <string name="a2_mea45_13"></string>
+    <string name="a2_mea45_14"></string>
+    <string name="a2_mea45_15"></string>
+
+
+
+    <string name="a2_mea46_1"></string>
+    <string name="a2_mea46_2"></string>
+    <string name="a2_mea46_3"></string>
+    <string name="a2_mea46_4"></string>
+    <string name="a2_mea46_5"></string>
+    <string name="a2_mea46_6"></string>
+    <string name="a2_mea46_7"></string>
+    <string name="a2_mea46_8"></string>
+    <string name="a2_mea46_9"></string>
+    <string name="a2_mea46_10"></string>
+    <string name="a2_mea46_11"></string>
+    <string name="a2_mea46_12"></string>
+    <string name="a2_mea46_13"></string>
+    <string name="a2_mea46_14"></string>
+    <string name="a2_mea46_15"></string>
+
+
+    <string name="a2_mea47_1"></string>
+    <string name="a2_mea47_2"></string>
+    <string name="a2_mea47_3"></string>
+    <string name="a2_mea47_4"></string>
+    <string name="a2_mea47_5"></string>
+    <string name="a2_mea47_6"></string>
+    <string name="a2_mea47_7"></string>
+    <string name="a2_mea47_8"></string>
+    <string name="a2_mea47_9"></string>
+    <string name="a2_mea47_10"></string>
+    <string name="a2_mea47_11"></string>
+    <string name="a2_mea47_12"></string>
+    <string name="a2_mea47_13"></string>
+    <string name="a2_mea47_14"></string>
+    <string name="a2_mea47_15"></string>
+
+
+
+    <string name="a2_mea48_1"></string>
+    <string name="a2_mea48_2"></string>
+    <string name="a2_mea48_3"></string>
+    <string name="a2_mea48_4"></string>
+    <string name="a2_mea48_5"></string>
+    <string name="a2_mea48_6"></string>
+    <string name="a2_mea48_7"></string>
+    <string name="a2_mea48_8"></string>
+    <string name="a2_mea48_9"></string>
+    <string name="a2_mea48_10"></string>
+    <string name="a2_mea48_11"></string>
+    <string name="a2_mea48_12"></string>
+    <string name="a2_mea48_13"></string>
+    <string name="a2_mea48_14"></string>
+    <string name="a2_mea48_15"></string>
+
+
+
+    <string name="a2_mea49_1"></string>
+    <string name="a2_mea49_2"></string>
+    <string name="a2_mea49_3"></string>
+    <string name="a2_mea49_4"></string>
+    <string name="a2_mea49_5"></string>
+    <string name="a2_mea49_6"></string>
+    <string name="a2_mea49_7"></string>
+    <string name="a2_mea49_8"></string>
+    <string name="a2_mea49_9"></string>
+    <string name="a2_mea49_10"></string>
+    <string name="a2_mea49_11"></string>
+    <string name="a2_mea49_12"></string>
+    <string name="a2_mea49_13"></string>
+    <string name="a2_mea49_14"></string>
+    <string name="a2_mea49_15"></string>
+
+
+    <string name="a2_mea50_1"></string>
+    <string name="a2_mea50_2"></string>
+    <string name="a2_mea50_3"></string>
+    <string name="a2_mea50_4"></string>
+    <string name="a2_mea50_5"></string>
+    <string name="a2_mea50_6"></string>
+    <string name="a2_mea50_7"></string>
+    <string name="a2_mea50_8"></string>
+    <string name="a2_mea50_9"></string>
+    <string name="a2_mea50_10"></string>
+    <string name="a2_mea50_11"></string>
+    <string name="a2_mea50_12"></string>
+    <string name="a2_mea50_13"></string>
+    <string name="a2_mea50_14"></string>
+    <string name="a2_mea50_15"></string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</resources>
