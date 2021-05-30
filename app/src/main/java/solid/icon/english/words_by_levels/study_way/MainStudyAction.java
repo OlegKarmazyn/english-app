@@ -1,6 +1,8 @@
 package solid.icon.english.words_by_levels.study_way;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -50,5 +52,18 @@ public class MainStudyAction extends AppCompatActivity {
 
             }
         });
+
+
+
+
     }
+
+    public void Oclick(View view)
+    {
+        // выводим сообщение
+        Toast.makeText(this, "Зачем вы нажали?", Toast.LENGTH_SHORT).show();
+
+    }
+
+
 }
