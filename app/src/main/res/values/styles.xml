@@ -13,16 +13,16 @@
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.ActionBar</item>
     </style>
 
-<!-- Base application theme.
+    <!-- Base application theme.
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         -->
-<!--    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">-->
-<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-<!--        <item name="colorAccent">@color/colorAccent</item>-->
-<!--        <item name="android:textColorSecondary">@color/colorBlack</item>-->
-<!--    </style>-->
+    <!--    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--        <item name="colorAccent">@color/colorAccent</item>-->
+    <!--        <item name="android:textColorSecondary">@color/colorBlack</item>-->
+    <!--    </style>-->
 
     <!--
     to set text color for title of subgroup in NavigationView
@@ -117,6 +117,10 @@
         <item name="android:layout_marginTop">20dp</item>
     </style>
 
+    <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
 
 
 </resources>

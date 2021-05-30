@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import solid.icon.english.db_pac.DBmoveINFO;
 import solid.icon.english.words_by_levels.LevelByEnglish;
+import solid.icon.english.words_by_levels.MainStudyAction;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         intent_words_by_levels = new Intent(this, LevelByEnglish.class);
-        intent_add_your_words = new Intent(this, LevelByEnglish.class);
+        intent_add_your_words = new Intent(this, MainStudyAction.class);
 
         words_by_levels = findViewById(R.id.words_by_levels);
         add_your_words = findViewById(R.id.add_your_words);
