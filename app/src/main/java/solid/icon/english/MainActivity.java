@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import solid.icon.english.db_pac.DBmoveINFO;
 import solid.icon.english.words_by_levels.LevelByEnglish;
-import solid.icon.english.words_by_levels.MainStudyAction;
+import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class MainActivity extends AppCompatActivity {
 

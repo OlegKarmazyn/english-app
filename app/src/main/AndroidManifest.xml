@@ -30,7 +30,7 @@
         <activity android:name=".words_by_levels.ListenWrite" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.Definition" android:screenOrientation="portrait"/>
 
-        <activity android:name=".words_by_levels.MainStudyAction" android:screenOrientation="portrait"/>
+        <activity android:name=".words_by_levels.study_way.MainStudyAction" android:screenOrientation="portrait"/>
 
     </application>
 

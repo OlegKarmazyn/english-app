@@ -1,4 +1,4 @@
-package solid.icon.english.words_by_levels;
+package solid.icon.english.words_by_levels.study_way;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
