@@ -8,6 +8,8 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout_choose_type_of_study"
+        style="@style/AppTabLayout"
+        app:tabTextAppearance="@style/AppTabTextAppearance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"

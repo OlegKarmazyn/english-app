@@ -17,7 +17,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
     @Override
     public CharSequence getPageTitle(int position) {
         // генерируем заголовок в зависимости от позиции
-        String[] tabTitles = new String[]{"learn", "definition", "listen", "test"};
+        String[] tabTitles = new String[]{"LEARN", "DEFINITION", "LISTEN", "TEST"};
         return tabTitles[position];
     }
 

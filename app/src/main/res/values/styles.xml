@@ -13,113 +13,23 @@
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.ActionBar</item>
     </style>
 
-    <!-- Base application theme.
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        -->
-    <!--    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">-->
-    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-    <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-    <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-    <!--        <item name="colorAccent">@color/colorAccent</item>-->
-    <!--        <item name="android:textColorSecondary">@color/colorBlack</item>-->
-    <!--    </style>-->
-
-    <!--
-    to set text color for title of subgroup in NavigationView
-     <item name="android:textColorSecondary">@color/colorBlack</item>
-     -->
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTabLayout" parent="Widget.Design.TabLayout">
+<!--        <item name="tabMaxWidth">60dp</item>-->
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabBackground">@color/colorPrimaryDark</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabPaddingStart">6dp</item>
+        <item name="tabPaddingEnd">6dp</item>
+<!--        <item name="tabBackground">?attr/selectableItemBackground</item>-->
+        <item name="tabTextAppearance">@style/AppTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/back_topic</item>
     </style>
 
-    <style name="TabLayoutStyle" parent="Widget.MaterialComponents.TabLayout.Colored">
-        <item name="tabIndicatorColor">@color/colorWhite</item>
-        <item name="tabIndicatorHeight">2dp</item>
-        <item name="tabPaddingStart">8dp</item>
-        <item name="tabPaddingEnd">8dp</item>
-        <item name="tabSelectedTextColor">@color/colorWhite</item>
-    </style>
-
-    <style name="TabExtraLayoutStyle" parent="Widget.MaterialComponents.TabLayout.Colored">
-        <item name="tabIndicatorColor">@color/colorWhite</item>
-        <item name="tabIndicatorHeight">2dp</item>
-        <item name="tabPaddingStart">30dp</item>
-        <item name="tabPaddingEnd">30dp</item>
-        <item name="tabBackground">?attr/selectableItemBackground</item>
-        <item name="tabSelectedTextColor">@color/colorWhite</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
-
-    <!-- CollapsingToolbarLayout -->
-    <style name="AppbarExpand" parent="@android:style/TextAppearance.Medium">
-        <item name="android:textSize">28sp</item>
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="AppbarCollaps" parent="@android:style/TextAppearance.Medium">
+    <!-- for text -->
+    <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/colorWhite</item>
-    </style>
-
-    <!-- TextInputLayout -->
-    <style name="countText">
-        <item name="android:textColor">#23ab2c</item>
-    </style>
-
-    <style name="countOver">
-        <item name="android:textColor">#f22c2c</item>
-    </style>
-
-
-    <!-- SnackBar buttons -->
-    <style name="SnackBarBtn">
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">22sp</item>
-        <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:padding">15dp</item>
-    </style>
-
-    <!-- Bottom Sheet buttons -->
-    <style name="BottomSheetPersistentBtn">
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:background">?android:selectableItemBackground</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:gravity">start|center_vertical</item>
-        <item name="android:layout_marginTop">10dp</item>
-        <item name="android:padding">10dp</item>
-        <item name="android:drawablePadding">10dp</item>
-    </style>
-
-    <style name="BottomSheetModalBtn">
-        <item name="android:textColor">@color/colorWhite</item>
-        <item name="android:background">?android:selectableItemBackground</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:gravity">center_vertical|center_horizontal</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginLeft">20dp</item>
-        <item name="android:layout_marginRight">20dp</item>
-        <item name="android:layout_marginTop">20dp</item>
-    </style>
-
-    <style name="Widget.AppTheme.ButtonBar.Fullscreen" parent="">
-        <item name="android:background">@color/black_overlay</item>
-        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="android:textColor">@color/back_true</item>
+        <item name="textAllCaps">false</item>
     </style>
 
 

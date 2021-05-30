@@ -13,17 +13,7 @@
     <color name="back_false">#CCFF0600</color>
 
 
-    <color name="colorBlack">#000000</color>
-    <color name="colorBlackLight">#4b4a50</color>
-    <color name="colorGray">#a2a2a6</color>
-    <color name="colorGrayLight">#edf1f1f1</color>
-    <color name="colorWhite">#ffffff</color>
-    <color name="colorWhiteLight">#d9ffffff</color>
-    <color name="colorOrange">#f78d2e</color>
-    <color name="light_blue_600">#FF039BE5</color>
-    <color name="light_blue_900">#FF01579B</color>
-    <color name="light_blue_A200">#FF40C4FF</color>
-    <color name="light_blue_A400">#FF00B0FF</color>
-    <color name="black_overlay">#66000000</color>
+    <color name="orange">#FFEB3B</color>
+    <color name="range">#F44336</color>
 
 </resources>
