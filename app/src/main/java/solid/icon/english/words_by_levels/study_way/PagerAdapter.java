@@ -14,6 +14,13 @@ public class PagerAdapter extends FragmentPagerAdapter {
         this.numOfTabs = numOfTabs;
     }
 
+    @Override
+    public CharSequence getPageTitle(int position) {
+        // генерируем заголовок в зависимости от позиции
+        String[] tabTitles = new String[]{"learn", "definition", "listen", "test"};
+        return tabTitles[position];
+    }
+
     @NonNull
     @Override
     public Fragment getItem(int position) {

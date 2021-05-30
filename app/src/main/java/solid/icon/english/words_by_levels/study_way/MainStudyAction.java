@@ -18,6 +18,7 @@ public class MainStudyAction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.study_words_tab_layout);
         ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
 
         TabLayout tabLayout     = (TabLayout) findViewById(R.id.tab_layout_choose_type_of_study);
@@ -25,12 +26,14 @@ public class MainStudyAction extends AppCompatActivity {
         TabItem item_definition = (TabItem) findViewById(R.id.item_definition);
         TabItem item_listen     = (TabItem) findViewById(R.id.item_listen);
         TabItem item_test       = (TabItem) findViewById(R.id.item_test);
-        ViewPager viewPager     = (ViewPager) findViewById(R.id.viewPager);
+        final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),
                                                      tabLayout.getTabCount());
 
         viewPager.setAdapter(pagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
