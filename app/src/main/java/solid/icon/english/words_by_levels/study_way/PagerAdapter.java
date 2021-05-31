@@ -28,7 +28,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new FragmentLearn();
             case 1:
-                return new FragmentGefinition();
+                return new FragmentDefinition();
             case 2:
                 return new FragmentListen();
             case 3:

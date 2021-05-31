@@ -64,11 +64,4 @@ public class FragmentLearn extends Fragment {
         return inflater.inflate(R.layout.fragment_learn, container, false);
 
     }
-
-    public void onMyButtonClick(View view)
-    {
-        // выводим сообщение
-
-    }
-
 }

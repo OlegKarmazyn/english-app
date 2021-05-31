@@ -11,10 +11,10 @@ import solid.icon.english.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FragmentGefinition#newInstance} factory method to
+ * Use the {@link FragmentDefinition#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FragmentGefinition extends Fragment {
+public class FragmentDefinition extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,7 +25,7 @@ public class FragmentGefinition extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public FragmentGefinition() {
+    public FragmentDefinition() {
         // Required empty public constructor
     }
 
@@ -38,8 +38,8 @@ public class FragmentGefinition extends Fragment {
      * @return A new instance of fragment FragmentGefinition.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentGefinition newInstance(String param1, String param2) {
-        FragmentGefinition fragment = new FragmentGefinition();
+    public static FragmentDefinition newInstance(String param1, String param2) {
+        FragmentDefinition fragment = new FragmentDefinition();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -60,6 +60,6 @@ public class FragmentGefinition extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gefinition, container, false);
+        return inflater.inflate(R.layout.fragment_definition, container, false);
     }
 }
