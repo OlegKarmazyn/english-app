@@ -17,7 +17,7 @@ import solid.icon.english.R;
 import solid.icon.english.db_pac.DBHelper;
 import solid.icon.english.db_pac.DBmoveINFO;
 import solid.icon.english.words_by_levels.LevelByEnglish;
-import solid.icon.english.words_by_levels.TestOrLearn;
+import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class Intermediate extends AppCompatActivity {
 
@@ -41,7 +41,7 @@ public class Intermediate extends AppCompatActivity {
 
         actionBar.setTitle("Topics to study");
 
-        intent0 = new Intent(this, TestOrLearn.class);
+        intent0 = new Intent(this, MainStudyAction.class);
 
         lev = "b1";
 
