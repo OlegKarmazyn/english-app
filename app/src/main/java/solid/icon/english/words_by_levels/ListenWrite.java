@@ -30,7 +30,7 @@ import solid.icon.english.words_by_levels.lev_b1.Level_B1;
 
 public class ListenWrite extends AppCompatActivity {
 
-    private AnimationDrawable drawable = null;
+    private AnimationDrawable animationDrawable = null;
     Level_A2 level_a2 = null;
     Level_B1 level_b1 = null;
     private ImageView imageView = null;
@@ -48,7 +48,7 @@ public class ListenWrite extends AppCompatActivity {
 
     private LinearLayout lay_write_learn = null;
 
-    private TextView words_1, words_2;
+    private TextView words1, words2;
 
     private FloatingActionButton fab; Drawable f;
 
@@ -63,15 +63,15 @@ public class ListenWrite extends AppCompatActivity {
         setContentView(R.layout.listen_write);
 
         imageView = findViewById(R.id.img_listen);
-        drawable = (AnimationDrawable) imageView.getDrawable();
+        animationDrawable = (AnimationDrawable) imageView.getDrawable();
 
 
         editText = findViewById(R.id.wrileEdit);
 
         lay_write_learn = findViewById(R.id.lay_write_learn);
 
-        words_1 = findViewById(R.id.words_by_engl);
-        words_2 = findViewById(R.id.words_by_transl);
+        words1 = findViewById(R.id.words_by_engl);
+        words2 = findViewById(R.id.words_by_transl);
 
         fab = findViewById(R.id.fab);
 
@@ -114,8 +114,8 @@ public class ListenWrite extends AppCompatActivity {
             //actionBar.setTitle(topic_by_b1[tem]);
         }
 
-        words_1.setClickable(false);
-        words_2.setClickable(false);
+        words1.setClickable(false);
+        words2.setClickable(false);
 
     }
 
@@ -133,15 +133,15 @@ public class ListenWrite extends AppCompatActivity {
     }
 
     private void words_get_text(){
-        words_1.setText(main_1[index][id[i]]);
-        words_2.setText(main_2[index][id[i]]);
+        words1.setText(main_1[index][id[i]]);
+        words2.setText(main_2[index][id[i]]);
     }
 
     @SuppressLint("NonConstantResourceId")
     public void click(View v) {
         switch (v.getId()) {
             case R.id.img_listen:
-                drawable.start();
+                animationDrawable.start();
                 listen();
                 new CountDownTimer(1000, 1000) {
 
@@ -151,7 +151,7 @@ public class ListenWrite extends AppCompatActivity {
 
                     public void onFinish() {
                         //mTextField.setText("done!");
-                        drawable.stop();
+                        animationDrawable.stop();
                     }
                 }.start();
 

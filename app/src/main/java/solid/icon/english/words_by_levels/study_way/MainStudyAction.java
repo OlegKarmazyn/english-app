@@ -2,14 +2,17 @@ package solid.icon.english.words_by_levels.study_way;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,10 +28,16 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.Locale;
 
+import solid.icon.english.Definition_Array;
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
 import solid.icon.english.words_by_levels.Definition;
+import solid.icon.english.words_by_levels.Lev_a2.Level_A2;
+import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
+import solid.icon.english.words_by_levels.ListenWrite;
+import solid.icon.english.words_by_levels.TestOrLearn;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
+import solid.icon.english.words_by_levels.lev_b1.Level_B1;
 
 public class MainStudyAction extends AppCompatActivity {
 
@@ -104,8 +113,10 @@ public class MainStudyAction extends AppCompatActivity {
                         init_learn_fragment();
                         break;
                     case 1:
+                        init_definition_fragment();
                         break;
                     case 2:
+                        init_listen_fragment();
                         break;
                     case 3:
                         doing = "test";
@@ -129,6 +140,147 @@ public class MainStudyAction extends AppCompatActivity {
 
     }
 
+    private ImageView imageView = null;
+    private AnimationDrawable animationDrawable = null;
+    private LinearLayout lay_write_learn = null;
+    private void init_listen_fragment(){
+        for(int i = 0; i < 15;i++){
+            id[i]= i * -1;
+        }
+        imageView = findViewById(R.id.img_listen);
+        animationDrawable = (AnimationDrawable) imageView.getDrawable();
+
+
+        editText = findViewById(R.id.wrileEdit);
+
+        lay_write_learn = findViewById(R.id.lay_write_learn);
+
+        words1 = findViewById(R.id.words_by_engl);
+        words2 = findViewById(R.id.words_by_transl);
+
+        fab = findViewById(R.id.fab);
+
+        full_array();
+
+        f = editText.getBackground();
+
+        el_next = findViewById(R.id.el_next);
+
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    int result =  mTTS.setLanguage(Locale.US);
+
+                    if(result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("TTS", "Language not supported");
+                    } else {
+
+                    }
+                }else{
+                    Log.e("TTS", "Initializator failef");
+                }
+            }
+        });
+        if (PreIntermediate.lev.equals("a2")){
+            index = PreIntermediate.abs;
+
+            main_1 = new Level_A2().main_1.clone();
+            main_2 = new Level_A2().main_2.clone();
+
+            //actionBar.setTitle(topic_by_a2[tem]);
+        } else if (Intermediate.lev.equals("b1")){
+            index = Intermediate.abs;
+
+            main_1 = new Level_B1().main_1.clone();
+            main_2 = new Level_B1().main_2.clone();
+
+            //actionBar.setTitle(topic_by_b1[tem]);
+        }
+        words_get_text_listen();
+        words1.setClickable(false);
+        words2.setClickable(false);
+
+    }
+    private void words_get_text_listen(){
+        words1.setText(main_1[index][id[i]]);
+        words2.setText(main_2[index][id[i]]);
+    }
+    private int [] counter_true_listen = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5};
+    @SuppressLint("NonConstantResourceId")
+    public void click_listen(View v) {
+        switch (v.getId()) {
+            case R.id.img_listen:
+                animationDrawable.start();
+                listen();
+                new CountDownTimer(1000, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+                        //mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+                    }
+
+                    public void onFinish() {
+                        //mTextField.setText("done!");
+                        animationDrawable.stop();
+                    }
+                }.start();
+
+                break;
+            case R.id.text_check_listen:
+                lay_write_learn.setVisibility(View.VISIBLE);
+
+                if(isTrueWords()){
+                    if (counter_true_listen[i] != 0){
+                        counter_true_listen[i] = 1;
+                    }
+
+                    editText.setBackgroundResource(R.color.back_true);
+                    fab.setVisibility(View.VISIBLE);
+                } else{
+                    counter_true_listen[i] = 0;
+                    editText.setBackgroundResource(R.color.back_false);
+                }
+                break;
+
+            case R.id.fab:
+                if (i < main_1[index].length - 1){
+                    i++;
+                    //editText.setBackgroundResource(R.color.colorPrimary);
+                    lay_write_learn.setVisibility(View.GONE);
+                    fab.setVisibility(View.GONE);
+                    editText.setText("");
+                    words_get_text();
+                    editText.setBackground(f);
+                } else {
+                    count = 0;
+                    for (int c: counter_true_listen) {
+                        if (c == 1){
+                            count++;
+                        }
+                    }
+                    Toast mess = Toast.makeText(this, "Correct answers " + count + " of " + main_1[index].length, Toast.LENGTH_LONG);
+                    mess.show();
+                    el_next.setVisibility(View.VISIBLE);
+                    fab.setVisibility(View.GONE);
+                }
+                break;
+            case R.id.el_next:
+                Intent intent = null;
+                if (PreIntermediate.lev.equals("a2")){
+                    TestOrLearn.doing = "test";
+                    intent = new Intent(this, Level_A2.class);
+
+                } else if (Intermediate.lev.equals("b1")){
+                    TestOrLearn.doing = "test";
+                    intent = new Intent(this, Level_B1.class);
+
+                }
+                startActivity(intent);
+                this.finish();
+                break;
+        }
+    }
 
     private void init_learn_fragment(){
         for(int i = 0; i < 15;i++){
@@ -187,16 +339,192 @@ public class MainStudyAction extends AppCompatActivity {
 
 
         } else if (doing.equals("test")){
+            editText_vis();
+            text1_1_visibel_vis();
+            text1_visibel_gone();
+            full_array();
+            index = Intermediate.abs;
+            change_test();
+        }
 
-                text1_1_visibel_vis();
-                text1_visibel_gone();
-                full_array();
-                index = Intermediate.abs;
-                change_test();
+    }
+
+    private void editText_vis(){
+
+        editText1.setVisibility(View.VISIBLE);
+        editText2.setVisibility(View.VISIBLE);
+        editText3.setVisibility(View.VISIBLE);
+        editText4.setVisibility(View.VISIBLE);
+        editText5.setVisibility(View.VISIBLE);
+        editText6.setVisibility(View.VISIBLE);
+        editText7.setVisibility(View.VISIBLE);
+        editText8.setVisibility(View.VISIBLE);
+        editText9.setVisibility(View.VISIBLE);
+        editText10.setVisibility(View.VISIBLE);
+        editText11.setVisibility(View.VISIBLE);
+        editText12.setVisibility(View.VISIBLE);
+        editText13.setVisibility(View.VISIBLE);
+        editText14.setVisibility(View.VISIBLE);
+        editText15.setVisibility(View.VISIBLE);
+    }
+    private EditText editText = null;
+
+    private LinearLayout lay_definition_transl = null;
+    private FloatingActionButton fab; Drawable f;
+    private TextView meaning = null;
+    private int a2_or_b1 = 0;
+
+    public int[][] main_meaning_b1 = new int[][]{};
+    public int[][] main_meaning_a2 = new int[][]{};
+
+    private void init_definition_fragment(){
+        for(int i = 0; i < 15;i++){
+            id[i]= i * -1;
+        }
+
+        main_meaning_b1 = new Definition_Array().main_meaning_b1.clone();
+        main_meaning_a2 = new Definition_Array().main_meaning_a2.clone();
+
+        editText = findViewById(R.id.writeEdit);
+        meaning = findViewById(R.id.meaning);
+        meaning.setClickable(false);
+
+        words1 = findViewById(R.id.words_by_engl);
+        words2 = findViewById(R.id.words_by_transl);
+
+        lay_definition_transl = findViewById(R.id.lay_definition_transl);
+
+        fab = findViewById(R.id.fab);
+
+        el_next = findViewById(R.id.el_next);
+
+        full_array();
+
+        f = editText.getBackground();
+
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    int result =  mTTS.setLanguage(Locale.US);
+
+                    if(result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("TTS", "Language not supported");
+                    } else {
+
+                    }
+                }else{
+                    Log.e("TTS", "Initializator failef");
+                }
             }
+        });
 
+        if (PreIntermediate.lev.equals("a2")){
+            index = PreIntermediate.abs;
 
+            main_1 = new Level_A2().main_1.clone();
+            main_2 = new Level_A2().main_2.clone();
+            a2_or_b1 = 0;
 
+            //actionBar.setTitle(topic_by_a2[tem]);
+        } else if (Intermediate.lev.equals("b1")){
+            index = Intermediate.abs;
+
+            main_1 = new Level_B1().main_1.clone();
+            main_2 = new Level_B1().main_2.clone();
+            a2_or_b1 = 1;
+            //actionBar.setTitle(topic_by_b1[tem]);
+        }
+
+        //words_1.setClickable(false);
+        words2.setClickable(false);
+        words_get_text();
+    }
+
+    private void listen(){ speak(getResources().getString((main_1[index][id[i]]))); }
+
+    private void speak(String text){
+        float pitch = 0.5f;
+        float speed = 0.5f;
+        Log.e("TTS", "123");
+        //mTTS.setPitch(pitch);
+        //mTTS.setSpeechRate(speed);
+
+        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    private void words_get_text(){
+        if(a2_or_b1 == 0){
+            meaning.setText(main_meaning_a2[index][id[i]]);
+        } else {
+            meaning.setText(main_meaning_b1[index][id[i]]);
+        }
+        words1.setText(main_1[index][id[i]]);
+        words2.setText(main_2[index][id[i]]);
+    }
+
+    private boolean isTrueWords(){
+        String eT = editText.getText().toString();
+        eT = eT.trim();
+        String res = (getResources().getString((main_1[index][id[i]])));
+        if((eT.equals(res)) ){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    private int [] counter_true_defi = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}; private int count = 0;
+
+    public void click_definition(View v) {
+        switch (v.getId()) {
+            case R.id.text_check:
+                lay_definition_transl.setVisibility(View.VISIBLE);
+
+                if(isTrueWords()){
+                    if (counter_true_defi[i] != 0){
+                        counter_true_defi[i] = 1;
+                    }
+
+                    editText.setBackgroundResource(R.color.back_true);
+                    fab.setVisibility(View.VISIBLE);
+                } else{
+                    counter_true_defi[i] = 0;
+                    editText.setBackgroundResource(R.color.back_false);
+                }
+                break;
+
+            case R.id.fab:
+                if (i < main_1[index].length - 1){
+                    i++;
+                    //editText.setBackgroundResource(R.color.colorPrimary);
+                    lay_definition_transl.setVisibility(View.GONE);
+                    fab.setVisibility(View.GONE);
+                    editText.setText("");
+                    words_get_text();
+                    editText.setBackground(f);
+                } else {
+                    count = 0;
+                    for (int c: counter_true_defi) {
+                        if (c == 1){
+                            count++;
+                        }
+                    }
+                    Toast mess = Toast.makeText(this, "Correct answers " + count + " of " + main_1[index].length, Toast.LENGTH_LONG);
+                    mess.show();
+                    el_next.setVisibility(View.VISIBLE);
+                    fab.setVisibility(View.GONE);
+                }
+                break;
+            case R.id.el_next:
+                Intent intent = new Intent(this, ListenWrite.class);
+                startActivity(intent);
+                this.finish();
+                break;
+            case R.id.words_by_engl:
+                listen();
+                break;
+        }
     }
 
     private void full_array(){
@@ -280,8 +608,9 @@ public class MainStudyAction extends AppCompatActivity {
         editText13.setVisibility(View.GONE);
         editText14.setVisibility(View.GONE);
         editText15.setVisibility(View.GONE);
-
     }
+
+
 
     private void text1_1_visibel_vis(){
 
@@ -696,8 +1025,8 @@ public class MainStudyAction extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
 
+        switch (item.getItemId()){
             case android.R.id.home:
                 Intent intent = new Intent(this, Intermediate.class);
                 startActivity(intent);
@@ -705,8 +1034,7 @@ public class MainStudyAction extends AppCompatActivity {
                 return true;
 
             case R.id.replay_mipmap:
-                doing = "learn";
-                init_learn_fragment();
+                reply__text();
                 return true;
 
             default:

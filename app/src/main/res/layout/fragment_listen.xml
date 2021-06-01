@@ -3,12 +3,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".words_by_levels.study_way.FragmentListen">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".words_by_levels.study_way.FragmentListen"
+    tools:ignore="OnClick">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="listen" />
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/lay_write_learn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/words_by_engl"
+                android:visibility="visible"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textSize="15sp"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/person_together"
+                android:gravity="center"
+                android:onClick="click_listen"
+                android:text="appreciate"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/words_by_transl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/person_together"
+                android:gravity="center"
+                android:onClick="click_listen"
+                android:paddingLeft="5dp"
+                android:paddingTop="15dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="15dp"
+                android:text="appreciate"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/wrileEdit"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:textSize="16sp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/img_listen"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/person_together"
+            android:padding="20dp"
+            android:layout_width="100dp"
+            android:onClick="click_listen"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/frame_anim"/>
+
+        <TextView
+            android:id="@+id/text_check_listen"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/person_together"
+            android:gravity="center"
+            android:onClick="click_listen"
+            android:padding="15dp"
+            android:text="CHECK"
+            android:textColor="@android:color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:visibility="gone"
+        android:onClick="click_listen"
+        android:layout_width="85dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="100dp"
+        app:srcCompat="@android:drawable/checkbox_on_background" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/el_next"
+        android:visibility="gone"
+        android:onClick="click_listen"
+        android:layout_width="85dp"
+        android:layout_height="67dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        app:srcCompat="@android:drawable/ic_media_next" />
 
 </FrameLayout>

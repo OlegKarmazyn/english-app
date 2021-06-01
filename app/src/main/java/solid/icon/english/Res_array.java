@@ -314,3 +314,4 @@ public class Res_array {
     public int[][] main_2 = new int[][]{draw0_2, draw1_2, draw2_2, draw3_2, draw4_2, draw5_2, draw6_2, draw7_2, draw8_2, draw9_2, draw10_2, draw11_2, draw12_2, draw13_2, draw14_2, draw15_2, draw16_2, draw17_2, draw18_2, draw19_2, draw20_2, draw21_2, draw22_2, draw23_2, draw24_2, draw25_2, draw26_2, draw27_2, draw28_2, draw29_2, draw30_2, draw31_2, draw32_2, draw33_2, draw34_2, draw35_2, draw36_2, draw37_2, draw38_2, draw39_2, draw40_2, draw41_2, draw42_2, draw43_2, draw44_2, draw45_2, draw46_2, draw47_2, draw48_2, draw49_2, draw50_2};
 
 }
+
