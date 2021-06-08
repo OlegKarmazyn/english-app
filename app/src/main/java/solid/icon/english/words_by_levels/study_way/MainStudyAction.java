@@ -172,7 +172,7 @@ public class MainStudyAction extends AppCompatActivity {
                 doing = "learn";
                 init_learn_fragment();
             }
-        }, 10);
+        }, 500);
 
 
     }

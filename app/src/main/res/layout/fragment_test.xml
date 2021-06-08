@@ -44,7 +44,7 @@
                         android:background="@drawable/person_together"
                         android:gravity="center"
                         android:onClick="learn_click"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:textStyle="bold"
                         />
@@ -63,7 +63,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:textSize="15sp"
                         android:textStyle="bold"
@@ -108,7 +108,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -128,7 +128,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -171,7 +171,7 @@
                         android:background="@drawable/person_together"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -191,7 +191,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -229,7 +229,7 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
-                        android:text="appriciate"
+                        android:text=""
                         android:background="@drawable/person_together"
                         android:layout_width="0dp"
                         android:layout_weight="1"
@@ -254,7 +254,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -297,7 +297,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -317,7 +317,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -360,7 +360,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -380,7 +380,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -423,7 +423,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -443,7 +443,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -486,7 +486,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -506,7 +506,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -549,7 +549,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -569,7 +569,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -612,7 +612,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -632,7 +632,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -675,7 +675,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -695,7 +695,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -738,7 +738,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -758,7 +758,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -801,7 +801,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -821,7 +821,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -864,7 +864,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -884,7 +884,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -928,7 +928,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="match_parent"
-                        android:text="appreciate"
+                        android:text=""
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
@@ -948,7 +948,7 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="appreciate1"
+                        android:text="1"
                         android:textColor="@android:color/black"
                         android:onClick="learn_click"
                         android:textStyle="bold"/>
