@@ -6,6 +6,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.Menu;
@@ -43,7 +44,7 @@ public class MainStudyAction extends AppCompatActivity {
 
     private TextToSpeech mTTS;
 
-
+    private final String TAG = "MainStudyAction";
     private Drawable LinDraw;
 
     private int counter_true = 0; private Toast mess;
@@ -98,10 +99,46 @@ public class MainStudyAction extends AppCompatActivity {
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
 
-
+        Handler h = new Handler();
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+                final int position = tab.getPosition();
+                viewPager.setCurrentItem(position);
+                h.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        switch (position){
+                            case 0:
+
+                                doing = "learn";
+                                init_learn_fragment();
+                                break;
+                            case 1:
+                                init_definition_fragment();
+                                break;
+                            case 2:
+                                init_listen_fragment();
+                                break;
+                            case 3:
+                                doing = "test";
+                                init_learn_fragment();
+                                check.setVisibility(View.VISIBLE);
+                                break;
+                        }
+                    }
+                },500);
+
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
                 int position = 0;
                 position = tab.getPosition();
                 viewPager.setCurrentItem(position);
@@ -109,6 +146,7 @@ public class MainStudyAction extends AppCompatActivity {
                 init_learn_fragment();
                 switch (position){
                     case 0:
+
                         doing = "learn";
                         init_learn_fragment();
                         break;
@@ -121,21 +159,20 @@ public class MainStudyAction extends AppCompatActivity {
                     case 3:
                         doing = "test";
                         init_learn_fragment();
+                        check.setVisibility(View.VISIBLE);
                         break;
                 }
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
             }
         });
+
+
+        h.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                doing = "learn";
+                init_learn_fragment();
+            }
+        }, 10);
 
 
     }
@@ -143,6 +180,8 @@ public class MainStudyAction extends AppCompatActivity {
     private ImageView imageView = null;
     private AnimationDrawable animationDrawable = null;
     private LinearLayout lay_write_learn = null;
+    int colora;
+
     private void init_listen_fragment(){
         for(int i = 0; i < 15;i++){
             id[i]= i * -1;
@@ -162,7 +201,7 @@ public class MainStudyAction extends AppCompatActivity {
 
         full_array();
 
-        f = editText.getBackground();
+        colora = getResources().getColor(R.color.range);
 
         el_next = findViewById(R.id.el_next);
 
@@ -251,7 +290,7 @@ public class MainStudyAction extends AppCompatActivity {
                     fab.setVisibility(View.GONE);
                     editText.setText("");
                     words_get_text();
-                    editText.setBackground(f);
+                    editText.setBackgroundColor(colora);
                 } else {
                     count = 0;
                     for (int c: counter_true_listen) {
@@ -286,6 +325,7 @@ public class MainStudyAction extends AppCompatActivity {
         for(int i = 0; i < 15;i++){
             id[i]= i * -1;
         }
+
         main_1 = new Res_array().main_1.clone();
         main_2 = new Res_array().main_2.clone();
         words1 = findViewById(R.id.words1); words2 = findViewById(R.id.words2); words3 = findViewById(R.id.words3); words4 = findViewById(R.id.words4); words5 = findViewById(R.id.words5);
@@ -1007,7 +1047,7 @@ public class MainStudyAction extends AppCompatActivity {
             change_test();
 
         } else if (doing.equals("test")) {
-            counter_true = 0;
+            counter_true = 0;//
             setBackgraund_to_lin_reply();
             text1_visibel_gone();
             check.setVisibility(View.VISIBLE);
