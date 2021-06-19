@@ -84,8 +84,6 @@ public class MainStudyAction extends AppCompatActivity {
         setContentView(R.layout.study_words_tab_layout);
         ActionBar actionBar = getSupportActionBar();
 
-
-
         TabLayout tabLayout     = (TabLayout) findViewById(R.id.tab_layout_choose_type_of_study);
         TabItem item_learn      = (TabItem) findViewById(R.id.item_learn);
         TabItem item_definition = (TabItem) findViewById(R.id.item_definition);
@@ -111,8 +109,8 @@ public class MainStudyAction extends AppCompatActivity {
                         switch (position){
                             case 0:
 
-                                doing = "learn";
-                                init_learn_fragment();
+                                //doing = "learn";
+                                //init_learn_fragment();
                                 break;
                             case 1:
                                 init_definition_fragment();
@@ -121,9 +119,9 @@ public class MainStudyAction extends AppCompatActivity {
                                 init_listen_fragment();
                                 break;
                             case 3:
-                                doing = "test";
-                                init_learn_fragment();
-                                check.setVisibility(View.VISIBLE);
+                                //doing = "test";
+                                //init_learn_fragment();
+                                //check.setVisibility(View.VISIBLE);
                                 break;
                         }
                     }
@@ -147,8 +145,8 @@ public class MainStudyAction extends AppCompatActivity {
                 switch (position){
                     case 0:
 
-                        doing = "learn";
-                        init_learn_fragment();
+                        //doing = "learn";
+                        //init_learn_fragment();
                         break;
                     case 1:
                         init_definition_fragment();
@@ -157,22 +155,22 @@ public class MainStudyAction extends AppCompatActivity {
                         init_listen_fragment();
                         break;
                     case 3:
-                        doing = "test";
-                        init_learn_fragment();
-                        check.setVisibility(View.VISIBLE);
+                        //doing = "test";
+                        //init_learn_fragment();
+                        //check.setVisibility(View.VISIBLE);
                         break;
                 }
             }
         });
 
 
-        h.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                doing = "learn";
-                init_learn_fragment();
-            }
-        }, 500);
+//        h.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                doing = "learn";
+//                init_learn_fragment();
+//            }
+//        }, 500);
 
 
     }
@@ -802,7 +800,7 @@ public class MainStudyAction extends AppCompatActivity {
         super.onDestroy();
     }
 
-    public void learn_click(View v) {
+    public void learn_clickkk(View v) {
         switch (v.getId()) {
             case R.id.words1:
                 if(words1_1.getVisibility() == View.GONE){
