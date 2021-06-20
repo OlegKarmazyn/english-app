@@ -103,6 +103,8 @@
     <string name="b1_tema_48">48 Commercials</string>
     <string name="b1_tema_49">49 Learning</string>
     <string name="b1_tema_50">50 Hitting the books</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

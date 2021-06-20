@@ -115,8 +115,8 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
             id[i]= i * -1;
         }
 
-        main_1 = new Res_array().main_1.clone();
-        main_2 = new Res_array().main_2.clone();
+        main_1 = new Res_array().main_1_learn.clone();
+        main_2 = new Res_array().main_2_learn.clone();
         words1 = getActivity().findViewById(R.id.words1); words2 = getActivity().findViewById(R.id.words2); words3 = getActivity().findViewById(R.id.words3); words4 = getActivity().findViewById(R.id.words4); words5 = getActivity().findViewById(R.id.words5);
         words6 = getActivity().findViewById(R.id.words6); words7 = getActivity().findViewById(R.id.words7); words8 = getActivity().findViewById(R.id.words8); words9 = getActivity().findViewById(R.id.words9); words10 = getActivity().findViewById(R.id.words10);
         words11 = getActivity().findViewById(R.id.words11); words12 = getActivity().findViewById(R.id.words12); words13 = getActivity().findViewById(R.id.words13); words14 = getActivity().findViewById(R.id.words14); words15 = getActivity().findViewById(R.id.words15);

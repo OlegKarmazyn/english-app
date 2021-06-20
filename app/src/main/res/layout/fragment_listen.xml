@@ -79,7 +79,6 @@
             android:background="@drawable/person_together"
             android:padding="20dp"
             android:layout_width="100dp"
-            android:onClick="click_listen"
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:src="@drawable/frame_anim"/>
