@@ -15,8 +15,6 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
 import java.util.Locale;
 
 import solid.icon.english.R;
@@ -76,7 +74,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
 
         return inflater.inflate(R.layout.fragment_test, container, false);
-
     }
 
     private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
@@ -89,7 +86,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
 
     private final String TAG = "FragmentLearn";
     private Drawable LinDraw;
-    private String doing = "";
     private int i = 0;
 
     TextView words1; TextView words2; TextView words3; TextView words4; TextView words5; TextView words6; TextView words7; TextView words8; TextView words9; TextView words10; TextView words11;
@@ -105,7 +101,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
     LinearLayout lin_12; LinearLayout lin_13; LinearLayout lin_14; LinearLayout lin_15;
 
     private TextView check;
-    private FloatingActionButton el_next;
     private  int index = 0;
 
     private int [] counter_flip = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
@@ -139,11 +134,25 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
         lin_11 = getActivity().findViewById(R.id.lin_11); lin_12 = getActivity().findViewById(R.id.lin_12); lin_13 = getActivity().findViewById(R.id.lin_13); lin_14 = getActivity().findViewById(R.id.lin_14); lin_15 = getActivity().findViewById(R.id.lin_15);
 
         check = getActivity().findViewById(R.id.check);
-        el_next = getActivity().findViewById(R.id.el_next);
 
         LinDraw = lin_1.getBackground();
 
         words1.setOnClickListener(this);
+        words2.setOnClickListener(this);
+        words3.setOnClickListener(this);
+        words4.setOnClickListener(this);
+        words5.setOnClickListener(this);
+        words6.setOnClickListener(this);
+        words7.setOnClickListener(this);
+        words8.setOnClickListener(this);
+        words9.setOnClickListener(this);
+        words10.setOnClickListener(this);
+        words11.setOnClickListener(this);
+        words12.setOnClickListener(this);
+        words13.setOnClickListener(this);
+        words14.setOnClickListener(this);
+        words15.setOnClickListener(this);
+        check.setOnClickListener(this);
 
         mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
             @Override
@@ -163,28 +172,12 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
             }
         });
 
-        doing = "test";
-
-        if(doing.equals("learn")){
-
-            full_array();
-            index = Intermediate.abs;
-            change_test();
-            editText_visible_gone();
-            check_visible_gone();
-
-
-
-        } else if (doing.equals("test")){
             check.setVisibility(View.VISIBLE);
-            editText_vis();
             text1_1_visibel_vis();
             text1_visibel_gone();
             full_array();
             index = Intermediate.abs;
             change_test();
-        }
-
 
     }
 
@@ -251,46 +244,8 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
         i = 0;
     }
 
-    private void editText_visible_gone(){
-
-        editText1.setVisibility(View.GONE);
-        editText2.setVisibility(View.GONE);
-        editText3.setVisibility(View.GONE);
-        editText4.setVisibility(View.GONE);
-        editText5.setVisibility(View.GONE);
-        editText6.setVisibility(View.GONE);
-        editText7.setVisibility(View.GONE);
-        editText8.setVisibility(View.GONE);
-        editText9.setVisibility(View.GONE);
-        editText10.setVisibility(View.GONE);
-        editText11.setVisibility(View.GONE);
-        editText12.setVisibility(View.GONE);
-        editText13.setVisibility(View.GONE);
-        editText14.setVisibility(View.GONE);
-        editText15.setVisibility(View.GONE);
-    }
-
     private void check_visible_gone(){
         check.setVisibility(View.GONE);
-    }
-
-    private void editText_vis(){
-
-        editText1.setVisibility(View.VISIBLE);
-        editText2.setVisibility(View.VISIBLE);
-        editText3.setVisibility(View.VISIBLE);
-        editText4.setVisibility(View.VISIBLE);
-        editText5.setVisibility(View.VISIBLE);
-        editText6.setVisibility(View.VISIBLE);
-        editText7.setVisibility(View.VISIBLE);
-        editText8.setVisibility(View.VISIBLE);
-        editText9.setVisibility(View.VISIBLE);
-        editText10.setVisibility(View.VISIBLE);
-        editText11.setVisibility(View.VISIBLE);
-        editText12.setVisibility(View.VISIBLE);
-        editText13.setVisibility(View.VISIBLE);
-        editText14.setVisibility(View.VISIBLE);
-        editText15.setVisibility(View.VISIBLE);
     }
 
     private void text1_1_visibel_vis(){
@@ -413,8 +368,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
         words15.setVisibility(View.VISIBLE);
 
     }
-
-    private void listen(){ speak(getResources().getString((main_1[index][id[i]]))); }
 
     private void speak(String text){
         float pitch = 0.5f;

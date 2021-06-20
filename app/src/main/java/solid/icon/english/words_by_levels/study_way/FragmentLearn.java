@@ -1,6 +1,5 @@
 package solid.icon.english.words_by_levels.study_way;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -8,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -77,12 +75,9 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
     public int[][] main_1 = new int[][]{};
     public int[][] main_2 = new int[][]{};
 
-    private int counter_true = 0; private Toast mess;
-
     private TextToSpeech mTTS;
 
     private final String TAG = "FragmentLearn";
-    private Drawable LinDraw;
     private int i = 0;
 
     TextView words1; TextView words2; TextView words3; TextView words4; TextView words5; TextView words6; TextView words7; TextView words8; TextView words9; TextView words10; TextView words11;
@@ -94,8 +89,6 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
     private  int index = 0;
 
     private int [] counter_flip = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    private String [] back_words = new String[15];
-    private boolean [] isRight = new boolean[]{true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
 
     @Override
     public void onResume(){
