@@ -70,15 +70,6 @@
 
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText1"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -133,15 +124,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText2"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -196,15 +178,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText3"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -259,15 +232,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText4"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -322,15 +286,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText5"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -385,15 +340,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText6"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -448,15 +394,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText7"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -511,15 +448,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText8"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -574,15 +502,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText9"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -637,15 +556,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText10"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -700,15 +610,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText11"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -763,15 +664,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText12"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -826,15 +718,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText13"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -889,15 +772,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText14"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -953,35 +827,8 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-                <EditText
-                    android:id="@+id/editText15"
-                    android:gravity="center"
-                    android:padding="15dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/check"
-                android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/person_together"
-                android:textColor="@android:color/black"
-                android:onClick="onClick"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:padding="15dp"
-                android:text="Check"
-                android:textSize="16sp"
-                tools:ignore="OnClick" />
 
         </LinearLayout>
     </ScrollView>
