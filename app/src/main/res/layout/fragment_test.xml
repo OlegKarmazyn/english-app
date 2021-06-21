@@ -43,8 +43,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/person_together"
                         android:gravity="center"
-                        android:onClick="learn_click"
-                        android:text=""
+                                         android:text=""
                         android:textColor="@android:color/black"
                         android:textStyle="bold"
                         />
@@ -58,8 +57,8 @@
                         android:layout_weight="1"
                         android:background="@drawable/person_together"
                         android:gravity="center"
-                        android:onClick="learn_click"
                         android:paddingLeft="5dp"
+                        android:clickable="false"
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
@@ -110,8 +109,7 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
 
                     <TextView
                         android:visibility="gone"
@@ -122,16 +120,16 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words2_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
                 </LinearLayout>
 
                 <EditText
@@ -173,8 +171,7 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
 
                     <TextView
                         android:visibility="gone"
@@ -186,15 +183,15 @@
                         android:paddingLeft="5dp"
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
+                        android:clickable="false"
                         android:paddingBottom="15dp"
                         android:background="@drawable/person_together"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
                 </LinearLayout>
 
                 <EditText
@@ -236,8 +233,7 @@
                         android:gravity="center"
                         android:layout_height="match_parent"
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
 
                     <TextView
                         android:visibility="gone"
@@ -248,16 +244,16 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words4_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
                 </LinearLayout>
 
                 <EditText
@@ -299,8 +295,7 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
 
                     <TextView
                         android:visibility="gone"
@@ -311,16 +306,16 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words5_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
                 </LinearLayout>
 
                 <EditText
@@ -362,7 +357,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -374,15 +368,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words6_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -425,7 +419,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -437,15 +430,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words7_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -488,8 +481,7 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
 
                     <TextView
                         android:visibility="gone"
@@ -500,16 +492,16 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words8_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
                 </LinearLayout>
 
                 <EditText
@@ -551,8 +543,7 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
-                        android:textStyle="bold"/>
+                                         android:textStyle="bold"/>
 
                     <TextView
                         android:visibility="gone"
@@ -563,15 +554,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words9_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -614,7 +605,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -626,15 +616,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words10_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -677,7 +667,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -689,15 +678,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words11_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -740,7 +729,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -752,15 +740,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words12_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -803,7 +791,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -815,15 +802,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words13_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -866,7 +853,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -878,15 +864,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words14_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -930,7 +916,6 @@
                         android:layout_height="match_parent"
                         android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
 
                     <TextView
@@ -942,15 +927,15 @@
                         android:paddingTop="15dp"
                         android:paddingRight="5dp"
                         android:paddingBottom="15dp"
+                        android:clickable="false"
                         android:background="@drawable/person_together"
                         android:id="@+id/words15_1"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:layout_height="wrap_content"
-                        android:text="1"
+                        android:text=""
                         android:textColor="@android:color/black"
-                        android:onClick="learn_click"
                         android:textStyle="bold"/>
                 </LinearLayout>
 
@@ -976,7 +961,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/person_together"
                 android:textColor="@android:color/black"
-                android:onClick="learn_click"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:padding="15dp"
@@ -990,7 +974,6 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/el_next"
         android:visibility="gone"
-        android:onClick="next_learn"
         android:layout_width="85dp"
         android:layout_height="67dp"
         android:layout_alignParentEnd="true"

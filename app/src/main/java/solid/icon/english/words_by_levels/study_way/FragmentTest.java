@@ -19,6 +19,7 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
+import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
 
 /**
@@ -115,8 +116,7 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
             id[i]= i * -1;
         }
 
-        main_1 = new Res_array().main_1_learn.clone();
-        main_2 = new Res_array().main_2_learn.clone();
+
         words1 = getActivity().findViewById(R.id.words1); words2 = getActivity().findViewById(R.id.words2); words3 = getActivity().findViewById(R.id.words3); words4 = getActivity().findViewById(R.id.words4); words5 = getActivity().findViewById(R.id.words5);
         words6 = getActivity().findViewById(R.id.words6); words7 = getActivity().findViewById(R.id.words7); words8 = getActivity().findViewById(R.id.words8); words9 = getActivity().findViewById(R.id.words9); words10 = getActivity().findViewById(R.id.words10);
         words11 = getActivity().findViewById(R.id.words11); words12 = getActivity().findViewById(R.id.words12); words13 = getActivity().findViewById(R.id.words13); words14 = getActivity().findViewById(R.id.words14); words15 = getActivity().findViewById(R.id.words15);
@@ -171,12 +171,19 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
                 }
             }
         });
-
+        if(Intermediate.lev.equals("b1")){
+            main_1 = new Res_array().main_1_learn_b1.clone();
+            main_2 = new Res_array().main_2_learn_b1.clone();
+            index = Intermediate.abs;
+        } else if(PreIntermediate.lev.equals("a2")){
+            main_1 = new Res_array().main_1_learn_a2.clone();
+            main_2 = new Res_array().main_2_learn_a2.clone();
+            index = PreIntermediate.abs;
+        }
             check.setVisibility(View.VISIBLE);
             text1_1_visibel_vis();
             text1_visibel_gone();
             full_array();
-            index = Intermediate.abs;
             change_test();
 
     }

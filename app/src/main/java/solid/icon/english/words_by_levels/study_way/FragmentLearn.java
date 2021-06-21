@@ -14,6 +14,7 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
+import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
 
 /**
@@ -97,9 +98,16 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         for(int i = 0; i < 15;i++){
             id[i]= i * -1;
         }
+        if(Intermediate.lev.equals("b1")){
+            main_1 = new Res_array().main_1_learn_b1.clone();
+            main_2 = new Res_array().main_2_learn_b1.clone();
+            index = Intermediate.abs;
+        } else if(PreIntermediate.lev.equals("a2")){
+            main_1 = new Res_array().main_1_learn_a2.clone();
+            main_2 = new Res_array().main_2_learn_a2.clone();
+            index = PreIntermediate.abs;
+        }
 
-        main_1 = new Res_array().main_1_learn.clone();
-        main_2 = new Res_array().main_2_learn.clone();
         words1 = getActivity().findViewById(R.id.words1); words2 = getActivity().findViewById(R.id.words2); words3 = getActivity().findViewById(R.id.words3); words4 = getActivity().findViewById(R.id.words4); words5 = getActivity().findViewById(R.id.words5);
         words6 = getActivity().findViewById(R.id.words6); words7 = getActivity().findViewById(R.id.words7); words8 = getActivity().findViewById(R.id.words8); words9 = getActivity().findViewById(R.id.words9); words10 = getActivity().findViewById(R.id.words10);
         words11 = getActivity().findViewById(R.id.words11); words12 = getActivity().findViewById(R.id.words12); words13 = getActivity().findViewById(R.id.words13); words14 = getActivity().findViewById(R.id.words14); words15 = getActivity().findViewById(R.id.words15);
@@ -143,8 +151,14 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         });
 
             full_array();
-            index = Intermediate.abs;
+
             change_test();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        text2_visibel_gone();
     }
 
     private void full_array(){
@@ -171,6 +185,25 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
             } while (isTrue);
             id[iter] = rand;
         }
+    }
+
+    private void text2_visibel_gone(){
+
+        words1_1.setVisibility(View.GONE);
+        words2_1.setVisibility(View.GONE);
+        words3_1.setVisibility(View.GONE);
+        words4_1.setVisibility(View.GONE);
+        words5_1.setVisibility(View.GONE);
+        words6_1.setVisibility(View.GONE);
+        words7_1.setVisibility(View.GONE);
+        words8_1.setVisibility(View.GONE);
+        words9_1.setVisibility(View.GONE);
+        words10_1.setVisibility(View.GONE);
+        words11_1.setVisibility(View.GONE);
+        words12_1.setVisibility(View.GONE);
+        words13_1.setVisibility(View.GONE);
+        words14_1.setVisibility(View.GONE);
+        words15_1.setVisibility(View.GONE);
     }
 
     private void change_test(){

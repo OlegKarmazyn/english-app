@@ -22,6 +22,7 @@ import java.util.Locale;
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
 import solid.icon.english.words_by_levels.Lev_a2.Level_A2;
+import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
 import solid.icon.english.words_by_levels.ListenWrite;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
 import solid.icon.english.words_by_levels.lev_b1.Level_B1;
@@ -162,7 +163,19 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
             }
         });
 
-
+        if(Intermediate.lev.equals("b1")){
+            main_1 = new Res_array().main_1_learn_b1.clone();
+            main_2 = new Res_array().main_2_learn_b1.clone();
+            index = Intermediate.abs;
+            a2_or_b1 = 1;
+        } else if(PreIntermediate.lev.equals("a2")){
+            main_1 = new Res_array().main_1_learn_a2.clone();
+            main_2 = new Res_array().main_2_learn_a2.clone();
+            index = PreIntermediate.abs;
+            a2_or_b1 = 0;
+        }
+        main_meaning_b1 = new Res_array().main_meaning_b1.clone();
+        main_meaning_a2 = new Res_array().main_meaning_a2.clone();
 
 //        if (PreIntermediate.lev.equals("a2")){
 //            index = PreIntermediate.abs;
@@ -173,13 +186,6 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
 //
 //            //actionBar.setTitle(topic_by_a2[tem]);
 //        } else if (Intermediate.lev.equals("b1")){
-            index = Intermediate.abs;
-            level_b1 = new Level_B1();
-            main_meaning_b1 = new Res_array().main_meaning_b1.clone();
-            main_meaning_a2 = new Res_array().main_meaning_a2.clone();
-            main_1 = level_b1.main_1.clone();
-            main_2 = level_b1.main_2.clone();
-            a2_or_b1 = 1;
             //actionBar.setTitle(topic_by_b1[tem]);
 //        }
 
@@ -227,7 +233,6 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
     }
 
     private void words_get_text(){
-        a2_or_b1 = 1;
         if(a2_or_b1 == 0){
             meaning.setText(main_meaning_a2[index][id[i]]);
         } else {

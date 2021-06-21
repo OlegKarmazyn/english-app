@@ -23,6 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.Locale;
 
 import solid.icon.english.R;
+import solid.icon.english.Res_array;
 import solid.icon.english.words_by_levels.Lev_a2.Level_A2;
 import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
 import solid.icon.english.words_by_levels.TestOrLearn;
@@ -216,6 +217,16 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                 }
             }
         });
+        if(Intermediate.lev.equals("b1")){
+            main_1 = new Res_array().main_1_learn_b1.clone();
+            main_2 = new Res_array().main_2_learn_b1.clone();
+            index = Intermediate.abs;
+        } else if(PreIntermediate.lev.equals("a2")){
+            main_1 = new Res_array().main_1_learn_a2.clone();
+            main_2 = new Res_array().main_2_learn_a2.clone();
+            index = PreIntermediate.abs;
+        }
+
 //        if (PreIntermediate.lev.equals("a2")){
 //            index = PreIntermediate.abs;
 //            level_a2 = new Level_A2();
@@ -223,10 +234,6 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
 //            main_2 = level_a2.main_2.clone();
 //            //actionBar.setTitle(topic_by_a2[tem]);
 //        } else if (Intermediate.lev.equals("b1")){
-            index = Intermediate.abs;
-            level_b1 = new Level_B1();
-            main_1 = level_b1.main_1.clone();
-            main_2 = level_b1.main_2.clone();
             //actionBar.setTitle(topic_by_b1[tem]);
 //        }
         words_get_text();
