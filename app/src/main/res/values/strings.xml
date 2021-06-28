@@ -103,6 +103,61 @@
     <string name="b1_tema_48">48 Commercials</string>
     <string name="b1_tema_49">49 Learning</string>
     <string name="b1_tema_50">50 Hitting the books</string>
+
+    <string-array name="topics_name_b1">
+    <item>00 Вводный урок</item>
+    <item>01 Likes and Dislikes</item>
+    <item>02 Loves &amp; hates</item>
+    <item>03 The world around you</item>
+    <item>04 Ou surroundings</item>
+    <item>05 Keping up-to-date</item>
+    <item>06 Staying modern</item>
+    <item>07 Dating</item>
+    <item>08 Romances</item>
+    <item>09 Sports you’ve tried</item>
+    <item>10 Working out</item>
+    <item>11 Money Matters</item>
+    <item>12 Money again</item>
+    <item>13 Crime</item>
+    <item>14 Crime and punishment</item>
+    <item>15 Natural disasters</item>
+    <item>16 Other catastrophes</item>
+    <item>17 Parties</item>
+    <item>18 Party hard</item>
+    <item>19 Modern morals</item>
+    <item>20 Moral rules</item>
+    <item>21 Silver screen</item>
+    <item>22 TV</item>
+    <item>23 Cinema</item>
+    <item>24 Cinemania</item>
+    <item>25 News</item>
+    <item>26 News updates</item>
+    <item>27 Beauty and Health</item>
+    <item>28 Beauty secrets</item>
+    <item>29 Social Issues</item>
+    <item>30 Society problems</item>
+    <item>31 Challenge</item>
+    <item>32 Going to the aim</item>
+    <item>33 Age</item>
+    <item>34 Time flies</item>
+    <item>35 Jobs</item>
+    <item>36 Careers</item>
+    <item>37 Opinions</item>
+    <item>38 Other points of view</item>
+    <item>39 Shops and shoppers</item>
+    <item>40 Shopping around</item>
+    <item>41 Music Universe</item>
+    <item>42 Into the music</item>
+    <item>43 Free time</item>
+    <item>44 Leisure</item>
+    <item>45 Entertainment</item>
+    <item>46 Ways to entertain</item>
+    <item>47 Advertising</item>
+    <item>48 Commercials</item>
+    <item>49 Learning</item>
+    <item>50 Hitting the books</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -939,118 +939,94 @@ public class Intermediate extends AppCompatActivity {
     public void click(View v) {
         switch (v.getId()) {
             case R.id.b1_tema_0:
-
-                startActivity(intent0);
                 abs = 0;
                 break;
-            case R.id.b1_tema_1:
 
-                startActivity(intent0);
+            case R.id.b1_tema_1:
                 abs = 1;
                 break;
-            case R.id.b1_tema_2:
 
-                startActivity(intent0);
+            case R.id.b1_tema_2:
                 abs = 2;
                 break;
-            case R.id.b1_tema_3:
 
-                startActivity(intent0);
+            case R.id.b1_tema_3:
                 abs = 3;
                 break;
-            case R.id.b1_tema_4:
 
-                startActivity(intent0);
+            case R.id.b1_tema_4:
                 abs = 4;
                 break;
-            case R.id.b1_tema_5:
 
-                startActivity(intent0);
+            case R.id.b1_tema_5:
                 abs = 5;
                 break;
-            case R.id.b1_tema_6:
 
-                startActivity(intent0);
+            case R.id.b1_tema_6:
                 abs = 6;
                 break;
-            case R.id.b1_tema_7:
 
-                startActivity(intent0);
+            case R.id.b1_tema_7:
                 abs = 7;
                 break;
-            case R.id.b1_tema_8:
 
-                startActivity(intent0);
+            case R.id.b1_tema_8:
                 abs = 8;
                 break;
-            case R.id.b1_tema_9:
 
-                startActivity(intent0);
+            case R.id.b1_tema_9:
                 abs = 9;
                 break;
-            case R.id.b1_tema_10:
 
-                startActivity(intent0);
+            case R.id.b1_tema_10:
                 abs = 10;
                 break;
-            case R.id.b1_tema_11:
 
-                startActivity(intent0);
+            case R.id.b1_tema_11:
                 abs = 11;
                 break;
-            case R.id.b1_tema_12:
 
-                startActivity(intent0);
+            case R.id.b1_tema_12:
                 abs = 12;
                 break;
-            case R.id.b1_tema_13:
 
-                startActivity(intent0);
+            case R.id.b1_tema_13:
                 abs = 13;
                 break;
-            case R.id.b1_tema_14:
 
-                startActivity(intent0);
+            case R.id.b1_tema_14:
                 abs = 14;
                 break;
-            case R.id.b1_tema_15:
 
-                startActivity(intent0);
+            case R.id.b1_tema_15:
                 abs = 15;
                 break;
-            case R.id.b1_tema_16:
 
-                startActivity(intent0);
+            case R.id.b1_tema_16:
                 abs = 16;
                 break;
-            case R.id.b1_tema_17:
 
-                startActivity(intent0);
+            case R.id.b1_tema_17:
                 abs = 17;
                 break;
-            case R.id.b1_tema_18:
 
-                startActivity(intent0);
+            case R.id.b1_tema_18:
                 abs = 18;
                 break;
-            case R.id.b1_tema_19:
 
-                startActivity(intent0);
+            case R.id.b1_tema_19:
                 abs = 19;
                 break;
-            case R.id.b1_tema_20:
 
-                startActivity(intent0);
+            case R.id.b1_tema_20:
                 abs = 20;
                 break;
-            case R.id.b1_tema_21:
 
-                startActivity(intent0);
+            case R.id.b1_tema_21:
                 abs = 21;
                 break;
-            case R.id.b1_tema_22:
 
-                startActivity(intent0);
+            case R.id.b1_tema_22:
                 abs = 22;
                 break;
             case R.id.b1_tema_23:
@@ -1058,144 +1034,121 @@ public class Intermediate extends AppCompatActivity {
                 startActivity(intent0);
                 abs = 23;
                 break;
-            case R.id.b1_tema_24:
 
-                startActivity(intent0);
+            case R.id.b1_tema_24:
                 abs = 24;
                 break;
-            case R.id.b1_tema_25:
 
-                startActivity(intent0);
+            case R.id.b1_tema_25:
                 abs = 25;
                 break;
-            case R.id.b1_tema_26:
 
-                startActivity(intent0);
+            case R.id.b1_tema_26:
                 abs = 26;
                 break;
+
             case R.id.b1_tema_27:
-                startActivity(intent0);
                 abs = 27;
                 break;
+
             case R.id.b1_tema_28:
-                startActivity(intent0);
                 abs = 28;
                 break;
-            case R.id.b1_tema_29:
 
-                startActivity(intent0);
+            case R.id.b1_tema_29:
                 abs = 29;
                 break;
-            case R.id.b1_tema_30:
 
-                startActivity(intent0);
+            case R.id.b1_tema_30:
                 abs = 30;
                 break;
-            case R.id.b1_tema_31:
 
-                startActivity(intent0);
+            case R.id.b1_tema_31:
                 abs = 31;
                 break;
-            case R.id.b1_tema_32:
 
-                startActivity(intent0);
+            case R.id.b1_tema_32:
                 abs = 32;
                 break;
-            case R.id.b1_tema_33:
 
-                startActivity(intent0);
+            case R.id.b1_tema_33:
                 abs = 33;
                 break;
-            case R.id.b1_tema_34:
 
-                startActivity(intent0);
+            case R.id.b1_tema_34:
                 abs = 34;
                 break;
-            case R.id.b1_tema_35:
 
-                startActivity(intent0);
+            case R.id.b1_tema_35:
                 abs = 35;
                 break;
-            case R.id.b1_tema_36:
 
-                startActivity(intent0);
+            case R.id.b1_tema_36:
                 abs = 36;
                 break;
-            case R.id.b1_tema_37:
 
-                startActivity(intent0);
+            case R.id.b1_tema_37:
                 abs = 37;
                 break;
+
             case R.id.b1_tema_38:
 
-                startActivity(intent0);
                 abs = 38;
                 break;
-            case R.id.b1_tema_39:
 
-                startActivity(intent0);
+            case R.id.b1_tema_39:
                 abs = 39;
                 break;
-            case R.id.b1_tema_40:
 
-                startActivity(intent0);
+            case R.id.b1_tema_40:
                 abs = 40;
                 break;
-            case R.id.b1_tema_41:
 
-                startActivity(intent0);
+            case R.id.b1_tema_41:
                 abs = 41;
                 break;
-            case R.id.b1_tema_42:
 
-                startActivity(intent0);
+            case R.id.b1_tema_42:
                 abs = 42;
                 break;
-            case R.id.b1_tema_43:
 
-                startActivity(intent0);
+            case R.id.b1_tema_43:
                 abs = 43;
                 break;
             case R.id.b1_tema_44:
 
-                startActivity(intent0);
                 abs = 44;
                 break;
-            case R.id.b1_tema_45:
 
-                startActivity(intent0);
+            case R.id.b1_tema_45:
                 abs = 45;
                 break;
-            case R.id.b1_tema_46:
 
-                startActivity(intent0);
+            case R.id.b1_tema_46:
                 abs = 46;
                 break;
-            case R.id.b1_tema_47:
 
-                startActivity(intent0);
+            case R.id.b1_tema_47:
                 abs = 47;
                 break;
-            case R.id.b1_tema_48:
 
-                startActivity(intent0);
+            case R.id.b1_tema_48:
                 abs = 48;
                 break;
-            case R.id.b1_tema_49:
 
-                startActivity(intent0);
+            case R.id.b1_tema_49:
                 abs = 49;
                 break;
-            case R.id.b1_tema_50:
 
-                startActivity(intent0);
+            case R.id.b1_tema_50:
                 abs = 50;
                 break;
 
-
         }
+        startActivity(intent0);
         this.finish();
     }
+
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {
 //        return true;
