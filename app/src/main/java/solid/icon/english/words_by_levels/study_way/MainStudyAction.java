@@ -14,6 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
+import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
 
 public class MainStudyAction extends AppCompatActivity {
@@ -70,13 +71,16 @@ public class MainStudyAction extends AppCompatActivity {
 
         switch (item.getItemId()){
             case android.R.id.home:
-                Intent intent = new Intent(this, Intermediate.class);
-                startActivity(intent);
+                Intent intent_a2 = new Intent(this, PreIntermediate.class);
+                Intent intent_b1 = new Intent(this, Intermediate.class);
+                if (PreIntermediate.lev.equals("a2")) {
+                    startActivity(intent_a2);
+                    finish();
+                } else if(Intermediate.lev.equals("b1")){
+                    startActivity(intent_b1);
+                    finish();
+                }
                 this.finish();
-                return true;
-
-            case R.id.replay_mipmap:
-                //reply__text();
                 return true;
 
             default:
@@ -86,8 +90,15 @@ public class MainStudyAction extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(this, Intermediate.class);
-        startActivity(intent);
+        Intent intent_a2 = new Intent(this, PreIntermediate.class);
+        Intent intent_b1 = new Intent(this, Intermediate.class);
+        if (PreIntermediate.lev.equals("a2")) {
+            startActivity(intent_a2);
+            finish();
+        } else if(Intermediate.lev.equals("b1")){
+            startActivity(intent_b1);
+            finish();
+        }
         this.finish();
     }
 }

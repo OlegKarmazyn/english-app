@@ -151,14 +151,13 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         });
 
             full_array();
-
             change_test();
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        text2_visibel_gone();
+        text1_1_visibel_gone();
     }
 
     private void full_array(){
@@ -187,7 +186,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         }
     }
 
-    private void text2_visibel_gone(){
+    private void text1_1_visibel_gone() {
 
         words1_1.setVisibility(View.GONE);
         words2_1.setVisibility(View.GONE);
@@ -404,5 +403,17 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 speak((String) words15.getText());
                 break;
         }
+    }
+
+    private void reply__text(){
+        int temp = 1000;
+        for (int j = 0; j < 15; j++) {
+            id[j] = temp;
+            temp++;
+        }
+        full_array();
+
+            text1_1_visibel_gone();
+            change_test();
     }
 }
