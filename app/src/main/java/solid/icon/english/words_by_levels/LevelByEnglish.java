@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
-import solid.icon.english.words_by_levels.lev_b1.Intermidiate_v2;
+import solid.icon.english.words_by_levels.lev_b1.Intermediate_v2;
 
 public class LevelByEnglish extends AppCompatActivity {
 
@@ -28,7 +28,7 @@ public class LevelByEnglish extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         a2 = new Intent(this, PreIntermediate.class);
-        b1 = new Intent(this, Intermidiate_v2.class);
+        b1 = new Intent(this, Intermediate_v2.class);
 
         pre_intermediate = findViewById(R.id.pre_intermediate);
         intermediate = findViewById(R.id.intermediate);

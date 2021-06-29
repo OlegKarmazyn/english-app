@@ -8,13 +8,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/cardView"
+        style="@style/MyCardViewStyle"
         app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-
             android:orientation="horizontal"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -26,7 +26,7 @@
                 android:padding="10dip"
                 android:text="@string/b1_tema_0"
                 android:textColor="@android:color/black"
-                android:textSize="17sp" />
+                android:textSize="18sp" />
 
             <CheckBox
                 android:id="@+id/b1_checkBox_0"

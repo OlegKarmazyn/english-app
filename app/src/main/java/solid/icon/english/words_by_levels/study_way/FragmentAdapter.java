@@ -7,8 +7,12 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class FragmentAdapter extends FragmentStateAdapter {
-    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+
+    String what_level; int num_of_topic;
+    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, String what_level, int num_of_topic) {
         super(fragmentManager, lifecycle);
+        this.what_level = what_level;
+        this.num_of_topic = num_of_topic;
     }
 
     @NonNull
@@ -17,14 +21,14 @@ public class FragmentAdapter extends FragmentStateAdapter {
         switch (position){
 
             case 1:
-                return new FragmentListen();
+                return new FragmentListen( what_level, num_of_topic);
             case 2:
-                return new FragmentTest();
+                return new FragmentTest( what_level, num_of_topic);
             case 3:
-                return new FragmentDefinition();
+                return new FragmentDefinition( what_level, num_of_topic);
 
             default:
-                return new FragmentLearn();
+                return new FragmentLearn( what_level, num_of_topic);
         }
     }
 

@@ -30,12 +30,11 @@ import solid.icon.english.words_by_levels.TestOrLearn;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
 import solid.icon.english.words_by_levels.lev_b1.Level_B1;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FragmentListen#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class FragmentListen extends Fragment implements View.OnClickListener {
+
+    String what_level; int num_of_topic;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -46,26 +45,10 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
     private String mParam1;
     private String mParam2;
 
-    public FragmentListen() {
+    public FragmentListen(String what_level, int num_of_topic) {
+        this.what_level = what_level;
+        this.num_of_topic = num_of_topic;
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FragmentListen.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FragmentListen newInstance(String param1, String param2) {
-        FragmentListen fragment = new FragmentListen();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -217,14 +200,14 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                 }
             }
         });
-        if(Intermediate.lev.equals("b1")){
+        if(what_level.equals("b1")){
             main_1 = new Res_array().main_1_learn_b1.clone();
             main_2 = new Res_array().main_2_learn_b1.clone();
-            index = Intermediate.abs;
-        } else if(PreIntermediate.lev.equals("a2")){
+            index = num_of_topic;
+        } else if(what_level.equals("a2")){
             main_1 = new Res_array().main_1_learn_a2.clone();
             main_2 = new Res_array().main_2_learn_a2.clone();
-            index = PreIntermediate.abs;
+            index = num_of_topic;
         }
 
 //        if (PreIntermediate.lev.equals("a2")){

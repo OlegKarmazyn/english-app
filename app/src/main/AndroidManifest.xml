@@ -25,7 +25,7 @@
         <activity android:name=".words_by_levels.Lev_a2.PreIntermediate" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.lev_b1.Level_B1" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.lev_b1.Intermediate" android:screenOrientation="portrait"/>
-        <activity android:name=".words_by_levels.lev_b1.Intermidiate_v2" android:screenOrientation="portrait"/>
+        <activity android:name=".words_by_levels.lev_b1.Intermediate_v2" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.LevelByEnglish" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.TestOrLearn" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.ListenWrite" android:screenOrientation="portrait"/>
