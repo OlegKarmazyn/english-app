@@ -15,8 +15,9 @@ import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
 import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
+import solid.icon.english.words_by_levels.LevelByEnglish;
 import solid.icon.english.words_by_levels.lev_b1.Intermediate;
-import solid.icon.english.words_by_levels.lev_b1.Intermediate_v2;
+import solid.icon.english.words_by_levels.lev_b1.EnglishLevel;
 
 public class MainStudyAction extends AppCompatActivity {
 
@@ -32,7 +33,7 @@ public class MainStudyAction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_study_action);
 
-        what_level = getIntent().getStringExtra("what_level");
+        what_level = LevelByEnglish.level;
         num_of_topic = getIntent().getIntExtra("num_of_topic", 0);
 
         tabLayout = findViewById(R.id.tab_layout_example);
@@ -97,15 +98,7 @@ public class MainStudyAction extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent_a2 = new Intent(this, PreIntermediate.class);
-        Intent intent_b1 = new Intent(this, Intermediate_v2.class);
-        if (what_level.equals("a2")) {
-            startActivity(intent_a2);
-            finish();
-        } else if(what_level.equals("b1")){
-            startActivity(intent_b1);
-            finish();
-        }
+        startActivity(new Intent(this, EnglishLevel.class));
         this.finish();
     }
 }

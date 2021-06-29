@@ -52,6 +52,61 @@
     <string name="a2_tema_49">49 Ideal World</string>
     <string name="a2_tema_50">50 Your universe</string>
 
+    <string-array name="topics_name_a2">
+    <item>00 Вводный урок</item>
+    <item>01 Friends</item>
+    <item>02 Mates</item>
+    <item>03 Modern devices and appliances</item>
+    <item>04 More about tech</item>
+    <item>05 Holidays</item>
+    <item>06 Other celebrations</item>
+    <item>07 Special occasions</item>
+    <item>08 Special events</item>
+    <item>09 Social networking</item>
+    <item>10 Socializing</item>
+    <item>11 Day off</item>
+    <item>12 A day to relax</item>
+    <item>13 Travel ideas</item>
+    <item>14 More about travel</item>
+    <item>15 Ecology and Environment</item>
+    <item>16 Environment and nature</item>
+    <item>17 Lifestyle</item>
+    <item>18 Style of living</item>
+    <item>19 Relationships</item>
+    <item>20 More about relationships</item>
+    <item>21 Stages</item>
+    <item>22 Step by step</item>
+    <item>23 Cinema and movies</item>
+    <item>24 More about cinema</item>
+    <item>25 Media</item>
+    <item>26 Other news</item>
+    <item>27 The best job</item>
+    <item>28 Working</item>
+    <item>29 Look to the future</item>
+    <item>30 Future and fate</item>
+    <item>31 Health Matters</item>
+    <item>32 Getting healthy</item>
+    <item>33 Places</item>
+    <item>34 Other places</item>
+    <item>35 Love and trust</item>
+    <item>36 Love and romance</item>
+    <item>37 Music</item>
+    <item>38 More about music</item>
+    <item>39 Modern society</item>
+    <item>40 People and society</item>
+    <item>41 Houses and homes</item>
+    <item>42 Is house a home?</item>
+    <item>43 The marketplace</item>
+    <item>44 Market or supermarket</item>
+    <item>45 Money</item>
+    <item>46 It’s all about money</item>
+    <item>47 Fame and Success</item>
+    <item>48 Celebrity overnight</item>
+    <item>49 Ideal World</item>
+    <item>50 Your universe</item>
+    </string-array>
+
+
     <string name="b1_tema_0">00 Вводный урок</string>
     <string name="b1_tema_1">01 Likes and Dislikes</string>
     <string name="b1_tema_2">02 Loves &amp; hates</string>

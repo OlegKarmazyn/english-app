@@ -10,8 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
-import solid.icon.english.words_by_levels.lev_b1.Intermediate_v2;
+import solid.icon.english.words_by_levels.lev_b1.EnglishLevel;
 
 public class LevelByEnglish extends AppCompatActivity {
 
@@ -21,14 +20,16 @@ public class LevelByEnglish extends AppCompatActivity {
     private Button pre_intermediate;
     private Button intermediate;
 
+    public static String level;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lavel_by_english);
         ActionBar actionBar = getSupportActionBar();
 
-        a2 = new Intent(this, PreIntermediate.class);
-        b1 = new Intent(this, Intermediate_v2.class);
+        a2 = new Intent(this, EnglishLevel.class);
+        b1 = new Intent(this, EnglishLevel.class);
 
         pre_intermediate = findViewById(R.id.pre_intermediate);
         intermediate = findViewById(R.id.intermediate);
@@ -38,6 +39,7 @@ public class LevelByEnglish extends AppCompatActivity {
         pre_intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                level = "a2";
                 startActivity(a2);
                 finish();
             }
@@ -47,6 +49,7 @@ public class LevelByEnglish extends AppCompatActivity {
         intermediate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                level = "b1";
                 startActivity(b1);
                 finish();
             }

@@ -55,7 +55,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             public void onClick(View v) {
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra("num_of_topic", position);
-                intent.putExtra("what_level", "b1");
                 context.startActivity(intent);
             }
         });
