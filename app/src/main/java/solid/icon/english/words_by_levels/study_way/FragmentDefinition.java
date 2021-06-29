@@ -1,6 +1,5 @@
 package solid.icon.english.words_by_levels.study_way;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -21,9 +20,6 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
-import solid.icon.english.words_by_levels.Lev_a2.Level_A2;
-import solid.icon.english.words_by_levels.ListenWrite;
-import solid.icon.english.words_by_levels.lev_b1.Level_B1;
 
 
 public class FragmentDefinition extends Fragment implements View.OnClickListener {
@@ -86,9 +82,6 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
     private int [] counter_true = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}; private int count = 0;
 
     private TextView meaning = null;
-
-    Level_A2 level_a2 = null;
-    Level_B1 level_b1 = null;
 
     private int[][] main_1 = new int[][]{};
     private int[][] main_2 = new int[][]{};
@@ -263,11 +256,11 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
                     fab.setVisibility(View.GONE);
                 }
                 break;
-            case R.id.el_next:
-                Intent intent = new Intent(getActivity(), ListenWrite.class);
-                startActivity(intent);
-                getActivity().finish();
-                break;
+//            case R.id.el_next:
+//                Intent intent = new Intent(getActivity(), ListenWrite.class);
+//                startActivity(intent);
+//                getActivity().finish();
+//                break;
             case R.id.words_by_engl:
                 listen();
                 break;

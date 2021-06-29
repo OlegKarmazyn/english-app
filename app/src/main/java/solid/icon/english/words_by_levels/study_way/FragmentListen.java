@@ -1,6 +1,5 @@
 package solid.icon.english.words_by_levels.study_way;
 
-import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -24,11 +23,6 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
-import solid.icon.english.words_by_levels.Lev_a2.Level_A2;
-import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
-import solid.icon.english.words_by_levels.TestOrLearn;
-import solid.icon.english.words_by_levels.lev_b1.Intermediate;
-import solid.icon.english.words_by_levels.lev_b1.Level_B1;
 
 
 public class FragmentListen extends Fragment implements View.OnClickListener {
@@ -67,8 +61,6 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
         return inflater.inflate(R.layout.fragment_listen, container, false);
     }
     private AnimationDrawable animationDrawable = null;
-    Level_A2 level_a2 = null;
-    Level_B1 level_b1 = null;
     private ImageView imageView = null;
     private int[][] main_1 = new int[][]{};
     private int[][] main_2 = new int[][]{};
@@ -283,20 +275,20 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                     fab.setVisibility(View.GONE);
                 }
                 break;
-            case R.id.el_next:
-                Intent intent = null;
-                if (PreIntermediate.lev.equals("a2")){
-                    TestOrLearn.doing = "test";
-                    intent = new Intent(getActivity(), Level_A2.class);
-
-                } else if (Intermediate.lev.equals("b1")){
-                    TestOrLearn.doing = "test";
-                    intent = new Intent(getActivity(), Level_B1.class);
-
-                }
-                startActivity(intent);
-                getActivity().finish();
-                break;
+//            case R.id.el_next:
+//                Intent intent = null;
+//                if (PreIntermediate.lev.equals("a2")){
+//                    TestOrLearn.doing = "test";
+//                    intent = new Intent(getActivity(), Level_A2.class);
+//
+//                } else if (Intermediate.lev.equals("b1")){
+//                    TestOrLearn.doing = "test";
+//                    intent = new Intent(getActivity(), Level_B1.class);
+//
+//                }
+//                startActivity(intent);
+//                getActivity().finish();
+//                break;
         }
     }
 }

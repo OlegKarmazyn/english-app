@@ -27,7 +27,7 @@ public class EnglishLevel extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.intermidiate_lay);
+        setContentView(R.layout.topics_layout);
 
         level = LevelByEnglish.level;
         if(level.equals("a2")) {

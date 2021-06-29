@@ -14,9 +14,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
-import solid.icon.english.words_by_levels.Lev_a2.PreIntermediate;
 import solid.icon.english.words_by_levels.LevelByEnglish;
-import solid.icon.english.words_by_levels.lev_b1.Intermediate;
 import solid.icon.english.words_by_levels.lev_b1.EnglishLevel;
 
 public class MainStudyAction extends AppCompatActivity {
@@ -79,15 +77,7 @@ public class MainStudyAction extends AppCompatActivity {
 
         switch (item.getItemId()){
             case android.R.id.home:
-                Intent intent_a2 = new Intent(this, PreIntermediate.class);
-                Intent intent_b1 = new Intent(this, Intermediate.class);
-                if (what_level.equals("a2")) {
-                    startActivity(intent_a2);
-                    finish();
-                } else if(what_level.equals("b1")){
-                    startActivity(intent_b1);
-                    finish();
-                }
+                startActivity(new Intent(this, EnglishLevel.class));
                 this.finish();
                 return true;
 
