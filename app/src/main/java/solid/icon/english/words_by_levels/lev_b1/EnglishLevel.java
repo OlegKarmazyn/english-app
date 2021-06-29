@@ -22,6 +22,7 @@ public class EnglishLevel extends AppCompatActivity {
     String name_topic [];
     String level;
     int[] key_topics = new int[51];
+    static String which_KNOW_TOPIC;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +46,7 @@ public class EnglishLevel extends AppCompatActivity {
 
     public int [] goDateBack(){
         DBmoveINFO dBmoveINFO = new DBmoveINFO(this);
-        String which_KNOW_TOPIC;
+
         which_KNOW_TOPIC = (level.equals("a2")) ? DBHelper.KNOW_TOPIC_A2 : ((level.equals("b1")) ? DBHelper.KNOW_TOPIC_B1 : null);
         for (int i = 0; i < 51; i++) {
             key_topics[i] = dBmoveINFO.back_check_info(i, which_KNOW_TOPIC);

@@ -3,6 +3,7 @@ package solid.icon.english.db_pac;
 import solid.icon.english.R;
 
 public class h {
+
     public int[] draw0_1_learn_a2= new int[]{
             R.string.a2_les_0_01, R.string.a2_les_0_02, R.string.a2_les_0_03, R.string.a2_les_0_04, R.string.a2_les_0_05, R.string.a2_les_0_06, R.string.a2_les_0_07, R.string.a2_les_0_08, R.string.a2_les_0_09,
             R.string.a2_les_0_10, R.string.a2_les_0_11, R.string.a2_les_0_12, R.string.a2_les_0_13, R.string.a2_les_0_14, R.string.a2_les_0_15};

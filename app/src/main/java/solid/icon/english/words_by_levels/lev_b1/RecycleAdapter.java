@@ -2,10 +2,13 @@ package solid.icon.english.words_by_levels.lev_b1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.jetbrains.annotations.NotNull;
 
 import solid.icon.english.R;
+import solid.icon.english.db_pac.DBmoveINFO;
 import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
@@ -41,14 +45,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, int position) {
         holder.b1_tema_0.setText(name_topic[position]);
 
-
-            if (key_topics[position] == 1) {
-//                Log.d("RecycleAdapter", "position = " + position + " thue " + " key_topic[position] = " + key_topics[position]);
-                holder.b1_checkBox_0.setChecked(true);
-            }else {
-                holder.b1_checkBox_0.setChecked(false);
+        holder.b1_checkBox_0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
+                if(isChecked) {
+                    Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
+                    dBmoveINFO.go_check_info(position, EnglishLevel.which_KNOW_TOPIC);
+                    holder.b1_checkBox_0.setPaintFlags(holder.b1_checkBox_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    key_topics[position] = 1;
+                }
+                else {
+                    holder.b1_checkBox_0.setPaintFlags(holder.b1_checkBox_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+                    dBmoveINFO.delete_check_info(position, EnglishLevel.which_KNOW_TOPIC);
+                    key_topics[position] = 0;
+                }
             }
-
+        });
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +72,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             }
         });
 
+        if (key_topics[position] == 1) {
+//          Log.d("RecycleAdapter", "position = " + position + " thue " + " key_topic[position] = " + key_topics[position]);
+            holder.b1_checkBox_0.setChecked(true);
+            //holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }else {
+            holder.b1_checkBox_0.setChecked(false);
+            //holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        }
     }
 
     @Override
