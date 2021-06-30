@@ -1,4 +1,4 @@
-package solid.icon.english.words_by_levels.lev_b1;
+package solid.icon.english.words_by_levels.universal_topic_level;
 
 import android.content.Context;
 import android.content.Intent;

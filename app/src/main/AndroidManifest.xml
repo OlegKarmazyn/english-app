@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".words_by_levels.lev_b1.EnglishLevel" android:screenOrientation="portrait"/>
+        <activity android:name=".words_by_levels.universal_topic_level.EnglishLevel" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.LevelByEnglish" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.study_way.MainStudyAction" android:screenOrientation="portrait"/>
 

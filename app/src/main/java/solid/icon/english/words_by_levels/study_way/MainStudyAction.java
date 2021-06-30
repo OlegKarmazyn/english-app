@@ -15,7 +15,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
 import solid.icon.english.words_by_levels.LevelByEnglish;
-import solid.icon.english.words_by_levels.lev_b1.EnglishLevel;
+import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class MainStudyAction extends AppCompatActivity {
 

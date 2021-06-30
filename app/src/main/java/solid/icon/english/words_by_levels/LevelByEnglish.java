@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.words_by_levels.lev_b1.EnglishLevel;
+import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class LevelByEnglish extends AppCompatActivity {
 
