@@ -131,6 +131,18 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
         }
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        setVisibleGoneTextView();
+        count = 0;
+    }
+
+    private void setVisibleGoneTextView(){
+        lay_write_learn.setVisibility(View.GONE);
+        editText.setBackground(f);
+    }
+
     private void speak(String text){
         float pitch = 0.5f;
         float speed = 0.5f;

@@ -167,6 +167,30 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
 
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        setVisibleGoneTextView();
+    }
+
+    private void setVisibleGoneTextView(){
+        lin_1.setBackground(LinDraw);
+        lin_2.setBackground(LinDraw);
+        lin_3.setBackground(LinDraw);
+        lin_4.setBackground(LinDraw);
+        lin_5.setBackground(LinDraw);
+        lin_6.setBackground(LinDraw);
+        lin_7.setBackground(LinDraw);
+        lin_8.setBackground(LinDraw);
+        lin_9.setBackground(LinDraw);
+        lin_10.setBackground(LinDraw);
+        lin_11.setBackground(LinDraw);
+        lin_12.setBackground(LinDraw);
+        lin_13.setBackground(LinDraw);
+        lin_14.setBackground(LinDraw);
+        lin_15.setBackground(LinDraw);
+    }
+
     private void full_array(){
         int rand = 0;
         boolean isTrue = false;
