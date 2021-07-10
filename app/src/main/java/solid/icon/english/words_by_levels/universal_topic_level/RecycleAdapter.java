@@ -52,11 +52,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
                 if(isChecked) {
                     Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
                     dBmoveINFO.go_check_info(position, EnglishLevel.which_KNOW_TOPIC);
-                    holder.b1_checkBox_0.setPaintFlags(holder.b1_checkBox_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     key_topics[position] = 1;
                 }
                 else {
-                    holder.b1_checkBox_0.setPaintFlags(holder.b1_checkBox_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+                    holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
                     dBmoveINFO.delete_check_info(position, EnglishLevel.which_KNOW_TOPIC);
                     key_topics[position] = 0;
                 }
@@ -66,6 +66,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                holder.cardView.setBackgroundColor(R.color.colorLightBlue);
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra("num_of_topic", position);
                 context.startActivity(intent);
@@ -75,10 +76,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         if (key_topics[position] == 1) {
 //          Log.d("RecycleAdapter", "position = " + position + " thue " + " key_topic[position] = " + key_topics[position]);
             holder.b1_checkBox_0.setChecked(true);
-            //holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+//            holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else {
             holder.b1_checkBox_0.setChecked(false);
-            //holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+//            holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
     }
 

@@ -161,11 +161,16 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
             id[i]= i * -1;
         }
 
+        for(int i = 0; i < 15;i++){
+            counter_true[i]= 5;
+        }
+
         imageView = getActivity().findViewById(R.id.img_listen);
         animationDrawable = (AnimationDrawable) imageView.getDrawable();
 
 
         editText = getActivity().findViewById(R.id.wrileEdit);
+        editText.setText("");
 
         lay_write_learn = getActivity().findViewById(R.id.lay_write_learn);
 
@@ -283,7 +288,7 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                     }
                     Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[index].length, Toast.LENGTH_LONG);
                     mess.show();
-                    el_next.setVisibility(View.VISIBLE);
+//                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
                 }
                 break;

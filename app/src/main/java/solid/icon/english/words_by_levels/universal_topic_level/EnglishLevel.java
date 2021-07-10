@@ -1,5 +1,6 @@
 package solid.icon.english.words_by_levels.universal_topic_level;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ public class EnglishLevel extends AppCompatActivity {
     String level;
     int[] key_topics = new int[51];
     static String which_KNOW_TOPIC;
+    final Context context = this;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,14 +40,23 @@ public class EnglishLevel extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycleView);
         goDateBack();
-        RecycleAdapter recycleAdapter = new RecycleAdapter(this, name_topic, key_topics);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+
+        recyclerView.setLayoutManager(layoutManager);
+
+//        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
+//                layoutManager.getOrientation());
+//        recyclerView.addItemDecoration(dividerItemDecoration);
+
+        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics);
         recyclerView.setAdapter(recycleAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
 
     public int [] goDateBack(){
-        DBmoveINFO dBmoveINFO = new DBmoveINFO(this);
+        DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
 
         which_KNOW_TOPIC = (level.equals("a2")) ? DBHelper.KNOW_TOPIC_A2 : ((level.equals("b1")) ? DBHelper.KNOW_TOPIC_B1 : null);
         for (int i = 0; i < 51; i++) {
@@ -60,7 +71,6 @@ public class EnglishLevel extends AppCompatActivity {
 
         switch (item.getItemId()){
             case android.R.id.home:
-
                 return true;
 
             default:
@@ -70,7 +80,7 @@ public class EnglishLevel extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, LevelByEnglish.class));
+        startActivity(new Intent(context, LevelByEnglish.class));
         this.finish();
     }
 }

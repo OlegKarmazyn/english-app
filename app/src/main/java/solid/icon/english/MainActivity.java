@@ -19,10 +19,6 @@ public class MainActivity extends AppCompatActivity {
     private Button words_by_levels;
     private Button add_your_words;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         words_by_levels = findViewById(R.id.words_by_levels);
         add_your_words = findViewById(R.id.add_your_words);
 
-        actionBar.setTitle("Wellcome");
+        actionBar.setTitle("Welcome");
 
 
         new DBmoveINFO(this).create(this);

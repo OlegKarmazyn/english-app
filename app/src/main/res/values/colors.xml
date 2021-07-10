@@ -2,6 +2,7 @@
 <resources>
     <color name="colorPrimary">@null</color>
     <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorBlue">#BF0073FD</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="colorBut">#000000</color>
     <color name="colorBut_act">#FFFFFF</color>
@@ -17,5 +18,10 @@
     <color name="range">#FFFFFF</color>
 
 <!--    <color name="main_color">#673AB7</color>-->
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGray">#696969</color>
+    <color name="colorGrayLight">#26696969</color>
 
 </resources>
