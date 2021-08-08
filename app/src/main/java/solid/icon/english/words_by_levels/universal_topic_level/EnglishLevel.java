@@ -44,7 +44,6 @@ public class EnglishLevel extends AppCompatActivity {
 
         }
         recyclerView = findViewById(R.id.recycleView);
-        goDateBack();
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(context);
 
@@ -54,11 +53,17 @@ public class EnglishLevel extends AppCompatActivity {
 //                layoutManager.getOrientation());
 //        recyclerView.addItemDecoration(dividerItemDecoration);
 
-        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
-        recyclerView.setAdapter(recycleAdapter);
+
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        goDateBack();
+        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
+        recyclerView.setAdapter(recycleAdapter);
+    }
 
     public int [] goDateBack(){
         DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
