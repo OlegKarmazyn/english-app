@@ -1,6 +1,5 @@
 package solid.icon.english.words_by_levels.study_way;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +14,6 @@ import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
 import solid.icon.english.words_by_levels.LevelByEnglish;
-import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class MainStudyAction extends AppCompatActivity {
 
@@ -77,8 +75,9 @@ public class MainStudyAction extends AppCompatActivity {
 
         switch (item.getItemId()){
             case android.R.id.home:
-                startActivity(new Intent(this, EnglishLevel.class));
+//                startActivity(new Intent(this, EnglishLevel.class));
                 this.finish();
+                overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
                 return true;
 
             default:
@@ -88,7 +87,8 @@ public class MainStudyAction extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(this, EnglishLevel.class));
+//        startActivity(new Intent(this, EnglishLevel.class));
         this.finish();
+        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
     }
 }

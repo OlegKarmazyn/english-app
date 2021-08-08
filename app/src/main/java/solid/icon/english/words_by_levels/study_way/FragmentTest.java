@@ -1,6 +1,8 @@
 package solid.icon.english.words_by_levels.study_way;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -19,6 +21,8 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
+import solid.icon.english.db_pac.DBmoveINFO;
+import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class FragmentTest extends Fragment implements View.OnClickListener {
 
@@ -548,8 +552,29 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
                 check_visible_gone();
                 mess = Toast.makeText(getActivity(), "Correct answers " + counter_true + " of " + 15, Toast.LENGTH_LONG);
                 mess.show();
-
+                if(counter_true < 12){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Do you want to mark this topic as done?");
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // User clicked OK button
+                            mark_topic_as_done();
+                        }
+                    });
+                    builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            // User cancelled the dialog
+                        }
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
                 break;
         }
+    }
+
+    private void mark_topic_as_done(){
+        DBmoveINFO dBmoveINFO = new DBmoveINFO( getActivity());
+        dBmoveINFO.go_check_info(index, EnglishLevel.which_KNOW_TOPIC);
     }
 }

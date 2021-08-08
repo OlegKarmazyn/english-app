@@ -23,7 +23,7 @@ public class EnglishLevel extends AppCompatActivity {
     String name_topic [];
     String level;
     int[] key_topics = new int[51];
-    static String which_KNOW_TOPIC;
+    public static String which_KNOW_TOPIC;
     final Context context = this;
 
     @Override
@@ -32,12 +32,17 @@ public class EnglishLevel extends AppCompatActivity {
         setContentView(R.layout.topics_layout);
 
         level = LevelByEnglish.level;
-        if(level.equals("a2")) {
-            name_topic = getResources().getStringArray(R.array.topics_name_a2);
-        } else if(level.equals("b1")){
-            name_topic = getResources().getStringArray(R.array.topics_name_b1);
-        }
+        try {
 
+
+            if (level.equals("a2")) {
+                name_topic = getResources().getStringArray(R.array.topics_name_a2);
+            } else if (level.equals("b1")) {
+                name_topic = getResources().getStringArray(R.array.topics_name_b1);
+            }
+        } catch (Exception e){
+
+        }
         recyclerView = findViewById(R.id.recycleView);
         goDateBack();
 
@@ -49,7 +54,7 @@ public class EnglishLevel extends AppCompatActivity {
 //                layoutManager.getOrientation());
 //        recyclerView.addItemDecoration(dividerItemDecoration);
 
-        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics);
+        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
         recyclerView.setAdapter(recycleAdapter);
 
     }
@@ -81,6 +86,7 @@ public class EnglishLevel extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         startActivity(new Intent(context, LevelByEnglish.class));
+        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
         this.finish();
     }
 }

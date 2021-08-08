@@ -23,13 +23,16 @@ import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
 
-    Context context; String[] name_topic;
-    int[] key_topics;
+    private Context context;
+    private String[] name_topic;
+    private int[] key_topics;
+    private EnglishLevel englishLevel;
 
-    public RecycleAdapter(Context context, String[] name_topic, int [] key_topics) {
+    public RecycleAdapter(Context context, String[] name_topic, int [] key_topics, EnglishLevel englishLevel) {
         this.context = context;
         this.name_topic = name_topic;
         this.key_topics = key_topics;
+        this.englishLevel = englishLevel;
     }
 
     @NonNull
@@ -70,6 +73,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra("num_of_topic", position);
                 context.startActivity(intent);
+                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
             }
         });
 

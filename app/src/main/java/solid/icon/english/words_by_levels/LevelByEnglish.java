@@ -41,6 +41,7 @@ public class LevelByEnglish extends AppCompatActivity {
             public void onClick(View v) {
                 level = "a2";
                 startActivity(a2);
+                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
                 finish();
             }
         });
@@ -51,6 +52,7 @@ public class LevelByEnglish extends AppCompatActivity {
             public void onClick(View v) {
                 level = "b1";
                 startActivity(b1);
+                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
                 finish();
             }
         });
@@ -62,6 +64,7 @@ public class LevelByEnglish extends AppCompatActivity {
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
         this.finish();
     }
 }

@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intent_words_by_levels);
+                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
                 finish();
             }
         });
@@ -48,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(intent_add_your_words);
+                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
                 finish();
             }
         });
