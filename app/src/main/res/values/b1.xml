@@ -1653,36 +1653,36 @@
     <string name="b1_les_49_15_1">осведомленный</string>
 
 
-    <string name="b1_les_50_01">abstruse</string>
-    <string name="b1_les_50_02">assessment</string>
-    <string name="b1_les_50_03">best</string>
-    <string name="b1_les_50_04">blended</string>
-    <string name="b1_les_50_05">bookworm</string>
-    <string name="b1_les_50_06">brush up</string>
-    <string name="b1_les_50_07">crash course</string>
-    <string name="b1_les_50_08">crib sheet</string>
-    <string name="b1_les_50_09">deep end</string>
-    <string name="b1_les_50_10">encouraging</string>
-    <string name="b1_les_50_11">get down</string>
-    <string name="b1_les_50_12">get through</string>
-    <string name="b1_les_50_13">imaginative</string>
-    <string name="b1_les_50_14">inside out</string>
-    <string name="b1_les_50_15">knowledgeable</string>
+    <string name="b1_les_50_01">mediocre</string>
+    <string name="b1_les_50_02">memorize</string>
+    <string name="b1_les_50_03">mess around</string>
+    <string name="b1_les_50_04">plodder</string>
+    <string name="b1_les_50_05">rough copy</string>
+    <string name="b1_les_50_06">scrape through</string>
+    <string name="b1_les_50_07">steep in</string>
+    <string name="b1_les_50_08">strict</string>
+    <string name="b1_les_50_09">swot up</string>
+    <string name="b1_les_50_10">throw into</string>
+    <string name="b1_les_50_11">tolerant</string>
+    <string name="b1_les_50_12">tuition</string>
+    <string name="b1_les_50_13">understanding</string>
+    <string name="b1_les_50_14">wild guess</string>
+    <string name="b1_les_50_15">with flying colors</string>
 
-    <string name="b1_les_50_01_1">малопонятный</string>
-    <string name="b1_les_50_02_1">оценка</string>
-    <string name="b1_les_50_03_1">все возможное</string>
-    <string name="b1_les_50_04_1">смешанный</string>
-    <string name="b1_les_50_05_1">книжный червь</string>
-    <string name="b1_les_50_06_1">освежить</string>
-    <string name="b1_les_50_07_1">интенсивный курс</string>
-    <string name="b1_les_50_08_1">шпаргалка</string>
-    <string name="b1_les_50_09_1">необдуманный поступок</string>
-    <string name="b1_les_50_10_1">ободряющий</string>
-    <string name="b1_les_50_11_1">приступить</string>
-    <string name="b1_les_50_12_1">справиться</string>
-    <string name="b1_les_50_13_1">творческий</string>
-    <string name="b1_les_50_14_1">наизнанку</string>
-    <string name="b1_les_50_15_1">осведомленный</string>
+    <string name="b1_les_50_01_1">посредственный</string>
+    <string name="b1_les_50_02_1">заучивать</string>
+    <string name="b1_les_50_03_1">бездельничать</string>
+    <string name="b1_les_50_04_1">трудяга</string>
+    <string name="b1_les_50_05_1">черновик</string>
+    <string name="b1_les_50_06_1">пробираться</string>
+    <string name="b1_les_50_07_1">погрязнуть</string>
+    <string name="b1_les_50_08_1">строгий</string>
+    <string name="b1_les_50_09_1">зубрить</string>
+    <string name="b1_les_50_10_1">взяться</string>
+    <string name="b1_les_50_11_1">терпимый</string>
+    <string name="b1_les_50_12_1">обучение</string>
+    <string name="b1_les_50_13_1">осмысление</string>
+    <string name="b1_les_50_14_1">домысел</string>
+    <string name="b1_les_50_15_1">с блеском</string>
 
 </resources>
