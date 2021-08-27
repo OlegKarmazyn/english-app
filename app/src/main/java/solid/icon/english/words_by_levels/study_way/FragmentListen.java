@@ -303,6 +303,9 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                     mess.show();
 //                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
+                    for(int i = 0; i < 15; i++){
+                        counter_true[i] = 5;
+                    }
                 }
                 break;
 //            case R.id.el_next:

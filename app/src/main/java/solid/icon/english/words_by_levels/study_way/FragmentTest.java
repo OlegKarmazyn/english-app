@@ -565,6 +565,9 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
                 check_visible_gone();
                 mess = Toast.makeText(getActivity(), "Correct answers " + counter_true + " of " + 15, Toast.LENGTH_LONG);
                 mess.show();
+                for(int i = 0; i < 15; i++){
+                    isRight[i] = false;
+                }
                 if(counter_true > 12){
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setMessage("Do you want to mark this topic as done?");
