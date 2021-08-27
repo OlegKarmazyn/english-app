@@ -13,6 +13,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
+import solid.icon.english.RandomOrg;
 import solid.icon.english.words_by_levels.LevelByEnglish;
 
 public class MainStudyAction extends AppCompatActivity {
@@ -23,11 +24,14 @@ public class MainStudyAction extends AppCompatActivity {
 
     String what_level;
     int num_of_topic;
+    public static RandomOrg randomOrg = new RandomOrg();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_study_action);
+
+        randomOrg.invoke_all_doing();
 
         what_level = LevelByEnglish.level;
         num_of_topic = getIntent().getIntExtra("num_of_topic", 0);

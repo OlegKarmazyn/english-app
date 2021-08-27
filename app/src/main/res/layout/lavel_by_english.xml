@@ -41,8 +41,17 @@
                 android:text="intermediate"
                 android:textStyle="bold" />
 
-
-
+            <Button
+                android:id="@+id/upper_Intermediate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/person_together"
+                android:padding="15dp"
+                android:text="Upper-Intermediate"
+                android:textStyle="bold" />
 
 
         </LinearLayout>

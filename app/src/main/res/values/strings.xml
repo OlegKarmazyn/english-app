@@ -213,6 +213,60 @@
     <item>50 Hitting the books</item>
     </string-array>
 
+    <string-array name="topics_name_b2">
+        <item>00 Вводный урок</item>
+        <item>01 Impression</item>
+        <item>02 Impressions and opinions</item>
+        <item>03 Communication</item>
+        <item>04 Connection</item>
+        <item>05 Dreams come true</item>
+        <item>06 Reach for the sky</item>
+        <item>07 Life Circles</item>
+        <item>08 Life ups and downs</item>
+        <item>09 Amazing people</item>
+        <item>10 People are awesome</item>
+        <item>11 Forever Friends</item>
+        <item>12 Besties</item>
+        <item>13 Work</item>
+        <item>14 Things to be done</item>
+        <item>15 How ambitious you are</item>
+        <item>16 Are you ambitious?</item>
+        <item>17 Risk</item>
+        <item>18 Risk taking</item>
+        <item>19 Money and business</item>
+        <item>20 Get down to business</item>
+        <item>21 Behavior</item>
+        <item>22 Attitude</item>
+        <item>23 Health, Diet, Addictions</item>
+        <item>24 Let’s get fit</item>
+        <item>25 Tales</item>
+        <item>26 More tales</item>
+        <item>27 Troubles. Mishaps</item>
+        <item>28 Other accidents</item>
+        <item>29 Beauty</item>
+        <item>30 Elegance</item>
+        <item>31 Perception</item>
+        <item>32 Senses</item>
+        <item>33 Mysteries</item>
+        <item>34 Thrillers</item>
+        <item>35 Progress</item>
+        <item>36 Development</item>
+        <item>37 Edible</item>
+        <item>38 Edible, isn’t it?</item>
+        <item>39 Home</item>
+        <item>40 Native places</item>
+        <item>41 Good and bad memories</item>
+        <item>42 Recollection</item>
+        <item>43 Winners</item>
+        <item>44 No losers here</item>
+        <item>45 Self-expression</item>
+        <item>46 Express yourself</item>
+        <item>47 On the move</item>
+        <item>48 Keep moving</item>
+        <item>49 Truth and lies</item>
+        <item>50 Lies or statistics</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

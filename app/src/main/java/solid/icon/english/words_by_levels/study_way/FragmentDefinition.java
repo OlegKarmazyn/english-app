@@ -21,6 +21,8 @@ import java.util.Locale;
 import solid.icon.english.R;
 import solid.icon.english.Res_array;
 
+import static solid.icon.english.words_by_levels.study_way.MainStudyAction.randomOrg;
+
 
 public class FragmentDefinition extends Fragment implements View.OnClickListener {
 
@@ -65,6 +67,7 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
 
     public int[][] main_meaning_b1 = new int[][]{};
     public int[][] main_meaning_a2 = new int[][]{};
+    public int[][] main_meaning_b2 = new int[][]{};
 
 
     private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
@@ -148,9 +151,22 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
             main_2 = new Res_array().main_2_learn_a2.clone();
             index = num_of_topic;
             a2_or_b1 = 0;
+        } else if(what_level.equals("b2")){
+            main_1 = new Res_array().main_1_learn_b2.clone();
+            main_2 = new Res_array().main_2_learn_b2.clone();
+            index = num_of_topic;
+            a2_or_b1 = 2;
+        } else if(what_level.equals("day")){
+            index = 0;
+            main_1 = new Res_array().main_1_learn_b2.clone();
+            main_2 = new Res_array().main_2_learn_b2.clone();
+
+            main_1[index] = randomOrg.random_words_english.clone();
+            main_2[index] = randomOrg.random_words_translation.clone();
         }
         main_meaning_b1 = new Res_array().main_meaning_b1.clone();
         main_meaning_a2 = new Res_array().main_meaning_a2.clone();
+        main_meaning_b2 = new Res_array().main_meaning_b2.clone();
 
         words2.setClickable(false);
         words_get_text();
@@ -197,8 +213,10 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
     private void words_get_text(){
         if(a2_or_b1 == 0){
             meaning.setText(main_meaning_a2[index][id[i]]);
-        } else {
+        } else if(a2_or_b1 == 1){
             meaning.setText(main_meaning_b1[index][id[i]]);
+        } else if(a2_or_b1 == 2){
+            meaning.setText(main_meaning_b2[index][id[i]]);
         }
         words1.setText(main_1[index][id[i]]);
         words2.setText(main_2[index][id[i]]);

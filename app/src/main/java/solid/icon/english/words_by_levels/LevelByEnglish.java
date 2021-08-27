@@ -16,9 +16,11 @@ public class LevelByEnglish extends AppCompatActivity {
 
     private Intent a2;
     private Intent b1;
+    private Intent b2;
 
     private Button pre_intermediate;
     private Button intermediate;
+    private Button upper_Intermediate;
 
     public static String level;
 
@@ -30,9 +32,11 @@ public class LevelByEnglish extends AppCompatActivity {
 
         a2 = new Intent(this, EnglishLevel.class);
         b1 = new Intent(this, EnglishLevel.class);
+        b2 = new Intent(this, EnglishLevel.class);
 
         pre_intermediate = findViewById(R.id.pre_intermediate);
         intermediate = findViewById(R.id.intermediate);
+        upper_Intermediate = findViewById(R.id.upper_Intermediate);
 
         actionBar.setTitle("Have fun");
 
@@ -52,6 +56,16 @@ public class LevelByEnglish extends AppCompatActivity {
             public void onClick(View v) {
                 level = "b1";
                 startActivity(b1);
+                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+                finish();
+            }
+        });
+
+        upper_Intermediate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                level = "b2";
+                startActivity(b2);
                 overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
                 finish();
             }

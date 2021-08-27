@@ -39,6 +39,8 @@ public class EnglishLevel extends AppCompatActivity {
                 name_topic = getResources().getStringArray(R.array.topics_name_a2);
             } else if (level.equals("b1")) {
                 name_topic = getResources().getStringArray(R.array.topics_name_b1);
+            }  else if (level.equals("b2")) {
+                name_topic = getResources().getStringArray(R.array.topics_name_b2);
             }
         } catch (Exception e){
 
@@ -68,7 +70,7 @@ public class EnglishLevel extends AppCompatActivity {
     public int [] goDateBack(){
         DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
 
-        which_KNOW_TOPIC = (level.equals("a2")) ? DBHelper.KNOW_TOPIC_A2 : ((level.equals("b1")) ? DBHelper.KNOW_TOPIC_B1 : null);
+        which_KNOW_TOPIC = (level.equals("a2")) ? DBHelper.KNOW_TOPIC_A2 : ((level.equals("b1")) ? DBHelper.KNOW_TOPIC_B1 : ((level.equals("b2")) ? DBHelper.KNOW_TOPIC_B2 : null));
         for (int i = 0; i < 51; i++) {
             key_topics[i] = dBmoveINFO.back_check_info(i, which_KNOW_TOPIC);
             Log.d("Intermediate_v2", i + " goDateBack = " + key_topics[i]);
