@@ -1622,13 +1622,13 @@
 
     <string name="b1_les_49_01">abstruse</string>
     <string name="b1_les_49_02">assessment</string>
-    <string name="b1_les_49_03">best</string>
-    <string name="b1_les_49_04">blended</string>
-    <string name="b1_les_49_05">bookworm</string>
-    <string name="b1_les_49_06">brush up</string>
-    <string name="b1_les_49_07">crash course</string>
-    <string name="b1_les_49_08">crib sheet</string>
-    <string name="b1_les_49_09">deep end</string>
+    <string name="b1_les_49_03">blended</string>
+    <string name="b1_les_49_04">bookworm</string>
+    <string name="b1_les_49_05">brush up</string>
+    <string name="b1_les_49_06">crash course</string>
+    <string name="b1_les_49_07">crib sheet</string>
+    <string name="b1_les_49_08">deep end</string>
+    <string name="b1_les_49_09">do your best</string>
     <string name="b1_les_49_10">encouraging</string>
     <string name="b1_les_49_11">get down</string>
     <string name="b1_les_49_12">get through</string>
@@ -1638,13 +1638,13 @@
 
     <string name="b1_les_49_01_1">малопонятный</string>
     <string name="b1_les_49_02_1">оценка</string>
-    <string name="b1_les_49_03_1">все возможное</string>
-    <string name="b1_les_49_04_1">смешанный</string>
-    <string name="b1_les_49_05_1">книжный червь</string>
-    <string name="b1_les_49_06_1">освежить</string>
-    <string name="b1_les_49_07_1">интенсивный курс</string>
-    <string name="b1_les_49_08_1">шпаргалка</string>
-    <string name="b1_les_49_09_1">необдуманный поступок</string>
+    <string name="b1_les_49_03_1">смешанный</string>
+    <string name="b1_les_49_04_1">книжный червь</string>
+    <string name="b1_les_49_05_1">освежить</string>
+    <string name="b1_les_49_06_1">интенсивный курс</string>
+    <string name="b1_les_49_07_1">шпаргалка</string>
+    <string name="b1_les_49_08_1">необдуманный поступок</string>
+    <string name="b1_les_49_09_1">делать все возможное</string>
     <string name="b1_les_49_10_1">ободряющий</string>
     <string name="b1_les_49_11_1">приступить</string>
     <string name="b1_les_49_12_1">справиться</string>
