@@ -73,6 +73,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:visibility="gone"
+            android:onClick="click_listen"
+            android:layout_gravity="end"
+            android:layout_width="85dp"
+            android:layout_height="67dp"
+            app:srcCompat="@android:drawable/checkbox_on_background" />
+
         <ImageView
             android:id="@+id/img_listen"
             android:layout_marginTop="20dp"
@@ -101,18 +110,6 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:visibility="gone"
-        android:onClick="click_listen"
-        android:layout_width="85dp"
-        android:layout_height="67dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="100dp"
-        app:srcCompat="@android:drawable/checkbox_on_background" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/el_next"

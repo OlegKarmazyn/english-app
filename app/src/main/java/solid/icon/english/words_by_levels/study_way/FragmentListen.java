@@ -306,6 +306,7 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                     for(int i = 0; i < 15; i++){
                         counter_true[i] = 5;
                     }
+                    i = 0;
                 }
                 break;
 //            case R.id.el_next:

@@ -585,6 +585,7 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
                     AlertDialog dialog = builder.create();
                     dialog.show();
                 }
+                counter_true = 0;
                 break;
         }
     }
