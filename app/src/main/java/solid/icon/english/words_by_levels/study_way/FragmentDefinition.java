@@ -93,83 +93,105 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
 
     private FloatingActionButton el_next;
 
+    private static boolean isNotTranslating = true;
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        isNotTranslating = true;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isNotTranslating = false;
+    }
+
     @Override
     public void onResume() {
         super.onResume();
 
-        for (int i = 0; i < 15; i++) {
-            id[i] = i * -1;
-        }
-        editText = getActivity().findViewById(R.id.writeEdit);
-        meaning = getActivity().findViewById(R.id.meaning);
-        meaning.setClickable(false);
+        if(isNotTranslating) {
 
-        words1 = getActivity().findViewById(R.id.words_by_engl);
-        words2 = getActivity().findViewById(R.id.words_by_transl);
-
-        lay_definition_transl = getActivity().findViewById(R.id.lay_definition_transl);
-
-        fab = getActivity().findViewById(R.id.fab);
-
-        text_check = getActivity().findViewById(R.id.text_check);
-
-        el_next = getActivity().findViewById(R.id.el_next);
-
-        full_array();
-
-        f = editText.getBackground();
-
-        fab.setOnClickListener(this);
-        text_check.setOnClickListener(this);
-        words1.setOnClickListener(this);
-
-        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.US);
-
-                    if(result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
-                        Log.e("TTS", "Language not supported");
-                    } else {
-
-                    }
-                }else{
-                    Log.e("TTS", "Initializator failef");
-                }
+            for (int i = 0; i < 15; i++) {
+                id[i] = i * -1;
             }
-        });
+            editText = getActivity().findViewById(R.id.writeEdit);
+            meaning = getActivity().findViewById(R.id.meaning);
+            meaning.setClickable(false);
 
-        if(what_level.equals("b1")){
-            main_1 = new Res_array().main_1_learn_b1.clone();
-            main_2 = new Res_array().main_2_learn_b1.clone();
-            index = num_of_topic;
-            a2_or_b1 = 1;
-        } else if(what_level.equals("a2")){
-            main_1 = new Res_array().main_1_learn_a2.clone();
-            main_2 = new Res_array().main_2_learn_a2.clone();
-            index = num_of_topic;
-            a2_or_b1 = 0;
-        } else if(what_level.equals("b2")){
-            main_1 = new Res_array().main_1_learn_b2.clone();
-            main_2 = new Res_array().main_2_learn_b2.clone();
-            index = num_of_topic;
-            a2_or_b1 = 2;
-        } else if(what_level.equals("day")){
-            index = 0;
-            main_1 = new Res_array().main_1_learn_b2.clone();
-            main_2 = new Res_array().main_2_learn_b2.clone();
+            words1 = getActivity().findViewById(R.id.words_by_engl);
+            words2 = getActivity().findViewById(R.id.words_by_transl);
 
-            main_1[index] = randomOrg.random_words_english.clone();
-            main_2[index] = randomOrg.random_words_translation.clone();
+            lay_definition_transl = getActivity().findViewById(R.id.lay_definition_transl);
+
+            fab = getActivity().findViewById(R.id.fab);
+
+            text_check = getActivity().findViewById(R.id.text_check);
+
+            el_next = getActivity().findViewById(R.id.el_next);
+
+            full_array();
+
+            f = editText.getBackground();
+
+            fab.setOnClickListener(this);
+            text_check.setOnClickListener(this);
+            words1.setOnClickListener(this);
+
+            mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int status) {
+                    if (status == TextToSpeech.SUCCESS) {
+                        int result = mTTS.setLanguage(Locale.US);
+
+                        if (result == TextToSpeech.LANG_MISSING_DATA
+                                || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                            Log.e("TTS", "Language not supported");
+                        } else {
+
+                        }
+                    } else {
+                        Log.e("TTS", "Initializator failef");
+                    }
+                }
+            });
+
+            if (what_level.equals("b1")) {
+                main_1 = new Res_array().main_1_learn_b1.clone();
+                main_2 = new Res_array().main_2_learn_b1.clone();
+                index = num_of_topic;
+                a2_or_b1 = 1;
+            } else if (what_level.equals("a2")) {
+                main_1 = new Res_array().main_1_learn_a2.clone();
+                main_2 = new Res_array().main_2_learn_a2.clone();
+                index = num_of_topic;
+                a2_or_b1 = 0;
+            } else if (what_level.equals("b2")) {
+                main_1 = new Res_array().main_1_learn_b2.clone();
+                main_2 = new Res_array().main_2_learn_b2.clone();
+                index = num_of_topic;
+                a2_or_b1 = 2;
+            } else if (what_level.equals("day")) {
+                index = 0;
+                main_1 = new Res_array().main_1_learn_b2.clone();
+                main_2 = new Res_array().main_2_learn_b2.clone();
+
+                main_1[index] = randomOrg.random_words_english.clone();
+                main_2[index] = randomOrg.random_words_translation.clone();
+            }
+            main_meaning_b1 = new Res_array().main_meaning_b1.clone();
+            main_meaning_a2 = new Res_array().main_meaning_a2.clone();
+            main_meaning_b2 = new Res_array().main_meaning_b2.clone();
+
+            words2.setClickable(false);
+            words_get_text();
         }
-        main_meaning_b1 = new Res_array().main_meaning_b1.clone();
-        main_meaning_a2 = new Res_array().main_meaning_a2.clone();
-        main_meaning_b2 = new Res_array().main_meaning_b2.clone();
-
-        words2.setClickable(false);
-        words_get_text();
     }
 
     private void full_array(){
