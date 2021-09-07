@@ -62,7 +62,12 @@ public class EnglishLevel extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        goDateBack();
+        try {
+            goDateBack();
+        }catch (Exception e){
+
+        }
+
         RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
         recyclerView.setAdapter(recycleAdapter);
     }

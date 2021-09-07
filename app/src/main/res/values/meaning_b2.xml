@@ -1,59 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="b2_mea0_1"></string>
-    <string name="b2_mea0_2"></string>
-    <string name="b2_mea0_3"></string>
-    <string name="b2_mea0_4"></string>
-    <string name="b2_mea0_5"></string>
-    <string name="b2_mea0_6"></string>
-    <string name="b2_mea0_7"></string>
-    <string name="b2_mea0_8"></string>
-    <string name="b2_mea0_9"></string>
-    <string name="b2_mea0_10"></string>
-    <string name="b2_mea0_11"></string>
-    <string name="b2_mea0_12"></string>
-    <string name="b2_mea0_13"></string>
-    <string name="b2_mea0_14"></string>
-    <string name="b2_mea0_15"></string>
+    <string name="b2_mea0_1">to say that someone has done something morally wrong, illegal, or unkind:</string>
+    <string name="b2_mea0_2">a person, especially a child, who talks a lot:</string>
+    <string name="b2_mea0_3">stylish or fashionable:</string>
+    <string name="b2_mea0_4">someone who seems unfriendly and who does not share their feelings</string>
+    <string name="b2_mea0_5">pleasant or friendly:</string>
+    <string name="b2_mea0_6">unhappy because of being away from home for a long period:</string>
+    <string name="b2_mea0_7">living or lasting for ever:</string>
+    <string name="b2_mea0_8">have little confidence and are uncertain about their own abilities or if other people really like them:</string>
+    <string name="b2_mea0_9">not possible to change; impossible to return to a previous condition:</string>
+    <string name="b2_mea0_10">very effective or surprising, or difficult to believe:</string>
+    <string name="b2_mea0_11">to not give enough care or attention to people or things that are your responsibility:</string>
+    <string name="b2_mea0_12">to behave as if something is true when you know that it is not, especially in order to deceive people or as a game:</string>
+    <string name="b2_mea0_13">unsuccessful; of no value:</string>
+    <string name="b2_mea0_14">to go idly about : ramble wandering around the house:</string>
+    <string name="b2_mea0_15">wearing attractive and stylish clothes:</string>
 
-    <string name="b2_mea1_1"></string>
-    <string name="b2_mea1_2"></string>
-    <string name="b2_mea1_3"></string>
-    <string name="b2_mea1_4"></string>
-    <string name="b2_mea1_5"></string>
-    <string name="b2_mea1_6"></string>
-    <string name="b2_mea1_7"></string>
-    <string name="b2_mea1_8"></string>
-    <string name="b2_mea1_9"></string>
-    <string name="b2_mea1_10"></string>
-    <string name="b2_mea1_11"></string>
-    <string name="b2_mea1_12"></string>
-    <string name="b2_mea1_13"></string>
-    <string name="b2_mea1_14"></string>
-    <string name="b2_mea1_15"></string>
-
-
-    <string name="b2_mea2_1"></string>
-    <string name="b2_mea2_2"></string>
-    <string name="b2_mea2_3"></string>
-    <string name="b2_mea2_4"></string>
-    <string name="b2_mea2_5"></string>
-    <string name="b2_mea2_6"></string>
-    <string name="b2_mea2_7"></string>
-    <string name="b2_mea2_8"></string>
-    <string name="b2_mea2_9"></string>
-    <string name="b2_mea2_10"></string>
-    <string name="b2_mea2_11"></string>
-    <string name="b2_mea2_12"></string>
-    <string name="b2_mea2_13"></string>
-    <string name="b2_mea2_14"></string>
-    <string name="b2_mea2_15"></string>
+    <string name="b2_mea1_1">to suddenly say something loudly:</string>
+    <string name="b2_mea1_2">a person, especially a child, who talks a lot:</string>
+    <string name="b2_mea1_3">a small insect that gives you a feeling of fear and dislike:</string>
+    <string name="b2_mea1_4">the quality or skill of being clever at planning something so you get what you want, especially by tricking other people:</string>
+    <string name="b2_mea1_5">making someone look or seem better or more attractive than usual:</string>
+    <string name="b2_mea1_6">soft and not able to keep a firm shape or position:</string>
+    <string name="b2_mea1_7">liking to enjoy yourself and have fun rather than liking serious things:</string>
+    <string name="b2_mea1_8">pleasant or friendly:</string>
+    <string name="b2_mea1_9">full of activity, or very busy and fast:</string>
+    <string name="b2_mea1_10">relaxed in manner and character; not usually worried about other people\'s behaviour or things that need to be done:</string>
+    <string name="b2_mea1_11">to walk slowly and with difficulty because of having an injured or painful leg or foot:</string>
+    <string name="b2_mea1_12">(of a person) friendly and energetic and finding it easy and enjoyable to be with others:</string>
+    <string name="b2_mea1_13">doing something dangerous and not worrying about the risks and the possible results:</string>
+    <string name="b2_mea1_14">clasp someone\'s right hand in one\'s own at meeting or parting, in reconciliation or congratulation, or as a sign of agreement.</string>
+    <string name="b2_mea1_15">a person who watches a lot of television and does not have an active life</string>
 
 
-    <string name="b2_mea3_1"></string>
-    <string name="b2_mea3_2"></string>
-    <string name="b2_mea3_3"></string>
+    <string name="b2_mea2_1">stylish or fashionable:</string>
+    <string name="b2_mea2_2">unfriendly and not liking something:</string>
+    <string name="b2_mea2_3">have little confidence and are uncertain about their own abilities or if other people really like them:</string>
+    <string name="b2_mea2_4">untidy:</string>
+    <string name="b2_mea2_5">not decorated in any way; with nothing added:</string>
+    <string name="b2_mea2_6">do not often talk about or show their feelings or thoughts:</string>
+    <string name="b2_mea2_7">someone who often takes risks:</string>
+    <string name="b2_mea2_8">untidy and looking a little dirty :</string>
+    <string name="b2_mea2_9">very wet or liquid, often in a way that is unpleasant:</string>
+    <string name="b2_mea2_10">person enjoys sport and is good at it:</string>
+    <string name="b2_mea2_11">to talk about a subject with someone and tell each other your ideas or opinions:</string>
+    <string name="b2_mea2_12">a person who enjoys taking part in extreme sports and other activities involving physical risk:</string>
+    <string name="b2_mea2_13">unsuccessful; of no value:</string>
+    <string name="b2_mea2_14">wearing attractive and stylish clothes</string>
+    <string name="b2_mea2_15">a person who is not strong, brave, or confident:</string>
+
+
+    <string name="b2_mea3_1">to say that someone has done something morally wrong, illegal, or unkind:</string>
+    <string name="b2_mea3_2">to have a positive opinion of someone or something:</string>
+    <string name="b2_mea3_3">someone who hurts or frightens someone else, often over a period of time, and often forcing them to do something that they do not want to do:</string>
     <string name="b2_mea3_4"></string>
     <string name="b2_mea3_5"></string>
     <string name="b2_mea3_6"></string>
