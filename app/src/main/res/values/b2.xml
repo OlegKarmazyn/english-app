@@ -212,7 +212,7 @@
     <string name="b2_les_6_05">prophetic</string>
     <string name="b2_les_6_06">recurring dream</string>
     <string name="b2_les_6_07">reminiscent of</string>
-    <string name="b2_les_6_08">scorching hot</string>
+    <string name="b2_les_6_08">scorching</string>
     <string name="b2_les_6_09">suppress</string>
     <string name="b2_les_6_10">take off</string>
     <string name="b2_les_6_11">truthful</string>
@@ -230,7 +230,7 @@
     <string name="b2_les_6_07_1">напоминающий</string>
     <string name="b2_les_6_08_1">знойный</string>
     <string name="b2_les_6_09_1">подавлять</string>
-    <string name="b2_les_6_10_1">снимать (ответственность)</string>
+    <string name="b2_les_6_10_1">снимать</string>
     <string name="b2_les_6_11_1">правдивый</string>
     <string name="b2_les_6_12_1">недостижимый</string>
     <string name="b2_les_6_13_1">уязвимый</string>
@@ -324,14 +324,14 @@
     <string name="b2_les_9_15">snobbish</string>
 
     <string name="b2_les_9_01_1">невоспитанный</string>
-    <string name="b2_les_9_02_1">фанатический</string>
+    <string name="b2_les_9_02_1">нетерпимый</string>
     <string name="b2_les_9_03_1">сломя голову</string>
     <string name="b2_les_9_04_1">круглолицый</string>
     <string name="b2_les_9_05_1">безразличный</string>
     <string name="b2_les_9_06_1">домосед</string>
-    <string name="b2_les_9_07_1">взъерошенный</string>
+    <string name="b2_les_9_07_1">растрепанный</string>
     <string name="b2_les_9_08_1">послушный</string>
-    <string name="b2_les_9_09_1">практичный</string>
+    <string name="b2_les_9_09_1">приземленный</string>
     <string name="b2_les_9_10_1">забывчивый</string>
     <string name="b2_les_9_11_1">веснушки</string>
     <string name="b2_les_9_12_1">сероватый</string>
