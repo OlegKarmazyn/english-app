@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="?actionBarSize"
         android:id="@+id/tab_layout_example"
         style="@style/AppTabLayout"
         app:tabTextAppearance="@style/AppTabTextAppearance"
@@ -43,6 +43,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="definition" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/item_select_true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="select" />
 
     </com.google.android.material.tabs.TabLayout>
 
