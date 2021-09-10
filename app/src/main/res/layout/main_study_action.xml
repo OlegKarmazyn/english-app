@@ -44,11 +44,6 @@
             android:layout_height="wrap_content"
             android:text="definition" />
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/item_select_true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="select" />
 
     </com.google.android.material.tabs.TabLayout>
 
