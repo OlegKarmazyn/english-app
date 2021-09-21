@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -56,17 +58,28 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
     private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
     public int[][] main_1 = new int[][]{};
     public int[][] main_2 = new int[][]{};
+    public int[][] main_3 = new int[][]{};
+
+    private int isException = 0;
 
     private TextToSpeech mTTS;
 
     private final String TAG = "FragmentLearn";
     private int i = 0;
 
-    TextView words1; TextView words2; TextView words3; TextView words4; TextView words5; TextView words6; TextView words7; TextView words8; TextView words9; TextView words10; TextView words11;
+    TextView words1; TextView words2; TextView words3; TextView words4; TextView words5; TextView words6;
+    TextView words7; TextView words8; TextView words9; TextView words10; TextView words11;
     TextView words12; TextView words13; TextView words14; TextView words15;
 
-    TextView words1_1; TextView words2_1; TextView words3_1; TextView words4_1; TextView words5_1; TextView words6_1; TextView words7_1; TextView words8_1; TextView words9_1; TextView words10_1; TextView words11_1;
+    TextView words1_1; TextView words2_1; TextView words3_1; TextView words4_1; TextView words5_1; TextView words6_1;
+    TextView words7_1; TextView words8_1; TextView words9_1; TextView words10_1; TextView words11_1;
     TextView words12_1; TextView words13_1; TextView words14_1; TextView words15_1;
+
+    ImageView img_learn_01; ImageView img_learn_02; ImageView img_learn_03; ImageView img_learn_04; ImageView img_learn_05; ImageView img_learn_06;
+    ImageView img_learn_07; ImageView img_learn_08; ImageView img_learn_09; ImageView img_learn_10; ImageView img_learn_11;
+    ImageView img_learn_12; ImageView img_learn_13; ImageView img_learn_14; ImageView img_learn_15;
+
+    ScrollView learn_ScrollView;
 
     private  int index = 0;
 
@@ -81,15 +94,16 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         }
         if(what_level.equals("b1")){
             main_1 = new Res_array().main_1_learn_b1.clone();
-            main_2 = new Res_array().main_2_learn_b1.clone();
+            main_2 = new Res_array().main_2_learn_b1.clone();//todo: add main3 b1 drawable
             index = num_of_topic;
         } else if(what_level.equals("a2")){
             main_1 = new Res_array().main_1_learn_a2.clone();
-            main_2 = new Res_array().main_2_learn_a2.clone();
+            main_2 = new Res_array().main_2_learn_a2.clone();//todo: add main3 b2 drawable
             index = num_of_topic;
         } else if(what_level.equals("b2")){
             main_1 = new Res_array().main_1_learn_b2.clone();
             main_2 = new Res_array().main_2_learn_b2.clone();
+            main_3 = new Res_array().main_3_learn_b2.clone();
             index = num_of_topic;
         } else if(what_level.equals("day")){
             index = 0;
@@ -108,6 +122,17 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         words1_1 = getActivity().findViewById(R.id.words1_1); words2_1 = getActivity().findViewById(R.id.words2_1); words3_1 = getActivity().findViewById(R.id.words3_1); words4_1 = getActivity().findViewById(R.id.words4_1); words5_1 = getActivity().findViewById(R.id.words5_1);
         words6_1 = getActivity().findViewById(R.id.words6_1); words7_1 = getActivity().findViewById(R.id.words7_1); words8_1 = getActivity().findViewById(R.id.words8_1); words9_1 = getActivity().findViewById(R.id.words9_1); words10_1 = getActivity().findViewById(R.id.words10_1);
         words11_1 = getActivity().findViewById(R.id.words11_1); words12_1 = getActivity().findViewById(R.id.words12_1); words13_1 = getActivity().findViewById(R.id.words13_1); words14_1 = getActivity().findViewById(R.id.words14_1); words15_1 = getActivity().findViewById(R.id.words15_1);
+
+        img_learn_01 = getActivity().findViewById(R.id.img_learn_01); img_learn_02 = getActivity().findViewById(R.id.img_learn_02);
+        img_learn_03 = getActivity().findViewById(R.id.img_learn_03); img_learn_04 = getActivity().findViewById(R.id.img_learn_04);
+        img_learn_05 = getActivity().findViewById(R.id.img_learn_05); img_learn_06 = getActivity().findViewById(R.id.img_learn_06);
+        img_learn_07 = getActivity().findViewById(R.id.img_learn_07); img_learn_08 = getActivity().findViewById(R.id.img_learn_08);
+        img_learn_09 = getActivity().findViewById(R.id.img_learn_09); img_learn_10 = getActivity().findViewById(R.id.img_learn_10);
+        img_learn_11 = getActivity().findViewById(R.id.img_learn_11); img_learn_12 = getActivity().findViewById(R.id.img_learn_12);
+        img_learn_13 = getActivity().findViewById(R.id.img_learn_13); img_learn_14 = getActivity().findViewById(R.id.img_learn_14);
+        img_learn_15 = getActivity().findViewById(R.id.img_learn_15);
+
+        learn_ScrollView = getActivity().findViewById(R.id.learn_ScrollView);
 
         words1.setOnClickListener(this);
         words2.setOnClickListener(this);
@@ -138,19 +163,24 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
 
                     }
                 }else{
-                    Log.e("TTS", "Initializator failef");
+                    Log.e("TTS", "Initialization failed");
                 }
             }
         });
 
             full_array();
-            change_test();
+            try {
+                change_test();
+            }catch (Exception e){
+                isException++;
+            }
     }
 
     @Override
     public void onPause() {
         super.onPause();
         text1_1_visibel_gone();
+        img_learn_01_visibel_gone();
     }
 
     private void full_array(){
@@ -198,6 +228,25 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         words15_1.setVisibility(View.GONE);
     }
 
+    private void img_learn_01_visibel_gone() {
+
+        img_learn_01.setVisibility(View.GONE);
+        img_learn_02.setVisibility(View.GONE);
+        img_learn_03.setVisibility(View.GONE);
+        img_learn_04.setVisibility(View.GONE);
+        img_learn_05.setVisibility(View.GONE);
+        img_learn_06.setVisibility(View.GONE);
+        img_learn_07.setVisibility(View.GONE);
+        img_learn_08.setVisibility(View.GONE);
+        img_learn_09.setVisibility(View.GONE);
+        img_learn_10.setVisibility(View.GONE);
+        img_learn_11.setVisibility(View.GONE);
+        img_learn_12.setVisibility(View.GONE);
+        img_learn_13.setVisibility(View.GONE);
+        img_learn_14.setVisibility(View.GONE);
+        img_learn_15.setVisibility(View.GONE);
+    }
+
     private void change_test(){
 
         words1.setText(main_1[index][id[i++]]);
@@ -233,6 +282,23 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         words14_1.setText(main_2[index][id[i++]]);
         words15_1.setText(main_2[index][id[i]]);
         i = 0;
+
+        img_learn_01.setImageResource(main_3[index][id[i++]]);
+        img_learn_02.setImageResource(main_3[index][id[i++]]);
+        img_learn_03.setImageResource(main_3[index][id[i++]]);
+        img_learn_04.setImageResource(main_3[index][id[i++]]);
+        img_learn_05.setImageResource(main_3[index][id[i++]]);
+        img_learn_06.setImageResource(main_3[index][id[i++]]);
+        img_learn_07.setImageResource(main_3[index][id[i++]]);
+        img_learn_08.setImageResource(main_3[index][id[i++]]);
+        img_learn_09.setImageResource(main_3[index][id[i++]]);
+        img_learn_10.setImageResource(main_3[index][id[i++]]);
+        img_learn_11.setImageResource(main_3[index][id[i++]]);
+        img_learn_12.setImageResource(main_3[index][id[i++]]);
+        img_learn_13.setImageResource(main_3[index][id[i++]]);
+        img_learn_14.setImageResource(main_3[index][id[i++]]);
+        img_learn_15.setImageResource(main_3[index][id[i]]);
+        i = 0;
     }
 
     private void speak(String text){
@@ -262,8 +328,9 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.words1:
-                if(words1_1.getVisibility() == View.GONE){
+                if (words1_1.getVisibility() == View.GONE) {
                     words1_1.setVisibility(View.VISIBLE);
+                    img_learn_01.setVisibility(View.VISIBLE);
                     counter_flip[0] = 1;
                     calculate_flip();
                 }
@@ -271,8 +338,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words2:
-                if(words2_1.getVisibility() == View.GONE){
+                if (words2_1.getVisibility() == View.GONE) {
                     words2_1.setVisibility(View.VISIBLE);
+                    img_learn_02.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_02.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[1] = 1;
                     calculate_flip();
                 }
@@ -280,8 +354,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words3:
-                if(words3_1.getVisibility() == View.GONE){
+                if (words3_1.getVisibility() == View.GONE) {
                     words3_1.setVisibility(View.VISIBLE);
+                    img_learn_03.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_03.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[2] = 1;
                     calculate_flip();
                 }
@@ -289,8 +370,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words4:
-                if(words4_1.getVisibility() == View.GONE){
+                if (words4_1.getVisibility() == View.GONE) {
                     words4_1.setVisibility(View.VISIBLE);
+                    img_learn_04.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_04.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[3] = 1;
                     calculate_flip();
                 }
@@ -298,8 +386,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words5:
-                if(words5_1.getVisibility() == View.GONE){
+                if (words5_1.getVisibility() == View.GONE) {
                     words5_1.setVisibility(View.VISIBLE);
+                    img_learn_05.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_05.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[4] = 1;
                     calculate_flip();
                 }
@@ -307,8 +402,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words6:
-                if(words6_1.getVisibility() == View.GONE){
+                if (words6_1.getVisibility() == View.GONE) {
                     words6_1.setVisibility(View.VISIBLE);
+                    img_learn_06.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_06.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[5] = 1;
                     calculate_flip();
                 }
@@ -316,8 +418,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words7:
-                if(words7_1.getVisibility() == View.GONE){
+                if (words7_1.getVisibility() == View.GONE) {
                     words7_1.setVisibility(View.VISIBLE);
+                    img_learn_07.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_07.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[6] = 1;
                     calculate_flip();
                 }
@@ -325,8 +434,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words8:
-                if(words8_1.getVisibility() == View.GONE){
+                if (words8_1.getVisibility() == View.GONE) {
                     words8_1.setVisibility(View.VISIBLE);
+                    img_learn_08.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_08.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[7] = 1;
                     calculate_flip();
                 }
@@ -334,8 +450,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words9:
-                if(words9_1.getVisibility() == View.GONE){
+                if (words9_1.getVisibility() == View.GONE) {
                     words9_1.setVisibility(View.VISIBLE);
+                    img_learn_09.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_09.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[8] = 1;
                     calculate_flip();
                 }
@@ -343,8 +466,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words10:
-                if(words10_1.getVisibility() == View.GONE){
+                if (words10_1.getVisibility() == View.GONE) {
                     words10_1.setVisibility(View.VISIBLE);
+                    img_learn_10.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_10.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[9] = 1;
                     calculate_flip();
                 }
@@ -352,8 +482,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words11:
-                if(words11_1.getVisibility() == View.GONE){
+                if (words11_1.getVisibility() == View.GONE) {
                     words11_1.setVisibility(View.VISIBLE);
+                    img_learn_11.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_11.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[10] = 1;
                     calculate_flip();
                 }
@@ -361,8 +498,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words12:
-                if(words12_1.getVisibility() == View.GONE){
+                if (words12_1.getVisibility() == View.GONE) {
                     words12_1.setVisibility(View.VISIBLE);
+                    img_learn_12.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_12.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[11] = 1;
                     calculate_flip();
                 }
@@ -370,8 +514,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words13:
-                if(words13_1.getVisibility() == View.GONE){
+                if (words13_1.getVisibility() == View.GONE) {
                     words13_1.setVisibility(View.VISIBLE);
+                    img_learn_13.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_13.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[12] = 1;
                     calculate_flip();
                 }
@@ -379,8 +530,15 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words14:
-                if(words14_1.getVisibility() == View.GONE){
+                if (words14_1.getVisibility() == View.GONE) {
                     words14_1.setVisibility(View.VISIBLE);
+                    img_learn_14.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_14.getTop()-300);
+                        }
+                    }, 300);
                     counter_flip[13] = 1;
                     calculate_flip();
                 }
@@ -388,13 +546,23 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.words15:
-                if(words15_1.getVisibility() == View.GONE){
+                if (words15_1.getVisibility() == View.GONE) {
                     words15_1.setVisibility(View.VISIBLE);
+                    img_learn_15.setVisibility(View.VISIBLE);
+                    learn_ScrollView.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            learn_ScrollView.smoothScrollTo(0, img_learn_15.getBottom());
+                        }
+                    }, 300);
                     counter_flip[14] = 1;
                     calculate_flip();
                 }
                 speak((String) words15.getText());
                 break;
+        }
+        if(isException >= 1){
+            img_learn_01_visibel_gone();
         }
     }
 
@@ -406,7 +574,8 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         }
         full_array();
 
-            text1_1_visibel_gone();
-            change_test();
+        text1_1_visibel_gone();
+        img_learn_01_visibel_gone();
+        change_test();
     }
 }
