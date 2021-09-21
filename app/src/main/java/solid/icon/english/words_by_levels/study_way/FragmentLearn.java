@@ -341,12 +341,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words2_1.getVisibility() == View.GONE) {
                     words2_1.setVisibility(View.VISIBLE);
                     img_learn_02.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_02.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_02);
                     counter_flip[1] = 1;
                     calculate_flip();
                 }
@@ -357,12 +352,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words3_1.getVisibility() == View.GONE) {
                     words3_1.setVisibility(View.VISIBLE);
                     img_learn_03.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_03.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_03);
                     counter_flip[2] = 1;
                     calculate_flip();
                 }
@@ -373,12 +363,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words4_1.getVisibility() == View.GONE) {
                     words4_1.setVisibility(View.VISIBLE);
                     img_learn_04.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_04.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_04);
                     counter_flip[3] = 1;
                     calculate_flip();
                 }
@@ -389,12 +374,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words5_1.getVisibility() == View.GONE) {
                     words5_1.setVisibility(View.VISIBLE);
                     img_learn_05.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_05.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_05);
                     counter_flip[4] = 1;
                     calculate_flip();
                 }
@@ -405,12 +385,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words6_1.getVisibility() == View.GONE) {
                     words6_1.setVisibility(View.VISIBLE);
                     img_learn_06.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_06.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_06);
                     counter_flip[5] = 1;
                     calculate_flip();
                 }
@@ -421,12 +396,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words7_1.getVisibility() == View.GONE) {
                     words7_1.setVisibility(View.VISIBLE);
                     img_learn_07.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_07.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_07);
                     counter_flip[6] = 1;
                     calculate_flip();
                 }
@@ -437,12 +407,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words8_1.getVisibility() == View.GONE) {
                     words8_1.setVisibility(View.VISIBLE);
                     img_learn_08.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_08.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_08);
                     counter_flip[7] = 1;
                     calculate_flip();
                 }
@@ -453,12 +418,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words9_1.getVisibility() == View.GONE) {
                     words9_1.setVisibility(View.VISIBLE);
                     img_learn_09.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_09.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_09);
                     counter_flip[8] = 1;
                     calculate_flip();
                 }
@@ -469,12 +429,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words10_1.getVisibility() == View.GONE) {
                     words10_1.setVisibility(View.VISIBLE);
                     img_learn_10.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_10.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_10);
                     counter_flip[9] = 1;
                     calculate_flip();
                 }
@@ -485,12 +440,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words11_1.getVisibility() == View.GONE) {
                     words11_1.setVisibility(View.VISIBLE);
                     img_learn_11.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_11.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_11);
                     counter_flip[10] = 1;
                     calculate_flip();
                 }
@@ -501,12 +451,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words12_1.getVisibility() == View.GONE) {
                     words12_1.setVisibility(View.VISIBLE);
                     img_learn_12.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_12.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_12);
                     counter_flip[11] = 1;
                     calculate_flip();
                 }
@@ -517,12 +462,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words13_1.getVisibility() == View.GONE) {
                     words13_1.setVisibility(View.VISIBLE);
                     img_learn_13.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_13.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_13);
                     counter_flip[12] = 1;
                     calculate_flip();
                 }
@@ -533,12 +473,7 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words14_1.getVisibility() == View.GONE) {
                     words14_1.setVisibility(View.VISIBLE);
                     img_learn_14.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_14.getTop()-300);
-                        }
-                    }, 300);
+                    scrollHelper(img_learn_14);
                     counter_flip[13] = 1;
                     calculate_flip();
                 }
@@ -549,12 +484,14 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
                 if (words15_1.getVisibility() == View.GONE) {
                     words15_1.setVisibility(View.VISIBLE);
                     img_learn_15.setVisibility(View.VISIBLE);
-                    learn_ScrollView.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            learn_ScrollView.smoothScrollTo(0, img_learn_15.getBottom());
-                        }
-                    }, 300);
+                    if(isException == 0) {
+                        learn_ScrollView.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                learn_ScrollView.smoothScrollTo(0, img_learn_15.getBottom());
+                            }
+                        }, 300);
+                    }
                     counter_flip[14] = 1;
                     calculate_flip();
                 }
@@ -563,6 +500,17 @@ public class FragmentLearn extends Fragment implements View.OnClickListener {
         }
         if(isException >= 1){
             img_learn_01_visibel_gone();
+        }
+    }
+
+    private void scrollHelper(View v){
+        if(isException == 0) {
+            learn_ScrollView.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    learn_ScrollView.smoothScrollTo(0, v.getTop() - 300);
+                }
+            }, 300);
         }
     }
 
