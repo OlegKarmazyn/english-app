@@ -502,9 +502,9 @@
     <string name="b2_les_14_07_1">прибыльное дело</string>
     <string name="b2_les_14_08_1">съезжать</string>
     <string name="b2_les_14_09_1">душа компании</string>
-    <string name="b2_les_14_10_1">задаваться</string>
+    <string name="b2_les_14_10_1">привилегия</string>
     <string name="b2_les_14_11_1">указывать</string>
-    <string name="b2_les_14_12_1">разбирать</string>
+    <string name="b2_les_14_12_1">разбираться</string>
     <string name="b2_les_14_13_1">подавать</string>
     <string name="b2_les_14_14_1">субсидия</string>
     <string name="b2_les_14_15_1">условия труда</string>
@@ -530,7 +530,7 @@
     <string name="b2_les_15_01_1">заветное желание</string>
     <string name="b2_les_15_02_1">преданный идее</string>
     <string name="b2_les_15_03_1">страстно желающий</string>
-    <string name="b2_les_15_04_1">приспосабливаться</string>
+    <string name="b2_les_15_04_1">подходить</string>
     <string name="b2_les_15_05_1">заставлять</string>
     <string name="b2_les_15_06_1">добиваться продвижения по службе</string>
     <string name="b2_les_15_07_1">предприимчивый</string>
@@ -538,7 +538,7 @@
     <string name="b2_les_15_09_1">терять контроль</string>
     <string name="b2_les_15_10_1">строить планы</string>
     <string name="b2_les_15_11_1">продвигаться</string>
-    <string name="b2_les_15_12_1">научиться</string>
+    <string name="b2_les_15_12_1">поднимать</string>
     <string name="b2_les_15_13_1">откладывать</string>
     <string name="b2_les_15_14_1">исключать</string>
     <string name="b2_les_15_15_1">столкнуться</string>
@@ -600,7 +600,7 @@
     <string name="b2_les_17_03_1">углубляться</string>
     <string name="b2_les_17_04_1">выносливость</string>
     <string name="b2_les_17_05_1">защитные очки</string>
-    <string name="b2_les_17_06_1">ремни безопасности</string>
+    <string name="b2_les_17_06_1">упряжь</string>
     <string name="b2_les_17_07_1">опасность</string>
     <string name="b2_les_17_08_1">опасный</string>
     <string name="b2_les_17_09_1">повышаться</string>
@@ -617,7 +617,7 @@
     <string name="b2_les_18_02">loosen</string>
     <string name="b2_les_18_03">lower</string>
     <string name="b2_les_18_04">misfortune</string>
-    <string name="b2_les_18_05">mouthguard</string>
+    <string name="b2_les_18_05">mouth guard</string>
     <string name="b2_les_18_06">plummet</string>
     <string name="b2_les_18_07">plunge</string>
     <string name="b2_les_18_08">safety</string>
@@ -639,9 +639,9 @@
     <string name="b2_les_18_08_1">безопасность</string>
     <string name="b2_les_18_09_1">мелкий</string>
     <string name="b2_les_18_10_1">сокращаться</string>
-    <string name="b2_les_18_11_1">попытка</string>
+    <string name="b2_les_18_11_1">наносить удар ножом</string>
     <string name="b2_les_18_12_1">устойчивый</string>
-    <string name="b2_les_18_13_1">сжимать</string>
+    <string name="b2_les_18_13_1">затянуть</string>
     <string name="b2_les_18_14_1">триумф</string>
     <string name="b2_les_18_15_1">рисковать</string>
 
@@ -651,7 +651,7 @@
     <string name="b2_les_19_02">bailout</string>
     <string name="b2_les_19_03">break even</string>
     <string name="b2_les_19_04">broke</string>
-    <string name="b2_les_19_05">cashflow</string>
+    <string name="b2_les_19_05">cash flow</string>
     <string name="b2_les_19_06">counterfeit</string>
     <string name="b2_les_19_07">creditors</string>
     <string name="b2_les_19_08">exorbitant</string>
@@ -663,7 +663,7 @@
     <string name="b2_les_19_14">make a profit</string>
     <string name="b2_les_19_15">supply and demand</string>
 
-    <string name="b2_les_19_01_1">подкреплять</string>
+    <string name="b2_les_19_01_1">поддерживать</string>
     <string name="b2_les_19_02_1">финансовая помощь</string>
     <string name="b2_les_19_03_1">покрывать расходы</string>
     <string name="b2_les_19_04_1">бедный</string>
@@ -708,8 +708,8 @@
     <string name="b2_les_20_09_1">погашать</string>
     <string name="b2_les_20_10_1">ограниченный бюджет</string>
     <string name="b2_les_20_11_1">растранжиривание</string>
-    <string name="b2_les_20_12_1">кутить</string>
-    <string name="b2_les_20_13_1">расточительство</string>
+    <string name="b2_les_20_12_1">сорить деньгами</string>
+    <string name="b2_les_20_13_1">разбазаривать</string>
     <string name="b2_les_20_14_1">состоятельный</string>
     <string name="b2_les_20_15_1">изымать</string>
 
