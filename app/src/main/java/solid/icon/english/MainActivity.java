@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private Button words_by_levels;
     private Button add_your_words;
 
-    public static int main = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,11 +49,7 @@ public class MainActivity extends AppCompatActivity {
         add_your_words.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LevelByEnglish.level = "day";
-                main = 1;
-                startActivity(intent_add_your_words);
-                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-                finish();
+
             }
         });
 

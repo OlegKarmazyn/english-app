@@ -1,6 +1,5 @@
 package solid.icon.english.words_by_levels.study_way;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,12 +14,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
-import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.RandomOrg;
 import solid.icon.english.words_by_levels.LevelByEnglish;
 
-import static solid.icon.english.MainActivity.main;
 
 public class MainStudyAction extends AppCompatActivity {
 
@@ -30,7 +26,6 @@ public class MainStudyAction extends AppCompatActivity {
 
     String what_level;
     int num_of_topic;
-    public static RandomOrg randomOrg;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,11 +33,6 @@ public class MainStudyAction extends AppCompatActivity {
         setContentView(R.layout.main_study_action);
 
         what_level = LevelByEnglish.level;
-
-        if(what_level.equals("day")) {
-            randomOrg = new RandomOrg();
-            randomOrg.invoke_all_doing();
-        }
         num_of_topic = getIntent().getIntExtra("num_of_topic", 0);
 
         tabLayout = findViewById(R.id.tab_layout_example);
@@ -129,10 +119,6 @@ public class MainStudyAction extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 //        startActivity(new Intent(this, EnglishLevel.class));
-        if(main == 1){
-            startActivity(new Intent(this, MainActivity.class));
-            main = 0;
-        }
         this.finish();
         overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
     }

@@ -65,17 +65,6 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_01"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_01"/>
-
                 <LinearLayout
                     android:id="@+id/lin_2"
                     android:layout_width="match_parent"
@@ -119,17 +108,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_02"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_02"/>
 
                 <LinearLayout
                     android:id="@+id/lin_3"
@@ -175,17 +153,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_03"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_03"/>
-
                 <LinearLayout
                     android:id="@+id/lin_4"
                     android:layout_width="match_parent"
@@ -229,17 +196,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_04"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_04"/>
 
                 <LinearLayout
                     android:id="@+id/lin_5"
@@ -285,17 +241,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_05"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_05"/>
-
                 <LinearLayout
                     android:id="@+id/lin_6"
                     android:layout_width="match_parent"
@@ -339,17 +284,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_06"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_06"/>
 
                 <LinearLayout
                     android:id="@+id/lin_7"
@@ -395,17 +329,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_07"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_07"/>
-
                 <LinearLayout
                     android:id="@+id/lin_8"
                     android:layout_width="match_parent"
@@ -449,17 +372,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_08"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_08"/>
 
                 <LinearLayout
                     android:id="@+id/lin_9"
@@ -505,17 +417,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_09"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_09"/>
-
                 <LinearLayout
                     android:id="@+id/lin_10"
                     android:layout_width="match_parent"
@@ -559,17 +460,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_10"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_10"/>
 
                 <LinearLayout
                     android:id="@+id/lin_11"
@@ -615,17 +505,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_11"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_11"/>
-
                 <LinearLayout
                     android:id="@+id/lin_12"
                     android:layout_width="match_parent"
@@ -669,17 +548,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_12"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_12"/>
 
                 <LinearLayout
                     android:id="@+id/lin_13"
@@ -725,17 +593,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_13"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_13"/>
-
                 <LinearLayout
                     android:id="@+id/lin_14"
                     android:layout_width="match_parent"
@@ -780,17 +637,6 @@
                         android:textStyle="bold"/>
                 </LinearLayout>
 
-            <ImageView
-                android:id="@+id/img_learn_14"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_14"/>
-
                 <LinearLayout
                     android:id="@+id/lin_15"
                     android:layout_width="match_parent"
@@ -834,18 +680,6 @@
                         android:textColor="@android:color/black"
                         android:textStyle="bold"/>
                 </LinearLayout>
-
-            <ImageView
-                android:id="@+id/img_learn_15"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:src="@drawable/b2_les_0_15"/>
 
         </LinearLayout>
     </ScrollView>

@@ -24,8 +24,6 @@ import solid.icon.english.Res_array;
 import solid.icon.english.db_pac.DBmoveINFO;
 import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
-import static solid.icon.english.words_by_levels.study_way.MainStudyAction.randomOrg;
-
 public class FragmentTest extends Fragment implements View.OnClickListener {
 
     String what_level; int num_of_topic;
@@ -168,13 +166,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
             main_1 = new Res_array().main_1_learn_b2.clone();
             main_2 = new Res_array().main_2_learn_b2.clone();
             index = num_of_topic;
-        } else if(what_level.equals("day")){
-            index = 0;
-            main_1 = new Res_array().main_1_learn_b2.clone();
-            main_2 = new Res_array().main_2_learn_b2.clone();
-
-            main_1[index] = randomOrg.random_words_english.clone();
-            main_2[index] = randomOrg.random_words_translation.clone();
         }
             check.setVisibility(View.VISIBLE);
             text1_1_visibel_vis();
