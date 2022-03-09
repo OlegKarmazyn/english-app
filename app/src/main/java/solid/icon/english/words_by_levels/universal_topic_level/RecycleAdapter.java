@@ -1,5 +1,6 @@
 package solid.icon.english.words_by_levels.universal_topic_level;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
@@ -9,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +46,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.b1_tema_0.setText(name_topic[position]);
 
         holder.b1_checkBox_0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -66,7 +67,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             }
         });
 
-        holder.cardView.setOnClickListener(new View.OnClickListener() {
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                holder.cardView.setBackgroundColor(R.color.colorLightBlue);
@@ -94,13 +95,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView b1_tema_0; CheckBox b1_checkBox_0; CardView cardView;
+        TextView b1_tema_0; CheckBox b1_checkBox_0; RelativeLayout relativeLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             b1_tema_0 = itemView.findViewById(R.id.b1_tema_0);
             b1_checkBox_0 = itemView.findViewById(R.id.b1_checkBox_0);
-            cardView = itemView.findViewById(R.id.cardView);
+            relativeLayout = itemView.findViewById(R.id.relativeLayout);
         }
     }
 }

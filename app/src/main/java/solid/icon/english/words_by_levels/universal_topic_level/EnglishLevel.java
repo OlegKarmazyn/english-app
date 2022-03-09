@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,17 +47,16 @@ public class EnglishLevel extends AppCompatActivity {
 
         }
         recyclerView = findViewById(R.id.recycleView);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-
-        recyclerView.setLayoutManager(layoutManager);
-
-//        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
-//                layoutManager.getOrientation());
-//        recyclerView.addItemDecoration(dividerItemDecoration);
+    }
 
 
-
+    private void setAdapter() {
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
+        recyclerView.setAdapter(recycleAdapter);
     }
 
     @Override
@@ -68,8 +68,7 @@ public class EnglishLevel extends AppCompatActivity {
 
         }
 
-        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
-        recyclerView.setAdapter(recycleAdapter);
+        setAdapter();
     }
 
     public int [] goDateBack(){

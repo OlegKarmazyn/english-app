@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/English/app/src/main/res/layout/activity_main.xml" value="0.22509057971014493" />
+        <entry key="..\:/English/app/src/main/res/layout/fragment_definition.xml" value="0.22509057971014493" />
         <entry key="..\:/English/app/src/main/res/layout/fragment_learn.xml" value="0.17831813576494426" />
+        <entry key="..\:/English/app/src/main/res/layout/fragment_listen.xml" value="0.22509057971014493" />
+        <entry key="..\:/English/app/src/main/res/layout/lavel_by_english.xml" value="0.22509057971014493" />
         <entry key="..\:/English/app/src/main/res/layout/main_study_action.xml" value="0.17831813576494426" />
+        <entry key="..\:/English/app/src/main/res/layout/my_row.xml" value="0.22509057971014493" />
+        <entry key="..\:/English/app/src/main/res/layout/study_words_tab_layout.xml" value="0.22509057971014493" />
+        <entry key="..\:/English/app/src/main/res/layout/topics_layout.xml" value="0.22509057971014493" />
       </map>
     </option>
   </component>
