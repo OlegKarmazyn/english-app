@@ -4,13 +4,18 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@android:color/transparent</item>
         <item name="windowActionBarOverlay">true</item>
-        <item name="colorPrimaryDark">@color/colorBut</item>
+        <item name="colorPrimaryDark">@color/ios_gray</item>
+
         <item name="colorAccent">@color/colorAccent</item>
         <!-- To change action bar text color -->
-        <item name="android:textColorPrimary">@color/colorBut</item>
+        <item name="android:textColorPrimary">@color/ios_black</item>
 
         <!-- This has to be here to make it work; let me know if you know why -->
         <item name="actionBarTheme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+
+        <item name="android:statusBarColor">@color/ios_gray</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/ios_veryDarkGray</item>
     </style>
 
     <style name="AppTabLayout" parent="Widget.Design.TabLayout">

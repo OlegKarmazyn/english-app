@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="?actionBarSize"
         android:id="@+id/tab_layout_choose_type_of_study"
         style="@style/AppTabLayout"
         app:tabTextAppearance="@style/AppTabTextAppearance"

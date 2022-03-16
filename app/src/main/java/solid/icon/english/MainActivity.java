@@ -1,57 +1,71 @@
 package solid.icon.english;
 
-import android.content.Intent;
+import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-
-import solid.icon.english.db_pac.DBmoveINFO;
-import solid.icon.english.words_by_levels.LevelByEnglish;
-import solid.icon.english.words_by_levels.study_way.MainStudyAction;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Intent intent_words_by_levels;
-    private Intent intent_add_your_words;
+    private Context context = this;
 
-    private Button words_by_levels;
-    private Button add_your_words;
+    private RecyclerView recyclerView_levels, recyclerView_your;
+
+    private String[] levels_titlesArray = new String[]{"level a2", "level b1", "level b2"},
+                    your_titlesArray = new String[]{
+                            "мои слова 1",
+                            "мои слова 2",
+                            "мои слова 3",
+                            "мои слова 4",
+                            "мои слова 5",
+                            "мои слова 6",
+                            "мои слова 7",
+                            "мои слова 8",
+                            "мои слова 9",
+                            "мои слова 10",
+                            "мои слова 11",
+                    },
+            keysArray, checkingArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActionBar actionBar = getSupportActionBar();
+        getSupportActionBar().hide();
 
-        intent_words_by_levels = new Intent(this, LevelByEnglish.class);
-        intent_add_your_words = new Intent(this, MainStudyAction.class);
+        recyclerView_levels = findViewById(R.id.recycleView_levels);
+        recyclerView_your = findViewById(R.id.recycleView_your);
 
-        words_by_levels = findViewById(R.id.words_by_levels);
-        add_your_words = findViewById(R.id.add_your_words);
+        //intent_words_by_levels = new Intent(this, LevelByEnglish.class);
 
-        actionBar.setTitle("Welcome");
+        setAdapters();
+    }
 
+    private void setAdapters(){
+        setSettingsToRecyclerView(recyclerView_levels);
+        setSettingsToRecyclerView(recyclerView_your);
+        setAdapterFor_recyclerView_levels();
+        setAdapterFor_recyclerView_your();
+    }
 
-        new DBmoveINFO(this).create(this);
+    private void setSettingsToRecyclerView(RecyclerView recyclerView){
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
 
-        words_by_levels.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent_words_by_levels);
-                overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-                finish();
-            }
-        });
+    }
 
-        add_your_words.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+    private void setAdapterFor_recyclerView_levels() {
+        AdapterMainActivity adapterMainActivity = new AdapterMainActivity(context, levels_titlesArray, keysArray, checkingArray, MainActivity.this);
+        recyclerView_levels.setAdapter(adapterMainActivity);
+    }
 
-            }
-        });
-
+    private void setAdapterFor_recyclerView_your() {
+        AdapterMainActivity adapterMainActivity = new AdapterMainActivity(context, your_titlesArray, keysArray, checkingArray, MainActivity.this);
+        recyclerView_your.setAdapter(adapterMainActivity);
     }
 }

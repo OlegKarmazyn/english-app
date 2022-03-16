@@ -5,46 +5,58 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_alignParentBottom="true">
+    android:background="@color/ios_gray">
 
-    <LinearLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_levels"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:text="Levels words"
+            android:textColor="@color/ios_blackText"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
 
-            <Button
-                android:id="@+id/words_by_levels"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:background="@drawable/person_together"
-                android:padding="15dp"
-                android:text="words by levels"
-                android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView_levels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_levels"
+            android:background="@drawable/rounded_table"
+            android:layout_margin="15dp"/>
 
-            <Button
-                android:id="@+id/add_your_words"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/person_together"
-                android:padding="15dp"
-                android:text="add your words"
-                android:textStyle="bold" />
+        <TextView
+            android:id="@+id/your_text"
+            android:layout_below="@+id/recycleView_levels"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your words"
+            android:textColor="@color/ios_blackText"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView_your"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/your_text"
+            android:background="@drawable/rounded_table"
+            android:layout_margin="15dp"/>
 
+    </RelativeLayout>
 
-
-
-        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

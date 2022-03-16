@@ -47,20 +47,20 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.b1_tema_0.setText(name_topic[position]);
+        holder.title.setText(name_topic[position]);
 
-        holder.b1_checkBox_0.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
                 if(isChecked) {
                     Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
                     dBmoveINFO.go_check_info(position, EnglishLevel.which_KNOW_TOPIC);
-                    holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     key_topics[position] = 1;
                 }
                 else {
-                    holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
                     dBmoveINFO.delete_check_info(position, EnglishLevel.which_KNOW_TOPIC);
                     key_topics[position] = 0;
                 }
@@ -80,11 +80,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
         if (key_topics[position] == 1) {
 //          Log.d("RecycleAdapter", "position = " + position + " thue " + " key_topic[position] = " + key_topics[position]);
-            holder.b1_checkBox_0.setChecked(true);
-//            holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            holder.checkBox.setChecked(true);
+//            holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else {
-            holder.b1_checkBox_0.setChecked(false);
-//            holder.b1_tema_0.setPaintFlags(holder.b1_tema_0.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            holder.checkBox.setChecked(false);
+//            holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
     }
 
@@ -95,12 +95,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView b1_tema_0; CheckBox b1_checkBox_0; RelativeLayout relativeLayout;
+        TextView title; CheckBox checkBox; RelativeLayout relativeLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            b1_tema_0 = itemView.findViewById(R.id.b1_tema_0);
-            b1_checkBox_0 = itemView.findViewById(R.id.b1_checkBox_0);
+            title = itemView.findViewById(R.id.title);
+            checkBox = itemView.findViewById(R.id.checkBox);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
         }
     }
