@@ -24,4 +24,12 @@
     <color name="colorGray">#696969</color>
     <color name="colorGrayLight">#1A696969</color>
 
+
+    <color name="ios_gray">#f2f1f7</color>
+    <color name="ios_darkGray">#e4e3e9</color>
+    <color name="ios_yellow">#daac0e</color>
+    <color name="ios_white">#ffffff</color>
+    <color name="ios_grayText">#e5e5e5</color>
+    <color name="ios_blackText">#000000</color>
+
 </resources>
