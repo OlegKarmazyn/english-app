@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView_levels, recyclerView_your;
 
-    private String[] levels_titlesArray = new String[]{"level a2", "level b1", "level b2"},
+    private String[] levels_titlesArray = new String[]{"Pre-Intermediate", "Intermediate", "Upper-Intermediate"},
                     your_titlesArray = new String[]{
                             "мои слова 1",
                             "мои слова 2",
@@ -39,8 +39,6 @@ public class MainActivity extends AppCompatActivity {
         recyclerView_levels = findViewById(R.id.recycleView_levels);
         recyclerView_your = findViewById(R.id.recycleView_your);
 
-        //intent_words_by_levels = new Intent(this, LevelByEnglish.class);
-
         setAdapters();
     }
 
@@ -54,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     private void setSettingsToRecyclerView(RecyclerView recyclerView){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(linearLayoutManager);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
+        RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(ContextCompat.getDrawable(context, R.drawable.divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
 
     }
