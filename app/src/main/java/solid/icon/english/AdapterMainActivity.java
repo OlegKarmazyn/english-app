@@ -4,16 +4,21 @@ package solid.icon.english;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.skydoves.elasticviews.ElasticAnimation;
+import com.skydoves.elasticviews.ElasticFinishListener;
 
 import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
@@ -45,6 +50,22 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(titlesArray[position]);
 
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked) {
+                    Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+
+                }
+                else {
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+
+                }
+            }
+        });
+
         holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,8 +78,15 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
                     intent.putExtra("level", "b2");
                 }
                 Log.e("position = ", String.valueOf(position));
-                context.startActivity(intent);
-                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+
+                new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(500)
+                        .setOnFinishListener(new ElasticFinishListener() {
+                            @Override
+                            public void onFinished() {
+                                context.startActivity(intent);
+                                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+                            }
+                        }).doAction();
             }
         });
     }

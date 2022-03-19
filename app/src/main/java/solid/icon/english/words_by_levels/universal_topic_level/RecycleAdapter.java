@@ -16,6 +16,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.skydoves.elasticviews.ElasticAnimation;
+import com.skydoves.elasticviews.ElasticFinishListener;
+
 import org.jetbrains.annotations.NotNull;
 
 import solid.icon.english.R;
@@ -74,8 +77,15 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra("num_of_topic", position);
                 intent.putExtra("level", englishLevel.level);
-                context.startActivity(intent);
-                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+
+                new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(500)
+                        .setOnFinishListener(new ElasticFinishListener() {
+                            @Override
+                            public void onFinished() {
+                                context.startActivity(intent);
+                                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+                            }
+                        }).doAction();
             }
         });
 

@@ -61,4 +61,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
 
     implementation 'org.jetbrains:annotations:16.0.2'
+
+    //topics animation
+    implementation "com.github.skydoves:elasticviews:2.1.0"
 }
