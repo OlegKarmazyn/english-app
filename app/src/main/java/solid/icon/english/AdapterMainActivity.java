@@ -1,7 +1,10 @@
 package solid.icon.english;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivity.MyViewHolder> {
 
@@ -37,8 +42,25 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(titlesArray[position]);
+
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, EnglishLevel.class);
+                if(position == 0) {
+                    intent.putExtra("level", "a2");
+                }else if(position == 1){
+                    intent.putExtra("level", "b1");
+                }else if(position == 2){
+                    intent.putExtra("level", "b2");
+                }
+                Log.e("position = ", String.valueOf(position));
+                context.startActivity(intent);
+                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+            }
+        });
     }
 
     @Override

@@ -15,7 +15,6 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.tabs.TabLayout;
 
 import solid.icon.english.R;
-import solid.icon.english.words_by_levels.LevelByEnglish;
 
 
 public class MainStudyAction extends AppCompatActivity {
@@ -32,7 +31,7 @@ public class MainStudyAction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_study_action);
 
-        what_level = LevelByEnglish.level;
+        what_level = getIntent().getStringExtra("level");
         num_of_topic = getIntent().getIntExtra("num_of_topic", 0);
 
         tabLayout = findViewById(R.id.tab_layout_example);

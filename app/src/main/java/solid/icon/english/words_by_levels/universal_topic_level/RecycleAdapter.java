@@ -73,6 +73,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 //                holder.cardView.setBackgroundColor(R.color.colorLightBlue);
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra("num_of_topic", position);
+                intent.putExtra("level", englishLevel.level);
                 context.startActivity(intent);
                 englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
             }

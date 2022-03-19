@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.db_pac.DBHelper;
 import solid.icon.english.db_pac.DBmoveINFO;
-import solid.icon.english.words_by_levels.LevelByEnglish;
 
 public class EnglishLevel extends AppCompatActivity {
 
@@ -32,7 +32,7 @@ public class EnglishLevel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
 
-        level = LevelByEnglish.level;
+        level =  getIntent().getStringExtra("level");
         try {
 
 
@@ -96,7 +96,7 @@ public class EnglishLevel extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        startActivity(new Intent(context, LevelByEnglish.class));
+        startActivity(new Intent(context, MainActivity.class));
         overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
         this.finish();
     }

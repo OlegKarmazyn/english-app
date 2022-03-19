@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
                             "мои слова 8",
                             "мои слова 9",
                             "мои слова 10",
-                            "мои слова 11",
+                            "мои слова 11"
                     },
             keysArray, checkingArray;
 

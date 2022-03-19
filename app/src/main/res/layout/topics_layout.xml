@@ -2,13 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/wallpaper"
+    android:background="@color/ios_gray"
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="?actionBarSize"
         android:id="@+id/recycleView"
-        android:padding="10dp"
+        android:padding="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/rounded_table"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
