@@ -84,7 +84,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
 
-                new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(500)
+                new ElasticAnimation(v).setScaleX(0.95f).setScaleY(0.95f).setDuration(250)
                         .setOnFinishListener(new ElasticFinishListener() {
                             @Override
                             public void onFinished() {

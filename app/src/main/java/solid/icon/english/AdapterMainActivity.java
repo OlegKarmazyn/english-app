@@ -17,9 +17,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.skydoves.elasticviews.ElasticAnimation;
-import com.skydoves.elasticviews.ElasticFinishListener;
-
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
@@ -80,15 +77,18 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
                 }
                 Log.e("position = ", String.valueOf(position));
 
-                new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(500)
-                        .setOnFinishListener(new ElasticFinishListener() {
-                            @Override
-                            public void onFinished() {
+                holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_table_clicked));
 
-                            }
-                        }).doAction();
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+
+//                new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(400)
+//                        .setOnFinishListener(new ElasticFinishListener() {
+//                            @Override
+//                            public void onFinished() {
+//
+//                            }
+//                        }).doAction();
             }
         });
     }
