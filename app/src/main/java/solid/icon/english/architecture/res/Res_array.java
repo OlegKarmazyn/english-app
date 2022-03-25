@@ -1,4 +1,6 @@
-package solid.icon.english;
+package solid.icon.english.architecture.res;
+
+import solid.icon.english.R;
 
 public class Res_array {
     public int[] draw0_1_learn_b1= new int[]{

@@ -15,33 +15,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.Serializable;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.Res_array;
+import solid.icon.english.architecture.MyFragmentActivity;
 
 
-public class FragmentListen extends Fragment implements View.OnClickListener {
+public class FragmentListen extends MyFragmentActivity implements View.OnClickListener {
 
-    String what_level; int num_of_topic;
-
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentListen(String what_level, int num_of_topic) {
+    public FragmentListen(Serializable what_level, int num_of_topic) {
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
+        defineArrays();
         // Required empty public constructor
     }
 
@@ -49,8 +37,8 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -62,10 +50,7 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
     }
     private AnimationDrawable animationDrawable = null;
     private ImageView imageView = null;
-    private int[][] main_1 = new int[][]{};
-    private int[][] main_2 = new int[][]{};
 
-    private int index = 0;
     private int i = 0;
 
     private TextToSpeech mTTS;
@@ -87,12 +72,12 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
 
     private FloatingActionButton el_next;
 
-    private void listen(){ speak(getResources().getString((main_1[index][id[i]]))); }
+    private void listen(){ speak(getResources().getString((main_1[num_of_topic][id[i]]))); }
 
     private boolean isTrueWords(){
         String eT = editText.getText().toString();
         eT = eT.trim();
-        String res = (getResources().getString((main_1[index][id[i]])));
+        String res = (getResources().getString((main_1[num_of_topic][id[i]])));
         if((eT.equals(res)) ){
             return true;
         } else {
@@ -101,8 +86,8 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
     }
 
     private void words_get_text(){
-        words1.setText(main_1[index][id[i]]);
-        words2.setText(main_2[index][id[i]]);
+        words1.setText(main_1[num_of_topic][id[i]]);
+        words2.setText(main_2[num_of_topic][id[i]]);
     }
 
     private void full_array(){
@@ -209,22 +194,9 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                 }
             }
         });
-        if(what_level.equals("b1")){
-            main_1 = new Res_array().main_1_learn_b1.clone();
-            main_2 = new Res_array().main_2_learn_b1.clone();
-            index = num_of_topic;
-        } else if(what_level.equals("a2")){
-            main_1 = new Res_array().main_1_learn_a2.clone();
-            main_2 = new Res_array().main_2_learn_a2.clone();
-            index = num_of_topic;
-        } else if(what_level.equals("b2")){
-            main_1 = new Res_array().main_1_learn_b2.clone();
-            main_2 = new Res_array().main_2_learn_b2.clone();
-            index = num_of_topic;
-        }
 
 //        if (PreIntermediate.lev.equals("a2")){
-//            index = PreIntermediate.abs;
+//            num_of_topic = PreIntermediate.abs;
 //            level_a2 = new Level_A2();
 //            main_1 = level_a2.main_1.clone();
 //            main_2 = level_a2.main_2.clone();
@@ -275,7 +247,7 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.fab:
-                if (i < main_1[index].length - 1){
+                if (i < main_1[num_of_topic].length - 1){
                     i++;
                     //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_write_learn.setVisibility(View.GONE);
@@ -290,7 +262,7 @@ public class FragmentListen extends Fragment implements View.OnClickListener {
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[index].length, Toast.LENGTH_LONG);
+                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
                     mess.show();
 //                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);

@@ -6,10 +6,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import java.io.Serializable;
+
 public class FragmentAdapter extends FragmentStateAdapter {
 
-    String what_level; int num_of_topic;
-    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, String what_level, int num_of_topic) {
+    Serializable what_level; int num_of_topic;
+    public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, Serializable what_level, int num_of_topic) {
         super(fragmentManager, lifecycle);
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;

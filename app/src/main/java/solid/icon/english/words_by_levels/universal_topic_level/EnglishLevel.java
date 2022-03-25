@@ -3,26 +3,25 @@ package solid.icon.english.words_by_levels.universal_topic_level;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.Serializable;
+
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.db_pac.DBHelper;
-import solid.icon.english.db_pac.DBmoveINFO;
+import solid.icon.english.architecture.ActivityGlobal;
 
-public class EnglishLevel extends AppCompatActivity {
+public class EnglishLevel extends ActivityGlobal {
 
     RecyclerView recyclerView;
     String name_topic [];
-    String level;
+    Serializable level;
     int[] key_topics = new int[51];
     public static String which_KNOW_TOPIC;
     final Context context = this;
@@ -31,22 +30,21 @@ public class EnglishLevel extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
+        recyclerView = findViewById(R.id.recycleView);
+        showActionBar(true,"rgevfuhahniku");
 
-        level =  getIntent().getStringExtra("level");
+        level = getIntent().getSerializableExtra(String.valueOf(KeysExtra.level));
         try {
 
 
-            if (level.equals("a2")) {
+            if (level == LessonsName.A2) {
                 name_topic = getResources().getStringArray(R.array.topics_name_a2);
-            } else if (level.equals("b1")) {
+            } else if (level == LessonsName.B1) {
                 name_topic = getResources().getStringArray(R.array.topics_name_b1);
-            }  else if (level.equals("b2")) {
+            }  else if (level == LessonsName.B2) {
                 name_topic = getResources().getStringArray(R.array.topics_name_b2);
             }
-        } catch (Exception e){
-
-        }
-        recyclerView = findViewById(R.id.recycleView);
+        } catch (Exception e){/*empty*/}
     }
 
 
@@ -72,13 +70,11 @@ public class EnglishLevel extends AppCompatActivity {
     }
 
     public int [] goDateBack(){
-        DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
 
-        which_KNOW_TOPIC = (level.equals("a2")) ? DBHelper.KNOW_TOPIC_A2 : ((level.equals("b1")) ? DBHelper.KNOW_TOPIC_B1 : ((level.equals("b2")) ? DBHelper.KNOW_TOPIC_B2 : null));
-        for (int i = 0; i < 51; i++) {
-            key_topics[i] = dBmoveINFO.back_check_info(i, which_KNOW_TOPIC);
-            Log.d("Intermediate_v2", i + " goDateBack = " + key_topics[i]);
+        for (int i = 0; i < 52; i++) {
+            key_topics[i] = 0;
         }
+
         return key_topics;
     }
 

@@ -1,4 +1,4 @@
-package solid.icon.english;
+package solid.icon.english.architecture;
 
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;

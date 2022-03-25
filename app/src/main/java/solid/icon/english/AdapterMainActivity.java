@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.skydoves.elasticviews.ElasticAnimation;
 import com.skydoves.elasticviews.ElasticFinishListener;
 
+import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivity.MyViewHolder> {
@@ -71,11 +72,11 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
             public void onClick(View v) {
                 Intent intent = new Intent(context, EnglishLevel.class);
                 if(position == 0) {
-                    intent.putExtra("level", "a2");
+                    intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.A2);
                 }else if(position == 1){
-                    intent.putExtra("level", "b1");
+                    intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B1);
                 }else if(position == 2){
-                    intent.putExtra("level", "b2");
+                    intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B2);
                 }
                 Log.e("position = ", String.valueOf(position));
 
@@ -83,10 +84,11 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
                         .setOnFinishListener(new ElasticFinishListener() {
                             @Override
                             public void onFinished() {
-                                context.startActivity(intent);
-                                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+
                             }
                         }).doAction();
+                context.startActivity(intent);
+                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
             }
         });
     }

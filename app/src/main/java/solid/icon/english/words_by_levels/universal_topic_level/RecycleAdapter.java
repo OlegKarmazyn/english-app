@@ -22,7 +22,7 @@ import com.skydoves.elasticviews.ElasticFinishListener;
 import org.jetbrains.annotations.NotNull;
 
 import solid.icon.english.R;
-import solid.icon.english.db_pac.DBmoveINFO;
+import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
@@ -55,16 +55,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                DBmoveINFO dBmoveINFO = new DBmoveINFO(context);
+                //todo
                 if(isChecked) {
                     Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
-                    dBmoveINFO.go_check_info(position, EnglishLevel.which_KNOW_TOPIC);
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     key_topics[position] = 1;
                 }
                 else {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                    dBmoveINFO.delete_check_info(position, EnglishLevel.which_KNOW_TOPIC);
                     key_topics[position] = 0;
                 }
             }
@@ -75,8 +73,8 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             public void onClick(View v) {
 //                holder.cardView.setBackgroundColor(R.color.colorLightBlue);
                 Intent intent = new Intent(context, MainStudyAction.class);
-                intent.putExtra("num_of_topic", position);
-                intent.putExtra("level", englishLevel.level);
+                intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
+                intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
 
                 new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(500)
                         .setOnFinishListener(new ElasticFinishListener() {

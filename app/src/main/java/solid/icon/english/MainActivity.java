@@ -3,12 +3,14 @@ package solid.icon.english;
 import android.content.Context;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class MainActivity extends AppCompatActivity {
+import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.DividerItemDecorator;
+
+public class MainActivity extends ActivityGlobal {
 
     private Context context = this;
 

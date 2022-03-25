@@ -15,31 +15,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
+import java.io.Serializable;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.Res_array;
-import solid.icon.english.db_pac.DBmoveINFO;
-import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
+import solid.icon.english.architecture.MyFragmentActivity;
 
-public class FragmentTest extends Fragment implements View.OnClickListener {
+public class FragmentTest extends MyFragmentActivity implements View.OnClickListener {
 
-    String what_level; int num_of_topic;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentTest(String what_level, int num_of_topic) {
+    public FragmentTest(Serializable what_level, int num_of_topic) {
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
+        defineArrays();
         // Required empty public constructor
     }
 
@@ -47,8 +36,8 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -61,8 +50,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
     }
 
     private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
-    public int[][] main_1 = new int[][]{};
-    public int[][] main_2 = new int[][]{};
 
     private int counter_true = 0; private Toast mess;
 
@@ -85,7 +72,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
     LinearLayout lin_12; LinearLayout lin_13; LinearLayout lin_14; LinearLayout lin_15;
 
     private TextView check;
-    private  int index = 0;
 
     private int [] counter_flip = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     private String [] back_words = new String[15];
@@ -98,25 +84,25 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
         for(int i = 0; i < 15;i++){
             id[i]= i * -1;
         }
+        FragmentActivity fragmentActivity = getActivity();
 
+        words1 = fragmentActivity.findViewById(R.id.words1); words2 = fragmentActivity.findViewById(R.id.words2); words3 = fragmentActivity.findViewById(R.id.words3); words4 = fragmentActivity.findViewById(R.id.words4); words5 = fragmentActivity.findViewById(R.id.words5);
+        words6 = fragmentActivity.findViewById(R.id.words6); words7 = fragmentActivity.findViewById(R.id.words7); words8 = fragmentActivity.findViewById(R.id.words8); words9 = fragmentActivity.findViewById(R.id.words9); words10 = fragmentActivity.findViewById(R.id.words10);
+        words11 = fragmentActivity.findViewById(R.id.words11); words12 = fragmentActivity.findViewById(R.id.words12); words13 = fragmentActivity.findViewById(R.id.words13); words14 = fragmentActivity.findViewById(R.id.words14); words15 = fragmentActivity.findViewById(R.id.words15);
 
-        words1 = getActivity().findViewById(R.id.words1); words2 = getActivity().findViewById(R.id.words2); words3 = getActivity().findViewById(R.id.words3); words4 = getActivity().findViewById(R.id.words4); words5 = getActivity().findViewById(R.id.words5);
-        words6 = getActivity().findViewById(R.id.words6); words7 = getActivity().findViewById(R.id.words7); words8 = getActivity().findViewById(R.id.words8); words9 = getActivity().findViewById(R.id.words9); words10 = getActivity().findViewById(R.id.words10);
-        words11 = getActivity().findViewById(R.id.words11); words12 = getActivity().findViewById(R.id.words12); words13 = getActivity().findViewById(R.id.words13); words14 = getActivity().findViewById(R.id.words14); words15 = getActivity().findViewById(R.id.words15);
+        words1_1 = fragmentActivity.findViewById(R.id.words1_1); words2_1 = fragmentActivity.findViewById(R.id.words2_1); words3_1 = fragmentActivity.findViewById(R.id.words3_1); words4_1 = fragmentActivity.findViewById(R.id.words4_1); words5_1 = fragmentActivity.findViewById(R.id.words5_1);
+        words6_1 = fragmentActivity.findViewById(R.id.words6_1); words7_1 = fragmentActivity.findViewById(R.id.words7_1); words8_1 = fragmentActivity.findViewById(R.id.words8_1); words9_1 = fragmentActivity.findViewById(R.id.words9_1); words10_1 = fragmentActivity.findViewById(R.id.words10_1);
+        words11_1 = fragmentActivity.findViewById(R.id.words11_1); words12_1 = fragmentActivity.findViewById(R.id.words12_1); words13_1 = fragmentActivity.findViewById(R.id.words13_1); words14_1 = fragmentActivity.findViewById(R.id.words14_1); words15_1 = fragmentActivity.findViewById(R.id.words15_1);
 
-        words1_1 = getActivity().findViewById(R.id.words1_1); words2_1 = getActivity().findViewById(R.id.words2_1); words3_1 = getActivity().findViewById(R.id.words3_1); words4_1 = getActivity().findViewById(R.id.words4_1); words5_1 = getActivity().findViewById(R.id.words5_1);
-        words6_1 = getActivity().findViewById(R.id.words6_1); words7_1 = getActivity().findViewById(R.id.words7_1); words8_1 = getActivity().findViewById(R.id.words8_1); words9_1 = getActivity().findViewById(R.id.words9_1); words10_1 = getActivity().findViewById(R.id.words10_1);
-        words11_1 = getActivity().findViewById(R.id.words11_1); words12_1 = getActivity().findViewById(R.id.words12_1); words13_1 = getActivity().findViewById(R.id.words13_1); words14_1 = getActivity().findViewById(R.id.words14_1); words15_1 = getActivity().findViewById(R.id.words15_1);
+        editText1 = fragmentActivity.findViewById(R.id.editText1); editText2 = fragmentActivity.findViewById(R.id.editText2); editText3 = fragmentActivity.findViewById(R.id.editText3); editText4 = fragmentActivity.findViewById(R.id.editText4); editText5 = fragmentActivity.findViewById(R.id.editText5);
+        editText6 = fragmentActivity.findViewById(R.id.editText6); editText7 = fragmentActivity.findViewById(R.id.editText7); editText8 = fragmentActivity.findViewById(R.id.editText8); editText9 = fragmentActivity.findViewById(R.id.editText9); editText10 = fragmentActivity.findViewById(R.id.editText10);
+        editText11 = fragmentActivity.findViewById(R.id.editText11); editText12 = fragmentActivity.findViewById(R.id.editText12); editText13 = fragmentActivity.findViewById(R.id.editText13); editText14 = fragmentActivity.findViewById(R.id.editText14); editText15 = fragmentActivity.findViewById(R.id.editText15);
 
-        editText1 = getActivity().findViewById(R.id.editText1); editText2 = getActivity().findViewById(R.id.editText2); editText3 = getActivity().findViewById(R.id.editText3); editText4 = getActivity().findViewById(R.id.editText4); editText5 = getActivity().findViewById(R.id.editText5);
-        editText6 = getActivity().findViewById(R.id.editText6); editText7 = getActivity().findViewById(R.id.editText7); editText8 = getActivity().findViewById(R.id.editText8); editText9 = getActivity().findViewById(R.id.editText9); editText10 = getActivity().findViewById(R.id.editText10);
-        editText11 = getActivity().findViewById(R.id.editText11); editText12 = getActivity().findViewById(R.id.editText12); editText13 = getActivity().findViewById(R.id.editText13); editText14 = getActivity().findViewById(R.id.editText14); editText15 = getActivity().findViewById(R.id.editText15);
+        lin_1 = fragmentActivity.findViewById(R.id.lin_1); lin_2 = fragmentActivity.findViewById(R.id.lin_2); lin_3 = fragmentActivity.findViewById(R.id.lin_3); lin_4 = fragmentActivity.findViewById(R.id.lin_4); lin_5 = fragmentActivity.findViewById(R.id.lin_5);
+        lin_6 = fragmentActivity.findViewById(R.id.lin_6); lin_7 = fragmentActivity.findViewById(R.id.lin_7); lin_8 = fragmentActivity.findViewById(R.id.lin_8); lin_9 = fragmentActivity.findViewById(R.id.lin_9); lin_10 = fragmentActivity.findViewById(R.id.lin_10);
+        lin_11 = fragmentActivity.findViewById(R.id.lin_11); lin_12 = fragmentActivity.findViewById(R.id.lin_12); lin_13 = fragmentActivity.findViewById(R.id.lin_13); lin_14 = fragmentActivity.findViewById(R.id.lin_14); lin_15 = fragmentActivity.findViewById(R.id.lin_15);
 
-        lin_1 = getActivity().findViewById(R.id.lin_1); lin_2 = getActivity().findViewById(R.id.lin_2); lin_3 = getActivity().findViewById(R.id.lin_3); lin_4 = getActivity().findViewById(R.id.lin_4); lin_5 = getActivity().findViewById(R.id.lin_5);
-        lin_6 = getActivity().findViewById(R.id.lin_6); lin_7 = getActivity().findViewById(R.id.lin_7); lin_8 = getActivity().findViewById(R.id.lin_8); lin_9 = getActivity().findViewById(R.id.lin_9); lin_10 = getActivity().findViewById(R.id.lin_10);
-        lin_11 = getActivity().findViewById(R.id.lin_11); lin_12 = getActivity().findViewById(R.id.lin_12); lin_13 = getActivity().findViewById(R.id.lin_13); lin_14 = getActivity().findViewById(R.id.lin_14); lin_15 = getActivity().findViewById(R.id.lin_15);
-
-        check = getActivity().findViewById(R.id.check);
+        check = fragmentActivity.findViewById(R.id.check);
 
         LinDraw = lin_1.getBackground();
 
@@ -137,7 +123,7 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
         words15.setOnClickListener(this);
         check.setOnClickListener(this);
 
-        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+        mTTS = new TextToSpeech(fragmentActivity, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS){
@@ -154,19 +140,7 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
                 }
             }
         });
-        if(what_level.equals("b1")){
-            main_1 = new Res_array().main_1_learn_b1.clone();
-            main_2 = new Res_array().main_2_learn_b1.clone();
-            index = num_of_topic;
-        } else if(what_level.equals("a2")){
-            main_1 = new Res_array().main_1_learn_a2.clone();
-            main_2 = new Res_array().main_2_learn_a2.clone();
-            index = num_of_topic;
-        } else if(what_level.equals("b2")){
-            main_1 = new Res_array().main_1_learn_b2.clone();
-            main_2 = new Res_array().main_2_learn_b2.clone();
-            index = num_of_topic;
-        }
+
             check.setVisibility(View.VISIBLE);
             text1_1_visibel_vis();
             text1_visibel_gone();
@@ -227,38 +201,38 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
 
     private void change_test(){
 
-        words1.setText(main_1[index][id[i++]]);
-        words2.setText(main_1[index][id[i++]]);
-        words3.setText(main_1[index][id[i++]]);
-        words4.setText(main_1[index][id[i++]]);
-        words5.setText(main_1[index][id[i++]]);
-        words6.setText(main_1[index][id[i++]]);
-        words7.setText(main_1[index][id[i++]]);
-        words8.setText(main_1[index][id[i++]]);
-        words9.setText(main_1[index][id[i++]]);
-        words10.setText(main_1[index][id[i++]]);
-        words11.setText(main_1[index][id[i++]]);
-        words12.setText(main_1[index][id[i++]]);
-        words13.setText(main_1[index][id[i++]]);
-        words14.setText(main_1[index][id[i++]]);
-        words15.setText(main_1[index][id[i]]);
+        words1.setText(main_1[num_of_topic][id[i++]]);
+        words2.setText(main_1[num_of_topic][id[i++]]);
+        words3.setText(main_1[num_of_topic][id[i++]]);
+        words4.setText(main_1[num_of_topic][id[i++]]);
+        words5.setText(main_1[num_of_topic][id[i++]]);
+        words6.setText(main_1[num_of_topic][id[i++]]);
+        words7.setText(main_1[num_of_topic][id[i++]]);
+        words8.setText(main_1[num_of_topic][id[i++]]);
+        words9.setText(main_1[num_of_topic][id[i++]]);
+        words10.setText(main_1[num_of_topic][id[i++]]);
+        words11.setText(main_1[num_of_topic][id[i++]]);
+        words12.setText(main_1[num_of_topic][id[i++]]);
+        words13.setText(main_1[num_of_topic][id[i++]]);
+        words14.setText(main_1[num_of_topic][id[i++]]);
+        words15.setText(main_1[num_of_topic][id[i]]);
         i = 0;
 
-        words1_1.setText(main_2[index][id[i++]]);
-        words2_1.setText(main_2[index][id[i++]]);
-        words3_1.setText(main_2[index][id[i++]]);
-        words4_1.setText(main_2[index][id[i++]]);
-        words5_1.setText(main_2[index][id[i++]]);
-        words6_1.setText(main_2[index][id[i++]]);
-        words7_1.setText(main_2[index][id[i++]]);
-        words8_1.setText(main_2[index][id[i++]]);
-        words9_1.setText(main_2[index][id[i++]]);
-        words10_1.setText(main_2[index][id[i++]]);
-        words11_1.setText(main_2[index][id[i++]]);
-        words12_1.setText(main_2[index][id[i++]]);
-        words13_1.setText(main_2[index][id[i++]]);
-        words14_1.setText(main_2[index][id[i++]]);
-        words15_1.setText(main_2[index][id[i]]);
+        words1_1.setText(main_2[num_of_topic][id[i++]]);
+        words2_1.setText(main_2[num_of_topic][id[i++]]);
+        words3_1.setText(main_2[num_of_topic][id[i++]]);
+        words4_1.setText(main_2[num_of_topic][id[i++]]);
+        words5_1.setText(main_2[num_of_topic][id[i++]]);
+        words6_1.setText(main_2[num_of_topic][id[i++]]);
+        words7_1.setText(main_2[num_of_topic][id[i++]]);
+        words8_1.setText(main_2[num_of_topic][id[i++]]);
+        words9_1.setText(main_2[num_of_topic][id[i++]]);
+        words10_1.setText(main_2[num_of_topic][id[i++]]);
+        words11_1.setText(main_2[num_of_topic][id[i++]]);
+        words12_1.setText(main_2[num_of_topic][id[i++]]);
+        words13_1.setText(main_2[num_of_topic][id[i++]]);
+        words14_1.setText(main_2[num_of_topic][id[i++]]);
+        words15_1.setText(main_2[num_of_topic][id[i]]);
         i = 0;
     }
 
@@ -340,7 +314,7 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
     private void equals_back_with_true(){
         String word = "";
         for (int j = 0; j < 15; j++){
-            word = getResources().getString((main_1[index][id[j]]));
+            word = getResources().getString((main_1[num_of_topic][id[j]]));
             back_words[j] = back_words[j].trim();
             isRight[j] = back_words[j].equals(word);
             //System.out.println("что " + back_words[j] + " с чем " + word + " " + isRight[j]);
@@ -582,7 +556,6 @@ public class FragmentTest extends Fragment implements View.OnClickListener {
     }
 
     private void mark_topic_as_done(){
-        DBmoveINFO dBmoveINFO = new DBmoveINFO( getActivity());
-        dBmoveINFO.go_check_info(index, EnglishLevel.which_KNOW_TOPIC);
+        //todo
     }
 }

@@ -12,43 +12,32 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.fragment.app.Fragment;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.io.Serializable;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.Res_array;
+import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.MyFragmentActivity;
+import solid.icon.english.architecture.res.Res_array;
 
 
-public class FragmentDefinition extends Fragment implements View.OnClickListener {
+public class FragmentDefinition extends MyFragmentActivity implements View.OnClickListener {
 
-    String what_level; int num_of_topic;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FragmentDefinition(String what_level, int num_of_topic) {
+    public FragmentDefinition(Serializable what_level, int num_of_topic) {
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
+        defineArrays();
         // Required empty public constructor
     }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+//            mParam1 = getArguments().getString(ARG_PARAM1);
+//            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -58,14 +47,12 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_definition, container, false);
     }
-    private int index = 0;
+
     private int i = 0;
 
     private TextToSpeech mTTS;
 
-    public int[][] main_meaning_b1 = new int[][]{};
-    public int[][] main_meaning_a2 = new int[][]{};
-    public int[][] main_meaning_b2 = new int[][]{};
+    public int[][] main_meaning = new int[][]{};
 
 
     private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
@@ -83,11 +70,6 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
     private int [] counter_true = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}; private int count = 0;
 
     private TextView meaning = null;
-
-    private int[][] main_1 = new int[][]{};
-    private int[][] main_2 = new int[][]{};
-
-    private int a2_or_b1 = 0;
 
     private FloatingActionButton el_next;
 
@@ -160,28 +142,20 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
                 }
             });
 
-            if (what_level.equals("b1")) {
-                main_1 = new Res_array().main_1_learn_b1.clone();
-                main_2 = new Res_array().main_2_learn_b1.clone();
-                index = num_of_topic;
-                a2_or_b1 = 1;
-            } else if (what_level.equals("a2")) {
-                main_1 = new Res_array().main_1_learn_a2.clone();
-                main_2 = new Res_array().main_2_learn_a2.clone();
-                index = num_of_topic;
-                a2_or_b1 = 0;
-            } else if (what_level.equals("b2")) {
-                main_1 = new Res_array().main_1_learn_b2.clone();
-                main_2 = new Res_array().main_2_learn_b2.clone();
-                index = num_of_topic;
-                a2_or_b1 = 2;
-            }
-            main_meaning_b1 = new Res_array().main_meaning_b1.clone();
-            main_meaning_a2 = new Res_array().main_meaning_a2.clone();
-            main_meaning_b2 = new Res_array().main_meaning_b2.clone();
-
             words2.setClickable(false);
             words_get_text();
+        }
+    }
+
+    @Override
+    protected void defineArrays() {
+        super.defineArrays();
+        if(what_level == ActivityGlobal.LessonsName.A2) {
+            main_meaning = new Res_array().main_meaning_a2.clone();
+        }else if(what_level == ActivityGlobal.LessonsName.B1){
+            main_meaning = new Res_array().main_meaning_b1.clone();
+        } else if(what_level == ActivityGlobal.LessonsName.B2){
+            main_meaning = new Res_array().main_meaning_b2.clone();
         }
     }
 
@@ -211,7 +185,7 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
         }
     }
 
-    private void listen(){ speak(getResources().getString((main_1[index][id[i]]))); }
+    private void listen(){ speak(getResources().getString((main_1[num_of_topic][id[i]]))); }
 
     private void speak(String text){
         float pitch = 0.5f;
@@ -224,21 +198,15 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
     }
 
     private void words_get_text(){
-        if(a2_or_b1 == 0){
-            meaning.setText(main_meaning_a2[index][id[i]]);
-        } else if(a2_or_b1 == 1){
-            meaning.setText(main_meaning_b1[index][id[i]]);
-        } else if(a2_or_b1 == 2){
-            meaning.setText(main_meaning_b2[index][id[i]]);
-        }
-        words1.setText(main_1[index][id[i]]);
-        words2.setText(main_2[index][id[i]]);
+        meaning.setText(main_meaning[num_of_topic][id[i]]);
+        words1.setText(main_1[num_of_topic][id[i]]);
+        words2.setText(main_2[num_of_topic][id[i]]);
     }
 
     private boolean isTrueWords(){
         String eT = editText.getText().toString();
         eT = eT.trim();
-        String res = (getResources().getString((main_1[index][id[i]])));
+        String res = (getResources().getString((main_1[num_of_topic][id[i]])));
         if((eT.equals(res)) ){
             return true;
         } else {
@@ -266,7 +234,7 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
                 break;
 
             case R.id.fab:
-                if (i < main_1[index].length - 1){
+                if (i < main_1[num_of_topic].length - 1){
                     i++;
                     //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_definition_transl.setVisibility(View.GONE);
@@ -281,7 +249,7 @@ public class FragmentDefinition extends Fragment implements View.OnClickListener
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[index].length, Toast.LENGTH_LONG);
+                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
                     mess.show();
                     el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);

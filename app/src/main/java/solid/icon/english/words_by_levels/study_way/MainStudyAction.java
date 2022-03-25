@@ -8,22 +8,24 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.Serializable;
+
 import solid.icon.english.R;
+import solid.icon.english.architecture.ActivityGlobal;
 
 
-public class MainStudyAction extends AppCompatActivity {
+public class MainStudyAction extends ActivityGlobal {
 
     TabLayout tabLayout;
     ViewPager2 pager2;
     FragmentAdapter adapter;
 
-    String what_level;
+    Serializable what_level;
     int num_of_topic;
 
     @Override
@@ -31,8 +33,8 @@ public class MainStudyAction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_study_action);
 
-        what_level = getIntent().getStringExtra("level");
-        num_of_topic = getIntent().getIntExtra("num_of_topic", 0);
+        what_level = getIntent().getSerializableExtra(String.valueOf(KeysExtra.level));
+        num_of_topic = getIntent().getIntExtra(String.valueOf(KeysExtra.num_of_topic), 0);
 
         tabLayout = findViewById(R.id.tab_layout_example);
         pager2 = findViewById(R.id.viewPager);

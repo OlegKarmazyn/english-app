@@ -1,4 +1,6 @@
-package solid.icon.english;
+package solid.icon.english.architecture.res;
+
+import solid.icon.english.R;
 
 public class Definition_Array {
     private int[] draw0_1 = new int[]{
