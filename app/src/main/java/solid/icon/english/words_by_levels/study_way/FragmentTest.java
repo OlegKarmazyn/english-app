@@ -3,8 +3,10 @@ package solid.icon.english.words_by_levels.study_way;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -556,6 +558,10 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
     }
 
     private void mark_topic_as_done(){
-        //todo
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = preferences.edit();
+        String mod_key = String.valueOf(what_level) + num_of_topic;
+        editor.putBoolean(mod_key, true);
+        editor.apply();
     }
 }
