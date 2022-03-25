@@ -77,7 +77,14 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
                 }
                 Log.e("position = ", String.valueOf(position));
 
-                holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_table_clicked));
+                if(position == 0){
+                    holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_top_row));
+                }else if(position == titlesArray.length - 1){
+                    holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_bottom_row));
+                }else{
+                    holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_middle_row));
+                }
+
 
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
