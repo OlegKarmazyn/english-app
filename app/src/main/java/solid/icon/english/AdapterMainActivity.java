@@ -11,10 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import solid.icon.english.architecture.ActivityGlobal;
@@ -64,7 +64,7 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
             }
         });
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, EnglishLevel.class);
@@ -78,26 +78,18 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
                 Log.e("position = ", String.valueOf(position));
 
                 if(position == 0){
-                    holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_top_row));
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_top_row));
                 }else if(position == titlesArray.length - 1){
-                    holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_bottom_row));
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_bottom_row));
                 }else{
-                    holder.relativeLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_middle_row));
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_middle_row));
                 }
-
 
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-
-//                new ElasticAnimation(v).setScaleX(0.90f).setScaleY(0.90f).setDuration(400)
-//                        .setOnFinishListener(new ElasticFinishListener() {
-//                            @Override
-//                            public void onFinished() {
-//
-//                            }
-//                        }).doAction();
             }
         });
+
     }
 
     @Override
@@ -109,13 +101,13 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
 
         TextView title;
         CheckBox checkBox;
-        RelativeLayout relativeLayout;
+        ConstraintLayout constraintLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             checkBox = itemView.findViewById(R.id.checkBox);
-            relativeLayout = itemView.findViewById(R.id.relativeLayout);
+            constraintLayout = itemView.findViewById(R.id.constraintLayout);
         }
     }
 }

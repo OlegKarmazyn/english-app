@@ -1,5 +1,6 @@
 package solid.icon.english.words_by_levels.universal_topic_level;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +11,7 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +20,7 @@ import java.io.Serializable;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.DividerItemDecorator;
 
 public class EnglishLevel extends ActivityGlobal {
 
@@ -29,12 +31,14 @@ public class EnglishLevel extends ActivityGlobal {
     public static String which_KNOW_TOPIC;
     final Context context = this;
 
+    @SuppressLint("RestrictedApi")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
         recyclerView = findViewById(R.id.recycleView);
         showActionBar(true,"rgevfuhahniku");
+        getSupportActionBar().setShowHideAnimationEnabled(false);
 
         level = getIntent().getSerializableExtra(String.valueOf(KeysExtra.level));
         try {
@@ -54,7 +58,7 @@ public class EnglishLevel extends ActivityGlobal {
     private void setAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(linearLayoutManager);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), linearLayoutManager.getOrientation());
+        RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(ContextCompat.getDrawable(context, R.drawable.divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
         RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
         recyclerView.setAdapter(recycleAdapter);

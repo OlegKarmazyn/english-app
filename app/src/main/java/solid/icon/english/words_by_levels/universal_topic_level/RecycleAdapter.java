@@ -12,14 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.skydoves.elasticviews.ElasticAnimation;
-import com.skydoves.elasticviews.ElasticFinishListener;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -76,7 +73,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             }
         });
 
-        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                holder.cardView.setBackgroundColor(R.color.colorLightBlue);
@@ -84,14 +81,16 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
 
-                new ElasticAnimation(v).setScaleX(0.95f).setScaleY(0.95f).setDuration(250)
-                        .setOnFinishListener(new ElasticFinishListener() {
-                            @Override
-                            public void onFinished() {
-                                context.startActivity(intent);
-                                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-                            }
-                        }).doAction();
+                if(position == 0){
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_top_row));
+                }else if(position == name_topic.length - 1){
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_bottom_row));
+                }else{
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_middle_row));
+                }
+
+                context.startActivity(intent);
+                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
             }
         });
 
@@ -109,13 +108,13 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title; CheckBox checkBox; RelativeLayout relativeLayout;
+        TextView title; CheckBox checkBox; ConstraintLayout constraintLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             checkBox = itemView.findViewById(R.id.checkBox);
-            relativeLayout = itemView.findViewById(R.id.relativeLayout);
+            constraintLayout = itemView.findViewById(R.id.constraintLayout);
         }
     }
 }
