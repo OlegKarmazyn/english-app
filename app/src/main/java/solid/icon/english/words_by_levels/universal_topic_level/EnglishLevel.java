@@ -2,7 +2,10 @@ package solid.icon.english.words_by_levels.universal_topic_level;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -22,7 +25,7 @@ public class EnglishLevel extends ActivityGlobal {
     RecyclerView recyclerView;
     String name_topic [];
     Serializable level;
-    int[] key_topics = new int[51];
+    boolean[] key_topics = new boolean[51];
     public static String which_KNOW_TOPIC;
     final Context context = this;
 
@@ -69,10 +72,12 @@ public class EnglishLevel extends ActivityGlobal {
         setAdapter();
     }
 
-    public int [] goDateBack(){
-
-        for (int i = 0; i < 52; i++) {
-            key_topics[i] = 0;
+    public boolean[] goDateBack(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        for(int i = 0; i < key_topics.length; i++){
+            String mod_key = String.valueOf(level) + i;
+            key_topics[i] = preferences.getBoolean(mod_key, false);
+            Log.d("goDateBack", "key_topics[" + i + "]" + key_topics[i]);
         }
 
         return key_topics;

@@ -3,7 +3,9 @@ package solid.icon.english.words_by_levels.universal_topic_level;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,14 +31,18 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     private Context context;
     private String[] name_topic;
-    private int[] key_topics;
+    private boolean[] key_topics;
     private EnglishLevel englishLevel;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
-    public RecycleAdapter(Context context, String[] name_topic, int [] key_topics, EnglishLevel englishLevel) {
+    public RecycleAdapter(Context context, String[] name_topic, boolean [] key_topics, EnglishLevel englishLevel) {
         this.context = context;
         this.name_topic = name_topic;
         this.key_topics = key_topics;
         this.englishLevel = englishLevel;
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        editor = preferences.edit();
     }
 
     @NonNull
@@ -55,15 +61,17 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                //todo
+                String mod_key = String.valueOf(englishLevel.level) + position;
+                Log.e("onBindViewHolder", mod_key + " - " + isChecked);
                 if(isChecked) {
-                    Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    key_topics[position] = 1;
+                    editor.putBoolean(mod_key, isChecked);
+                    editor.apply();
                 }
                 else {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                    key_topics[position] = 0;
+                    editor.putBoolean(mod_key, isChecked);
+                    editor.apply();
                 }
             }
         });
@@ -87,13 +95,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             }
         });
 
-        if (key_topics[position] == 1) {
-//          Log.d("RecycleAdapter", "position = " + position + " thue " + " key_topic[position] = " + key_topics[position]);
+        if (key_topics[position]) {
             holder.checkBox.setChecked(true);
-//            holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         }else {
             holder.checkBox.setChecked(false);
-//            holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
     }
 
