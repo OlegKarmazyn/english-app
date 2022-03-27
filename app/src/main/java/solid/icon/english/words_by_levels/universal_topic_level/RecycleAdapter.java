@@ -59,7 +59,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(name_topic[position]);
         holder.checkBox.setChecked(key_topics[position]);
-        Log.d("position", "is " + position);
+
+        if (key_topics[position]){
+            holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }else{
+            holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        }
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

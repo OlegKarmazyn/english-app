@@ -38,11 +38,11 @@ public class MainActivity extends ActivityGlobal {
     }
 
     private void getIsCheckArray(){
-        boolean[] isCheckArray = new boolean[3];
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        isCheckArray[0] = sharedPreferences.getBoolean(LessonsName.A2.name(), false);
-        isCheckArray[1] = sharedPreferences.getBoolean(LessonsName.B1.name(), false);
-        isCheckArray[2] = sharedPreferences.getBoolean(LessonsName.B2.name(), false);
+        boolean[] isCheckArray = new boolean[lessonsNames.length];
+        for (int i = 0; i < lessonsNames.length; i++) {
+            isCheckArray[i] = sharedPreferences.getBoolean(lessonsNames[i].name(), false);
+        }
         this.isCheckArray = isCheckArray;
     }
 

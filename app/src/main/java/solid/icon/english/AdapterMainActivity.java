@@ -4,7 +4,9 @@ package solid.icon.english;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Paint;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,12 +28,17 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
     String[] titlesArray;
     boolean[] isCheckArray;
     MainActivity mainActivity;
+    private ActivityGlobal.LessonsName[] lessonsNames = ActivityGlobal.LessonsName.values();
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     public AdapterMainActivity(Context context, String[] titlesArray, boolean[] isCheckArray, MainActivity mainActivity) {
         this.context = context;
         this.titlesArray = titlesArray;
         this.isCheckArray = isCheckArray;
         this.mainActivity = mainActivity;
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        editor = preferences.edit();
     }
 
     @NonNull
@@ -46,6 +53,13 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(titlesArray[position]);
         holder.checkBox.setChecked(isCheckArray[position]);
+
+        if (isCheckArray[position]){
+            holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+        }else{
+            holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        }
+
         if(position == 0){
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
         }else if(position == titlesArray.length - 1){
@@ -59,15 +73,16 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                if(isChecked) {
-//todo
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                editor.putBoolean(lessonsNames[position].name(), isChecked);
+                editor.apply();
 
+                if(isChecked) {
+                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 }
                 else {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-
                 }
+
             }
         });
 
