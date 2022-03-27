@@ -56,7 +56,7 @@ public class MainActivity extends ActivityGlobal {
         recyclerView.setLayoutManager(linearLayoutManager);
         RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(ContextCompat.getDrawable(context, R.drawable.divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
-
+        recyclerView.setNestedScrollingEnabled(false);
     }
 
     private void setAdapterFor_recyclerView_levels() {

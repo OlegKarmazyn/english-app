@@ -36,9 +36,9 @@ public class EnglishLevel extends ActivityGlobal {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
+
         recyclerView = findViewById(R.id.recycleView);
         showActionBar(true,"rgevfuhahniku");
-        getSupportActionBar().setShowHideAnimationEnabled(false);
 
         level = getIntent().getSerializableExtra(String.valueOf(KeysExtra.level));
         try {
@@ -62,6 +62,7 @@ public class EnglishLevel extends ActivityGlobal {
         recyclerView.addItemDecoration(dividerItemDecoration);
         RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
         recyclerView.setAdapter(recycleAdapter);
+        recyclerView.setNestedScrollingEnabled(false);
     }
 
     @Override
