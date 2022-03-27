@@ -54,6 +54,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(name_topic[position]);
+        holder.checkBox.setChecked(key_topics[position]);
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -80,13 +81,14 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
+                intent.putExtra("title", name_topic[position]);
 
                 if(position == 0){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_top_row));
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row));
                 }else if(position == name_topic.length - 1){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_bottom_row));
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row));
                 }else{
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_middle_row));
+                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row));
                 }
 
                 context.startActivity(intent);
@@ -94,11 +96,6 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
             }
         });
 
-        if (key_topics[position]) {
-            holder.checkBox.setChecked(true);
-        }else {
-            holder.checkBox.setChecked(false);
-        }
     }
 
     @Override

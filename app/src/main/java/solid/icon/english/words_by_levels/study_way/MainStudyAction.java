@@ -1,5 +1,6 @@
 package solid.icon.english.words_by_levels.study_way;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,8 +34,10 @@ public class MainStudyAction extends ActivityGlobal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_study_action);
 
-        what_level = getIntent().getSerializableExtra(String.valueOf(KeysExtra.level));
-        num_of_topic = getIntent().getIntExtra(String.valueOf(KeysExtra.num_of_topic), 0);
+        Intent intent = getIntent();
+        what_level = intent.getSerializableExtra(String.valueOf(KeysExtra.level));
+        num_of_topic = intent.getIntExtra(String.valueOf(KeysExtra.num_of_topic), 0);
+        showActionBar(true, intent.getStringExtra("title"));
 
         tabLayout = findViewById(R.id.tab_layout_example);
         pager2 = findViewById(R.id.viewPager);

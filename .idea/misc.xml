@@ -3,12 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/English/app/src/main/res/drawable/clicked_bottom_row.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/clicked_middle_row.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/clicked_middle_row_no.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/clicked_top_row.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/drawable/divider.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/middle_row.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/not_clicked_top_row.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/drawable/recyclerview_divider.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/rounded_bottom_row.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/drawable/rounded_bottom_row_.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/drawable/rounded_middle_row.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/drawable/rounded_table.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/drawable/rounded_table_clicked.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/row_bottom.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/row_middle.xml" value="0.3828125" />
+        <entry key="..\:/English/app/src/main/res/drawable/top_row.xml" value="0.3828125" />
         <entry key="..\:/English/app/src/main/res/layout/activity_main.xml" value="0.22509057971014493" />
         <entry key="..\:/English/app/src/main/res/layout/fragment_definition.xml" value="0.22509057971014493" />
         <entry key="..\:/English/app/src/main/res/layout/fragment_learn.xml" value="0.17831813576494426" />

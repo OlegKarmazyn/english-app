@@ -24,15 +24,13 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
 
     Context context;
     String[] titlesArray;
-    String[] keysArray;
-    String[] checkingArray;
+    boolean[] isCheckArray;
     MainActivity mainActivity;
 
-    public AdapterMainActivity(Context context, String[] titlesArray, String[] keysArray, String[] checkingArray, MainActivity mainActivity) {
+    public AdapterMainActivity(Context context, String[] titlesArray, boolean[] isCheckArray, MainActivity mainActivity) {
         this.context = context;
         this.titlesArray = titlesArray;
-        this.keysArray = keysArray;
-        this.checkingArray = checkingArray;
+        this.isCheckArray = isCheckArray;
         this.mainActivity = mainActivity;
     }
 
@@ -47,13 +45,22 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(titlesArray[position]);
+        holder.checkBox.setChecked(isCheckArray[position]);
+        if(position == 0){
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
+        }else if(position == titlesArray.length - 1){
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
+        }else{
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
+        }
+
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 if(isChecked) {
-                    Log.d("Recycle", "b1_checkBox_1 - onCheckedChanged - if - true");
+//todo
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
                 }
@@ -76,14 +83,6 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
                     intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B2);
                 }
                 Log.e("position = ", String.valueOf(position));
-
-                if(position == 0){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_top_row));
-                }else if(position == titlesArray.length - 1){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_bottom_row));
-                }else{
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.rounded_middle_row));
-                }
 
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);

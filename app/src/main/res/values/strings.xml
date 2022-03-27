@@ -1,4 +1,12 @@
 <resources>
+
+    <string-array name="lessonNames">
+        <item>Pre-Intermediate</item>
+        <item>Intermediate</item>
+        <item>Upper-Intermediate</item>
+    </string-array>
+
+
     <string name="app_name">English</string>
     <string name="a2_tema_0">00 Вводный урок</string>
     <string name="a2_tema_1">01 Friends</string>
