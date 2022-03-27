@@ -51,10 +51,15 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         return new MyViewHolder(view);
     }
 
+    ConstraintLayout last_layout;
+    boolean isLast = false;
+    int last_position;
+
     @Override
     public void onBindViewHolder(@NonNull @NotNull RecycleAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(name_topic[position]);
         holder.checkBox.setChecked(key_topics[position]);
+        Log.d("position", "is " + position);
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -77,7 +82,19 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                holder.cardView.setBackgroundColor(R.color.colorLightBlue);
+                if(isLast) {
+                    if(last_position == 0){
+                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row_no));
+                    }else if(last_position == name_topic.length - 1){
+                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row_no));
+                    }else{
+                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row_no));
+                    }
+                }
+                isLast = true;
+                last_layout = holder.constraintLayout;
+                last_position = position;
+
                 Intent intent = new Intent(context, MainStudyAction.class);
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
                 intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
