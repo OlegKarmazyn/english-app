@@ -10,8 +10,8 @@
     <color name="back">#FF9140</color>
     <color name="back_topic">#FF7640</color>
 
-    <color name="back_true">#CC83FF00</color>
-    <color name="back_false">#CCFF0600</color>
+    <color name="back_true">#1A83FF00</color>
+    <color name="back_false">#1AFF0600</color>
 
 
     <color name="orange">#FFEB3B</color>

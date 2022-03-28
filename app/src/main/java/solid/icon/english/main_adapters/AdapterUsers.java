@@ -3,25 +3,29 @@ package solid.icon.english.main_adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
+import solid.icon.english.user_line.UserLevel;
 
 public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder> {
 
@@ -29,14 +33,15 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     String[] titlesArray;
     boolean[] isCheckArray;
     MainActivity mainActivity;
-    private ActivityGlobal.LessonsName[] lessonsNames = ActivityGlobal.LessonsName.values();
     int size;
+    TopicModelDao topicModelDao;
 
     public AdapterUsers(Context context, String[] titlesArray, MainActivity mainActivity) {
         this.context = context;
         this.titlesArray = titlesArray;
         this.mainActivity = mainActivity;
         getIsCheckArray();
+        topicModelDao = App.getInstance().getDatabase().topicModelDao();
     }
 
     private void getIsCheckArray(){
@@ -85,6 +90,12 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             holder.title.setVisibility(View.GONE);
             holder.checkBox.setVisibility(View.GONE);
 
+            holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                }
+            });
         }
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -98,23 +109,23 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 }
             }
         });
+
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addNewTopic();
-                mainActivity.setDataToUserAdapter();
+                if(position != size){
+
+                    Intent intent = new Intent(context, UserLevel.class);
+                    context.startActivity(intent);
+                    mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+
+                }else{
+                    showAddDialog();
+                }
             }
         });
 
 
-    }
-
-    private void addNewTopic(){
-        TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
-        TopicModel topicModel = new TopicModel();
-        topicModel.topicsName = "topic 1";
-        topicModel.subTopicsName1 = "subTopics";
-        topicModelDao.insert(topicModel);
     }
 
     @Override
@@ -122,6 +133,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         size = titlesArray.length;
         return size + 1;
     }
+
+    //---------------------------------------MyViewHolder---------------------------------------//
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -137,5 +150,37 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             add_topic = itemView.findViewById(R.id.add_topic);
             constraintLayout = itemView.findViewById(R.id.constraintLayout);
         }
+    }
+
+    //-----------------------------------------dialogs-----------------------------------------//
+
+    private void showAddDialog(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        final EditText edittext = new EditText(context);
+        alert.setTitle("Do you want to add topic?");
+        alert.setMessage("Enter name for topic");
+
+        alert.setView(edittext);
+
+        alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                String editText = edittext.getText().toString();
+
+                TopicModel topicModel = new TopicModel();
+                topicModel.topicsName = editText;
+                topicModel.subTopicsName1 = "subTopics";
+                topicModelDao.insert(topicModel);
+
+                mainActivity.setDataToUserAdapter();
+            }
+        });
+
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+
+        alert.show();
     }
 }

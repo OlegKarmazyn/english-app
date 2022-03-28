@@ -282,25 +282,25 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
 
     private void set_all_back_to_lin(){
         int k = 0;
-        setBackgraund_to_lin(lin_1, k); k++;
-        setBackgraund_to_lin(lin_2, k); k++;
-        setBackgraund_to_lin(lin_3, k); k++;
-        setBackgraund_to_lin(lin_4, k); k++;
-        setBackgraund_to_lin(lin_5, k); k++;
-        setBackgraund_to_lin(lin_6, k); k++;
-        setBackgraund_to_lin(lin_7, k); k++;
-        setBackgraund_to_lin(lin_8, k); k++;
-        setBackgraund_to_lin(lin_9, k); k++;
-        setBackgraund_to_lin(lin_10, k); k++;
-        setBackgraund_to_lin(lin_11, k); k++;
-        setBackgraund_to_lin(lin_12, k); k++;
-        setBackgraund_to_lin(lin_13, k); k++;
-        setBackgraund_to_lin(lin_14, k); k++;
-        setBackgraund_to_lin(lin_15, k); k++;
+        setBackground_to_lin(lin_1, k); k++;
+        setBackground_to_lin(lin_2, k); k++;
+        setBackground_to_lin(lin_3, k); k++;
+        setBackground_to_lin(lin_4, k); k++;
+        setBackground_to_lin(lin_5, k); k++;
+        setBackground_to_lin(lin_6, k); k++;
+        setBackground_to_lin(lin_7, k); k++;
+        setBackground_to_lin(lin_8, k); k++;
+        setBackground_to_lin(lin_9, k); k++;
+        setBackground_to_lin(lin_10, k); k++;
+        setBackground_to_lin(lin_11, k); k++;
+        setBackground_to_lin(lin_12, k); k++;
+        setBackground_to_lin(lin_13, k); k++;
+        setBackground_to_lin(lin_14, k); k++;
+        setBackground_to_lin(lin_15, k); k++;
     }
 
     @SuppressLint("ResourceAsColor")
-    private void setBackgraund_to_lin(LinearLayout lin, int k){
+    private void setBackground_to_lin(LinearLayout lin, int k){
         //System.out.println(k + " " + " " +isRight[k]);
         if (isRight[k]){
             lin.setBackgroundResource(R.color.back_true);

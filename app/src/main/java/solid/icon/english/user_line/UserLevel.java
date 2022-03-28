@@ -1,6 +1,5 @@
-package solid.icon.english.words_by_levels.universal_topic_level;
+package solid.icon.english.user_line;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,15 +17,14 @@ import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.DividerItemDecorator;
 
-public class EnglishLevel extends ActivityGlobal {
+public class UserLevel extends ActivityGlobal {
 
     RecyclerView recyclerView;
     String name_topic [];
-    LessonsName level;
-    boolean[] key_topics = new boolean[51];
+    String level;
+    boolean[] key_topics = new boolean[10];
     final Context context = this;
 
-    @SuppressLint("RestrictedApi")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,21 +32,9 @@ public class EnglishLevel extends ActivityGlobal {
 
         recyclerView = findViewById(R.id.recycleView);
 
-        level = (LessonsName) getIntent().getSerializableExtra(String.valueOf(KeysExtra.level));
+        level = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
 
-        try {
-            String[] lessonNames = getResources().getStringArray(R.array.lessonNames);
-            if (level == LessonsName.A2) {
-                name_topic = getResources().getStringArray(R.array.topics_name_a2);
-                showActionBar(true, lessonNames[0]);
-            } else if (level == LessonsName.B1) {
-                name_topic = getResources().getStringArray(R.array.topics_name_b1);
-                showActionBar(true, lessonNames[1]);
-            }  else if (level == LessonsName.B2) {
-                name_topic = getResources().getStringArray(R.array.topics_name_b2);
-                showActionBar(true, lessonNames[2]);
-            }
-        } catch (Exception e){/*empty*/}
+        //todo name_topic
 
         goDateBack();
         setAdapter();
@@ -60,15 +46,15 @@ public class EnglishLevel extends ActivityGlobal {
         recyclerView.setLayoutManager(linearLayoutManager);
         RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(ContextCompat.getDrawable(context, R.drawable.divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
-        RecycleAdapter recycleAdapter = new RecycleAdapter(context, name_topic, key_topics, EnglishLevel.this);
-        recyclerView.setAdapter(recycleAdapter);
+        UserAdapter userAdapter = new UserAdapter(context, name_topic, key_topics, UserLevel.this);
+        recyclerView.setAdapter(userAdapter);
         recyclerView.setNestedScrollingEnabled(false);
     }
 
     public boolean[] goDateBack(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         for(int i = 0; i < key_topics.length; i++){
-            String mod_key = level.name() + i;
+            String mod_key = level + i;
             key_topics[i] = preferences.getBoolean(mod_key, false);
             Log.d("goDateBack", "key_topics[" + i + "]" + key_topics[i]);
         }

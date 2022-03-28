@@ -15,6 +15,9 @@ public class TopicModel {
     public String topicsName;
 
     @ColumnInfo
+    public boolean isCheck;
+
+    @ColumnInfo
     public String subTopicsName0;
 
     @ColumnInfo
