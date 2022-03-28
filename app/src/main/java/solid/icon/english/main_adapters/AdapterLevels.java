@@ -1,4 +1,4 @@
-package solid.icon.english;
+package solid.icon.english.main_adapters;
 
 
 import android.annotation.SuppressLint;
@@ -19,10 +19,12 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import solid.icon.english.MainActivity;
+import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
-public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivity.MyViewHolder> {
+public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHolder> {
 
     Context context;
     String[] titlesArray;
@@ -32,7 +34,7 @@ public class AdapterMainActivity extends RecyclerView.Adapter<AdapterMainActivit
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
-    public AdapterMainActivity(Context context, String[] titlesArray, boolean[] isCheckArray, MainActivity mainActivity) {
+    public AdapterLevels(Context context, String[] titlesArray, boolean[] isCheckArray, MainActivity mainActivity) {
         this.context = context;
         this.titlesArray = titlesArray;
         this.isCheckArray = isCheckArray;

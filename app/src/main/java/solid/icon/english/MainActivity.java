@@ -11,15 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.main_adapters.AdapterLevels;
 
 public class MainActivity extends ActivityGlobal {
 
     private Context context = this;
 
-    private RecyclerView recyclerView_levels, recyclerView_your;
+    private RecyclerView recyclerView_levels, recyclerView_user;
 
     private String[] levels_titlesArray,
-                    your_titlesArray;
+                    users_titlesArray;
     private boolean[] isCheckArray;
     private LessonsName[] lessonsNames = LessonsName.values();
 
@@ -30,7 +31,7 @@ public class MainActivity extends ActivityGlobal {
         showActionBar(false, "");
 
         recyclerView_levels = findViewById(R.id.recycleView_levels);
-        recyclerView_your = findViewById(R.id.recycleView_your);
+        recyclerView_user = findViewById(R.id.recycleView_user);
 
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
@@ -62,12 +63,12 @@ public class MainActivity extends ActivityGlobal {
     }
 
     private void setAdapterFor_recyclerView_levels() {
-        AdapterMainActivity adapterMainActivity = new AdapterMainActivity(context, levels_titlesArray, isCheckArray, MainActivity.this);
-        recyclerView_levels.setAdapter(adapterMainActivity);
+        AdapterLevels adapterLevels = new AdapterLevels(context, levels_titlesArray, isCheckArray, MainActivity.this);
+        recyclerView_levels.setAdapter(adapterLevels);
     }
 
-    private void setAdapterFor_recyclerView_your() {
-        AdapterMainActivity adapterMainActivity = new AdapterMainActivity(context, your_titlesArray, isCheckArray, MainActivity.this);
-        recyclerView_your.setAdapter(adapterMainActivity);
+    private void setAdapterFor_recyclerView_user() {
+        AdapterLevels adapterLevels = new AdapterLevels(context, users_titlesArray, isCheckArray, MainActivity.this);
+        recyclerView_user.setAdapter(adapterLevels);
     }
 }
