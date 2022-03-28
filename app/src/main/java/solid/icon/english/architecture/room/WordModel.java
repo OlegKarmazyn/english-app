@@ -6,19 +6,25 @@ import androidx.room.PrimaryKey;
 
 
 @Entity
-public class PersonLife {
+public class WordModel {
 
     @PrimaryKey(autoGenerate = true)
     public long id;
 
     @ColumnInfo
-    public String nameActive;
+    public String topicsName;
 
     @ColumnInfo
-    public String date;
+    public String subTopicsName;
 
     @ColumnInfo
-    public int days;
+    public String englishWord;
+
+    @ColumnInfo
+    public String rusWord;
+
+    @ColumnInfo
+    public String definition;
 
 }
 
