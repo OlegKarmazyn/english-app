@@ -34,13 +34,22 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
-    public AdapterUsers(Context context, String[] titlesArray, boolean[] isCheckArray, MainActivity mainActivity) {
+    public AdapterUsers(Context context, String[] titlesArray, MainActivity mainActivity) {
         this.context = context;
         this.titlesArray = titlesArray;
-        this.isCheckArray = isCheckArray;
         this.mainActivity = mainActivity;
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         editor = preferences.edit();
+        getIsCheckArray();
+    }
+
+    private void getIsCheckArray(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
+        boolean[] isCheckArray = new boolean[lessonsNames.length];
+        for (int i = 0; i < lessonsNames.length; i++) {
+            isCheckArray[i] = sharedPreferences.getBoolean(lessonsNames[i].name(), false);
+        }
+        this.isCheckArray = isCheckArray;
     }
 
     @NonNull
