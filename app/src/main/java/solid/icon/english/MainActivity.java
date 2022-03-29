@@ -39,6 +39,8 @@ public class MainActivity extends ActivityGlobal {
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
         fullRecycleView();
+
+        Log.e(TAG, "efrwasrewgergreg");
     }
     //----------------method for RecyclerView--------------------------------// start
 

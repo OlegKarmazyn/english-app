@@ -114,6 +114,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 if(position != size){
 
                     Intent intent = new Intent(context, UserLevel.class);
+                    intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
                     intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
                     context.startActivity(intent);
                     mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);

@@ -28,14 +28,20 @@ public class UserLevel extends ActivityGlobal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
 
-        recyclerView = findViewById(R.id.recycleView);
-
         level = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
 
-        //todo name_topic
+        showActionBar(true, level);
+
+        recyclerView = findViewById(R.id.recycleView);
+
+        getNameTopic();
 
         goDateBack();
         setAdapter();
+    }
+
+    private void getNameTopic(){
+
     }
 
 
