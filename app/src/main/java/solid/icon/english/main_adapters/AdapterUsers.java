@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.room.App;
@@ -28,6 +31,8 @@ import solid.icon.english.architecture.room.TopicModelDao;
 import solid.icon.english.user_line.UserLevel;
 
 public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder> {
+
+    String TAG = "AdapterUsers";
 
     Context context;
     String[] titlesArray;
@@ -40,19 +45,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         this.context = context;
         this.titlesArray = titlesArray;
         this.mainActivity = mainActivity;
-        getIsCheckArray();
         topicModelDao = App.getInstance().getDatabase().topicModelDao();
+
+        getIsCheckArray(); // last after init
     }
-
-    private void getIsCheckArray(){
-        isCheckArray = new boolean[titlesArray.length];
-        //todo
-        for (int i = 0; i < isCheckArray.length; i++) {
-            isCheckArray[i] = false;
-        }
-    }
-
-
 
     @NonNull
     @Override
@@ -64,6 +60,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
+
+        /*------------------------------settings------------------------------*/
 
         if(position != size){
 
@@ -89,19 +87,18 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             holder.add_topic.setVisibility(View.VISIBLE);
             holder.title.setVisibility(View.GONE);
             holder.checkBox.setVisibility(View.GONE);
-
-            holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
+
+        /*------------------------------components------------------------------*/
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                //todo
+
+                TopicModel topicModel = topicModelDao.getById(position + 1);
+                topicModel.isCheck = isChecked;
+                topicModelDao.update(topicModel);
+
                 if (isChecked) {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                 } else {
@@ -125,7 +122,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
         });
 
-
     }
 
     @Override
@@ -134,7 +130,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         return size + 1;
     }
 
-    //---------------------------------------MyViewHolder---------------------------------------//
+    /*---------------------------------------MyViewHolder---------------------------------------*/
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -152,9 +148,21 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         }
     }
 
-    //-----------------------------------------dialogs-----------------------------------------//
+    /*-----------------------------------------getIsCheckArray--------------------------------*/
 
-    private void showAddDialog(){
+    private void getIsCheckArray(){
+        isCheckArray = new boolean[titlesArray.length];
+        List<TopicModel> topicModelList = topicModelDao.getAll();
+
+        for (int i = 0, len = titlesArray.length; i < len; i++) {
+            isCheckArray[i] = topicModelList.get(i).isCheck;
+            Log.d(TAG, "isCheckArray[" + i + "] = " + isCheckArray[i]);
+        }
+    }
+
+    /*-----------------------------------------dialogs-----------------------------------------*/
+
+     public void showAddDialog(){
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         final EditText edittext = new EditText(context);
         alert.setTitle("Do you want to add topic?");
