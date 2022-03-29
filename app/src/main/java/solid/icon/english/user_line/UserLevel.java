@@ -1,10 +1,7 @@
 package solid.icon.english.user_line;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -14,19 +11,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.room.App;
+import solid.icon.english.architecture.room.TopicModel;
+import solid.icon.english.architecture.room.TopicModelDao;
 
 public class UserLevel extends ActivityGlobal {
 
+    int size = 10;
+
     RecyclerView recyclerView;
-    String name_topic [];
+    String name_topic [] = new String[size];
     String level;
-    boolean[] key_topics = new boolean[10];
+    boolean[] key_topics = new boolean[size];
     final Context context = this;
+    TopicModelDao topicModelDao;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
+
+        topicModelDao = App.getInstance().getDatabase().topicModelDao();
 
         level = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
 
@@ -36,11 +41,22 @@ public class UserLevel extends ActivityGlobal {
 
         getNameTopic();
 
-        goDateBack();
         setAdapter();
     }
 
     private void getNameTopic(){
+        TopicModel topicModel = topicModelDao.getByTopicsName(level);
+
+        name_topic[0] = topicModel.subTopicsName0;
+        name_topic[1] = topicModel.subTopicsName1;
+        name_topic[2] = topicModel.subTopicsName2;
+        name_topic[3] = topicModel.subTopicsName3;
+        name_topic[4] = topicModel.subTopicsName4;
+        name_topic[5] = topicModel.subTopicsName5;
+        name_topic[6] = topicModel.subTopicsName6;
+        name_topic[7] = topicModel.subTopicsName7;
+        name_topic[8] = topicModel.subTopicsName8;
+        name_topic[9] = topicModel.subTopicsName9;
 
     }
 
@@ -50,19 +66,14 @@ public class UserLevel extends ActivityGlobal {
         recyclerView.setLayoutManager(linearLayoutManager);
         RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(ContextCompat.getDrawable(context, R.drawable.divider));
         recyclerView.addItemDecoration(dividerItemDecoration);
-        UserAdapter userAdapter = new UserAdapter(context, name_topic, key_topics, UserLevel.this);
-        recyclerView.setAdapter(userAdapter);
         recyclerView.setNestedScrollingEnabled(false);
+
+        setDataToUserAdapter();
     }
 
-    public boolean[] goDateBack(){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        for(int i = 0; i < key_topics.length; i++){
-            String mod_key = level + i;
-            key_topics[i] = preferences.getBoolean(mod_key, false);
-            Log.d("goDateBack", "key_topics[" + i + "]" + key_topics[i]);
-        }
-
-        return key_topics;
+    public void setDataToUserAdapter(){
+        UserAdapter userAdapter = new UserAdapter(context, name_topic, UserLevel.this);
+        recyclerView.setAdapter(userAdapter);
     }
+
 }

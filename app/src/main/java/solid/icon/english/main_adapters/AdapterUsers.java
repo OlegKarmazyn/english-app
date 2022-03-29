@@ -180,7 +180,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
                 TopicModel topicModel = new TopicModel();
                 topicModel.topicsName = editText;
-                topicModel.subTopicsName1 = "subTopics";
                 topicModelDao.insert(topicModel);
 
                 mainActivity.setDataToUserAdapter();

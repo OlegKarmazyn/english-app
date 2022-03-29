@@ -18,7 +18,7 @@ public interface TopicModelDao {
     TopicModel getById(long id);
 
     @Query("SELECT * FROM TopicModel WHERE topicsName = :topicsName")
-    List<TopicModel> getAllByTopicsName(String topicsName);
+    TopicModel getByTopicsName(String topicsName);
 
     @Insert
     void insert(TopicModel TopicModel);

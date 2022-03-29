@@ -2,6 +2,7 @@ package solid.icon.english.user_line;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
@@ -12,75 +13,95 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.jetbrains.annotations.NotNull;
-
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
-import solid.icon.english.words_by_levels.study_way.MainStudyAction;
+import solid.icon.english.architecture.room.App;
+import solid.icon.english.architecture.room.TopicModel;
+import solid.icon.english.architecture.room.TopicModelDao;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
 
-    private Context context;
-    private String[] name_topic;
-    private boolean[] key_topics;
-    private UserLevel englishLevel;
-    SharedPreferences preferences;
-    SharedPreferences.Editor editor;
-    int size;
+    String TAG = "AdapterUsers";
 
-    public UserAdapter(Context context, String[] name_topic, boolean [] key_topics, UserLevel englishLevel) {
+    Context context;
+    String[] titlesArray;
+    boolean[] isCheckArray;
+    UserLevel userLevel;
+    int size;
+    TopicModelDao topicModelDao;
+
+    public UserAdapter(Context context, String[] titlesArray, UserLevel userLevel) {
         this.context = context;
-        this.name_topic = name_topic;
-        this.key_topics = key_topics;
-        this.englishLevel = englishLevel;
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        editor = preferences.edit();
+        this.titlesArray = titlesArray;
+        this.userLevel = userLevel;
+        topicModelDao = App.getInstance().getDatabase().topicModelDao();
+
+        size = titlesArray.length;
+        getIsCheckArray(); // last after init
     }
 
     @NonNull
-    @NotNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
+    public UserAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
-        return new MyViewHolder(view);
+        View view = inflater.inflate(R.layout.my_row_custom, parent, false);
+        return new UserAdapter.MyViewHolder(view);
     }
 
-    ConstraintLayout last_layout;
-    boolean isLast = false;
-    int last_position;
-
     @Override
-    public void onBindViewHolder(@NonNull @NotNull UserAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
-        holder.title.setText(name_topic[position]);
-        holder.checkBox.setChecked(key_topics[position]);
+    public void onBindViewHolder(@NonNull UserAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        if (key_topics[position]){
-            holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }else{
-            holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+        /*------------------------------settings------------------------------*/
+
+        if(position != size){
+
+            holder.title.setText(titlesArray[position]);
+            holder.checkBox.setChecked(isCheckArray[position]);
+
+            if (position == 0) {
+                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
+            } else if (position == titlesArray.length - 1) {
+                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
+            } else {
+                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
+            }
+
+            if (isCheckArray[position]) {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            }
+
+        }else {
+
+            holder.add_topic.setVisibility(View.VISIBLE);
+            holder.title.setVisibility(View.GONE);
+            holder.checkBox.setVisibility(View.GONE);
         }
+
+        /*------------------------------components------------------------------*/
 
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String mod_key = String.valueOf(englishLevel.level) + position;
-                Log.e("onBindViewHolder", mod_key + " - " + isChecked);
-                if(isChecked) {
+
+                TopicModel topicModel = topicModelDao.getById(position + 1);
+                topicModel.isCheck = isChecked;
+                topicModelDao.update(topicModel);
+
+                if (isChecked) {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    editor.putBoolean(mod_key, isChecked);
-                    editor.apply();
-                }
-                else {
+                } else {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                    editor.putBoolean(mod_key, isChecked);
-                    editor.apply();
                 }
             }
         });
@@ -88,34 +109,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isLast) {
-                    if(last_position == 0){
-                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row_no));
-                    }else if(last_position == name_topic.length - 1){
-                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row_no));
-                    }else{
-                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row_no));
-                    }
-                }
-                isLast = true;
-                last_layout = holder.constraintLayout;
-                last_position = position;
+                if(position != size){
 
-                Intent intent = new Intent(context, MainStudyAction.class);
-                intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
-                intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
-                intent.putExtra("title", name_topic[position]);
+                    Intent intent = new Intent(context, UserLevel.class);
+                    intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
+                    intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
+                    context.startActivity(intent);
+                    userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
-                if(position == 0){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row));
-                }else if(position == name_topic.length - 1){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row));
                 }else{
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row));
+                    showAddDialog(position);
                 }
-
-                context.startActivity(intent);
-                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
             }
         });
 
@@ -123,19 +127,79 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        size = name_topic.length;
         return size + 1;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    /*---------------------------------------MyViewHolder---------------------------------------*/
 
-        TextView title; CheckBox checkBox; ConstraintLayout constraintLayout;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView title;
+        CheckBox checkBox;
+        ImageView add_topic;
+        ConstraintLayout constraintLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.title);
             checkBox = itemView.findViewById(R.id.checkBox);
+            add_topic = itemView.findViewById(R.id.add_topic);
             constraintLayout = itemView.findViewById(R.id.constraintLayout);
         }
+    }
+
+    /*-----------------------------------------getIsCheckArray--------------------------------*/
+
+    public void getIsCheckArray(){
+        isCheckArray = new boolean[size];
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        for(int i = 0; i < 10; i++){
+            String mod_key = userLevel.level + i;
+            isCheckArray[i] = preferences.getBoolean(mod_key, false);
+            Log.d(TAG, "key_topics[" + i + "]" + isCheckArray[i]);
+        }
+    }
+
+    /*-----------------------------------------dialogs-----------------------------------------*/
+
+    public void showAddDialog(int position){
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        final EditText edittext = new EditText(context);
+        alert.setTitle("Do you want to add topic?");
+        alert.setMessage("Enter name for topic");
+
+        alert.setView(edittext);
+
+        alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                String editText = edittext.getText().toString();
+
+                TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
+
+                switch (position) {
+                    case 0: topicModel.subTopicsName0 = editText;
+                    case 1: topicModel.subTopicsName1 = editText;
+                    case 2: topicModel.subTopicsName2 = editText;
+                    case 3: topicModel.subTopicsName3 = editText;
+                    case 4: topicModel.subTopicsName4 = editText;
+                    case 5: topicModel.subTopicsName5 = editText;
+                    case 6: topicModel.subTopicsName6 = editText;
+                    case 7: topicModel.subTopicsName7 = editText;
+                    case 8: topicModel.subTopicsName8 = editText;
+                    case 9: topicModel.subTopicsName9 = editText;
+                }
+                topicModelDao.update(topicModel);
+
+                userLevel.setDataToUserAdapter();
+            }
+        });
+
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+
+        alert.show();
     }
 }
