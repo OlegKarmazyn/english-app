@@ -39,13 +39,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     int size;
     TopicModelDao topicModelDao;
 
-    public UserAdapter(Context context, String[] titlesArray, UserLevel userLevel) {
+    public UserAdapter(Context context, String[] titlesArray, int size, UserLevel userLevel) {
         this.context = context;
         this.titlesArray = titlesArray;
         this.userLevel = userLevel;
         topicModelDao = App.getInstance().getDatabase().topicModelDao();
+        this.size = size;
 
-        size = titlesArray.length;
         getIsCheckArray(); // last after init
     }
 
@@ -94,9 +94,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                TopicModel topicModel = topicModelDao.getById(position + 1);
-                topicModel.isCheck = isChecked;
-                topicModelDao.update(topicModel);
+                //todo check shared pref
 
                 if (isChecked) {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -153,7 +151,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public void getIsCheckArray(){
         isCheckArray = new boolean[size];
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < size; i++){
             String mod_key = userLevel.level + i;
             isCheckArray[i] = preferences.getBoolean(mod_key, false);
             Log.d(TAG, "key_topics[" + i + "]" + isCheckArray[i]);
@@ -178,16 +176,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
 
                 switch (position) {
-                    case 0: topicModel.subTopicsName0 = editText;
-                    case 1: topicModel.subTopicsName1 = editText;
-                    case 2: topicModel.subTopicsName2 = editText;
-                    case 3: topicModel.subTopicsName3 = editText;
-                    case 4: topicModel.subTopicsName4 = editText;
-                    case 5: topicModel.subTopicsName5 = editText;
-                    case 6: topicModel.subTopicsName6 = editText;
-                    case 7: topicModel.subTopicsName7 = editText;
-                    case 8: topicModel.subTopicsName8 = editText;
-                    case 9: topicModel.subTopicsName9 = editText;
+                    case 0: topicModel.subTopicsName0 = editText; break;
+                    case 1: topicModel.subTopicsName1 = editText; break;
+                    case 2: topicModel.subTopicsName2 = editText; break;
+                    case 3: topicModel.subTopicsName3 = editText; break;
+                    case 4: topicModel.subTopicsName4 = editText; break;
+                    case 5: topicModel.subTopicsName5 = editText; break;
+                    case 6: topicModel.subTopicsName6 = editText; break;
+                    case 7: topicModel.subTopicsName7 = editText; break;
+                    case 8: topicModel.subTopicsName8 = editText; break;
+                    case 9: topicModel.subTopicsName9 = editText; break;
                 }
                 topicModelDao.update(topicModel);
 

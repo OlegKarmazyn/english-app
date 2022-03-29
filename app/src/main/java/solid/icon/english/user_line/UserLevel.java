@@ -2,6 +2,7 @@ package solid.icon.english.user_line;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -17,12 +18,11 @@ import solid.icon.english.architecture.room.TopicModelDao;
 
 public class UserLevel extends ActivityGlobal {
 
-    int size = 10;
+    int size = 0;
 
     RecyclerView recyclerView;
-    String name_topic [] = new String[size];
+    String name_topic [] = new String[10]; //here number of subTopics !!!!!!!!!!!
     String level;
-    boolean[] key_topics = new boolean[size];
     final Context context = this;
     TopicModelDao topicModelDao;
 
@@ -38,8 +38,6 @@ public class UserLevel extends ActivityGlobal {
         showActionBar(true, level);
 
         recyclerView = findViewById(R.id.recycleView);
-
-        getNameTopic();
 
         setAdapter();
     }
@@ -58,6 +56,14 @@ public class UserLevel extends ActivityGlobal {
         name_topic[8] = topicModel.subTopicsName8;
         name_topic[9] = topicModel.subTopicsName9;
 
+        for (String s: name_topic) {
+            if (s != null){
+                size++;
+            }
+        }
+
+        Log.d(TAG, "size = " + size);
+
     }
 
 
@@ -72,8 +78,14 @@ public class UserLevel extends ActivityGlobal {
     }
 
     public void setDataToUserAdapter(){
-        UserAdapter userAdapter = new UserAdapter(context, name_topic, UserLevel.this);
+        getNameTopic();
+
+        recyclerView.setAlpha(0f);
+
+        UserAdapter userAdapter = new UserAdapter(context, name_topic, size, UserLevel.this);
         recyclerView.setAdapter(userAdapter);
+
+        recyclerView.animate().alpha(1f);
     }
 
 }
