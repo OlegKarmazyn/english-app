@@ -1,9 +1,13 @@
 package solid.icon.english.architecture;
 
 import android.content.Context;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import solid.icon.english.R;
 
 public abstract class ActivityGlobal extends AppCompatActivity {
 
@@ -28,6 +32,26 @@ public abstract class ActivityGlobal extends AppCompatActivity {
             actionBar.hide();
         }
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        this.finish();
+        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
     }
 }
 

@@ -89,5 +89,8 @@ public class MainActivity extends ActivityGlobal {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        //todo like in zno app
+    }
 }

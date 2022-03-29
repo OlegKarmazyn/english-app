@@ -25,6 +25,7 @@ import java.util.List;
 
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
+import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
@@ -113,6 +114,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 if(position != size){
 
                     Intent intent = new Intent(context, UserLevel.class);
+                    intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
                     context.startActivity(intent);
                     mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 

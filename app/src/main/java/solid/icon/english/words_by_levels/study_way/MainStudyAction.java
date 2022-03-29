@@ -119,11 +119,4 @@ public class MainStudyAction extends ActivityGlobal {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    @Override
-    public void onBackPressed() {
-//        startActivity(new Intent(this, EnglishLevel.class));
-        this.finish();
-        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
-    }
 }
