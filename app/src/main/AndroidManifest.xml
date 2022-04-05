@@ -24,6 +24,7 @@
         <activity android:name=".words_by_levels.universal_topic_level.EnglishLevel" android:screenOrientation="portrait"/>
         <activity android:name=".words_by_levels.study_way.MainStudyAction" android:screenOrientation="portrait"/>
         <activity android:name=".user_line.UserLevel" android:screenOrientation="portrait"/>
+        <activity android:name=".user_line.studying.StudyActivity" android:screenOrientation="portrait"/>
 
     </application>
 

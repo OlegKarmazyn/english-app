@@ -27,6 +27,7 @@ import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
+import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
 
@@ -117,9 +118,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             public void onClick(View v) {
                 if(position != size){
 
-                    Intent intent = new Intent(context, UserLevel.class);
-                    intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
-                    intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
+                    Intent intent = new Intent(context, StudyActivity.class);
+                    intent.putExtra(ActivityGlobal.KeysExtra.level.name(), userLevel.level); //topics
+                    intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position); //position
+                    intent.putExtra(ActivityGlobal.KeysExtra.title.name(), holder.title.getText()); //title (subTopics)
                     context.startActivity(intent);
                     userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
