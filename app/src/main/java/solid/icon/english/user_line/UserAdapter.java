@@ -38,6 +38,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     UserLevel userLevel;
     int size;
     TopicModelDao topicModelDao;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     public UserAdapter(Context context, String[] titlesArray, int size, UserLevel userLevel) {
         this.context = context;
@@ -45,6 +47,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         this.userLevel = userLevel;
         topicModelDao = App.getInstance().getDatabase().topicModelDao();
         this.size = size;
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        editor = preferences.edit();
 
         getIsCheckArray(); // last after init
     }
@@ -94,7 +99,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
-                //todo check shared pref
+                editor.putBoolean(userLevel.level + position, isChecked);
+                editor.apply();
+
+                Log.d("holder.checkBox", userLevel.level + position);
 
                 if (isChecked) {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -150,7 +158,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     public void getIsCheckArray(){
         isCheckArray = new boolean[size];
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         for(int i = 0; i < size; i++){
             String mod_key = userLevel.level + i;
             isCheckArray[i] = preferences.getBoolean(mod_key, false);
