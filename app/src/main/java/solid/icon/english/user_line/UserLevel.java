@@ -21,7 +21,7 @@ public class UserLevel extends ActivityGlobal {
     int size = 0;
 
     RecyclerView recyclerView;
-    String name_topic [] = new String[10]; //here number of subTopics !!!!!!!!!!!
+    String name_topic [] = new String[10]; //here is number of subTopics !!!!!!!!!!!
     String level;
     final Context context = this;
     TopicModelDao topicModelDao;
@@ -56,6 +56,7 @@ public class UserLevel extends ActivityGlobal {
         name_topic[8] = topicModel.subTopicsName8;
         name_topic[9] = topicModel.subTopicsName9;
 
+        size = 0;
         for (String s: name_topic) {
             if (s != null){
                 size++;
