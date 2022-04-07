@@ -12,10 +12,10 @@ public class WordModel {
     public long id;
 
     @ColumnInfo
-    public String topicsName;
+    public String topicName;
 
     @ColumnInfo
-    public String subTopicsName;
+    public String subTopicName;
 
     @ColumnInfo
     public String englishWord;

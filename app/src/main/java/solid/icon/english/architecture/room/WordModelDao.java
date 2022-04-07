@@ -17,11 +17,11 @@ public interface WordModelDao {
     @Query("SELECT * FROM WordModel WHERE id = :id")
     WordModel getById(long id);
 
-    @Query("SELECT * FROM WordModel WHERE topicsName = :topicsName")
-    List<WordModel> getAllByTopicsName(String topicsName);
+    @Query("SELECT * FROM WordModel WHERE topicName = :topicName")
+    List<WordModel> getAllByTopicsName(String topicName);
 
-    @Query("SELECT * FROM WordModel WHERE subTopicsName = :subTopicsName")
-    List<WordModel> getAllBySubTopicsName(String subTopicsName);
+    @Query("SELECT * FROM WordModel WHERE subTopicName = :subTopicName and topicName = :topicName")
+    List<WordModel> getAllBySubTopicsName(String subTopicName, String topicName);
 
     @Insert
     void insert(WordModel wordModel);

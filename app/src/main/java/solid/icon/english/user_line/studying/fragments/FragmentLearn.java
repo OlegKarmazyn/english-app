@@ -11,18 +11,18 @@ import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 
+import java.util.List;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.MyFragmentActivity;
+import solid.icon.english.architecture.UserFragmentActivity;
+import solid.icon.english.architecture.room.WordModel;
 
-public class FragmentLearn extends MyFragmentActivity implements View.OnClickListener {
+public class FragmentLearn extends UserFragmentActivity implements View.OnClickListener {
 
-    String topic; String subTopic;
-    public FragmentLearn(String topic, String subTopic) {
-        this.topic = topic;
-        this.subTopic = subTopic;
-        defineArrays();
+    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr) {
+        super(wordModelList, topic, subTopic, englishTranslArr, rusTranslArr);
+
         // Required empty public constructor
     }
 
@@ -118,12 +118,13 @@ public class FragmentLearn extends MyFragmentActivity implements View.OnClickLis
             }
         });
 
-            full_array();
-            try {
-                change_test();
-            }catch (Exception e){
-                isException++;
-            }
+//            full_array();
+//            try {
+//                change_test();
+//            }catch (Exception e){
+//                isException++;
+//            }
+
     }
 
     @Override
@@ -179,38 +180,38 @@ public class FragmentLearn extends MyFragmentActivity implements View.OnClickLis
 
     private void change_test(){
 
-        words1.setText(main_1[num_of_topic][id[i++]]);
-        words2.setText(main_1[num_of_topic][id[i++]]);
-        words3.setText(main_1[num_of_topic][id[i++]]);
-        words4.setText(main_1[num_of_topic][id[i++]]);
-        words5.setText(main_1[num_of_topic][id[i++]]);
-        words6.setText(main_1[num_of_topic][id[i++]]);
-        words7.setText(main_1[num_of_topic][id[i++]]);
-        words8.setText(main_1[num_of_topic][id[i++]]);
-        words9.setText(main_1[num_of_topic][id[i++]]);
-        words10.setText(main_1[num_of_topic][id[i++]]);
-        words11.setText(main_1[num_of_topic][id[i++]]);
-        words12.setText(main_1[num_of_topic][id[i++]]);
-        words13.setText(main_1[num_of_topic][id[i++]]);
-        words14.setText(main_1[num_of_topic][id[i++]]);
-        words15.setText(main_1[num_of_topic][id[i]]);
-        i = 0;
-
-        words1_1.setText(main_2[num_of_topic][id[i++]]);
-        words2_1.setText(main_2[num_of_topic][id[i++]]);
-        words3_1.setText(main_2[num_of_topic][id[i++]]);
-        words4_1.setText(main_2[num_of_topic][id[i++]]);
-        words5_1.setText(main_2[num_of_topic][id[i++]]);
-        words6_1.setText(main_2[num_of_topic][id[i++]]);
-        words7_1.setText(main_2[num_of_topic][id[i++]]);
-        words8_1.setText(main_2[num_of_topic][id[i++]]);
-        words9_1.setText(main_2[num_of_topic][id[i++]]);
-        words10_1.setText(main_2[num_of_topic][id[i++]]);
-        words11_1.setText(main_2[num_of_topic][id[i++]]);
-        words12_1.setText(main_2[num_of_topic][id[i++]]);
-        words13_1.setText(main_2[num_of_topic][id[i++]]);
-        words14_1.setText(main_2[num_of_topic][id[i++]]);
-        words15_1.setText(main_2[num_of_topic][id[i]]);
+//        words1.setText(main_1[num_of_topic][id[i++]]);
+//        words2.setText(main_1[num_of_topic][id[i++]]);
+//        words3.setText(main_1[num_of_topic][id[i++]]);
+//        words4.setText(main_1[num_of_topic][id[i++]]);
+//        words5.setText(main_1[num_of_topic][id[i++]]);
+//        words6.setText(main_1[num_of_topic][id[i++]]);
+//        words7.setText(main_1[num_of_topic][id[i++]]);
+//        words8.setText(main_1[num_of_topic][id[i++]]);
+//        words9.setText(main_1[num_of_topic][id[i++]]);
+//        words10.setText(main_1[num_of_topic][id[i++]]);
+//        words11.setText(main_1[num_of_topic][id[i++]]);
+//        words12.setText(main_1[num_of_topic][id[i++]]);
+//        words13.setText(main_1[num_of_topic][id[i++]]);
+//        words14.setText(main_1[num_of_topic][id[i++]]);
+//        words15.setText(main_1[num_of_topic][id[i]]);
+//        i = 0;
+//
+//        words1_1.setText(main_2[num_of_topic][id[i++]]);
+//        words2_1.setText(main_2[num_of_topic][id[i++]]);
+//        words3_1.setText(main_2[num_of_topic][id[i++]]);
+//        words4_1.setText(main_2[num_of_topic][id[i++]]);
+//        words5_1.setText(main_2[num_of_topic][id[i++]]);
+//        words6_1.setText(main_2[num_of_topic][id[i++]]);
+//        words7_1.setText(main_2[num_of_topic][id[i++]]);
+//        words8_1.setText(main_2[num_of_topic][id[i++]]);
+//        words9_1.setText(main_2[num_of_topic][id[i++]]);
+//        words10_1.setText(main_2[num_of_topic][id[i++]]);
+//        words11_1.setText(main_2[num_of_topic][id[i++]]);
+//        words12_1.setText(main_2[num_of_topic][id[i++]]);
+//        words13_1.setText(main_2[num_of_topic][id[i++]]);
+//        words14_1.setText(main_2[num_of_topic][id[i++]]);
+//        words15_1.setText(main_2[num_of_topic][id[i]]);
         i = 0;
     }
 
