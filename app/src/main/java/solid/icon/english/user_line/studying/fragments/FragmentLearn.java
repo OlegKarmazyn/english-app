@@ -6,11 +6,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentActivity;
-
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -39,17 +40,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_learn, container, false);
+        return inflater.inflate(R.layout.user_fragment_learn, container, false);
     }
-
-    private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
-
-    private int isException = 0;
-
-    private TextToSpeech mTTS;
-
-    private final String TAG = "FragmentLearn";
-    private int i = 0;
 
     TextView words1; TextView words2; TextView words3; TextView words4; TextView words5; TextView words6;
     TextView words7; TextView words8; TextView words9; TextView words10; TextView words11;
@@ -61,46 +53,26 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
     ScrollView learn_ScrollView;
 
-    private int [] counter_flip = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+    LinearLayout verticalLinearLayout;
+
+    List<Button> buttonListOfEnglish, buttonListOfRus;
+
+    /**
+     *  onResume
+     */
 
     @Override
     public void onResume(){
         super.onResume();
 
-        for(int i = 0; i < 15;i++){
-            id[i]= i * -1;
-        }
+        context = getActivity();
 
-        FragmentActivity fragmentActivity = getActivity();
+        assert context != null;
 
-        assert fragmentActivity != null;
-        words1 = fragmentActivity.findViewById(R.id.words1); words2 = fragmentActivity.findViewById(R.id.words2); words3 = fragmentActivity.findViewById(R.id.words3); words4 = fragmentActivity.findViewById(R.id.words4); words5 = fragmentActivity.findViewById(R.id.words5);
-        words6 = fragmentActivity.findViewById(R.id.words6); words7 = fragmentActivity.findViewById(R.id.words7); words8 = fragmentActivity.findViewById(R.id.words8); words9 = fragmentActivity.findViewById(R.id.words9); words10 = fragmentActivity.findViewById(R.id.words10);
-        words11 = fragmentActivity.findViewById(R.id.words11); words12 = fragmentActivity.findViewById(R.id.words12); words13 = fragmentActivity.findViewById(R.id.words13); words14 = fragmentActivity.findViewById(R.id.words14); words15 = fragmentActivity.findViewById(R.id.words15);
+        learn_ScrollView = context.findViewById(R.id.learn_ScrollView);
+        verticalLinearLayout = context.findViewById(R.id.verticalLinearLayout);
 
-        words1_1 = fragmentActivity.findViewById(R.id.words1_1); words2_1 = fragmentActivity.findViewById(R.id.words2_1); words3_1 = fragmentActivity.findViewById(R.id.words3_1); words4_1 = fragmentActivity.findViewById(R.id.words4_1); words5_1 = fragmentActivity.findViewById(R.id.words5_1);
-        words6_1 = fragmentActivity.findViewById(R.id.words6_1); words7_1 = fragmentActivity.findViewById(R.id.words7_1); words8_1 = fragmentActivity.findViewById(R.id.words8_1); words9_1 = fragmentActivity.findViewById(R.id.words9_1); words10_1 = fragmentActivity.findViewById(R.id.words10_1);
-        words11_1 = fragmentActivity.findViewById(R.id.words11_1); words12_1 = fragmentActivity.findViewById(R.id.words12_1); words13_1 = fragmentActivity.findViewById(R.id.words13_1); words14_1 = fragmentActivity.findViewById(R.id.words14_1); words15_1 = fragmentActivity.findViewById(R.id.words15_1);
-
-        learn_ScrollView = fragmentActivity.findViewById(R.id.learn_ScrollView);
-
-        words1.setOnClickListener(this);
-        words2.setOnClickListener(this);
-        words3.setOnClickListener(this);
-        words4.setOnClickListener(this);
-        words5.setOnClickListener(this);
-        words6.setOnClickListener(this);
-        words7.setOnClickListener(this);
-        words8.setOnClickListener(this);
-        words9.setOnClickListener(this);
-        words10.setOnClickListener(this);
-        words11.setOnClickListener(this);
-        words12.setOnClickListener(this);
-        words13.setOnClickListener(this);
-        words14.setOnClickListener(this);
-        words15.setOnClickListener(this);
-
-        mTTS = new TextToSpeech(fragmentActivity, new TextToSpeech.OnInitListener() {
+        mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS){
@@ -118,39 +90,85 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             }
         });
 
-//            full_array();
-//            try {
-//                change_test();
-//            }catch (Exception e){
-//                isException++;
-//            }
+        /* method after init */
+        fillArrays();
+        addButtonToScreen();
+        createAddButton();
+
+        randomizeArray();
+        try {
+            change_test();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        text1_1_visibel_gone();
+    private void createAddButton() {
+
+        Button btnTag = new Button(context);
+        btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        btnTag.setText("Adding button");
+        btnTag.setTextSize(18);
+        verticalLinearLayout.addView(btnTag);
     }
 
-    private void full_array(){
-        int rand = 0;
+    private void addButtonToScreen() {
+
+        for (int i = 0; i < 1; i++) {
+
+            LinearLayout horizontalLayout = new LinearLayout(context);
+            horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+
+            //set the properties for button
+            Button btnTag1 = new Button(context);
+            btnTag1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            btnTag1.setText("English");
+            btnTag1.setTextSize(18);
+
+            //set the properties for button
+            Button btnTag2 = new Button(context);
+            btnTag2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            btnTag2.setText("Russion");
+            btnTag2.setTextSize(18);
+
+            //add button to the horizontalLayout
+            horizontalLayout.addView(btnTag1);
+            horizontalLayout.addView(btnTag2);
+
+            //add layout to the layout verticalLinearLayout
+            verticalLinearLayout.addView(horizontalLayout);
+        }
+    }
+
+    private void fillArrays() {
+        id = new int[size];
+        counter_flip = new int[size];
+        if(size != 0) {
+            Arrays.fill(id, 99999);
+            Arrays.fill(counter_flip, 0);
+        }
+    }
+
+
+    private void randomizeArray(){
+        int rand;
         boolean isTrue = false;
-        int k = 0;
+        int k;
 
 
-        for (int iter = 0; iter < 15; iter++) {
+        for (int iter = 0; iter < size; iter++) {
             do {
                 k = 0;
-                rand = (int) (Math.random() * 15);
-                for (int j = 0; j < 15; j++) {
+                rand = (int) (Math.random() * size);
+                for (int j = 0; j < size; j++) {
                     if (rand == id[j]) {
                         isTrue = true;
                     }else{
                         k++;
                     }
                 }
-                if(k == 15){
+                if(k == size){
                     isTrue = false;
                 }
 
@@ -212,28 +230,27 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 //        words13_1.setText(main_2[num_of_topic][id[i++]]);
 //        words14_1.setText(main_2[num_of_topic][id[i++]]);
 //        words15_1.setText(main_2[num_of_topic][id[i]]);
-        i = 0;
     }
 
     private void speak(String text){
-        float pitch = 0.5f;
-        float speed = 0.5f;
-        Log.e("TTS", "123");
-        //mTTS.setPitch(pitch);
-        //mTTS.setSpeechRate(speed);
+//        float pitch = 0.5f;
+//        float speed = 0.5f;
+//        mTTS.setPitch(pitch);
+//        mTTS.setSpeechRate(speed);
+
+        Log.e("TTS", "speaking");
 
         mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
     }
 
     public void calculate_flip(){
-        int ma = 0;
-        for (int g:
-                counter_flip) {
+        int co = 0;
+        for (int g: counter_flip) {
             if (g == 1){
-                ma++;
+                co++;
             }
         }
-        if (ma == 15){
+        if (co == size){
             //el_next.setVisibility(View.VISIBLE);
         }
     }
@@ -378,26 +395,22 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         }
     }
 
-    private void scrollHelper(View v){
-        if(isException == 0) {
-            learn_ScrollView.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    learn_ScrollView.smoothScrollTo(0, v.getTop() - 300);
-                }
-            }, 300);
-        }
-    }
-
     private void reply__text(){
         int temp = 1000;
-        for (int j = 0; j < 15; j++) {
+        for (int j = 0; j < size; j++) {
             id[j] = temp;
             temp++;
         }
-        full_array();
+        randomizeArray();
 
         text1_1_visibel_gone();
         change_test();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        //text1_1_visibel_gone();
+        //todo
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".words_by_levels.study_way.FragmentLearn">
+
+    <ScrollView
+        android:id="@+id/learn_ScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="OnClick" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/verticalLinearLayout">
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/el_next"
+        android:visibility="gone"
+        android:onClick="next_learn"
+        android:layout_width="85dp"
+        android:layout_height="67dp"
+        android:layout_margin="40dp"
+        app:srcCompat="@android:drawable/ic_media_next"
+        tools:ignore="OnClick" />
+
+</FrameLayout>

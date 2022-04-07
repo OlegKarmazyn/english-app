@@ -1,6 +1,9 @@
 package solid.icon.english.architecture;
 
+import android.speech.tts.TextToSpeech;
+
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import java.util.List;
 
@@ -8,9 +11,20 @@ import solid.icon.english.architecture.room.WordModel;
 
 public abstract class UserFragmentActivity extends Fragment {
 
-    List<WordModel> wordModelList;
-    String topic, subTopic;
-    String[] englishTranslArr, rusTranslArr;
+    protected List<WordModel> wordModelList;
+    protected String topic, subTopic;
+    protected String[] englishTranslArr, rusTranslArr;
+    protected int size = 0;
+
+    protected int [] id;
+
+    protected TextToSpeech mTTS;
+
+    protected int [] counter_flip;
+
+    protected FragmentActivity context;
+
+    protected String TAG = this.getClass().toString();
 
     public UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr){
         this.wordModelList = wordModelList;
@@ -18,6 +32,9 @@ public abstract class UserFragmentActivity extends Fragment {
         this.subTopic = subTopic;
         this.englishTranslArr = englishTranslArr;
         this.rusTranslArr = rusTranslArr;
+
+        if (wordModelList != null)
+        size = wordModelList.size();
     }
 
 }
