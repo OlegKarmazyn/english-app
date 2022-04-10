@@ -2,6 +2,7 @@ package solid.icon.english.user_line.studying;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -101,7 +102,7 @@ public class StudyActivity extends ActivityGlobal {
 
     private void getWordsList(){
         WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
-        List<WordModel> wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
+        wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
 
         englishTranslArr = new String[wordModelList.size()];
         rusTranslArr = new String[wordModelList.size()];
@@ -109,6 +110,8 @@ public class StudyActivity extends ActivityGlobal {
         for (WordModel w : wordModelList) {
             englishTranslArr[i] = w.englishWord;
             rusTranslArr[i] = w.rusWord;
+            Log.e(TAG, englishTranslArr[i]);
+            Log.e(TAG, rusTranslArr[i]);
             i++;
         }
     }

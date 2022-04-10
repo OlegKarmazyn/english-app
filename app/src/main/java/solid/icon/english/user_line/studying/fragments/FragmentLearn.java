@@ -8,9 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 
 import java.util.Arrays;
 import java.util.List;
@@ -18,7 +21,9 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
+import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.architecture.room.WordModelDao;
 
 public class FragmentLearn extends UserFragmentActivity implements View.OnClickListener {
 
@@ -136,6 +141,51 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
         button.setGravity(Gravity.CENTER);
 
+        //listener
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddingDialog();
+            }
+
+            private void showAddingDialog() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(context);
+
+                final View customLayout = getLayoutInflater().inflate(R.layout.custom_dialog, null);
+                builder.setView(customLayout);
+                AlertDialog dialog = builder.create();
+                dialog.show();
+
+                customLayout.findViewById(R.id.but_yes).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.cancel();
+                        EditText englishWord = customLayout.findViewById(R.id.english_word);
+                        EditText russianWord = customLayout.findViewById(R.id.russian_word);
+                        EditText definition = customLayout.findViewById(R.id.definition);
+                        addToDBNewWord(englishWord.getText().toString(), russianWord.getText().toString(), definition.getText().toString());
+                    }
+                });
+                customLayout.findViewById(R.id.but_no).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.cancel();
+                    }
+                });
+            }
+
+            private void addToDBNewWord(String englishWord, String russianWord, String definition){
+                WordModelDao wordModelDao = App.instance.getDatabase().wordModelDao();
+                WordModel wordModel = new WordModel();
+                wordModel.englishWord = englishWord;
+                wordModel.rusWord = russianWord;
+                wordModel.definition = definition;
+                wordModel.topicName = topic;
+                wordModel.subTopicName = subTopic;
+                wordModelDao.insert(wordModel);
+            }
+        });
+
         //add layout to the layout verticalLinearLayout
         horizontalLayout.addView(button);
         verticalLinearLayout.addView(horizontalLayout);
@@ -147,35 +197,47 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     private void addTranslationButtonToScreen() {
         int dp_15 = getDp(15);
 
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < size; i++) {
 
             LinearLayout horizontalLayout = new LinearLayout(context);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
 
+            //params for horizontalLayout
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams.setMargins(0,dp_15,0,0);
-
+            layoutParams.setMargins(0, dp_15, 0,0);
             horizontalLayout.setLayoutParams(layoutParams);
 
+            //set params for buttons
+            LinearLayout.LayoutParams engButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            engButtonParams.weight = 1;
+            LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            rusButtonParams.weight = 1;
+            engButtonParams.setMargins(0, 0, 0,0);
+            rusButtonParams.setMargins( getDp(10), 0, 0,0);
+
             //set the properties for English button
-            Button buttonEng = new Button(context);
-            buttonEng.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            buttonEng.setText("English");
-            buttonEng.setTextSize(15);
-            buttonEng.setBackgroundResource(R.drawable.person_together);
-            buttonEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            TextView textViewEng = new TextView(context);
+            textViewEng.setText(englishTranslArr[i]);
+            textViewEng.setTextSize(15);
+            textViewEng.setBackgroundResource(R.drawable.person_together);
+            textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            textViewEng.setLayoutParams(engButtonParams);
+            textViewEng.setGravity(Gravity.CENTER);
+            textViewEng.setTextColor(getActivity().getColor(R.color.ios_black));
 
             //set the properties for Russian button
-            Button buttonRus = new Button(context);
-            buttonRus.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            buttonRus.setText("Russian");
-            buttonRus.setTextSize(15);
-            buttonRus.setBackgroundResource(R.drawable.person_together);
-            buttonRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            TextView textViewRus = new TextView(context);
+            textViewRus.setText(rusTranslArr[i]);
+            textViewRus.setTextSize(15);
+            textViewRus.setBackgroundResource(R.drawable.person_together);
+            textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            textViewRus.setLayoutParams(rusButtonParams);
+            textViewRus.setGravity(Gravity.CENTER);
+            textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
 
             //add button to the horizontalLayout
-            horizontalLayout.addView(buttonEng);
-            horizontalLayout.addView(buttonRus);
+            horizontalLayout.addView(textViewEng);
+            horizontalLayout.addView(textViewRus);
 
             //add layout to the layout verticalLinearLayout
             verticalLinearLayout.addView(horizontalLayout);

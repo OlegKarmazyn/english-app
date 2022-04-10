@@ -1,6 +1,7 @@
 package solid.icon.english.architecture;
 
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -36,6 +37,7 @@ public abstract class UserFragmentActivity extends Fragment {
 
         if (wordModelList != null)
         size = wordModelList.size();
+        Log.e(TAG, String.valueOf(size));
     }
 
     public int getDp(int px){
