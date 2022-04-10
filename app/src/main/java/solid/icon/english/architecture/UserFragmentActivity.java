@@ -15,6 +15,7 @@ public abstract class UserFragmentActivity extends Fragment {
     protected String topic, subTopic;
     protected String[] englishTranslArr, rusTranslArr;
     protected int size = 0;
+    protected float metrics = Dpi.metrics;
 
     protected int [] id;
 
@@ -35,6 +36,10 @@ public abstract class UserFragmentActivity extends Fragment {
 
         if (wordModelList != null)
         size = wordModelList.size();
+    }
+
+    public int getDp(int px){
+        return (int) (px * metrics);
     }
 
 }

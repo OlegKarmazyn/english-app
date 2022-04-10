@@ -1,8 +1,11 @@
 package solid.icon.english.architecture.room;
 
 import android.app.Application;
+import android.util.DisplayMetrics;
 
 import androidx.room.Room;
+
+import solid.icon.english.architecture.Dpi;
 
 public class App extends Application {
 
@@ -20,6 +23,13 @@ public class App extends Application {
                 AppDatabase.class, "database")
                 .allowMainThreadQueries()
                 .build();
+
+        setDp();
+    }
+
+    private void setDp() {
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        Dpi.metrics = metrics.density;
     }
 
     public static App getInstance() {

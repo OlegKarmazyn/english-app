@@ -3,6 +3,7 @@ package solid.icon.english.user_line.studying.fragments;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -90,9 +91,9 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             }
         });
 
-        /* method after init */
+        /* methods after init */
         fillArrays();
-        addButtonToScreen();
+        addTranslationButtonToScreen();
         createAddButton();
 
         randomizeArray();
@@ -104,37 +105,77 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
     }
 
+    /**
+     * There is ADDING BUTTON
+     */
     private void createAddButton() {
+        //counting margin
+        int dp_15 = getDp(15);
+        Log.e(TAG, String.valueOf(dp_15));
 
-        Button btnTag = new Button(context);
-        btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        btnTag.setText("Adding button");
-        btnTag.setTextSize(18);
-        verticalLinearLayout.addView(btnTag);
+        LinearLayout horizontalLayout = new LinearLayout(context);
+        horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+        horizontalLayout.setGravity(Gravity.CENTER);
+
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(0, dp_15,0,0);
+
+        horizontalLayout.setLayoutParams(layoutParams);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        //set the properties for Translation button
+        Button button = new Button(context);
+        button.setLayoutParams(params);
+        button.setText("Adding button");
+        button.setTextSize(15);
+        button.setBackgroundResource(R.drawable.person_together);
+        button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+        button.setGravity(Gravity.CENTER);
+
+        //add layout to the layout verticalLinearLayout
+        horizontalLayout.addView(button);
+        verticalLinearLayout.addView(horizontalLayout);
     }
 
-    private void addButtonToScreen() {
+    /**
+     * Translation buttons
+     */
+    private void addTranslationButtonToScreen() {
+        int dp_15 = getDp(15);
 
         for (int i = 0; i < 1; i++) {
 
             LinearLayout horizontalLayout = new LinearLayout(context);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-            //set the properties for button
-            Button btnTag1 = new Button(context);
-            btnTag1.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            btnTag1.setText("English");
-            btnTag1.setTextSize(18);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0,dp_15,0,0);
 
-            //set the properties for button
-            Button btnTag2 = new Button(context);
-            btnTag2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-            btnTag2.setText("Russion");
-            btnTag2.setTextSize(18);
+            horizontalLayout.setLayoutParams(layoutParams);
+
+            //set the properties for English button
+            Button buttonEng = new Button(context);
+            buttonEng.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            buttonEng.setText("English");
+            buttonEng.setTextSize(15);
+            buttonEng.setBackgroundResource(R.drawable.person_together);
+            buttonEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+
+            //set the properties for Russian button
+            Button buttonRus = new Button(context);
+            buttonRus.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+            buttonRus.setText("Russian");
+            buttonRus.setTextSize(15);
+            buttonRus.setBackgroundResource(R.drawable.person_together);
+            buttonRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
 
             //add button to the horizontalLayout
-            horizontalLayout.addView(btnTag1);
-            horizontalLayout.addView(btnTag2);
+            horizontalLayout.addView(buttonEng);
+            horizontalLayout.addView(buttonRus);
 
             //add layout to the layout verticalLinearLayout
             verticalLinearLayout.addView(horizontalLayout);
