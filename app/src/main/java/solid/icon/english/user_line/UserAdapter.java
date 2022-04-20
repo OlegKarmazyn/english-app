@@ -131,6 +131,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             }
         });
 
+        holder.constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                /* DELETE */
+                showDeleteDialog(position);
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -207,6 +216,33 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             }
         });
 
+        alert.show();
+    }
+
+    public void showDeleteDialog(int position){
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle("Do you want to delete topic?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
+                switch (position){
+                    case 0: topicModel.subTopicsName0 = null; break;
+                    case 1: topicModel.subTopicsName1 = null; break;
+                    case 2: topicModel.subTopicsName2 = null; break;
+                    case 3: topicModel.subTopicsName3 = null; break;
+                    case 4: topicModel.subTopicsName4 = null; break;
+                    case 5: topicModel.subTopicsName5 = null; break;
+                    case 6: topicModel.subTopicsName6 = null; break;
+                    case 7: topicModel.subTopicsName7 = null; break;
+                    case 8: topicModel.subTopicsName8 = null; break;
+                    case 9: topicModel.subTopicsName9 = null; break;
+                }
+
+                topicModelDao.update(topicModel);
+                userLevel.setDataToUserAdapter();
+            }
+        });
         alert.show();
     }
 }

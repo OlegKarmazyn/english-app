@@ -125,6 +125,16 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
         });
 
+        holder.constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                /* DELETE */
+                /* DELETE */
+                showDeleteDialog(position);
+                return false;
+            }
+        });
+
     }
 
     @Override
@@ -191,6 +201,19 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
         });
 
+        alert.show();
+    }
+
+    public void showDeleteDialog(int position){
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle("Do you want to delete topic?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
+                topicModelDao.delete(topicModel);
+            }
+        });
         alert.show();
     }
 }

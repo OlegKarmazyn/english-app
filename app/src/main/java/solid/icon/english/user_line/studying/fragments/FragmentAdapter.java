@@ -32,7 +32,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
         switch (position){
 
             case 1:
-                //return new FragmentListen( what_level, num_of_topic);
+                return new FragmentListen(wordModelList, topic, subTopic, englishTranslArr, rusTranslArr);
             case 2:
                 //return new FragmentTest( what_level, num_of_topic);
             case 3:
