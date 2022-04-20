@@ -214,7 +214,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             TextView textViewRus = new TextView(context);
 
             //set the properties for English button
-            textViewEng.setText(englishTranslArr[i]);
+            textViewEng.setText(rusTranslArr[i]);
             textViewEng.setTextSize(15);
             textViewEng.setBackgroundResource(R.drawable.person_together);
             textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
@@ -229,7 +229,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             });
 
             //set the properties for Russian button
-            textViewRus.setText(rusTranslArr[i]);
+            textViewRus.setText(englishTranslArr[i]);
             textViewRus.setTextSize(15);
             textViewRus.setBackgroundResource(R.drawable.person_together);
             textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
@@ -237,12 +237,9 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             textViewRus.setGravity(Gravity.CENTER);
             textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
             textViewRus.setVisibility(View.GONE);
-            textViewRus.setOnClickListener(new View.OnClickListener() { //todo change to textViewEng
-                @Override
-                public void onClick(View v) {
-                    speak(textViewRus.getText().toString()); //todo change to textViewEng
-                }
-            });
+            textViewRus.setTextIsSelectable(true);
+            textViewRus.setClickable(false);
+
 
             //add button to the lists
             buttonListOfEnglish.add(textViewEng);
