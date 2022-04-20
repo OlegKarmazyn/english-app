@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -57,6 +58,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     List<TextView> buttonListOfEnglish = new ArrayList<>(),
             buttonListOfRus = new ArrayList<>();
 
+    WordModelDao wordModelDao;
+
     /**
      *  onResume
      */
@@ -72,6 +75,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
         learn_ScrollView = context.findViewById(R.id.learn_ScrollView);
         verticalLinearLayout = context.findViewById(R.id.verticalLinearLayout);
+
+        wordModelDao = App.instance.getDatabase().wordModelDao();
 
         mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
@@ -116,6 +121,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         LinearLayout horizontalLayout = new LinearLayout(context);
         horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
         horizontalLayout.setGravity(Gravity.CENTER);
+        horizontalLayout.setAlpha(0f);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, dp_15,0,0);
@@ -170,7 +176,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             }
 
             private void addToDBNewWord(String englishWord, String russianWord, String definition){
-                WordModelDao wordModelDao = App.instance.getDatabase().wordModelDao();
                 WordModel wordModel = new WordModel();
                 wordModel.englishWord = englishWord;
                 wordModel.rusWord = russianWord;
@@ -184,6 +189,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         //add layout to the layout verticalLinearLayout
         horizontalLayout.addView(button);
         verticalLinearLayout.addView(horizontalLayout);
+
+        horizontalLayout.animate().alpha(1f).setDuration(1300);
     }
 
     /**
@@ -193,9 +200,11 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         int dp_15 = getDp(15);
 
         for (int i = 0; i < size; i++) {
+            final int I = i;
 
             LinearLayout horizontalLayout = new LinearLayout(context);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+            horizontalLayout.setAlpha(0f);
 
             //params for horizontalLayout
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -227,6 +236,14 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                     textViewRus.setVisibility(View.VISIBLE);
                 }
             });
+            textViewEng.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    deleteWord(I);
+                    return false;
+                }
+            });
+
 
             //set the properties for Russian button
             textViewRus.setText(englishTranslArr[i]);
@@ -251,7 +268,15 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
             //add layout to the layout verticalLinearLayout
             verticalLinearLayout.addView(horizontalLayout);
+
+            horizontalLayout.animate().alpha(1f).setDuration(1300);
         }
+    }
+
+    private void deleteWord(int i){
+        WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
+        wordModelDao.delete(wordModel);
+        Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
     }
 
     private void fillArrays() {
