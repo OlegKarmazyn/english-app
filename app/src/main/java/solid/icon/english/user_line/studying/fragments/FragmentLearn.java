@@ -203,8 +203,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             engButtonParams.weight = 1;
             LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             rusButtonParams.weight = 1;
-            engButtonParams.setMargins(getDp(10), 0, 0,0);
-            rusButtonParams.setMargins( 0, 0, 0,0);
+            engButtonParams.setMargins(0, 0, 0,0);
+            rusButtonParams.setMargins( getDp(10), 0, 0,0);
 
             TextView textViewEng = new TextView(context),
                     textViewRus = new TextView(context);
@@ -217,6 +217,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             textViewEng.setLayoutParams(engButtonParams);
             textViewEng.setGravity(Gravity.CENTER);
             textViewEng.setTextColor(getActivity().getColor(R.color.ios_black));
+            textViewEng.setVisibility(View.VISIBLE);
 
             //set the properties for Russian button
             textViewRus.setText(rusTranslArr[i]);
@@ -226,10 +227,11 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             textViewRus.setLayoutParams(rusButtonParams);
             textViewRus.setGravity(Gravity.CENTER);
             textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
+            textViewRus.setVisibility(View.GONE);
 
             // create listener ( + long Listener)
             View.OnClickListener listener = v -> {
-                textViewEng.setVisibility(View.VISIBLE);
+                textViewRus.setVisibility(View.VISIBLE);
                 speak(textViewEng.getText().toString());
                 outLog("OnClickListener - first (speak) step");
 
@@ -241,16 +243,16 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             };
 
             // setOnClickListener
-            textViewRus.setOnClickListener(listener);
             textViewEng.setOnClickListener(listener);
+            textViewRus.setOnClickListener(listener);
 
             //add button to the lists
-            buttonListOfRus.add(textViewRus);
             buttonListOfEnglish.add(textViewEng);
+            buttonListOfRus.add(textViewRus);
 
             //add button to the horizontalLayout
-            horizontalLayout.addView(textViewRus);
             horizontalLayout.addView(textViewEng);
+            horizontalLayout.addView(textViewRus);
 
 
             //add layout to the layout verticalLinearLayout
