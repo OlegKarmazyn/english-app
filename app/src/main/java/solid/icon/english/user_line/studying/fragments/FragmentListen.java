@@ -23,12 +23,13 @@ import java.util.Locale;
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.user_line.studying.StudyActivity;
 
 
 public class FragmentListen extends UserFragmentActivity implements View.OnClickListener {
 
-    public FragmentListen(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr) {
-        super(wordModelList, topic, subTopic, englishTranslArr, rusTranslArr);
+    public FragmentListen(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
+        super(wordModelList, topic, subTopic, studyActivity);
 
         // Required empty public constructor
     }

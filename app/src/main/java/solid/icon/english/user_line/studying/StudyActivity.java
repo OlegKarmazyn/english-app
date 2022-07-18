@@ -2,7 +2,6 @@ package solid.icon.english.user_line.studying;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -31,7 +30,6 @@ public class StudyActivity extends ActivityGlobal {
 
     List<WordModel> wordModelList;
     String topic, subTopic;
-    String[] englishTranslArr, rusTranslArr;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,7 +80,7 @@ public class StudyActivity extends ActivityGlobal {
         getWordsList();
 
         FragmentManager fm = getSupportFragmentManager();
-        adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, englishTranslArr, rusTranslArr );
+        adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, StudyActivity.this);
         pager2.setAdapter(adapter);
     }
 
@@ -94,16 +92,6 @@ public class StudyActivity extends ActivityGlobal {
         WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
         wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
 
-        englishTranslArr = new String[wordModelList.size()];
-        rusTranslArr = new String[wordModelList.size()];
-        int i = 0;
-        for (WordModel w : wordModelList) {
-            englishTranslArr[i] = w.englishWord;
-            rusTranslArr[i] = w.rusWord;
-            Log.e(TAG, englishTranslArr[i]);
-            Log.e(TAG, rusTranslArr[i]);
-            i++;
-        }
     }
 
     @Override

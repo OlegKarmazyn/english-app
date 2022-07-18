@@ -9,21 +9,22 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import java.util.List;
 
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 
     List<WordModel> wordModelList;
     String topic, subTopic;
-    String[] englishTranslArr, rusTranslArr;
+    StudyActivity studyActivity;
 
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle,
-                           List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr) {
+                           List<WordModel> wordModelList, String topic, String subTopic,
+                           StudyActivity studyActivity) {
         super(fragmentManager, lifecycle);
         this.wordModelList = wordModelList;
         this.topic = topic;
         this.subTopic = subTopic;
-        this.englishTranslArr = englishTranslArr;
-        this.rusTranslArr = rusTranslArr;
+        this.studyActivity = studyActivity;
     }
 
     @NonNull
@@ -32,14 +33,14 @@ public class FragmentAdapter extends FragmentStateAdapter {
         switch (position){
 
             case 1:
-                return new FragmentListen(wordModelList, topic, subTopic, englishTranslArr, rusTranslArr);
+                return new FragmentListen(wordModelList, topic, subTopic, studyActivity);
             case 2:
                 //return new FragmentTest( what_level, num_of_topic);
             case 3:
                 //return new FragmentDefinition( what_level, num_of_topic);
 
             default:
-                return new FragmentLearn(wordModelList, topic, subTopic, englishTranslArr, rusTranslArr);
+                return new FragmentLearn(wordModelList, topic, subTopic, studyActivity);
         }
     }
 

@@ -9,12 +9,14 @@ import androidx.fragment.app.FragmentActivity;
 import java.util.List;
 
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.user_line.studying.StudyActivity;
 
 public abstract class UserFragmentActivity extends Fragment {
 
     protected List<WordModel> wordModelList;
     protected String topic, subTopic;
     protected String[] englishTranslArr, rusTranslArr;
+    protected StudyActivity studyActivity;
     protected int size = 0;
     protected float metrics = Dpi.metrics;
 
@@ -28,16 +30,32 @@ public abstract class UserFragmentActivity extends Fragment {
 
     protected String TAG = this.getClass().getSimpleName();
 
-    protected UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr){
+    protected UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity){
         this.wordModelList = wordModelList;
         this.topic = topic;
         this.subTopic = subTopic;
-        this.englishTranslArr = englishTranslArr;
-        this.rusTranslArr = rusTranslArr;
+        this.studyActivity = studyActivity;
+        outLog(studyActivity.toString());
 
-        if (wordModelList != null)
-        size = wordModelList.size();
-        outLog("size = " + size);
+        fillMainArrays();
+    }
+
+    protected void fillMainArrays(){
+        if (wordModelList != null){
+            size = wordModelList.size();
+            outLog("size = " + size);
+        }else { return; }
+
+        englishTranslArr = new String[size];
+        rusTranslArr = new String[size];
+        int i = 0;
+        for (WordModel w : wordModelList) {
+            englishTranslArr[i] = w.englishWord;
+            rusTranslArr[i] = w.rusWord;
+            outLog("englishTranslArr = " + englishTranslArr[i]);
+            outLog("rusTranslArr = " + rusTranslArr[i]);
+            i++;
+        }
     }
 
     protected int getDp(int px){

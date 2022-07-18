@@ -25,11 +25,12 @@ import solid.icon.english.architecture.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
+import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentLearn extends UserFragmentActivity implements View.OnClickListener {
 
-    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr) {
-        super(wordModelList, topic, subTopic, englishTranslArr, rusTranslArr);
+    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
+        super(wordModelList, topic, subTopic, studyActivity);
 
         // Required empty public constructor
     }
@@ -170,6 +171,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                 wordModel.topicName = topic;
                 wordModel.subTopicName = subTopic;
                 wordModelDao.insert(wordModel);
+                wordModelList.add(wordModel);
+                studyActivity.setDateToActivity();
             }
         });
 
