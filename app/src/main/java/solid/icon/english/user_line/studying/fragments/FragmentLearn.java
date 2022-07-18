@@ -116,7 +116,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     private void createAddButton() {
         //counting margin
         int dp_15 = getDp(15);
-        Log.e(TAG, String.valueOf(dp_15));
+        Log.e(TAG + " - dp_15", String.valueOf(dp_15));
 
         LinearLayout horizontalLayout = new LinearLayout(context);
         horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);

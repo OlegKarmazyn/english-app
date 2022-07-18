@@ -33,14 +33,6 @@ public class StudyActivity extends ActivityGlobal {
     String topic, subTopic;
     String[] englishTranslArr, rusTranslArr;
 
-
-     //tod!o:  1 - зашло проверило кол листа
-     //todo:  2 - количестово = количество кнопок ( как создавать кнопки ) + лист или масив кнопок по обьектам что бы слушатели были
-     //todo:  3 - кнопка додавания нового слова
-     //todo:  4 - ф-ционал кнопки додавания
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

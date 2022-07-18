@@ -26,7 +26,7 @@ public abstract class UserFragmentActivity extends Fragment {
 
     protected FragmentActivity context;
 
-    protected String TAG = this.getClass().toString();
+    protected String TAG = this.getClass().getSimpleName();
 
     public UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr){
         this.wordModelList = wordModelList;
@@ -37,7 +37,7 @@ public abstract class UserFragmentActivity extends Fragment {
 
         if (wordModelList != null)
         size = wordModelList.size();
-        Log.e(TAG, String.valueOf(size));
+        Log.e(TAG + " - size", String.valueOf(size));
     }
 
     public int getDp(int px){
