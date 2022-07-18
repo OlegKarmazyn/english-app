@@ -2,7 +2,6 @@ package solid.icon.english.user_line.studying.fragments;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,10 +37,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -82,16 +77,15 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             @Override
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.getDefault());
+                    int result =  mTTS.setLanguage(Locale.ENGLISH);
 
                     if(result == TextToSpeech.LANG_MISSING_DATA
                             || result == TextToSpeech.LANG_NOT_SUPPORTED){
-                        Log.e("TTS", "Language not supported");
-                    } else {
-
+                        outLog("TTS - Language not supported");
                     }
+
                 }else{
-                    Log.e("TTS", "Initialization failed");
+                    outLog("TTS - Initialization failed");
                 }
             }
         });
@@ -116,7 +110,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     private void createAddButton() {
         //counting margin
         int dp_15 = getDp(15);
-        Log.e(TAG + " - dp_15", String.valueOf(dp_15));
+        outLog("dp_15 = " + dp_15);
 
         LinearLayout horizontalLayout = new LinearLayout(context);
         horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -157,22 +151,15 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                 AlertDialog dialog = builder.create();
                 dialog.show();
 
-                customLayout.findViewById(R.id.but_yes).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                        EditText englishWord = customLayout.findViewById(R.id.english_word);
-                        EditText russianWord = customLayout.findViewById(R.id.russian_word);
-                        EditText definition = customLayout.findViewById(R.id.definition);
-                        addToDBNewWord(englishWord.getText().toString(), russianWord.getText().toString(), definition.getText().toString());
-                    }
+                customLayout.findViewById(R.id.but_yes).setOnClickListener(view -> {
+                    dialog.cancel();
+                    EditText englishWord = customLayout.findViewById(R.id.english_word);
+                    EditText russianWord = customLayout.findViewById(R.id.russian_word);
+                    EditText definition = customLayout.findViewById(R.id.definition);
+                    addToDBNewWord(englishWord.getText().toString(), russianWord.getText().toString(), definition.getText().toString());
                 });
-                customLayout.findViewById(R.id.but_no).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog.cancel();
-                    }
-                });
+
+                customLayout.findViewById(R.id.but_no).setOnClickListener(view -> dialog.cancel());
             }
 
             private void addToDBNewWord(String englishWord, String russianWord, String definition){
@@ -216,55 +203,55 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             engButtonParams.weight = 1;
             LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             rusButtonParams.weight = 1;
-            engButtonParams.setMargins(0, 0, 0,0);
-            rusButtonParams.setMargins( getDp(10), 0, 0,0);
+            engButtonParams.setMargins(getDp(10), 0, 0,0);
+            rusButtonParams.setMargins( 0, 0, 0,0);
 
-            TextView textViewEng = new TextView(context);
-            TextView textViewRus = new TextView(context);
+            TextView textViewEng = new TextView(context),
+                    textViewRus = new TextView(context);
 
             //set the properties for English button
-            textViewEng.setText(rusTranslArr[i]);
+            textViewEng.setText(englishTranslArr[i]);
             textViewEng.setTextSize(15);
             textViewEng.setBackgroundResource(R.drawable.person_together);
             textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewEng.setLayoutParams(engButtonParams);
             textViewEng.setGravity(Gravity.CENTER);
             textViewEng.setTextColor(getActivity().getColor(R.color.ios_black));
-            textViewEng.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    textViewRus.setVisibility(View.VISIBLE);
-                }
-            });
-            textViewEng.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    deleteWord(I);
-                    return false;
-                }
-            });
-
 
             //set the properties for Russian button
-            textViewRus.setText(englishTranslArr[i]);
+            textViewRus.setText(rusTranslArr[i]);
             textViewRus.setTextSize(15);
             textViewRus.setBackgroundResource(R.drawable.person_together);
             textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewRus.setLayoutParams(rusButtonParams);
             textViewRus.setGravity(Gravity.CENTER);
             textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
-            textViewRus.setVisibility(View.GONE);
-            textViewRus.setTextIsSelectable(true);
-            textViewRus.setClickable(false);
 
+            // create listener ( + long Listener)
+            View.OnClickListener listener = v -> {
+                textViewEng.setVisibility(View.VISIBLE);
+                speak(textViewEng.getText().toString());
+                outLog("OnClickListener - first (speak) step");
+
+                v.setOnLongClickListener(v1 -> {
+                    deleteWord(I);
+                    outLog("OnClickListener - second (delete) step");
+                    return false;
+                });
+            };
+
+            // setOnClickListener
+            textViewRus.setOnClickListener(listener);
+            textViewEng.setOnClickListener(listener);
 
             //add button to the lists
-            buttonListOfEnglish.add(textViewEng);
             buttonListOfRus.add(textViewRus);
+            buttonListOfEnglish.add(textViewEng);
 
             //add button to the horizontalLayout
-            horizontalLayout.addView(textViewEng);
             horizontalLayout.addView(textViewRus);
+            horizontalLayout.addView(textViewEng);
+
 
             //add layout to the layout verticalLinearLayout
             verticalLinearLayout.addView(horizontalLayout);
@@ -323,9 +310,9 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     }
 
     private void speak(String text){
-        Log.e("TTS", "is speaking");
+        outLog("TTS - is speaking");
 
-        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
+        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null, null);
     }
 
     @Override

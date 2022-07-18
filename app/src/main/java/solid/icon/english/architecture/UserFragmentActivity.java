@@ -28,7 +28,7 @@ public abstract class UserFragmentActivity extends Fragment {
 
     protected String TAG = this.getClass().getSimpleName();
 
-    public UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr){
+    protected UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, String[] englishTranslArr, String[] rusTranslArr){
         this.wordModelList = wordModelList;
         this.topic = topic;
         this.subTopic = subTopic;
@@ -37,11 +37,15 @@ public abstract class UserFragmentActivity extends Fragment {
 
         if (wordModelList != null)
         size = wordModelList.size();
-        Log.e(TAG + " - size", String.valueOf(size));
+        outLog("size = " + size);
     }
 
-    public int getDp(int px){
+    protected int getDp(int px){
         return (int) (px * metrics);
+    }
+
+    protected void outLog(String text){
+        Log.d(TAG, text);
     }
 
 }

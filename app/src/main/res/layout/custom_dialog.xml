@@ -55,7 +55,7 @@
         android:layout_marginRight="10dp"
         android:padding="10dp"
         android:textColor="@android:color/black"
-        android:background="@drawable/personaliy_act"
+        android:background="@drawable/person_together"
         android:gravity="center"
         android:text="Close"
         android:layout_height="wrap_content"/>
@@ -69,7 +69,7 @@
         android:padding="10dp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
-        android:background="@drawable/personaliy_act"
+        android:background="@drawable/person_together"
         android:gravity="center"
         android:text="Create"
         android:layout_height="wrap_content"/>
