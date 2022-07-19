@@ -55,4 +55,58 @@
         android:layout_below="@+id/tab_layout_example"
         android:layout_marginTop="0dp" />
 
+    <LinearLayout
+        android:id="@+id/bottom_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/botton_sheet_back"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" - доступ до теми на 1 годину"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" - доступ до усіх тем на 24 години"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout_proz"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_proz"/>
+
 </RelativeLayout>

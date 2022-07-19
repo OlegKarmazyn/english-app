@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.TranslateAnimation;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +34,8 @@ public class StudyActivity extends ActivityGlobal {
 
     List<WordModel> wordModelList;
     String topic, subTopic;
+
+    public boolean isReplaced = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -71,6 +77,21 @@ public class StudyActivity extends ActivityGlobal {
         });
     }
 
+    public void showMenu(){
+        RelativeLayout relativeLayout_proz = findViewById(R.id.relativeLayout_proz);
+        relativeLayout_proz.setAlpha(0f);
+        LinearLayout bottom_lay = findViewById(R.id.bottom_lay);
+
+        TranslateAnimation animation = new TranslateAnimation(0, 0, 2000, 0);
+        animation.setDuration(1000);
+        animation.setFillAfter(true);
+
+        bottom_lay.setVisibility(View.VISIBLE);
+        relativeLayout_proz.setVisibility(View.VISIBLE);
+        relativeLayout_proz.animate().alpha(1f).setDuration(1000);
+        bottom_lay.startAnimation(animation);
+    }
+
     /**
      * preparation of all data for display to the user
      */
@@ -108,7 +129,13 @@ public class StudyActivity extends ActivityGlobal {
                 this.finish();
                 overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
                 return true;
+
             case R.id.replay_mipmap:
+                setDateToActivity();
+                return true;
+
+            case R.id.replaced:
+                isReplaced = !isReplaced;
                 setDateToActivity();
                 return true;
 

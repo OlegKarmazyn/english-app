@@ -96,11 +96,11 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             isCreate = true;
 
             fillArrays();
+            randomizeArray();
 
             addTranslationButtonToScreen();
             createAddButton();
 
-            randomizeArray();
         }
 
     }
@@ -190,7 +190,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         int dp_15 = getDp(15);
 
         for (int i = 0; i < size; i++) {
-            final int I = i;
+            int randomInt = id[i];
+            final int I = randomInt;
 
             LinearLayout horizontalLayout = new LinearLayout(context);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -206,41 +207,45 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             engButtonParams.weight = 1;
             LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             rusButtonParams.weight = 1;
-            engButtonParams.setMargins(0, 0, 0,0);
-            rusButtonParams.setMargins( getDp(10), 0, 0,0);
+
 
             TextView textViewEng = new TextView(context),
                     textViewRus = new TextView(context);
 
             //set the properties for English button
-            textViewEng.setText(englishTranslArr[i]);
+            textViewEng.setText(englishTranslArr[randomInt]);
             textViewEng.setTextSize(15);
             textViewEng.setBackgroundResource(R.drawable.person_together);
             textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewEng.setLayoutParams(engButtonParams);
             textViewEng.setGravity(Gravity.CENTER);
             textViewEng.setTextColor(getActivity().getColor(R.color.ios_black));
-            textViewEng.setVisibility(View.VISIBLE);
+
 
             //set the properties for Russian button
-            textViewRus.setText(rusTranslArr[i]);
+            textViewRus.setText(rusTranslArr[randomInt]);
             textViewRus.setTextSize(15);
             textViewRus.setBackgroundResource(R.drawable.person_together);
             textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewRus.setLayoutParams(rusButtonParams);
             textViewRus.setGravity(Gravity.CENTER);
             textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
-            textViewRus.setVisibility(View.GONE);
+
 
             // create listener ( + long Listener)
             View.OnClickListener listener = v -> {
-                textViewRus.setVisibility(View.VISIBLE);
+                if(!studyActivity.isReplaced) {
+                    textViewRus.setVisibility(View.VISIBLE);
+                }else {
+                    textViewEng.setVisibility(View.VISIBLE);
+                }
                 speak(textViewEng.getText().toString());
                 outLog("OnClickListener - first (speak) step");
 
                 v.setOnLongClickListener(v1 -> {
                     deleteWord(I);
                     outLog("OnClickListener - second (delete) step");
+                    studyActivity.showMenu();
                     return false;
                 });
             };
@@ -253,9 +258,26 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             buttonListOfEnglish.add(textViewEng);
             buttonListOfRus.add(textViewRus);
 
+            if(!studyActivity.isReplaced) {
+                engButtonParams.setMargins(0, 0, 0, 0);
+                rusButtonParams.setMargins(getDp(10), 0, 0, 0);
+                textViewEng.setVisibility(View.VISIBLE);
+                textViewRus.setVisibility(View.GONE);
+
+                horizontalLayout.addView(textViewEng);
+                horizontalLayout.addView(textViewRus);
+            } else{
+                engButtonParams.setMargins(getDp(10), 0, 0, 0);
+                rusButtonParams.setMargins(0, 0, 0, 0);
+                textViewEng.setVisibility(View.GONE);
+                textViewRus.setVisibility(View.VISIBLE);
+
+                horizontalLayout.addView(textViewRus);
+                horizontalLayout.addView(textViewEng);
+            }
+
             //add button to the horizontalLayout
-            horizontalLayout.addView(textViewEng);
-            horizontalLayout.addView(textViewRus);
+
 
 
             //add layout to the layout verticalLinearLayout
@@ -267,6 +289,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
     private void deleteWord(int i){
         WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
+        outLog("deleted - " + wordModel.englishWord);
         wordModelDao.delete(wordModel);
         Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
     }
