@@ -1,6 +1,5 @@
 package solid.icon.english;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -19,8 +18,6 @@ import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
 
 public class MainActivity extends ActivityGlobal {
-
-    private Context context = this;
 
     private RecyclerView recyclerView_levels, recyclerView_user;
 
