@@ -212,6 +212,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             public void onClick(DialogInterface dialog, int which) {
                 TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
                 topicModelDao.delete(topicModel);
+
+                mainActivity.setDataToUserAdapter();
             }
         });
         alert.show();
