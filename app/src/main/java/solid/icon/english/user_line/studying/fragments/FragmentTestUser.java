@@ -13,20 +13,13 @@ import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentTestUser extends UserFragmentActivity {
+
     protected FragmentTestUser(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
-        super(wordModelList, topic, subTopic, studyActivity);
-
-        // Required empty public constructor
+        super(wordModelList, topic, subTopic, studyActivity); //empty
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.user_fragment_learn, container, false);
     }

@@ -1,5 +1,6 @@
 package solid.icon.english.architecture;
 
+import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 
@@ -64,6 +65,11 @@ public abstract class UserFragmentActivity extends Fragment {
 
     protected void outLog(String text){
         Log.d(TAG, text);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
 }
