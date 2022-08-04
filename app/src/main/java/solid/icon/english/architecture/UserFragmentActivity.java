@@ -107,6 +107,16 @@ public abstract class UserFragmentActivity extends Fragment {
         Log.d(TAG, String.valueOf(text));
     }
 
+    protected void setVisibleAllItems(){
+        if(studyActivity.menu == null) return;
+        studyActivity.menu.getItem(0).setVisible(true);
+        studyActivity.menu.getItem(1).setVisible(true);
+    }
+
+    protected void setNotVisibleItem(int i){
+        studyActivity.menu.getItem(i).setVisible(false);
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

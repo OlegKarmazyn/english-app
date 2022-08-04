@@ -94,9 +94,9 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
             addTranslationButtonToScreen();
             createAddButton();
-
         }
 
+        setVisibleAllItems();
     }
 
     /**
@@ -110,7 +110,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         LinearLayout horizontalLayout = new LinearLayout(context);
         horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
         horizontalLayout.setGravity(Gravity.CENTER);
-        horizontalLayout.setAlpha(0f);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         layoutParams.setMargins(0, dp_15,0,0);
@@ -174,7 +173,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         horizontalLayout.addView(button);
         verticalLinearLayout.addView(horizontalLayout);
 
-        horizontalLayout.animate().alpha(1f).setDuration(1300);
     }
 
     /**
@@ -188,7 +186,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
             LinearLayout horizontalLayout = new LinearLayout(context);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
-            horizontalLayout.setAlpha(0f);
 
             //params for horizontalLayout
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -265,7 +262,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                 textViewEng.setVisibility(View.GONE);
                 textViewRus.setVisibility(View.VISIBLE);
 
-                //add button to the horizontalLayout
                 horizontalLayout.addView(textViewRus);
                 horizontalLayout.addView(textViewEng);
             }
@@ -273,7 +269,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             //add layout to the layout verticalLinearLayout
             verticalLinearLayout.addView(horizontalLayout);
 
-            horizontalLayout.animate().alpha(1f).setDuration(1300);
         }
     }
 
@@ -284,11 +279,16 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
     }
 
-    private void text1_1_visible_gone() {
-        for (TextView t: buttonListOfRus) {
-            t.setVisibility(View.GONE);
+    private void text_visible_gone() {
+        if(!studyActivity.isReplaced) {
+            for (TextView t : buttonListOfRus) {
+                t.setVisibility(View.GONE);
+            }
+        }else {
+            for (TextView t : buttonListOfEnglish) {
+                t.setVisibility(View.GONE);
+            }
         }
-        //todo Visible done second buttons
     }
 
     private void speak(String text){
@@ -305,7 +305,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     @Override
     public void onPause() {
         super.onPause();
-        text1_1_visible_gone();
-        //todo
+        text_visible_gone();
+
     }
 }

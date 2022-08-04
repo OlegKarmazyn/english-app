@@ -2,6 +2,7 @@ package solid.icon.english.user_line.studying;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,6 +37,7 @@ public class StudyActivity extends ActivityGlobal {
     String topic, subTopic;
 
     public boolean isReplaced = false;
+    public Menu menu;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -75,6 +77,7 @@ public class StudyActivity extends ActivityGlobal {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
     }
 
     public void showMenu(){
@@ -90,6 +93,8 @@ public class StudyActivity extends ActivityGlobal {
         relativeLayout_proz.setVisibility(View.VISIBLE);
         relativeLayout_proz.animate().alpha(1f).setDuration(1000);
         bottom_lay.startAnimation(animation);
+
+        //todo сделать МЕНЮ вместо диалога для изменения или удаления
     }
 
     /**
@@ -102,7 +107,26 @@ public class StudyActivity extends ActivityGlobal {
 
         FragmentManager fm = getSupportFragmentManager();
         adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, StudyActivity.this);
-        pager2.setAdapter(adapter);
+        int cur = pager2.getCurrentItem();
+
+        pager2.animate().alpha(0).setDuration(600);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pager2.setAdapter(adapter);
+                pager2.setCurrentItem(cur);
+            }
+        }, 650);
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                pager2.animate().alpha(1).setDuration(1000);
+            }
+        },700);
+
     }
 
     /**
@@ -118,6 +142,7 @@ public class StudyActivity extends ActivityGlobal {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+        this.menu = menu;
         return true;
     }
 

@@ -43,26 +43,86 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private AnimationDrawable animationDrawable = null;
     private ImageView imageView = null;
 
-    private int i = 0;
-
     private TextToSpeech mTTS;
+
+    private int i = 0;
 
     private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
-    private EditText editText;
-
-    private LinearLayout lay_write_learn = null;
-
-    private TextView words1, words2;
-
-    private FloatingActionButton fab; Drawable f;
-
-    TextView text_check_listen;
-
-
     private int [] counter_true = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}; private int count = 0;
 
+    private LinearLayout lay_write_learn = null;
+    private EditText editText;
+    private TextView words1, words2;
+    private TextView text_check_listen;
+
+    private FloatingActionButton fab; Drawable f;
     private FloatingActionButton el_next;
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        for(int i = 0; i < size;i++){
+            id[i]= i * -1;
+        }
+
+        for(int i = 0; i < size;i++){
+            counter_true[i]= 5;
+        }
+
+        imageView = getActivity().findViewById(R.id.img_listen);
+        animationDrawable = (AnimationDrawable) imageView.getDrawable();
+
+
+        editText = getActivity().findViewById(R.id.wrileEdit);
+        editText.setText("");
+
+        lay_write_learn = getActivity().findViewById(R.id.lay_write_learn);
+
+        words1 = getActivity().findViewById(R.id.words_by_engl);
+        words2 = getActivity().findViewById(R.id.words_by_transl);
+
+        fab = getActivity().findViewById(R.id.fab);
+
+        full_array();
+
+        f = editText.getBackground();
+
+        el_next = getActivity().findViewById(R.id.el_next);
+
+        text_check_listen = getActivity().findViewById(R.id.text_check_listen);
+
+        imageView.setOnClickListener(this);
+        fab.setOnClickListener(this);
+        el_next.setOnClickListener(this);
+        text_check_listen.setOnClickListener(this);
+
+        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    int result =  mTTS.setLanguage(Locale.US);
+
+                    if(result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                        Log.e("TTS", "Language not supported");
+                    } else {
+
+                    }
+                }else{
+                    Log.e("TTS", "Initialization failed");
+                }
+            }
+        });
+
+        words_get_text();
+
+        words1.setClickable(false);
+        words2.setClickable(false);
+
+        setNotVisibleItem(0);
+    }
 
     private void listen(){ speak(rusTranslArr[id[i]]); }
 
@@ -129,70 +189,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-
-        for(int i = 0; i < size;i++){
-            id[i]= i * -1;
-        }
-
-        for(int i = 0; i < size;i++){
-            counter_true[i]= 5;
-        }
-
-        imageView = getActivity().findViewById(R.id.img_listen);
-        animationDrawable = (AnimationDrawable) imageView.getDrawable();
-
-
-        editText = getActivity().findViewById(R.id.wrileEdit);
-        editText.setText("");
-
-        lay_write_learn = getActivity().findViewById(R.id.lay_write_learn);
-
-        words1 = getActivity().findViewById(R.id.words_by_engl);
-        words2 = getActivity().findViewById(R.id.words_by_transl);
-
-        fab = getActivity().findViewById(R.id.fab);
-
-        full_array();
-
-        f = editText.getBackground();
-
-        el_next = getActivity().findViewById(R.id.el_next);
-
-        text_check_listen = getActivity().findViewById(R.id.text_check_listen);
-
-        imageView.setOnClickListener(this);
-        fab.setOnClickListener(this);
-        el_next.setOnClickListener(this);
-        text_check_listen.setOnClickListener(this);
-
-        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.US);
-
-                    if(result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
-                        Log.e("TTS", "Language not supported");
-                    } else {
-
-                    }
-                }else{
-                    Log.e("TTS", "Initialization failed");
-                }
-            }
-        });
-
-        words_get_text();
-
-        words1.setClickable(false);
-        words2.setClickable(false);
-
-    }
-
-    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_listen:
@@ -253,20 +249,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     i = 0;
                 }
                 break;
-//            case R.id.el_next:
-//                Intent intent = null;
-//                if (PreIntermediate.lev.equals("a2")){
-//                    TestOrLearn.doing = "test";
-//                    intent = new Intent(getActivity(), Level_A2.class);
-//
-//                } else if (Intermediate.lev.equals("b1")){
-//                    TestOrLearn.doing = "test";
-//                    intent = new Intent(getActivity(), Level_B1.class);
-//
-//                }
-//                startActivity(intent);
-//                getActivity().finish();
-//                break;
         }
     }
 }

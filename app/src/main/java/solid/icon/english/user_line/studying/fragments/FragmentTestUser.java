@@ -1,6 +1,7 @@
 package solid.icon.english.user_line.studying.fragments;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +63,8 @@ public class FragmentTestUser extends UserFragmentActivity {
 
             createAllComponents();
         }
+
+        setNotVisibleItem(0);
     }
 
     private void createAllComponents() {
@@ -70,7 +73,58 @@ public class FragmentTestUser extends UserFragmentActivity {
         for (int i = 0; i < size; i++) {
             final int randomInt = id[i];
 
+            LinearLayout horizontalLayout = new LinearLayout(context);
+            horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+            horizontalLayout.setAlpha(0f);
 
+            //params for horizontalLayout
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0, dp_15, 0,0);
+            horizontalLayout.setLayoutParams(layoutParams);
+
+            //set params for buttons
+            LinearLayout.LayoutParams engButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            engButtonParams.weight = 1;
+            LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            rusButtonParams.weight = 1;
+
+
+            TextView textViewEng = new TextView(context),
+                    textViewRus = new TextView(context);
+
+            //set the properties for English button
+            textViewEng.setText(englishTranslArr[randomInt]);
+            textViewEng.setTextSize(15);
+            textViewEng.setBackgroundResource(R.drawable.person_together);
+            textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            textViewEng.setLayoutParams(engButtonParams);
+            textViewEng.setGravity(Gravity.CENTER);
+            textViewEng.setTextColor(getActivity().getColor(R.color.ios_black));
+
+
+            //set the properties for Russian button
+            textViewRus.setText(rusTranslArr[randomInt]);
+            textViewRus.setTextSize(15);
+            textViewRus.setBackgroundResource(R.drawable.person_together);
+            textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            textViewRus.setLayoutParams(rusButtonParams);
+            textViewRus.setGravity(Gravity.CENTER);
+            textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
+
+            //set margins
+            engButtonParams.setMargins(0, 0, 0, 0);
+            rusButtonParams.setMargins(getDp(10), 0, 0, 0);
+            textViewEng.setVisibility(View.VISIBLE);
+            textViewRus.setVisibility(View.GONE);
+
+
+            horizontalLayout.addView(textViewRus);
+            horizontalLayout.addView(textViewEng);
+            verticalLinearLayout.addView(horizontalLayout);
+
+            //todo ADD EditText
+
+            horizontalLayout.animate().alpha(1f).setDuration(1300);
         }
     }
 
