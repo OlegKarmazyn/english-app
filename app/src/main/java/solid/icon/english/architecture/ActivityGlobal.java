@@ -22,7 +22,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     }
 
     protected Context context = this;
-    protected String TAG = this.getClass().toString();
+    protected String TAG = this.getClass().getSimpleName();
 
     protected void showActionBar(boolean isShow, String titleText){
         ActionBar actionBar = getSupportActionBar();

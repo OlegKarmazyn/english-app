@@ -25,7 +25,7 @@ public class MainActivity extends ActivityGlobal {
     private RecyclerView recyclerView_levels, recyclerView_user;
 
     private String[] levels_titlesArray,
-                    users_titlesArray = new String[]{"topicas"};
+                    users_titlesArray = new String[]{"topics"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +40,7 @@ public class MainActivity extends ActivityGlobal {
 
         fullRecycleView();
 
-        Log.e(TAG, "efrwasrewgergreg");
+        Log.e(TAG, "start");
     }
     //----------------method for RecyclerView--------------------------------// start
 
