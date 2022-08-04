@@ -7,6 +7,7 @@ import android.util.Log;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import java.util.Arrays;
 import java.util.List;
 
 import solid.icon.english.architecture.room.WordModel;
@@ -56,6 +57,41 @@ public abstract class UserFragmentActivity extends Fragment {
             outLog("englishTranslArr = " + englishTranslArr[i]);
             outLog("rusTranslArr = " + rusTranslArr[i]);
             i++;
+        }
+    }
+
+    protected void fillArrays() {
+        id = new int[size];
+        counter_flip = new int[size];
+        if(size != 0) {
+            Arrays.fill(id, 99999);
+            Arrays.fill(counter_flip, 0);
+        }
+    }
+
+    protected void randomizeArray(){
+        int rand;
+        boolean isTrue = false;
+        int k;
+
+
+        for (int iter = 0; iter < size; iter++) {
+            do {
+                k = 0;
+                rand = (int) (Math.random() * size);
+                for (int j = 0; j < size; j++) {
+                    if (rand == id[j]) {
+                        isTrue = true;
+                    }else{
+                        k++;
+                    }
+                }
+                if(k == size){
+                    isTrue = false;
+                }
+
+            } while (isTrue);
+            id[iter] = rand;
         }
     }
 

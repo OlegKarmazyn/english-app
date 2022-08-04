@@ -16,7 +16,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -51,11 +50,11 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
     WordModelDao wordModelDao;
 
+    private boolean isCreate = false;
+
     /**
      *  onResume
      */
-
-    private boolean isCreate = false;
     @Override
     public void onResume(){
         super.onResume();
@@ -64,7 +63,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
         assert context != null;
 
-        learn_ScrollView = context.findViewById(R.id.learn_ScrollView);
+        learn_ScrollView = context.findViewById(R.id.scrollView);
         verticalLinearLayout = context.findViewById(R.id.verticalLinearLayout);
 
         wordModelDao = App.instance.getDatabase().wordModelDao();
@@ -287,42 +286,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         outLog("deleted - " + wordModel.englishWord);
         wordModelDao.delete(wordModel);
         Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-    }
-
-    private void fillArrays() {
-        id = new int[size];
-        counter_flip = new int[size];
-        if(size != 0) {
-            Arrays.fill(id, 99999);
-            Arrays.fill(counter_flip, 0);
-        }
-    }
-
-
-    private void randomizeArray(){
-        int rand;
-        boolean isTrue = false;
-        int k;
-
-
-        for (int iter = 0; iter < size; iter++) {
-            do {
-                k = 0;
-                rand = (int) (Math.random() * size);
-                for (int j = 0; j < size; j++) {
-                    if (rand == id[j]) {
-                        isTrue = true;
-                    }else{
-                        k++;
-                    }
-                }
-                if(k == size){
-                    isTrue = false;
-                }
-
-            } while (isTrue);
-            id[iter] = rand;
-        }
     }
 
     private void text1_1_visible_gone() {

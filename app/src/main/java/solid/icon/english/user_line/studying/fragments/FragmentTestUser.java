@@ -4,12 +4,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
+import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.architecture.room.WordModelDao;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentTestUser extends UserFragmentActivity {
@@ -24,12 +30,42 @@ public class FragmentTestUser extends UserFragmentActivity {
         return inflater.inflate(R.layout.user_fragment_learn, container, false);
     }
 
+    ScrollView scrollView;
+
+    LinearLayout verticalLinearLayout;
+
+    List<TextView> buttonListOfEnglish = new ArrayList<>(),
+            buttonListOfRus = new ArrayList<>();
+
+    WordModelDao wordModelDao;
+
+    private boolean isCreate = false;
+
     @Override
     public void onResume() {
         super.onResume();
 
         context = getActivity();
+
+        assert context != null;
+        scrollView = context.findViewById(R.id.scrollView);
+        verticalLinearLayout = context.findViewById(R.id.verticalLinearLayout);
+
+        wordModelDao = App.instance.getDatabase().wordModelDao();
+
+        /* methods after init */
+        if(!isCreate) {
+            isCreate = true;
+
+            fillArrays();
+
+            randomizeArray();
+
+
+
+        }
     }
+
 
     @Override
     public void onPause() {

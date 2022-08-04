@@ -7,7 +7,7 @@
     tools:context=".words_by_levels.study_way.FragmentLearn">
 
     <ScrollView
-        android:id="@+id/learn_ScrollView"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:ignore="OnClick" >

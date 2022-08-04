@@ -122,11 +122,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     }
 
     private void speak(String text){
-        float pitch = 0.5f;
-        float speed = 0.5f;
-        Log.e("TTS", "123");
-        //mTTS.setPitch(pitch);
-        //mTTS.setSpeechRate(speed);
+        //float pitch = 0.5f;
+        //float speed = 0.5f;
 
         mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
     }
@@ -174,7 +171,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
             @Override
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.getDefault()); //todo LANGUAGE    Locale.US
+                    int result =  mTTS.setLanguage(Locale.US);
 
                     if(result == TextToSpeech.LANG_MISSING_DATA
                             || result == TextToSpeech.LANG_NOT_SUPPORTED){
