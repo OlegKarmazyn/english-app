@@ -176,7 +176,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             }
         });
 
-        //add layout to the layout verticalLinearLayout
+        //adding layout to the layout verticalLinearLayout
         horizontalLayout.addView(button);
         verticalLinearLayout.addView(horizontalLayout);
 
