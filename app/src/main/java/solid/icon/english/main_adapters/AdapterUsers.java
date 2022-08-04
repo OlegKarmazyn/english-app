@@ -59,23 +59,24 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         return new MyViewHolder(view);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         /*------------------------------settings------------------------------*/
 
+        if (position == 0) {
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
+        } else if (position == titlesArray.length) {
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
+        } else {
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
+        }
+
         if(position != size){
 
             holder.title.setText(titlesArray[position]);
             holder.checkBox.setChecked(isCheckArray[position]);
-
-            if (position == 0) {
-                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
-            } else if (position == titlesArray.length - 1) {
-                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
-            } else {
-                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
-            }
 
             if (isCheckArray[position]) {
                 holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
