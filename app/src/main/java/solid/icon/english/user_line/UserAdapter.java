@@ -63,23 +63,22 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         return new UserAdapter.MyViewHolder(view);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull UserAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         /*------------------------------settings------------------------------*/
 
+        if (position == 0) {
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
+        } else {
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
+        }
+
         if(position != size){
 
             holder.title.setText(titlesArray[position]);
             holder.checkBox.setChecked(isCheckArray[position]);
-
-            if (position == 0) {
-                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
-            } else if (position == titlesArray.length - 1) {
-                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
-            } else {
-                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
-            }
 
             if (isCheckArray[position]) {
                 holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -89,6 +88,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         }else {
 
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
             holder.add_topic.setVisibility(View.VISIBLE);
             holder.title.setVisibility(View.GONE);
             holder.checkBox.setVisibility(View.GONE);

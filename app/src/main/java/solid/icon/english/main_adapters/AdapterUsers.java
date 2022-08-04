@@ -67,8 +67,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         if (position == 0) {
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
-        } else if (position == titlesArray.length) {
-            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
         } else {
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
         }
@@ -86,6 +84,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         }else {
 
+            holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
             holder.add_topic.setVisibility(View.VISIBLE);
             holder.title.setVisibility(View.GONE);
             holder.checkBox.setVisibility(View.GONE);
