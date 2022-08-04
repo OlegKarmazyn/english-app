@@ -103,6 +103,10 @@ public abstract class UserFragmentActivity extends Fragment {
         Log.d(TAG, text);
     }
 
+    protected void outLog(int text){
+        Log.d(TAG, String.valueOf(text));
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

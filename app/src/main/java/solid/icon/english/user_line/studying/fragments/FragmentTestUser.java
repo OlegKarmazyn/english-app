@@ -58,9 +58,17 @@ public class FragmentTestUser extends UserFragmentActivity {
             isCreate = true;
 
             fillArrays();
-
             randomizeArray();
 
+            createAllComponents();
+        }
+    }
+
+    private void createAllComponents() {
+        int dp_15 = getDp(15);
+
+        for (int i = 0; i < size; i++) {
+            final int randomInt = id[i];
 
 
         }

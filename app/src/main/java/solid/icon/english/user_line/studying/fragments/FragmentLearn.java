@@ -184,8 +184,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         int dp_15 = getDp(15);
 
         for (int i = 0; i < size; i++) {
-            int randomInt = id[i];
-            final int I = randomInt;
+            final int randomInt = id[i];
 
             LinearLayout horizontalLayout = new LinearLayout(context);
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
@@ -237,7 +236,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                 outLog("OnClickListener - first (speak) step");
 
                 v.setOnLongClickListener(v1 -> {
-                    deleteWord(I);
+                    deleteWord(randomInt);
                     outLog("OnClickListener - second (delete) step");
                     studyActivity.showMenu();
                     return false;
@@ -266,13 +265,10 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                 textViewEng.setVisibility(View.GONE);
                 textViewRus.setVisibility(View.VISIBLE);
 
+                //add button to the horizontalLayout
                 horizontalLayout.addView(textViewRus);
                 horizontalLayout.addView(textViewEng);
             }
-
-            //add button to the horizontalLayout
-
-
 
             //add layout to the layout verticalLinearLayout
             verticalLinearLayout.addView(horizontalLayout);
