@@ -102,7 +102,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
             @Override
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.US);
+                    int result =  mTTS.setLanguage(Locale.ENGLISH);
 
                     if(result == TextToSpeech.LANG_MISSING_DATA
                             || result == TextToSpeech.LANG_NOT_SUPPORTED){
@@ -124,7 +124,10 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         setNotVisibleItem(0);
     }
 
-    private void listen(){ speak(rusTranslArr[id[i]]); }
+    private void listen(){
+        speak(englishTranslArr[id[i]]);
+        outLog("englishTranslArr " + englishTranslArr[id[i]]);
+    }
 
     private boolean isTrueWords(){
         String eT = editText.getText().toString();
