@@ -46,10 +46,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private TextToSpeech mTTS;
 
     private int i = 0;
-
-    private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
-
-    private int [] counter_true = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}; private int count = 0;
+    private int count = 0;
 
     private LinearLayout lay_write_learn = null;
     private EditText editText;
@@ -62,14 +59,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     @Override
     public void onResume() {
         super.onResume();
-
-        for(int i = 0; i < size;i++){
-            id[i]= i * -1;
-        }
-
-        for(int i = 0; i < size;i++){
-            counter_true[i]= 5;
-        }
 
         imageView = getActivity().findViewById(R.id.img_listen);
         animationDrawable = (AnimationDrawable) imageView.getDrawable();
@@ -84,8 +73,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         words2 = getActivity().findViewById(R.id.words_by_transl);
 
         fab = getActivity().findViewById(R.id.fab);
-
-        full_array();
 
         f = editText.getBackground();
 
@@ -145,33 +132,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         words2.setText(rusTranslArr[id[i]]);
     }
 
-    private void full_array(){
-        int rand = 0;
-        boolean isTrue = false;
-        int k = 0;
-
-
-        for (int iter = 0; iter < size; iter++) {
-            do {
-                k = 0;
-                rand = (int) (Math.random() * size);
-                Log.e(TAG, "full_array");
-                for (int j = 0; j < size; j++) {
-                    if (rand == id[j]) {
-                        isTrue = true;
-                    }else{
-                        k++;
-                    }
-                }
-                if(k == size){
-                    isTrue = false;
-                }
-
-            } while (isTrue);
-            id[iter] = rand;
-        }
-    }
-
     @Override
     public void onPause() {
         super.onPause();
@@ -214,14 +174,14 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                 lay_write_learn.setVisibility(View.VISIBLE);
 
                 if(isTrueWords()){
-                    if (counter_true[i] != 0){
-                        counter_true[i] = 1;
+                    if (counter_flip[i] != 0){
+                        counter_flip[i] = 1;
                     }
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
                 } else{
-                    counter_true[i] = 0;
+                    counter_flip[i] = 0;
                     editText.setBackgroundResource(R.color.back_false);
                 }
                 break;
@@ -237,17 +197,17 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     editText.setBackground(f);
                 } else {
                     count = 0;
-                    for (int c: counter_true) {
+                    for (int c: counter_flip) {
                         if (c == 1){
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG);
-                    mess.show();
+                    Toast.makeText(getActivity(), "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
+
 //                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
                     for(int i = 0; i < size; i++){
-                        counter_true[i] = 5;
+                        counter_flip[i] = 5;
                     }
                     i = 0;
                 }

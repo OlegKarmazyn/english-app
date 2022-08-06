@@ -89,9 +89,6 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         if(!isCreate) {
             isCreate = true;
 
-            fillArrays();
-            randomizeArray();
-
             addTranslationButtonToScreen();
             createAddButton();
         }

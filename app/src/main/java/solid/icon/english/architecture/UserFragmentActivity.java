@@ -58,6 +58,9 @@ public abstract class UserFragmentActivity extends Fragment {
             outLog("rusTranslArr = " + rusTranslArr[i]);
             i++;
         }
+
+        fillArrays();
+        randomizeArray();
     }
 
     protected void fillArrays() {

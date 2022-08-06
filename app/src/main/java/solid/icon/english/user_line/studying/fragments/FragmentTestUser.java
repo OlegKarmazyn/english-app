@@ -66,9 +66,6 @@ public class FragmentTestUser extends UserFragmentActivity {
         if(!isCreate) {
             isCreate = true;
 
-            fillArrays();
-            randomizeArray();
-
             createAllComponents();
             createCheckButton();
         }
