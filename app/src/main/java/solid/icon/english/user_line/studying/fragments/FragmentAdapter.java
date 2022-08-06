@@ -37,7 +37,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
             case 2:
                 return new FragmentTestUser(wordModelList, topic, subTopic, studyActivity);
             case 3:
-                //return new FragmentDefinition( what_level, num_of_topic);
+                return new FragmentDefinition(wordModelList, topic, subTopic, studyActivity);
 
             default:
                 return new FragmentLearn(wordModelList, topic, subTopic, studyActivity);

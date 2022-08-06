@@ -147,7 +147,10 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                     EditText englishWord = customLayout.findViewById(R.id.english_word);
                     EditText russianWord = customLayout.findViewById(R.id.russian_word);
                     EditText definition = customLayout.findViewById(R.id.definition);
-                    addToDBNewWord(englishWord.getText().toString(), russianWord.getText().toString(), definition.getText().toString());
+                    addToDBNewWord(
+                            englishWord.getText().toString().trim(),
+                            russianWord.getText().toString().trim(),
+                            definition.getText().toString().trim());
                 });
 
                 customLayout.findViewById(R.id.but_no).setOnClickListener(view -> dialog.cancel());

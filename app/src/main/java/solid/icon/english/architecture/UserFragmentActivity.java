@@ -17,7 +17,7 @@ public abstract class UserFragmentActivity extends Fragment {
 
     protected List<WordModel> wordModelList;
     protected String topic, subTopic;
-    protected String[] englishTranslArr, rusTranslArr;
+    protected String[] englishTranslArr, rusTranslArr, definitionArr;
     protected StudyActivity studyActivity;
     protected int size = 0;
     protected float metrics = Dpi.metrics;
@@ -50,12 +50,15 @@ public abstract class UserFragmentActivity extends Fragment {
 
         englishTranslArr = new String[size];
         rusTranslArr = new String[size];
+        definitionArr = new String[size];
         int i = 0;
         for (WordModel w : wordModelList) {
             englishTranslArr[i] = w.englishWord;
             rusTranslArr[i] = w.rusWord;
+            definitionArr[i] = w.definition;
             outLog("englishTranslArr = " + englishTranslArr[i]);
             outLog("rusTranslArr = " + rusTranslArr[i]);
+            outLog("definitionArr = " + definitionArr[i]);
             i++;
         }
 
