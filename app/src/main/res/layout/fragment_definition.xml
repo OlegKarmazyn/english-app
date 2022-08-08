@@ -78,23 +78,23 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab"
-            android:visibility="gone"
-            android:layout_width="85dp"
-            android:layout_height="67dp"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="300dp"
             app:srcCompat="@android:drawable/checkbox_on_background" />
 
         <EditText
             android:id="@+id/writeEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:gravity="center"
             android:layout_gravity="center"
             android:padding="15dp"
             android:textSize="16sp"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_marginRight="15dp"/>
 
         <TextView
             android:id="@+id/text_check"

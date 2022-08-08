@@ -70,8 +70,8 @@ public abstract class UserFragmentActivity extends Fragment {
         id = new int[size];
         counter_flip = new int[size];
         if(size != 0) {
-            Arrays.fill(id, 99999);
-            Arrays.fill(counter_flip, 0);
+            Arrays.fill(id, -1);
+            Arrays.fill(counter_flip, -1);
         }
     }
 

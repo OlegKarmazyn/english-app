@@ -1,5 +1,6 @@
 package solid.icon.english.user_line.studying.fragments;
 
+import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -59,6 +61,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     @Override
     public void onResume() {
         super.onResume();
+        context = getActivity();
 
         imageView = getActivity().findViewById(R.id.img_listen);
         animationDrawable = (AnimationDrawable) imageView.getDrawable();
@@ -151,6 +154,11 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
     }
 
+    private void hideSoftKeyboard(EditText input) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -180,10 +188,12 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
+                    hideSoftKeyboard(editText);
                 } else{
                     counter_flip[i] = 0;
                     editText.setBackgroundResource(R.color.back_false);
                 }
+
                 break;
 
             case R.id.fab:
@@ -207,7 +217,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 //                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
                     for(int i = 0; i < size; i++){
-                        counter_flip[i] = 5;
+                        counter_flip[i] = -1;
                     }
                     i = 0;
                 }
