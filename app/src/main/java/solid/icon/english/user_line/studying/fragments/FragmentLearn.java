@@ -1,5 +1,6 @@
 package solid.icon.english.user_line.studying.fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.Gravity;
@@ -233,9 +234,9 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                 outLog("OnClickListener - first (speak) step");
 
                 v.setOnLongClickListener(v1 -> {
-                    deleteWord(randomInt);
+                    showDeleteDialog(randomInt);
                     outLog("OnClickListener - second (delete) step");
-                    studyActivity.showMenu();
+                    //studyActivity.showMenu(); //todo edit + delete
                     return false;
                 });
             };
@@ -272,11 +273,19 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         }
     }
 
-    private void deleteWord(int i){
-        WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
-        outLog("deleted - " + wordModel.englishWord);
-        wordModelDao.delete(wordModel);
-        Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+    public void showDeleteDialog(int i){
+        AlertDialog.Builder alert = new AlertDialog.Builder(context);
+        alert.setTitle("Do you want to delete topic?");
+        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
+                outLog("deleted - " + wordModel.englishWord);
+                wordModelDao.delete(wordModel);
+                Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+        alert.show();
     }
 
     private void text_visible_gone() {
