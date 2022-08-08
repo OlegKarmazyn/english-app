@@ -2,14 +2,17 @@ package solid.icon.english.user_line.studying.fragments;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,6 +56,10 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
     private boolean isCreate = false;
 
+    private RelativeLayout relativeLayout_proz;
+    private LinearLayout bottom_lay;
+
+
     /**
      *  onResume
      */
@@ -66,6 +73,8 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
         learn_ScrollView = context.findViewById(R.id.scrollView);
         verticalLinearLayout = context.findViewById(R.id.verticalLinearLayout);
+        relativeLayout_proz = context.findViewById(R.id.relativeLayout_proz);
+        bottom_lay = context.findViewById(R.id.bottom_lay);
 
         wordModelDao = App.instance.getDatabase().wordModelDao();
 
@@ -130,31 +139,22 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
         //listener
         button.setOnClickListener(new View.OnClickListener() {
+
+            final EditText englishWord = context.findViewById(R.id.english_word),
+                    russianWord = context.findViewById(R.id.russian_word),
+                    definition = context.findViewById(R.id.definition);
+
             @Override
             public void onClick(View v) {
-                showAddingDialog();
+                showMenu();
+                context.findViewById(R.id.but_yes).setOnClickListener(v1 -> combineData());
             }
 
-            private void showAddingDialog() {
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-
-                final View customLayout = getLayoutInflater().inflate(R.layout.custom_dialog, null);
-                builder.setView(customLayout);
-                AlertDialog dialog = builder.create();
-                dialog.show();
-
-                customLayout.findViewById(R.id.but_yes).setOnClickListener(view -> {
-                    dialog.cancel();
-                    EditText englishWord = customLayout.findViewById(R.id.english_word);
-                    EditText russianWord = customLayout.findViewById(R.id.russian_word);
-                    EditText definition = customLayout.findViewById(R.id.definition);
-                    addToDBNewWord(
-                            englishWord.getText().toString().trim(),
-                            russianWord.getText().toString().trim(),
-                            definition.getText().toString().trim());
-                });
-
-                customLayout.findViewById(R.id.but_no).setOnClickListener(view -> dialog.cancel());
+            private void combineData() {
+                addToDBNewWord(
+                        englishWord.getText().toString().trim(),
+                        russianWord.getText().toString().trim(),
+                        definition.getText().toString().trim());
             }
 
             private void addToDBNewWord(String englishWord, String russianWord, String definition){
@@ -269,6 +269,37 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             verticalLinearLayout.addView(horizontalLayout);
 
         }
+    }
+
+    private void showMenu(){
+        relativeLayout_proz.setAlpha(0f);
+
+        TranslateAnimation animation = new TranslateAnimation(0, 0, 2000, 0);
+        animation.setDuration(1000);
+        animation.setFillAfter(true);
+
+        bottom_lay.setVisibility(View.VISIBLE);
+        relativeLayout_proz.setVisibility(View.VISIBLE);
+        relativeLayout_proz.animate().alpha(1f).setDuration(1000);
+        bottom_lay.startAnimation(animation);
+
+        relativeLayout_proz.setOnClickListener(this::closeMenu);
+
+        context.findViewById(R.id.but_no).setOnClickListener(this::closeMenu);
+    }
+
+    public void closeMenu(View v){
+        TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 2000);
+        animation.setDuration(1000);
+        animation.setFillAfter(true);
+
+        new Handler().postDelayed(() -> {
+            bottom_lay.setVisibility(View.GONE);
+            relativeLayout_proz.setVisibility(View.GONE);
+        }, 1000);
+
+        relativeLayout_proz.animate().alpha(0f).setDuration(1000);
+        bottom_lay.startAnimation(animation);
     }
 
     public void showDeleteDialog(int i){

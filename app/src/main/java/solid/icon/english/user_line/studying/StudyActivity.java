@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.TranslateAnimation;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -78,23 +74,6 @@ public class StudyActivity extends ActivityGlobal {
             }
         });
 
-    }
-
-    public void showMenu(){
-        RelativeLayout relativeLayout_proz = findViewById(R.id.relativeLayout_proz);
-        relativeLayout_proz.setAlpha(0f);
-        LinearLayout bottom_lay = findViewById(R.id.bottom_lay);
-
-        TranslateAnimation animation = new TranslateAnimation(0, 0, 2000, 0);
-        animation.setDuration(1000);
-        animation.setFillAfter(true);
-
-        bottom_lay.setVisibility(View.VISIBLE);
-        relativeLayout_proz.setVisibility(View.VISIBLE);
-        relativeLayout_proz.animate().alpha(1f).setDuration(1000);
-        bottom_lay.startAnimation(animation);
-
-        //todo сделать МЕНЮ вместо диалога для изменения или удаления
     }
 
     /**

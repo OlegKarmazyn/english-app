@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".words_by_levels.study_way.FragmentLearn">
 
     <ScrollView
@@ -25,14 +24,109 @@
         </LinearLayout>
     </ScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/el_next"
+    <RelativeLayout
+        android:id="@+id/relativeLayout_proz"
         android:visibility="gone"
-        android:onClick="next_learn"
-        android:layout_width="85dp"
-        android:layout_height="67dp"
-        android:layout_margin="40dp"
-        app:srcCompat="@android:drawable/ic_media_next"
-        tools:ignore="OnClick" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_proz"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:id="@+id/relative_editing">
+
+        <LinearLayout
+            android:id="@+id/bottom_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="@drawable/botton_sheet_back"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp"
+            android:visibility="gone">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter info for create new word"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="22sp"/>
+
+            <EditText
+                android:id="@+id/english_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="english word"
+                android:gravity="center"
+                android:textColor="@color/ios_blackText"/>
+
+            <EditText
+                android:id="@+id/russian_word"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="other language word"
+                android:gravity="center"
+                android:textColor="@color/ios_blackText"/>
+
+            <EditText
+                android:id="@+id/definition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:hint="definition (meaning)"
+                android:gravity="center"
+                android:textColor="@color/ios_blackText"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/but_no"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="10dp"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/person_together"
+                    android:gravity="center"
+                    android:text="Close"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/but_yes"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/person_together"
+                    android:gravity="center"
+                    android:text="Create"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>
