@@ -189,15 +189,13 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
 
             //params for horizontalLayout
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             layoutParams.setMargins(0, dp_15, 0,0);
             horizontalLayout.setLayoutParams(layoutParams);
 
             //set params for buttons
-            LinearLayout.LayoutParams engButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            engButtonParams.weight = 1;
-            LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            rusButtonParams.weight = 1;
+            LinearLayout.LayoutParams engButtonParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
+            LinearLayout.LayoutParams rusButtonParams = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1);
 
 
             TextView textViewEng = new TextView(context),
