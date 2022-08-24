@@ -67,48 +67,23 @@ public abstract class UserFragmentActivity extends Fragment {
         }
 
         fillArrays();
-        id = randomizeArray(id);
+        shuffleArray(id);
     }
 
+    //arrays should not have positive values
     protected void fillArrays() {
         id = new int[size];
         counter_flip = new int[size];
+        final int NOT_USE_VALUE = -1;
         if (size != 0) {
-            Arrays.fill(id, -1);
-            Arrays.fill(counter_flip, -1);
+            Arrays.fill(counter_flip, NOT_USE_VALUE);
+        }
+        for (int i = 0; i < size; i++) {
+            id[i] = i;
         }
     }
 
-    protected int[] randomizeArray(int[] id) {
-        int rand;
-        boolean isTrue = false;
-        int k;
-
-
-        for (int iter = 0; iter < size; iter++) {
-            do {
-                k = 0;
-                rand = (int) (Math.random() * size);
-                for (int j = 0; j < size; j++) {
-                    if (rand == id[j]) {
-                        isTrue = true;
-                    } else {
-                        k++;
-                    }
-                }
-                if (k == size) {
-                    isTrue = false;
-                }
-
-            } while (isTrue);
-            id[iter] = rand;
-        }
-
-        return id;
-    }
-
-    static void shuffleArray(int[] ar) {
-        // If running on Java 6 or older, use `new Random()` on RHS here
+    protected void shuffleArray(int[] ar) {
         Random rnd = ThreadLocalRandom.current();
         for (int i = ar.length - 1; i > 0; i--) {
             int index = rnd.nextInt(i + 1);
