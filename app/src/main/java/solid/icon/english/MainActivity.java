@@ -22,7 +22,7 @@ public class MainActivity extends ActivityGlobal {
     private RecyclerView recyclerView_levels, recyclerView_user;
 
     private String[] levels_titlesArray,
-                    users_titlesArray = new String[]{"topics"};
+            users_titlesArray = new String[]{"topics"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +41,14 @@ public class MainActivity extends ActivityGlobal {
     }
     //----------------method for RecyclerView--------------------------------// start
 
-    private void fullRecycleView(){
+    private void fullRecycleView() {
         setSettingsToRecyclerView(recyclerView_levels);
         setSettingsToRecyclerView(recyclerView_user);
         setAdapters();
 
     }
 
-    private void setSettingsToRecyclerView(RecyclerView recyclerView){
+    private void setSettingsToRecyclerView(RecyclerView recyclerView) {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(linearLayoutManager);
         RecyclerView.ItemDecoration dividerItemDecoration = new DividerItemDecorator(ContextCompat.getDrawable(context, R.drawable.divider));
@@ -65,7 +65,7 @@ public class MainActivity extends ActivityGlobal {
         setDataToUserAdapter();
     }
 
-    public void setDataToUserAdapter(){
+    public void setDataToUserAdapter() {
         getUsers_titlesArray();
 
         recyclerView_user.setAlpha(0f);
@@ -78,7 +78,7 @@ public class MainActivity extends ActivityGlobal {
 
     //----------------method for RecyclerView--------------------------------// end
 
-    private void getUsers_titlesArray(){
+    private void getUsers_titlesArray() {
         TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
         List<TopicModel> topicModelList = topicModelDao.getAll();
         users_titlesArray = new String[topicModelList.size()];

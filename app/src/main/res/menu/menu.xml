@@ -6,16 +6,16 @@
     <item
         android:id="@+id/replay_mipmap"
         android:icon="@drawable/replay_mipmap"
+        android:orderInCategory="2"
         android:title=""
-        app:showAsAction="always"
         android:visible="true"
-        android:orderInCategory="2" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/replaced"
         android:icon="@drawable/ic_replaced"
+        android:orderInCategory="1"
         android:title=""
-        app:showAsAction="always"
         android:visible="true"
-        android:orderInCategory="1" />
+        app:showAsAction="always" />
 </menu>

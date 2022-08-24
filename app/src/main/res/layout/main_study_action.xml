@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/ios_gray"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/ios_gray">
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_marginTop="?actionBarSize"
         android:id="@+id/tab_layout_example"
         style="@style/AppTabLayout"
-        app:tabTextAppearance="@style/AppTabTextAppearance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="?actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabTextAppearance="@style/AppTabTextAppearance">
 
 
         <com.google.android.material.tabs.TabItem

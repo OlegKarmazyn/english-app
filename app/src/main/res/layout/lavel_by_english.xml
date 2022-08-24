@@ -4,56 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
     android:background="@color/ios_gray"
-    android:layout_alignParentBottom="true">
+    android:orientation="vertical">
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginBottom="120dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/pre_intermediate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
-            android:layout_marginBottom="120dp"
-            android:orientation="vertical"
-            android:padding="10dp">
+            android:background="@drawable/person_together"
+            android:padding="15dp"
+            android:text="pre-intermediate"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/pre_intermediate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:background="@drawable/person_together"
-                android:padding="15dp"
-                android:text="pre-intermediate"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/intermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/person_together"
+            android:padding="15dp"
+            android:text="intermediate"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/intermediate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/person_together"
-                android:padding="15dp"
-                android:text="intermediate"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/upper_Intermediate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/person_together"
-                android:padding="15dp"
-                android:text="Upper-Intermediate"
-                android:textStyle="bold" />
+        <Button
+            android:id="@+id/upper_Intermediate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/person_together"
+            android:padding="15dp"
+            android:text="Upper-Intermediate"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
 
-        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>

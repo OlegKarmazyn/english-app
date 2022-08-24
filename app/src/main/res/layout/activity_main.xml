@@ -4,58 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/ios_gray">
+    android:background="@color/ios_gray"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/text_levels"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Levels words"
-            android:textColor="@color/ios_blackText"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView_levels"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_levels"
-            android:background="@drawable/rounded_table"
-            android:layout_margin="15dp"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/your_text"
-            android:layout_below="@+id/recycleView_levels"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Your words"
-            android:textColor="@color/ios_blackText"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/text_levels"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Levels words"
+                android:textColor="@color/ios_blackText"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycleView_user"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/your_text"
-            android:background="@drawable/rounded_table"
-            android:layout_margin="15dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView_levels"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_levels"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_table" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/your_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recycleView_levels"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Your words"
+                android:textColor="@color/ios_blackText"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycleView_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/your_text"
+                android:layout_margin="15dp"
+                android:background="@drawable/rounded_table" />
+
+        </RelativeLayout>
 
     </ScrollView>
 
