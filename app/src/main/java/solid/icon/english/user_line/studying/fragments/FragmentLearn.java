@@ -1,6 +1,5 @@
 package solid.icon.english.user_line.studying.fragments;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -78,20 +77,17 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
         wordModelDao = App.instance.getDatabase().wordModelDao();
 
-        mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = mTTS.setLanguage(Locale.ENGLISH);
+        mTTS = new TextToSpeech(context, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                int result = mTTS.setLanguage(Locale.ENGLISH);
 
-                    if (result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        outLog("TTS - Language not supported");
-                    }
-
-                } else {
-                    outLog("TTS - Initialization failed");
+                if (result == TextToSpeech.LANG_MISSING_DATA
+                        || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    outLog("TTS - Language not supported");
                 }
+
+            } else {
+                outLog("TTS - Initialization failed");
             }
         });
 
@@ -208,7 +204,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewEng.setLayoutParams(engButtonParams);
             textViewEng.setGravity(Gravity.CENTER);
-            textViewEng.setTextColor(getActivity().getColor(R.color.ios_black));
+            textViewEng.setTextColor(context.getColor(R.color.ios_black));
 
 
             //set the properties for Russian button
@@ -218,7 +214,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
             textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewRus.setLayoutParams(rusButtonParams);
             textViewRus.setGravity(Gravity.CENTER);
-            textViewRus.setTextColor(getActivity().getColor(R.color.ios_black));
+            textViewRus.setTextColor(context.getColor(R.color.ios_black));
 
 
             // create listener ( + long Listener)
@@ -307,14 +303,11 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     public void showDeleteDialog(int i) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
-        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
-                outLog("deleted - " + wordModel.englishWord);
-                wordModelDao.delete(wordModel);
-                Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-            }
+        alert.setPositiveButton("Yes", (dialog, which) -> {
+            WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
+            outLog("deleted - " + wordModel.englishWord);
+            wordModelDao.delete(wordModel);
+            Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
         });
         alert.show();
     }
