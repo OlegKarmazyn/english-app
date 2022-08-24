@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentActivity;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.user_line.studying.StudyActivity;
@@ -22,17 +24,17 @@ public abstract class UserFragmentActivity extends Fragment {
     protected int size = 0;
     protected float metrics = Dpi.metrics;
 
-    protected int [] id;
+    protected int[] id;
 
     protected TextToSpeech mTTS;
 
-    protected int [] counter_flip;
+    protected int[] counter_flip;
 
     protected FragmentActivity context;
 
     protected String TAG = this.getClass().getSimpleName();
 
-    protected UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity){
+    protected UserFragmentActivity(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
         this.wordModelList = wordModelList;
         this.topic = topic;
         this.subTopic = subTopic;
@@ -42,11 +44,13 @@ public abstract class UserFragmentActivity extends Fragment {
         fillMainArrays();
     }
 
-    protected void fillMainArrays(){
-        if (wordModelList != null){
+    protected void fillMainArrays() {
+        if (wordModelList != null) {
             size = wordModelList.size();
             outLog("size = " + size);
-        }else { return; }
+        } else {
+            return;
+        }
 
         englishTranslArr = new String[size];
         rusTranslArr = new String[size];
@@ -63,19 +67,19 @@ public abstract class UserFragmentActivity extends Fragment {
         }
 
         fillArrays();
-        randomizeArray();
+        id = randomizeArray(id);
     }
 
     protected void fillArrays() {
         id = new int[size];
         counter_flip = new int[size];
-        if(size != 0) {
+        if (size != 0) {
             Arrays.fill(id, -1);
             Arrays.fill(counter_flip, -1);
         }
     }
 
-    protected void randomizeArray(){
+    protected int[] randomizeArray(int[] id) {
         int rand;
         boolean isTrue = false;
         int k;
@@ -88,38 +92,52 @@ public abstract class UserFragmentActivity extends Fragment {
                 for (int j = 0; j < size; j++) {
                     if (rand == id[j]) {
                         isTrue = true;
-                    }else{
+                    } else {
                         k++;
                     }
                 }
-                if(k == size){
+                if (k == size) {
                     isTrue = false;
                 }
 
             } while (isTrue);
             id[iter] = rand;
         }
+
+        return id;
     }
 
-    protected int getDp(int px){
+    static void shuffleArray(int[] ar) {
+        // If running on Java 6 or older, use `new Random()` on RHS here
+        Random rnd = ThreadLocalRandom.current();
+        for (int i = ar.length - 1; i > 0; i--) {
+            int index = rnd.nextInt(i + 1);
+            // Simple swap
+            int a = ar[index];
+            ar[index] = ar[i];
+            ar[i] = a;
+        }
+    }
+
+    protected int getDp(int px) {
         return (int) (px * metrics);
     }
 
-    protected void outLog(String text){
+    protected void outLog(String text) {
         Log.d(TAG, text);
     }
 
-    protected void outLog(int text){
+    protected void outLog(int text) {
         Log.d(TAG, String.valueOf(text));
     }
 
-    protected void setVisibleAllItems(){
-        if(studyActivity.menu == null) return;
+    protected void setVisibleAllItems() {
+        if (studyActivity.menu == null) return;
         studyActivity.menu.getItem(0).setVisible(true);
         studyActivity.menu.getItem(1).setVisible(true);
     }
 
-    protected void setNotVisibleItem(int i){
+    protected void setNotVisibleItem(int i) {
         studyActivity.menu.getItem(i).setVisible(false);
     }
 
