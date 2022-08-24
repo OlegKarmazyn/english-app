@@ -63,7 +63,7 @@ public class FragmentTestUser extends UserFragmentActivity {
         wordModelDao = App.instance.getDatabase().wordModelDao();
 
         /* methods after init */
-        if(!isCreate) {
+        if (!isCreate) {
             isCreate = true;
 
             createAllComponents();
@@ -84,7 +84,7 @@ public class FragmentTestUser extends UserFragmentActivity {
 
             //params for horizontalLayout
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams.setMargins(0, dp_15, 0,0);
+            layoutParams.setMargins(0, dp_15, 0, 0);
             horizontalLayout.setLayoutParams(layoutParams);
 
             //set params for buttons
@@ -132,7 +132,7 @@ public class FragmentTestUser extends UserFragmentActivity {
 
             EditText editText = new EditText(context);
             LinearLayout.LayoutParams layoutParams_editText = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            layoutParams_editText.setMargins(0, dp_15, 0,0);
+            layoutParams_editText.setMargins(0, dp_15, 0, 0);
             editText.setLayoutParams(layoutParams_editText);
             editText.setGravity(Gravity.CENTER);
             editText.setTextColor(getActivity().getColor(R.color.ios_black));
@@ -156,7 +156,7 @@ public class FragmentTestUser extends UserFragmentActivity {
         horizontalLayout.setGravity(Gravity.CENTER);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(0, dp_15,0,0);
+        layoutParams.setMargins(0, dp_15, 0, 0);
 
         horizontalLayout.setLayoutParams(layoutParams);
 
@@ -180,14 +180,14 @@ public class FragmentTestUser extends UserFragmentActivity {
                 int counter = 0;
                 for (int i = 0; i < size; i++) {
                     int index = id[i];
-                    if (editTextList.get(i).getText().toString().trim().equals(englishTranslArr[index])){
+                    if (editTextList.get(i).getText().toString().trim().equals(englishTranslArr[index])) {
                         editTextList.get(i).setBackgroundResource(R.color.back_true);
                         counter++;
                     } else {
                         editTextList.get(i).setBackgroundResource(R.color.back_false);
                     }
                 }
-                for (TextView t: textViewList){
+                for (TextView t : textViewList) {
                     t.setVisibility(View.VISIBLE);
                 }
                 Toast.makeText(context, "True answer - " + counter, Toast.LENGTH_LONG).show();
@@ -200,13 +200,13 @@ public class FragmentTestUser extends UserFragmentActivity {
 
     }
 
-    private void setNaturalDesign(){
-        for (EditText e: editTextList) {
+    private void setNaturalDesign() {
+        for (EditText e : editTextList) {
             e.setBackground(drawable);
             e.setText("");
         }
 
-        for (TextView t: textViewList){
+        for (TextView t : textViewList) {
             t.setVisibility(View.GONE);
         }
     }

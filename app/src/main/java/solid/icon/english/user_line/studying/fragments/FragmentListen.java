@@ -42,6 +42,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_listen, container, false);
     }
+
     private AnimationDrawable animationDrawable = null;
     private ImageView imageView = null;
 
@@ -55,7 +56,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private TextView words1, words2;
     private TextView text_check_listen;
 
-    private FloatingActionButton fab; Drawable f;
+    private FloatingActionButton fab;
+    Drawable f;
     private FloatingActionButton el_next;
 
     @Override
@@ -91,16 +93,16 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.ENGLISH);
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.ENGLISH);
 
-                    if(result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                    if (result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                         Log.e("TTS", "Language not supported");
                     } else {
 
                     }
-                }else{
+                } else {
                     Log.e("TTS", "Initialization failed");
                 }
             }
@@ -114,23 +116,23 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         setNotVisibleItem(0);
     }
 
-    private void listen(){
+    private void listen() {
         speak(englishTranslArr[id[i]]);
         outLog("englishTranslArr " + englishTranslArr[id[i]]);
     }
 
-    private boolean isTrueWords(){
+    private boolean isTrueWords() {
         String eT = editText.getText().toString();
         eT = eT.trim();
         String res = (englishTranslArr[id[i]]);
-        if((eT.equals(res)) ){
+        if ((eT.equals(res))) {
             return true;
         } else {
             return false;
         }
     }
 
-    private void words_get_text(){
+    private void words_get_text() {
         words1.setText(englishTranslArr[id[i]]);
         words2.setText(rusTranslArr[id[i]]);
     }
@@ -142,16 +144,16 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         count = 0;
     }
 
-    private void setVisibleGoneTextView(){
+    private void setVisibleGoneTextView() {
         lay_write_learn.setVisibility(View.GONE);
         editText.setBackground(f);
     }
 
-    private void speak(String text){
+    private void speak(String text) {
         //float pitch = 0.5f;
         //float speed = 0.5f;
 
-        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     private void hideSoftKeyboard(EditText input) {
@@ -181,15 +183,15 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
             case R.id.text_check_listen:
                 lay_write_learn.setVisibility(View.VISIBLE);
 
-                if(isTrueWords()){
-                    if (counter_flip[i] != 0){
+                if (isTrueWords()) {
+                    if (counter_flip[i] != 0) {
                         counter_flip[i] = 1;
                     }
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
                     hideSoftKeyboard(editText);
-                } else{
+                } else {
                     counter_flip[i] = 0;
                     editText.setBackgroundResource(R.color.back_false);
                 }
@@ -197,7 +199,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                 break;
 
             case R.id.fab:
-                if (i < englishTranslArr.length - 1){
+                if (i < englishTranslArr.length - 1) {
                     i++;
                     //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_write_learn.setVisibility(View.GONE);
@@ -207,8 +209,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     editText.setBackground(f);
                 } else {
                     count = 0;
-                    for (int c: counter_flip) {
-                        if (c == 1){
+                    for (int c : counter_flip) {
+                        if (c == 1) {
                             count++;
                         }
                     }
@@ -216,7 +218,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
 //                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
-                    for(int i = 0; i < size; i++){
+                    for (int i = 0; i < size; i++) {
                         counter_flip[i] = -1;
                     }
                     i = 0;

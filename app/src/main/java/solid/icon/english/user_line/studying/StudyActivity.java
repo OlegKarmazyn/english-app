@@ -80,7 +80,7 @@ public class StudyActivity extends ActivityGlobal {
      * preparation of all data for display to the user
      */
 
-    public void setDateToActivity(){
+    public void setDateToActivity() {
         /*methods before init table*/
         getWordsList();
 
@@ -104,7 +104,7 @@ public class StudyActivity extends ActivityGlobal {
             public void run() {
                 pager2.animate().alpha(1).setDuration(1000);
             }
-        },700);
+        }, 700);
 
     }
 
@@ -112,7 +112,7 @@ public class StudyActivity extends ActivityGlobal {
      * getting all english and rus words from list from database
      */
 
-    private void getWordsList(){
+    private void getWordsList() {
         WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
         wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
 
@@ -128,7 +128,7 @@ public class StudyActivity extends ActivityGlobal {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
                 overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);

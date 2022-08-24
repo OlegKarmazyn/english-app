@@ -44,7 +44,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
 
     private TextView words1, words2;
 
-    private FloatingActionButton fab; Drawable f;
+    private FloatingActionButton fab;
+    Drawable f;
 
     private TextView text_check;
 
@@ -97,29 +98,29 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         words2.setClickable(false);
         words_get_text();
 
-        if(!isCreate){
+        if (!isCreate) {
             isCreate = true;
             f = editText.getBackground();
             Arrays.fill(counter_flip, 2); //must be not 0 or not 1
         }
     }
 
-    private void speak(String text){
+    private void speak(String text) {
         outLog("is speaking " + text);
-        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
-    private void words_get_text(){
+    private void words_get_text() {
         meaning.setText(definitionArr[id[i]]);
         words1.setText(englishTranslArr[id[i]]);
         words2.setText(rusTranslArr[id[i]]);
     }
 
-    private boolean isTrueWords(){
+    private boolean isTrueWords() {
         String eT = editText.getText().toString();
         eT = eT.trim();
         String res = englishTranslArr[id[i]];
-        if((eT.equals(res)) ){
+        if ((eT.equals(res))) {
             return true;
         } else {
             return false;
@@ -132,21 +133,21 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
             case R.id.text_check:
                 lay_definition_transl.setVisibility(View.VISIBLE);
 
-                if(isTrueWords()){
-                    if (counter_flip[i] != 0){
+                if (isTrueWords()) {
+                    if (counter_flip[i] != 0) {
                         counter_flip[i] = 1;
                     }
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
-                } else{
+                } else {
                     counter_flip[i] = 0;
                     editText.setBackgroundResource(R.color.back_false);
                 }
                 break;
 
             case R.id.fab:
-                if (i < size - 1){ // todo CHECK
+                if (i < size - 1) { // todo CHECK
                     i++;
                     //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_definition_transl.setVisibility(View.GONE);
@@ -156,8 +157,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                     editText.setBackground(f);
                 } else {
                     int count = 0;
-                    for (int c: counter_flip) {
-                        if (c == 1){
+                    for (int c : counter_flip) {
+                        if (c == 1) {
                             count++;
                         }
                     }
