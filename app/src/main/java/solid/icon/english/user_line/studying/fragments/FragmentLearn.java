@@ -61,10 +61,10 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
 
     /**
-     *  onResume
+     * onResume
      */
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
 
         context = getActivity();
@@ -81,22 +81,22 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.ENGLISH);
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.ENGLISH);
 
-                    if(result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                    if (result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                         outLog("TTS - Language not supported");
                     }
 
-                }else{
+                } else {
                     outLog("TTS - Initialization failed");
                 }
             }
         });
 
         /* methods after init */
-        if(!isCreate) {
+        if (!isCreate) {
             isCreate = true;
 
             addTranslationButtonToScreen();
@@ -119,7 +119,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         horizontalLayout.setGravity(Gravity.CENTER);
 
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(0, dp_15,0,0);
+        layoutParams.setMargins(0, dp_15, 0, 0);
 
         horizontalLayout.setLayoutParams(layoutParams);
 
@@ -157,7 +157,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
                         definition.getText().toString().trim());
             }
 
-            private void addToDBNewWord(String englishWord, String russianWord, String definition){
+            private void addToDBNewWord(String englishWord, String russianWord, String definition) {
                 WordModel wordModel = new WordModel();
                 wordModel.englishWord = englishWord;
                 wordModel.rusWord = russianWord;
@@ -190,7 +190,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
             //params for horizontalLayout
             LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-            layoutParams.setMargins(0, dp_15, 0,0);
+            layoutParams.setMargins(0, dp_15, 0, 0);
             horizontalLayout.setLayoutParams(layoutParams);
 
             //set params for buttons
@@ -222,32 +222,34 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
 
             // create listener ( + long Listener)
-            View.OnClickListener listener = v -> {
-                if(!studyActivity.isReplaced) {
+            View.OnClickListener onClickListener = v -> {
+                if (!studyActivity.isReplaced) {
                     textViewRus.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     textViewEng.setVisibility(View.VISIBLE);
                 }
                 speak(textViewEng.getText().toString());
                 outLog("OnClickListener - first (speak) step");
+            };
 
-                v.setOnLongClickListener(v1 -> {
-                    showDeleteDialog(randomInt);
-                    outLog("OnClickListener - second (delete) step");
-                    //studyActivity.showMenu(); //todo edit + delete
-                    return false;
-                });
+            View.OnLongClickListener onLongClickListener = v -> {
+                showDeleteDialog(randomInt);
+                outLog("OnClickListener - second (delete) step");
+                //studyActivity.showMenu(); //todo edit + delete
+                return false;
             };
 
             // setOnClickListener
-            textViewEng.setOnClickListener(listener);
-            textViewRus.setOnClickListener(listener);
+            textViewEng.setOnClickListener(onClickListener);
+            textViewRus.setOnClickListener(onClickListener);
+            textViewEng.setOnLongClickListener(onLongClickListener);
+            textViewRus.setOnLongClickListener(onLongClickListener);
 
             //add button to the lists
             buttonListOfEnglish.add(textViewEng);
             buttonListOfRus.add(textViewRus);
 
-            if(!studyActivity.isReplaced) {
+            if (!studyActivity.isReplaced) {
                 engButtonParams.setMargins(0, 0, 0, 0);
                 rusButtonParams.setMargins(getDp(10), 0, 0, 0);
                 textViewEng.setVisibility(View.VISIBLE);
@@ -255,7 +257,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
 
                 horizontalLayout.addView(textViewEng);
                 horizontalLayout.addView(textViewRus);
-            } else{
+            } else {
                 engButtonParams.setMargins(getDp(10), 0, 0, 0);
                 rusButtonParams.setMargins(0, 0, 0, 0);
                 textViewEng.setVisibility(View.GONE);
@@ -271,7 +273,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         }
     }
 
-    private void showMenu(){
+    private void showMenu() {
         relativeLayout_proz.setAlpha(0f);
 
         TranslateAnimation animation = new TranslateAnimation(0, 0, 2000, 0);
@@ -288,7 +290,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         context.findViewById(R.id.but_no).setOnClickListener(this::closeMenu);
     }
 
-    public void closeMenu(View v){
+    public void closeMenu(View v) {
         TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 2000);
         animation.setDuration(1000);
         animation.setFillAfter(true);
@@ -302,7 +304,7 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
         bottom_lay.startAnimation(animation);
     }
 
-    public void showDeleteDialog(int i){
+    public void showDeleteDialog(int i) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -318,21 +320,21 @@ public class FragmentLearn extends UserFragmentActivity implements View.OnClickL
     }
 
     private void text_visible_gone() {
-        if(!studyActivity.isReplaced) {
+        if (!studyActivity.isReplaced) {
             for (TextView t : buttonListOfRus) {
                 t.setVisibility(View.GONE);
             }
-        }else {
+        } else {
             for (TextView t : buttonListOfEnglish) {
                 t.setVisibility(View.GONE);
             }
         }
     }
 
-    private void speak(String text){
+    private void speak(String text) {
         outLog("TTS - is speaking");
 
-        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null, null);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
     }
 
     @Override
