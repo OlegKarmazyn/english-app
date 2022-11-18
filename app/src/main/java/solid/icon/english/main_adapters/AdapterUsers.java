@@ -2,19 +2,26 @@ package solid.icon.english.main_adapters;
 
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -71,7 +78,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
         }
 
-        if(position != size){
+        if (position != size) {
 
             holder.title.setText(titlesArray[position]);
             holder.checkBox.setChecked(isCheckArray[position]);
@@ -82,7 +89,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
 
-        }else {
+        } else {
 
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
             holder.add_topic.setVisibility(View.VISIBLE);
@@ -91,48 +98,39 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         }
 
         /*------------------------------components------------------------------*/
+        //todo: redone!!! it does not work!!!
+        holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            TopicModel topicModel = topicModelDao.getById(position + 1);
+            topicModel.isCheck = isChecked;
+            topicModelDao.update(topicModel);
 
-                TopicModel topicModel = topicModelDao.getById(position + 1);
-                topicModel.isCheck = isChecked;
-                topicModelDao.update(topicModel);
-
-                if (isChecked) {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                } else {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                }
+            if (isChecked) {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
         });
 
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(position != size){
+        holder.constraintLayout.setOnClickListener(v -> {
+            if (position != size) {
 
-                    Intent intent = new Intent(context, UserLevel.class);
-                    intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
-                    intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
-                    context.startActivity(intent);
-                    mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+                Intent intent = new Intent(context, UserLevel.class);
+                intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
+                intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
+                context.startActivity(intent);
+                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
-                }else{
-                    showAddDialog();
-                }
+            } else {
+                showCustomAddingDialog();
             }
         });
 
-        holder.constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                /* DELETE */
-                /* DELETE */
-                showDeleteDialog(position);
-                return false;
-            }
+        holder.constraintLayout.setOnLongClickListener(v -> {
+            /* DELETE */
+            /* DELETE */
+            showDeleteDialog(position);
+            return false;
         });
 
     }
@@ -163,7 +161,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     /*-----------------------------------------getIsCheckArray--------------------------------*/
 
-    private void getIsCheckArray(){
+    private void getIsCheckArray() {
         isCheckArray = new boolean[titlesArray.length];
         List<TopicModel> topicModelList = topicModelDao.getAll();
 
@@ -175,43 +173,54 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     /*-----------------------------------------dialogs-----------------------------------------*/
 
-     public void showAddDialog(){
-        AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        final EditText edittext = new EditText(context);
-        alert.setTitle("Do you want to add topic?");
-        alert.setMessage("Enter name for topic");
+    public void showCustomAddingDialog() {
+        Dialog dialog = new Dialog(context);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        alert.setView(edittext);
+        dialog.setContentView(R.layout.adding_dialog);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        //dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
-        alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
+        TextView tvCancel = dialog.findViewById(R.id.tvCancel),
+                tvAdd = dialog.findViewById(R.id.tvAdd);
+        Spinner spinner = dialog.findViewById(R.id.spinner);
+        ArrayAdapter<?> adapter =
+                ArrayAdapter.createFromResource(context, R.array.country,
+                        android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-                String editText = edittext.getText().toString();
+        spinner.setAdapter(adapter);
 
-                TopicModel topicModel = new TopicModel();
-                topicModel.topicsName = editText;
-                topicModelDao.insert(topicModel);
+        tvAdd.setOnClickListener(v -> {
+            EditText etName = dialog.findViewById(R.id.etName);
+            String topicsName = etName.getText().toString();
 
-                mainActivity.setDataToUserAdapter();
-            }
+            TopicModel topicModel = new TopicModel();
+            topicModel.topicsName = topicsName;
+            topicModel.country = spinner.getSelectedItem().toString();
+            topicModelDao.insert(topicModel);
+
+            dialog.dismiss();
+            mainActivity.setDataToUserAdapter();
         });
 
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-            }
-        });
+        tvCancel.setOnClickListener(v -> dialog.dismiss());
 
-        alert.show();
+        dialog.show();
     }
 
-    public void showDeleteDialog(int position){
+    public void showDeleteDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
-                topicModelDao.delete(topicModel);
+                try {
+                    TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
+                    topicModelDao.delete(topicModel);
+                } catch (ArrayIndexOutOfBoundsException ex) {
+                    Toast.makeText(context, "Error, try again", Toast.LENGTH_LONG).show();
+                }
 
                 mainActivity.setDataToUserAdapter();
             }

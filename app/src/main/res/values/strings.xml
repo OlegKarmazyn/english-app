@@ -6,6 +6,11 @@
         <item>Upper-Intermediate</item>
     </string-array>
 
+    <string-array name="country">
+        <item>eng</item>
+        <item>esp</item>
+    </string-array>
+
 
     <string name="app_name">English</string>
     <string name="a2_tema_0">00 Вводный урок</string>
