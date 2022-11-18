@@ -193,7 +193,7 @@ public class FragmentLearn extends UserFragmentActivity {
     /**
      * Translation buttons
      */
-    private void addTranslationButtonToScreen() {
+    private void addTranslationButtonToScreen() { //todo learn definition
         int dp_15 = getDp(15);
 
         for (int i = 0; i < size; i++) {
