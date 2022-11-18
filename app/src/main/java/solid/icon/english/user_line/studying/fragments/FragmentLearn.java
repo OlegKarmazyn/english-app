@@ -1,5 +1,6 @@
 package solid.icon.english.user_line.studying.fragments;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
@@ -101,7 +102,8 @@ public class FragmentLearn extends UserFragmentActivity {
 
         mTTS = new TextToSpeech(context, status -> {
             if (status == TextToSpeech.SUCCESS) {
-                int result = mTTS.setLanguage(Locale.ENGLISH);
+                Locale locSpanish = new Locale("spa", "MEX");
+                int result = mTTS.setLanguage(locSpanish);
 
                 if (result == TextToSpeech.LANG_MISSING_DATA
                         || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -220,8 +222,6 @@ public class FragmentLearn extends UserFragmentActivity {
             textViewEng.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewEng.setLayoutParams(engButtonParams);
             textViewEng.setGravity(Gravity.CENTER);
-            textViewEng.setTextColor(context.getColor(R.color.ios_black));
-
 
             //set the properties for Russian button
             textViewRus.setText(rusTranslArr[randomInt]);
@@ -230,7 +230,11 @@ public class FragmentLearn extends UserFragmentActivity {
             textViewRus.setPadding(getDp(5), dp_15, getDp(5), dp_15);
             textViewRus.setLayoutParams(rusButtonParams);
             textViewRus.setGravity(Gravity.CENTER);
-            textViewRus.setTextColor(context.getColor(R.color.ios_black));
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                textViewRus.setTextColor(context.getColor(R.color.ios_black));
+                textViewEng.setTextColor(context.getColor(R.color.ios_black));
+            }
 
 
             // create listener ( + long Listener)
