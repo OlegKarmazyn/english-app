@@ -97,13 +97,12 @@ public class FragmentLearn extends UserFragmentActivity {
         russianWord = context.findViewById(R.id.russian_word);
         definition = context.findViewById(R.id.definition);
 
-
         wordModelDao = App.instance.getDatabase().wordModelDao();
 
         mTTS = new TextToSpeech(context, status -> {
             if (status == TextToSpeech.SUCCESS) {
-                Locale locSpanish = new Locale("spa", "MEX");
-                int result = mTTS.setLanguage(locSpanish);
+                Locale locale = new Locale(topicModel.country);
+                int result = mTTS.setLanguage(locale);
 
                 if (result == TextToSpeech.LANG_MISSING_DATA
                         || result == TextToSpeech.LANG_NOT_SUPPORTED) {

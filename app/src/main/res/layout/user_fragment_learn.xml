@@ -68,7 +68,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="25dp"
                 android:gravity="center"
-                android:hint="english word"
+                android:hint="word or phrase"
                 android:textColor="@color/ios_blackText" />
 
             <EditText
@@ -79,7 +79,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="25dp"
                 android:gravity="center"
-                android:hint="other language word"
+                android:hint="translation"
                 android:textColor="@color/ios_blackText" />
 
             <EditText

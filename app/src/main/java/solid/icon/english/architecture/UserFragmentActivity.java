@@ -12,12 +12,17 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import solid.icon.english.architecture.room.App;
+import solid.icon.english.architecture.room.TopicModel;
+import solid.icon.english.architecture.room.TopicModelDao;
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.architecture.room.WordModelDao;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public abstract class UserFragmentActivity extends Fragment {
 
     protected List<WordModel> wordModelList;
+    protected TopicModel topicModel;
     protected String topic, subTopic;
     protected String[] englishTranslArr, rusTranslArr, definitionArr;
     protected StudyActivity studyActivity;
@@ -42,6 +47,12 @@ public abstract class UserFragmentActivity extends Fragment {
         outLog(studyActivity.toString());
 
         fillMainArrays();
+        topicModel = getTopicsModel();
+    }
+
+    private TopicModel getTopicsModel() {
+        TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
+        return topicModelDao.getByTopicsName(topic);
     }
 
     protected void fillMainArrays() {
