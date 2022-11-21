@@ -46,8 +46,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private AnimationDrawable animationDrawable = null;
     private ImageView imageView = null;
 
-    private TextToSpeech mTTS;
-
     private int i = 0;
     private int count = 0;
 
@@ -90,21 +88,19 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         el_next.setOnClickListener(this);
         text_check_listen.setOnClickListener(this);
 
-        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = mTTS.setLanguage(Locale.ENGLISH);
+        mTTS = new TextToSpeech(getActivity(), status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                Locale locale = new Locale(topicModel.country);
+                int result = mTTS.setLanguage(locale);
 
-                    if (result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Log.e("TTS", "Language not supported");
-                    } else {
-
-                    }
+                if (result == TextToSpeech.LANG_MISSING_DATA
+                        || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Language not supported");
                 } else {
-                    Log.e("TTS", "Initialization failed");
+
                 }
+            } else {
+                Log.e("TTS", "Initialization failed");
             }
         });
 
@@ -147,13 +143,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private void setVisibleGoneTextView() {
         lay_write_learn.setVisibility(View.GONE);
         editText.setBackground(f);
-    }
-
-    private void speak(String text) {
-        //float pitch = 0.5f;
-        //float speed = 0.5f;
-
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     private void hideSoftKeyboard(EditText input) {

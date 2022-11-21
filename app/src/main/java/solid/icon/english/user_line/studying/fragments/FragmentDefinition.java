@@ -36,8 +36,6 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         return inflater.inflate(R.layout.fragment_definition, container, false);
     }
 
-    private TextToSpeech mTTS;
-
     private EditText editText = null;
 
     private LinearLayout lay_definition_transl = null;
@@ -81,7 +79,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    int result = mTTS.setLanguage(Locale.US);
+                    Locale locale = new Locale(topicModel.country);
+                    int result = mTTS.setLanguage(locale);
 
                     if (result == TextToSpeech.LANG_MISSING_DATA
                             || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -101,13 +100,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         if (!isCreate) {
             isCreate = true;
             f = editText.getBackground();
-            Arrays.fill(counter_flip, 2); //must be not 0 or not 1
+            Arrays.fill(counter_flip, 2); //must be neither 0 or 1
         }
-    }
-
-    private void speak(String text) {
-        outLog("is speaking " + text);
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     private void words_get_text() {

@@ -27,7 +27,9 @@ public abstract class UserFragmentActivity extends Fragment {
     protected String[] englishTranslArr, rusTranslArr, definitionArr;
     protected StudyActivity studyActivity;
     protected int size = 0;
-    protected float metrics = Dpi.metrics;
+    protected float metrics = Dpi.metrics,
+            pitch = 0.7f, //tone
+            speechRate = 0.7f; //speed
 
     protected int[] id;
 
@@ -103,6 +105,13 @@ public abstract class UserFragmentActivity extends Fragment {
             ar[index] = ar[i];
             ar[i] = a;
         }
+    }
+
+    protected void speak(String text) {
+        outLog("TTS - is speaking");
+        mTTS.setPitch(pitch);
+        mTTS.setSpeechRate(speechRate);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     protected int getDp(int px) {

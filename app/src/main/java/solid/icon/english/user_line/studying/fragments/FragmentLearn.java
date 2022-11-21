@@ -4,6 +4,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.Voice;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -374,11 +375,6 @@ public class FragmentLearn extends UserFragmentActivity {
                 t.setVisibility(View.GONE);
             }
         }
-    }
-
-    private void speak(String text) {
-        outLog("TTS - is speaking");
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
     }
 
     @Override
