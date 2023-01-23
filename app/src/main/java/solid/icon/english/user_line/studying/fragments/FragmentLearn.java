@@ -1,10 +1,9 @@
 package solid.icon.english.user_line.studying.fragments;
 
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
-import android.speech.tts.Voice;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
@@ -231,10 +231,8 @@ public class FragmentLearn extends UserFragmentActivity {
             textViewRus.setLayoutParams(rusButtonParams);
             textViewRus.setGravity(Gravity.CENTER);
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                textViewRus.setTextColor(context.getColor(R.color.ios_black));
-                textViewEng.setTextColor(context.getColor(R.color.ios_black));
-            }
+            textViewRus.setTextColor(context.getColor(R.color.ios_black));
+            textViewEng.setTextColor(context.getColor(R.color.ios_black));
 
 
             // create listener ( + long Listener)
@@ -328,6 +326,7 @@ public class FragmentLearn extends UserFragmentActivity {
 
     public void closeMenu(View v) {
         closeMenu();
+        context.startActivity(new Intent(context, MainActivity.class));
     }
 
     private void closeMenu() {
