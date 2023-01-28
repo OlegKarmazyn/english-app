@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [WordModel::class, TopicModel::class],
+    entities = [WordModel::class, TopicModel::class, SubTopicModel::class],
     version = 2,
     exportSchema = true,
     autoMigrations = [
