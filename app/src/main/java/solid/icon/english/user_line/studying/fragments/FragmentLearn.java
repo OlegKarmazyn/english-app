@@ -326,7 +326,6 @@ public class FragmentLearn extends UserFragmentActivity {
 
     public void closeMenu(View v) {
         closeMenu();
-        context.startActivity(new Intent(context, MainActivity.class));
     }
 
     private void closeMenu() {
