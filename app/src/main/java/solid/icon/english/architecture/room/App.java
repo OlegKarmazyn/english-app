@@ -11,8 +11,6 @@ public class App extends Application {
 
     public static App instance;
 
-    public static int item_selected = 0;
-
     private AppDatabase database;
 
     @Override
