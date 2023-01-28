@@ -2,7 +2,6 @@ package solid.icon.english.user_line;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
@@ -12,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -75,7 +73,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
         }
 
-        if(position != size){
+        if (position != size) {
 
             holder.title.setText(titlesArray[position]);
             holder.checkBox.setChecked(isCheckArray[position]);
@@ -86,7 +84,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
 
-        }else {
+        } else {
 
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
             holder.add_topic.setVisibility(View.VISIBLE);
@@ -96,48 +94,39 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         /*------------------------------components------------------------------*/
 
-        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-                editor.putBoolean(userLevel.level + position, isChecked);
-                editor.apply();
+            editor.putBoolean(userLevel.level + position, isChecked);
+            editor.apply();
 
-                Log.d("holder.checkBox", userLevel.level + position);
+            Log.d("holder.checkBox", userLevel.level + position);
 
-                if (isChecked) {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                } else {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                }
+            if (isChecked) {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
         });
 
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(position != size){
+        holder.constraintLayout.setOnClickListener(v -> {
+            if (position != size) {
 
-                    Intent intent = new Intent(context, StudyActivity.class);
-                    intent.putExtra(ActivityGlobal.KeysExtra.level.name(), userLevel.level); //topics
-                    intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position); //position
-                    intent.putExtra(ActivityGlobal.KeysExtra.title.name(), holder.title.getText()); //title (subTopics)
-                    context.startActivity(intent);
-                    userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+                Intent intent = new Intent(context, StudyActivity.class);
+                intent.putExtra(ActivityGlobal.KeysExtra.level.name(), userLevel.level); //topics
+                intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position); //position
+                intent.putExtra(ActivityGlobal.KeysExtra.title.name(), holder.title.getText()); //title (subTopics)
+                context.startActivity(intent);
+                userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
-                }else{
-                    showAddDialog(position);
-                }
+            } else {
+                showAddDialog(position);
             }
         });
 
-        holder.constraintLayout.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                /* DELETE */
-                showDeleteDialog(position);
-                return false;
-            }
+        holder.constraintLayout.setOnLongClickListener(v -> {
+            /* DELETE */
+            showDeleteDialog(position);
+            return false;
         });
 
     }
@@ -167,9 +156,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*-----------------------------------------getIsCheckArray--------------------------------*/
 
-    public void getIsCheckArray(){
+    public void getIsCheckArray() {
         isCheckArray = new boolean[size];
-        for(int i = 0; i < size; i++){
+        for (int i = 0; i < size; i++) {
             String mod_key = userLevel.level + i;
             isCheckArray[i] = preferences.getBoolean(mod_key, false);
             Log.d(TAG, "key_topics[" + i + "]" + isCheckArray[i]);
@@ -178,7 +167,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*-----------------------------------------dialogs-----------------------------------------*/
 
-    public void showAddDialog(int position){
+    public void showAddDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         final EditText edittext = new EditText(context);
         alert.setTitle("Do you want to add topic?");
@@ -186,62 +175,94 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         alert.setView(edittext);
 
-        alert.setPositiveButton("Add", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
+        alert.setPositiveButton("Add", (dialog, whichButton) -> {
 
-                String editText = edittext.getText().toString();
+            String editText = edittext.getText().toString();
+            TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
 
-                TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
-
-                switch (position) {
-                    case 0: topicModel.subTopicsName0 = editText; break;
-                    case 1: topicModel.subTopicsName1 = editText; break;
-                    case 2: topicModel.subTopicsName2 = editText; break;
-                    case 3: topicModel.subTopicsName3 = editText; break;
-                    case 4: topicModel.subTopicsName4 = editText; break;
-                    case 5: topicModel.subTopicsName5 = editText; break;
-                    case 6: topicModel.subTopicsName6 = editText; break;
-                    case 7: topicModel.subTopicsName7 = editText; break;
-                    case 8: topicModel.subTopicsName8 = editText; break;
-                    case 9: topicModel.subTopicsName9 = editText; break;
-                }
-                topicModelDao.update(topicModel);
-
-                userLevel.setDataToUserAdapter();
+            switch (position) {
+                case 0:
+                    topicModel.subTopicsName0 = editText;
+                    break;
+                case 1:
+                    topicModel.subTopicsName1 = editText;
+                    break;
+                case 2:
+                    topicModel.subTopicsName2 = editText;
+                    break;
+                case 3:
+                    topicModel.subTopicsName3 = editText;
+                    break;
+                case 4:
+                    topicModel.subTopicsName4 = editText;
+                    break;
+                case 5:
+                    topicModel.subTopicsName5 = editText;
+                    break;
+                case 6:
+                    topicModel.subTopicsName6 = editText;
+                    break;
+                case 7:
+                    topicModel.subTopicsName7 = editText;
+                    break;
+                case 8:
+                    topicModel.subTopicsName8 = editText;
+                    break;
+                case 9:
+                    topicModel.subTopicsName9 = editText;
+                    break;
             }
+            topicModelDao.update(topicModel);
+
+            userLevel.setDataToUserAdapter();
         });
 
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-            }
+        alert.setNegativeButton("Cancel", (dialog, whichButton) -> {
         });
 
         alert.show();
     }
 
-    public void showDeleteDialog(int position){
+    public void showDeleteDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
-        alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
-                switch (position){
-                    case 0: topicModel.subTopicsName0 = null; break;
-                    case 1: topicModel.subTopicsName1 = null; break;
-                    case 2: topicModel.subTopicsName2 = null; break;
-                    case 3: topicModel.subTopicsName3 = null; break;
-                    case 4: topicModel.subTopicsName4 = null; break;
-                    case 5: topicModel.subTopicsName5 = null; break;
-                    case 6: topicModel.subTopicsName6 = null; break;
-                    case 7: topicModel.subTopicsName7 = null; break;
-                    case 8: topicModel.subTopicsName8 = null; break;
-                    case 9: topicModel.subTopicsName9 = null; break;
-                }
-
-                topicModelDao.update(topicModel);
-                userLevel.setDataToUserAdapter();
+        alert.setPositiveButton("Yes", (dialog, which) -> {
+            TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
+            switch (position) {
+                case 0:
+                    topicModel.subTopicsName0 = null;
+                    break;
+                case 1:
+                    topicModel.subTopicsName1 = null;
+                    break;
+                case 2:
+                    topicModel.subTopicsName2 = null;
+                    break;
+                case 3:
+                    topicModel.subTopicsName3 = null;
+                    break;
+                case 4:
+                    topicModel.subTopicsName4 = null;
+                    break;
+                case 5:
+                    topicModel.subTopicsName5 = null;
+                    break;
+                case 6:
+                    topicModel.subTopicsName6 = null;
+                    break;
+                case 7:
+                    topicModel.subTopicsName7 = null;
+                    break;
+                case 8:
+                    topicModel.subTopicsName8 = null;
+                    break;
+                case 9:
+                    topicModel.subTopicsName9 = null;
+                    break;
             }
+
+            topicModelDao.update(topicModel);
+            userLevel.setDataToUserAdapter();
         });
         alert.show();
     }
