@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "ec3077c90bee145394b51aa1dee040b1",
+    "identityHash": "28d6d439d089a1e8ff8271865b85b44c",
     "entities": [
       {
         "tableName": "WordModel",
@@ -151,12 +151,44 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "SubTopicModel",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `topicsName` TEXT, `subTopicsName` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "topicsName",
+            "columnName": "topicsName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "subTopicsName",
+            "columnName": "subTopicsName",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ec3077c90bee145394b51aa1dee040b1')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '28d6d439d089a1e8ff8271865b85b44c')"
     ]
   }
 }

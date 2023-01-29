@@ -20,6 +20,9 @@ public interface SubTopicDao {
     @Query("SELECT * FROM SubTopicModel WHERE topicsName = :topicsName and subTopicsName = :subTopicsName")
     SubTopicModel getByNames(String topicsName, String subTopicsName);
 
+    @Query("SELECT * FROM SubTopicModel WHERE topicsName = :topicsName")
+    List<SubTopicModel> getAllByTopicsName(String topicsName);
+
     @Insert
     void insert(SubTopicModel subTopicModel);
 

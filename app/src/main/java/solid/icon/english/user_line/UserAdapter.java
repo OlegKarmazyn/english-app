@@ -23,8 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
-import solid.icon.english.architecture.room.TopicModel;
-import solid.icon.english.architecture.room.TopicModelDao;
+import solid.icon.english.architecture.room.SubTopicDao;
+import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
@@ -36,21 +36,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     boolean[] isCheckArray;
     UserLevel userLevel;
     int size;
-    TopicModelDao topicModelDao;
+    SubTopicDao subTopicDao;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
-    public UserAdapter(Context context, String[] titlesArray, int size, UserLevel userLevel) {
+    public UserAdapter(Context context, String[] titlesArray, UserLevel userLevel) {
         this.context = context;
         this.titlesArray = titlesArray;
         this.userLevel = userLevel;
-        topicModelDao = App.getInstance().getDatabase().topicModelDao();
-        this.size = size;
+        subTopicDao = App.getInstance().getDatabase().subTopicDao();
+        this.size = titlesArray.length;
 
         preferences = PreferenceManager.getDefaultSharedPreferences(context);
         editor = preferences.edit();
-
-        getIsCheckArray(); // last after init
+        // last after init
+        getIsCheckArray();
     }
 
     @NonNull
@@ -96,10 +96,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-            editor.putBoolean(userLevel.level + position, isChecked);
+            editor.putBoolean(userLevel.chosenTopics + position, isChecked);
             editor.apply();
 
-            Log.d("holder.checkBox", userLevel.level + position);
+            Log.d("holder.checkBox", userLevel.chosenTopics + position);
 
             if (isChecked) {
                 holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -112,14 +112,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             if (position != size) {
 
                 Intent intent = new Intent(context, StudyActivity.class);
-                intent.putExtra(ActivityGlobal.KeysExtra.level.name(), userLevel.level); //topics
+                intent.putExtra(ActivityGlobal.KeysExtra.level.name(), userLevel.chosenTopics); //topics
                 intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position); //position
                 intent.putExtra(ActivityGlobal.KeysExtra.title.name(), holder.title.getText()); //title (subTopics)
                 context.startActivity(intent);
                 userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
             } else {
-                showAddDialog(position);
+                showAddDialog();
             }
         });
 
@@ -133,7 +133,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        return size + 1;
+        // add one because of ADD BUTTON is item
+        return titlesArray.length + 1;
     }
 
     /*---------------------------------------MyViewHolder---------------------------------------*/
@@ -159,7 +160,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public void getIsCheckArray() {
         isCheckArray = new boolean[size];
         for (int i = 0; i < size; i++) {
-            String mod_key = userLevel.level + i;
+            String mod_key = userLevel.chosenTopics + i;
             isCheckArray[i] = preferences.getBoolean(mod_key, false);
             Log.d(TAG, "key_topics[" + i + "]" + isCheckArray[i]);
         }
@@ -167,7 +168,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*-----------------------------------------dialogs-----------------------------------------*/
 
-    public void showAddDialog(int position) {
+    public void showAddDialog() {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         final EditText edittext = new EditText(context);
         alert.setTitle("Do you want to add topic?");
@@ -176,44 +177,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         alert.setView(edittext);
 
         alert.setPositiveButton("Add", (dialog, whichButton) -> {
-
             String editText = edittext.getText().toString();
-            TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
-
-            switch (position) {
-                case 0:
-                    topicModel.subTopicsName0 = editText;
-                    break;
-                case 1:
-                    topicModel.subTopicsName1 = editText;
-                    break;
-                case 2:
-                    topicModel.subTopicsName2 = editText;
-                    break;
-                case 3:
-                    topicModel.subTopicsName3 = editText;
-                    break;
-                case 4:
-                    topicModel.subTopicsName4 = editText;
-                    break;
-                case 5:
-                    topicModel.subTopicsName5 = editText;
-                    break;
-                case 6:
-                    topicModel.subTopicsName6 = editText;
-                    break;
-                case 7:
-                    topicModel.subTopicsName7 = editText;
-                    break;
-                case 8:
-                    topicModel.subTopicsName8 = editText;
-                    break;
-                case 9:
-                    topicModel.subTopicsName9 = editText;
-                    break;
-            }
-            topicModelDao.update(topicModel);
-
+            SubTopicModel subTopicModel = new SubTopicModel();
+            subTopicModel.topicsName = userLevel.chosenTopics;
+            subTopicModel.subTopicsName = editText;
+            subTopicDao.insert(subTopicModel);
             userLevel.setDataToUserAdapter();
         });
 
@@ -227,41 +195,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
         alert.setPositiveButton("Yes", (dialog, which) -> {
-            TopicModel topicModel = topicModelDao.getByTopicsName(userLevel.level);
-            switch (position) {
-                case 0:
-                    topicModel.subTopicsName0 = null;
-                    break;
-                case 1:
-                    topicModel.subTopicsName1 = null;
-                    break;
-                case 2:
-                    topicModel.subTopicsName2 = null;
-                    break;
-                case 3:
-                    topicModel.subTopicsName3 = null;
-                    break;
-                case 4:
-                    topicModel.subTopicsName4 = null;
-                    break;
-                case 5:
-                    topicModel.subTopicsName5 = null;
-                    break;
-                case 6:
-                    topicModel.subTopicsName6 = null;
-                    break;
-                case 7:
-                    topicModel.subTopicsName7 = null;
-                    break;
-                case 8:
-                    topicModel.subTopicsName8 = null;
-                    break;
-                case 9:
-                    topicModel.subTopicsName9 = null;
-                    break;
-            }
-
-            topicModelDao.update(topicModel);
+            SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, titlesArray[position]);
+            subTopicDao.delete(subTopicModel);
             userLevel.setDataToUserAdapter();
         });
         alert.show();
