@@ -20,6 +20,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
+
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
@@ -39,6 +48,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     SubTopicDao subTopicDao;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    String email = "admin@gmail.com";
 
     public UserAdapter(Context context, String[] titlesArray, UserLevel userLevel) {
         this.context = context;
@@ -119,7 +129,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
             } else {
-                showAddDialog();
+                showAddDialog(position);
             }
         });
 
@@ -167,8 +177,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     /*-----------------------------------------dialogs-----------------------------------------*/
-
-    public void showAddDialog() {
+    /*----------------------------------Add Data----------------------------------*/
+    public void showAddDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         final EditText edittext = new EditText(context);
         alert.setTitle("Do you want to add topic?");
@@ -183,14 +193,38 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             subTopicModel.subTopicsName = editText;
             subTopicDao.insert(subTopicModel);
             userLevel.setDataToUserAdapter();
+            moveDataFB(userLevel.chosenTopics, editText, position);
         });
 
-        alert.setNegativeButton("Cancel", (dialog, whichButton) -> {
-        });
+        alert.setNegativeButton("Cancel", null);
 
         alert.show();
     }
 
+    private void moveDataFB(String topicsName, String subTopicsName, int position) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
+
+        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    String checkingEmail = (String) hashMap.get("email");
+                    if (checkingEmail.equals(email)) {
+                        dataSnapshot1.getRef().child("subTopicsName" + position).setValue(subTopicsName);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
+    }
+
+    /*----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
@@ -198,7 +232,31 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, titlesArray[position]);
             subTopicDao.delete(subTopicModel);
             userLevel.setDataToUserAdapter();
+            deleteDataFB(userLevel.chosenTopics, position);
         });
         alert.show();
+    }
+
+    private void deleteDataFB(String topicsName, int position) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
+
+        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    String checkingEmail = (String) hashMap.get("email");
+                    if (checkingEmail.equals(email)) {
+                        dataSnapshot1.getRef().child("subTopicsName" + position).removeValue();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
     }
 }
