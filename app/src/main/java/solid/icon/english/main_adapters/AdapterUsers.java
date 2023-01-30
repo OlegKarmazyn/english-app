@@ -176,6 +176,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     /*-----------------------------------------dialogs-----------------------------------------*/
 
+    /*----------------------------------Add Data----------------------------------*/
     public void showCustomAddingDialog() {
         Dialog dialog = new Dialog(context);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -218,6 +219,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         dbRef.setValue(topicsName);
     }
 
+
+    /*----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
@@ -253,4 +256,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
         });
     }
+
+    //todo add post words method to firebase with already exists data
 }
