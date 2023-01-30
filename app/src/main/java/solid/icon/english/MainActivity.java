@@ -2,10 +2,18 @@ package solid.icon.english;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -37,8 +45,13 @@ public class MainActivity extends ActivityGlobal {
 
         fullRecycleView();
 
-        Log.e(TAG, "start");
+        firebaseTest();
     }
+
+    private void firebaseTest(){
+
+    }
+
     //----------------method for RecyclerView--------------------------------// start
 
     private void fullRecycleView() {
@@ -80,6 +93,7 @@ public class MainActivity extends ActivityGlobal {
 
     private void getUsers_titlesArray() {
         TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
+        assert topicModelDao != null;
         List<TopicModel> topicModelList = topicModelDao.getAll();
         users_titlesArray = new String[topicModelList.size()];
         for (int i = 0; i < users_titlesArray.length; i++) {
