@@ -32,6 +32,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.List;
 
 import solid.icon.english.MainActivity;
@@ -215,8 +216,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void moveDataFB(String topicsName) {
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push().child("topicsName");
-        dbRef.setValue(topicsName);
+        String email = getEmail();
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push();
+        dbRef.child("topicsName").setValue(topicsName);
+        dbRef.child("email").setValue(email);
     }
 
 
@@ -239,14 +242,19 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void deleteDataFB(String topicsName) {
+        String email = getEmail();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query applesQuery = ref.orderByChild("topicsName").equalTo(topicsName);
+        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
 
-        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    dataSnapshot1.getRef().removeValue();
+                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    String checkingEmail = (String) hashMap.get("email");
+                    if (checkingEmail.equals(email)) {
+                        dataSnapshot1.getRef().removeValue();
+                    }
                 }
             }
 
@@ -255,6 +263,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 Log.e(TAG, "onCancelled", databaseError.toException());
             }
         });
+    }
+
+    private String getEmail() {
+        return "admin@gmail.com"; //todo normal email
     }
 
     //todo add post words method to firebase with already exists data
