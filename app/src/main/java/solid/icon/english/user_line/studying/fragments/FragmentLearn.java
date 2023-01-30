@@ -1,9 +1,9 @@
 package solid.icon.english.user_line.studying.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,15 +17,24 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
+import solid.icon.english.architecture.WordFB;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
@@ -33,10 +42,13 @@ import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentLearn extends UserFragmentActivity {
 
-    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
+    int num_of_topic;
+
+    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, int num_of_topic, StudyActivity studyActivity) {
         super(wordModelList, topic, subTopic, studyActivity);
 
         // Required empty public constructor
+        this.num_of_topic = num_of_topic;
     }
 
     @Override
@@ -181,13 +193,64 @@ public class FragmentLearn extends UserFragmentActivity {
                 wordModelDao.insert(wordModel);
                 wordModelList.add(wordModel);
                 studyActivity.setDateToActivity();
+                moveDataFB(englishWord, russianWord, definition);
             }
         });
 
         //adding layout to the layout verticalLinearLayout
         horizontalLayout.addView(button);
         verticalLinearLayout.addView(horizontalLayout);
+    }
 
+    private void moveDataFB(String englishWord, String russianWord, String definition) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        String email = "admin@gmail.com";
+        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topic);
+
+        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    String checkingEmail = (String) hashMap.get("email");
+                    if (checkingEmail.equals(email)) {
+                        WordFB wordFB = new WordFB(englishWord, russianWord, definition);
+                        dataSnapshot1.getRef().child("subTopicsName" + num_of_topic)
+                                .child("word" + size).setValue(wordFB);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
+    }
+
+    private void deleteDataFB() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        String email = "admin@gmail.com";
+        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topic);
+
+        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    String checkingEmail = (String) hashMap.get("email");
+                    if (checkingEmail.equals(email)) {
+                        dataSnapshot1.getRef().child("subTopicsName" + num_of_topic)
+                                .child("word" + size).removeValue();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
     }
 
     /**
@@ -358,6 +421,7 @@ public class FragmentLearn extends UserFragmentActivity {
             Toast.makeText(context, "Deleted: " + deletedWord, Toast.LENGTH_SHORT).show();
             closeMenu();
             studyActivity.setDateToActivity();
+            deleteDataFB();
         });
         alert.setNegativeButton("No", ((dialog, which) -> closeMenu()));
         alert.show();

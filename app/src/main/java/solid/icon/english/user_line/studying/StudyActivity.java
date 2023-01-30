@@ -31,6 +31,7 @@ public class StudyActivity extends ActivityGlobal {
 
     List<WordModel> wordModelList;
     String topic, subTopic;
+    int num_of_topic;
 
     public boolean isReplaced = false;
     public Menu menu;
@@ -43,6 +44,7 @@ public class StudyActivity extends ActivityGlobal {
         Intent intent = getIntent();
         topic = intent.getStringExtra(KeysExtra.level.name());
         subTopic = intent.getStringExtra(KeysExtra.title.name());
+        num_of_topic = intent.getIntExtra(KeysExtra.num_of_topic.name(), 0);
         showActionBar(true, subTopic);
 
         tabLayout = findViewById(R.id.tab_layout_example);
@@ -85,7 +87,7 @@ public class StudyActivity extends ActivityGlobal {
         getWordsList();
 
         FragmentManager fm = getSupportFragmentManager();
-        adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, StudyActivity.this);
+        adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, num_of_topic, StudyActivity.this);
         int cur = pager2.getCurrentItem();
 
         pager2.animate().alpha(0).setDuration(600);
