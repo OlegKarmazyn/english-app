@@ -228,6 +228,7 @@ public class FragmentLearn extends UserFragmentActivity {
         });
     }
 
+    //todo doesn't work well
     private void deleteDataFB() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         String email = "admin@gmail.com";
@@ -417,11 +418,11 @@ public class FragmentLearn extends UserFragmentActivity {
             WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
             outLog("deleted - " + wordModel.englishWord);
             String deletedWord = wordModel.englishWord;
+            deleteDataFB();
             wordModelDao.delete(wordModel);
             Toast.makeText(context, "Deleted: " + deletedWord, Toast.LENGTH_SHORT).show();
             closeMenu();
             studyActivity.setDateToActivity();
-            deleteDataFB();
         });
         alert.setNegativeButton("No", ((dialog, which) -> closeMenu()));
         alert.show();

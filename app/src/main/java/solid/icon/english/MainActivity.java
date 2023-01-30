@@ -40,12 +40,6 @@ public class MainActivity extends ActivityGlobal {
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
         fullRecycleView();
-
-        firebaseTest();
-    }
-
-    private void firebaseTest() {
-
     }
 
     //----------------method for RecyclerView--------------------------------// start

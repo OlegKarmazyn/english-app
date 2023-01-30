@@ -184,7 +184,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         dialog.setContentView(R.layout.adding_dialog);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        //dialog.getWindow().getAttributes().windowAnimations = R.style.animation;
 
         TextView tvCancel = dialog.findViewById(R.id.tvCancel),
                 tvAdd = dialog.findViewById(R.id.tvAdd);
@@ -198,16 +197,16 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         tvAdd.setOnClickListener(v -> {
             EditText etName = dialog.findViewById(R.id.etName);
-            String topicsName = etName.getText().toString();
+            String topicsName = etName.getText().toString().trim();
 
-            TopicModel topicModel = new TopicModel();
-            topicModel.topicsName = topicsName;
-            topicModel.country = spinner.getSelectedItem().toString();
-            topicModelDao.insert(topicModel);
-
+            if(topicsName.charAt(0) == '-' && topicsName.length() == 20){
+                getDataFB(topicsName);
+            }else{
+                insertNewTopics(topicsName, spinner.getSelectedItem().toString());
+                moveDataFB(topicsName);
+                mainActivity.setDataToUserAdapter();
+            }
             dialog.dismiss();
-            mainActivity.setDataToUserAdapter();
-            moveDataFB(topicsName);
         });
 
         tvCancel.setOnClickListener(v -> dialog.dismiss());
@@ -220,6 +219,31 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push();
         dbRef.child("topicsName").setValue(topicsName);
         dbRef.child("email").setValue(email);
+    }
+
+    private void getDataFB(String key) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(key);
+
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String topicsName = dataSnapshot.child("topicsName").getValue(String.class);
+                insertNewTopics(topicsName, "en");
+                mainActivity.setDataToUserAdapter();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
+    }
+
+    private void insertNewTopics(String topicsName, String country){
+        TopicModel topicModel = new TopicModel();
+        topicModel.topicsName = topicsName;
+        topicModel.country = country;
+        topicModelDao.insert(topicModel);
     }
 
 
