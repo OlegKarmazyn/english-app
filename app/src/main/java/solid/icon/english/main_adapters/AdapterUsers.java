@@ -29,6 +29,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
@@ -36,7 +37,6 @@ import java.util.List;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
-import solid.icon.english.architecture.WordFB;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
@@ -205,7 +205,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
             dialog.dismiss();
             mainActivity.setDataToUserAdapter();
-            moveDataToFB(topicsName);
+            moveDataFB(topicsName);
         });
 
         tvCancel.setOnClickListener(v -> dialog.dismiss());
@@ -213,23 +213,9 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         dialog.show();
     }
 
-    private void moveDataToFB(String topicsName) {
-        // Write a message to the database
-        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(topicsName).child("key");
-        myRef.push();
-
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
+    private void moveDataFB(String topicsName) {
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push().child("topicsName");
+        dbRef.setValue(topicsName);
     }
 
     public void showDeleteDialog(int position) {
@@ -244,7 +230,27 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
 
             mainActivity.setDataToUserAdapter();
+            deleteDataFB(titlesArray[position]);
         });
         alert.show();
+    }
+
+    private void deleteDataFB(String topicsName) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Query applesQuery = ref.orderByChild("topicsName").equalTo(topicsName);
+
+        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    dataSnapshot1.getRef().removeValue();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
+            }
+        });
     }
 }

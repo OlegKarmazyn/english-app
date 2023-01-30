@@ -1,19 +1,14 @@
 package solid.icon.english;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -31,6 +26,7 @@ public class MainActivity extends ActivityGlobal {
 
     private String[] levels_titlesArray,
             users_titlesArray = new String[]{"topics"};
+    private long backPressedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +44,7 @@ public class MainActivity extends ActivityGlobal {
         firebaseTest();
     }
 
-    private void firebaseTest(){
+    private void firebaseTest() {
 
     }
 
@@ -104,6 +100,14 @@ public class MainActivity extends ActivityGlobal {
 
     @Override
     public void onBackPressed() {
-        //todo like in zno app
+        Toast backToast = Toast.makeText(getBaseContext(), "Click again to exit", LENGTH_SHORT);
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel();
+            super.onBackPressed();
+            return;
+        } else {
+            backToast.show();
+        }
+        backPressedTime = System.currentTimeMillis();
     }
 }
