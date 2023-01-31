@@ -210,9 +210,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    assert hashMap != null;
                     String checkingEmail = (String) hashMap.get("email");
                     if (checkingEmail.equals(email)) {
-                        dataSnapshot1.getRef().child("subTopicsName" + position).setValue(subTopicsName);
+                        dataSnapshot1.getRef().child("subNames")
+                                .child("subTopicsName" + position).setValue(subTopicsName);
                     }
                 }
             }

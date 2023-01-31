@@ -14,6 +14,7 @@ import java.util.List;
 
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.firebase.database.FirebaseOperation;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
@@ -40,6 +41,7 @@ public class MainActivity extends ActivityGlobal {
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
         fullRecycleView();
+        FirebaseOperation.getPath("soo");
     }
 
     //----------------method for RecyclerView--------------------------------// start

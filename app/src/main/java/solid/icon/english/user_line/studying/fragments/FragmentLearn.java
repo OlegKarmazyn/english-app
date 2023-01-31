@@ -240,9 +240,10 @@ public class FragmentLearn extends UserFragmentActivity {
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     HashMap hashMap = (HashMap) dataSnapshot1.getValue();
                     String checkingEmail = (String) hashMap.get("email");
+                    //todo FirebaseOperation func witch give path for multi-use
                     if (checkingEmail.equals(email)) {
                         dataSnapshot1.getRef().child("subTopicsName" + num_of_topic)
-                                .child("word" + size).removeValue();
+                                .child("word" + size);
                     }
                 }
             }
