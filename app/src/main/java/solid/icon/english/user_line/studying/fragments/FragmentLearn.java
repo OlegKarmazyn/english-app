@@ -34,6 +34,7 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
+import solid.icon.english.architecture.firebase.database.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.WordFB;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
@@ -203,28 +204,10 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        String email = "admin@gmail.com";
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topic);
-
-        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    String checkingEmail = (String) hashMap.get("email");
-                    if (checkingEmail.equals(email)) {
-                        WordFB wordFB = new WordFB(englishWord, russianWord, definition);
-                        dataSnapshot1.getRef().child("subTopicsName" + num_of_topic)
-                                .child("word" + size).setValue(wordFB);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
+        FirebaseOperation firebaseOperation = new FirebaseOperation();
+        firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
+            WordFB wordFB = new WordFB(englishWord, russianWord, definition);
+            dataSnapshot.getRef().child(subTopic).push().setValue(wordFB);
         });
     }
 

@@ -219,9 +219,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         FirebaseOperation firebaseOperation = new FirebaseOperation();
         firebaseOperation.getPathIfAllowed(topicsName, dataSnapshot -> {
             for (DataSnapshot dataSnapshot1 : dataSnapshot.child("subNames").getChildren()) {
-                String subName = (String) dataSnapshot1.getValue();
-                if (subName.equals(subTopicsName)) {
+                String subNameSnapshot = (String) dataSnapshot1.getValue();
+                if (subNameSnapshot.equals(subTopicsName)) {
                     dataSnapshot1.getRef().removeValue();
+                    dataSnapshot.child(subTopicsName).getRef().removeValue();
                 }
             }
         });
