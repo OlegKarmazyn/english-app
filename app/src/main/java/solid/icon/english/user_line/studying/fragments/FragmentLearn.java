@@ -3,7 +3,6 @@ package solid.icon.english.user_line.studying.fragments;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.tts.TextToSpeech;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,18 +16,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
@@ -43,13 +35,11 @@ import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentLearn extends UserFragmentActivity {
 
-    int num_of_topic;
+    FirebaseOperation firebaseOperation = new FirebaseOperation();
 
     public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, int num_of_topic, StudyActivity studyActivity) {
         super(wordModelList, topic, subTopic, studyActivity);
-
         // Required empty public constructor
-        this.num_of_topic = num_of_topic;
     }
 
     @Override
@@ -204,37 +194,15 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {
-        FirebaseOperation firebaseOperation = new FirebaseOperation();
         firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
             WordFB wordFB = new WordFB(englishWord, russianWord, definition);
-            dataSnapshot.getRef().child(subTopic).push().setValue(wordFB);
+            dataSnapshot.getRef().child(subTopic).child(englishWord).setValue(wordFB);
         });
     }
 
-    //todo doesn't work well
-    private void deleteDataFB() {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        String email = "admin@gmail.com";
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topic);
-
-        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    String checkingEmail = (String) hashMap.get("email");
-                    //todo FirebaseOperation func witch give path for multi-use
-                    if (checkingEmail.equals(email)) {
-                        dataSnapshot1.getRef().child("subTopicsName" + num_of_topic)
-                                .child("word" + size);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
+    private void deleteDataFB(String wordsName) {
+        firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
+            dataSnapshot.child(subTopic).child(wordsName).getRef().removeValue();
         });
     }
 
@@ -402,7 +370,7 @@ public class FragmentLearn extends UserFragmentActivity {
             WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
             outLog("deleted - " + wordModel.englishWord);
             String deletedWord = wordModel.englishWord;
-            deleteDataFB();
+            deleteDataFB(deletedWord);
             wordModelDao.delete(wordModel);
             Toast.makeText(context, "Deleted: " + deletedWord, Toast.LENGTH_SHORT).show();
             closeMenu();

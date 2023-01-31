@@ -29,7 +29,7 @@ public class FirebaseOperation {
 
     private static final String TAG = "FirebaseOperation";
 
-    /* --------------------------------Delete SubTopics------------------------------ */
+    /* --------------get permission to change data if owner of it------------------- */
     public void getPathIfAllowed(String topicsName, final OnGetDataListener listener) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
