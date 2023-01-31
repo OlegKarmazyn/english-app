@@ -31,6 +31,8 @@ import java.util.HashMap;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.firebase.database.FirebaseOperation;
+import solid.icon.english.architecture.firebase.database.OnGetDataListener;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
@@ -38,7 +40,7 @@ import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
 
-    String TAG = "AdapterUsers";
+    private static final String TAG = "UserAdapter";
 
     Context context;
     String[] titlesArray;
@@ -202,27 +204,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     private void moveDataFB(String topicsName, String subTopicsName, int position) {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
-
-        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    assert hashMap != null;
-                    String checkingEmail = (String) hashMap.get("email");
-                    if (checkingEmail.equals(email)) {
-                        dataSnapshot1.getRef().child("subNames")
-                                .child("subTopicsName" + position).setValue(subTopicsName);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
+        FirebaseOperation firebaseOperation = new FirebaseOperation();
+        firebaseOperation.getPathIfAllowed(topicsName, dataSnapshot -> {
+            dataSnapshot.getRef().child("subNames").child("subTopicsName" + position).setValue(subTopicsName);
         });
     }
 
@@ -234,30 +218,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, titlesArray[position]);
             subTopicDao.delete(subTopicModel);
             userLevel.setDataToUserAdapter();
-            deleteDataFB(userLevel.chosenTopics, position);
+            deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
         });
         alert.show();
     }
 
-    private void deleteDataFB(String topicsName, int position) {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
-
-        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    String checkingEmail = (String) hashMap.get("email");
-                    if (checkingEmail.equals(email)) {
-                        dataSnapshot1.getRef().child("subTopicsName" + position).removeValue();
-                    }
+    private void deleteDataFB(String topicsName, String subTopicsName) {
+        FirebaseOperation firebaseOperation = new FirebaseOperation();
+        firebaseOperation.getPathIfAllowed(topicsName, dataSnapshot -> {
+            for (DataSnapshot dataSnapshot1 : dataSnapshot.child("subNames").getChildren()) {
+                String subName = (String) dataSnapshot1.getValue();
+                if (subName.equals(subTopicsName)) {
+                    dataSnapshot1.getRef().removeValue();
                 }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
             }
         });
     }

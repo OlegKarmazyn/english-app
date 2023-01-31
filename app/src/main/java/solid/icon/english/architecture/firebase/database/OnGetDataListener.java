@@ -6,7 +6,7 @@ public interface OnGetDataListener {
     //this is for callbacks
     void onSuccess(DataSnapshot dataSnapshot);
 
-    void onStart();
-
-    void onFailure();
+//    void onStart();
+//
+//    void onFailure();
 }

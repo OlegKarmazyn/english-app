@@ -34,7 +34,7 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
-import solid.icon.english.architecture.WordFB;
+import solid.icon.english.architecture.firebase.database.WordFB;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;

@@ -1,4 +1,4 @@
-package solid.icon.english.architecture;
+package solid.icon.english.architecture.firebase.database;
 
 public class WordFB {
 

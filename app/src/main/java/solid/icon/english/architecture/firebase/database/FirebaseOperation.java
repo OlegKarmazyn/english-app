@@ -1,7 +1,8 @@
 package solid.icon.english.architecture.firebase.database;
 
 
-import android.annotation.SuppressLint;
+import static solid.icon.english.architecture.firebase.StaticData.email;
+
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -28,47 +29,28 @@ public class FirebaseOperation {
 
     private static final String TAG = "FirebaseOperation";
 
-    /* --------------------------------Read Data------------------------------ */
-    public void readData(Query ref, final OnGetDataListener listener) {
-        listener.onStart();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+    /* --------------------------------Delete SubTopics------------------------------ */
+    public void getPathIfAllowed(String topicsName, final OnGetDataListener listener) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
+
+        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                listener.onSuccess(dataSnapshot);
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
+                    String checkingEmail = (String) hashMap.get("email");
+                    if (checkingEmail.equals(email)) {
+                        listener.onSuccess(dataSnapshot1);
+                    }
+                }
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                listener.onFailure();
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.e(TAG, "onCancelled", databaseError.toException());
             }
         });
-    }
-
-    /* --------------------------------Get Path------------------------------ */
-    public static void getPath(String topicsName) {
-
-
-
-//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-//        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
-//
-//        new FirebaseOperation().readData(topicsQuery, new OnGetDataListener() {
-//            @Override
-//            public void onSuccess(DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onStart() {
-//                Log.d("onSTART", "Started");
-//            }
-//
-//            @Override
-//            public void onFailure() {
-//                Log.d("onFailure", "Failed");
-//            }
-//        });
-
     }
 
     /* --------------------------------Move Topics------------------------------ */
