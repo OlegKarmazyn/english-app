@@ -20,6 +20,9 @@ public interface TopicModelDao {
     @Query("SELECT * FROM TopicModel WHERE topicsName = :topicsName")
     TopicModel getByTopicsName(String topicsName);
 
+    @Query("SELECT * FROM TopicModel WHERE topicsKey = :topicsKey")
+    TopicModel getByTopicsKey(String topicsKey);
+
     @Insert
     void insert(TopicModel TopicModel);
 

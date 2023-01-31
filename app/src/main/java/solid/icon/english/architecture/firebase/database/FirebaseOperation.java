@@ -1,6 +1,5 @@
 package solid.icon.english.architecture.firebase.database;
 
-import static solid.icon.english.architecture.firebase.StaticData.path;
 
 import android.annotation.SuppressLint;
 import android.util.Log;
@@ -22,6 +21,8 @@ import solid.icon.english.architecture.firebase.StaticData;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
+import solid.icon.english.architecture.room.TopicModel;
+import solid.icon.english.architecture.room.TopicModelDao;
 
 public class FirebaseOperation {
 
@@ -46,47 +47,45 @@ public class FirebaseOperation {
     /* --------------------------------Get Path------------------------------ */
     public static void getPath(String topicsName) {
 
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
 
-        new FirebaseOperation().readData(topicsQuery, new OnGetDataListener() {
-            @SuppressLint("RestrictedApi")
-            @Override
-            public void onSuccess(DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    String checkingEmail = (String) hashMap.get("email");
-                    if (checkingEmail.equals("admin@gmail.com")) {
-                        path = String.valueOf(dataSnapshot1.getRef().getPath());
-                        Log.e("path", path);
-                    }
-                }
-            }
 
-            @Override
-            public void onStart() {
-                Log.d("onSTART", "Started");
-            }
+//        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
+//        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
+//
+//        new FirebaseOperation().readData(topicsQuery, new OnGetDataListener() {
+//            @Override
+//            public void onSuccess(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//            @Override
+//            public void onStart() {
+//                Log.d("onSTART", "Started");
+//            }
+//
+//            @Override
+//            public void onFailure() {
+//                Log.d("onFailure", "Failed");
+//            }
+//        });
 
-            @Override
-            public void onFailure() {
-                Log.d("onFailure", "Failed");
-            }
-        });
     }
 
     /* --------------------------------Move Topics------------------------------ */
     public void moveTopics(String topicsName) {
         String email = StaticData.email;
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push();
+        TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
+        TopicModel topicModel = topicModelDao.getByTopicsName(topicsName);
+        topicModel.topicsKey = dbRef.getKey();
+        topicModelDao.update(topicModel);
         dbRef.child("topicsName").setValue(topicsName);
         dbRef.child("email").setValue(email);
     }
 
     /* --------------------------------Get All Data from Firebase DB---------------------------- */
     public void getFullTopics(String key, String topicsName) {
-        path = key;
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(path).child("subNames");
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(key).child("subNames");
         Log.e(TAG, "ref: " + ref);
 
         ref.addListenerForSingleValueEvent(new ValueEventListener() {

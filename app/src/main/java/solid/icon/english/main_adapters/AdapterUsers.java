@@ -124,7 +124,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 Intent intent = new Intent(context, UserLevel.class);
                 intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
                 intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
-                FirebaseOperation.getPath(holder.title.getText().toString());
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
@@ -204,7 +203,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
                 getDataFB(topicsName);
             } else {
-                insertNewTopics(topicsName, spinner.getSelectedItem().toString());
+                insertNewTopics(topicsName, spinner.getSelectedItem().toString(), "");
                 moveDataFB(topicsName);
                 mainActivity.setDataToUserAdapter();
             }
@@ -227,7 +226,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String topicsName = dataSnapshot.child("topicsName").getValue(String.class);
-                insertNewTopics(topicsName, "en");
+                insertNewTopics(topicsName, "en", key);
                 firebaseOperation.getFullTopics(key, topicsName);
                 mainActivity.setDataToUserAdapter();
             }
@@ -239,10 +238,11 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         });
     }
 
-    private void insertNewTopics(String topicsName, String country) {
+    private void insertNewTopics(String topicsName, String country, String key) {
         TopicModel topicModel = new TopicModel();
         topicModel.topicsName = topicsName;
         topicModel.country = country;
+        topicModel.topicsKey = key;
         topicModelDao.insert(topicModel);
     }
 

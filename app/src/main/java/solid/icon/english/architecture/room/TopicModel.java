@@ -17,38 +17,10 @@ public class TopicModel {
     @ColumnInfo
     public String country;
 
+    @ColumnInfo(name = "topicsKey")
+    public String topicsKey;
+
     @ColumnInfo
     public boolean isCheck;
-
-    @ColumnInfo
-    public String subTopicsName0;
-
-    @ColumnInfo
-    public String subTopicsName1;
-
-    @ColumnInfo
-    public String subTopicsName2;
-
-    @ColumnInfo
-    public String subTopicsName3;
-
-    @ColumnInfo
-    public String subTopicsName4;
-
-    @ColumnInfo
-    public String subTopicsName5;
-
-    @ColumnInfo
-    public String subTopicsName6;
-
-    @ColumnInfo
-    public String subTopicsName7;
-
-    @ColumnInfo
-    public String subTopicsName8;
-
-    @ColumnInfo
-    public String subTopicsName9;
-
 }
 
