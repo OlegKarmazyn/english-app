@@ -21,18 +21,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.firebase.database.FirebaseOperation;
-import solid.icon.english.architecture.firebase.database.OnGetDataListener;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
@@ -206,7 +198,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     private void moveDataFB(String topicsName, String subTopicsName, int position) {
         FirebaseOperation firebaseOperation = new FirebaseOperation();
         firebaseOperation.getPathIfAllowed(topicsName, dataSnapshot -> {
-            dataSnapshot.getRef().child("subNames").child("subTopicsName" + position).setValue(subTopicsName);
+            dataSnapshot.getRef().child("subNames").push().setValue(subTopicsName);
         });
     }
 
