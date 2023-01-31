@@ -29,15 +29,14 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
 import java.util.List;
 
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.firebase.database.FirebaseOperation;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
@@ -53,12 +52,14 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     MainActivity mainActivity;
     int size;
     TopicModelDao topicModelDao;
+    FirebaseOperation firebaseOperation;
 
     public AdapterUsers(Context context, String[] titlesArray, MainActivity mainActivity) {
         this.context = context;
         this.titlesArray = titlesArray;
         this.mainActivity = mainActivity;
         topicModelDao = App.getInstance().getDatabase().topicModelDao();
+        firebaseOperation = new FirebaseOperation();
 
         getIsCheckArray(); // last after init
     }
@@ -123,6 +124,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 Intent intent = new Intent(context, UserLevel.class);
                 intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
                 intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
+                FirebaseOperation.getPath(holder.title.getText().toString());
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
@@ -199,9 +201,9 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             EditText etName = dialog.findViewById(R.id.etName);
             String topicsName = etName.getText().toString().trim();
 
-            if(topicsName.charAt(0) == '-' && topicsName.length() == 20){
+            if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
                 getDataFB(topicsName);
-            }else{
+            } else {
                 insertNewTopics(topicsName, spinner.getSelectedItem().toString());
                 moveDataFB(topicsName);
                 mainActivity.setDataToUserAdapter();
@@ -215,10 +217,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void moveDataFB(String topicsName) {
-        String email = getEmail();
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push();
-        dbRef.child("topicsName").setValue(topicsName);
-        dbRef.child("email").setValue(email);
+        firebaseOperation.moveTopics(topicsName);
     }
 
     private void getDataFB(String key) {
@@ -229,6 +228,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String topicsName = dataSnapshot.child("topicsName").getValue(String.class);
                 insertNewTopics(topicsName, "en");
+                firebaseOperation.getFullTopics(key, topicsName);
                 mainActivity.setDataToUserAdapter();
             }
 
@@ -239,7 +239,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         });
     }
 
-    private void insertNewTopics(String topicsName, String country){
+    private void insertNewTopics(String topicsName, String country) {
         TopicModel topicModel = new TopicModel();
         topicModel.topicsName = topicsName;
         topicModel.country = country;
@@ -266,31 +266,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void deleteDataFB(String topicsName) {
-        String email = getEmail();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
-
-        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    String checkingEmail = (String) hashMap.get("email");
-                    if (checkingEmail.equals(email)) {
-                        dataSnapshot1.getRef().removeValue();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
-        });
-    }
-
-    private String getEmail() {
-        return "admin@gmail.com"; //todo normal email
+        firebaseOperation.deleteTopics(topicsName);
     }
 
     //todo add post words method to firebase with already exists data
