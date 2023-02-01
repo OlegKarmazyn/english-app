@@ -16,7 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.util.List;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;

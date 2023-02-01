@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHolder> {
@@ -43,7 +43,7 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         getIsCheckArray();
     }
 
-    private void getIsCheckArray(){
+    private void getIsCheckArray() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         boolean[] isCheckArray = new boolean[lessonsNames.length];
         for (int i = 0; i < lessonsNames.length; i++) {
@@ -65,17 +65,17 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         holder.title.setText(titlesArray[position]);
         holder.checkBox.setChecked(isCheckArray[position]);
 
-        if (isCheckArray[position]){
+        if (isCheckArray[position]) {
             holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }else{
+        } else {
             holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
 
-        if(position == 0){
+        if (position == 0) {
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
-        }else if(position == titlesArray.length - 1){
+        } else if (position == titlesArray.length - 1) {
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
-        }else{
+        } else {
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_middle));
         }
 
@@ -87,10 +87,9 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
                 editor.putBoolean(lessonsNames[position].name(), isChecked);
                 editor.apply();
 
-                if(isChecked) {
+                if (isChecked) {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                }
-                else {
+                } else {
                     holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
                 }
 
@@ -101,11 +100,11 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, EnglishLevel.class);
-                if(position == 0) {
+                if (position == 0) {
                     intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.A2);
-                }else if(position == 1){
+                } else if (position == 1) {
                     intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B1);
-                }else if(position == 2){
+                } else if (position == 2) {
                     intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B2);
                 }
                 Log.e("position = ", String.valueOf(position));

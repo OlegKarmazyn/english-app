@@ -24,9 +24,9 @@ import java.util.Locale;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
-import solid.icon.english.architecture.UserFragmentActivity;
 import solid.icon.english.architecture.firebase.database.WordFB;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;

@@ -17,7 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 import java.io.Serializable;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 
 
 public class MainStudyAction extends ActivityGlobal {
@@ -77,13 +77,38 @@ public class MainStudyAction extends ActivityGlobal {
         return true;
     }
 
-    private void flip_words(){
-        TextView words1_1; TextView words2_1; TextView words3_1; TextView words4_1; TextView words5_1; TextView words6_1; TextView words7_1; TextView words8_1; TextView words9_1; TextView words10_1; TextView words11_1;
-        TextView words12_1; TextView words13_1; TextView words14_1; TextView words15_1;
+    private void flip_words() {
+        TextView words1_1;
+        TextView words2_1;
+        TextView words3_1;
+        TextView words4_1;
+        TextView words5_1;
+        TextView words6_1;
+        TextView words7_1;
+        TextView words8_1;
+        TextView words9_1;
+        TextView words10_1;
+        TextView words11_1;
+        TextView words12_1;
+        TextView words13_1;
+        TextView words14_1;
+        TextView words15_1;
 
-        words1_1 = findViewById(R.id.words1_1); words2_1 = findViewById(R.id.words2_1); words3_1 = findViewById(R.id.words3_1); words4_1 = findViewById(R.id.words4_1); words5_1 = findViewById(R.id.words5_1);
-        words6_1 = findViewById(R.id.words6_1); words7_1 = findViewById(R.id.words7_1); words8_1 = findViewById(R.id.words8_1); words9_1 = findViewById(R.id.words9_1); words10_1 = findViewById(R.id.words10_1);
-        words11_1 = findViewById(R.id.words11_1); words12_1 = findViewById(R.id.words12_1); words13_1 = findViewById(R.id.words13_1); words14_1 = findViewById(R.id.words14_1); words15_1 = findViewById(R.id.words15_1);
+        words1_1 = findViewById(R.id.words1_1);
+        words2_1 = findViewById(R.id.words2_1);
+        words3_1 = findViewById(R.id.words3_1);
+        words4_1 = findViewById(R.id.words4_1);
+        words5_1 = findViewById(R.id.words5_1);
+        words6_1 = findViewById(R.id.words6_1);
+        words7_1 = findViewById(R.id.words7_1);
+        words8_1 = findViewById(R.id.words8_1);
+        words9_1 = findViewById(R.id.words9_1);
+        words10_1 = findViewById(R.id.words10_1);
+        words11_1 = findViewById(R.id.words11_1);
+        words12_1 = findViewById(R.id.words12_1);
+        words13_1 = findViewById(R.id.words13_1);
+        words14_1 = findViewById(R.id.words14_1);
+        words15_1 = findViewById(R.id.words15_1);
 
         words1_1.setVisibility(View.GONE);
         words2_1.setVisibility(View.GONE);
@@ -105,7 +130,7 @@ public class MainStudyAction extends ActivityGlobal {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
 //                startActivity(new Intent(this, EnglishLevel.class));
                 this.finish();

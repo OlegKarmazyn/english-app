@@ -1,4 +1,4 @@
-package solid.icon.english.architecture;
+package solid.icon.english.architecture.parents;
 
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -12,11 +12,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import solid.icon.english.architecture.Dpi;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
 import solid.icon.english.architecture.room.WordModel;
-import solid.icon.english.architecture.room.WordModelDao;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public abstract class UserFragmentActivity extends Fragment {

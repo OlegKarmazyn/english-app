@@ -30,8 +30,8 @@ import java.util.List;
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
@@ -245,7 +245,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
                 topicModelDao.delete(topicModel);
             } catch (ArrayIndexOutOfBoundsException ex) {
-                Toast.makeText(context, "Error, try again", Toast.LENGTH_LONG).show();
+                Toasty.error(context, "Error, try again", Toast.LENGTH_LONG).show();
             }
 
             mainActivity.setDataToUserAdapter();

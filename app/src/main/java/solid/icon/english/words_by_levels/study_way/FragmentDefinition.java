@@ -18,8 +18,8 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
-import solid.icon.english.architecture.MyFragmentActivity;
+import solid.icon.english.architecture.parents.ActivityGlobal;
+import solid.icon.english.architecture.parents.MyFragmentActivity;
 import solid.icon.english.architecture.res.Res_array;
 
 
@@ -55,7 +55,7 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     public int[][] main_meaning = new int[][]{};
 
 
-    private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
+    private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
     private EditText editText = null;
 
@@ -63,11 +63,13 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
 
     private TextView words1, words2;
 
-    private FloatingActionButton fab; Drawable f;
+    private FloatingActionButton fab;
+    Drawable f;
 
     private TextView text_check;
 
-    private int [] counter_true = new int[]{5,5,5,5,5,5,5,5,5,5,5,5,5,5,5}; private int count = 0;
+    private int[] counter_true = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+    private int count = 0;
 
     private TextView meaning = null;
 
@@ -96,7 +98,7 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     public void onResume() {
         super.onResume();
 
-        if(isNotTranslating) {
+        if (isNotTranslating) {
 
             for (int i = 0; i < 15; i++) {
                 id[i] = i * -1;
@@ -150,16 +152,16 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     @Override
     protected void defineArrays() {
         super.defineArrays();
-        if(what_level == ActivityGlobal.LessonsName.A2) {
+        if (what_level == ActivityGlobal.LessonsName.A2) {
             main_meaning = new Res_array().main_meaning_a2.clone();
-        }else if(what_level == ActivityGlobal.LessonsName.B1){
+        } else if (what_level == ActivityGlobal.LessonsName.B1) {
             main_meaning = new Res_array().main_meaning_b1.clone();
-        } else if(what_level == ActivityGlobal.LessonsName.B2){
+        } else if (what_level == ActivityGlobal.LessonsName.B2) {
             main_meaning = new Res_array().main_meaning_b2.clone();
         }
     }
 
-    private void full_array(){
+    private void full_array() {
         int rand = 0;
         boolean isTrue = false;
         int k = 0;
@@ -172,11 +174,11 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
                 for (int j = 0; j < 15; j++) {
                     if (rand == id[j]) {
                         isTrue = true;
-                    }else{
+                    } else {
                         k++;
                     }
                 }
-                if(k == 15){
+                if (k == 15) {
                     isTrue = false;
                 }
 
@@ -185,29 +187,31 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
         }
     }
 
-    private void listen(){ speak(getResources().getString((main_1[num_of_topic][id[i]]))); }
+    private void listen() {
+        speak(getResources().getString((main_1[num_of_topic][id[i]])));
+    }
 
-    private void speak(String text){
+    private void speak(String text) {
         float pitch = 0.5f;
         float speed = 0.5f;
         Log.e("TTS", "123");
         //mTTS.setPitch(pitch);
         //mTTS.setSpeechRate(speed);
 
-        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
-    private void words_get_text(){
+    private void words_get_text() {
         meaning.setText(main_meaning[num_of_topic][id[i]]);
         words1.setText(main_1[num_of_topic][id[i]]);
         words2.setText(main_2[num_of_topic][id[i]]);
     }
 
-    private boolean isTrueWords(){
+    private boolean isTrueWords() {
         String eT = editText.getText().toString();
         eT = eT.trim();
         String res = (getResources().getString((main_1[num_of_topic][id[i]])));
-        if((eT.equals(res)) ){
+        if ((eT.equals(res))) {
             return true;
         } else {
             return false;
@@ -220,21 +224,21 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
             case R.id.text_check:
                 lay_definition_transl.setVisibility(View.VISIBLE);
 
-                if(isTrueWords()){
-                    if (counter_true[i] != 0){
+                if (isTrueWords()) {
+                    if (counter_true[i] != 0) {
                         counter_true[i] = 1;
                     }
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
-                } else{
+                } else {
                     counter_true[i] = 0;
                     editText.setBackgroundResource(R.color.back_false);
                 }
                 break;
 
             case R.id.fab:
-                if (i < main_1[num_of_topic].length - 1){
+                if (i < main_1[num_of_topic].length - 1) {
                     i++;
                     //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_definition_transl.setVisibility(View.GONE);
@@ -244,8 +248,8 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
                     editText.setBackground(f);
                 } else {
                     count = 0;
-                    for (int c: counter_true) {
-                        if (c == 1){
+                    for (int c : counter_true) {
+                        if (c == 1) {
                             count++;
                         }
                     }

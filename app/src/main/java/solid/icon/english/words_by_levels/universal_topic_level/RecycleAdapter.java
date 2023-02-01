@@ -21,7 +21,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.jetbrains.annotations.NotNull;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {

@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.UserFragmentActivity;
+import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;

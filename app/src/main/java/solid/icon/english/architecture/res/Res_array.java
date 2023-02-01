@@ -3,34 +3,34 @@ package solid.icon.english.architecture.res;
 import solid.icon.english.R;
 
 public class Res_array {
-    public int[] draw0_1_learn_b1= new int[]{
+    public int[] draw0_1_learn_b1 = new int[]{
             R.string.b1_les_0_01, R.string.b1_les_0_02, R.string.b1_les_0_03, R.string.b1_les_0_04, R.string.b1_les_0_05, R.string.b1_les_0_06, R.string.b1_les_0_07, R.string.b1_les_0_08, R.string.b1_les_0_09,
             R.string.b1_les_0_10, R.string.b1_les_0_11, R.string.b1_les_0_12, R.string.b1_les_0_13, R.string.b1_les_0_14, R.string.b1_les_0_15};
-    public int[] draw1_1_learn_b1= new int[]{
+    public int[] draw1_1_learn_b1 = new int[]{
             R.string.b1_les_1_01, R.string.b1_les_1_02, R.string.b1_les_1_03, R.string.b1_les_1_04, R.string.b1_les_1_05, R.string.b1_les_1_06, R.string.b1_les_1_07, R.string.b1_les_1_08, R.string.b1_les_1_09,
             R.string.b1_les_1_10, R.string.b1_les_1_11, R.string.b1_les_1_12, R.string.b1_les_1_13, R.string.b1_les_1_14, R.string.b1_les_1_15};
-    public int[] draw2_1_learn_b1= new int[]{
+    public int[] draw2_1_learn_b1 = new int[]{
             R.string.b1_les_2_01, R.string.b1_les_2_02, R.string.b1_les_2_03, R.string.b1_les_2_04, R.string.b1_les_2_05, R.string.b1_les_2_06, R.string.b1_les_2_07, R.string.b1_les_2_08, R.string.b1_les_2_09,
             R.string.b1_les_2_10, R.string.b1_les_2_11, R.string.b1_les_2_12, R.string.b1_les_2_13, R.string.b1_les_2_14, R.string.b1_les_2_15};
-    public int[] draw3_1_learn_b1= new int[]{
+    public int[] draw3_1_learn_b1 = new int[]{
             R.string.b1_les_3_01, R.string.b1_les_3_02, R.string.b1_les_3_03, R.string.b1_les_3_04, R.string.b1_les_3_05, R.string.b1_les_3_06, R.string.b1_les_3_07, R.string.b1_les_3_08, R.string.b1_les_3_09,
             R.string.b1_les_3_10, R.string.b1_les_3_11, R.string.b1_les_3_12, R.string.b1_les_3_13, R.string.b1_les_3_14, R.string.b1_les_3_15};
-    public int[] draw4_1_learn_b1= new int[]{
+    public int[] draw4_1_learn_b1 = new int[]{
             R.string.b1_les_4_01, R.string.b1_les_4_02, R.string.b1_les_4_03, R.string.b1_les_4_04, R.string.b1_les_4_05, R.string.b1_les_4_06, R.string.b1_les_4_07, R.string.b1_les_4_08, R.string.b1_les_4_09,
             R.string.b1_les_4_10, R.string.b1_les_4_11, R.string.b1_les_4_12, R.string.b1_les_4_13, R.string.b1_les_4_14, R.string.b1_les_4_15};
-    public int[] draw5_1_learn_b1= new int[]{
+    public int[] draw5_1_learn_b1 = new int[]{
             R.string.b1_les_5_01, R.string.b1_les_5_02, R.string.b1_les_5_03, R.string.b1_les_5_04, R.string.b1_les_5_05, R.string.b1_les_5_06, R.string.b1_les_5_07, R.string.b1_les_5_08, R.string.b1_les_5_09,
             R.string.b1_les_5_10, R.string.b1_les_5_11, R.string.b1_les_5_12, R.string.b1_les_5_13, R.string.b1_les_5_14, R.string.b1_les_5_15};
-    public int[] draw6_1_learn_b1= new int[]{
+    public int[] draw6_1_learn_b1 = new int[]{
             R.string.b1_les_6_01, R.string.b1_les_6_02, R.string.b1_les_6_03, R.string.b1_les_6_04, R.string.b1_les_6_05, R.string.b1_les_6_06, R.string.b1_les_6_07, R.string.b1_les_6_08, R.string.b1_les_6_09,
             R.string.b1_les_6_10, R.string.b1_les_6_11, R.string.b1_les_6_12, R.string.b1_les_6_13, R.string.b1_les_6_14, R.string.b1_les_6_15};
-    public int[] draw7_1_learn_b1= new int[]{
+    public int[] draw7_1_learn_b1 = new int[]{
             R.string.b1_les_7_01, R.string.b1_les_7_02, R.string.b1_les_7_03, R.string.b1_les_7_04, R.string.b1_les_7_05, R.string.b1_les_7_06, R.string.b1_les_7_07, R.string.b1_les_7_08, R.string.b1_les_7_09,
             R.string.b1_les_7_10, R.string.b1_les_7_11, R.string.b1_les_7_12, R.string.b1_les_7_13, R.string.b1_les_7_14, R.string.b1_les_7_15};
-    public int[] draw8_1_learn_b1= new int[]{
+    public int[] draw8_1_learn_b1 = new int[]{
             R.string.b1_les_8_01, R.string.b1_les_8_02, R.string.b1_les_8_03, R.string.b1_les_8_04, R.string.b1_les_8_05, R.string.b1_les_8_06, R.string.b1_les_8_07, R.string.b1_les_8_08, R.string.b1_les_8_09,
             R.string.b1_les_8_10, R.string.b1_les_8_11, R.string.b1_les_8_12, R.string.b1_les_8_13, R.string.b1_les_8_14, R.string.b1_les_8_15};
-    public int[] draw9_1_learn_b1= new int[]{
+    public int[] draw9_1_learn_b1 = new int[]{
             R.string.b1_les_9_01, R.string.b1_les_9_02, R.string.b1_les_9_03, R.string.b1_les_9_04, R.string.b1_les_9_05, R.string.b1_les_9_06, R.string.b1_les_9_07, R.string.b1_les_9_08, R.string.b1_les_9_09,
             R.string.b1_les_9_10, R.string.b1_les_9_11, R.string.b1_les_9_12, R.string.b1_les_9_13, R.string.b1_les_9_14, R.string.b1_les_9_15};
     public int[] draw10_1_learn_b1 = new int[]{
@@ -84,7 +84,7 @@ public class Res_array {
     public int[] draw26_1_learn_b1 = new int[]{
             R.string.b1_les_26_01, R.string.b1_les_26_02, R.string.b1_les_26_03, R.string.b1_les_26_04, R.string.b1_les_26_05, R.string.b1_les_26_06, R.string.b1_les_26_07, R.string.b1_les_26_08, R.string.b1_les_26_09,
             R.string.b1_les_26_10, R.string.b1_les_26_11, R.string.b1_les_26_12, R.string.b1_les_26_13, R.string.b1_les_26_14, R.string.b1_les_26_15};
-    public int[] draw27_1_learn_b1= new int[]{
+    public int[] draw27_1_learn_b1 = new int[]{
             R.string.b1_les_27_01, R.string.b1_les_27_02, R.string.b1_les_27_03, R.string.b1_les_27_04, R.string.b1_les_27_05, R.string.b1_les_27_06, R.string.b1_les_27_07, R.string.b1_les_27_08, R.string.b1_les_27_09,
             R.string.b1_les_27_10, R.string.b1_les_27_11, R.string.b1_les_27_12, R.string.b1_les_27_13, R.string.b1_les_27_14, R.string.b1_les_27_15};
     public int[] draw28_1_learn_b1 = new int[]{
@@ -103,34 +103,34 @@ public class Res_array {
             R.string.b1_les_32_01, R.string.b1_les_32_02, R.string.b1_les_32_03, R.string.b1_les_32_04, R.string.b1_les_32_05, R.string.b1_les_32_06, R.string.b1_les_32_07, R.string.b1_les_32_08, R.string.b1_les_32_09,
             R.string.b1_les_32_10, R.string.b1_les_32_11, R.string.b1_les_32_12, R.string.b1_les_32_13, R.string.b1_les_32_14, R.string.b1_les_32_15};
 
-    public int[] draw0_2_learn_b1= new int[]{
+    public int[] draw0_2_learn_b1 = new int[]{
             R.string.b1_les_0_01_1, R.string.b1_les_0_02_1, R.string.b1_les_0_03_1, R.string.b1_les_0_04_1, R.string.b1_les_0_05_1, R.string.b1_les_0_06_1, R.string.b1_les_0_07_1, R.string.b1_les_0_08_1, R.string.b1_les_0_09_1,
             R.string.b1_les_0_10_1, R.string.b1_les_0_11_1, R.string.b1_les_0_12_1, R.string.b1_les_0_13_1, R.string.b1_les_0_14_1, R.string.b1_les_0_15_1};
-    public int[] draw1_2_learn_b1= new int[]{
+    public int[] draw1_2_learn_b1 = new int[]{
             R.string.b1_les_1_01_1, R.string.b1_les_1_02_1, R.string.b1_les_1_03_1, R.string.b1_les_1_04_1, R.string.b1_les_1_05_1, R.string.b1_les_1_06_1, R.string.b1_les_1_07_1, R.string.b1_les_1_08_1, R.string.b1_les_1_09_1,
             R.string.b1_les_1_10_1, R.string.b1_les_1_11_1, R.string.b1_les_1_12_1, R.string.b1_les_1_13_1, R.string.b1_les_1_14_1, R.string.b1_les_1_15_1};
-    public int[] draw2_2_learn_b1= new int[]{
+    public int[] draw2_2_learn_b1 = new int[]{
             R.string.b1_les_2_01_1, R.string.b1_les_2_02_1, R.string.b1_les_2_03_1, R.string.b1_les_2_04_1, R.string.b1_les_2_05_1, R.string.b1_les_2_06_1, R.string.b1_les_2_07_1, R.string.b1_les_2_08_1, R.string.b1_les_2_09_1,
             R.string.b1_les_2_10_1, R.string.b1_les_2_11_1, R.string.b1_les_2_12_1, R.string.b1_les_2_13_1, R.string.b1_les_2_14_1, R.string.b1_les_2_15_1};
-    public int[] draw3_2_learn_b1= new int[]{
+    public int[] draw3_2_learn_b1 = new int[]{
             R.string.b1_les_3_01_1, R.string.b1_les_3_02_1, R.string.b1_les_3_03_1, R.string.b1_les_3_04_1, R.string.b1_les_3_05_1, R.string.b1_les_3_06_1, R.string.b1_les_3_07_1, R.string.b1_les_3_08_1, R.string.b1_les_3_09_1,
             R.string.b1_les_3_10_1, R.string.b1_les_3_11_1, R.string.b1_les_3_12_1, R.string.b1_les_3_13_1, R.string.b1_les_3_14_1, R.string.b1_les_3_15_1};
-    public int[] draw4_2_learn_b1= new int[]{
+    public int[] draw4_2_learn_b1 = new int[]{
             R.string.b1_les_4_01_1, R.string.b1_les_4_02_1, R.string.b1_les_4_03_1, R.string.b1_les_4_04_1, R.string.b1_les_4_05_1, R.string.b1_les_4_06_1, R.string.b1_les_4_07_1, R.string.b1_les_4_08_1, R.string.b1_les_4_09_1,
             R.string.b1_les_4_10_1, R.string.b1_les_4_11_1, R.string.b1_les_4_12_1, R.string.b1_les_4_13_1, R.string.b1_les_4_14_1, R.string.b1_les_4_15_1};
-    public int[] draw5_2_learn_b1= new int[]{
+    public int[] draw5_2_learn_b1 = new int[]{
             R.string.b1_les_5_01_1, R.string.b1_les_5_02_1, R.string.b1_les_5_03_1, R.string.b1_les_5_04_1, R.string.b1_les_5_05_1, R.string.b1_les_5_06_1, R.string.b1_les_5_07_1, R.string.b1_les_5_08_1, R.string.b1_les_5_09_1,
             R.string.b1_les_5_10_1, R.string.b1_les_5_11_1, R.string.b1_les_5_12_1, R.string.b1_les_5_13_1, R.string.b1_les_5_14_1, R.string.b1_les_5_15_1};
-    public int[] draw6_2_learn_b1= new int[]{
+    public int[] draw6_2_learn_b1 = new int[]{
             R.string.b1_les_6_01_1, R.string.b1_les_6_02_1, R.string.b1_les_6_03_1, R.string.b1_les_6_04_1, R.string.b1_les_6_05_1, R.string.b1_les_6_06_1, R.string.b1_les_6_07_1, R.string.b1_les_6_08_1, R.string.b1_les_6_09_1,
             R.string.b1_les_6_10_1, R.string.b1_les_6_11_1, R.string.b1_les_6_12_1, R.string.b1_les_6_13_1, R.string.b1_les_6_14_1, R.string.b1_les_6_15_1};
-    public int[] draw7_2_learn_b1= new int[]{
+    public int[] draw7_2_learn_b1 = new int[]{
             R.string.b1_les_7_01_1, R.string.b1_les_7_02_1, R.string.b1_les_7_03_1, R.string.b1_les_7_04_1, R.string.b1_les_7_05_1, R.string.b1_les_7_06_1, R.string.b1_les_7_07_1, R.string.b1_les_7_08_1, R.string.b1_les_7_09_1,
             R.string.b1_les_7_10_1, R.string.b1_les_7_11_1, R.string.b1_les_7_12_1, R.string.b1_les_7_13_1, R.string.b1_les_7_14_1, R.string.b1_les_7_15_1};
-    public int[] draw8_2_learn_b1= new int[]{
+    public int[] draw8_2_learn_b1 = new int[]{
             R.string.b1_les_8_01_1, R.string.b1_les_8_02_1, R.string.b1_les_8_03_1, R.string.b1_les_8_04_1, R.string.b1_les_8_05_1, R.string.b1_les_8_06_1, R.string.b1_les_8_07_1, R.string.b1_les_8_08_1, R.string.b1_les_8_09_1,
             R.string.b1_les_8_10_1, R.string.b1_les_8_11_1, R.string.b1_les_8_12_1, R.string.b1_les_8_13_1, R.string.b1_les_8_14_1, R.string.b1_les_8_15_1};
-    public int[] draw9_2_learn_b1= new int[]{
+    public int[] draw9_2_learn_b1 = new int[]{
             R.string.b1_les_9_01_1, R.string.b1_les_9_02_1, R.string.b1_les_9_03_1, R.string.b1_les_9_04_1, R.string.b1_les_9_05_1, R.string.b1_les_9_06_1, R.string.b1_les_9_07_1, R.string.b1_les_9_08_1, R.string.b1_les_9_09_1,
             R.string.b1_les_9_10_1, R.string.b1_les_9_11_1, R.string.b1_les_9_12_1, R.string.b1_les_9_13_1, R.string.b1_les_9_14_1, R.string.b1_les_9_15_1};
     public int[] draw10_2_learn_b1 = new int[]{
@@ -184,7 +184,7 @@ public class Res_array {
     public int[] draw26_2_learn_b1 = new int[]{
             R.string.b1_les_26_01_1, R.string.b1_les_26_02_1, R.string.b1_les_26_03_1, R.string.b1_les_26_04_1, R.string.b1_les_26_05_1, R.string.b1_les_26_06_1, R.string.b1_les_26_07_1, R.string.b1_les_26_08_1, R.string.b1_les_26_09_1,
             R.string.b1_les_26_10_1, R.string.b1_les_26_11_1, R.string.b1_les_26_12_1, R.string.b1_les_26_13_1, R.string.b1_les_26_14_1, R.string.b1_les_26_15_1};
-    public int[] draw27_2_learn_b1= new int[]{
+    public int[] draw27_2_learn_b1 = new int[]{
             R.string.b1_les_27_01_1, R.string.b1_les_27_02_1, R.string.b1_les_27_03_1, R.string.b1_les_27_04_1, R.string.b1_les_27_05_1, R.string.b1_les_27_06_1, R.string.b1_les_27_07_1, R.string.b1_les_27_08_1, R.string.b1_les_27_09_1,
             R.string.b1_les_27_10_1, R.string.b1_les_27_11_1, R.string.b1_les_27_12_1, R.string.b1_les_27_13_1, R.string.b1_les_27_14_1, R.string.b1_les_27_15_1};
     public int[] draw28_2_learn_b1 = new int[]{
@@ -627,34 +627,34 @@ public class Res_array {
     public int[][] main_meaning_b1 = new int[][]{draw0_b1_definition, draw1_b1_definition, draw2_b1_definition, draw3_b1_definition, draw4_b1_definition, draw5_b1_definition, draw6_b1_definition, draw7_b1_definition, draw8_b1_definition, draw9_b1_definition, draw10_b1_definition, draw11_b1_definition, draw12_b1_definition, draw13_b1_definition, draw14_b1_definition, draw15_b1_definition, draw16_b1_definition, draw17_b1_definition, draw18_b1_definition, draw19_b1_definition, draw20_b1_definition, draw21_b1_definition, draw22_b1_definition, draw23_b1_definition, draw24_b1_definition, draw25_b1_definition, draw26_b1_definition, draw27_b1_definition, draw28_b1_definition, draw29_b1_definition, draw30_b1_definition, draw31_b1_definition, draw32_b1_definition, draw33_b1_definition, draw34_b1_definition, draw35_b1_definition, draw36_b1_definition, draw37_b1_definition, draw38_b1_definition, draw39_b1_definition, draw40_b1_definition, draw41_b1_definition, draw42_b1_definition, draw43_b1_definition, draw44_b1_definition, draw45_b1_definition, draw46_b1_definition, draw47_b1_definition, draw48_b1_definition, draw49_b1_definition, draw50_b1_definition};
     public int[][] main_meaning_a2 = new int[][]{draw0_a2_definition, draw1_a2_definition, draw2_a2_definition, draw3_a2_definition, draw4_a2_definition, draw5_a2_definition, draw6_a2_definition, draw7_a2_definition, draw8_a2_definition, draw9_a2_definition, draw10_a2_definition, draw11_a2_definition, draw12_a2_definition, draw13_a2_definition, draw14_a2_definition, draw15_a2_definition, draw16_a2_definition, draw17_a2_definition, draw18_a2_definition, draw19_a2_definition, draw20_a2_definition, draw21_a2_definition, draw22_a2_definition, draw23_a2_definition, draw24_a2_definition, draw25_a2_definition, draw26_a2_definition, draw27_a2_definition, draw28_a2_definition, draw29_a2_definition, draw30_a2_definition, draw31_a2_definition, draw32_a2_definition, draw33_a2_definition, draw34_a2_definition, draw35_a2_definition, draw36_a2_definition, draw37_a2_definition, draw38_a2_definition, draw39_a2_definition, draw40_a2_definition, draw41_a2_definition, draw42_a2_definition, draw43_a2_definition, draw44_a2_definition, draw45_a2_definition, draw46_a2_definition, draw47_a2_definition, draw48_a2_definition, draw49_a2_definition, draw50_a2_definition};
 
-    public int[] draw0_1_learn_a2= new int[]{
+    public int[] draw0_1_learn_a2 = new int[]{
             R.string.a2_les_0_01, R.string.a2_les_0_02, R.string.a2_les_0_03, R.string.a2_les_0_04, R.string.a2_les_0_05, R.string.a2_les_0_06, R.string.a2_les_0_07, R.string.a2_les_0_08, R.string.a2_les_0_09,
             R.string.a2_les_0_10, R.string.a2_les_0_11, R.string.a2_les_0_12, R.string.a2_les_0_13, R.string.a2_les_0_14, R.string.a2_les_0_15};
-    public int[] draw1_1_learn_a2= new int[]{
+    public int[] draw1_1_learn_a2 = new int[]{
             R.string.a2_les_1_01, R.string.a2_les_1_02, R.string.a2_les_1_03, R.string.a2_les_1_04, R.string.a2_les_1_05, R.string.a2_les_1_06, R.string.a2_les_1_07, R.string.a2_les_1_08, R.string.a2_les_1_09,
             R.string.a2_les_1_10, R.string.a2_les_1_11, R.string.a2_les_1_12, R.string.a2_les_1_13, R.string.a2_les_1_14, R.string.a2_les_1_15};
-    public int[] draw2_1_learn_a2= new int[]{
+    public int[] draw2_1_learn_a2 = new int[]{
             R.string.a2_les_2_01, R.string.a2_les_2_02, R.string.a2_les_2_03, R.string.a2_les_2_04, R.string.a2_les_2_05, R.string.a2_les_2_06, R.string.a2_les_2_07, R.string.a2_les_2_08, R.string.a2_les_2_09,
             R.string.a2_les_2_10, R.string.a2_les_2_11, R.string.a2_les_2_12, R.string.a2_les_2_13, R.string.a2_les_2_14, R.string.a2_les_2_15};
-    public int[] draw3_1_learn_a2= new int[]{
+    public int[] draw3_1_learn_a2 = new int[]{
             R.string.a2_les_3_01, R.string.a2_les_3_02, R.string.a2_les_3_03, R.string.a2_les_3_04, R.string.a2_les_3_05, R.string.a2_les_3_06, R.string.a2_les_3_07, R.string.a2_les_3_08, R.string.a2_les_3_09,
             R.string.a2_les_3_10, R.string.a2_les_3_11, R.string.a2_les_3_12, R.string.a2_les_3_13, R.string.a2_les_3_14, R.string.a2_les_3_15};
-    public int[] draw4_1_learn_a2= new int[]{
+    public int[] draw4_1_learn_a2 = new int[]{
             R.string.a2_les_4_01, R.string.a2_les_4_02, R.string.a2_les_4_03, R.string.a2_les_4_04, R.string.a2_les_4_05, R.string.a2_les_4_06, R.string.a2_les_4_07, R.string.a2_les_4_08, R.string.a2_les_4_09,
             R.string.a2_les_4_10, R.string.a2_les_4_11, R.string.a2_les_4_12, R.string.a2_les_4_13, R.string.a2_les_4_14, R.string.a2_les_4_15};
-    public int[] draw5_1_learn_a2= new int[]{
+    public int[] draw5_1_learn_a2 = new int[]{
             R.string.a2_les_5_01, R.string.a2_les_5_02, R.string.a2_les_5_03, R.string.a2_les_5_04, R.string.a2_les_5_05, R.string.a2_les_5_06, R.string.a2_les_5_07, R.string.a2_les_5_08, R.string.a2_les_5_09,
             R.string.a2_les_5_10, R.string.a2_les_5_11, R.string.a2_les_5_12, R.string.a2_les_5_13, R.string.a2_les_5_14, R.string.a2_les_5_15};
-    public int[] draw6_1_learn_a2= new int[]{
+    public int[] draw6_1_learn_a2 = new int[]{
             R.string.a2_les_6_01, R.string.a2_les_6_02, R.string.a2_les_6_03, R.string.a2_les_6_04, R.string.a2_les_6_05, R.string.a2_les_6_06, R.string.a2_les_6_07, R.string.a2_les_6_08, R.string.a2_les_6_09,
             R.string.a2_les_6_10, R.string.a2_les_6_11, R.string.a2_les_6_12, R.string.a2_les_6_13, R.string.a2_les_6_14, R.string.a2_les_6_15};
-    public int[] draw7_1_learn_a2= new int[]{
+    public int[] draw7_1_learn_a2 = new int[]{
             R.string.a2_les_7_01, R.string.a2_les_7_02, R.string.a2_les_7_03, R.string.a2_les_7_04, R.string.a2_les_7_05, R.string.a2_les_7_06, R.string.a2_les_7_07, R.string.a2_les_7_08, R.string.a2_les_7_09,
             R.string.a2_les_7_10, R.string.a2_les_7_11, R.string.a2_les_7_12, R.string.a2_les_7_13, R.string.a2_les_7_14, R.string.a2_les_7_15};
-    public int[] draw8_1_learn_a2= new int[]{
+    public int[] draw8_1_learn_a2 = new int[]{
             R.string.a2_les_8_01, R.string.a2_les_8_02, R.string.a2_les_8_03, R.string.a2_les_8_04, R.string.a2_les_8_05, R.string.a2_les_8_06, R.string.a2_les_8_07, R.string.a2_les_8_08, R.string.a2_les_8_09,
             R.string.a2_les_8_10, R.string.a2_les_8_11, R.string.a2_les_8_12, R.string.a2_les_8_13, R.string.a2_les_8_14, R.string.a2_les_8_15};
-    public int[] draw9_1_learn_a2= new int[]{
+    public int[] draw9_1_learn_a2 = new int[]{
             R.string.a2_les_9_01, R.string.a2_les_9_02, R.string.a2_les_9_03, R.string.a2_les_9_04, R.string.a2_les_9_05, R.string.a2_les_9_06, R.string.a2_les_9_07, R.string.a2_les_9_08, R.string.a2_les_9_09,
             R.string.a2_les_9_10, R.string.a2_les_9_11, R.string.a2_les_9_12, R.string.a2_les_9_13, R.string.a2_les_9_14, R.string.a2_les_9_15};
     public int[] draw10_1_learn_a2 = new int[]{
@@ -708,7 +708,7 @@ public class Res_array {
     public int[] draw26_1_learn_a2 = new int[]{
             R.string.a2_les_26_01, R.string.a2_les_26_02, R.string.a2_les_26_03, R.string.a2_les_26_04, R.string.a2_les_26_05, R.string.a2_les_26_06, R.string.a2_les_26_07, R.string.a2_les_26_08, R.string.a2_les_26_09,
             R.string.a2_les_26_10, R.string.a2_les_26_11, R.string.a2_les_26_12, R.string.a2_les_26_13, R.string.a2_les_26_14, R.string.a2_les_26_15};
-    public int[] draw27_1_learn_a2= new int[]{
+    public int[] draw27_1_learn_a2 = new int[]{
             R.string.a2_les_27_01, R.string.a2_les_27_02, R.string.a2_les_27_03, R.string.a2_les_27_04, R.string.a2_les_27_05, R.string.a2_les_27_06, R.string.a2_les_27_07, R.string.a2_les_27_08, R.string.a2_les_27_09,
             R.string.a2_les_27_10, R.string.a2_les_27_11, R.string.a2_les_27_12, R.string.a2_les_27_13, R.string.a2_les_27_14, R.string.a2_les_27_15};
     public int[] draw28_1_learn_a2 = new int[]{
@@ -727,34 +727,34 @@ public class Res_array {
             R.string.a2_les_32_01, R.string.a2_les_32_02, R.string.a2_les_32_03, R.string.a2_les_32_04, R.string.a2_les_32_05, R.string.a2_les_32_06, R.string.a2_les_32_07, R.string.a2_les_32_08, R.string.a2_les_32_09,
             R.string.a2_les_32_10, R.string.a2_les_32_11, R.string.a2_les_32_12, R.string.a2_les_32_13, R.string.a2_les_32_14, R.string.a2_les_32_15};
 
-    public int[] draw0_2_learn_a2= new int[]{
+    public int[] draw0_2_learn_a2 = new int[]{
             R.string.a2_les_0_01_1, R.string.a2_les_0_02_1, R.string.a2_les_0_03_1, R.string.a2_les_0_04_1, R.string.a2_les_0_05_1, R.string.a2_les_0_06_1, R.string.a2_les_0_07_1, R.string.a2_les_0_08_1, R.string.a2_les_0_09_1,
             R.string.a2_les_0_10_1, R.string.a2_les_0_11_1, R.string.a2_les_0_12_1, R.string.a2_les_0_13_1, R.string.a2_les_0_14_1, R.string.a2_les_0_15_1};
-    public int[] draw1_2_learn_a2= new int[]{
+    public int[] draw1_2_learn_a2 = new int[]{
             R.string.a2_les_1_01_1, R.string.a2_les_1_02_1, R.string.a2_les_1_03_1, R.string.a2_les_1_04_1, R.string.a2_les_1_05_1, R.string.a2_les_1_06_1, R.string.a2_les_1_07_1, R.string.a2_les_1_08_1, R.string.a2_les_1_09_1,
             R.string.a2_les_1_10_1, R.string.a2_les_1_11_1, R.string.a2_les_1_12_1, R.string.a2_les_1_13_1, R.string.a2_les_1_14_1, R.string.a2_les_1_15_1};
-    public int[] draw2_2_learn_a2= new int[]{
+    public int[] draw2_2_learn_a2 = new int[]{
             R.string.a2_les_2_01_1, R.string.a2_les_2_02_1, R.string.a2_les_2_03_1, R.string.a2_les_2_04_1, R.string.a2_les_2_05_1, R.string.a2_les_2_06_1, R.string.a2_les_2_07_1, R.string.a2_les_2_08_1, R.string.a2_les_2_09_1,
             R.string.a2_les_2_10_1, R.string.a2_les_2_11_1, R.string.a2_les_2_12_1, R.string.a2_les_2_13_1, R.string.a2_les_2_14_1, R.string.a2_les_2_15_1};
-    public int[] draw3_2_learn_a2= new int[]{
+    public int[] draw3_2_learn_a2 = new int[]{
             R.string.a2_les_3_01_1, R.string.a2_les_3_02_1, R.string.a2_les_3_03_1, R.string.a2_les_3_04_1, R.string.a2_les_3_05_1, R.string.a2_les_3_06_1, R.string.a2_les_3_07_1, R.string.a2_les_3_08_1, R.string.a2_les_3_09_1,
             R.string.a2_les_3_10_1, R.string.a2_les_3_11_1, R.string.a2_les_3_12_1, R.string.a2_les_3_13_1, R.string.a2_les_3_14_1, R.string.a2_les_3_15_1};
-    public int[] draw4_2_learn_a2= new int[]{
+    public int[] draw4_2_learn_a2 = new int[]{
             R.string.a2_les_4_01_1, R.string.a2_les_4_02_1, R.string.a2_les_4_03_1, R.string.a2_les_4_04_1, R.string.a2_les_4_05_1, R.string.a2_les_4_06_1, R.string.a2_les_4_07_1, R.string.a2_les_4_08_1, R.string.a2_les_4_09_1,
             R.string.a2_les_4_10_1, R.string.a2_les_4_11_1, R.string.a2_les_4_12_1, R.string.a2_les_4_13_1, R.string.a2_les_4_14_1, R.string.a2_les_4_15_1};
-    public int[] draw5_2_learn_a2= new int[]{
+    public int[] draw5_2_learn_a2 = new int[]{
             R.string.a2_les_5_01_1, R.string.a2_les_5_02_1, R.string.a2_les_5_03_1, R.string.a2_les_5_04_1, R.string.a2_les_5_05_1, R.string.a2_les_5_06_1, R.string.a2_les_5_07_1, R.string.a2_les_5_08_1, R.string.a2_les_5_09_1,
             R.string.a2_les_5_10_1, R.string.a2_les_5_11_1, R.string.a2_les_5_12_1, R.string.a2_les_5_13_1, R.string.a2_les_5_14_1, R.string.a2_les_5_15_1};
-    public int[] draw6_2_learn_a2= new int[]{
+    public int[] draw6_2_learn_a2 = new int[]{
             R.string.a2_les_6_01_1, R.string.a2_les_6_02_1, R.string.a2_les_6_03_1, R.string.a2_les_6_04_1, R.string.a2_les_6_05_1, R.string.a2_les_6_06_1, R.string.a2_les_6_07_1, R.string.a2_les_6_08_1, R.string.a2_les_6_09_1,
             R.string.a2_les_6_10_1, R.string.a2_les_6_11_1, R.string.a2_les_6_12_1, R.string.a2_les_6_13_1, R.string.a2_les_6_14_1, R.string.a2_les_6_15_1};
-    public int[] draw7_2_learn_a2= new int[]{
+    public int[] draw7_2_learn_a2 = new int[]{
             R.string.a2_les_7_01_1, R.string.a2_les_7_02_1, R.string.a2_les_7_03_1, R.string.a2_les_7_04_1, R.string.a2_les_7_05_1, R.string.a2_les_7_06_1, R.string.a2_les_7_07_1, R.string.a2_les_7_08_1, R.string.a2_les_7_09_1,
             R.string.a2_les_7_10_1, R.string.a2_les_7_11_1, R.string.a2_les_7_12_1, R.string.a2_les_7_13_1, R.string.a2_les_7_14_1, R.string.a2_les_7_15_1};
-    public int[] draw8_2_learn_a2= new int[]{
+    public int[] draw8_2_learn_a2 = new int[]{
             R.string.a2_les_8_01_1, R.string.a2_les_8_02_1, R.string.a2_les_8_03_1, R.string.a2_les_8_04_1, R.string.a2_les_8_05_1, R.string.a2_les_8_06_1, R.string.a2_les_8_07_1, R.string.a2_les_8_08_1, R.string.a2_les_8_09_1,
             R.string.a2_les_8_10_1, R.string.a2_les_8_11_1, R.string.a2_les_8_12_1, R.string.a2_les_8_13_1, R.string.a2_les_8_14_1, R.string.a2_les_8_15_1};
-    public int[] draw9_2_learn_a2= new int[]{
+    public int[] draw9_2_learn_a2 = new int[]{
             R.string.a2_les_9_01_1, R.string.a2_les_9_02_1, R.string.a2_les_9_03_1, R.string.a2_les_9_04_1, R.string.a2_les_9_05_1, R.string.a2_les_9_06_1, R.string.a2_les_9_07_1, R.string.a2_les_9_08_1, R.string.a2_les_9_09_1,
             R.string.a2_les_9_10_1, R.string.a2_les_9_11_1, R.string.a2_les_9_12_1, R.string.a2_les_9_13_1, R.string.a2_les_9_14_1, R.string.a2_les_9_15_1};
     public int[] draw10_2_learn_a2 = new int[]{
@@ -808,7 +808,7 @@ public class Res_array {
     public int[] draw26_2_learn_a2 = new int[]{
             R.string.a2_les_26_01_1, R.string.a2_les_26_02_1, R.string.a2_les_26_03_1, R.string.a2_les_26_04_1, R.string.a2_les_26_05_1, R.string.a2_les_26_06_1, R.string.a2_les_26_07_1, R.string.a2_les_26_08_1, R.string.a2_les_26_09_1,
             R.string.a2_les_26_10_1, R.string.a2_les_26_11_1, R.string.a2_les_26_12_1, R.string.a2_les_26_13_1, R.string.a2_les_26_14_1, R.string.a2_les_26_15_1};
-    public int[] draw27_2_learn_a2= new int[]{
+    public int[] draw27_2_learn_a2 = new int[]{
             R.string.a2_les_27_01_1, R.string.a2_les_27_02_1, R.string.a2_les_27_03_1, R.string.a2_les_27_04_1, R.string.a2_les_27_05_1, R.string.a2_les_27_06_1, R.string.a2_les_27_07_1, R.string.a2_les_27_08_1, R.string.a2_les_27_09_1,
             R.string.a2_les_27_10_1, R.string.a2_les_27_11_1, R.string.a2_les_27_12_1, R.string.a2_les_27_13_1, R.string.a2_les_27_14_1, R.string.a2_les_27_15_1};
     public int[] draw28_2_learn_a2 = new int[]{
@@ -939,34 +939,34 @@ public class Res_array {
     public int[][] main_1_learn_a2 = new int[][]{draw0_1_learn_a2, draw1_1_learn_a2, draw2_1_learn_a2, draw3_1_learn_a2, draw4_1_learn_a2, draw5_1_learn_a2, draw6_1_learn_a2, draw7_1_learn_a2, draw8_1_learn_a2, draw9_1_learn_a2, draw10_1_learn_a2, draw11_1_learn_a2, draw12_1_learn_a2, draw13_1_learn_a2, draw14_1_learn_a2, draw15_1_learn_a2, draw16_1_learn_a2, draw17_1_learn_a2, draw18_1_learn_a2, draw19_1_learn_a2, draw20_1_learn_a2, draw21_1_learn_a2, draw22_1_learn_a2, draw23_1_learn_a2, draw24_1_learn_a2, draw25_1_learn_a2, draw26_1_learn_a2, draw27_1_learn_a2, draw28_1_learn_a2, draw29_1_learn_a2, draw30_1_learn_a2, draw31_1_learn_a2, draw32_1_learn_a2, draw33_1_learn_a2, draw34_1_learn_a2, draw35_1_learn_a2, draw36_1_learn_a2, draw37_1_learn_a2, draw38_1_learn_a2, draw39_1_learn_a2, draw40_1_learn_a2, draw41_1_learn_a2, draw42_1_learn_a2, draw43_1_learn_a2, draw44_1_learn_a2, draw45_1_learn_a2, draw46_1_learn_a2, draw47_1_learn_a2, draw48_1_learn_a2, draw49_1_learn_a2, draw50_1_learn_a2};
     public int[][] main_2_learn_a2 = new int[][]{draw0_2_learn_a2, draw1_2_learn_a2, draw2_2_learn_a2, draw3_2_learn_a2, draw4_2_learn_a2, draw5_2_learn_a2, draw6_2_learn_a2, draw7_2_learn_a2, draw8_2_learn_a2, draw9_2_learn_a2, draw10_2_learn_a2, draw11_2_learn_a2, draw12_2_learn_a2, draw13_2_learn_a2, draw14_2_learn_a2, draw15_2_learn_a2, draw16_2_learn_a2, draw17_2_learn_a2, draw18_2_learn_a2, draw19_2_learn_a2, draw20_2_learn_a2, draw21_2_learn_a2, draw22_2_learn_a2, draw23_2_learn_a2, draw24_2_learn_a2, draw25_2_learn_a2, draw26_2_learn_a2, draw27_2_learn_a2, draw28_2_learn_a2, draw29_2_learn_a2, draw30_2_learn_a2, draw31_2_learn_a2, draw32_2_learn_a2, draw33_2_learn_a2, draw34_2_learn_a2, draw35_2_learn_a2, draw36_2_learn_a2, draw37_2_learn_a2, draw38_2_learn_a2, draw39_2_learn_a2, draw40_2_learn_a2, draw41_2_learn_a2, draw42_2_learn_a2, draw43_2_learn_a2, draw44_2_learn_a2, draw45_2_learn_a2, draw46_2_learn_a2, draw47_2_learn_a2, draw48_2_learn_a2, draw49_2_learn_a2, draw50_2_learn_a2};
 
-    public int[] draw0_1_learn_b2= new int[]{
+    public int[] draw0_1_learn_b2 = new int[]{
             R.string.b2_les_0_01, R.string.b2_les_0_02, R.string.b2_les_0_03, R.string.b2_les_0_04, R.string.b2_les_0_05, R.string.b2_les_0_06, R.string.b2_les_0_07, R.string.b2_les_0_08, R.string.b2_les_0_09,
             R.string.b2_les_0_10, R.string.b2_les_0_11, R.string.b2_les_0_12, R.string.b2_les_0_13, R.string.b2_les_0_14, R.string.b2_les_0_15};
-    public int[] draw1_1_learn_b2= new int[]{
+    public int[] draw1_1_learn_b2 = new int[]{
             R.string.b2_les_1_01, R.string.b2_les_1_02, R.string.b2_les_1_03, R.string.b2_les_1_04, R.string.b2_les_1_05, R.string.b2_les_1_06, R.string.b2_les_1_07, R.string.b2_les_1_08, R.string.b2_les_1_09,
             R.string.b2_les_1_10, R.string.b2_les_1_11, R.string.b2_les_1_12, R.string.b2_les_1_13, R.string.b2_les_1_14, R.string.b2_les_1_15};
-    public int[] draw2_1_learn_b2= new int[]{
+    public int[] draw2_1_learn_b2 = new int[]{
             R.string.b2_les_2_01, R.string.b2_les_2_02, R.string.b2_les_2_03, R.string.b2_les_2_04, R.string.b2_les_2_05, R.string.b2_les_2_06, R.string.b2_les_2_07, R.string.b2_les_2_08, R.string.b2_les_2_09,
             R.string.b2_les_2_10, R.string.b2_les_2_11, R.string.b2_les_2_12, R.string.b2_les_2_13, R.string.b2_les_2_14, R.string.b2_les_2_15};
-    public int[] draw3_1_learn_b2= new int[]{
+    public int[] draw3_1_learn_b2 = new int[]{
             R.string.b2_les_3_01, R.string.b2_les_3_02, R.string.b2_les_3_03, R.string.b2_les_3_04, R.string.b2_les_3_05, R.string.b2_les_3_06, R.string.b2_les_3_07, R.string.b2_les_3_08, R.string.b2_les_3_09,
             R.string.b2_les_3_10, R.string.b2_les_3_11, R.string.b2_les_3_12, R.string.b2_les_3_13, R.string.b2_les_3_14, R.string.b2_les_3_15};
-    public int[] draw4_1_learn_b2= new int[]{
+    public int[] draw4_1_learn_b2 = new int[]{
             R.string.b2_les_4_01, R.string.b2_les_4_02, R.string.b2_les_4_03, R.string.b2_les_4_04, R.string.b2_les_4_05, R.string.b2_les_4_06, R.string.b2_les_4_07, R.string.b2_les_4_08, R.string.b2_les_4_09,
             R.string.b2_les_4_10, R.string.b2_les_4_11, R.string.b2_les_4_12, R.string.b2_les_4_13, R.string.b2_les_4_14, R.string.b2_les_4_15};
-    public int[] draw5_1_learn_b2= new int[]{
+    public int[] draw5_1_learn_b2 = new int[]{
             R.string.b2_les_5_01, R.string.b2_les_5_02, R.string.b2_les_5_03, R.string.b2_les_5_04, R.string.b2_les_5_05, R.string.b2_les_5_06, R.string.b2_les_5_07, R.string.b2_les_5_08, R.string.b2_les_5_09,
             R.string.b2_les_5_10, R.string.b2_les_5_11, R.string.b2_les_5_12, R.string.b2_les_5_13, R.string.b2_les_5_14, R.string.b2_les_5_15};
-    public int[] draw6_1_learn_b2= new int[]{
+    public int[] draw6_1_learn_b2 = new int[]{
             R.string.b2_les_6_01, R.string.b2_les_6_02, R.string.b2_les_6_03, R.string.b2_les_6_04, R.string.b2_les_6_05, R.string.b2_les_6_06, R.string.b2_les_6_07, R.string.b2_les_6_08, R.string.b2_les_6_09,
             R.string.b2_les_6_10, R.string.b2_les_6_11, R.string.b2_les_6_12, R.string.b2_les_6_13, R.string.b2_les_6_14, R.string.b2_les_6_15};
-    public int[] draw7_1_learn_b2= new int[]{
+    public int[] draw7_1_learn_b2 = new int[]{
             R.string.b2_les_7_01, R.string.b2_les_7_02, R.string.b2_les_7_03, R.string.b2_les_7_04, R.string.b2_les_7_05, R.string.b2_les_7_06, R.string.b2_les_7_07, R.string.b2_les_7_08, R.string.b2_les_7_09,
             R.string.b2_les_7_10, R.string.b2_les_7_11, R.string.b2_les_7_12, R.string.b2_les_7_13, R.string.b2_les_7_14, R.string.b2_les_7_15};
-    public int[] draw8_1_learn_b2= new int[]{
+    public int[] draw8_1_learn_b2 = new int[]{
             R.string.b2_les_8_01, R.string.b2_les_8_02, R.string.b2_les_8_03, R.string.b2_les_8_04, R.string.b2_les_8_05, R.string.b2_les_8_06, R.string.b2_les_8_07, R.string.b2_les_8_08, R.string.b2_les_8_09,
             R.string.b2_les_8_10, R.string.b2_les_8_11, R.string.b2_les_8_12, R.string.b2_les_8_13, R.string.b2_les_8_14, R.string.b2_les_8_15};
-    public int[] draw9_1_learn_b2= new int[]{
+    public int[] draw9_1_learn_b2 = new int[]{
             R.string.b2_les_9_01, R.string.b2_les_9_02, R.string.b2_les_9_03, R.string.b2_les_9_04, R.string.b2_les_9_05, R.string.b2_les_9_06, R.string.b2_les_9_07, R.string.b2_les_9_08, R.string.b2_les_9_09,
             R.string.b2_les_9_10, R.string.b2_les_9_11, R.string.b2_les_9_12, R.string.b2_les_9_13, R.string.b2_les_9_14, R.string.b2_les_9_15};
     public int[] draw10_1_learn_b2 = new int[]{
@@ -1020,7 +1020,7 @@ public class Res_array {
     public int[] draw26_1_learn_b2 = new int[]{
             R.string.b2_les_26_01, R.string.b2_les_26_02, R.string.b2_les_26_03, R.string.b2_les_26_04, R.string.b2_les_26_05, R.string.b2_les_26_06, R.string.b2_les_26_07, R.string.b2_les_26_08, R.string.b2_les_26_09,
             R.string.b2_les_26_10, R.string.b2_les_26_11, R.string.b2_les_26_12, R.string.b2_les_26_13, R.string.b2_les_26_14, R.string.b2_les_26_15};
-    public int[] draw27_1_learn_b2= new int[]{
+    public int[] draw27_1_learn_b2 = new int[]{
             R.string.b2_les_27_01, R.string.b2_les_27_02, R.string.b2_les_27_03, R.string.b2_les_27_04, R.string.b2_les_27_05, R.string.b2_les_27_06, R.string.b2_les_27_07, R.string.b2_les_27_08, R.string.b2_les_27_09,
             R.string.b2_les_27_10, R.string.b2_les_27_11, R.string.b2_les_27_12, R.string.b2_les_27_13, R.string.b2_les_27_14, R.string.b2_les_27_15};
     public int[] draw28_1_learn_b2 = new int[]{
@@ -1039,34 +1039,34 @@ public class Res_array {
             R.string.b2_les_32_01, R.string.b2_les_32_02, R.string.b2_les_32_03, R.string.b2_les_32_04, R.string.b2_les_32_05, R.string.b2_les_32_06, R.string.b2_les_32_07, R.string.b2_les_32_08, R.string.b2_les_32_09,
             R.string.b2_les_32_10, R.string.b2_les_32_11, R.string.b2_les_32_12, R.string.b2_les_32_13, R.string.b2_les_32_14, R.string.b2_les_32_15};
 
-    public int[] draw0_2_learn_b2= new int[]{
+    public int[] draw0_2_learn_b2 = new int[]{
             R.string.b2_les_0_01_1, R.string.b2_les_0_02_1, R.string.b2_les_0_03_1, R.string.b2_les_0_04_1, R.string.b2_les_0_05_1, R.string.b2_les_0_06_1, R.string.b2_les_0_07_1, R.string.b2_les_0_08_1, R.string.b2_les_0_09_1,
             R.string.b2_les_0_10_1, R.string.b2_les_0_11_1, R.string.b2_les_0_12_1, R.string.b2_les_0_13_1, R.string.b2_les_0_14_1, R.string.b2_les_0_15_1};
-    public int[] draw1_2_learn_b2= new int[]{
+    public int[] draw1_2_learn_b2 = new int[]{
             R.string.b2_les_1_01_1, R.string.b2_les_1_02_1, R.string.b2_les_1_03_1, R.string.b2_les_1_04_1, R.string.b2_les_1_05_1, R.string.b2_les_1_06_1, R.string.b2_les_1_07_1, R.string.b2_les_1_08_1, R.string.b2_les_1_09_1,
             R.string.b2_les_1_10_1, R.string.b2_les_1_11_1, R.string.b2_les_1_12_1, R.string.b2_les_1_13_1, R.string.b2_les_1_14_1, R.string.b2_les_1_15_1};
-    public int[] draw2_2_learn_b2= new int[]{
+    public int[] draw2_2_learn_b2 = new int[]{
             R.string.b2_les_2_01_1, R.string.b2_les_2_02_1, R.string.b2_les_2_03_1, R.string.b2_les_2_04_1, R.string.b2_les_2_05_1, R.string.b2_les_2_06_1, R.string.b2_les_2_07_1, R.string.b2_les_2_08_1, R.string.b2_les_2_09_1,
             R.string.b2_les_2_10_1, R.string.b2_les_2_11_1, R.string.b2_les_2_12_1, R.string.b2_les_2_13_1, R.string.b2_les_2_14_1, R.string.b2_les_2_15_1};
-    public int[] draw3_2_learn_b2= new int[]{
+    public int[] draw3_2_learn_b2 = new int[]{
             R.string.b2_les_3_01_1, R.string.b2_les_3_02_1, R.string.b2_les_3_03_1, R.string.b2_les_3_04_1, R.string.b2_les_3_05_1, R.string.b2_les_3_06_1, R.string.b2_les_3_07_1, R.string.b2_les_3_08_1, R.string.b2_les_3_09_1,
             R.string.b2_les_3_10_1, R.string.b2_les_3_11_1, R.string.b2_les_3_12_1, R.string.b2_les_3_13_1, R.string.b2_les_3_14_1, R.string.b2_les_3_15_1};
-    public int[] draw4_2_learn_b2= new int[]{
+    public int[] draw4_2_learn_b2 = new int[]{
             R.string.b2_les_4_01_1, R.string.b2_les_4_02_1, R.string.b2_les_4_03_1, R.string.b2_les_4_04_1, R.string.b2_les_4_05_1, R.string.b2_les_4_06_1, R.string.b2_les_4_07_1, R.string.b2_les_4_08_1, R.string.b2_les_4_09_1,
             R.string.b2_les_4_10_1, R.string.b2_les_4_11_1, R.string.b2_les_4_12_1, R.string.b2_les_4_13_1, R.string.b2_les_4_14_1, R.string.b2_les_4_15_1};
-    public int[] draw5_2_learn_b2= new int[]{
+    public int[] draw5_2_learn_b2 = new int[]{
             R.string.b2_les_5_01_1, R.string.b2_les_5_02_1, R.string.b2_les_5_03_1, R.string.b2_les_5_04_1, R.string.b2_les_5_05_1, R.string.b2_les_5_06_1, R.string.b2_les_5_07_1, R.string.b2_les_5_08_1, R.string.b2_les_5_09_1,
             R.string.b2_les_5_10_1, R.string.b2_les_5_11_1, R.string.b2_les_5_12_1, R.string.b2_les_5_13_1, R.string.b2_les_5_14_1, R.string.b2_les_5_15_1};
-    public int[] draw6_2_learn_b2= new int[]{
+    public int[] draw6_2_learn_b2 = new int[]{
             R.string.b2_les_6_01_1, R.string.b2_les_6_02_1, R.string.b2_les_6_03_1, R.string.b2_les_6_04_1, R.string.b2_les_6_05_1, R.string.b2_les_6_06_1, R.string.b2_les_6_07_1, R.string.b2_les_6_08_1, R.string.b2_les_6_09_1,
             R.string.b2_les_6_10_1, R.string.b2_les_6_11_1, R.string.b2_les_6_12_1, R.string.b2_les_6_13_1, R.string.b2_les_6_14_1, R.string.b2_les_6_15_1};
-    public int[] draw7_2_learn_b2= new int[]{
+    public int[] draw7_2_learn_b2 = new int[]{
             R.string.b2_les_7_01_1, R.string.b2_les_7_02_1, R.string.b2_les_7_03_1, R.string.b2_les_7_04_1, R.string.b2_les_7_05_1, R.string.b2_les_7_06_1, R.string.b2_les_7_07_1, R.string.b2_les_7_08_1, R.string.b2_les_7_09_1,
             R.string.b2_les_7_10_1, R.string.b2_les_7_11_1, R.string.b2_les_7_12_1, R.string.b2_les_7_13_1, R.string.b2_les_7_14_1, R.string.b2_les_7_15_1};
-    public int[] draw8_2_learn_b2= new int[]{
+    public int[] draw8_2_learn_b2 = new int[]{
             R.string.b2_les_8_01_1, R.string.b2_les_8_02_1, R.string.b2_les_8_03_1, R.string.b2_les_8_04_1, R.string.b2_les_8_05_1, R.string.b2_les_8_06_1, R.string.b2_les_8_07_1, R.string.b2_les_8_08_1, R.string.b2_les_8_09_1,
             R.string.b2_les_8_10_1, R.string.b2_les_8_11_1, R.string.b2_les_8_12_1, R.string.b2_les_8_13_1, R.string.b2_les_8_14_1, R.string.b2_les_8_15_1};
-    public int[] draw9_2_learn_b2= new int[]{
+    public int[] draw9_2_learn_b2 = new int[]{
             R.string.b2_les_9_01_1, R.string.b2_les_9_02_1, R.string.b2_les_9_03_1, R.string.b2_les_9_04_1, R.string.b2_les_9_05_1, R.string.b2_les_9_06_1, R.string.b2_les_9_07_1, R.string.b2_les_9_08_1, R.string.b2_les_9_09_1,
             R.string.b2_les_9_10_1, R.string.b2_les_9_11_1, R.string.b2_les_9_12_1, R.string.b2_les_9_13_1, R.string.b2_les_9_14_1, R.string.b2_les_9_15_1};
     public int[] draw10_2_learn_b2 = new int[]{
@@ -1120,7 +1120,7 @@ public class Res_array {
     public int[] draw26_2_learn_b2 = new int[]{
             R.string.b2_les_26_01_1, R.string.b2_les_26_02_1, R.string.b2_les_26_03_1, R.string.b2_les_26_04_1, R.string.b2_les_26_05_1, R.string.b2_les_26_06_1, R.string.b2_les_26_07_1, R.string.b2_les_26_08_1, R.string.b2_les_26_09_1,
             R.string.b2_les_26_10_1, R.string.b2_les_26_11_1, R.string.b2_les_26_12_1, R.string.b2_les_26_13_1, R.string.b2_les_26_14_1, R.string.b2_les_26_15_1};
-    public int[] draw27_2_learn_b2= new int[]{
+    public int[] draw27_2_learn_b2 = new int[]{
             R.string.b2_les_27_01_1, R.string.b2_les_27_02_1, R.string.b2_les_27_03_1, R.string.b2_les_27_04_1, R.string.b2_les_27_05_1, R.string.b2_les_27_06_1, R.string.b2_les_27_07_1, R.string.b2_les_27_08_1, R.string.b2_les_27_09_1,
             R.string.b2_les_27_10_1, R.string.b2_les_27_11_1, R.string.b2_les_27_12_1, R.string.b2_les_27_13_1, R.string.b2_les_27_14_1, R.string.b2_les_27_15_1};
     public int[] draw28_2_learn_b2 = new int[]{
@@ -1249,7 +1249,7 @@ public class Res_array {
             R.string.b2_les_50_10_1, R.string.b2_les_50_11_1, R.string.b2_les_50_12_1, R.string.b2_les_50_13_1, R.string.b2_les_50_14_1, R.string.b2_les_50_15_1};
 
 
-//
+    //
     public int[][] main_1_learn_b2 = new int[][]{draw0_1_learn_b2, draw1_1_learn_b2, draw2_1_learn_b2, draw3_1_learn_b2, draw4_1_learn_b2, draw5_1_learn_b2, draw6_1_learn_b2, draw7_1_learn_b2, draw8_1_learn_b2, draw9_1_learn_b2, draw10_1_learn_b2, draw11_1_learn_b2, draw12_1_learn_b2, draw13_1_learn_b2, draw14_1_learn_b2, draw15_1_learn_b2, draw16_1_learn_b2, draw17_1_learn_b2, draw18_1_learn_b2, draw19_1_learn_b2, draw20_1_learn_b2, draw21_1_learn_b2, draw22_1_learn_b2, draw23_1_learn_b2, draw24_1_learn_b2, draw25_1_learn_b2, draw26_1_learn_b2, draw27_1_learn_b2, draw28_1_learn_b2, draw29_1_learn_b2, draw30_1_learn_b2, draw31_1_learn_b2, draw32_1_learn_b2, draw33_1_learn_b2, draw34_1_learn_b2, draw35_1_learn_b2, draw36_1_learn_b2, draw37_1_learn_b2, draw38_1_learn_b2, draw39_1_learn_b2, draw40_1_learn_b2, draw41_1_learn_b2, draw42_1_learn_b2, draw43_1_learn_b2, draw44_1_learn_b2, draw45_1_learn_b2, draw46_1_learn_b2, draw47_1_learn_b2, draw48_1_learn_b2, draw49_1_learn_b2, draw50_1_learn_b2};
     public int[][] main_2_learn_b2 = new int[][]{draw0_2_learn_b2, draw1_2_learn_b2, draw2_2_learn_b2, draw3_2_learn_b2, draw4_2_learn_b2, draw5_2_learn_b2, draw6_2_learn_b2, draw7_2_learn_b2, draw8_2_learn_b2, draw9_2_learn_b2, draw10_2_learn_b2, draw11_2_learn_b2, draw12_2_learn_b2, draw13_2_learn_b2, draw14_2_learn_b2, draw15_2_learn_b2, draw16_2_learn_b2, draw17_2_learn_b2, draw18_2_learn_b2, draw19_2_learn_b2, draw20_2_learn_b2, draw21_2_learn_b2, draw22_2_learn_b2, draw23_2_learn_b2, draw24_2_learn_b2, draw25_2_learn_b2, draw26_2_learn_b2, draw27_2_learn_b2, draw28_2_learn_b2, draw29_2_learn_b2, draw30_2_learn_b2, draw31_2_learn_b2, draw32_2_learn_b2, draw33_2_learn_b2, draw34_2_learn_b2, draw35_2_learn_b2, draw36_2_learn_b2, draw37_2_learn_b2, draw38_2_learn_b2, draw39_2_learn_b2, draw40_2_learn_b2, draw41_2_learn_b2, draw42_2_learn_b2, draw43_2_learn_b2, draw44_2_learn_b2, draw45_2_learn_b2, draw46_2_learn_b2, draw47_2_learn_b2, draw48_2_learn_b2, draw49_2_learn_b2, draw50_2_learn_b2};
 

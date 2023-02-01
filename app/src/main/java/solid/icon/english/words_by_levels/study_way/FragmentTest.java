@@ -23,7 +23,7 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.MyFragmentActivity;
+import solid.icon.english.architecture.parents.MyFragmentActivity;
 
 public class FragmentTest extends MyFragmentActivity implements View.OnClickListener {
 
@@ -51,9 +51,10 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         return inflater.inflate(R.layout.fragment_test, container, false);
     }
 
-    private int [] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
+    private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
-    private int counter_true = 0; private Toast mess;
+    private int counter_true = 0;
+    private Toast mess;
 
     private TextToSpeech mTTS;
 
@@ -61,48 +62,148 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
     private Drawable LinDraw;
     private int i = 0;
 
-    TextView words1; TextView words2; TextView words3; TextView words4; TextView words5; TextView words6; TextView words7; TextView words8; TextView words9; TextView words10; TextView words11;
-    TextView words12; TextView words13; TextView words14; TextView words15;
+    TextView words1;
+    TextView words2;
+    TextView words3;
+    TextView words4;
+    TextView words5;
+    TextView words6;
+    TextView words7;
+    TextView words8;
+    TextView words9;
+    TextView words10;
+    TextView words11;
+    TextView words12;
+    TextView words13;
+    TextView words14;
+    TextView words15;
 
-    TextView words1_1; TextView words2_1; TextView words3_1; TextView words4_1; TextView words5_1; TextView words6_1; TextView words7_1; TextView words8_1; TextView words9_1; TextView words10_1; TextView words11_1;
-    TextView words12_1; TextView words13_1; TextView words14_1; TextView words15_1;
+    TextView words1_1;
+    TextView words2_1;
+    TextView words3_1;
+    TextView words4_1;
+    TextView words5_1;
+    TextView words6_1;
+    TextView words7_1;
+    TextView words8_1;
+    TextView words9_1;
+    TextView words10_1;
+    TextView words11_1;
+    TextView words12_1;
+    TextView words13_1;
+    TextView words14_1;
+    TextView words15_1;
 
-    EditText editText1; EditText editText2; EditText editText3; EditText editText4; EditText editText5; EditText editText6; EditText editText7; EditText editText8; EditText editText9; EditText editText10; EditText editText11;
-    EditText editText12; EditText editText13; EditText editText14; EditText editText15;
+    EditText editText1;
+    EditText editText2;
+    EditText editText3;
+    EditText editText4;
+    EditText editText5;
+    EditText editText6;
+    EditText editText7;
+    EditText editText8;
+    EditText editText9;
+    EditText editText10;
+    EditText editText11;
+    EditText editText12;
+    EditText editText13;
+    EditText editText14;
+    EditText editText15;
 
-    LinearLayout lin_1; LinearLayout lin_2; LinearLayout lin_3; LinearLayout lin_4; LinearLayout lin_5; LinearLayout lin_6; LinearLayout lin_7; LinearLayout lin_8; LinearLayout lin_9; LinearLayout lin_10; LinearLayout lin_11;
-    LinearLayout lin_12; LinearLayout lin_13; LinearLayout lin_14; LinearLayout lin_15;
+    LinearLayout lin_1;
+    LinearLayout lin_2;
+    LinearLayout lin_3;
+    LinearLayout lin_4;
+    LinearLayout lin_5;
+    LinearLayout lin_6;
+    LinearLayout lin_7;
+    LinearLayout lin_8;
+    LinearLayout lin_9;
+    LinearLayout lin_10;
+    LinearLayout lin_11;
+    LinearLayout lin_12;
+    LinearLayout lin_13;
+    LinearLayout lin_14;
+    LinearLayout lin_15;
 
     private TextView check;
 
-    private int [] counter_flip = new int[]{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-    private String [] back_words = new String[15];
-    private boolean [] isRight = new boolean[]{true,true,true,true,true,true,true,true,true,true,true,true,true,true,true};
+    private int[] counter_flip = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    private String[] back_words = new String[15];
+    private boolean[] isRight = new boolean[]{true, true, true, true, true, true, true, true, true, true, true, true, true, true, true};
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
 
-        for(int i = 0; i < 15;i++){
-            id[i]= i * -1;
+        for (int i = 0; i < 15; i++) {
+            id[i] = i * -1;
         }
         FragmentActivity fragmentActivity = getActivity();
 
-        words1 = fragmentActivity.findViewById(R.id.words1); words2 = fragmentActivity.findViewById(R.id.words2); words3 = fragmentActivity.findViewById(R.id.words3); words4 = fragmentActivity.findViewById(R.id.words4); words5 = fragmentActivity.findViewById(R.id.words5);
-        words6 = fragmentActivity.findViewById(R.id.words6); words7 = fragmentActivity.findViewById(R.id.words7); words8 = fragmentActivity.findViewById(R.id.words8); words9 = fragmentActivity.findViewById(R.id.words9); words10 = fragmentActivity.findViewById(R.id.words10);
-        words11 = fragmentActivity.findViewById(R.id.words11); words12 = fragmentActivity.findViewById(R.id.words12); words13 = fragmentActivity.findViewById(R.id.words13); words14 = fragmentActivity.findViewById(R.id.words14); words15 = fragmentActivity.findViewById(R.id.words15);
+        words1 = fragmentActivity.findViewById(R.id.words1);
+        words2 = fragmentActivity.findViewById(R.id.words2);
+        words3 = fragmentActivity.findViewById(R.id.words3);
+        words4 = fragmentActivity.findViewById(R.id.words4);
+        words5 = fragmentActivity.findViewById(R.id.words5);
+        words6 = fragmentActivity.findViewById(R.id.words6);
+        words7 = fragmentActivity.findViewById(R.id.words7);
+        words8 = fragmentActivity.findViewById(R.id.words8);
+        words9 = fragmentActivity.findViewById(R.id.words9);
+        words10 = fragmentActivity.findViewById(R.id.words10);
+        words11 = fragmentActivity.findViewById(R.id.words11);
+        words12 = fragmentActivity.findViewById(R.id.words12);
+        words13 = fragmentActivity.findViewById(R.id.words13);
+        words14 = fragmentActivity.findViewById(R.id.words14);
+        words15 = fragmentActivity.findViewById(R.id.words15);
 
-        words1_1 = fragmentActivity.findViewById(R.id.words1_1); words2_1 = fragmentActivity.findViewById(R.id.words2_1); words3_1 = fragmentActivity.findViewById(R.id.words3_1); words4_1 = fragmentActivity.findViewById(R.id.words4_1); words5_1 = fragmentActivity.findViewById(R.id.words5_1);
-        words6_1 = fragmentActivity.findViewById(R.id.words6_1); words7_1 = fragmentActivity.findViewById(R.id.words7_1); words8_1 = fragmentActivity.findViewById(R.id.words8_1); words9_1 = fragmentActivity.findViewById(R.id.words9_1); words10_1 = fragmentActivity.findViewById(R.id.words10_1);
-        words11_1 = fragmentActivity.findViewById(R.id.words11_1); words12_1 = fragmentActivity.findViewById(R.id.words12_1); words13_1 = fragmentActivity.findViewById(R.id.words13_1); words14_1 = fragmentActivity.findViewById(R.id.words14_1); words15_1 = fragmentActivity.findViewById(R.id.words15_1);
+        words1_1 = fragmentActivity.findViewById(R.id.words1_1);
+        words2_1 = fragmentActivity.findViewById(R.id.words2_1);
+        words3_1 = fragmentActivity.findViewById(R.id.words3_1);
+        words4_1 = fragmentActivity.findViewById(R.id.words4_1);
+        words5_1 = fragmentActivity.findViewById(R.id.words5_1);
+        words6_1 = fragmentActivity.findViewById(R.id.words6_1);
+        words7_1 = fragmentActivity.findViewById(R.id.words7_1);
+        words8_1 = fragmentActivity.findViewById(R.id.words8_1);
+        words9_1 = fragmentActivity.findViewById(R.id.words9_1);
+        words10_1 = fragmentActivity.findViewById(R.id.words10_1);
+        words11_1 = fragmentActivity.findViewById(R.id.words11_1);
+        words12_1 = fragmentActivity.findViewById(R.id.words12_1);
+        words13_1 = fragmentActivity.findViewById(R.id.words13_1);
+        words14_1 = fragmentActivity.findViewById(R.id.words14_1);
+        words15_1 = fragmentActivity.findViewById(R.id.words15_1);
 
-        editText1 = fragmentActivity.findViewById(R.id.editText1); editText2 = fragmentActivity.findViewById(R.id.editText2); editText3 = fragmentActivity.findViewById(R.id.editText3); editText4 = fragmentActivity.findViewById(R.id.editText4); editText5 = fragmentActivity.findViewById(R.id.editText5);
-        editText6 = fragmentActivity.findViewById(R.id.editText6); editText7 = fragmentActivity.findViewById(R.id.editText7); editText8 = fragmentActivity.findViewById(R.id.editText8); editText9 = fragmentActivity.findViewById(R.id.editText9); editText10 = fragmentActivity.findViewById(R.id.editText10);
-        editText11 = fragmentActivity.findViewById(R.id.editText11); editText12 = fragmentActivity.findViewById(R.id.editText12); editText13 = fragmentActivity.findViewById(R.id.editText13); editText14 = fragmentActivity.findViewById(R.id.editText14); editText15 = fragmentActivity.findViewById(R.id.editText15);
+        editText1 = fragmentActivity.findViewById(R.id.editText1);
+        editText2 = fragmentActivity.findViewById(R.id.editText2);
+        editText3 = fragmentActivity.findViewById(R.id.editText3);
+        editText4 = fragmentActivity.findViewById(R.id.editText4);
+        editText5 = fragmentActivity.findViewById(R.id.editText5);
+        editText6 = fragmentActivity.findViewById(R.id.editText6);
+        editText7 = fragmentActivity.findViewById(R.id.editText7);
+        editText8 = fragmentActivity.findViewById(R.id.editText8);
+        editText9 = fragmentActivity.findViewById(R.id.editText9);
+        editText10 = fragmentActivity.findViewById(R.id.editText10);
+        editText11 = fragmentActivity.findViewById(R.id.editText11);
+        editText12 = fragmentActivity.findViewById(R.id.editText12);
+        editText13 = fragmentActivity.findViewById(R.id.editText13);
+        editText14 = fragmentActivity.findViewById(R.id.editText14);
+        editText15 = fragmentActivity.findViewById(R.id.editText15);
 
-        lin_1 = fragmentActivity.findViewById(R.id.lin_1); lin_2 = fragmentActivity.findViewById(R.id.lin_2); lin_3 = fragmentActivity.findViewById(R.id.lin_3); lin_4 = fragmentActivity.findViewById(R.id.lin_4); lin_5 = fragmentActivity.findViewById(R.id.lin_5);
-        lin_6 = fragmentActivity.findViewById(R.id.lin_6); lin_7 = fragmentActivity.findViewById(R.id.lin_7); lin_8 = fragmentActivity.findViewById(R.id.lin_8); lin_9 = fragmentActivity.findViewById(R.id.lin_9); lin_10 = fragmentActivity.findViewById(R.id.lin_10);
-        lin_11 = fragmentActivity.findViewById(R.id.lin_11); lin_12 = fragmentActivity.findViewById(R.id.lin_12); lin_13 = fragmentActivity.findViewById(R.id.lin_13); lin_14 = fragmentActivity.findViewById(R.id.lin_14); lin_15 = fragmentActivity.findViewById(R.id.lin_15);
+        lin_1 = fragmentActivity.findViewById(R.id.lin_1);
+        lin_2 = fragmentActivity.findViewById(R.id.lin_2);
+        lin_3 = fragmentActivity.findViewById(R.id.lin_3);
+        lin_4 = fragmentActivity.findViewById(R.id.lin_4);
+        lin_5 = fragmentActivity.findViewById(R.id.lin_5);
+        lin_6 = fragmentActivity.findViewById(R.id.lin_6);
+        lin_7 = fragmentActivity.findViewById(R.id.lin_7);
+        lin_8 = fragmentActivity.findViewById(R.id.lin_8);
+        lin_9 = fragmentActivity.findViewById(R.id.lin_9);
+        lin_10 = fragmentActivity.findViewById(R.id.lin_10);
+        lin_11 = fragmentActivity.findViewById(R.id.lin_11);
+        lin_12 = fragmentActivity.findViewById(R.id.lin_12);
+        lin_13 = fragmentActivity.findViewById(R.id.lin_13);
+        lin_14 = fragmentActivity.findViewById(R.id.lin_14);
+        lin_15 = fragmentActivity.findViewById(R.id.lin_15);
 
         check = fragmentActivity.findViewById(R.id.check);
 
@@ -128,26 +229,26 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         mTTS = new TextToSpeech(fragmentActivity, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    int result =  mTTS.setLanguage(Locale.US);
+                if (status == TextToSpeech.SUCCESS) {
+                    int result = mTTS.setLanguage(Locale.US);
 
-                    if(result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED){
+                    if (result == TextToSpeech.LANG_MISSING_DATA
+                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                         Log.e("TTS", "Language not supported");
                     } else {
 
                     }
-                }else{
+                } else {
                     Log.e("TTS", "Initializator failef");
                 }
             }
         });
 
-            check.setVisibility(View.VISIBLE);
-            text1_1_visibel_vis();
-            text1_visibel_gone();
-            full_array();
-            change_test();
+        check.setVisibility(View.VISIBLE);
+        text1_1_visibel_vis();
+        text1_visibel_gone();
+        full_array();
+        change_test();
 
     }
 
@@ -157,7 +258,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         setVisibleGoneTextView();
     }
 
-    private void setVisibleGoneTextView(){
+    private void setVisibleGoneTextView() {
         lin_1.setBackground(LinDraw);
         lin_2.setBackground(LinDraw);
         lin_3.setBackground(LinDraw);
@@ -175,7 +276,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         lin_15.setBackground(LinDraw);
     }
 
-    private void full_array(){
+    private void full_array() {
         int rand = 0;
         boolean isTrue = false;
         int k = 0;
@@ -188,11 +289,11 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 for (int j = 0; j < 15; j++) {
                     if (rand == id[j]) {
                         isTrue = true;
-                    }else{
+                    } else {
                         k++;
                     }
                 }
-                if(k == 15){
+                if (k == 15) {
                     isTrue = false;
                 }
 
@@ -201,7 +302,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         }
     }
 
-    private void change_test(){
+    private void change_test() {
 
         words1.setText(main_1[num_of_topic][id[i++]]);
         words2.setText(main_1[num_of_topic][id[i++]]);
@@ -238,11 +339,11 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         i = 0;
     }
 
-    private void check_visible_gone(){
+    private void check_visible_gone() {
         check.setVisibility(View.GONE);
     }
 
-    private void text1_1_visibel_vis(){
+    private void text1_1_visibel_vis() {
 
         words1_1.setVisibility(View.VISIBLE);
         words2_1.setVisibility(View.VISIBLE);
@@ -261,7 +362,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         words15_1.setVisibility(View.VISIBLE);
     }
 
-    private void text1_visibel_gone(){
+    private void text1_visibel_gone() {
 
         words1.setVisibility(View.GONE);
         words2.setVisibility(View.GONE);
@@ -280,42 +381,57 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         words15.setVisibility(View.GONE);
     }
 
-    private void set_all_back_to_lin(){
+    private void set_all_back_to_lin() {
         int k = 0;
-        setBackground_to_lin(lin_1, k); k++;
-        setBackground_to_lin(lin_2, k); k++;
-        setBackground_to_lin(lin_3, k); k++;
-        setBackground_to_lin(lin_4, k); k++;
-        setBackground_to_lin(lin_5, k); k++;
-        setBackground_to_lin(lin_6, k); k++;
-        setBackground_to_lin(lin_7, k); k++;
-        setBackground_to_lin(lin_8, k); k++;
-        setBackground_to_lin(lin_9, k); k++;
-        setBackground_to_lin(lin_10, k); k++;
-        setBackground_to_lin(lin_11, k); k++;
-        setBackground_to_lin(lin_12, k); k++;
-        setBackground_to_lin(lin_13, k); k++;
-        setBackground_to_lin(lin_14, k); k++;
-        setBackground_to_lin(lin_15, k); k++;
+        setBackground_to_lin(lin_1, k);
+        k++;
+        setBackground_to_lin(lin_2, k);
+        k++;
+        setBackground_to_lin(lin_3, k);
+        k++;
+        setBackground_to_lin(lin_4, k);
+        k++;
+        setBackground_to_lin(lin_5, k);
+        k++;
+        setBackground_to_lin(lin_6, k);
+        k++;
+        setBackground_to_lin(lin_7, k);
+        k++;
+        setBackground_to_lin(lin_8, k);
+        k++;
+        setBackground_to_lin(lin_9, k);
+        k++;
+        setBackground_to_lin(lin_10, k);
+        k++;
+        setBackground_to_lin(lin_11, k);
+        k++;
+        setBackground_to_lin(lin_12, k);
+        k++;
+        setBackground_to_lin(lin_13, k);
+        k++;
+        setBackground_to_lin(lin_14, k);
+        k++;
+        setBackground_to_lin(lin_15, k);
+        k++;
     }
 
     @SuppressLint("ResourceAsColor")
-    private void setBackground_to_lin(LinearLayout lin, int k){
+    private void setBackground_to_lin(LinearLayout lin, int k) {
         //System.out.println(k + " " + " " +isRight[k]);
-        if (isRight[k]){
+        if (isRight[k]) {
             lin.setBackgroundResource(R.color.back_true);
             counter_true++;
             //System.out.println("true");
-        }else {
+        } else {
             lin.setBackgroundResource(R.color.back_false);
             //System.out.println("false");
         }
 
     }
 
-    private void equals_back_with_true(){
+    private void equals_back_with_true() {
         String word = "";
-        for (int j = 0; j < 15; j++){
+        for (int j = 0; j < 15; j++) {
             word = getResources().getString((main_1[num_of_topic][id[j]]));
             back_words[j] = back_words[j].trim();
             isRight[j] = back_words[j].equals(word);
@@ -323,7 +439,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         }
     }
 
-    private void back_inf_from_editText(){
+    private void back_inf_from_editText() {
         int t = 0;
         back_words[t++] = editText1.getText().toString(); // приводим к типу String
         back_words[t++] = editText2.getText().toString();
@@ -343,7 +459,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         t = 0;
     }
 
-    private void text1_visibel_vis(){
+    private void text1_visibel_vis() {
 
         words1.setVisibility(View.VISIBLE);
         words2.setVisibility(View.VISIBLE);
@@ -363,25 +479,25 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
 
     }
 
-    private void speak(String text){
+    private void speak(String text) {
         float pitch = 0.5f;
         float speed = 0.5f;
         Log.e("TTS", "123");
         //mTTS.setPitch(pitch);
         //mTTS.setSpeechRate(speed);
 
-        mTTS.speak(text,TextToSpeech.QUEUE_FLUSH, null);
+        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
-    public void calculate_flip(){
+    public void calculate_flip() {
         int ma = 0;
-        for (int g:
+        for (int g :
                 counter_flip) {
-            if (g == 1){
+            if (g == 1) {
                 ma++;
             }
         }
-        if (ma == 15){
+        if (ma == 15) {
             //el_next.setVisibility(View.VISIBLE);
         }
     }
@@ -390,7 +506,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.words1:
-                if(words1_1.getVisibility() == View.GONE){
+                if (words1_1.getVisibility() == View.GONE) {
                     words1_1.setVisibility(View.VISIBLE);
                     counter_flip[0] = 1;
                     calculate_flip();
@@ -399,7 +515,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words2:
-                if(words2_1.getVisibility() == View.GONE){
+                if (words2_1.getVisibility() == View.GONE) {
                     words2_1.setVisibility(View.VISIBLE);
                     counter_flip[1] = 1;
                     calculate_flip();
@@ -408,7 +524,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words3:
-                if(words3_1.getVisibility() == View.GONE){
+                if (words3_1.getVisibility() == View.GONE) {
                     words3_1.setVisibility(View.VISIBLE);
                     counter_flip[2] = 1;
                     calculate_flip();
@@ -417,7 +533,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words4:
-                if(words4_1.getVisibility() == View.GONE){
+                if (words4_1.getVisibility() == View.GONE) {
                     words4_1.setVisibility(View.VISIBLE);
                     counter_flip[3] = 1;
                     calculate_flip();
@@ -426,7 +542,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words5:
-                if(words5_1.getVisibility() == View.GONE){
+                if (words5_1.getVisibility() == View.GONE) {
                     words5_1.setVisibility(View.VISIBLE);
                     counter_flip[4] = 1;
                     calculate_flip();
@@ -435,7 +551,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words6:
-                if(words6_1.getVisibility() == View.GONE){
+                if (words6_1.getVisibility() == View.GONE) {
                     words6_1.setVisibility(View.VISIBLE);
                     counter_flip[5] = 1;
                     calculate_flip();
@@ -444,7 +560,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words7:
-                if(words7_1.getVisibility() == View.GONE){
+                if (words7_1.getVisibility() == View.GONE) {
                     words7_1.setVisibility(View.VISIBLE);
                     counter_flip[6] = 1;
                     calculate_flip();
@@ -453,7 +569,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words8:
-                if(words8_1.getVisibility() == View.GONE){
+                if (words8_1.getVisibility() == View.GONE) {
                     words8_1.setVisibility(View.VISIBLE);
                     counter_flip[7] = 1;
                     calculate_flip();
@@ -462,7 +578,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words9:
-                if(words9_1.getVisibility() == View.GONE){
+                if (words9_1.getVisibility() == View.GONE) {
                     words9_1.setVisibility(View.VISIBLE);
                     counter_flip[8] = 1;
                     calculate_flip();
@@ -471,7 +587,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words10:
-                if(words10_1.getVisibility() == View.GONE){
+                if (words10_1.getVisibility() == View.GONE) {
                     words10_1.setVisibility(View.VISIBLE);
                     counter_flip[9] = 1;
                     calculate_flip();
@@ -480,7 +596,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words11:
-                if(words11_1.getVisibility() == View.GONE){
+                if (words11_1.getVisibility() == View.GONE) {
                     words11_1.setVisibility(View.VISIBLE);
                     counter_flip[10] = 1;
                     calculate_flip();
@@ -489,7 +605,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words12:
-                if(words12_1.getVisibility() == View.GONE){
+                if (words12_1.getVisibility() == View.GONE) {
                     words12_1.setVisibility(View.VISIBLE);
                     counter_flip[11] = 1;
                     calculate_flip();
@@ -498,7 +614,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words13:
-                if(words13_1.getVisibility() == View.GONE){
+                if (words13_1.getVisibility() == View.GONE) {
                     words13_1.setVisibility(View.VISIBLE);
                     counter_flip[12] = 1;
                     calculate_flip();
@@ -507,7 +623,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words14:
-                if(words14_1.getVisibility() == View.GONE){
+                if (words14_1.getVisibility() == View.GONE) {
                     words14_1.setVisibility(View.VISIBLE);
                     counter_flip[13] = 1;
                     calculate_flip();
@@ -516,7 +632,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.words15:
-                if(words15_1.getVisibility() == View.GONE){
+                if (words15_1.getVisibility() == View.GONE) {
                     words15_1.setVisibility(View.VISIBLE);
                     counter_flip[14] = 1;
                     calculate_flip();
@@ -532,10 +648,10 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 check_visible_gone();
                 mess = Toast.makeText(getActivity(), "Correct answers " + counter_true + " of " + 15, Toast.LENGTH_LONG);
                 mess.show();
-                for(int i = 0; i < 15; i++){
+                for (int i = 0; i < 15; i++) {
                     isRight[i] = false;
                 }
-                if(counter_true > 12){
+                if (counter_true > 12) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                     builder.setMessage("Do you want to mark this topic as done?");
                     builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -557,7 +673,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         }
     }
 
-    private void mark_topic_as_done(){
+    private void mark_topic_as_done() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
         SharedPreferences.Editor editor = preferences.edit();
         String mod_key = String.valueOf(what_level) + num_of_topic;

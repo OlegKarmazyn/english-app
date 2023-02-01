@@ -22,8 +22,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
@@ -188,7 +188,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 subTopicModel.subTopicsName = subTopicsName;
                 subTopicDao.insert(subTopicModel);
                 moveDataFB(userLevel.chosenTopics, subTopicsName);
-            }else{
+            } else {
                 Toasty.error(context, "\"" + subTopicsName + "\"" + " already exists").show();
             }
             userLevel.setDataToUserAdapter();

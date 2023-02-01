@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 
 public class EnglishLevel extends ActivityGlobal {
 
     RecyclerView recyclerView;
-    String name_topic [];
+    String name_topic[];
     LessonsName level;
     boolean[] key_topics = new boolean[51];
     final Context context = this;
@@ -42,11 +42,11 @@ public class EnglishLevel extends ActivityGlobal {
             } else if (level == LessonsName.B1) {
                 name_topic = getResources().getStringArray(R.array.topics_name_b1);
                 showActionBar(true, lessonNames[1]);
-            }  else if (level == LessonsName.B2) {
+            } else if (level == LessonsName.B2) {
                 name_topic = getResources().getStringArray(R.array.topics_name_b2);
                 showActionBar(true, lessonNames[2]);
             }
-        } catch (Exception e){/*empty*/}
+        } catch (Exception e) {/*empty*/}
 
         goDateBack();
         setAdapter();
@@ -63,9 +63,9 @@ public class EnglishLevel extends ActivityGlobal {
         recyclerView.setNestedScrollingEnabled(false);
     }
 
-    public boolean[] goDateBack(){
+    public boolean[] goDateBack() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        for(int i = 0; i < key_topics.length; i++){
+        for (int i = 0; i < key_topics.length; i++) {
             String mod_key = level.name() + i;
             key_topics[i] = preferences.getBoolean(mod_key, false);
             Log.d("goDateBack", "key_topics[" + i + "]" + key_topics[i]);

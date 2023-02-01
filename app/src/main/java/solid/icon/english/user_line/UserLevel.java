@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import solid.icon.english.R;
-import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
@@ -68,7 +68,7 @@ public class UserLevel extends ActivityGlobal {
 
         recyclerView.setAlpha(0f);
 
-        UserAdapter userAdapter = new UserAdapter(context, name_topic,UserLevel.this);
+        UserAdapter userAdapter = new UserAdapter(context, name_topic, UserLevel.this);
         recyclerView.setAdapter(userAdapter);
 
         recyclerView.animate().alpha(1f);
