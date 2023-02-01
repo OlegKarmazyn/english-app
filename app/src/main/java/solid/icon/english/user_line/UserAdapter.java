@@ -20,8 +20,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DataSnapshot;
-
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
@@ -123,7 +122,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 
             } else {
-                showAddDialog(position);
+                showAddDialog();
             }
         });
 
@@ -172,7 +171,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*-----------------------------------------dialogs-----------------------------------------*/
     /*----------------------------------Add Data----------------------------------*/
-    public void showAddDialog(int position) {
+    public void showAddDialog() {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         final EditText edittext = new EditText(context);
         alert.setTitle("Do you want to add topic?");
@@ -181,13 +180,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         alert.setView(edittext);
 
         alert.setPositiveButton("Add", (dialog, whichButton) -> {
-            String editText = edittext.getText().toString();
-            SubTopicModel subTopicModel = new SubTopicModel();
-            subTopicModel.topicsName = userLevel.chosenTopics;
-            subTopicModel.subTopicsName = editText;
-            subTopicDao.insert(subTopicModel);
+            String subTopicsName = edittext.getText().toString();
+            SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, subTopicsName);
+            if (subTopicModel == null) {
+                subTopicModel = new SubTopicModel();
+                subTopicModel.topicsName = userLevel.chosenTopics;
+                subTopicModel.subTopicsName = subTopicsName;
+                subTopicDao.insert(subTopicModel);
+                moveDataFB(userLevel.chosenTopics, subTopicsName);
+            }else{
+                Toasty.error(context, "\"" + subTopicsName + "\"" + " already exists").show();
+            }
             userLevel.setDataToUserAdapter();
-            moveDataFB(userLevel.chosenTopics, editText);
         });
 
         alert.setNegativeButton("Cancel", null);

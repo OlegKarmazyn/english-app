@@ -27,6 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
@@ -191,15 +192,19 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         tvAdd.setOnClickListener(v -> {
             EditText etName = dialog.findViewById(R.id.etName);
             String topicsName = etName.getText().toString().trim();
+            dialog.dismiss();
 
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
                 getDataFB(topicsName);
             } else {
-                insertNewTopics(topicsName, spinner.getSelectedItem().toString());
-                moveDataFB(topicsName);
+                if (topicModelDao.getByTopicsName(topicsName) == null) {
+                    insertNewTopics(topicsName, spinner.getSelectedItem().toString());
+                    moveDataFB(topicsName);
+                } else {
+                    Toasty.error(context, "\"" + topicsName + "\"" + " already exists").show();
+                }
                 mainActivity.setDataToUserAdapter();
             }
-            dialog.dismiss();
         });
 
         tvCancel.setOnClickListener(v -> dialog.dismiss());
