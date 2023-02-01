@@ -24,7 +24,7 @@ import com.google.firebase.database.DataSnapshot;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
-import solid.icon.english.architecture.firebase.database.FirebaseOperation;
+import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
@@ -42,7 +42,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     SubTopicDao subTopicDao;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
-    String email = "admin@gmail.com";
+    FirebaseOperation firebaseOperation = new FirebaseOperation();
 
     public UserAdapter(Context context, String[] titlesArray, UserLevel userLevel) {
         this.context = context;
@@ -187,7 +187,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             subTopicModel.subTopicsName = editText;
             subTopicDao.insert(subTopicModel);
             userLevel.setDataToUserAdapter();
-            moveDataFB(userLevel.chosenTopics, editText, position);
+            moveDataFB(userLevel.chosenTopics, editText);
         });
 
         alert.setNegativeButton("Cancel", null);
@@ -195,11 +195,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         alert.show();
     }
 
-    private void moveDataFB(String topicsName, String subTopicsName, int position) {
-        FirebaseOperation firebaseOperation = new FirebaseOperation();
-        firebaseOperation.getPathIfAllowed(topicsName, dataSnapshot -> {
-            dataSnapshot.getRef().child("subNames").push().setValue(subTopicsName);
-        });
+    private void moveDataFB(String topicsName, String subTopicsName) {
+        firebaseOperation.moveSubTopics(topicsName, subTopicsName);
     }
 
     /*----------------------------------Delete Data----------------------------------*/
@@ -216,15 +213,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     private void deleteDataFB(String topicsName, String subTopicsName) {
-        FirebaseOperation firebaseOperation = new FirebaseOperation();
-        firebaseOperation.getPathIfAllowed(topicsName, dataSnapshot -> {
-            for (DataSnapshot dataSnapshot1 : dataSnapshot.child("subNames").getChildren()) {
-                String subNameSnapshot = (String) dataSnapshot1.getValue();
-                if (subNameSnapshot.equals(subTopicsName)) {
-                    dataSnapshot1.getRef().removeValue();
-                    dataSnapshot.child("subTopics").child(subTopicsName).getRef().removeValue();
-                }
-            }
-        });
+        firebaseOperation.deleteSubTopics(topicsName, subTopicsName);
     }
 }

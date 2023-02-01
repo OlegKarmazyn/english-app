@@ -1,4 +1,4 @@
-package solid.icon.english.architecture.firebase.database
+package solid.icon.english.architecture.firebase.database.operations
 
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.FirebaseDatabase
@@ -7,7 +7,7 @@ import kotlinx.coroutines.launch
 import solid.icon.english.architecture.firebase.StaticData.email
 import solid.icon.english.architecture.room.App
 
-class TopicsOperation(private var firebaseOperation: FirebaseOperation) {
+class TopicsOperation {
 
 
     fun moveTopics(topicsName: String) {
@@ -22,11 +22,9 @@ class TopicsOperation(private var firebaseOperation: FirebaseOperation) {
         }
     }
 
-    fun deleteTopics(topicsName: String) {
+    fun deleteTopics(dataSnapshot: DataSnapshot) {
         GlobalScope.launch {
-            firebaseOperation.getPathIfAllowed(topicsName) { dataSnapshot: DataSnapshot ->
-                dataSnapshot.ref.removeValue()
-            }
+            dataSnapshot.ref.removeValue()
         }
     }
 

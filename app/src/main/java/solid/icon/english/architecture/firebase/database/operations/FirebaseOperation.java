@@ -1,4 +1,4 @@
-package solid.icon.english.architecture.firebase.database;
+package solid.icon.english.architecture.firebase.database.operations;
 
 
 import static solid.icon.english.architecture.firebase.StaticData.email;
@@ -18,19 +18,17 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import solid.icon.english.architecture.firebase.StaticData;
+import solid.icon.english.architecture.firebase.database.OnGetDataListener;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
-import solid.icon.english.architecture.room.TopicModel;
-import solid.icon.english.architecture.room.TopicModelDao;
 
 public class FirebaseOperation {
 
     private static final String TAG = "FirebaseOperation";
-    private TopicsOperation topicsOperation = new TopicsOperation(this);
-    private SubTopicsOperation subTopicsOperation  = new SubTopicsOperation();
-    private WordsOperation wordsOperation = new WordsOperation();
+    private final TopicsOperation topicsOperation = new TopicsOperation();
+    private final SubTopicsOperation subTopicsOperation = new SubTopicsOperation();
+    private final WordsOperation wordsOperation = new WordsOperation();
 
     /* --------------get permission to change data if owner of it------------------- */
     public void getPathIfAllowed(String topicsName, final OnGetDataListener listener) {
@@ -104,14 +102,24 @@ public class FirebaseOperation {
         });
     }
 
-    /* ------------------Move Topics and update key in local bd---------------------------- */
+    /* ------------------------------------Topics---------------------------- */
     public void moveTopics(String topicsName) {
         topicsOperation.moveTopics(topicsName);
     }
 
-    /* ------------------Delete topics and all data from Firebase DB------------------------ */
     public void deleteTopics(String topicsName) {
-        topicsOperation.deleteTopics(topicsName);
+        getPathIfAllowed(topicsName, topicsOperation::deleteTopics);
+    }
+
+    /* ------------------------------------Sub topics---------------------------- */
+    public void moveSubTopics(String topicsName, String subTopicsName) {
+        getPathIfAllowed(topicsName, dataSnapshot ->
+                subTopicsOperation.moveSubTopics(subTopicsName, dataSnapshot));
+    }
+
+    public void deleteSubTopics(String topicsName, String subTopicsName) {
+        getPathIfAllowed(topicsName, dataSnapshot ->
+                subTopicsOperation.deleteSubTopics(subTopicsName, dataSnapshot));
     }
 
 }

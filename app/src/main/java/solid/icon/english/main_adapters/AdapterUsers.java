@@ -36,7 +36,7 @@ import java.util.List;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.ActivityGlobal;
-import solid.icon.english.architecture.firebase.database.FirebaseOperation;
+import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
@@ -219,6 +219,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         firebaseOperation.moveTopics(topicsName);
     }
 
+    // TODO: 01.02.2023 make smaller
     private void getDataFB(String key) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(key);
 
