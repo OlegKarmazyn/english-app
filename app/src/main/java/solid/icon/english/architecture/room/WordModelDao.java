@@ -23,8 +23,8 @@ public interface WordModelDao {
     @Query("SELECT * FROM WordModel WHERE subTopicName = :subTopicName and topicName = :topicName")
     List<WordModel> getAllBySubTopicsName(String subTopicName, String topicName);
 
-    @Query("SELECT * FROM WordModel WHERE subTopicName = :subTopicName and topicName = :topicName and rusWord = :rusWord and englishWord = :englishWord")
-    WordModel getWordModelByName(String englishWord, String rusWord, String subTopicName, String topicName);
+    @Query("SELECT * FROM WordModel WHERE englishWord = :englishWord and subTopicName = :subTopicName and topicName = :topicName")
+    WordModel getWordModelByName(String englishWord, String subTopicName, String topicName);
 
     @Insert
     void insert(WordModel wordModel);

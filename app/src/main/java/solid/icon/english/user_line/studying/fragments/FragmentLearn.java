@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
 import solid.icon.english.architecture.firebase.database.WordFB;
@@ -154,10 +155,10 @@ public class FragmentLearn extends UserFragmentActivity {
             @Override
             public void onClick(View v) {
                 appearMenu();
-                setUpEditingMenu();
+                setUpAddingMenu();
             }
 
-            private void setUpEditingMenu() {
+            private void setUpAddingMenu() {
                 menu_title.setText("Enter info for create new word");
                 but_no.setText("Close");
                 but_yes.setText("Create");
@@ -173,16 +174,21 @@ public class FragmentLearn extends UserFragmentActivity {
             }
 
             private void addToDBNewWord(String englishWord, String russianWord, String definition) {
-                WordModel wordModel = new WordModel();
-                wordModel.englishWord = englishWord;
-                wordModel.rusWord = russianWord;
-                wordModel.definition = definition;
-                wordModel.topicName = topic;
-                wordModel.subTopicName = subTopic;
-                wordModelDao.insert(wordModel);
-                wordModelList.add(wordModel);
-                studyActivity.setDateToActivity();
-                moveDataFB(englishWord, russianWord, definition);
+                WordModel word = wordModelDao.getWordModelByName(englishWord, subTopic, topic);
+                if (word == null) { //if doesn't exist
+                    WordModel wordModel = new WordModel();
+                    wordModel.englishWord = englishWord;
+                    wordModel.rusWord = russianWord;
+                    wordModel.definition = definition;
+                    wordModel.topicName = topic;
+                    wordModel.subTopicName = subTopic;
+                    wordModelDao.insert(wordModel);
+                    wordModelList.add(wordModel);
+                    moveDataFB(englishWord, russianWord, definition);
+                } else {
+                    Toasty.error(context, "\"" + englishWord + "\"" + " already exists").show();
+                    studyActivity.setDateToActivity();
+                }
             }
         });
 
@@ -298,8 +304,7 @@ public class FragmentLearn extends UserFragmentActivity {
 
     private void setUpEditingMenu(int topicId) {
         appearMenu();
-        WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[topicId],
-                rusTranslArr[topicId], subTopic, topic);
+        WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[topicId], subTopic, topic);
         String editingText = "Enter info for editing word";
         menu_title.setText(editingText);
         englishWord.setText(wordModel.englishWord);
@@ -361,7 +366,7 @@ public class FragmentLearn extends UserFragmentActivity {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
         alert.setPositiveButton("Yes", (dialog, which) -> {
-            WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], rusTranslArr[i], subTopic, topic);
+            WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], subTopic, topic);
             outLog("deleted - " + wordModel.englishWord);
             String deletedWord = wordModel.englishWord;
             deleteDataFB(deletedWord);
