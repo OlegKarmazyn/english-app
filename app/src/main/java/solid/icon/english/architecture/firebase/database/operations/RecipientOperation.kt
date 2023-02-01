@@ -6,41 +6,35 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import solid.icon.english.architecture.firebase.database.interfaces.OnGetDataListener
 import solid.icon.english.architecture.room.App
+import solid.icon.english.architecture.room.SubTopicDao
 import solid.icon.english.architecture.room.SubTopicModel
 
 class RecipientOperation {
 
-    var list: List<String> = ArrayList()
-
-    public fun getAllData(key: String, topicsName: String) {
-
-    }
-
-    private fun insertNewSubTopics(topicsName: String) {
-        val subTopicDao = App.getInstance().database.subTopicDao()
-        for (s in list) {
-            val subTopicModel = SubTopicModel()
-            subTopicModel.topicsName = topicsName
-            subTopicModel.subTopicsName = s
-            subTopicDao!!.insert(subTopicModel)
+    fun getAllData(key: String, topicsName: String) {
+        FirebaseOperation().getDataSnapshotByKey(key) { dataSnapshot ->
+            getSubTopics(topicsName, dataSnapshot)
         }
     }
 
-    private fun getAllData(key: String?, listener: OnGetDataListener) {
-        val ref = FirebaseDatabase.getInstance().getReference(key!!).child("subNames")
-        ref.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (dataSnapshot1 in dataSnapshot.children) {
-                    val subName = dataSnapshot1.value as String?
-                    list.plus(subName)
-                }
-                listener.onSuccess(dataSnapshot)
-            }
-
-            override fun onCancelled(databaseError: DatabaseError) {
-
-            }
-        })
+    private fun getSubTopics(topicsName: String, dataSnapshot: DataSnapshot) {
+        for (dataSnap in dataSnapshot.child("subNames").children) {
+            val subName = dataSnap.value as String?
+            insertNewSubTopics(topicsName, subName!!)
+        }
     }
+
+    private fun insertNewSubTopics(topicsName: String, subTopicsName: String) {
+        val subTopicDao = App.getInstance().database.subTopicDao()
+        val subTopicModel = SubTopicModel()
+        subTopicModel.topicsName = topicsName
+        subTopicModel.subTopicsName = subTopicsName
+        subTopicDao!!.insert(subTopicModel)
+    }
+
+    private fun getWords(dataSnapshot: DataSnapshot) {
+
+    }
+
 
 }

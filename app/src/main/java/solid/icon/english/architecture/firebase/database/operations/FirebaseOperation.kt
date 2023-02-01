@@ -63,8 +63,12 @@ class FirebaseOperation {
             topicModel.topicsKey = key
             topicModel.country = "en"
             listener.onSuccess(topicModel)
-            getAllData(key, topicsName!!)
+            getAllData(key, topicsName!!) //main method for getting data
         }
+    }
+
+    private fun getAllData(key: String, topicsName: String) {
+        recipientOperation.getAllData(key, topicsName)
     }
 
     fun getDataSnapshotByKey(key: String, listener: OnGetDataListener) {
@@ -76,10 +80,6 @@ class FirebaseOperation {
 
             override fun onCancelled(error: DatabaseError) {}
         })
-    }
-
-    fun getAllData(key: String, topicsName: String) {
-        recipientOperation.getAllData(key, topicsName)
     }
 
     /* ------------------------------------Topics---------------------------- */
