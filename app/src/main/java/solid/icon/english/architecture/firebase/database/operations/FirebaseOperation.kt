@@ -49,6 +49,8 @@ class FirebaseOperation {
         for (ch in arr) {
             if (ch == "." || ch == "#" || ch == "$" || ch == "[" || ch == "]") {
                 key += "_"
+            }else{
+                key += ch
             }
         }
         return key
