@@ -28,6 +28,9 @@ import solid.icon.english.architecture.room.TopicModelDao;
 public class FirebaseOperation {
 
     private static final String TAG = "FirebaseOperation";
+    private TopicsOperation topicsOperation = new TopicsOperation(this);
+    private SubTopicsOperation subTopicsOperation  = new SubTopicsOperation();
+    private WordsOperation wordsOperation = new WordsOperation();
 
     /* --------------get permission to change data if owner of it------------------- */
     public void getPathIfAllowed(String topicsName, final OnGetDataListener listener) {
@@ -63,18 +66,6 @@ public class FirebaseOperation {
             key += ch;
         }
         return key;
-    }
-
-    /* --------------------------------Move Topics------------------------------ */
-    public void moveTopics(String topicsName) {
-        String email = StaticData.email;
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference().push();
-        TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
-        TopicModel topicModel = topicModelDao.getByTopicsName(topicsName);
-        topicModel.topicsKey = dbRef.getKey();
-        topicModelDao.update(topicModel);
-        dbRef.child("topicsName").setValue(topicsName);
-        dbRef.child("email").setValue(email);
     }
 
     /* --------------------------------Get All Data from Firebase DB---------------------------- */
@@ -113,29 +104,14 @@ public class FirebaseOperation {
         });
     }
 
-    /* -----------------------------Delete all data from Firebase DB--------------------------- */
+    /* ------------------Move Topics and update key in local bd---------------------------- */
+    public void moveTopics(String topicsName) {
+        topicsOperation.moveTopics(topicsName);
+    }
+
+    /* ------------------Delete topics and all data from Firebase DB------------------------ */
     public void deleteTopics(String topicsName) {
-        String email = StaticData.email;
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Query topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName);
-
-        topicsQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    HashMap hashMap = (HashMap) dataSnapshot1.getValue();
-                    String checkingEmail = (String) hashMap.get("email");
-                    if (checkingEmail.equals(email)) {
-                        dataSnapshot1.getRef().removeValue();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
-        });
+        topicsOperation.deleteTopics(topicsName);
     }
 
 }
