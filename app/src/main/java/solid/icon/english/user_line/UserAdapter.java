@@ -222,7 +222,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 String subNameSnapshot = (String) dataSnapshot1.getValue();
                 if (subNameSnapshot.equals(subTopicsName)) {
                     dataSnapshot1.getRef().removeValue();
-                    dataSnapshot.child(subTopicsName).getRef().removeValue();
+                    dataSnapshot.child("subTopics").child(subTopicsName).getRef().removeValue();
                 }
             }
         });

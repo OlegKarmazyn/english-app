@@ -18,8 +18,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
-import com.google.firebase.database.DataSnapshot;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -194,15 +192,19 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {
+        String subKey = firebaseOperation.validateKey(subTopic);
+        String wordKey = firebaseOperation.validateKey(englishWord);
         firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
             WordFB wordFB = new WordFB(englishWord, russianWord, definition);
-            dataSnapshot.getRef().child(subTopic).child(englishWord).setValue(wordFB);
+            dataSnapshot.getRef().child("subTopics").child(subKey).child(wordKey).setValue(wordFB);
         });
     }
 
-    private void deleteDataFB(String wordsName) {
+    private void deleteDataFB(String englishWord) {
+        String subKey = firebaseOperation.validateKey(subTopic);
+        String wordKey = firebaseOperation.validateKey(englishWord);
         firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
-            dataSnapshot.child(subTopic).child(wordsName).getRef().removeValue();
+            dataSnapshot.child("subTopics").child(subKey).child(wordKey).getRef().removeValue();
         });
     }
 

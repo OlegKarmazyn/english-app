@@ -53,6 +53,18 @@ public class FirebaseOperation {
         });
     }
 
+    public String validateKey(String s) {
+        String[] arr = s.split("");
+        String key = "";
+        for (String ch : arr) {
+            if (ch.equals(".") || ch.equals("#") || ch.equals("$") || ch.equals("[") || ch.equals("]")) {
+                ch = "_";
+            }
+            key += ch;
+        }
+        return key;
+    }
+
     /* --------------------------------Move Topics------------------------------ */
     public void moveTopics(String topicsName) {
         String email = StaticData.email;
