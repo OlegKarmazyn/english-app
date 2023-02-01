@@ -13,12 +13,13 @@ class SubTopicsOperation {
     }
 
     fun deleteSubTopics(subTopicsName: String, dataSnapshot: DataSnapshot) {
+        val validatedSub = FirebaseOperation().validateKey(subTopicsName)
         GlobalScope.launch {
             for (dataSnapshot1 in dataSnapshot.child("subNames").children) {
                 val subNameSnapshot = dataSnapshot1.value as String?
                 if (subNameSnapshot == subTopicsName) {
                     dataSnapshot1.ref.removeValue()
-                    dataSnapshot.child("subTopics").child(subTopicsName).ref.removeValue()
+                    dataSnapshot.child("subTopics").child(validatedSub).ref.removeValue()
                 }
             }
         }
