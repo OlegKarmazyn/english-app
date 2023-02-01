@@ -19,6 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import solid.icon.english.architecture.firebase.database.OnGetDataListener;
+import solid.icon.english.architecture.firebase.database.WordFB;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
@@ -122,4 +123,18 @@ public class FirebaseOperation {
                 subTopicsOperation.deleteSubTopics(subTopicsName, dataSnapshot));
     }
 
+    /* ------------------------------------Words---------------------------- */
+    public void moveWord(String topicsName, String subTopicsName, WordFB wordFB) {
+        String subKey = validateKey(subTopicsName);
+        String wordKey = validateKey(wordFB.englishWord);
+        getPathIfAllowed(topicsName, dataSnapshot ->
+                wordsOperation.moveWord(subKey, wordKey, wordFB, dataSnapshot));
+    }
+
+    public void deleteWord(String topicsName, String subTopicsName, String englishWord) {
+        String subKey = validateKey(subTopicsName);
+        String wordKey = validateKey(englishWord);
+        getPathIfAllowed(topicsName, dataSnapshot ->
+                wordsOperation.deleteWord(subKey, wordKey, dataSnapshot));
+    }
 }

@@ -24,8 +24,8 @@ import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.UserFragmentActivity;
-import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.WordFB;
+import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
@@ -192,20 +192,12 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {
-        String subKey = firebaseOperation.validateKey(subTopic);
-        String wordKey = firebaseOperation.validateKey(englishWord);
-        firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
-            WordFB wordFB = new WordFB(englishWord, russianWord, definition);
-            dataSnapshot.getRef().child("subTopics").child(subKey).child(wordKey).setValue(wordFB);
-        });
+        WordFB wordFB = new WordFB(englishWord, russianWord, definition);
+        firebaseOperation.moveWord(topic, subTopic, wordFB);
     }
 
     private void deleteDataFB(String englishWord) {
-        String subKey = firebaseOperation.validateKey(subTopic);
-        String wordKey = firebaseOperation.validateKey(englishWord);
-        firebaseOperation.getPathIfAllowed(topic, dataSnapshot -> {
-            dataSnapshot.child("subTopics").child(subKey).child(wordKey).getRef().removeValue();
-        });
+        firebaseOperation.deleteWord(topic, subTopic, englishWord);
     }
 
     /**
