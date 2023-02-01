@@ -25,12 +25,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.List;
 
 import solid.icon.english.MainActivity;
@@ -107,7 +101,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         //todo: redone!!! it does not work!!!
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-            TopicModel topicModel = topicModelDao.getById(position + 1);
+            TopicModel topicModel = topicModelDao.getById(position + 1); //id starts from 1
             topicModel.isCheck = isChecked;
             topicModelDao.update(topicModel);
 
@@ -133,8 +127,9 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         });
 
         holder.constraintLayout.setOnLongClickListener(v -> {
-            /* DELETE */
-            showDeleteDialog(position);
+            /* DELETE if not one element(adding button)*/
+            if (size != 1)
+                showDeleteDialog(position);
             return false;
         });
 
@@ -182,18 +177,15 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     public void showCustomAddingDialog() {
         Dialog dialog = new Dialog(context);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
         dialog.setContentView(R.layout.adding_dialog);
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
         TextView tvCancel = dialog.findViewById(R.id.tvCancel),
                 tvAdd = dialog.findViewById(R.id.tvAdd);
         Spinner spinner = dialog.findViewById(R.id.spinner);
-        ArrayAdapter<?> adapter =
-                ArrayAdapter.createFromResource(context, R.array.country,
-                        android.R.layout.simple_spinner_item);
+        ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(context, R.array.country,
+                android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
         spinner.setAdapter(adapter);
 
         tvAdd.setOnClickListener(v -> {
@@ -203,7 +195,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
                 getDataFB(topicsName);
             } else {
-                insertNewTopics(topicsName, spinner.getSelectedItem().toString(), "");
+                insertNewTopics(topicsName, spinner.getSelectedItem().toString());
                 moveDataFB(topicsName);
                 mainActivity.setDataToUserAdapter();
             }
@@ -219,31 +211,22 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         firebaseOperation.moveTopics(topicsName);
     }
 
-    // TODO: 01.02.2023 make smaller
     private void getDataFB(String key) {
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference(key);
-
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String topicsName = dataSnapshot.child("topicsName").getValue(String.class);
-                insertNewTopics(topicsName, "en", key);
-                firebaseOperation.getFullTopics(key, topicsName);
-                mainActivity.setDataToUserAdapter();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "onCancelled", databaseError.toException());
-            }
+        firebaseOperation.getTopicsWithAllData(key, topicModel -> {
+            insertNewTopics(topicModel);
+            mainActivity.setDataToUserAdapter();
         });
     }
 
-    private void insertNewTopics(String topicsName, String country, String key) {
+    private void insertNewTopics(TopicModel topicModel) {
+        topicModelDao.insert(topicModel);
+    }
+
+    private void insertNewTopics(String topicsName, String country) {
         TopicModel topicModel = new TopicModel();
         topicModel.topicsName = topicsName;
         topicModel.country = country;
-        topicModel.topicsKey = key;
+        topicModel.topicsKey = ""; //empty!
         topicModelDao.insert(topicModel);
     }
 

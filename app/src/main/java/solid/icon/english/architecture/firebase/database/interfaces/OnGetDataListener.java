@@ -1,4 +1,4 @@
-package solid.icon.english.architecture.firebase.database;
+package solid.icon.english.architecture.firebase.database.interfaces;
 
 import com.google.firebase.database.DataSnapshot;
 
@@ -7,6 +7,5 @@ public interface OnGetDataListener {
     void onSuccess(DataSnapshot dataSnapshot);
 
 //    void onStart();
-//
 //    void onFailure();
 }
