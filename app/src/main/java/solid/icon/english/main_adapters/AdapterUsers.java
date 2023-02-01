@@ -3,6 +3,8 @@ package solid.icon.english.main_adapters;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -18,7 +20,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -236,20 +237,27 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
 
-    /*----------------------------------Delete Data----------------------------------*/
+    /*----------------------------------Delete Data----------------------------------*/ // TODO: 02.02.2023 make it better
     public void showDeleteDialog(int position) {
+        TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        alert.setTitle("Do you want to delete topic?");
-        alert.setPositiveButton("Yes", (dialog, which) -> {
-            try {
-                TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
-                topicModelDao.delete(topicModel);
-            } catch (ArrayIndexOutOfBoundsException ex) {
-                Toasty.error(context, "Error, try again", Toast.LENGTH_LONG).show();
-            }
+        alert.setTitle("What do you want to do?");
+        EditText editText = new EditText(context);
+        editText.setText(topicModel.topicsKey);
+        editText.setHint("public key");
+        editText.setEnabled(false);
+        alert.setView(editText);
 
+        alert.setPositiveButton("Delete", (dialog, which) -> {
+            topicModelDao.delete(topicModel);
             mainActivity.setDataToUserAdapter();
             deleteDataFB(titlesArray[position]);
+        });
+        alert.setNegativeButton("Copy key", (dialog, which) -> {
+            ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
+            clipboard.setPrimaryClip(clip);
+            Toasty.success(context, "Key successfully copied").show();
         });
         alert.show();
     }
