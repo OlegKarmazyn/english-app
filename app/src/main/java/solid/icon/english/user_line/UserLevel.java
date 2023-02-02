@@ -2,6 +2,7 @@ package solid.icon.english.user_line;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.Menu;
 
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
@@ -29,13 +30,10 @@ public class UserLevel extends ActivityGlobal {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
-
-        subTopicDao = App.getInstance().getDatabase().subTopicDao();
-
-        chosenTopics = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
-
         showActionBar(true, chosenTopics);
 
+        subTopicDao = App.getInstance().getDatabase().subTopicDao();
+        chosenTopics = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
         recyclerView = findViewById(R.id.recycleView);
 
         setAdapter();
@@ -51,7 +49,6 @@ public class UserLevel extends ActivityGlobal {
             iterator += 1;
         }
     }
-
 
     private void setAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
@@ -72,5 +69,11 @@ public class UserLevel extends ActivityGlobal {
         recyclerView.setAdapter(userAdapter);
 
         recyclerView.animate().alpha(1f);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.sub_menu, menu);
+        return true;
     }
 }
