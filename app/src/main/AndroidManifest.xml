@@ -29,6 +29,8 @@
         <activity android:name=".user_line.UserLevel" android:screenOrientation="portrait"/>
         <activity android:name=".user_line.studying.StudyActivity" android:screenOrientation="portrait"/>
 
+        <activity android:name=".SettingsActivity" android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

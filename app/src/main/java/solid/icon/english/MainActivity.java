@@ -4,6 +4,7 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -32,7 +33,7 @@ public class MainActivity extends ActivityGlobal {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        showActionBar(false, "");
+        showActionBarWithoutTitle(true);
 
         recyclerView_levels = findViewById(R.id.recycleView_levels);
         recyclerView_user = findViewById(R.id.recycleView_user);
@@ -90,6 +91,12 @@ public class MainActivity extends ActivityGlobal {
             users_titlesArray[i] = topicModelList.get(i).topicsName;
             Log.e("getUsers_titlesArray", users_titlesArray[i]);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     @Override

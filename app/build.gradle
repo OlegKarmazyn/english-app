@@ -85,4 +85,7 @@ dependencies {
     //Toasty
     implementation 'com.github.GrenderG:Toasty:1.5.2'
 
+    //update sharedPreference
+    implementation 'androidx.preference:preference-ktx:1.2.0'
+
 }
