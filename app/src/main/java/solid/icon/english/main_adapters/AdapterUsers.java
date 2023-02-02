@@ -244,22 +244,40 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         alert.setTitle("What do you want to do?");
         EditText editText = new EditText(context);
         editText.setText(topicModel.topicsKey);
-        editText.setHint("public key");
+        editText.setHint("empty key");
         editText.setEnabled(false);
         alert.setView(editText);
 
-        alert.setPositiveButton("Delete", (dialog, which) -> {
+        alert.setNeutralButton("Delete", (dialog, which) -> {
             topicModelDao.delete(topicModel);
             mainActivity.setDataToUserAdapter();
             deleteDataFB(titlesArray[position]);
         });
-        alert.setNegativeButton("Copy key", (dialog, which) -> {
-            ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
-            clipboard.setPrimaryClip(clip);
-            Toasty.success(context, "Key successfully copied").show();
-        });
+        if (topicModel.topicsKey != null) {
+            alert.setPositiveButton("Share", ((dialog, which) -> {
+                sharedKey(topicModel.topicsKey);
+            }));
+            alert.setNegativeButton("Copy key", (dialog, which) -> {
+                ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
+                clipboard.setPrimaryClip(clip);
+                Toasty.success(context, "Key successfully copied").show();
+            });
+        } else {
+            alert.setPositiveButton("Post", ((dialog, which) -> {
+                postFB();
+            }));
+        }
         alert.show();
+    }
+
+    private void sharedKey(String key) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "English VS: share key");
+        String shareMessage = key + "\n";
+        shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
+        context.startActivity(Intent.createChooser(shareIntent, "English VS: share key"));
     }
 
     private void deleteDataFB(String topicsName) {
@@ -267,4 +285,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     //todo add post words method to firebase with already exists data
+    private void postFB(){
+        Toasty.info(context, "In developing").show();
+    }
 }
