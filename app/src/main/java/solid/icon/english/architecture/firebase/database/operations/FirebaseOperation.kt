@@ -21,6 +21,7 @@ class FirebaseOperation {
     private val subTopicsOperation = SubTopicsOperation()
     private val wordsOperation = WordsOperation()
     private val recipientOperation = RecipientOperation()
+    private val senderOperation = SenderOperation(this)
 
     /* --------------get permission to change data if owner of it------------------- */
     fun getPathIfAllowed(topicsName: String, listener: OnGetDataListener) {
@@ -82,6 +83,11 @@ class FirebaseOperation {
 
             override fun onCancelled(error: DatabaseError) {}
         })
+    }
+
+    /* --------------------------------Post All Data to Firebase DB--------------------------- */
+    fun postData(topicsName: String){
+        senderOperation.postAllData(topicsName)
     }
 
     /* ------------------------------------Topics---------------------------- */

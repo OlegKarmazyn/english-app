@@ -265,7 +265,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             });
         } else {
             alert.setPositiveButton("Post", ((dialog, which) -> {
-                postFB();
+                postFB(topicModel.topicsName);
             }));
         }
         alert.show();
@@ -284,8 +284,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         firebaseOperation.deleteTopics(topicsName);
     }
 
-    //todo add post words method to firebase with already exists data
-    private void postFB(){
-        Toasty.info(context, "In developing").show();
+    private void postFB(String topicsName){
+        firebaseOperation.postData(topicsName);
+        Toasty.info(context, "Sending data in process...").show();
     }
 }
