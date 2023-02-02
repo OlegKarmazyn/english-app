@@ -32,6 +32,7 @@ import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
@@ -49,6 +50,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     int size;
     TopicModelDao topicModelDao;
     FirebaseOperation firebaseOperation;
+    LocalOperation localOperation;
 
     public AdapterUsers(Context context, String[] titlesArray, MainActivity mainActivity) {
         this.context = context;
@@ -56,6 +58,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         this.mainActivity = mainActivity;
         topicModelDao = App.getInstance().getDatabase().topicModelDao();
         firebaseOperation = new FirebaseOperation();
+        localOperation = new LocalOperation();
 
         getIsCheckArray(); // last after init
     }
@@ -130,7 +133,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         holder.constraintLayout.setOnLongClickListener(v -> {
             /* DELETE if not one element(adding button)*/
-            if (size != 1)
+            if (size != 0)
                 showDeleteDialog(position);
             return false;
         });
@@ -249,7 +252,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         alert.setView(editText);
 
         alert.setNeutralButton("Delete", (dialog, which) -> {
-            topicModelDao.delete(topicModel);
+            localOperation.deleteTopic(topicModel.topicsName);
             mainActivity.setDataToUserAdapter();
             deleteDataFB(titlesArray[position]);
         });
@@ -284,7 +287,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         firebaseOperation.deleteTopics(topicsName);
     }
 
-    private void postFB(String topicsName){
+    private void postFB(String topicsName) {
         firebaseOperation.postData(topicsName);
         Toasty.info(context, "Sending data in process...").show();
     }

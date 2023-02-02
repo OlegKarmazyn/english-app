@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
@@ -42,6 +43,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     FirebaseOperation firebaseOperation = new FirebaseOperation();
+    LocalOperation localOperation = new LocalOperation();
 
     public UserAdapter(Context context, String[] titlesArray, UserLevel userLevel) {
         this.context = context;
@@ -127,8 +129,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         });
 
         holder.constraintLayout.setOnLongClickListener(v -> {
-            /* DELETE */
-            showDeleteDialog(position);
+            if (position != 0)
+                showDeleteDialog(position);
             return false;
         });
 
@@ -208,10 +210,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle("Do you want to delete topic?");
         alert.setPositiveButton("Yes", (dialog, which) -> {
-            SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, titlesArray[position]);
-            subTopicDao.delete(subTopicModel);
-            userLevel.setDataToUserAdapter();
+            localOperation.deleteSubTopic(userLevel.chosenTopics, titlesArray[position]);
             deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
+            userLevel.setDataToUserAdapter();
         });
         alert.show();
     }

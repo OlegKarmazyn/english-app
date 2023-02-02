@@ -23,6 +23,9 @@ public interface SubTopicDao {
     @Query("SELECT * FROM SubTopicModel WHERE topicsName = :topicsName")
     List<SubTopicModel> getAllByTopicsName(String topicsName);
 
+    @Query("DELETE FROM SubTopicModel WHERE topicsName = :topicsName")
+    void deleteWhere(String topicsName);
+
     @Insert
     void insert(SubTopicModel subTopicModel);
 

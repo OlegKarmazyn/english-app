@@ -26,6 +26,12 @@ public interface WordModelDao {
     @Query("SELECT * FROM WordModel WHERE englishWord = :englishWord and subTopicName = :subTopicName and topicName = :topicName")
     WordModel getWordModelByName(String englishWord, String subTopicName, String topicName);
 
+    @Query("DELETE FROM WordModel WHERE subTopicName = :subTopicName and topicName = :topicName")
+    void deleteWhere(String subTopicName, String topicName);
+
+    @Query("DELETE FROM WordModel WHERE topicName = :topicName")
+    void deleteWhere(String topicName);
+
     @Insert
     void insert(WordModel wordModel);
 
