@@ -173,14 +173,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     /*----------------------------------Add Data----------------------------------*/
     public void showAddDialog() {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        final EditText edittext = new EditText(context);
+        final EditText editText = new EditText(context);
         alert.setTitle("Do you want to add topic?");
         alert.setMessage("Enter name for topic");
 
-        alert.setView(edittext);
+        alert.setView(editText);
 
         alert.setPositiveButton("Add", (dialog, whichButton) -> {
-            String subTopicsName = edittext.getText().toString();
+            String subTopicsName = editText.getText().toString().trim();
             SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, subTopicsName);
             if (subTopicModel == null) {
                 subTopicModel = new SubTopicModel();

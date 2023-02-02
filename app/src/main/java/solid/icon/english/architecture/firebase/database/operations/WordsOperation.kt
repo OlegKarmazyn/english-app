@@ -13,10 +13,10 @@ class WordsOperation {
         }
     }
 
-    fun updateWord(subKey: String, wordKey: String, wordFB: WordFB, dataSnapshot: DataSnapshot) {
+    fun updateWord(previousKey: String, subKey: String, wordKey: String, wordFB: WordFB, dataSnapshot: DataSnapshot) {
         GlobalScope.launch {
-            dataSnapshot.child("subTopics").child(subKey).child(wordKey).ref.removeValue()
             dataSnapshot.ref.child("subTopics").child(subKey).child(wordKey).setValue(wordFB)
+            dataSnapshot.child("subTopics").child(subKey).child(previousKey).ref.removeValue()
         }
     }
 

@@ -117,11 +117,12 @@ class FirebaseOperation {
         }
     }
 
-    fun updateWord(topicsName: String, subTopicsName: String, wordFB: WordFB) {
+    fun updateWord(previousName: String, topicsName: String, subTopicsName: String, wordFB: WordFB) {
         val subKey = validateKey(subTopicsName)
         val wordKey = validateKey(wordFB.englishWord)
+        val previousKey = validateKey(previousName)
         getPathIfAllowed(topicsName) { dataSnapshot: DataSnapshot ->
-            wordsOperation.updateWord(subKey, wordKey, wordFB, dataSnapshot)
+            wordsOperation.updateWord(previousKey, subKey, wordKey, wordFB, dataSnapshot)
         }
     }
 

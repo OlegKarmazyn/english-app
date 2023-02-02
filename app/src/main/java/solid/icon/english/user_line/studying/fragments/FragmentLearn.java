@@ -202,9 +202,9 @@ public class FragmentLearn extends UserFragmentActivity {
         firebaseOperation.moveWord(topic, subTopic, wordFB);
     }
 
-    private void updateDataFB(String englishWord, String russianWord, String definition) {
+    private void updateDataFB(String previousName, String englishWord, String russianWord, String definition) {
         WordFB wordFB = new WordFB(englishWord, russianWord, definition);
-        firebaseOperation.updateWord(topic, subTopic, wordFB);
+        firebaseOperation.updateWord(previousName, topic, subTopic, wordFB);
     }
 
     private void deleteDataFB(String englishWord) {
@@ -315,6 +315,7 @@ public class FragmentLearn extends UserFragmentActivity {
         englishWord.setText(wordModel.englishWord);
         russianWord.setText(wordModel.rusWord);
         definition.setText(wordModel.definition);
+        String previousName = wordModel.englishWord;
 
         but_yes.setText("Edit");
         but_yes.setOnClickListener(v -> {
@@ -324,7 +325,7 @@ public class FragmentLearn extends UserFragmentActivity {
             wordModel.definition = definition.getText().toString().trim();
             wordModelDao.update(wordModel);
             closeMenu();
-            updateDataFB(wordModel.englishWord, wordModel.rusWord, wordModel.definition);
+            updateDataFB(previousName, wordModel.englishWord, wordModel.rusWord, wordModel.definition);
             studyActivity.setDateToActivity();
         });
 
