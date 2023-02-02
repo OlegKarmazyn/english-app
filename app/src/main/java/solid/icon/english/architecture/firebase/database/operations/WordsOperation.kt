@@ -13,6 +13,13 @@ class WordsOperation {
         }
     }
 
+    fun updateWord(subKey: String, wordKey: String, wordFB: WordFB, dataSnapshot: DataSnapshot) {
+        GlobalScope.launch {
+            dataSnapshot.child("subTopics").child(subKey).child(wordKey).ref.removeValue()
+            dataSnapshot.ref.child("subTopics").child(subKey).child(wordKey).setValue(wordFB)
+        }
+    }
+
     fun deleteWord(subKey: String, wordKey: String, dataSnapshot: DataSnapshot) {
         GlobalScope.launch {
             dataSnapshot.child("subTopics").child(subKey).child(wordKey).ref.removeValue()

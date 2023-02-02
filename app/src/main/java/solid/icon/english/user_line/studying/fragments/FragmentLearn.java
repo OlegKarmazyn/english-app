@@ -187,8 +187,8 @@ public class FragmentLearn extends UserFragmentActivity {
                     moveDataFB(englishWord, russianWord, definition);
                 } else {
                     Toasty.error(context, "\"" + englishWord + "\"" + " already exists").show();
-                    studyActivity.setDateToActivity();
                 }
+                studyActivity.setDateToActivity();
             }
         });
 
@@ -200,6 +200,11 @@ public class FragmentLearn extends UserFragmentActivity {
     private void moveDataFB(String englishWord, String russianWord, String definition) {
         WordFB wordFB = new WordFB(englishWord, russianWord, definition);
         firebaseOperation.moveWord(topic, subTopic, wordFB);
+    }
+
+    private void updateDataFB(String englishWord, String russianWord, String definition) {
+        WordFB wordFB = new WordFB(englishWord, russianWord, definition);
+        firebaseOperation.updateWord(topic, subTopic, wordFB);
     }
 
     private void deleteDataFB(String englishWord) {
@@ -319,6 +324,7 @@ public class FragmentLearn extends UserFragmentActivity {
             wordModel.definition = definition.getText().toString().trim();
             wordModelDao.update(wordModel);
             closeMenu();
+            updateDataFB(wordModel.englishWord, wordModel.rusWord, wordModel.definition);
             studyActivity.setDateToActivity();
         });
 

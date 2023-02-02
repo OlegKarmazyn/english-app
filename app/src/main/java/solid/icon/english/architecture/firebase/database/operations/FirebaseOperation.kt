@@ -49,7 +49,7 @@ class FirebaseOperation {
         for (ch in arr) {
             if (ch == "." || ch == "#" || ch == "$" || ch == "[" || ch == "]") {
                 key += "_"
-            }else{
+            } else {
                 key += ch
             }
         }
@@ -114,6 +114,14 @@ class FirebaseOperation {
         val wordKey = validateKey(wordFB.englishWord)
         getPathIfAllowed(topicsName) { dataSnapshot: DataSnapshot ->
             wordsOperation.moveWord(subKey, wordKey, wordFB, dataSnapshot)
+        }
+    }
+
+    fun updateWord(topicsName: String, subTopicsName: String, wordFB: WordFB) {
+        val subKey = validateKey(subTopicsName)
+        val wordKey = validateKey(wordFB.englishWord)
+        getPathIfAllowed(topicsName) { dataSnapshot: DataSnapshot ->
+            wordsOperation.updateWord(subKey, wordKey, wordFB, dataSnapshot)
         }
     }
 
