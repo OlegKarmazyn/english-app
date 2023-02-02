@@ -15,8 +15,8 @@ class WordsOperation {
 
     fun updateWord(previousKey: String, subKey: String, wordKey: String, wordFB: WordFB, dataSnapshot: DataSnapshot) {
         GlobalScope.launch {
-            dataSnapshot.ref.child("subTopics").child(subKey).child(wordKey).setValue(wordFB)
             dataSnapshot.child("subTopics").child(subKey).child(previousKey).ref.removeValue()
+            dataSnapshot.ref.child("subTopics").child(subKey).child(wordKey).setValue(wordFB)
         }
     }
 

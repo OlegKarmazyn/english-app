@@ -2,21 +2,29 @@ package solid.icon.english.user_line;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
+import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
+import solid.icon.english.architecture.room.TopicModel;
 
 public class UserLevel extends ActivityGlobal {
 
@@ -71,9 +79,31 @@ public class UserLevel extends ActivityGlobal {
         recyclerView.animate().alpha(1f);
     }
 
+    private void updateSubTopics() {
+        LocalOperation localOperation = new LocalOperation();
+        for (String sub: name_topic) {
+            localOperation.deleteSubTopic(chosenTopics, sub);
+        }
+        TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
+        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName);
+        Toasty.info(context, "Pls wait few second").show();
+        new Handler().postDelayed(this::setDataToUserAdapter, 3000); // TODO: BAD
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.sub_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.download_data:
+                updateSubTopics();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
