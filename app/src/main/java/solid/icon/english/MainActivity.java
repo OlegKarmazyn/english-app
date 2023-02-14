@@ -86,9 +86,15 @@ public class MainActivity extends ActivityGlobal {
         TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
         assert topicModelDao != null;
         List<TopicModel> topicModelList = topicModelDao.getAll();
+        for(TopicModel t : topicModelList){
+            if(t.topicsName == null)
+                topicModelDao.delete(t);
+        }
         users_titlesArray = new String[topicModelList.size()];
         for (int i = 0; i < users_titlesArray.length; i++) {
-            users_titlesArray[i] = topicModelList.get(i).topicsName;
+            if(topicModelList.get(i).topicsName != null) {
+                users_titlesArray[i] = topicModelList.get(i).topicsName;
+            }
             Log.e("getUsers_titlesArray", users_titlesArray[i]);
         }
     }
