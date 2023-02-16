@@ -18,6 +18,7 @@ import java.util.Locale;
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.firebase.database.interfaces.OnSuccessListener;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
 import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
@@ -85,9 +86,8 @@ public class UserLevel extends ActivityGlobal {
             localOperation.deleteSubTopic(chosenTopics, sub);
         }
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
-        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName);
-        Toasty.info(context, "Pls wait few second").show();
-        new Handler().postDelayed(this::setDataToUserAdapter, 3000); // TODO: BAD
+        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName, this::setDataToUserAdapter);
+        Toasty.info(context, "Loading...").show();
     }
 
     @Override

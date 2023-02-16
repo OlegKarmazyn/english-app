@@ -129,7 +129,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         });
 
         holder.constraintLayout.setOnLongClickListener(v -> {
-            if (position != 0)
+            if (position != size)
                 showDeleteDialog(position);
             return false;
         });

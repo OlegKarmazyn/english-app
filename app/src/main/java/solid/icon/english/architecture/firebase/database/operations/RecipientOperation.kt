@@ -3,6 +3,7 @@ package solid.icon.english.architecture.firebase.database.operations
 import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import solid.icon.english.architecture.firebase.database.WordFB
+import solid.icon.english.architecture.firebase.database.interfaces.OnSuccessListener
 import solid.icon.english.architecture.room.App
 import solid.icon.english.architecture.room.SubTopicModel
 import solid.icon.english.architecture.room.WordModel
@@ -12,6 +13,13 @@ class RecipientOperation {
     fun getAllData(key: String, topicsName: String) {
         FirebaseOperation().getDataSnapshotByKey(key) { dataSnapshot ->
             getSubTopics(topicsName, dataSnapshot)
+        }
+    }
+
+    fun getAllData(key: String, topicsName: String, listener: OnSuccessListener) {
+        FirebaseOperation().getDataSnapshotByKey(key) { dataSnapshot ->
+            getSubTopics(topicsName, dataSnapshot)
+            listener.onSuccess()
         }
     }
 

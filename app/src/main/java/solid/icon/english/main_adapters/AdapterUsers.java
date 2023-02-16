@@ -106,7 +106,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         //todo: redone!!! it does not work!!!
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-            TopicModel topicModel = topicModelDao.getById(position + 1); //id starts from 1
+            TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
             topicModel.isCheck = isChecked;
             topicModelDao.update(topicModel);
 
@@ -240,7 +240,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
 
-    /*----------------------------------Delete Data----------------------------------*/ // TODO: 02.02.2023 make it better
+    /*----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
         TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
