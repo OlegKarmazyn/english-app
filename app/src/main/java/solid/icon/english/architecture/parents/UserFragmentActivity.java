@@ -6,6 +6,7 @@ import android.util.Log;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
+import androidx.preference.PreferenceManager;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,8 +29,8 @@ public abstract class UserFragmentActivity extends Fragment {
     protected StudyActivity studyActivity;
     protected int size = 0;
     protected float metrics = Dpi.metrics,
-            pitch = 0.7f, //tone
-            speechRate = 0.7f; //speed
+            pitch = 0, //tone
+            speechRate = 0; //speed
 
     protected int[] id;
 
@@ -108,10 +109,18 @@ public abstract class UserFragmentActivity extends Fragment {
     }
 
     protected void speak(String text) {
+        getSpeedAndPitch();
         outLog("TTS - is speaking");
         mTTS.setPitch(pitch);
         mTTS.setSpeechRate(speechRate);
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
+    }
+
+    private void getSpeedAndPitch(){
+        if (pitch == 0) {
+            pitch = PreferenceManager.getDefaultSharedPreferences(context).getFloat("pitch", 0.7f);
+            speechRate = PreferenceManager.getDefaultSharedPreferences(context).getFloat("speechRate", 0.7f);
+        }
     }
 
     protected int getDp(int px) {
