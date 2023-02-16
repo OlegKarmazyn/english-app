@@ -3,7 +3,7 @@
     <color name="colorPrimary">@null</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorBlue">#BF0073FD</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">@color/siteGradient</color>
     <color name="colorBut">#000000</color>
     <color name="colorBut_act">#FFFFFF</color>
     <color name="color_proz">#25000000</color>
@@ -17,7 +17,7 @@
     <color name="orange">#FFEB3B</color>
     <color name="range">#FFFFFF</color>
 
-<!--    <color name="main_color">#673AB7</color>-->
+    <!--    <color name="main_color">#673AB7</color>-->
 
     <color name="colorWhite">#ffffff</color>
     <color name="colorBlack">#000000</color>
@@ -37,5 +37,7 @@
     <color name="ios_green">#CD92CC0B</color>
     <color name="ios_yellow">#daac0e</color>
     <color name="ios_red">#CDCC0B0B</color>
+
+    <color name="siteGradient">#f5666f</color>
 
 </resources>

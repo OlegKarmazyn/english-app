@@ -2,7 +2,6 @@ package solid.icon.english.user_line;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,12 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-import java.util.Locale;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
-import solid.icon.english.architecture.firebase.database.interfaces.OnSuccessListener;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
 import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
@@ -82,7 +79,7 @@ public class UserLevel extends ActivityGlobal {
 
     private void updateSubTopics() {
         LocalOperation localOperation = new LocalOperation();
-        for (String sub: name_topic) {
+        for (String sub : name_topic) {
             localOperation.deleteSubTopic(chosenTopics, sub);
         }
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);

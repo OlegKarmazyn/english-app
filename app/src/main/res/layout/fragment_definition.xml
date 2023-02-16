@@ -81,9 +81,10 @@
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="300dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
             android:visibility="gone"
-            app:srcCompat="@android:drawable/checkbox_on_background" />
+            app:srcCompat="@drawable/ic_next" />
 
         <EditText
             android:id="@+id/writeEdit"
@@ -94,6 +95,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
             android:gravity="center"
+            android:hint="your answer"
             android:padding="15dp"
             android:textSize="16sp" />
 
@@ -118,7 +120,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/el_next"
         android:layout_width="85dp"
-        android:layout_height="67dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="25dp"

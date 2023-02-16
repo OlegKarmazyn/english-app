@@ -987,7 +987,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/el_next"
         android:layout_width="85dp"
-        android:layout_height="67dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="40dp"
