@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
@@ -174,24 +175,21 @@ public class FragmentTestUser extends UserFragmentActivity {
         button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
         button.setGravity(Gravity.CENTER);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int counter = 0;
-                for (int i = 0; i < size; i++) {
-                    int index = id[i];
-                    if (editTextList.get(i).getText().toString().trim().equals(englishTranslArr[index])) {
-                        editTextList.get(i).setBackgroundResource(R.color.back_true);
-                        counter++;
-                    } else {
-                        editTextList.get(i).setBackgroundResource(R.color.back_false);
-                    }
+        button.setOnClickListener(v -> {
+            int counter = 0;
+            for (int i = 0; i < size; i++) {
+                int index = id[i];
+                if (editTextList.get(i).getText().toString().trim().equals(englishTranslArr[index])) {
+                    editTextList.get(i).setBackgroundResource(R.color.back_true);
+                    counter++;
+                } else {
+                    editTextList.get(i).setBackgroundResource(R.color.back_false);
                 }
-                for (TextView t : textViewList) {
-                    t.setVisibility(View.VISIBLE);
-                }
-                Toast.makeText(context, "True answer - " + counter, Toast.LENGTH_LONG).show();
             }
+            for (TextView t : textViewList) {
+                t.setVisibility(View.VISIBLE);
+            }
+            Toasty.success(context, "Correct answers " + counter + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
         });
 
         //adding layout to the layout verticalLinearLayout

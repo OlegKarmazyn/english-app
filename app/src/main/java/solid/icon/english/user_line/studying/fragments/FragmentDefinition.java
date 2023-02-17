@@ -19,6 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.WordModel;
@@ -129,6 +130,7 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
+                    text_check.setVisibility(View.GONE);
                 } else {
                     counter_flip[i] = 0;
                     editText.setBackgroundResource(R.color.back_false);
@@ -141,6 +143,7 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                     //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_definition_transl.setVisibility(View.GONE);
                     fab.setVisibility(View.GONE);
+                    text_check.setVisibility(View.VISIBLE);
                     editText.setText("");
                     words_get_text();
                     editText.setBackground(f);
@@ -151,8 +154,7 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + size, Toast.LENGTH_LONG);
-                    mess.show();
+                    Toasty.success(context, "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
                     fab.setVisibility(View.GONE);
                 }
                 break;

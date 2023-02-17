@@ -84,21 +84,29 @@ public abstract class UserFragmentActivity extends Fragment {
         } else {
             return;
         }
-
-        englishTranslArr = new String[size];
-        rusTranslArr = new String[size];
-        definitionArr = new String[size];
-        int i = 0;
-        for (WordModel w : wordModelList) {
-            englishTranslArr[i] = w.englishWord;
-            rusTranslArr[i] = w.rusWord;
-            definitionArr[i] = w.definition;
-            outLog("englishTranslArr = " + englishTranslArr[i]);
-            outLog("rusTranslArr = " + rusTranslArr[i]);
-            outLog("definitionArr = " + definitionArr[i]);
-            i++;
+        if (size != 0) {
+            englishTranslArr = new String[size];
+            rusTranslArr = new String[size];
+            definitionArr = new String[size];
+            int i = 0;
+            for (WordModel w : wordModelList) {
+                englishTranslArr[i] = w.englishWord;
+                rusTranslArr[i] = w.rusWord;
+                definitionArr[i] = w.definition;
+                outLog("englishTranslArr = " + englishTranslArr[i]);
+                outLog("rusTranslArr = " + rusTranslArr[i]);
+                outLog("definitionArr = " + definitionArr[i]);
+                i++;
+            }
+        } else {
+            englishTranslArr = new String[1];
+            rusTranslArr = new String[1];
+            definitionArr = new String[1];
+            englishTranslArr[0] = "empty";
+            rusTranslArr[0] = "empty";
+            definitionArr[0] = "empty";
+            size = 1;
         }
-
         fillArrays();
         shuffleArray(id);
     }

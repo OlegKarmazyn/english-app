@@ -1,5 +1,6 @@
 package solid.icon.english.user_line.studying.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
@@ -22,6 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.List;
 import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.WordModel;
@@ -56,7 +58,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
     private FloatingActionButton fab;
     Drawable f;
-    private FloatingActionButton el_next;
 
     @Override
     public void onResume() {
@@ -79,13 +80,10 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
         f = editText.getBackground();
 
-        el_next = getActivity().findViewById(R.id.el_next);
-
         text_check_listen = getActivity().findViewById(R.id.text_check_listen);
 
         imageView.setOnClickListener(this);
         fab.setOnClickListener(this);
-        el_next.setOnClickListener(this);
         text_check_listen.setOnClickListener(this);
 
         mTTS = new TextToSpeech(getActivity(), status -> {
@@ -96,9 +94,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                 if (result == TextToSpeech.LANG_MISSING_DATA
                         || result == TextToSpeech.LANG_NOT_SUPPORTED) {
                     Log.e("TTS", "Language not supported");
-                } else {
+                } //empty else
 
-                }
             } else {
                 Log.e("TTS", "Initialization failed");
             }
@@ -121,11 +118,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         String eT = editText.getText().toString();
         eT = eT.trim();
         String res = (englishTranslArr[id[i]]);
-        if ((eT.equals(res))) {
-            return true;
-        } else {
-            return false;
-        }
+        return eT.equals(res);
     }
 
     private void words_get_text() {
@@ -150,6 +143,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -179,6 +173,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
+                    text_check_listen.setVisibility(View.GONE);
                     hideSoftKeyboard(editText);
                 } else {
                     counter_flip[i] = 0;
@@ -190,9 +185,9 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
             case R.id.fab:
                 if (i < englishTranslArr.length - 1) {
                     i++;
-                    //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_write_learn.setVisibility(View.GONE);
                     fab.setVisibility(View.GONE);
+                    text_check_listen.setVisibility(View.VISIBLE);
                     editText.setText("");
                     words_get_text();
                     editText.setBackground(f);
@@ -203,9 +198,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                             count++;
                         }
                     }
-                    Toast.makeText(getActivity(), "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
+                    Toasty.success(context, "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
 
-//                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
                     for (int i = 0; i < size; i++) {
                         counter_flip[i] = -1;

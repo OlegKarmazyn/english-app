@@ -7,123 +7,118 @@
     tools:context=".words_by_levels.study_way.FragmentListen"
     tools:ignore="OnClick">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
 
         <LinearLayout
-            android:id="@+id/lay_write_learn"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lay_write_learn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/words_by_engl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/person_together"
+                    android:gravity="center"
+                    android:onClick="click_listen"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="15dp"
+                    android:text="appreciate"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/words_by_transl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/person_together"
+                    android:gravity="center"
+                    android:onClick="click_listen"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="15dp"
+                    android:text="appreciate"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/wrileEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:hint="your answer"
+                android:padding="15dp"
+                android:textSize="16sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:onClick="click_listen"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_next" />
+
+            <ImageView
+                android:id="@+id/img_listen"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/person_together"
+                android:padding="20dp"
+                android:src="@drawable/frame_anim" />
 
             <TextView
-                android:id="@+id/words_by_engl"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
+                android:id="@+id/text_check_listen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/person_together"
                 android:gravity="center"
                 android:onClick="click_listen"
-                android:paddingLeft="5dp"
-                android:paddingTop="15dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="15dp"
-                android:text="appreciate"
-                android:textColor="@android:color/black"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                android:visibility="visible" />
-
-            <TextView
-                android:id="@+id/words_by_transl"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/person_together"
-                android:gravity="center"
-                android:onClick="click_listen"
-                android:paddingLeft="5dp"
-                android:paddingTop="15dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="15dp"
-                android:text="appreciate"
+                android:padding="15dp"
+                android:text="CHECK"
                 android:textColor="@android:color/black"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/wrileEdit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="15dp"
-            android:gravity="center"
-            android:hint="your answer"
-            android:padding="15dp"
-            android:textSize="16sp" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="5dp"
-            android:onClick="click_listen"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_next" />
-
-        <ImageView
-            android:id="@+id/img_listen"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/person_together"
-            android:padding="20dp"
-            android:src="@drawable/frame_anim" />
-
-        <TextView
-            android:id="@+id/text_check_listen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/person_together"
-            android:gravity="center"
-            android:onClick="click_listen"
-            android:padding="15dp"
-            android:text="CHECK"
-            android:textColor="@android:color/black"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/el_next"
-        android:layout_width="85dp"
-        android:layout_height="67dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="25dp"
-        android:onClick="click_listen"
-        android:visibility="gone"
-        app:srcCompat="@android:drawable/ic_media_next" />
+    </ScrollView>
 
 </FrameLayout>
