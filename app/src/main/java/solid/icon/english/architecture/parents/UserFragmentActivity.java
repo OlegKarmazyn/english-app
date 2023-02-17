@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.preference.PreferenceManager;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -19,6 +20,7 @@ import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.user_line.studying.StudyActivity;
+import solid.icon.english.user_line.studying.fragments.FragmentDefinition;
 
 public abstract class UserFragmentActivity extends Fragment {
 
@@ -49,8 +51,25 @@ public abstract class UserFragmentActivity extends Fragment {
         this.studyActivity = studyActivity;
         outLog(studyActivity.toString());
 
+        deleteEmptyDefinition();
         fillMainArrays();
         topicModel = getTopicsModel();
+    }
+
+    private void deleteEmptyDefinition() {
+        if (FragmentDefinition.class.getSimpleName().equals(TAG)) {
+            List<WordModel> deletingList = new ArrayList<>();
+            if (wordModelList != null)
+                for (WordModel wordModel : wordModelList) {
+                    if (wordModel.definition == null || wordModel.definition.isEmpty()) {
+                        deletingList.add(wordModel);
+                    }
+                }
+            for (WordModel wordModel : deletingList) {
+                outLog("DELETING - " + wordModel.englishWord + ": " + wordModel.rusWord);
+                wordModelList.remove(wordModel);
+            }
+        }
     }
 
     private TopicModel getTopicsModel() {
@@ -116,7 +135,7 @@ public abstract class UserFragmentActivity extends Fragment {
         mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
-    private void getSpeedAndPitch(){
+    private void getSpeedAndPitch() {
         if (pitch == 0) {
             pitch = PreferenceManager.getDefaultSharedPreferences(context).getFloat("pitch", 0.7f);
             speechRate = PreferenceManager.getDefaultSharedPreferences(context).getFloat("speechRate", 0.7f);

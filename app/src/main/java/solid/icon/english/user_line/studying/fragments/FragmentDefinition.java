@@ -1,5 +1,6 @@
 package solid.icon.english.user_line.studying.fragments;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -58,7 +59,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         super.onResume();
         context = getActivity();
 
-        editText = getActivity().findViewById(R.id.writeEdit);
+        assert context != null;
+        editText = context.findViewById(R.id.writeEdit);
         meaning = getActivity().findViewById(R.id.meaning);
         meaning.setClickable(false);
 
@@ -75,22 +77,18 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         text_check.setOnClickListener(this);
         words1.setOnClickListener(this);
 
-        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    Locale locale = new Locale(topicModel.country);
-                    int result = mTTS.setLanguage(locale);
+        mTTS = new TextToSpeech(getActivity(), status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                Locale locale = new Locale(topicModel.country);
+                int result = mTTS.setLanguage(locale);
 
-                    if (result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Log.e("TTS", "Language not supported");
-                    } else {
+                if (result == TextToSpeech.LANG_MISSING_DATA
+                        || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Language not supported");
+                }  //empty else
 
-                    }
-                } else {
-                    Log.e("TTS", "Initialization failed");
-                }
+            } else {
+                Log.e("TTS", "Initialization failed");
             }
         });
 
@@ -114,13 +112,10 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         String eT = editText.getText().toString();
         eT = eT.trim();
         String res = englishTranslArr[id[i]];
-        if ((eT.equals(res))) {
-            return true;
-        } else {
-            return false;
-        }
+        return eT.equals(res);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -161,11 +156,6 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                     fab.setVisibility(View.GONE);
                 }
                 break;
-//            case R.id.el_next:
-//                Intent intent = new Intent(getActivity(), ListenWrite.class);
-//                startActivity(intent);
-//                getActivity().finish();
-//                break;
             case R.id.words_by_engl:
                 speak(englishTranslArr[id[i]]);
                 break;
