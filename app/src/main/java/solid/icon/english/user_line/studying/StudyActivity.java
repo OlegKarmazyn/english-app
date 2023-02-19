@@ -1,5 +1,6 @@
 package solid.icon.english.user_line.studying;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,6 +16,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
@@ -32,6 +34,7 @@ public class StudyActivity extends ActivityGlobal {
     List<WordModel> wordModelList;
     String topic, subTopic;
     int num_of_topic;
+    int sizeOfItems = 0;
 
     public boolean isReplaced = false;
     public Menu menu;
@@ -55,7 +58,12 @@ public class StudyActivity extends ActivityGlobal {
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                pager2.setCurrentItem(tab.getPosition());
+                if (sizeOfItems != 0) {
+                    pager2.setCurrentItem(tab.getPosition());
+                } else {
+                    tabLayout.selectTab(tabLayout.getTabAt(0));
+                    Toasty.warning(context, "List of words is empty").show();
+                }
             }
 
             @Override
@@ -92,32 +100,22 @@ public class StudyActivity extends ActivityGlobal {
 
         pager2.animate().alpha(0).setDuration(600);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                pager2.setAdapter(adapter);
-                pager2.setCurrentItem(cur);
-            }
+        new Handler().postDelayed(() -> {
+            pager2.setAdapter(adapter);
+            pager2.setCurrentItem(cur);
         }, 650);
 
-
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                pager2.animate().alpha(1).setDuration(1000);
-            }
-        }, 700);
-
+        new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(1000), 700);
     }
 
     /**
-     * getting all english and rus words from list from database
+     * getting all english and translating words from list in database
      */
 
     private void getWordsList() {
         WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
         wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
-
+        sizeOfItems = wordModelList.size();
     }
 
     @Override
@@ -127,6 +125,7 @@ public class StudyActivity extends ActivityGlobal {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

@@ -42,14 +42,12 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
 
     private LinearLayout lay_definition_transl = null;
 
-    private TextView words1, words2;
+    private TextView words1, words2, meaning;
 
     private FloatingActionButton fab;
     Drawable f;
 
     private TextView text_check;
-
-    private TextView meaning = null;
 
     private int i = 0;
 
@@ -104,9 +102,9 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
     }
 
     private void words_get_text() {
-        meaning.setText(definitionArr[id[i]]);
         words1.setText(englishTranslArr[id[i]]);
         words2.setText(rusTranslArr[id[i]]);
+        meaning.setText(definitionArr[id[i]]);
     }
 
     private boolean isTrueWords() {

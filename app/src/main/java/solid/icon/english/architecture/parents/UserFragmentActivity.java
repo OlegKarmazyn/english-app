@@ -98,14 +98,6 @@ public abstract class UserFragmentActivity extends Fragment {
                 outLog("definitionArr = " + definitionArr[i]);
                 i++;
             }
-        } else {
-            englishTranslArr = new String[1];
-            rusTranslArr = new String[1];
-            definitionArr = new String[1];
-            englishTranslArr[0] = "empty";
-            rusTranslArr[0] = "empty";
-            definitionArr[0] = "empty";
-            size = 1;
         }
         fillArrays();
         shuffleArray(id);
