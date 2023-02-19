@@ -334,15 +334,16 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void appearMenu() {
+        int duration = 800;
         relativeLayout_proz.setAlpha(0f);
 
         TranslateAnimation animation = new TranslateAnimation(0, 0, 2000, 0);
-        animation.setDuration(1000);
+        animation.setDuration(duration);
         animation.setFillAfter(true);
 
         bottom_lay.setVisibility(View.VISIBLE);
         relativeLayout_proz.setVisibility(View.VISIBLE);
-        relativeLayout_proz.animate().alpha(1f).setDuration(1000);
+        relativeLayout_proz.animate().alpha(1f).setDuration(duration);
         bottom_lay.startAnimation(animation);
     }
 
@@ -351,8 +352,9 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void closeMenu() {
+        int duration = 700;
         TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 2000);
-        animation.setDuration(1000);
+        animation.setDuration(duration);
         animation.setFillAfter(true);
 
         new Handler().postDelayed(() -> {
@@ -363,9 +365,9 @@ public class FragmentLearn extends UserFragmentActivity {
             englishWord.setText("");
             russianWord.setText("");
             definition.setText("");
-        }, 1000);
+        }, duration);
 
-        relativeLayout_proz.animate().alpha(0f).setDuration(1000);
+        relativeLayout_proz.animate().alpha(0f).setDuration(duration);
         bottom_lay.startAnimation(animation);
     }
 
