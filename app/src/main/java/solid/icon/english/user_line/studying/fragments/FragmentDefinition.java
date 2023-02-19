@@ -97,21 +97,32 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         if (!isCreate) {
             isCreate = true;
             f = editText.getBackground();
-            Arrays.fill(counter_flip, 2); //must be neither 0 or 1
+            Arrays.fill(counter_flip, 2); //must be neither 0 nor 1
         }
     }
 
     private void words_get_text() {
-        words1.setText(englishTranslArr[id[i]]);
-        words2.setText(rusTranslArr[id[i]]);
-        meaning.setText(definitionArr[id[i]]);
+        try {
+            words1.setText(englishTranslArr[id[i]]);
+            words2.setText(rusTranslArr[id[i]]);
+            meaning.setText(definitionArr[id[i]]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            words1.setClickable(false);
+            words2.setClickable(false);
+            text_check.setClickable(false);
+            Toasty.warning(context, "List of definitions is empty").show();
+        }
     }
 
     private boolean isTrueWords() {
-        String eT = editText.getText().toString();
-        eT = eT.trim();
-        String res = englishTranslArr[id[i]];
-        return eT.equals(res);
+        try {
+            String eT = editText.getText().toString();
+            eT = eT.trim();
+            String res = englishTranslArr[id[i]];
+            return eT.equals(res);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return false;
+        }
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -122,9 +133,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                 lay_definition_transl.setVisibility(View.VISIBLE);
 
                 if (isTrueWords()) {
-                    if (counter_flip[i] != 0) {
+                    if (counter_flip[i] != 0)
                         counter_flip[i] = 1;
-                    }
 
                     editText.setBackgroundResource(R.color.back_true);
                     fab.setVisibility(View.VISIBLE);
