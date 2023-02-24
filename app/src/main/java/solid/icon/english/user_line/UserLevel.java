@@ -36,12 +36,12 @@ public class UserLevel extends ActivityGlobal {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.topics_layout);
-        showActionBar(true, chosenTopics);
 
         subTopicDao = App.getInstance().getDatabase().subTopicDao();
         chosenTopics = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
         recyclerView = findViewById(R.id.recycleView);
 
+        showActionBar(true, chosenTopics);
         setAdapter();
     }
 
