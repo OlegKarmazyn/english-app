@@ -35,10 +35,11 @@ import solid.icon.english.user_line.studying.StudyActivity;
 public class FragmentLearn extends UserFragmentActivity {
 
     FirebaseOperation firebaseOperation = new FirebaseOperation();
+    boolean isSubTest;
 
-    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, int num_of_topic, StudyActivity studyActivity) {
+    public FragmentLearn(List<WordModel> wordModelList, String topic, String subTopic, boolean isSubTest, StudyActivity studyActivity) {
         super(wordModelList, topic, subTopic, studyActivity);
-        // Required empty public constructor
+        this.isSubTest = isSubTest;
     }
 
     @Override
@@ -122,79 +123,81 @@ public class FragmentLearn extends UserFragmentActivity {
      * There is ADDING BUTTON
      */
     private void createAddButton() {
-        //counting margin
-        int dp_15 = getDp(15);
-        outLog("dp_15 = " + dp_15);
+        if(!isSubTest) {
+            //counting margin
+            int dp_15 = getDp(15);
+            outLog("dp_15 = " + dp_15);
 
-        LinearLayout horizontalLayout = new LinearLayout(context);
-        horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
-        horizontalLayout.setGravity(Gravity.CENTER);
+            LinearLayout horizontalLayout = new LinearLayout(context);
+            horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
+            horizontalLayout.setGravity(Gravity.CENTER);
 
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        layoutParams.setMargins(0, dp_15, 0, 0);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            layoutParams.setMargins(0, dp_15, 0, 0);
 
-        horizontalLayout.setLayoutParams(layoutParams);
+            horizontalLayout.setLayoutParams(layoutParams);
 
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            );
 
-        //set the properties for Translation button
-        Button button = new Button(context);
-        button.setLayoutParams(params);
-        button.setText("Adding button");
-        button.setTextSize(15);
-        button.setBackgroundResource(R.drawable.person_together);
-        button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
-        button.setGravity(Gravity.CENTER);
+            //set the properties for Translation button
+            Button button = new Button(context);
+            button.setLayoutParams(params);
+            button.setText("Adding button");
+            button.setTextSize(15);
+            button.setBackgroundResource(R.drawable.person_together);
+            button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+            button.setGravity(Gravity.CENTER);
 
-        //listener
-        button.setOnClickListener(new View.OnClickListener() {
+            //listener
+            button.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                appearMenu();
-                setUpAddingMenu();
-            }
-
-            private void setUpAddingMenu() {
-                menu_title.setText("Enter info for create new word");
-                but_no.setText("Close");
-                but_yes.setText("Create");
-                but_no.setOnClickListener(v1 -> closeMenu(v1));
-                but_yes.setOnClickListener(v1 -> combineData());
-            }
-
-            private void combineData() {
-                addToDBNewWord(
-                        englishWord.getText().toString().trim(),
-                        russianWord.getText().toString().trim(),
-                        definition.getText().toString().trim());
-            }
-
-            private void addToDBNewWord(String englishWord, String russianWord, String definition) {
-                WordModel word = wordModelDao.getWordModelByName(englishWord, subTopic, topic);
-                if (word == null) { //if doesn't exist
-                    WordModel wordModel = new WordModel();
-                    wordModel.englishWord = englishWord;
-                    wordModel.rusWord = russianWord;
-                    wordModel.definition = definition;
-                    wordModel.topicName = topic;
-                    wordModel.subTopicName = subTopic;
-                    wordModelDao.insert(wordModel);
-                    wordModelList.add(wordModel);
-                    moveDataFB(englishWord, russianWord, definition);
-                } else {
-                    Toasty.error(context, "\"" + englishWord + "\"" + " already exists").show();
+                @Override
+                public void onClick(View v) {
+                    appearMenu();
+                    setUpAddingMenu();
                 }
-                studyActivity.setDateToActivity();
-            }
-        });
 
-        //adding layout to the layout verticalLinearLayout
-        horizontalLayout.addView(button);
-        verticalLinearLayout.addView(horizontalLayout);
+                private void setUpAddingMenu() {
+                    menu_title.setText("Enter info for create new word");
+                    but_no.setText("Close");
+                    but_yes.setText("Create");
+                    but_no.setOnClickListener(v1 -> closeMenu(v1));
+                    but_yes.setOnClickListener(v1 -> combineData());
+                }
+
+                private void combineData() {
+                    addToDBNewWord(
+                            englishWord.getText().toString().trim(),
+                            russianWord.getText().toString().trim(),
+                            definition.getText().toString().trim());
+                }
+
+                private void addToDBNewWord(String englishWord, String russianWord, String definition) {
+                    WordModel word = wordModelDao.getWordModelByName(englishWord, subTopic, topic);
+                    if (word == null) { //if doesn't exist
+                        WordModel wordModel = new WordModel();
+                        wordModel.englishWord = englishWord;
+                        wordModel.rusWord = russianWord;
+                        wordModel.definition = definition;
+                        wordModel.topicName = topic;
+                        wordModel.subTopicName = subTopic;
+                        wordModelDao.insert(wordModel);
+                        wordModelList.add(wordModel);
+                        moveDataFB(englishWord, russianWord, definition);
+                    } else {
+                        Toasty.error(context, "\"" + englishWord + "\"" + " already exists").show();
+                    }
+                    studyActivity.setDateToActivity();
+                }
+            });
+
+            //adding layout to the layout verticalLinearLayout
+            horizontalLayout.addView(button);
+            verticalLinearLayout.addView(horizontalLayout);
+        }
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {

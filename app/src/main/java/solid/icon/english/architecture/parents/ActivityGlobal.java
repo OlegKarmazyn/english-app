@@ -23,7 +23,8 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     public enum KeysExtra {
         level,
         num_of_topic,
-        title
+        title,
+        isSubTest
     }
 
     protected Context context = this;

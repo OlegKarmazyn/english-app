@@ -1,6 +1,8 @@
 package solid.icon.english.user_line;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +25,7 @@ import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.architecture.room.TopicModel;
+import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserLevel extends ActivityGlobal {
 
@@ -87,17 +90,30 @@ public class UserLevel extends ActivityGlobal {
         Toasty.info(context, "Loading...").show();
     }
 
+    private void goToStudy(){
+        Intent intent = new Intent(context, StudyActivity.class);
+        intent.putExtra(ActivityGlobal.KeysExtra.level.name(), chosenTopics); //topics
+        intent.putExtra(ActivityGlobal.KeysExtra.isSubTest.name(), true);
+        intent.putExtra(ActivityGlobal.KeysExtra.title.name(), "Testing"); //title (subTopics)
+        context.startActivity(intent);
+        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.sub_menu, menu);
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.download_data:
                 updateSubTopics();
+                return true;
+            case R.id.test_subTopics:
+                goToStudy();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

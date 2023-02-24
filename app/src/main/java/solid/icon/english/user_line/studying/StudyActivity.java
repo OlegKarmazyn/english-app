@@ -2,8 +2,10 @@ package solid.icon.english.user_line.studying;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -14,12 +16,16 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
+import solid.icon.english.architecture.room.SubTopicDao;
+import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
 import solid.icon.english.user_line.studying.fragments.FragmentAdapter;
@@ -33,8 +39,9 @@ public class StudyActivity extends ActivityGlobal {
 
     List<WordModel> wordModelList;
     String topic, subTopic;
-    int num_of_topic;
+    boolean isSubTest;
     int sizeOfItems = 0;
+    SharedPreferences preferences;
 
     public boolean isReplaced = false;
     public Menu menu;
@@ -47,8 +54,9 @@ public class StudyActivity extends ActivityGlobal {
         Intent intent = getIntent();
         topic = intent.getStringExtra(KeysExtra.level.name());
         subTopic = intent.getStringExtra(KeysExtra.title.name());
-        num_of_topic = intent.getIntExtra(KeysExtra.num_of_topic.name(), 0);
+        isSubTest = intent.getBooleanExtra(KeysExtra.isSubTest.name(), false);
         showActionBar(true, subTopic);
+        preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         tabLayout = findViewById(R.id.tab_layout_example);
         pager2 = findViewById(R.id.viewPager);
@@ -95,7 +103,7 @@ public class StudyActivity extends ActivityGlobal {
         getWordsList();
 
         FragmentManager fm = getSupportFragmentManager();
-        adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, num_of_topic, StudyActivity.this);
+        adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, isSubTest, StudyActivity.this);
         int cur = pager2.getCurrentItem();
 
         pager2.animate().alpha(0).setDuration(600);
@@ -113,9 +121,45 @@ public class StudyActivity extends ActivityGlobal {
      */
 
     private void getWordsList() {
-        WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
-        wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
+        if (!isSubTest) {
+            WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
+            wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
+        } else {
+            getTestingWords();
+        }
         sizeOfItems = wordModelList.size();
+        defineWords();
+    }
+
+    private void defineWords() {
+        if (sizeOfItems == 0) {
+            String message = "List of words is empty. Complete SubTopic to keep in mind your words";
+            Toasty.warning(context, message, Toasty.LENGTH_LONG).show();
+        } else {
+            Collections.shuffle(wordModelList);
+            List<WordModel> _wordModelList = new ArrayList<>();
+            for (int i = 0; i < Math.min(wordModelList.size(), 10); i++) {
+                _wordModelList.add(wordModelList.get(i));
+            }
+            wordModelList = _wordModelList;
+        }
+    }
+
+    private void getTestingWords() {
+        SubTopicDao subTopicDao = App.getInstance().getDatabase().subTopicDao();
+        WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
+        List<SubTopicModel> subTopicModelList = subTopicDao.getAllByTopicsName(topic);
+        int size = subTopicModelList.size();
+        wordModelList = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            String subTopic = subTopicModelList.get(i).subTopicsName;
+            String mod_key = topic + subTopic;
+            boolean isChecked = preferences.getBoolean(mod_key, false);
+
+            if (isChecked) {
+                wordModelList.addAll(wordModelDao.getAllBySubTopicsName(subTopic, topic));
+            }
+        }
     }
 
     @Override

@@ -101,10 +101,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
-            editor.putBoolean(userLevel.chosenTopics + position, isChecked);
+            editor.putBoolean(userLevel.chosenTopics + titlesArray[position], isChecked);
             editor.apply();
 
-            Log.d("holder.checkBox", userLevel.chosenTopics + position);
+            Log.d("holder.checkBox", userLevel.chosenTopics + titlesArray[position]);
 
             if (isChecked) {
                 holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -165,7 +165,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public void getIsCheckArray() {
         isCheckArray = new boolean[size];
         for (int i = 0; i < size; i++) {
-            String mod_key = userLevel.chosenTopics + i;
+            String mod_key = userLevel.chosenTopics + titlesArray[i];
             isCheckArray[i] = preferences.getBoolean(mod_key, false);
             Log.d(TAG, "key_topics[" + i + "]" + isCheckArray[i]);
         }

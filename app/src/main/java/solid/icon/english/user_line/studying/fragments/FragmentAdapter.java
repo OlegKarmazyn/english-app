@@ -15,17 +15,17 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     List<WordModel> wordModelList;
     String topic, subTopic;
-    int num_of_topic;
+    boolean isSubTest;
     StudyActivity studyActivity;
 
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle,
-                           List<WordModel> wordModelList, String topic, String subTopic, int num_of_topic,
+                           List<WordModel> wordModelList, String topic, String subTopic, boolean isSubTest,
                            StudyActivity studyActivity) {
         super(fragmentManager, lifecycle);
         this.wordModelList = wordModelList;
         this.topic = topic;
         this.subTopic = subTopic;
-        this.num_of_topic = num_of_topic;
+        this.isSubTest = isSubTest;
         this.studyActivity = studyActivity;
     }
 
@@ -42,7 +42,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
                 return new FragmentDefinition(wordModelList, topic, subTopic, studyActivity);
 
             default:
-                return new FragmentLearn(wordModelList, topic, subTopic, num_of_topic, studyActivity);
+                return new FragmentLearn(wordModelList, topic, subTopic, isSubTest, studyActivity);
         }
     }
 
