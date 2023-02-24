@@ -124,11 +124,12 @@ public class StudyActivity extends ActivityGlobal {
         if (!isSubTest) {
             WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
             wordModelList = wordModelDao.getAllBySubTopicsName(subTopic, topic);
+            sizeOfItems = wordModelList.size();
         } else {
             getTestingWords();
+            sizeOfItems = wordModelList.size();
+            defineWords();
         }
-        sizeOfItems = wordModelList.size();
-        defineWords();
     }
 
     private void defineWords() {
