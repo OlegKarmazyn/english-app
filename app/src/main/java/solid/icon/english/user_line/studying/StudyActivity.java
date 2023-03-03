@@ -134,7 +134,7 @@ public class StudyActivity extends ActivityGlobal {
 
     private void defineWords() {
         if (sizeOfItems == 0) {
-            String message = "List of words is empty. Complete SubTopic to keep in mind your words";
+            String message = "List of words is empty. Complete at least one SubTopic";
             Toasty.warning(context, message, Toasty.LENGTH_LONG).show();
         } else {
             Collections.shuffle(wordModelList);
