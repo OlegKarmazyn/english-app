@@ -26,6 +26,7 @@ import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.WordFB;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.gpt.GPT;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
@@ -123,7 +124,7 @@ public class FragmentLearn extends UserFragmentActivity {
      * There is ADDING BUTTON
      */
     private void createAddButton() {
-        if(!isSubTest) {
+        if (!isSubTest) {
             //counting margin
             int dp_15 = getDp(15);
             outLog("dp_15 = " + dp_15);
@@ -162,9 +163,9 @@ public class FragmentLearn extends UserFragmentActivity {
 
                 private void setUpAddingMenu() {
                     menu_title.setText("Enter info for create new word");
-                    but_no.setText("Close");
+                    but_no.setText("Definition");
                     but_yes.setText("Create");
-                    but_no.setOnClickListener(v1 -> closeMenu(v1));
+                    but_no.setOnClickListener(v1 -> proposeDefinition());
                     but_yes.setOnClickListener(v1 -> combineData());
                 }
 
@@ -350,8 +351,23 @@ public class FragmentLearn extends UserFragmentActivity {
         bottom_lay.startAnimation(animation);
     }
 
-    public void closeMenu(View v) {
+    private void closeMenu(View v) {
         closeMenu();
+    }
+
+    public void proposeDefinition() {
+        String eng = englishWord.getText().toString().trim();
+        String trl = russianWord.getText().toString().trim();
+        if (!eng.isEmpty() && !trl.isEmpty()) {
+            Toasty.info(context, "Loading...").show();
+            new GPT().giveDefinition(eng, trl, response -> {
+                new Thread(() -> context.runOnUiThread(() -> {
+                    definition.setText(response);
+                })).start();
+            });
+        } else {
+            Toasty.warning(context, "Empty field").show();
+        }
     }
 
     private void closeMenu() {

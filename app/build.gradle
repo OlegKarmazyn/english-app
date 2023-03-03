@@ -88,4 +88,7 @@ dependencies {
     //update sharedPreference
     implementation 'androidx.preference:preference-ktx:1.2.0'
 
+    //http
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
 }
