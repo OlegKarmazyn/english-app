@@ -221,6 +221,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void getDataFB(String key) {
+        Toasty.info(context, "Loading...").show();
         firebaseOperation.getTopicsWithAllData(key, topicModel -> {
             insertNewTopics(topicModel);
             mainActivity.setDataToUserAdapter();

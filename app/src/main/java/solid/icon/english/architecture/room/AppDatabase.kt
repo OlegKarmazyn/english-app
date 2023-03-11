@@ -6,8 +6,8 @@ import androidx.room.migration.AutoMigrationSpec
 
 @Database(
     entities = [WordModel::class, TopicModel::class, SubTopicModel::class],
-    version = 3,
-    exportSchema = true,
+    version = 1,
+    exportSchema = true
 //    autoMigrations = [
 //        AutoMigration(
 //            from = 1,
