@@ -1,11 +1,12 @@
 package solid.icon.english.setting
 
 import androidx.lifecycle.ViewModel
+import solid.icon.english.architecture.local_data.PreferencesOperations
 
 class SettingViewModel(context: SettingsActivity) : ViewModel() {
 
     private val authModel = AuthModel(context)
-    private val preferencesOperations = PreferencesOperations(context)
+    private val preferencesOperations = PreferencesOperations()
 
     fun logIn(
         email: String?,

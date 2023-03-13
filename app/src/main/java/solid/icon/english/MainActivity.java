@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.local_data.PreferencesOperations;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
@@ -41,6 +42,11 @@ public class MainActivity extends ActivityGlobal {
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
         fullRecycleView();
+        firstOpen();
+    }
+
+    private void firstOpen() {
+        new PreferencesOperations().firstOpen();
     }
 
     //----------------method for RecyclerView--------------------------------// start
@@ -49,7 +55,6 @@ public class MainActivity extends ActivityGlobal {
         setSettingsToRecyclerView(recyclerView_levels);
         setSettingsToRecyclerView(recyclerView_user);
         setAdapters();
-
     }
 
     private void setSettingsToRecyclerView(RecyclerView recyclerView) {

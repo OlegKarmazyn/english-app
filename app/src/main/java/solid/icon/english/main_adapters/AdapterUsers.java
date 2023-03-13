@@ -33,6 +33,7 @@ import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.local_data.LocalOperation;
+import solid.icon.english.architecture.local_data.PreferencesOperations;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
@@ -51,6 +52,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     TopicModelDao topicModelDao;
     FirebaseOperation firebaseOperation;
     LocalOperation localOperation;
+    PreferencesOperations preferencesOperations;
 
     public AdapterUsers(Context context, String[] titlesArray, MainActivity mainActivity) {
         this.context = context;
@@ -59,6 +61,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         topicModelDao = App.getInstance().getDatabase().topicModelDao();
         firebaseOperation = new FirebaseOperation();
         localOperation = new LocalOperation();
+        preferencesOperations = new PreferencesOperations();
 
         getIsCheckArray(); // last after init
     }
@@ -95,7 +98,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
 
         } else {
-
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_bottom));
             holder.add_topic.setVisibility(View.VISIBLE);
             holder.title.setVisibility(View.GONE);
@@ -103,12 +105,12 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         }
 
         /*------------------------------components------------------------------*/
-        //todo: redone!!! it does not work!!!
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
             TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
             topicModel.isCheck = isChecked;
             topicModelDao.update(topicModel);
+            isCheckArray[position] = isChecked;
 
             if (isChecked) {
                 holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
@@ -203,7 +205,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             } else {
                 if (topicModelDao.getByTopicsName(topicsName) == null) {
                     insertNewTopics(topicsName, spinner.getSelectedItem().toString());
-                    moveDataFB(topicsName);
                 } else {
                     Toasty.error(context, "\"" + topicsName + "\"" + " already exists").show();
                 }
@@ -212,12 +213,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         });
 
         tvCancel.setOnClickListener(v -> dialog.dismiss());
-
         dialog.show();
-    }
-
-    private void moveDataFB(String topicsName) {
-        firebaseOperation.moveTopics(topicsName);
     }
 
     private void getDataFB(String key) {
@@ -236,7 +232,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         TopicModel topicModel = new TopicModel();
         topicModel.topicsName = topicsName;
         topicModel.country = country;
-        topicModel.topicsKey = ""; //empty!
+        topicModel.topicsKey = null; //empty!
         topicModelDao.insert(topicModel);
     }
 
@@ -258,9 +254,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             deleteDataFB(titlesArray[position]);
         });
         if (topicModel.topicsKey != null) {
-            alert.setPositiveButton("Share", ((dialog, which) -> {
-                sharedKey(topicModel.topicsKey);
-            }));
+            Log.e(TAG, "topicModel.topicsKey " + topicModel.topicsKey + ".");
+            alert.setPositiveButton("Share", ((dialog, which) -> sharedKey(topicModel.topicsKey)));
             alert.setNegativeButton("Copy key", (dialog, which) -> {
                 ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
@@ -268,9 +263,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 Toasty.success(context, "Key successfully copied").show();
             });
         } else {
-            alert.setPositiveButton("Post", ((dialog, which) -> {
-                postFB(topicModel.topicsName);
-            }));
+            alert.setPositiveButton("Post", ((dialog, which) -> postFB(topicModel.topicsName)));
         }
         alert.show();
     }
@@ -289,7 +282,12 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void postFB(String topicsName) {
-        firebaseOperation.postData(topicsName);
-        Toasty.info(context, "Sending data in process...").show();
+        if (preferencesOperations.getAllowedTopics() > 0) {
+            firebaseOperation.postData(topicsName);
+            Toasty.info(context, "Sending data in process...").show();
+            preferencesOperations.decreaseAllowedTopics(1);
+        } else {
+            Toasty.warning(context, "You can share limited topics").show();
+        }
     }
 }

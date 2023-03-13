@@ -5,16 +5,17 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import solid.icon.english.architecture.firebase.StaticData
 import solid.icon.english.architecture.firebase.database.WordFB
 import solid.icon.english.architecture.firebase.database.interfaces.GetTopicsModelListener
 import solid.icon.english.architecture.firebase.database.interfaces.OnGetDataListener
+import solid.icon.english.architecture.local_data.PreferencesOperations
 import solid.icon.english.architecture.room.TopicModel
 
 class FirebaseOperation {
 
     companion object {
         private const val TAG = "FirebaseOperation"
+        private var email: String? = PreferencesOperations().getEmail()
     }
 
     private val topicsOperation = TopicsOperation()
@@ -24,7 +25,7 @@ class FirebaseOperation {
     private val senderOperation = SenderOperation(this)
 
     /* --------------get permission to change data if owner of it------------------- */
-    fun getPathIfAllowed(topicsName: String, listener: OnGetDataListener) {
+    private fun getPathIfAllowed(topicsName: String, listener: OnGetDataListener) {
         val ref = FirebaseDatabase.getInstance().reference
         val topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName)
         topicsQuery.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -32,7 +33,7 @@ class FirebaseOperation {
                 for (dataSnapshot1 in dataSnapshot.children) {
                     val hashMap = dataSnapshot1.value as HashMap<*, *>
                     val checkingEmail = hashMap["email"] as String
-                    if (checkingEmail == StaticData.email) {
+                    if (checkingEmail == email) {
                         listener.onSuccess(dataSnapshot1)
                     }
                 }
@@ -86,13 +87,13 @@ class FirebaseOperation {
     }
 
     /* --------------------------------Post All Data to Firebase DB--------------------------- */
-    fun postData(topicsName: String){
+    fun postData(topicsName: String) {
         senderOperation.postAllData(topicsName)
     }
 
     /* ------------------------------------Topics---------------------------- */
     fun moveTopics(topicsName: String) { // TODO: 01.02.2023 check if email exists
-        topicsOperation.moveTopics(topicsName)
+        email?.let { topicsOperation.moveTopics(topicsName, it) }
     }
 
     fun deleteTopics(topicsName: String) {
@@ -123,7 +124,12 @@ class FirebaseOperation {
         }
     }
 
-    fun updateWord(previousName: String, topicsName: String, subTopicsName: String, wordFB: WordFB) {
+    fun updateWord(
+        previousName: String,
+        topicsName: String,
+        subTopicsName: String,
+        wordFB: WordFB
+    ) {
         val subKey = validateKey(subTopicsName)
         val wordKey = validateKey(wordFB.englishWord)
         val previousKey = validateKey(previousName)

@@ -1,9 +1,8 @@
 package solid.icon.english.architecture.parents;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -12,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import solid.icon.english.R;
 import solid.icon.english.setting.SettingsActivity;
-import solid.icon.english.architecture.firebase.StaticData;
 
 public abstract class ActivityGlobal extends AppCompatActivity {
 
@@ -30,14 +28,9 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     protected Context context = this;
     protected String TAG = this.getClass().getSimpleName();
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        updateEmail();
-    }
-
-    protected void showActionBarWithoutTitle(boolean isShow){
+    protected void showActionBarWithoutTitle(boolean isShow) {
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         if (isShow) {
             actionBar.setTitle("");
         } else {
@@ -47,6 +40,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
 
     protected void showActionBar(boolean isShow, String titleText) {
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         if (isShow) {
             actionBar.setHomeButtonEnabled(true);
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -56,16 +50,12 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         }
     }
 
-    protected void updateEmail() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
-        StaticData.email = preferences.getString("email", "admin@gmail.com");
-    }
-
     private void startUserAcc() {
         startActivity(new Intent(context, SettingsActivity.class));
         overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

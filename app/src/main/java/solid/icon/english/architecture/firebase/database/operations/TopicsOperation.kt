@@ -4,13 +4,12 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import solid.icon.english.architecture.firebase.StaticData.email
 import solid.icon.english.architecture.room.App
 
 class TopicsOperation {
 
 
-    fun moveTopics(topicsName: String) {
+    fun moveTopics(topicsName: String, email: String) {
         GlobalScope.launch {
             val dbRef = FirebaseDatabase.getInstance().reference.push()
             val topicModelDao = App.getInstance().database.topicModelDao()
