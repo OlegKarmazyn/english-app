@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.preference.PreferenceManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.settings_activity.*
 import solid.icon.english.R
@@ -20,12 +21,10 @@ class SettingsActivity : ActivityGlobal() {
         set(value) {
             if (value) {
                 etPassword.isVisible = false
-                btnSignUp.isVisible = false
                 btnLogIn.isVisible = false
                 btnLogOut.isVisible = true
             } else {
                 etPassword.isVisible = true
-                btnSignUp.isVisible = true
                 btnLogIn.isVisible = true
                 btnLogOut.isVisible = false
                 etEmail.setText("")
@@ -55,18 +54,14 @@ class SettingsActivity : ActivityGlobal() {
         }
 
         // TODO: make loading
-        btnSignUp.setOnClickListener {
-            viewModel.signUp(getEmail(), getPassword())
-        }
-
         btnLogIn.setOnClickListener {
             viewModel.logIn(getEmail(), getPassword()) {
-                isUserExist = true
+                isUserExist = it
             }
         }
 
         btnLogOut.setOnClickListener {
-            viewModel.logOut(){
+            viewModel.logOut() {
                 isUserExist = false
             }
         }

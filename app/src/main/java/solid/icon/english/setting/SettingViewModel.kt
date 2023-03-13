@@ -6,14 +6,7 @@ class SettingViewModel(context: SettingsActivity) : ViewModel() {
 
     private val authModel = AuthModel(context)
 
-    fun signUp(email: String?, password: String?) {
-        // Create a new user with email and password
-        if (!email.isNullOrBlank() && !password.isNullOrBlank()) {
-            authModel.signUp(email, password)
-        }
-    }
-
-    fun logIn(email: String?, password: String?, onSuccess: () -> Unit) {
+    fun logIn(email: String?, password: String?, onSuccess: (Boolean) -> Unit) {
         // log into system
         if (!email.isNullOrBlank() && !password.isNullOrBlank()) {
             authModel.logIn(email, password, onSuccess)
@@ -23,4 +16,6 @@ class SettingViewModel(context: SettingsActivity) : ViewModel() {
     fun logOut(onSuccess: () -> Unit) {
         authModel.logOut(onSuccess)
     }
+
+
 }
