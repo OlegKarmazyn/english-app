@@ -34,11 +34,11 @@ class SettingsActivity : ActivityGlobal() {
         setContentView(R.layout.settings_activity)
         showActionBar(true, "Account")
 
+        viewModel = SettingViewModel(this)
         initUI()
     }
 
     private fun initUI() {
-        viewModel = SettingViewModel(this)
         val user = auth.currentUser
         if (user != null) {
             etEmail.setText(user.email)

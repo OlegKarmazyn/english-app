@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ios_gray">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -60,5 +62,37 @@
         android:id="@+id/loading_layout"
         layout="@layout/loading"
         android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registration allows you to:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAllowedTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- share one topic" />
+
+        <TextView
+            android:id="@+id/tvGptCalls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- call gpt-helper 20 times per day" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
