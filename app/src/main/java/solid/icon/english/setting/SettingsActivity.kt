@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.core.view.isVisible
 import androidx.preference.PreferenceManager
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.settings_activity.*
 import solid.icon.english.R
@@ -27,8 +26,6 @@ class SettingsActivity : ActivityGlobal() {
                 etPassword.isVisible = true
                 btnLogIn.isVisible = true
                 btnLogOut.isVisible = false
-                etEmail.setText("")
-                etPassword.setText("")
             }
             field = value
         }
@@ -36,7 +33,7 @@ class SettingsActivity : ActivityGlobal() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.settings_activity)
-        showActionBar(true, "")
+        showActionBar(true, "Account")
 
         initUI()
     }
@@ -50,19 +47,31 @@ class SettingsActivity : ActivityGlobal() {
             if (user.isEmailVerified)
                 isUserExist = user.isEmailVerified
             else
-                Toasty.warning(context, "Please check your email for a verification link.").show()
+                Toasty.warning(context, "Please check your email for a verification link").show()
         }
 
-        // TODO: make loading
         btnLogIn.setOnClickListener {
-            viewModel.logIn(getEmail(), getPassword()) {
-                isUserExist = it
-            }
+            viewModel.logIn(getEmail(), getPassword(),
+                onStart = {
+                    loading_layout.isVisible = true
+                },
+                onSuccess = {
+                    isUserExist = it
+                    loading_layout.isVisible = false
+                    if (it) {
+                        saveEmail(getEmail()!!)
+                        Toasty.success(context, "Log in - done").show()
+                    }
+                })
         }
 
         btnLogOut.setOnClickListener {
-            viewModel.logOut() {
+            viewModel.logOut {
                 isUserExist = false
+                etEmail.setText("")
+                etPassword.setText("")
+                saveEmail("")
+                Toasty.success(context, "Log out - done").show()
             }
         }
     }
@@ -83,14 +92,12 @@ class SettingsActivity : ActivityGlobal() {
         }
     }
 
+    private fun saveEmail(email: String) {
+        val editor = preferences.edit()
+        editor.putString("email", email)
+        editor.apply()
+    }
 }
-
-//    private fun saveEmail() {
-//        val email = email
-//        val editor = preferences.edit()
-//        editor.putString("email", email())
-//        editor.apply()
-//    }
 
 //    private fun savePitchAndSpeech() {
 //        try {
