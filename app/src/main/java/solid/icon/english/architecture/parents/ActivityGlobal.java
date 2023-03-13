@@ -11,7 +11,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import solid.icon.english.R;
-import solid.icon.english.SettingsActivity;
+import solid.icon.english.setting.SettingsActivity;
 import solid.icon.english.architecture.firebase.StaticData;
 
 public abstract class ActivityGlobal extends AppCompatActivity {
