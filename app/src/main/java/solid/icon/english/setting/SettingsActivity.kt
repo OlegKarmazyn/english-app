@@ -1,9 +1,7 @@
 package solid.icon.english.setting
 
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.core.view.isVisible
-import androidx.preference.PreferenceManager
 import com.google.firebase.auth.FirebaseAuth
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.settings_activity.*
@@ -12,17 +10,18 @@ import solid.icon.english.architecture.parents.ActivityGlobal
 
 class SettingsActivity : ActivityGlobal() {
 
-    private lateinit var preferences: SharedPreferences
     private lateinit var viewModel: SettingViewModel
     private val auth = FirebaseAuth.getInstance()
 
     private var isUserExist: Boolean = false
         set(value) {
             if (value) {
+                etEmail.isEnabled = false
                 etPassword.isVisible = false
                 btnLogIn.isVisible = false
                 btnLogOut.isVisible = true
             } else {
+                etEmail.isEnabled = true
                 etPassword.isVisible = true
                 btnLogIn.isVisible = true
                 btnLogOut.isVisible = false
@@ -39,7 +38,6 @@ class SettingsActivity : ActivityGlobal() {
     }
 
     private fun initUI() {
-        preferences = PreferenceManager.getDefaultSharedPreferences(context)
         viewModel = SettingViewModel(this)
         val user = auth.currentUser
         if (user != null) {
@@ -47,7 +45,7 @@ class SettingsActivity : ActivityGlobal() {
             if (user.isEmailVerified)
                 isUserExist = user.isEmailVerified
             else
-                Toasty.warning(context, "Please check your email for a verification link").show()
+                Toasty.warning(context, "Please check ${user.email} for a verification link").show()
         }
 
         btnLogIn.setOnClickListener {
@@ -59,7 +57,7 @@ class SettingsActivity : ActivityGlobal() {
                     isUserExist = it
                     loading_layout.isVisible = false
                     if (it) {
-                        saveEmail(getEmail()!!)
+                        viewModel.saveEmail(getEmail()!!)
                         Toasty.success(context, "Log in - done").show()
                     }
                 })
@@ -70,7 +68,7 @@ class SettingsActivity : ActivityGlobal() {
                 isUserExist = false
                 etEmail.setText("")
                 etPassword.setText("")
-                saveEmail("")
+                viewModel.saveEmail("")
                 Toasty.success(context, "Log out - done").show()
             }
         }
@@ -91,22 +89,4 @@ class SettingsActivity : ActivityGlobal() {
             null
         }
     }
-
-    private fun saveEmail(email: String) {
-        val editor = preferences.edit()
-        editor.putString("email", email)
-        editor.apply()
-    }
 }
-
-//    private fun savePitchAndSpeech() {
-//        try {
-//            val pitch = etPitch.text.toString().trim().toFloat()
-//            val speechRate = etSpeechRate.text.toString().trim().toFloat()
-//            val editor = preferences.edit()
-//            editor.putFloat("pitch", pitch)
-//            editor.putFloat("speechRate", speechRate)
-//            editor.apply()
-//        }catch (_: java.lang.Exception){}
-//    }
-

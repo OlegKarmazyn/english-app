@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 class SettingViewModel(context: SettingsActivity) : ViewModel() {
 
     private val authModel = AuthModel(context)
+    private val preferencesOperations = PreferencesOperations(context)
 
     fun logIn(
         email: String?,
@@ -20,5 +21,9 @@ class SettingViewModel(context: SettingsActivity) : ViewModel() {
 
     fun logOut(onSuccess: () -> Unit) {
         authModel.logOut(onSuccess)
+    }
+
+    fun saveEmail(email: String){
+        preferencesOperations.saveEmail(email)
     }
 }
