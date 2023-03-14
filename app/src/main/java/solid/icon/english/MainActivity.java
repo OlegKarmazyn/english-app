@@ -5,6 +5,8 @@ import static android.widget.Toast.LENGTH_SHORT;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.core.content.ContextCompat;
@@ -25,6 +27,7 @@ import solid.icon.english.main_adapters.AdapterUsers;
 public class MainActivity extends ActivityGlobal {
 
     private RecyclerView recyclerView_levels, recyclerView_user;
+    RelativeLayout loading_layout;
 
     private String[] levels_titlesArray,
             users_titlesArray = new String[]{"topics"};
@@ -38,6 +41,7 @@ public class MainActivity extends ActivityGlobal {
 
         recyclerView_levels = findViewById(R.id.recycleView_levels);
         recyclerView_user = findViewById(R.id.recycleView_user);
+        loading_layout = findViewById(R.id.loading_layout);
 
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
@@ -47,6 +51,13 @@ public class MainActivity extends ActivityGlobal {
 
     private void firstOpen() {
         new PreferencesOperations().firstOpen();
+    }
+
+    public void setLoadingVisible(boolean isLoading) {
+        if (isLoading)
+            loading_layout.setVisibility(View.VISIBLE);
+        else
+            loading_layout.setVisibility(View.GONE);
     }
 
     //----------------method for RecyclerView--------------------------------// start
@@ -91,13 +102,13 @@ public class MainActivity extends ActivityGlobal {
         TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
         assert topicModelDao != null;
         List<TopicModel> topicModelList = topicModelDao.getAll();
-        for(TopicModel t : topicModelList){
-            if(t.topicsName == null)
+        for (TopicModel t : topicModelList) {
+            if (t.topicsName == null)
                 topicModelDao.delete(t);
         }
         users_titlesArray = new String[topicModelList.size()];
         for (int i = 0; i < users_titlesArray.length; i++) {
-            if(topicModelList.get(i).topicsName != null) {
+            if (topicModelList.get(i).topicsName != null) {
                 users_titlesArray[i] = topicModelList.get(i).topicsName;
             }
             Log.e("getUsers_titlesArray", users_titlesArray[i]);

@@ -92,7 +92,7 @@ class FirebaseOperation {
     }
 
     /* ------------------------------------Topics---------------------------- */
-    fun moveTopics(topicsName: String) { // TODO: 01.02.2023 check if email exists
+    fun moveTopics(topicsName: String) {
         email?.let { topicsOperation.moveTopics(topicsName, it) }
     }
 
