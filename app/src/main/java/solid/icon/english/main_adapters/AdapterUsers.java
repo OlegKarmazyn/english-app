@@ -201,7 +201,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             dialog.dismiss();
 
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
-                getDataFB(topicsName);
+                getDataFB(topicsName, spinner.getSelectedItem().toString());
             } else {
                 if (topicModelDao.getByTopicsName(topicsName) == null) {
                     insertNewTopics(topicsName, spinner.getSelectedItem().toString());
@@ -216,10 +216,11 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         dialog.show();
     }
 
-    private void getDataFB(String key) {
+    private void getDataFB(String key, String country) {
         mainActivity.setLoadingVisible(true);
         Toasty.info(context, "Loading...").show();
         firebaseOperation.getTopicsWithAllData(key, topicModel -> {
+            topicModel.country = country;
             insertNewTopics(topicModel);
             mainActivity.setLoadingVisible(false);
             mainActivity.setDataToUserAdapter();
