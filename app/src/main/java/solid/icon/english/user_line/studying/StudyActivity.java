@@ -1,13 +1,16 @@
 package solid.icon.english.user_line.studying;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +25,7 @@ import java.util.List;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
+import solid.icon.english.architecture.local_data.PreferencesOperations;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
@@ -33,6 +37,8 @@ import solid.icon.english.user_line.studying.fragments.FragmentAdapter;
 
 public class StudyActivity extends ActivityGlobal {
 
+    PreferencesOperations preferencesOperations = new PreferencesOperations();
+
     TabLayout tabLayout;
     ViewPager2 pager2;
     FragmentAdapter adapter;
@@ -41,7 +47,6 @@ public class StudyActivity extends ActivityGlobal {
     String topic, subTopic;
     boolean isSubTest;
     int sizeOfItems = 0;
-    SharedPreferences preferences;
 
     public boolean isReplaced = false;
     public Menu menu;
@@ -56,7 +61,6 @@ public class StudyActivity extends ActivityGlobal {
         subTopic = intent.getStringExtra(KeysExtra.title.name());
         isSubTest = intent.getBooleanExtra(KeysExtra.isSubTest.name(), false);
         showActionBar(true, subTopic);
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
 
         tabLayout = findViewById(R.id.tab_layout_example);
         pager2 = findViewById(R.id.viewPager);
@@ -92,6 +96,40 @@ public class StudyActivity extends ActivityGlobal {
             }
         });
 
+        displayGptNotification();
+    }
+
+    //------------showing alert dialog to notify about gpt helper---------------///
+    private void displayGptNotification() {
+        if (!preferencesOperations.getGptDescription()) {
+            final LinearLayout linearLayout = new LinearLayout(context);
+            linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+            linearLayout.setLayoutParams(layoutParams);
+            linearLayout.setPadding(50, 0, 0, 0);
+
+            final CheckBox checkBox = new CheckBox(context);
+            int id = View.generateViewId();
+            checkBox.setId(id);
+            linearLayout.addView(checkBox);
+            final TextView textView = new TextView(context);
+            textView.setText("don't show me again");
+            linearLayout.addView(textView);
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("GPT-bot can help");
+            builder.setMessage("Just click \"DEFINITION\" and bot give it");
+
+            builder.setView(linearLayout);
+
+            builder.setPositiveButton("Okay", (dialog, which) -> {
+                if (checkBox.isChecked()) {
+                    preferencesOperations.putGptDescription();
+                }
+            });
+
+            builder.show();
+        }
     }
 
     /**
@@ -155,7 +193,7 @@ public class StudyActivity extends ActivityGlobal {
         for (int i = 0; i < size; i++) {
             String subTopic = subTopicModelList.get(i).subTopicsName;
             String mod_key = topic + subTopic;
-            boolean isChecked = preferences.getBoolean(mod_key, false);
+            boolean isChecked = preferencesOperations.getCheckingSubTopics(mod_key);
 
             if (isChecked) {
                 wordModelList.addAll(wordModelDao.getAllBySubTopicsName(subTopic, topic));

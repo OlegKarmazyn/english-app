@@ -27,6 +27,7 @@ import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.WordFB;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.gpt.GPT;
+import solid.icon.english.architecture.local_data.PreferencesOperations;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
@@ -358,6 +359,11 @@ public class FragmentLearn extends UserFragmentActivity {
     public void proposeDefinition() {
         String eng = englishWord.getText().toString().trim();
         String trl = russianWord.getText().toString().trim();
+        if (new PreferencesOperations().getGptCalls() == 0) {
+            Toasty.warning(context, "your free daily limit is over").show();
+            return;
+        }
+
         if (!eng.isEmpty() && !trl.isEmpty()) {
             Toasty.info(context, "Loading...").show();
             new GPT().giveDefinition(eng, trl, response -> {

@@ -1,11 +1,15 @@
 package solid.icon.english.architecture.gpt
 
+import android.os.Build
 import android.util.Log
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import org.json.JSONException
 import org.json.JSONObject
+import solid.icon.english.architecture.local_data.PreferencesOperations
 import java.io.IOException
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 class GPT {
 
@@ -44,6 +48,7 @@ class GPT {
                         val jsonArray = jsonObject.getJSONArray("choices")
                         val result = jsonArray.getJSONObject(0).getString("text")
                         onSuccessGpt.onSuccess(result.trim { it <= ' ' })
+                        PreferencesOperations().decreaseGptCalls() // minus one
                     } catch (e: JSONException) {
                         e.printStackTrace()
                     }
@@ -51,6 +56,18 @@ class GPT {
             }
         })
 
+    }
+
+    fun giveDateKey(): String {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val currentDate = LocalDate.now()
+            val dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+            val dateString = currentDate.format(dateFormatter)
+
+            return "gpt-$dateString"
+        } else {
+            return "gpt"
+        }
     }
 
 }

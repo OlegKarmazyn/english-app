@@ -1,22 +1,27 @@
 package solid.icon.english.architecture.local_data
 
 import androidx.preference.PreferenceManager
+import solid.icon.english.architecture.gpt.GPT
 import solid.icon.english.architecture.room.App
 
 class PreferencesOperations {
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(App.instance)
     private val editor = preferences.edit()
+    private val currentDateKey = GPT().giveDateKey()
+
     enum class Keys(val key: String) {
         IS_FIRST_OPEN("is firstly open"),
         EMAIL("email"),
         ALLOWED_TOPICS("number of topics"),
         PITCH("pitch"),
         SPEECH_RATE("speechRate"),
+        GPT_DESCRIPTION("gpt description")
     }
 
     fun firstOpen() {
-        if(preferences.getBoolean(Keys.IS_FIRST_OPEN.key, true)){
+        putGptCalls()
+        if (preferences.getBoolean(Keys.IS_FIRST_OPEN.key, true)) {
             editor.putBoolean(Keys.IS_FIRST_OPEN.key, false)
             editor.putInt(Keys.ALLOWED_TOPICS.key, 1) // TODO: make it for gptBot
             editor.apply()
@@ -32,7 +37,7 @@ class PreferencesOperations {
         return preferences.getString(Keys.EMAIL.key, null)
     }
 
-    fun getAllowedTopics() : Int{
+    fun getAllowedTopics(): Int {
         return preferences.getInt(Keys.ALLOWED_TOPICS.key, 0)
     }
 
@@ -42,16 +47,49 @@ class PreferencesOperations {
         editor.apply()
     }
 
-    fun increaseAllowedTopics(number: Int = 1){
+    fun increaseAllowedTopics(number: Int = 1) {
         val sharedNum = preferences.getInt(Keys.ALLOWED_TOPICS.key, 0)
         editor.putInt(Keys.ALLOWED_TOPICS.key, sharedNum + number)
         editor.apply()
     }
 
-    fun decreaseAllowedTopics(number: Int = 1){
+    fun decreaseAllowedTopics(number: Int = 1) {
         val sharedNum = preferences.getInt(Keys.ALLOWED_TOPICS.key, 0)
         editor.putInt(Keys.ALLOWED_TOPICS.key, sharedNum - number)
         editor.apply()
+    }
+
+    private fun putGptCalls() {
+        val freeCalls = 20
+        val errorNumber = -99
+        val gptCallsNumber = preferences.getInt(currentDateKey, errorNumber)
+        if (gptCallsNumber == errorNumber) {
+            editor.putInt(currentDateKey, freeCalls)
+            editor.apply()
+        }
+    }
+
+    fun decreaseGptCalls(){
+        val sharedNum = preferences.getInt(currentDateKey, 0)
+        editor.putInt(Keys.ALLOWED_TOPICS.key, sharedNum - 1)
+        editor.apply()
+    }
+
+    fun getGptCalls(): Int {
+        return preferences.getInt(currentDateKey, 0)
+    }
+
+    fun getCheckingSubTopics(mod_key: String): Boolean {
+        return preferences.getBoolean(mod_key, false)
+    }
+
+    fun putGptDescription() {
+        editor.putBoolean(Keys.GPT_DESCRIPTION.key, true)
+        editor.apply()
+    }
+
+    fun getGptDescription() : Boolean{
+        return preferences.getBoolean(Keys.GPT_DESCRIPTION.key, false)
     }
 
 }
