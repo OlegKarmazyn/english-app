@@ -93,6 +93,7 @@ class FirebaseOperation {
 
     fun uploadDate(topicsName: String){
         getPathIfAllowed(topicsName) {
+            subTopicsOperation.deleteSubTopicsNames(it)
             senderOperation.uploadAllData(topicsName)
         }
     }

@@ -25,4 +25,9 @@ class SubTopicsOperation {
         }
     }
 
+    fun deleteSubTopicsNames(dataSnapshot: DataSnapshot) {
+        GlobalScope.launch {
+            dataSnapshot.child("subNames").ref.removeValue()
+        }
+    }
 }
