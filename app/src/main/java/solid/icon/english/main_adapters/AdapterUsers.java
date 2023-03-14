@@ -290,7 +290,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         }
         if (preferencesOperations.getAllowedTopics() > 0) {
             firebaseOperation.postData(topicsName);
-            Toasty.info(context, "Sending data in process...").show();
+            Toasty.info(context, "Sending data ✓").show();
             preferencesOperations.decreaseAllowedTopics(1);
         } else {
             Toasty.warning(context, "You can share limited topics").show();

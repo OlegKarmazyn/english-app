@@ -17,8 +17,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
 import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
@@ -115,6 +117,11 @@ public class UserLevel extends ActivityGlobal {
             loading_layout.setVisibility(View.GONE);
     }
 
+    private void uploadSubTopics() {
+        new FirebaseOperation().postData(chosenTopics);
+        Toasty.info(context, "Sending data ✓").show();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.sub_menu, menu);
@@ -128,6 +135,9 @@ public class UserLevel extends ActivityGlobal {
             case R.id.download_data:
                 updateSubTopics();
                 return true;
+            case R.id.upload_data:
+                uploadSubTopics();
+                return true;
             case R.id.test_subTopics:
                 goToStudy();
                 return true;
@@ -135,4 +145,6 @@ public class UserLevel extends ActivityGlobal {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+
 }

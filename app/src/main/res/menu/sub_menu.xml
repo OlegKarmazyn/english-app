@@ -14,7 +14,15 @@
         android:id="@+id/download_data"
         android:icon="@drawable/ic_download_data"
         android:orderInCategory="2"
-        android:title=""
-        android:visible="true"
-        app:showAsAction="always" />
+        android:title="Download"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/upload_data"
+        android:icon="@drawable/ic_upload_data"
+        android:orderInCategory="3"
+        android:title="Upload"
+        android:visible="true" />
+
+
 </menu>

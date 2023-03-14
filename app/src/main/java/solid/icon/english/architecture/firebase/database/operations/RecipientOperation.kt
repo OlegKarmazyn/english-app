@@ -31,8 +31,8 @@ class RecipientOperation {
         }
     }
 
+    val subTopicDao = App.getInstance().database.subTopicDao()!!
     private fun insertNewSubTopics(topicsName: String, subTopicsName: String) {
-        val subTopicDao = App.getInstance().database.subTopicDao()!!
         var subTopicModel = subTopicDao.getByNames(topicsName, subTopicsName)
         if (subTopicModel == null)
             subTopicModel = SubTopicModel()
@@ -45,7 +45,6 @@ class RecipientOperation {
     private fun getWords(topicsName: String, subTopicsName: String, dataSnapshot: DataSnapshot) {
         val validatedSubTopic = FirebaseOperation().validateKey(subTopicsName)
         val wordsListOfSnapshot = dataSnapshot.child("subTopics").child(validatedSubTopic)
-        Log.e("getWords", wordsListOfSnapshot.ref.toString())
         for (dataSnap in wordsListOfSnapshot.children) {
             val wordFB = dataSnap.getValue(WordFB::class.java)
             insertNewWordModel(topicsName, subTopicsName, wordFB!!)
