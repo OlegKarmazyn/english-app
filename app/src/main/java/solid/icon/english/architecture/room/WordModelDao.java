@@ -3,6 +3,7 @@ package solid.icon.english.architecture.room;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -32,11 +33,8 @@ public interface WordModelDao {
     @Query("DELETE FROM WordModel WHERE topicName = :topicName")
     void deleteWhere(String topicName);
 
-    @Insert
-    void insert(WordModel wordModel);
-
-    @Update
-    void update(WordModel wordModel);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void upsert(WordModel wordModel);
 
     @Delete
     void delete(WordModel wordModel);

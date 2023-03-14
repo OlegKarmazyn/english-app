@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
@@ -30,6 +31,7 @@ import solid.icon.english.user_line.studying.StudyActivity;
 public class UserLevel extends ActivityGlobal {
 
     RecyclerView recyclerView;
+    RelativeLayout loading_layout;
     String[] name_topic;
     String chosenTopics;
     final Context context = this;
@@ -43,6 +45,7 @@ public class UserLevel extends ActivityGlobal {
         subTopicDao = App.getInstance().getDatabase().subTopicDao();
         chosenTopics = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
         recyclerView = findViewById(R.id.recycleView);
+        loading_layout = findViewById(R.id.loading_layout);
 
         showActionBar(true, chosenTopics);
         setAdapter();
@@ -81,22 +84,35 @@ public class UserLevel extends ActivityGlobal {
     }
 
     private void updateSubTopics() {
-        LocalOperation localOperation = new LocalOperation();
-        for (String sub : name_topic) {
-            localOperation.deleteSubTopic(chosenTopics, sub);
-        }
+//        LocalOperation localOperation = new LocalOperation();
+//        for (String sub : name_topic) {
+//            localOperation.deleteSubTopic(chosenTopics, sub);
+//        }
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
-        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName, this::setDataToUserAdapter);
-        Toasty.info(context, "Loading...").show();
+        if (topicModel.topicsKey == null)
+            return;
+
+        setLoadingVisible(true);
+        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName, () -> {
+            setLoadingVisible(false);
+            setDataToUserAdapter();
+        });
     }
 
-    private void goToStudy(){
+    private void goToStudy() {
         Intent intent = new Intent(context, StudyActivity.class);
         intent.putExtra(ActivityGlobal.KeysExtra.level.name(), chosenTopics); //topics
         intent.putExtra(ActivityGlobal.KeysExtra.isSubTest.name(), true);
         intent.putExtra(ActivityGlobal.KeysExtra.title.name(), "Testing"); //title (subTopics)
         context.startActivity(intent);
         overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+    }
+
+    private void setLoadingVisible(boolean isLoading) {
+        if (isLoading)
+            loading_layout.setVisibility(View.VISIBLE);
+        else
+            loading_layout.setVisibility(View.GONE);
     }
 
     @Override

@@ -3,6 +3,7 @@ package solid.icon.english.architecture.room;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -23,11 +24,8 @@ public interface TopicModelDao {
     @Query("SELECT * FROM TopicModel WHERE topicsKey = :topicsKey")
     TopicModel getByTopicsKey(String topicsKey);
 
-    @Insert
-    void insert(TopicModel TopicModel);
-
-    @Update
-    void update(TopicModel TopicModel);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void upsert(TopicModel TopicModel);
 
     @Delete
     void delete(TopicModel TopicModel);

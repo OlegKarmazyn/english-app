@@ -15,7 +15,7 @@ class TopicsOperation {
             val topicModelDao = App.getInstance().database.topicModelDao()
             val topicModel = topicModelDao!!.getByTopicsName(topicsName)
             topicModel.topicsKey = dbRef.key
-            topicModelDao.update(topicModel)
+            topicModelDao.upsert(topicModel)
             dbRef.child("topicsName").setValue(topicsName)
             dbRef.child("email").setValue(email)
         }

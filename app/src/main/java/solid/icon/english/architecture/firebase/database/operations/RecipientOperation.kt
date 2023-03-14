@@ -32,11 +32,14 @@ class RecipientOperation {
     }
 
     private fun insertNewSubTopics(topicsName: String, subTopicsName: String) {
-        val subTopicDao = App.getInstance().database.subTopicDao()
-        val subTopicModel = SubTopicModel()
+        val subTopicDao = App.getInstance().database.subTopicDao()!!
+        var subTopicModel = subTopicDao.getByNames(topicsName, subTopicsName)
+        if (subTopicModel == null)
+            subTopicModel = SubTopicModel()
+
         subTopicModel.topicsName = topicsName
         subTopicModel.subTopicsName = subTopicsName
-        subTopicDao!!.insert(subTopicModel)
+        subTopicDao.upsert(subTopicModel)
     }
 
     private fun getWords(topicsName: String, subTopicsName: String, dataSnapshot: DataSnapshot) {
@@ -49,14 +52,18 @@ class RecipientOperation {
         }
     }
 
-    private val wordModelDao = App.getInstance().database.wordModelDao()
+    private val wordModelDao = App.getInstance().database.wordModelDao()!!
     private fun insertNewWordModel(topicsName: String, subTopicsName: String, wordFB: WordFB) {
-        val wordModel = WordModel()
+        var wordModel =
+            wordModelDao.getWordModelByName(wordFB.englishWord, subTopicsName, topicsName)
+        if (wordModel == null)
+            wordModel = WordModel()
+
         wordModel.topicName = topicsName
         wordModel.subTopicName = subTopicsName
         wordModel.englishWord = wordFB.englishWord
         wordModel.rusWord = wordFB.rusWord
         wordModel.definition = wordFB.definition
-        wordModelDao?.insert(wordModel)
+        wordModelDao.upsert(wordModel)
     }
 }

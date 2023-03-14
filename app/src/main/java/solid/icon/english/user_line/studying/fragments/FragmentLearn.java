@@ -186,7 +186,7 @@ public class FragmentLearn extends UserFragmentActivity {
                         wordModel.definition = definition;
                         wordModel.topicName = topic;
                         wordModel.subTopicName = subTopic;
-                        wordModelDao.insert(wordModel);
+                        wordModelDao.upsert(wordModel);
                         wordModelList.add(wordModel);
                         moveDataFB(englishWord, russianWord, definition);
                     } else {
@@ -328,7 +328,7 @@ public class FragmentLearn extends UserFragmentActivity {
             wordModel.englishWord = englishWord.getText().toString().trim();
             wordModel.rusWord = russianWord.getText().toString().trim();
             wordModel.definition = definition.getText().toString().trim();
-            wordModelDao.update(wordModel);
+            wordModelDao.upsert(wordModel);
             closeMenu();
             updateDataFB(previousName, wordModel.englishWord, wordModel.rusWord, wordModel.definition);
             studyActivity.setDateToActivity();

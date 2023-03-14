@@ -109,7 +109,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
             TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
             topicModel.isCheck = isChecked;
-            topicModelDao.update(topicModel);
+            topicModelDao.upsert(topicModel);
             isCheckArray[position] = isChecked;
 
             if (isChecked) {
@@ -227,7 +227,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void insertNewTopics(TopicModel topicModel) {
-        topicModelDao.insert(topicModel);
+        topicModelDao.upsert(topicModel);
     }
 
     private void insertNewTopics(String topicsName, String country) {
@@ -235,7 +235,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         topicModel.topicsName = topicsName;
         topicModel.country = country;
         topicModel.topicsKey = null; //empty!
-        topicModelDao.insert(topicModel);
+        topicModelDao.upsert(topicModel);
     }
 
 
@@ -284,6 +284,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void postFB(String topicsName) {
+        if (preferencesOperations.getEmail() == null) {
+            Toasty.warning(context, "You can post topic after registration").show();
+            return;
+        }
         if (preferencesOperations.getAllowedTopics() > 0) {
             firebaseOperation.postData(topicsName);
             Toasty.info(context, "Sending data in process...").show();

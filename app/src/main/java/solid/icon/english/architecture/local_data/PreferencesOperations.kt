@@ -1,5 +1,6 @@
 package solid.icon.english.architecture.local_data
 
+import android.util.Log
 import androidx.preference.PreferenceManager
 import solid.icon.english.architecture.gpt.GPT
 import solid.icon.english.architecture.room.App
@@ -55,6 +56,7 @@ class PreferencesOperations {
 
     fun decreaseAllowedTopics(number: Int = 1) {
         val sharedNum = preferences.getInt(Keys.ALLOWED_TOPICS.key, 0)
+        Log.e("sharedNum", sharedNum.toString())
         editor.putInt(Keys.ALLOWED_TOPICS.key, sharedNum - number)
         editor.apply()
     }

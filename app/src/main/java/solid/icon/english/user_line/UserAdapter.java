@@ -188,7 +188,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 subTopicModel = new SubTopicModel();
                 subTopicModel.topicsName = userLevel.chosenTopics;
                 subTopicModel.subTopicsName = subTopicsName;
-                subTopicDao.insert(subTopicModel);
+                subTopicDao.upsert(subTopicModel);
                 moveDataFB(userLevel.chosenTopics, subTopicsName);
             } else {
                 Toasty.error(context, "\"" + subTopicsName + "\"" + " already exists").show();

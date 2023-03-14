@@ -3,6 +3,7 @@ package solid.icon.english.architecture.room;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -26,11 +27,8 @@ public interface SubTopicDao {
     @Query("DELETE FROM SubTopicModel WHERE topicsName = :topicsName")
     void deleteWhere(String topicsName);
 
-    @Insert
-    void insert(SubTopicModel subTopicModel);
-
-    @Update
-    void update(SubTopicModel subTopicModel);
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void upsert(SubTopicModel subTopicModel);
 
     @Delete
     void delete(SubTopicModel subTopicModel);
