@@ -113,7 +113,7 @@ public class UserLevel extends ActivityGlobal {
     }
 
     private void uploadSubTopics() {
-        new FirebaseOperation().postData(chosenTopics);
+        new FirebaseOperation().uploadDate(chosenTopics);
         Toasty.info(context, "Sending data ✓").show();
     }
 

@@ -16,22 +16,28 @@ class SenderOperation(private val firebaseOperation: FirebaseOperation) {
         }
     }
 
-    private fun postTopic(topicsName: String){
+    private fun postTopic(topicsName: String) {
         firebaseOperation.moveTopics(topicsName)
         postSubTopics(topicsName)
     }
 
-    private fun postSubTopics(topicsName: String){
+    fun uploadAllData(topicsName: String) {
+        GlobalScope.launch {
+            postSubTopics(topicsName)
+        }
+    }
+
+    private fun postSubTopics(topicsName: String) {
         val list = subTopicDao?.getAllByTopicsName(topicsName)
-        for(element in list!!){
+        for (element in list!!) {
             firebaseOperation.moveSubTopics(topicsName, element.subTopicsName)
             postWords(topicsName, element.subTopicsName)
         }
     }
 
-    private fun postWords(topicsName: String, subTopName: String){
+    private fun postWords(topicsName: String, subTopName: String) {
         val list = wordModelDao?.getAllBySubTopicsName(subTopName, topicsName)
-        for(element in list!!){
+        for (element in list!!) {
             val wordFB = WordFB()
             wordFB.rusWord = element.rusWord
             wordFB.englishWord = element.englishWord

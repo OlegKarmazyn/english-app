@@ -15,7 +15,6 @@ class FirebaseOperation {
 
     companion object {
         private const val TAG = "FirebaseOperation"
-        private var email: String? = PreferencesOperations().getEmail()
     }
 
     private val topicsOperation = TopicsOperation()
@@ -23,6 +22,7 @@ class FirebaseOperation {
     private val wordsOperation = WordsOperation()
     private val recipientOperation = RecipientOperation()
     private val senderOperation = SenderOperation(this)
+    private var email: String? = PreferencesOperations().getEmail()
 
     /* --------------get permission to change data if owner of it------------------- */
     private fun getPathIfAllowed(topicsName: String, listener: OnGetDataListener) {
@@ -49,10 +49,10 @@ class FirebaseOperation {
         val arr = s.split("").toTypedArray()
         var key = ""
         for (ch in arr) {
-            if (ch == "." || ch == "#" || ch == "$" || ch == "[" || ch == "]") {
-                key += "_"
+            key += if (ch == "." || ch == "#" || ch == "$" || ch == "[" || ch == "]") {
+                "_"
             } else {
-                key += ch
+                ch
             }
         }
         return key
@@ -91,8 +91,15 @@ class FirebaseOperation {
         senderOperation.postAllData(topicsName)
     }
 
+    fun uploadDate(topicsName: String){
+        getPathIfAllowed(topicsName) {
+            senderOperation.uploadAllData(topicsName)
+        }
+    }
+
     /* ------------------------------------Topics---------------------------- */
     fun moveTopics(topicsName: String) {
+        Log.e(TAG, "moveTopics: email - $email")
         email?.let { topicsOperation.moveTopics(topicsName, it) }
     }
 
