@@ -118,7 +118,7 @@ public class StudyActivity extends ActivityGlobal {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setTitle("GPT-bot can help");
-            builder.setMessage("Just click \"DEFINITION\" and bot give it");
+            builder.setMessage("Just click \"DEFINITION\" and bot will give it");
 
             builder.setView(linearLayout);
 

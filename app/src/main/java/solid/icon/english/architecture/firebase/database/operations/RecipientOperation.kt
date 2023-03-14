@@ -1,6 +1,5 @@
 package solid.icon.english.architecture.firebase.database.operations
 
-import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import solid.icon.english.architecture.firebase.database.WordFB
 import solid.icon.english.architecture.firebase.database.interfaces.OnSuccessListener

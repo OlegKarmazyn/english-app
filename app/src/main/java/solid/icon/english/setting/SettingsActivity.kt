@@ -58,7 +58,7 @@ class SettingsActivity : ActivityGlobal() {
                     loading_layout.isVisible = false
                     if (it) {
                         viewModel.saveEmail(getEmail()!!)
-                        Toasty.success(context, "Log in - done").show()
+                        Toasty.success(context, "Logged in").show()
                     }
                 })
         }
@@ -69,7 +69,7 @@ class SettingsActivity : ActivityGlobal() {
                 etEmail.setText("")
                 etPassword.setText("")
                 viewModel.saveEmail("")
-                Toasty.success(context, "Log out - done").show()
+                Toasty.success(context, "Logged out").show()
             }
         }
     }

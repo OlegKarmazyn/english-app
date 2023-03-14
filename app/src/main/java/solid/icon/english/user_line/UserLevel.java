@@ -22,7 +22,6 @@ import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
-import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
@@ -86,10 +85,6 @@ public class UserLevel extends ActivityGlobal {
     }
 
     private void updateSubTopics() {
-//        LocalOperation localOperation = new LocalOperation();
-//        for (String sub : name_topic) {
-//            localOperation.deleteSubTopic(chosenTopics, sub);
-//        }
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
         if (topicModel.topicsKey == null)
             return;
@@ -145,6 +140,4 @@ public class UserLevel extends ActivityGlobal {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
 }

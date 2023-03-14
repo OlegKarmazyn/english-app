@@ -286,15 +286,15 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     private void postFB(String topicsName) {
         if (preferencesOperations.getEmail() == null) {
-            Toasty.warning(context, "You can post topic after registration").show();
+            Toasty.warning(context, "You can post topics after registration").show();
             return;
         }
         if (preferencesOperations.getAllowedTopics() > 0) {
-            firebaseOperation.postData(topicsName);
             Toasty.info(context, "Sending data ✓").show();
             preferencesOperations.decreaseAllowedTopics(1);
+            firebaseOperation.postData(topicsName);
         } else {
-            Toasty.warning(context, "You can share limited topics").show();
+            Toasty.warning(context, "You can share limited amount of topics").show();
         }
     }
 }
