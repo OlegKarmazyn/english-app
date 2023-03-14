@@ -71,8 +71,9 @@ class PreferencesOperations {
         }
     }
 
-    fun decreaseGptCalls(){
+    fun decreaseGptCalls() {
         val sharedNum = preferences.getInt(currentDateKey, 0)
+        Log.d("decreaseGptCalls", "$sharedNum minus 1 = ${sharedNum - 1}")
         editor.putInt(Keys.ALLOWED_TOPICS.key, sharedNum - 1)
         editor.apply()
     }
@@ -90,7 +91,7 @@ class PreferencesOperations {
         editor.apply()
     }
 
-    fun getGptDescription() : Boolean{
+    fun getGptDescription(): Boolean {
         return preferences.getBoolean(Keys.GPT_DESCRIPTION.key, false)
     }
 

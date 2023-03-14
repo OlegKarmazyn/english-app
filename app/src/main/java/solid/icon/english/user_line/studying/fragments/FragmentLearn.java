@@ -359,6 +359,10 @@ public class FragmentLearn extends UserFragmentActivity {
     public void proposeDefinition() {
         String eng = englishWord.getText().toString().trim();
         String trl = russianWord.getText().toString().trim();
+        if (new PreferencesOperations().getEmail() == null) {
+            Toasty.warning(context, "You can use this after registration").show();
+            return;
+        }
         if (new PreferencesOperations().getGptCalls() == 0) {
             Toasty.warning(context, "your free daily limit is over").show();
             return;
