@@ -3,26 +3,23 @@ package solid.icon.english.main_adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
-import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHolder> {
 
@@ -30,9 +27,9 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
     String[] titlesArray;
     boolean[] isCheckArray;
     MainActivity mainActivity;
-    private ActivityGlobal.LessonsName[] lessonsNames = ActivityGlobal.LessonsName.values();
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    private final ActivityGlobal.LessonsName[] lessonsNames = ActivityGlobal.LessonsName.values();
 
     public AdapterLevels(Context context, String[] titlesArray, MainActivity mainActivity) {
         this.context = context;
@@ -44,10 +41,9 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
     }
 
     private void getIsCheckArray() {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         boolean[] isCheckArray = new boolean[lessonsNames.length];
         for (int i = 0; i < lessonsNames.length; i++) {
-            isCheckArray[i] = sharedPreferences.getBoolean(lessonsNames[i].name(), false);
+            isCheckArray[i] = preferences.getBoolean(lessonsNames[i].name(), false);
         }
         this.isCheckArray = isCheckArray;
     }
@@ -60,6 +56,7 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         return new MyViewHolder(view);
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.title.setText(titlesArray[position]);
@@ -80,38 +77,26 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         }
 
 
-        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            editor.putBoolean(lessonsNames[position].name(), isChecked);
+            editor.apply();
 
-                editor.putBoolean(lessonsNames[position].name(), isChecked);
-                editor.apply();
-
-                if (isChecked) {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                } else {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                }
-
+            if (isChecked) {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
             }
         });
 
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, EnglishLevel.class);
-                if (position == 0) {
-                    intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.A2);
-                } else if (position == 1) {
-                    intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B1);
-                } else if (position == 2) {
-                    intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), ActivityGlobal.LessonsName.B2);
-                }
-                Log.e("position = ", String.valueOf(position));
-
-                context.startActivity(intent);
-                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-            }
+        holder.constraintLayout.setOnClickListener(v -> {
+            Toasty.error(context, "This part in developing").show();
+            // TODO: 15.03.2023 redone all resources with word
+//            Intent intent = new Intent(context, EnglishLevel.class);
+//            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), lessonsNames[position].name());
+//            Log.e("lessonsNames", lessonsNames[position].name());
+//
+//            context.startActivity(intent);
+//            mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
         });
 
     }
