@@ -121,10 +121,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         holder.constraintLayout.setOnClickListener(v -> {
             if (position != size) {
-
+                TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
                 Intent intent = new Intent(context, UserLevel.class);
                 intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
-                intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position);
+                intent.putExtra(ActivityGlobal.KeysExtra.topicsKey.name(), topicModel.topicsKey);
                 context.startActivity(intent);
                 mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
 

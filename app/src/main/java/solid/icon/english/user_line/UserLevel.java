@@ -35,6 +35,7 @@ public class UserLevel extends ActivityGlobal {
     RelativeLayout loading_layout;
     String[] name_topic;
     String chosenTopics;
+    String topicsKey;
     final Context context = this;
     SubTopicDao subTopicDao;
 
@@ -45,6 +46,7 @@ public class UserLevel extends ActivityGlobal {
 
         subTopicDao = App.getInstance().getDatabase().subTopicDao();
         chosenTopics = getIntent().getStringExtra(String.valueOf(KeysExtra.level));
+        topicsKey = getIntent().getStringExtra(String.valueOf(KeysExtra.topicsKey));
         recyclerView = findViewById(R.id.recycleView);
         loading_layout = findViewById(R.id.loading_layout);
 
@@ -84,19 +86,6 @@ public class UserLevel extends ActivityGlobal {
         recyclerView.animate().alpha(1f);
     }
 
-    private void downloadSubTopics() {
-        TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
-        if (topicModel.topicsKey == null)
-            return;
-
-        setLoadingVisible(true);
-        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName, () -> {
-            setLoadingVisible(false);
-            setDataToUserAdapter();
-            Toasty.success(context, getString(R.string.data_uptodata)).show();
-        });
-    }
-
     private void goToTestActivity() {
         Intent intent = new Intent(context, StudyActivity.class);
         intent.putExtra(ActivityGlobal.KeysExtra.level.name(), chosenTopics); //topics
@@ -113,14 +102,33 @@ public class UserLevel extends ActivityGlobal {
             loading_layout.setVisibility(View.GONE);
     }
 
+    private void downloadSubTopics() {
+        TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
+        if (topicModel.topicsKey == null)
+            return;
+
+        setLoadingVisible(true);
+        new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName, () -> {
+            setLoadingVisible(false);
+            setDataToUserAdapter();
+            Toasty.success(context, getString(R.string.data_uptodata)).show();
+        });
+    }
+
     private void uploadSubTopics() {
-        new FirebaseOperation().uploadDate(chosenTopics);
-        Toasty.success(context, getString(R.string.successfully_uploaded)).show();
+        new FirebaseOperation().uploadDate(chosenTopics, () -> {
+            Toasty.success(context, getString(R.string.successfully_uploaded)).show();
+        });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.sub_menu, menu);
+        //hide download and upload buttons
+        if (topicsKey == null){
+            menu.getItem(1).setVisible(false);
+            menu.getItem(2).setVisible(false);
+        }
         return true;
     }
 

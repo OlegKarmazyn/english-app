@@ -8,6 +8,7 @@ import com.google.firebase.database.ValueEventListener
 import solid.icon.english.architecture.firebase.database.WordFB
 import solid.icon.english.architecture.firebase.database.interfaces.GetTopicsModelListener
 import solid.icon.english.architecture.firebase.database.interfaces.OnGetDataListener
+import solid.icon.english.architecture.firebase.database.interfaces.OnSuccessListener
 import solid.icon.english.architecture.local_data.PreferencesOperations
 import solid.icon.english.architecture.room.TopicModel
 
@@ -91,10 +92,11 @@ class FirebaseOperation {
         senderOperation.postAllData(topicsName)
     }
 
-    fun uploadDate(topicsName: String){
+    fun uploadDate(topicsName: String, onSuccessListener: OnSuccessListener){
         getPathIfAllowed(topicsName) {
             subTopicsOperation.deleteSubTopicsNames(it)
             senderOperation.uploadAllData(topicsName)
+            onSuccessListener.onSuccess()
         }
     }
 
