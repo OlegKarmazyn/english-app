@@ -14,6 +14,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -183,6 +184,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         alert.setPositiveButton(R.string.add, (dialog, whichButton) -> {
             String subTopicsName = editText.getText().toString().trim();
+            if(subTopicsName.isEmpty()){
+                Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
+                return;
+            }
+
             SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, subTopicsName);
             if (subTopicModel == null) {
                 subTopicModel = new SubTopicModel();
@@ -210,6 +216,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         alert.setTitle(R.string.delete_subTopic);
         alert.setPositiveButton(R.string.yes, (dialog, which) -> {
+            String toastText = "\"" + titlesArray[position] + "\" deleted";
+            Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteSubTopic(userLevel.chosenTopics, titlesArray[position]);
             deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
             userLevel.setDataToUserAdapter();

@@ -17,5 +17,6 @@
     <string name="can_post_after_registration">You can post topics after registration</string>
     <string name="limited_amount_of_topics">You can share limited amount of topics</string>
     <string name="this_part_in_developing">This part in developing</string>
+    <string name="name_filed_is_empty">Name field is empty</string>
 
 </resources>

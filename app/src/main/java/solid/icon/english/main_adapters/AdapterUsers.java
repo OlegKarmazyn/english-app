@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -201,6 +202,11 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             String topicsName = etName.getText().toString().trim();
             dialog.dismiss();
 
+            if(topicsName.isEmpty()){
+                Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
+                return;
+            }
+
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
                 getDataFB(topicsName, spinner.getSelectedItem().toString());
             } else {
@@ -253,6 +259,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         alert.setView(editText);
 
         alert.setNeutralButton("Delete", (dialog, which) -> {
+            String toastText = "\"" + topicModel.topicsName + "\" deleted";
+            Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteTopic(topicModel.topicsName);
             mainActivity.setDataToUserAdapter();
             deleteDataFB(titlesArray[position]);
