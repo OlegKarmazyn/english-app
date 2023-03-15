@@ -78,20 +78,20 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registration allows you to:"
+            android:text="@string/registration_allows_you_to"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvAllowedTopics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="- share one topic" />
+            android:text="@string/share_tree_topics" />
 
         <TextView
             android:id="@+id/tvGptCalls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="- call gpt-helper 20 times per day" />
+            android:text="@string/call_gpt_helper_20_times_per_day" />
     </LinearLayout>
 
 

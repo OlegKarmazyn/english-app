@@ -11,6 +11,10 @@
         <item>es</item>
     </string-array>
 
+    <string name="registration_allows_you_to">Registration allows you to:</string>
+    <string name="share_tree_topics">- share tree topics</string>
+    <string name="call_gpt_helper_20_times_per_day">- call gpt-helper 20 times per day</string>
+
 
     <string name="app_name">English VS</string>
     <string name="a2_tema_0">00 Вводный урок</string>
@@ -66,57 +70,57 @@
     <string name="a2_tema_50">50 Your universe</string>
 
     <string-array name="topics_name_a2">
-    <item>00 Вводный урок</item>
-    <item>01 Friends</item>
-    <item>02 Mates</item>
-    <item>03 Modern devices and appliances</item>
-    <item>04 More about tech</item>
-    <item>05 Holidays</item>
-    <item>06 Other celebrations</item>
-    <item>07 Special occasions</item>
-    <item>08 Special events</item>
-    <item>09 Social networking</item>
-    <item>10 Socializing</item>
-    <item>11 Day off</item>
-    <item>12 A day to relax</item>
-    <item>13 Travel ideas</item>
-    <item>14 More about travel</item>
-    <item>15 Ecology and Environment</item>
-    <item>16 Environment and nature</item>
-    <item>17 Lifestyle</item>
-    <item>18 Style of living</item>
-    <item>19 Relationships</item>
-    <item>20 More about relationships</item>
-    <item>21 Stages</item>
-    <item>22 Step by step</item>
-    <item>23 Cinema and movies</item>
-    <item>24 More about cinema</item>
-    <item>25 Media</item>
-    <item>26 Other news</item>
-    <item>27 The best job</item>
-    <item>28 Working</item>
-    <item>29 Look to the future</item>
-    <item>30 Future and fate</item>
-    <item>31 Health Matters</item>
-    <item>32 Getting healthy</item>
-    <item>33 Places</item>
-    <item>34 Other places</item>
-    <item>35 Love and trust</item>
-    <item>36 Love and romance</item>
-    <item>37 Music</item>
-    <item>38 More about music</item>
-    <item>39 Modern society</item>
-    <item>40 People and society</item>
-    <item>41 Houses and homes</item>
-    <item>42 Is house a home?</item>
-    <item>43 The marketplace</item>
-    <item>44 Market or supermarket</item>
-    <item>45 Money</item>
-    <item>46 It’s all about money</item>
-    <item>47 Fame and Success</item>
-    <item>48 Celebrity overnight</item>
-    <item>49 Ideal World</item>
-    <item>50 Your universe</item>
+        <item>00 Вводный урок</item>
+        <item>01 Friends</item>
+        <item>02 Mates</item>
+        <item>03 Modern devices and appliances</item>
+        <item>04 More about tech</item>
+        <item>05 Holidays</item>
+        <item>06 Other celebrations</item>
+        <item>07 Special occasions</item>
+        <item>08 Special events</item>
+        <item>09 Social networking</item>
+        <item>10 Socializing</item>
+        <item>11 Day off</item>
+        <item>12 A day to relax</item>
+        <item>13 Travel ideas</item>
+        <item>14 More about travel</item>
+        <item>15 Ecology and Environment</item>
+        <item>16 Environment and nature</item>
+        <item>17 Lifestyle</item>
+        <item>18 Style of living</item>
+        <item>19 Relationships</item>
+        <item>20 More about relationships</item>
+        <item>21 Stages</item>
+        <item>22 Step by step</item>
+        <item>23 Cinema and movies</item>
+        <item>24 More about cinema</item>
+        <item>25 Media</item>
+        <item>26 Other news</item>
+        <item>27 The best job</item>
+        <item>28 Working</item>
+        <item>29 Look to the future</item>
+        <item>30 Future and fate</item>
+        <item>31 Health Matters</item>
+        <item>32 Getting healthy</item>
+        <item>33 Places</item>
+        <item>34 Other places</item>
+        <item>35 Love and trust</item>
+        <item>36 Love and romance</item>
+        <item>37 Music</item>
+        <item>38 More about music</item>
+        <item>39 Modern society</item>
+        <item>40 People and society</item>
+        <item>41 Houses and homes</item>
+        <item>42 Is house a home?</item>
+        <item>43 The marketplace</item>
+        <item>44 Market or supermarket</item>
+        <item>45 Money</item>
+        <item>46 It’s all about money</item>
+        <item>47 Fame and Success</item>
+        <item>48 Celebrity overnight</item>
+        <item>49 Ideal World</item>
+        <item>50 Your universe</item>
     </string-array>
 
 
@@ -173,57 +177,57 @@
     <string name="b1_tema_50">50 Hitting the books</string>
 
     <string-array name="topics_name_b1">
-    <item>00 Вводный урок</item>
-    <item>01 Likes and Dislikes</item>
-    <item>02 Loves &amp; hates</item>
-    <item>03 The world around you</item>
-    <item>04 Ou surroundings</item>
-    <item>05 Keping up-to-date</item>
-    <item>06 Staying modern</item>
-    <item>07 Dating</item>
-    <item>08 Romances</item>
-    <item>09 Sports you’ve tried</item>
-    <item>10 Working out</item>
-    <item>11 Money Matters</item>
-    <item>12 Money again</item>
-    <item>13 Crime</item>
-    <item>14 Crime and punishment</item>
-    <item>15 Natural disasters</item>
-    <item>16 Other catastrophes</item>
-    <item>17 Parties</item>
-    <item>18 Party hard</item>
-    <item>19 Modern morals</item>
-    <item>20 Moral rules</item>
-    <item>21 Silver screen</item>
-    <item>22 TV</item>
-    <item>23 Cinema</item>
-    <item>24 Cinemania</item>
-    <item>25 News</item>
-    <item>26 News updates</item>
-    <item>27 Beauty and Health</item>
-    <item>28 Beauty secrets</item>
-    <item>29 Social Issues</item>
-    <item>30 Society problems</item>
-    <item>31 Challenge</item>
-    <item>32 Going to the aim</item>
-    <item>33 Age</item>
-    <item>34 Time flies</item>
-    <item>35 Jobs</item>
-    <item>36 Careers</item>
-    <item>37 Opinions</item>
-    <item>38 Other points of view</item>
-    <item>39 Shops and shoppers</item>
-    <item>40 Shopping around</item>
-    <item>41 Music Universe</item>
-    <item>42 Into the music</item>
-    <item>43 Free time</item>
-    <item>44 Leisure</item>
-    <item>45 Entertainment</item>
-    <item>46 Ways to entertain</item>
-    <item>47 Advertising</item>
-    <item>48 Commercials</item>
-    <item>49 Learning</item>
-    <item>50 Hitting the books</item>
+        <item>00 Вводный урок</item>
+        <item>01 Likes and Dislikes</item>
+        <item>02 Loves &amp; hates</item>
+        <item>03 The world around you</item>
+        <item>04 Ou surroundings</item>
+        <item>05 Keping up-to-date</item>
+        <item>06 Staying modern</item>
+        <item>07 Dating</item>
+        <item>08 Romances</item>
+        <item>09 Sports you’ve tried</item>
+        <item>10 Working out</item>
+        <item>11 Money Matters</item>
+        <item>12 Money again</item>
+        <item>13 Crime</item>
+        <item>14 Crime and punishment</item>
+        <item>15 Natural disasters</item>
+        <item>16 Other catastrophes</item>
+        <item>17 Parties</item>
+        <item>18 Party hard</item>
+        <item>19 Modern morals</item>
+        <item>20 Moral rules</item>
+        <item>21 Silver screen</item>
+        <item>22 TV</item>
+        <item>23 Cinema</item>
+        <item>24 Cinemania</item>
+        <item>25 News</item>
+        <item>26 News updates</item>
+        <item>27 Beauty and Health</item>
+        <item>28 Beauty secrets</item>
+        <item>29 Social Issues</item>
+        <item>30 Society problems</item>
+        <item>31 Challenge</item>
+        <item>32 Going to the aim</item>
+        <item>33 Age</item>
+        <item>34 Time flies</item>
+        <item>35 Jobs</item>
+        <item>36 Careers</item>
+        <item>37 Opinions</item>
+        <item>38 Other points of view</item>
+        <item>39 Shops and shoppers</item>
+        <item>40 Shopping around</item>
+        <item>41 Music Universe</item>
+        <item>42 Into the music</item>
+        <item>43 Free time</item>
+        <item>44 Leisure</item>
+        <item>45 Entertainment</item>
+        <item>46 Ways to entertain</item>
+        <item>47 Advertising</item>
+        <item>48 Commercials</item>
+        <item>49 Learning</item>
+        <item>50 Hitting the books</item>
     </string-array>
 
     <string-array name="topics_name_b2">

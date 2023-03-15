@@ -194,6 +194,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+        spinner.setEnabled(false);
 
         tvAdd.setOnClickListener(v -> {
             EditText etName = dialog.findViewById(R.id.etName);
