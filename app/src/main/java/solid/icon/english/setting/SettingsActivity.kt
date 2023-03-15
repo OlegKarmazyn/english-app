@@ -58,7 +58,7 @@ class SettingsActivity : ActivityGlobal() {
                     loading_layout.isVisible = false
                     if (it) {
                         viewModel.saveEmail(getEmail()!!)
-                        Toasty.success(context, "Logged in").show()
+                        Toasty.success(context, getString(R.string.logged_in)).show()
                     }
                 })
         }
@@ -69,7 +69,7 @@ class SettingsActivity : ActivityGlobal() {
                 etEmail.setText("")
                 etPassword.setText("")
                 viewModel.saveEmail("")
-                Toasty.success(context, "Logged out").show()
+                Toasty.success(context, getString(R.string.logged_out)).show()
             }
         }
     }
@@ -77,7 +77,7 @@ class SettingsActivity : ActivityGlobal() {
     private fun getEmail(): String? {
         val email = etEmail.text.toString().trim()
         return email.ifBlank {
-            Toasty.error(context, "Email field is empty").show()
+            Toasty.error(context, getString(R.string.email_field_is_empty)).show()
             null
         }
     }
@@ -85,7 +85,7 @@ class SettingsActivity : ActivityGlobal() {
     private fun getPassword(): String? {
         val email = etPassword.text.toString().trim()
         return email.ifBlank {
-            Toasty.error(context, "Password field is empty").show()
+            Toasty.error(context, getString(R.string.password_field_is_empty)).show()
             null
         }
     }

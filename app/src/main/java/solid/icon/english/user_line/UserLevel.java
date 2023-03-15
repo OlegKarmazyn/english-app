@@ -84,7 +84,7 @@ public class UserLevel extends ActivityGlobal {
         recyclerView.animate().alpha(1f);
     }
 
-    private void updateSubTopics() {
+    private void downloadSubTopics() {
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
         if (topicModel.topicsKey == null)
             return;
@@ -93,10 +93,11 @@ public class UserLevel extends ActivityGlobal {
         new RecipientOperation().getAllData(topicModel.topicsKey, topicModel.topicsName, () -> {
             setLoadingVisible(false);
             setDataToUserAdapter();
+            Toasty.success(context, getString(R.string.data_uptodata)).show();
         });
     }
 
-    private void goToStudy() {
+    private void goToTestActivity() {
         Intent intent = new Intent(context, StudyActivity.class);
         intent.putExtra(ActivityGlobal.KeysExtra.level.name(), chosenTopics); //topics
         intent.putExtra(ActivityGlobal.KeysExtra.isSubTest.name(), true);
@@ -114,7 +115,7 @@ public class UserLevel extends ActivityGlobal {
 
     private void uploadSubTopics() {
         new FirebaseOperation().uploadDate(chosenTopics);
-        Toasty.info(context, "Sending data ✓").show();
+        Toasty.success(context, getString(R.string.successfully_uploaded)).show();
     }
 
     @Override
@@ -128,13 +129,13 @@ public class UserLevel extends ActivityGlobal {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.download_data:
-                updateSubTopics();
+                downloadSubTopics();
                 return true;
             case R.id.upload_data:
                 uploadSubTopics();
                 return true;
             case R.id.test_subTopics:
-                goToStudy();
+                goToTestActivity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

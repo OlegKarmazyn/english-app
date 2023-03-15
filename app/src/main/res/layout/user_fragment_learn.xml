@@ -58,7 +58,7 @@
                     android:id="@+id/menu_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter info for create new word"
+                    android:text="@string/enter_info_to_create_new_word"
                     android:textColor="@android:color/black"
                     android:textSize="22sp"
                     android:textStyle="bold" />
@@ -71,7 +71,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="25dp"
                     android:gravity="center"
-                    android:hint="word or phrase"
+                    android:hint="@string/word_or_phrase"
                     android:textColor="@color/ios_blackText" />
 
                 <EditText
@@ -82,7 +82,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="25dp"
                     android:gravity="center"
-                    android:hint="translation"
+                    android:hint="@string/translation"
                     android:textColor="@color/ios_blackText" />
 
                 <EditText
@@ -93,7 +93,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginRight="25dp"
                     android:gravity="center"
-                    android:hint="definition (meaning)"
+                    android:hint="@string/definition_meaning"
                     android:textColor="@color/ios_blackText" />
 
                 <LinearLayout
@@ -111,7 +111,7 @@
                         android:background="@drawable/person_together"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Close"
+                        android:text="@string/cancel"
                         android:textColor="@android:color/black"
                         android:textSize="20dp" />
 
@@ -124,7 +124,7 @@
                         android:background="@drawable/person_together"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Create"
+                        android:text="@string/create"
                         android:textColor="@android:color/black"
                         android:textSize="20dp"
                         android:textStyle="bold" />

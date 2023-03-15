@@ -176,12 +176,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     public void showAddDialog() {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
         final EditText editText = new EditText(context);
-        alert.setTitle("Do you want to add topic?");
-        alert.setMessage("Enter name for topic");
+        alert.setTitle(R.string.add_subTopic);
+        alert.setMessage(R.string.enter_name_here);
 
         alert.setView(editText);
 
-        alert.setPositiveButton("Add", (dialog, whichButton) -> {
+        alert.setPositiveButton(R.string.add, (dialog, whichButton) -> {
             String subTopicsName = editText.getText().toString().trim();
             SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, subTopicsName);
             if (subTopicModel == null) {
@@ -196,7 +196,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             userLevel.setDataToUserAdapter();
         });
 
-        alert.setNegativeButton("Cancel", null);
+        alert.setNegativeButton(R.string.cancel, null);
 
         alert.show();
     }
@@ -208,8 +208,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     /*----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        alert.setTitle("Do you want to delete topic?");
-        alert.setPositiveButton("Yes", (dialog, which) -> {
+        alert.setTitle(R.string.delete_subTopic);
+        alert.setPositiveButton(R.string.yes, (dialog, which) -> {
             localOperation.deleteSubTopic(userLevel.chosenTopics, titlesArray[position]);
             deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
             userLevel.setDataToUserAdapter();

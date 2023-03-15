@@ -219,7 +219,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     private void getDataFB(String key, String country) {
         mainActivity.setLoadingVisible(true);
-        Toasty.info(context, "Loading...").show();
+        Toasty.info(context, context.getString(R.string.loading)).show();
         firebaseOperation.getTopicsWithAllData(key, topicModel -> {
             topicModel.country = country;
             insertNewTopics(topicModel);
@@ -245,7 +245,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     public void showDeleteDialog(int position) {
         TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
         AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        alert.setTitle("What do you want to do?");
+        alert.setTitle(R.string.what_do_you_want_to_do);
         EditText editText = new EditText(context);
         editText.setText(topicModel.topicsKey);
         editText.setHint("empty key");
@@ -264,7 +264,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
                 clipboard.setPrimaryClip(clip);
-                Toasty.success(context, "Key successfully copied").show();
+                Toasty.success(context, context.getString(R.string.successfully_copied)).show();
             });
         } else {
             alert.setPositiveButton("Post", ((dialog, which) -> postFB(topicModel.topicsName)));
@@ -275,10 +275,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     private void sharedKey(String key) {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "English VS: share key");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.english_share_key));
         String shareMessage = key + "\n";
         shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
-        context.startActivity(Intent.createChooser(shareIntent, "English VS: share key"));
+        context.startActivity(Intent.createChooser(shareIntent, context.getString(R.string.english_share_key)));
     }
 
     private void deleteDataFB(String topicsName) {
@@ -287,15 +287,15 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     private void postFB(String topicsName) {
         if (preferencesOperations.getEmail() == null) {
-            Toasty.warning(context, "You can post topics after registration").show();
+            Toasty.warning(context, context.getString(R.string.can_post_after_registration)).show();
             return;
         }
         if (preferencesOperations.getAllowedTopics() > 0) {
-            Toasty.info(context, "Sending data ✓").show();
+            Toasty.info(context, context.getString(R.string.successfully_uploaded)).show();
             preferencesOperations.decreaseAllowedTopics(1);
             firebaseOperation.postData(topicsName);
         } else {
-            Toasty.warning(context, "You can share limited amount of topics").show();
+            Toasty.warning(context, context.getString(R.string.limited_amount_of_topics)).show();
         }
     }
 }

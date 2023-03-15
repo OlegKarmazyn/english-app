@@ -163,9 +163,9 @@ public class FragmentLearn extends UserFragmentActivity {
                 }
 
                 private void setUpAddingMenu() {
-                    menu_title.setText("Enter info for create new word");
-                    but_no.setText("Definition");
-                    but_yes.setText("Create");
+                    menu_title.setText(R.string.enter_info_to_create_new_word);
+                    but_no.setText(R.string.definition);
+                    but_yes.setText(R.string.create);
                     but_no.setOnClickListener(v1 -> proposeDefinition());
                     but_yes.setOnClickListener(v1 -> combineData());
                 }
@@ -315,7 +315,7 @@ public class FragmentLearn extends UserFragmentActivity {
     private void setUpEditingMenu(int topicId) {
         appearMenu();
         WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[topicId], subTopic, topic);
-        String editingText = "Enter info for editing word";
+        String editingText = context.getString(R.string.Enter_info_to_edit);
         menu_title.setText(editingText);
         englishWord.setText(wordModel.englishWord);
         russianWord.setText(wordModel.rusWord);
@@ -360,23 +360,23 @@ public class FragmentLearn extends UserFragmentActivity {
         String eng = englishWord.getText().toString().trim();
         String trl = russianWord.getText().toString().trim();
         if (new PreferencesOperations().getEmail() == null) {
-            Toasty.warning(context, "You can use this after registration").show();
+            Toasty.warning(context, getString(R.string.use_after_registration)).show();
             return;
         }
         if (new PreferencesOperations().getGptCalls() == 0) {
-            Toasty.warning(context, "your free daily limit is over").show();
+            Toasty.warning(context, getString(R.string.your_free_daily_limit)).show();
             return;
         }
 
         if (!eng.isEmpty() && !trl.isEmpty()) {
-            Toasty.info(context, "Loading...").show();
+            Toasty.info(context, getString(R.string.loading)).show();
             new GPT().giveDefinition(eng, trl, response -> {
                 new Thread(() -> context.runOnUiThread(() -> {
                     definition.setText(response);
                 })).start();
             });
         } else {
-            Toasty.warning(context, "Empty field").show();
+            Toasty.warning(context, getString(R.string.empty_field)).show();
         }
     }
 

@@ -74,7 +74,7 @@ public class StudyActivity extends ActivityGlobal {
                     pager2.setCurrentItem(tab.getPosition());
                 } else {
                     tabLayout.selectTab(tabLayout.getTabAt(0));
-                    Toasty.warning(context, "List of words is empty").show();
+                    Toasty.warning(context, getString(R.string.list_of_words_is_empty)).show();
                 }
             }
 
@@ -113,16 +113,16 @@ public class StudyActivity extends ActivityGlobal {
             checkBox.setId(id);
             linearLayout.addView(checkBox);
             final TextView textView = new TextView(context);
-            textView.setText("don't show me again");
+            textView.setText(R.string.do_not_show_again);
             linearLayout.addView(textView);
 
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("GPT-bot can help");
-            builder.setMessage("Just click \"DEFINITION\" and bot will give it");
+            builder.setTitle(R.string.gpt_can_help);
+            builder.setMessage(R.string.click_to_get_definition_from_bot);
 
             builder.setView(linearLayout);
 
-            builder.setPositiveButton("Okay", (dialog, which) -> {
+            builder.setPositiveButton(R.string.okay, (dialog, which) -> {
                 if (checkBox.isChecked()) {
                     preferencesOperations.putGptDescription();
                 }
@@ -172,7 +172,7 @@ public class StudyActivity extends ActivityGlobal {
 
     private void defineWords() {
         if (sizeOfItems == 0) {
-            String message = "List of words is empty. Complete at least one SubTopic";
+            String message = getString(R.string.comlete_at_least_subtopic);
             Toasty.warning(context, message, Toasty.LENGTH_LONG).show();
         } else {
             Collections.shuffle(wordModelList);

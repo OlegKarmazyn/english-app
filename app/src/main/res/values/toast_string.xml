@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="successfully_uploaded">Successfully uploaded</string>
+    <string name="comlete_at_least_subtopic">List of words is empty. Complete at least one SubTopic</string>
+    <string name="list_of_words_is_empty">List of words is empty</string>
+    <string name="data_uptodata">Data is up-to-date</string>
+    <string name="use_after_registration">You can use this after registration</string>
+    <string name="your_free_daily_limit">your free daily limit is over</string>
+    <string name="empty_field">Empty field</string>
+    <string name="loading">Loading…</string>
+    <string name="list_definition_is_empty">List of definitions is empty</string>
+    <string name="logged_in">Logged in</string>
+    <string name="logged_out">Logged out</string>
+    <string name="email_field_is_empty">Email field is empty</string>
+    <string name="password_field_is_empty">Password field is empty</string>
+    <string name="successfully_copied">Successfully copied</string>
+    <string name="can_post_after_registration">You can post topics after registration</string>
+    <string name="limited_amount_of_topics">You can share limited amount of topics</string>
+
+</resources>

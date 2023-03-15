@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
-                android:text="Levels words"
+                android:text="@string/words_by_level"
                 android:textColor="@color/ios_blackText"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -43,7 +43,7 @@
                 android:layout_below="@+id/recycleView_levels"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="30dp"
-                android:text="Your words"
+                android:text="@string/your_words"
                 android:textColor="@color/ios_blackText"
                 android:textSize="24sp"
                 android:textStyle="bold" />

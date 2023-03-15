@@ -89,14 +89,15 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         });
 
         holder.constraintLayout.setOnClickListener(v -> {
-            Toasty.error(context, "This part in developing").show();
-            // TODO: 15.03.2023 redone all resources with word
-//            Intent intent = new Intent(context, EnglishLevel.class);
-//            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), lessonsNames[position].name());
-//            Log.e("lessonsNames", lessonsNames[position].name());
-//
-//            context.startActivity(intent);
-//            mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+            Toasty.info(context, "This part in developing").show();
+            // TODO: 15.03.2023 redone all resources with words
+            /*
+            Intent intent = new Intent(context, EnglishLevel.class);
+            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), lessonsNames[position].name());
+            Log.e("lessonsNames", lessonsNames[position].name());
+            context.startActivity(intent);
+            mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+            */
         });
 
     }

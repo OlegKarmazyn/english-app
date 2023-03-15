@@ -110,7 +110,7 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
             words1.setClickable(false);
             words2.setClickable(false);
             text_check.setClickable(false);
-            Toasty.warning(context, "List of definitions is empty").show();
+            Toasty.warning(context, getString(R.string.list_definition_is_empty)).show();
         }
     }
 

@@ -12,8 +12,30 @@
     </string-array>
 
     <string name="registration_allows_you_to">Registration allows you to:</string>
-    <string name="share_tree_topics">- share tree topics</string>
+    <string name="share_three_topics">- share three topics</string>
     <string name="call_gpt_helper_20_times_per_day">- call gpt-helper 20 times per day</string>
+    <string name="words_by_level">Words by level</string>
+    <string name="your_words">Your words</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="enter_name_of_topic">Enter name of topic</string>
+    <string name="add_subTopic">Do you want to add new subtopic?</string>
+    <string name="enter_name_here">Enter name here</string>
+    <string name="delete_subTopic">Do you want to delete subtopic?</string>
+    <string name="yes">Yes</string>
+    <string name="enter_info_to_create_new_word">Enter info to create new word</string>
+    <string name="word_or_phrase">word or phrase</string>
+    <string name="translation">translation</string>
+    <string name="definition_meaning">definition (meaning)</string>
+    <string name="create">Create</string>
+    <string name="Enter_info_to_edit">Enter info to edit the word</string>
+    <string name="do_not_show_again">don\'t show me again</string>
+    <string name="okay">Okay</string>
+    <string name="gpt_can_help">GPT-bot can help</string>
+    <string name="click_to_get_definition_from_bot">Just click \"DEFINITION\" and bot will give it</string>
+    <string name="definition">Definition</string>
+    <string name="what_do_you_want_to_do">What do you want to do?</string>
+    <string name="english_share_key">English VS: share key</string>
 
 
     <string name="app_name">English VS</string>
@@ -69,6 +91,58 @@
     <string name="a2_tema_49">49 Ideal World</string>
     <string name="a2_tema_50">50 Your universe</string>
 
+    <string name="b1_tema_0">00 Вводный урок</string>
+    <string name="b1_tema_1">01 Likes and Dislikes</string>
+    <string name="b1_tema_2">02 Loves &amp; hates</string>
+    <string name="b1_tema_3">03 The world around you</string>
+    <string name="b1_tema_4">04 Ou surroundings</string>
+    <string name="b1_tema_5">05 Keping up-to-date</string>
+    <string name="b1_tema_6">06 Staying modern</string>
+    <string name="b1_tema_7">07 Dating</string>
+    <string name="b1_tema_8">08 Romances</string>
+    <string name="b1_tema_9">09 Sports you’ve tried</string>
+    <string name="b1_tema_10">10 Working out</string>
+    <string name="b1_tema_11">11 Money Matters</string>
+    <string name="b1_tema_12">12 Money again</string>
+    <string name="b1_tema_13">13 Crime</string>
+    <string name="b1_tema_14">14 Crime and punishment</string>
+    <string name="b1_tema_15">15 Natural disasters</string>
+    <string name="b1_tema_16">16 Other catastrophes</string>
+    <string name="b1_tema_17">17 Parties</string>
+    <string name="b1_tema_18">18 Party hard</string>
+    <string name="b1_tema_19">19 Modern morals</string>
+    <string name="b1_tema_20">20 Moral rules</string>
+    <string name="b1_tema_21">21 Silver screen</string>
+    <string name="b1_tema_22">22 TV</string>
+    <string name="b1_tema_23">23 Cinema</string>
+    <string name="b1_tema_24">24 Cinemania</string>
+    <string name="b1_tema_25">25 News</string>
+    <string name="b1_tema_26">26 News updates</string>
+    <string name="b1_tema_27">27 Beauty and Health</string>
+    <string name="b1_tema_28">28 Beauty secrets</string>
+    <string name="b1_tema_29">29 Social Issues</string>
+    <string name="b1_tema_30">30 Society problems</string>
+    <string name="b1_tema_31">31 Challenge</string>
+    <string name="b1_tema_32">32 Going to the aim</string>
+    <string name="b1_tema_33">33 Age</string>
+    <string name="b1_tema_34">34 Time flies</string>
+    <string name="b1_tema_35">35 Jobs</string>
+    <string name="b1_tema_36">36 Careers</string>
+    <string name="b1_tema_37">37 Opinions</string>
+    <string name="b1_tema_38">38 Other points of view</string>
+    <string name="b1_tema_39">39 Shops and shoppers</string>
+    <string name="b1_tema_40">40 Shopping around</string>
+    <string name="b1_tema_41">41 Music Universe</string>
+    <string name="b1_tema_42">42 Into the music</string>
+    <string name="b1_tema_43">43 Free time</string>
+    <string name="b1_tema_44">44 Leisure</string>
+    <string name="b1_tema_45">45 Entertainment</string>
+    <string name="b1_tema_46">46 Ways to entertain</string>
+    <string name="b1_tema_47">47 Advertising</string>
+    <string name="b1_tema_48">48 Commercials</string>
+    <string name="b1_tema_49">49 Learning</string>
+    <string name="b1_tema_50">50 Hitting the books</string>
+
     <string-array name="topics_name_a2">
         <item>00 Вводный урок</item>
         <item>01 Friends</item>
@@ -122,59 +196,6 @@
         <item>49 Ideal World</item>
         <item>50 Your universe</item>
     </string-array>
-
-
-    <string name="b1_tema_0">00 Вводный урок</string>
-    <string name="b1_tema_1">01 Likes and Dislikes</string>
-    <string name="b1_tema_2">02 Loves &amp; hates</string>
-    <string name="b1_tema_3">03 The world around you</string>
-    <string name="b1_tema_4">04 Ou surroundings</string>
-    <string name="b1_tema_5">05 Keping up-to-date</string>
-    <string name="b1_tema_6">06 Staying modern</string>
-    <string name="b1_tema_7">07 Dating</string>
-    <string name="b1_tema_8">08 Romances</string>
-    <string name="b1_tema_9">09 Sports you’ve tried</string>
-    <string name="b1_tema_10">10 Working out</string>
-    <string name="b1_tema_11">11 Money Matters</string>
-    <string name="b1_tema_12">12 Money again</string>
-    <string name="b1_tema_13">13 Crime</string>
-    <string name="b1_tema_14">14 Crime and punishment</string>
-    <string name="b1_tema_15">15 Natural disasters</string>
-    <string name="b1_tema_16">16 Other catastrophes</string>
-    <string name="b1_tema_17">17 Parties</string>
-    <string name="b1_tema_18">18 Party hard</string>
-    <string name="b1_tema_19">19 Modern morals</string>
-    <string name="b1_tema_20">20 Moral rules</string>
-    <string name="b1_tema_21">21 Silver screen</string>
-    <string name="b1_tema_22">22 TV</string>
-    <string name="b1_tema_23">23 Cinema</string>
-    <string name="b1_tema_24">24 Cinemania</string>
-    <string name="b1_tema_25">25 News</string>
-    <string name="b1_tema_26">26 News updates</string>
-    <string name="b1_tema_27">27 Beauty and Health</string>
-    <string name="b1_tema_28">28 Beauty secrets</string>
-    <string name="b1_tema_29">29 Social Issues</string>
-    <string name="b1_tema_30">30 Society problems</string>
-    <string name="b1_tema_31">31 Challenge</string>
-    <string name="b1_tema_32">32 Going to the aim</string>
-    <string name="b1_tema_33">33 Age</string>
-    <string name="b1_tema_34">34 Time flies</string>
-    <string name="b1_tema_35">35 Jobs</string>
-    <string name="b1_tema_36">36 Careers</string>
-    <string name="b1_tema_37">37 Opinions</string>
-    <string name="b1_tema_38">38 Other points of view</string>
-    <string name="b1_tema_39">39 Shops and shoppers</string>
-    <string name="b1_tema_40">40 Shopping around</string>
-    <string name="b1_tema_41">41 Music Universe</string>
-    <string name="b1_tema_42">42 Into the music</string>
-    <string name="b1_tema_43">43 Free time</string>
-    <string name="b1_tema_44">44 Leisure</string>
-    <string name="b1_tema_45">45 Entertainment</string>
-    <string name="b1_tema_46">46 Ways to entertain</string>
-    <string name="b1_tema_47">47 Advertising</string>
-    <string name="b1_tema_48">48 Commercials</string>
-    <string name="b1_tema_49">49 Learning</string>
-    <string name="b1_tema_50">50 Hitting the books</string>
 
     <string-array name="topics_name_b1">
         <item>00 Вводный урок</item>

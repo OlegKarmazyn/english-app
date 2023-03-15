@@ -14,7 +14,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter name for topic"
+        android:text="@string/enter_name_of_topic"
         android:textColor="@color/ios_blackText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="100dp"
             android:background="@drawable/dialog_button"
-            android:text="CANCEL"
+            android:text="@string/cancel"
             android:textColor="@color/ios_blue"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/dialog_button"
-            android:text="ADD"
+            android:text="@string/add"
             android:textColor="@color/ios_blue"
             android:textSize="18sp"
             android:textStyle="bold" />

@@ -85,7 +85,7 @@
             android:id="@+id/tvAllowedTopics"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/share_tree_topics" />
+            android:text="@string/share_three_topics" />
 
         <TextView
             android:id="@+id/tvGptCalls"
