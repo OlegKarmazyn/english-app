@@ -20,11 +20,12 @@ class PreferencesOperations {
         GPT_DESCRIPTION("gpt description")
     }
 
+    //--------------method calls when user open app only first time----------//
     fun firstOpen() {
         putGptCalls()
         if (preferences.getBoolean(Keys.IS_FIRST_OPEN.key, true)) {
             editor.putBoolean(Keys.IS_FIRST_OPEN.key, false)
-            editor.putInt(Keys.ALLOWED_TOPICS.key, 1) // TODO: make it for gptBot
+            editor.putInt(Keys.ALLOWED_TOPICS.key, 3) //free posting topics
             editor.apply()
         }
     }
