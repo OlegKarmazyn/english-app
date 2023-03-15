@@ -179,11 +179,11 @@ public class FragmentLearn extends UserFragmentActivity {
 
                 private void addToDBNewWord(String englishWord, String russianWord, String definition) {
                     if (englishWord.isEmpty()) {
-                        Toasty.error(context, "English field is empty").show();
+                        Toasty.error(context, R.string.engl_field_is_empty).show();
                         return;
                     }
                     if (russianWord.isEmpty()) {
-                        Toasty.error(context, "Translation field is empty").show();
+                        Toasty.error(context, R.string.translation_field_is_empty).show();
                         return;
                     }
 
