@@ -178,6 +178,15 @@ public class FragmentLearn extends UserFragmentActivity {
                 }
 
                 private void addToDBNewWord(String englishWord, String russianWord, String definition) {
+                    if (englishWord.isEmpty()) {
+                        Toasty.error(context, "English field is empty").show();
+                        return;
+                    }
+                    if (russianWord.isEmpty()) {
+                        Toasty.error(context, "Translation field is empty").show();
+                        return;
+                    }
+
                     WordModel word = wordModelDao.getWordModelByName(englishWord, subTopic, topic);
                     if (word == null) { //if doesn't exist
                         WordModel wordModel = new WordModel();
@@ -376,7 +385,7 @@ public class FragmentLearn extends UserFragmentActivity {
                 })).start();
             });
         } else {
-            Toasty.warning(context, getString(R.string.empty_field)).show();
+            Toasty.error(context, getString(R.string.empty_field)).show();
         }
     }
 
