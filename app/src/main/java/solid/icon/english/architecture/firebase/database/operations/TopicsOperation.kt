@@ -11,7 +11,7 @@ class TopicsOperation {
 
     fun moveTopics(topicsName: String, email: String) {
         GlobalScope.launch {
-            val dbRef = FirebaseDatabase.getInstance().reference.push()
+            val dbRef = FirebaseDatabase.getInstance().reference.child("users_topics").push()
             val topicModelDao = App.getInstance().database.topicModelDao()
             val topicModel = topicModelDao!!.getByTopicsName(topicsName)
             topicModel.topicsKey = dbRef.key

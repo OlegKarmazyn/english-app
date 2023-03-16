@@ -25,6 +25,6 @@ class SettingViewModel(context: SettingsActivity) : ViewModel() {
     }
 
     fun saveEmail(email: String){
-        preferencesOperations.saveEmail(email)
+        preferencesOperations.email = email
     }
 }

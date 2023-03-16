@@ -23,18 +23,18 @@ class FirebaseOperation {
     private val wordsOperation = WordsOperation()
     private val recipientOperation = RecipientOperation()
     private val senderOperation = SenderOperation(this)
-    private var email: String? = PreferencesOperations().getEmail()
+    private val preferencesOperations = PreferencesOperations()
 
     /* --------------get permission to change data if owner of it------------------- */
     private fun getPathIfAllowed(topicsName: String, listener: OnGetDataListener) {
-        val ref = FirebaseDatabase.getInstance().reference
+        val ref = FirebaseDatabase.getInstance().reference.child("users_topics")
         val topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName)
         topicsQuery.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (dataSnapshot1 in dataSnapshot.children) {
                     val hashMap = dataSnapshot1.value as HashMap<*, *>
                     val checkingEmail = hashMap["email"] as String
-                    if (checkingEmail == email) {
+                    if (checkingEmail == preferencesOperations.email) {
                         listener.onSuccess(dataSnapshot1)
                     }
                 }
@@ -77,7 +77,7 @@ class FirebaseOperation {
     }
 
     fun getDataSnapshotByKey(key: String, listener: OnGetDataListener) {
-        val ref = FirebaseDatabase.getInstance().getReference(key)
+        val ref = FirebaseDatabase.getInstance().reference.child("users_topics").child(key)
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listener.onSuccess(snapshot)
@@ -92,7 +92,7 @@ class FirebaseOperation {
         senderOperation.postAllData(topicsName)
     }
 
-    fun uploadDate(topicsName: String, onSuccessListener: OnSuccessListener){
+    fun uploadDate(topicsName: String, onSuccessListener: OnSuccessListener) {
         getPathIfAllowed(topicsName) {
             subTopicsOperation.deleteSubTopicsNames(it)
             senderOperation.uploadAllData(topicsName)
@@ -102,8 +102,7 @@ class FirebaseOperation {
 
     /* ------------------------------------Topics---------------------------- */
     fun moveTopics(topicsName: String) {
-        Log.e(TAG, "moveTopics: email - $email")
-        email?.let { topicsOperation.moveTopics(topicsName, it) }
+        preferencesOperations.email?.let { topicsOperation.moveTopics(topicsName, it) }
     }
 
     fun deleteTopics(topicsName: String) {

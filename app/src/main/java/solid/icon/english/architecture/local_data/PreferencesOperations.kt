@@ -10,6 +10,13 @@ class PreferencesOperations {
     private val preferences = PreferenceManager.getDefaultSharedPreferences(App.instance)
     private val editor = preferences.edit()
     private val currentDateKey = GPT().giveDateKey()
+    var email: String? = null
+        set(value) {
+            editor.putString(Keys.EMAIL.key, value)
+            editor.apply()
+            field = value
+        }
+        get() = preferences.getString(Keys.EMAIL.key, null)
 
     enum class Keys(val key: String) {
         IS_FIRST_OPEN("is firstly open"),
@@ -28,15 +35,6 @@ class PreferencesOperations {
             editor.putInt(Keys.ALLOWED_TOPICS.key, 3) //free posting topics
             editor.apply()
         }
-    }
-
-    fun saveEmail(email: String) {
-        editor.putString(Keys.EMAIL.key, email)
-        editor.apply()
-    }
-
-    fun getEmail(): String? {
-        return preferences.getString(Keys.EMAIL.key, null)
     }
 
     fun getAllowedTopics(): Int {
