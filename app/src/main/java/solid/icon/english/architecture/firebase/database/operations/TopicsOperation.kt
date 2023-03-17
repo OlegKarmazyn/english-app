@@ -8,8 +8,7 @@ import solid.icon.english.architecture.room.App
 
 class TopicsOperation {
 
-
-    fun moveTopics(topicsName: String, email: String) {
+    fun moveTopics(topicsName: String, email: String, uid: String) {
         GlobalScope.launch {
             val dbRef = FirebaseDatabase.getInstance().reference.child("users_topics").push()
             val topicModelDao = App.getInstance().database.topicModelDao()
@@ -18,6 +17,7 @@ class TopicsOperation {
             topicModelDao.upsert(topicModel)
             dbRef.child("topicsName").setValue(topicsName)
             dbRef.child("email").setValue(email)
+            dbRef.child("uid").setValue(uid)
         }
     }
 

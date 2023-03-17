@@ -102,7 +102,9 @@ class FirebaseOperation {
 
     /* ------------------------------------Topics---------------------------- */
     fun moveTopics(topicsName: String) {
-        preferencesOperations.email?.let { topicsOperation.moveTopics(topicsName, it) }
+        preferencesOperations.email?.let {
+            topicsOperation.moveTopics(topicsName, it, preferencesOperations.uid)
+        }
     }
 
     fun deleteTopics(topicsName: String) {

@@ -39,7 +39,7 @@ class SettingsActivity : ActivityGlobal() {
     }
 
     private fun initUI() {
-        val user = auth.currentUser
+        var user = auth.currentUser
         if (user != null) {
             etEmail.setText(user.email)
             if (user.isEmailVerified)
@@ -57,7 +57,8 @@ class SettingsActivity : ActivityGlobal() {
                     isUserExist = it
                     loading_layout.isVisible = false
                     if (it) {
-                        viewModel.saveEmail(getEmail()!!)
+                        user = auth.currentUser
+                        viewModel.saveEmail(user!!.email, user!!.uid)
                         Toasty.success(context, getString(R.string.logged_in)).show()
                     }
                 })

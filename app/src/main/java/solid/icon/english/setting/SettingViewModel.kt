@@ -24,7 +24,8 @@ class SettingViewModel(context: SettingsActivity) : ViewModel() {
         authModel.logOut(onSuccess)
     }
 
-    fun saveEmail(email: String){
+    fun saveEmail(email: String?, uid: String = ""){
         preferencesOperations.email = email
+        preferencesOperations.uid = uid
     }
 }

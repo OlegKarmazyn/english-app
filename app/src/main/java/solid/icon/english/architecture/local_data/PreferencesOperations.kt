@@ -18,9 +18,18 @@ class PreferencesOperations {
         }
         get() = preferences.getString(Keys.EMAIL.key, null)
 
+    var uid: String = ""
+        set(value) {
+            editor.putString(Keys.UID.key, value)
+            editor.apply()
+            field = value
+        }
+        get() = preferences.getString(Keys.UID.key, "null")!!
+
     enum class Keys(val key: String) {
         IS_FIRST_OPEN("is firstly open"),
         EMAIL("email"),
+        UID("uid"),
         ALLOWED_TOPICS("number of topics"),
         PITCH("pitch"),
         SPEECH_RATE("speechRate"),
