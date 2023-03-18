@@ -1,5 +1,7 @@
 package solid.icon.english.setting
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
@@ -7,6 +9,7 @@ import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.settings_activity.*
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
+
 
 class SettingsActivity : ActivityGlobal() {
 
@@ -72,6 +75,12 @@ class SettingsActivity : ActivityGlobal() {
                 viewModel.saveEmail("")
                 Toasty.success(context, getString(R.string.logged_out)).show()
             }
+        }
+
+        tvOurSite.setOnClickListener {
+            val uri: Uri = Uri.parse("http://english-vs.web.app")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
         }
     }
 
