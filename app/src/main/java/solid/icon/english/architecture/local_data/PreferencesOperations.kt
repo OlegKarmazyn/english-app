@@ -28,6 +28,8 @@ class PreferencesOperations {
 
     enum class Keys(val key: String) {
         IS_FIRST_OPEN("is firstly open"),
+        IS_OPENED_SITE("is opened site"),
+        NUMBER_OF_VISITS("number of visits"),
         EMAIL("email"),
         UID("uid"),
         ALLOWED_TOPICS("number of topics"),
@@ -39,11 +41,27 @@ class PreferencesOperations {
     //--------------method calls when user open app only first time----------//
     fun firstOpen() {
         putGptCalls()
+        val number = getNumberOfVisits()
+
         if (preferences.getBoolean(Keys.IS_FIRST_OPEN.key, true)) {
             editor.putBoolean(Keys.IS_FIRST_OPEN.key, false)
             editor.putInt(Keys.ALLOWED_TOPICS.key, 3) //free posting topics
-            editor.apply()
         }
+        editor.putInt(Keys.NUMBER_OF_VISITS.key, number + 1)
+        editor.apply()
+    }
+
+    fun setIsOpenedSite(isOpen: Boolean){
+        editor.putBoolean(Keys.IS_OPENED_SITE.key, isOpen)
+        editor.apply()
+    }
+
+    fun getIsOpenedSite(): Boolean{
+        return preferences.getBoolean(Keys.IS_OPENED_SITE.key, false)
+    }
+
+    fun getNumberOfVisits(): Int{
+        return preferences.getInt(Keys.NUMBER_OF_VISITS.key, 0)
     }
 
     fun getAllowedTopics(): Int {

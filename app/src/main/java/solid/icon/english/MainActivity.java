@@ -2,6 +2,10 @@ package solid.icon.english;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -25,6 +29,8 @@ import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
 
 public class MainActivity extends ActivityGlobal {
+
+    // TODO: 18.03.2023 make viewModel and organize this activity
 
     private RecyclerView recyclerView_levels, recyclerView_user;
     RelativeLayout loading_layout;
@@ -50,7 +56,24 @@ public class MainActivity extends ActivityGlobal {
     }
 
     private void firstOpen() {
-        new PreferencesOperations().firstOpen();
+        PreferencesOperations pref = new PreferencesOperations();
+        pref.firstOpen();
+        if (pref.getNumberOfVisits() < 4 && !pref.getIsOpenedSite())
+            showSiteDialog();
+    }
+
+    private void showSiteDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Школа чекає на тебе!");
+        builder.setMessage("Скоріше реєструйся на безкоштовне індивідуальне заняття");
+        builder.setPositiveButton("Поїхали", (dialog, which) -> {
+            new PreferencesOperations().setIsOpenedSite(true);
+            Uri uri = Uri.parse("http://english-vs.web.app");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
+        builder.setNegativeButton("Пізніше", null);
+        builder.show();
     }
 
     public void setLoadingVisible(boolean isLoading) {
