@@ -228,6 +228,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
             userLevel.setDataToUserAdapter();
         });
+        dialog.setNegativeButton(R.string.no, v -> dialog.dismiss());
         dialog.show();
     }
 
