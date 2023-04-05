@@ -2,23 +2,18 @@ package solid.icon.english.main_adapters;
 
 
 import android.annotation.SuppressLint;
-import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +34,7 @@ import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
+import solid.icon.english.dialogs.CustomDialog;
 import solid.icon.english.user_line.UserLevel;
 
 public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder> {
@@ -136,7 +132,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
         holder.constraintLayout.setOnLongClickListener(v -> {
             /* DELETE if not one element(adding button)*/
-            if (size != 0)
+            if (position != size)
                 showDeleteDialog(position);
             return false;
         });
@@ -183,35 +179,23 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     /*----------------------------------Add Data----------------------------------*/
     public void showCustomAddingDialog() {
-        Dialog dialog = new Dialog(context);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.setContentView(R.layout.adding_dialog);
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        CustomDialog dialog = new CustomDialog(context);
+        dialog.create();
 
-        TextView tvCancel = dialog.findViewById(R.id.tvCancel),
-                tvAdd = dialog.findViewById(R.id.tvAdd);
-        Spinner spinner = dialog.findViewById(R.id.spinner);
-        ArrayAdapter<?> adapter = ArrayAdapter.createFromResource(context, R.array.country,
-                android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setEnabled(false);
-
-        tvAdd.setOnClickListener(v -> {
-            EditText etName = dialog.findViewById(R.id.etName);
-            String topicsName = etName.getText().toString().trim();
+        dialog.tvAdd.setOnClickListener(v -> {
+            String topicsName = dialog.etName.getText().toString().trim();
             dialog.dismiss();
 
-            if(topicsName.isEmpty()){
+            if (topicsName.isEmpty()) {
                 Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
                 return;
             }
 
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
-                getDataFB(topicsName, spinner.getSelectedItem().toString());
+                getDataFB(topicsName, dialog.spinner.getSelectedItem().toString());
             } else {
                 if (topicModelDao.getByTopicsName(topicsName) == null) {
-                    insertNewTopics(topicsName, spinner.getSelectedItem().toString());
+                    insertNewTopics(topicsName, dialog.spinner.getSelectedItem().toString());
                 } else {
                     Toasty.error(context, "\"" + topicsName + "\"" + " already exists").show();
                 }
@@ -219,7 +203,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
         });
 
-        tvCancel.setOnClickListener(v -> dialog.dismiss());
+        dialog.tvCancel.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
     }
 
