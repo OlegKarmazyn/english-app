@@ -181,8 +181,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     public void showCustomAddingDialog() {
         CustomDialog dialog = new CustomDialog(context);
         dialog.create();
-
-        dialog.tvAdd.setOnClickListener(v -> {
+        dialog.positiveButton.setText("rf");
+        dialog.positiveButton.setOnClickListener(v -> {
             String topicsName = dialog.etName.getText().toString().trim();
             dialog.dismiss();
 
@@ -203,7 +203,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
         });
 
-        dialog.tvCancel.setOnClickListener(v -> dialog.dismiss());
+        dialog.negativeButton.setOnClickListener(v -> dialog.dismiss());
         dialog.show();
     }
 

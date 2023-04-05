@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDialog
+import androidx.core.view.isVisible
 import solid.icon.english.R
 
 class CustomDialog(
@@ -20,8 +21,9 @@ class CustomDialog(
     lateinit var tvTitle: TextView
     lateinit var etName: EditText
     lateinit var spinner: Spinner
-    lateinit var tvCancel: TextView
-    lateinit var tvAdd: TextView
+    lateinit var positiveButton: TextView
+    lateinit var neutralButton: TextView
+    lateinit var negativeButton: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,13 +34,26 @@ class CustomDialog(
         tvTitle = findViewById(R.id.tvTitle)!!
         etName = findViewById(R.id.etName)!!
         spinner = findViewById(R.id.spinner)!!
-        tvCancel = findViewById(R.id.tvCancel)!!
-        tvAdd = findViewById(R.id.tvAdd)!!
+        negativeButton = findViewById(R.id.tvNegative)!!
+        neutralButton = findViewById(R.id.tvNeutral)!!
+        positiveButton = findViewById(R.id.tvPositive)!!
 
         setUpSpinner()
     }
 
-    fun setUpSpinner() {
+    override fun onStart() {
+        super.onStart()
+        checkIfClickListener(negativeButton)
+        checkIfClickListener(neutralButton)
+        checkIfClickListener(positiveButton)
+    }
+
+    private fun checkIfClickListener(view: TextView) {
+        if (!view.hasOnClickListeners())
+            view.isVisible = false
+    }
+
+    private fun setUpSpinner() {
         val adapter: ArrayAdapter<*> = ArrayAdapter.createFromResource(
             context, R.array.country,
             android.R.layout.simple_spinner_item
