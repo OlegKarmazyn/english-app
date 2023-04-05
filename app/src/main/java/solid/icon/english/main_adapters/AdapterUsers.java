@@ -181,8 +181,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     public void showCustomAddingDialog() {
         CustomDialog dialog = new CustomDialog(context);
         dialog.create();
-        dialog.positiveButton.setText("rf");
-        dialog.positiveButton.setOnClickListener(v -> {
+
+        dialog.setPositiveButton("Add", v -> {
             String topicsName = dialog.etName.getText().toString().trim();
             dialog.dismiss();
 
@@ -202,8 +202,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 mainActivity.setDataToUserAdapter();
             }
         });
-
-        dialog.negativeButton.setOnClickListener(v -> dialog.dismiss());
+        dialog.setNegativeButton("Cansel", v -> dialog.dismiss());
         dialog.show();
     }
 
@@ -234,34 +233,37 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     /*----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
         TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
-        AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        alert.setTitle(R.string.what_do_you_want_to_do);
-        EditText editText = new EditText(context);
-        editText.setText(topicModel.topicsKey);
-        editText.setHint("empty key");
-        editText.setEnabled(false);
-        alert.setView(editText);
 
-        alert.setNeutralButton("Delete", (dialog, which) -> {
+        CustomDialog dialog = new CustomDialog(context);
+        dialog.create();
+
+        dialog.setTitle(R.string.what_do_you_want_to_do);
+        dialog.etName.setText(topicModel.topicsKey);
+        dialog.etName.setHint("empty key");
+        dialog.etName.setEnabled(false);
+
+        dialog.setNegativeButton("Delete", v -> {
             String toastText = "\"" + topicModel.topicsName + "\" deleted";
             Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteTopic(topicModel.topicsName);
             mainActivity.setDataToUserAdapter();
             deleteDataFB(titlesArray[position]);
+            dialog.dismiss();
         });
+
         if (topicModel.topicsKey != null) {
             Log.e(TAG, "topicModel.topicsKey " + topicModel.topicsKey + ".");
-            alert.setPositiveButton("Share", ((dialog, which) -> sharedKey(topicModel.topicsKey)));
-            alert.setNegativeButton("Copy key", (dialog, which) -> {
+            dialog.setPositiveButton("Share", (v -> sharedKey(topicModel.topicsKey)));
+            dialog.setNeutralButton("Copy key", v -> {
                 ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
                 clipboard.setPrimaryClip(clip);
                 Toasty.success(context, context.getString(R.string.successfully_copied)).show();
             });
         } else {
-            alert.setPositiveButton("Post", ((dialog, which) -> postFB(topicModel.topicsName)));
+            dialog.setPositiveButton("Post", (v -> postFB(topicModel.topicsName)));
         }
-        alert.show();
+        dialog.show();
     }
 
     private void sharedKey(String key) {

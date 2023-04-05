@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View.OnClickListener
 import android.view.Window
 import android.widget.ArrayAdapter
 import android.widget.EditText
@@ -41,16 +42,42 @@ class CustomDialog(
         setUpSpinner()
     }
 
-    override fun onStart() {
-        super.onStart()
-        checkIfClickListener(negativeButton)
-        checkIfClickListener(neutralButton)
-        checkIfClickListener(positiveButton)
+    fun setNeutralButton(text: CharSequence, listener: OnClickListener) {
+        neutralButton.text = text
+        neutralButton.setOnClickListener(listener)
     }
 
-    private fun checkIfClickListener(view: TextView) {
-        if (!view.hasOnClickListeners())
-            view.isVisible = false
+    fun setNeutralButton(textId: Int, listener: OnClickListener) {
+        neutralButton.text = context.getText(textId)
+        neutralButton.setOnClickListener(listener)
+    }
+
+    fun setPositiveButton(text: CharSequence, listener: OnClickListener) {
+        positiveButton.text = text
+        positiveButton.setOnClickListener(listener)
+    }
+
+    fun setPositiveButton(textId: Int, listener: OnClickListener) {
+        positiveButton.text = context.getText(textId)
+        positiveButton.setOnClickListener(listener)
+    }
+
+    fun setNegativeButton(text: CharSequence, listener: OnClickListener) {
+        negativeButton.text = text
+        negativeButton.setOnClickListener(listener)
+    }
+
+    fun setNegativeButton(textId: Int, listener: OnClickListener) {
+        negativeButton.text = context.getText(textId)
+        negativeButton.setOnClickListener(listener)
+    }
+
+    fun setTitle(text: String) {
+        negativeButton.text = text
+    }
+
+    override fun setTitle(textId: Int) {
+        negativeButton.text = context.getText(textId)
     }
 
     private fun setUpSpinner() {
@@ -62,4 +89,15 @@ class CustomDialog(
         spinner.adapter = adapter
     }
 
+    override fun onStart() {
+        super.onStart()
+        checkIfClickListener(negativeButton)
+        checkIfClickListener(neutralButton)
+        checkIfClickListener(positiveButton)
+    }
+
+    private fun checkIfClickListener(view: TextView) {
+        if (!view.hasOnClickListeners())
+            view.isVisible = false
+    }
 }
