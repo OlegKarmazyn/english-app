@@ -183,9 +183,9 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         dialog.create();
 
         dialog.setPositiveButton("Add", v -> {
-            String topicsName = dialog.etName.getText().toString().trim();
             dialog.dismiss();
 
+            String topicsName = dialog.etName.getText().toString().trim();
             if (topicsName.isEmpty()) {
                 Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
                 return;
@@ -243,25 +243,29 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         dialog.etName.setEnabled(false);
 
         dialog.setNegativeButton("Delete", v -> {
+            dialog.dismiss();
             String toastText = "\"" + topicModel.topicsName + "\" deleted";
             Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteTopic(topicModel.topicsName);
             mainActivity.setDataToUserAdapter();
             deleteDataFB(titlesArray[position]);
-            dialog.dismiss();
         });
 
         if (topicModel.topicsKey != null) {
             Log.e(TAG, "topicModel.topicsKey " + topicModel.topicsKey + ".");
             dialog.setPositiveButton("Share", (v -> sharedKey(topicModel.topicsKey)));
             dialog.setNeutralButton("Copy key", v -> {
+                dialog.dismiss();
                 ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
                 clipboard.setPrimaryClip(clip);
                 Toasty.success(context, context.getString(R.string.successfully_copied)).show();
             });
         } else {
-            dialog.setPositiveButton("Post", (v -> postFB(topicModel.topicsName)));
+            dialog.setPositiveButton("Post", (v -> {
+                dialog.dismiss();
+                postFB(topicModel.topicsName);
+            }));
         }
         dialog.show();
     }

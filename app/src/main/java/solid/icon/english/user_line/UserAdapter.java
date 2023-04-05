@@ -29,6 +29,7 @@ import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
+import solid.icon.english.dialogs.CustomDialog;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
@@ -175,15 +176,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     /*-----------------------------------------dialogs-----------------------------------------*/
     /*----------------------------------Add Data----------------------------------*/
     public void showAddDialog() {
-        AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        final EditText editText = new EditText(context);
-        alert.setTitle(R.string.add_subTopic);
-        alert.setMessage(R.string.enter_name_here);
+        CustomDialog dialog = new CustomDialog(context);
+        dialog.create();
 
-        alert.setView(editText);
-
-        alert.setPositiveButton(R.string.add, (dialog, whichButton) -> {
-            String subTopicsName = editText.getText().toString().trim();
+        dialog.setTitle(R.string.add_subTopic);
+        dialog.setPositiveButton(R.string.add, v -> {
+            dialog.dismiss();
+            String subTopicsName = dialog.etName.getText().toString().trim();
             if(subTopicsName.isEmpty()){
                 Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
                 return;
@@ -202,9 +201,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             userLevel.setDataToUserAdapter();
         });
 
-        alert.setNegativeButton(R.string.cancel, null);
+        dialog.setNegativeButton(R.string.cancel, v -> {
+            dialog.dismiss();
+        });
 
-        alert.show();
+        dialog.show();
     }
 
     private void moveDataFB(String topicsName, String subTopicsName) {
@@ -213,16 +214,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        alert.setTitle(R.string.delete_subTopic);
-        alert.setPositiveButton(R.string.yes, (dialog, which) -> {
+        CustomDialog dialog = new CustomDialog(context);
+        dialog.create();
+
+        dialog.setTitle(R.string.delete_subTopic);
+        dialog.etName.setVisibility(View.GONE);
+
+        dialog.setPositiveButton(R.string.yes, v -> {
+            dialog.dismiss();
             String toastText = "\"" + titlesArray[position] + "\" deleted";
             Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteSubTopic(userLevel.chosenTopics, titlesArray[position]);
             deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
             userLevel.setDataToUserAdapter();
         });
-        alert.show();
+        dialog.show();
     }
 
     private void deleteDataFB(String topicsName, String subTopicsName) {

@@ -73,11 +73,11 @@ class CustomDialog(
     }
 
     fun setTitle(text: String) {
-        negativeButton.text = text
+        tvTitle.text = text
     }
 
     override fun setTitle(textId: Int) {
-        negativeButton.text = context.getText(textId)
+        tvTitle.text = context.getText(textId)
     }
 
     private fun setUpSpinner() {
