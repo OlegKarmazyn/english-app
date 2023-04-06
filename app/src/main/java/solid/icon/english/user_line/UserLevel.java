@@ -103,10 +103,8 @@ public class UserLevel extends ActivityGlobal {
     }
 
     private void downloadSubTopics() {
-        if (!doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!doesInternetConnectionExist())
             return;
-        }
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
         if (topicModel.topicsKey == null)
             return;
@@ -120,10 +118,8 @@ public class UserLevel extends ActivityGlobal {
     }
 
     private void uploadSubTopics() {
-        if (!doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!doesInternetConnectionExist())
             return;
-        }
         new FirebaseOperation().uploadDate(chosenTopics, () -> {
             Toasty.success(context, getString(R.string.successfully_uploaded)).show();
         });

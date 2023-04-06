@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
+import es.dmoral.toasty.Toasty;
+import solid.icon.english.R;
 import solid.icon.english.architecture.Dpi;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
@@ -62,8 +64,10 @@ public abstract class UserFragmentActivity extends Fragment {
     public boolean doesInternetConnectionExist() {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        if (!isConnected)
+            Toasty.error(context, R.string.no_internet_connection).show();
+        return isConnected;
     }
 
     private void deleteEmptyDefinition() {

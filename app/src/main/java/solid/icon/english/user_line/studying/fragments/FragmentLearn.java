@@ -210,28 +210,22 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {
-        if (!doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!doesInternetConnectionExist())
             return;
-        }
         WordFB wordFB = new WordFB(englishWord, russianWord, definition);
         firebaseOperation.moveWord(topic, subTopic, wordFB);
     }
 
     private void updateDataFB(String previousName, String englishWord, String russianWord, String definition) {
-        if (!doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!doesInternetConnectionExist())
             return;
-        }
         WordFB wordFB = new WordFB(englishWord, russianWord, definition);
         firebaseOperation.updateWord(previousName, topic, subTopic, wordFB);
     }
 
     private void deleteDataFB(String englishWord) {
-        if (!doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!doesInternetConnectionExist())
             return;
-        }
         firebaseOperation.deleteWord(topic, subTopic, englishWord);
     }
 

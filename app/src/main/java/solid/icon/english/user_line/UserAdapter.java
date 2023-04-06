@@ -209,10 +209,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     private void moveDataFB(String topicsName, String subTopicsName) {
-        if (!userLevel.doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!userLevel.doesInternetConnectionExist())
             return;
-        }
         firebaseOperation.moveSubTopics(topicsName, subTopicsName);
     }
 
@@ -237,10 +235,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     private void deleteDataFB(String topicsName, String subTopicsName) {
-        if (!userLevel.doesInternetConnectionExist()) {
-            Toasty.error(context, R.string.no_internet_connection).show();
+        if (!userLevel.doesInternetConnectionExist())
             return;
-        }
         firebaseOperation.deleteSubTopics(topicsName, subTopicsName);
     }
 }

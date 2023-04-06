@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.setting.SettingsActivity;
 
@@ -43,10 +44,12 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     }
 
     public boolean doesInternetConnectionExist() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        if (!isConnected)
+            Toasty.error(context, R.string.no_internet_connection).show();
+        return isConnected;
     }
 
     protected void showActionBar(boolean isShow, String titleText) {
