@@ -48,7 +48,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
         if (!isConnected)
-            Toasty.error(context, R.string.no_internet_connection).show();
+            Toasty.warning(context, R.string.no_internet_connection).show();
         return isConnected;
     }
 

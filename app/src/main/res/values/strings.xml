@@ -145,7 +145,7 @@
     <string name="b1_tema_49">49 Learning</string>
     <string name="b1_tema_50">50 Hitting the books</string>
     <string name="our_site_english_vs_web_app">our site: english-vs.web.app</string>
-    <string name="no_internet_connection">Internet connection doesn\'t exist</string>
+    <string name="no_internet_connection">Error: Internet disconnected</string>
 
 
     <string-array name="topics_name_a2">
