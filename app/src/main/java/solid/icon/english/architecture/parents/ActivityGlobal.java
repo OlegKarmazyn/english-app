@@ -3,6 +3,8 @@ package solid.icon.english.architecture.parents;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -27,6 +29,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     }
 
     protected Context context = this;
+
     protected String TAG = this.getClass().getSimpleName();
 
     protected void showActionBarWithoutTitle(boolean isShow) {
@@ -37,6 +40,13 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         } else {
             actionBar.hide();
         }
+    }
+
+    protected boolean doesInternetConnectionExist() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     protected void showActionBar(boolean isShow, String titleText) {

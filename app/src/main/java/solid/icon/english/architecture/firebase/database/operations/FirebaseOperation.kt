@@ -59,11 +59,11 @@ class FirebaseOperation {
             topicModel.topicsKey = key
             topicModel.country = "en"
             listener.onSuccess(topicModel)
-            getAllData(key, topicsName!!) //main method for getting data
+            getDataUnderTopic(key, topicsName!!) //main method for getting data
         }
     }
 
-    private fun getAllData(key: String, topicsName: String) {
+    private fun getDataUnderTopic(key: String, topicsName: String) {
         recipientOperation.getAllData(key, topicsName)
     }
 

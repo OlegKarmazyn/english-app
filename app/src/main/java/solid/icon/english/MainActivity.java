@@ -3,7 +3,6 @@ package solid.icon.english;
 import static android.widget.Toast.LENGTH_SHORT;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -83,8 +82,7 @@ public class MainActivity extends ActivityGlobal {
             loading_layout.setVisibility(View.GONE);
     }
 
-    //----------------method for RecyclerView--------------------------------// start
-
+    // region methods for RecyclerView
     private void fullRecycleView() {
         setSettingsToRecyclerView(recyclerView_levels);
         setSettingsToRecyclerView(recyclerView_user);
@@ -118,8 +116,7 @@ public class MainActivity extends ActivityGlobal {
 
         recyclerView_user.animate().alpha(1f);
     }
-
-    //----------------method for RecyclerView--------------------------------// end
+    //endregion method for RecyclerView
 
     private void getUsers_titlesArray() {
         TopicModelDao topicModelDao = App.getInstance().getDatabase().topicModelDao();
