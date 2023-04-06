@@ -16,8 +16,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -32,6 +30,7 @@ import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
+import solid.icon.english.dialogs.CustomDialog;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentLearn extends UserFragmentActivity {
@@ -412,9 +411,12 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     public void showDeleteDialog(int i) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(context);
-        alert.setTitle("Do you want to delete topic?");
-        alert.setPositiveButton("Yes", (dialog, which) -> {
+        CustomDialog dialog = new CustomDialog(context);
+        dialog.create();
+        dialog.etName.setVisibility(View.GONE);
+        dialog.setTitle(R.string.delete_word);
+        dialog.setPositiveButton("Yes", v -> {
+            dialog.dismiss();
             WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[i], subTopic, topic);
             outLog("deleted - " + wordModel.englishWord);
             String deletedWord = wordModel.englishWord;
@@ -424,8 +426,11 @@ public class FragmentLearn extends UserFragmentActivity {
             closeMenu();
             studyActivity.setDateToActivity();
         });
-        alert.setNegativeButton("No", ((dialog, which) -> closeMenu()));
-        alert.show();
+        dialog.setNegativeButton("No", (v -> {
+            dialog.dismiss();
+            closeMenu();
+        }));
+        dialog.show();
     }
 
     private void text_visible_gone() {

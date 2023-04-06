@@ -182,7 +182,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         CustomDialog dialog = new CustomDialog(context);
         dialog.create();
 
-        dialog.setPositiveButton("Add", v -> {
+        dialog.setPositiveButton(R.string.add, v -> {
             dialog.dismiss();
 
             String topicsName = dialog.etName.getText().toString().trim();
@@ -202,7 +202,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 mainActivity.setDataToUserAdapter();
             }
         });
-        dialog.setNegativeButton("Cansel", v -> dialog.dismiss());
+        dialog.setNegativeButton(R.string.cancel, v -> dialog.dismiss());
         dialog.show();
     }
 
