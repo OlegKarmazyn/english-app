@@ -72,7 +72,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull UserAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
-        /*------------------------------settings------------------------------*/
+        /*note------------------------------settings------------------------------*/
 
         if (position == 0) {
             holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.row_top));
@@ -99,7 +99,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             holder.checkBox.setVisibility(View.GONE);
         }
 
-        /*------------------------------components------------------------------*/
+        /*note------------------------------components------------------------------*/
 
         holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
 
@@ -144,7 +144,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         return titlesArray.length + 1;
     }
 
-    /*---------------------------------------MyViewHolder---------------------------------------*/
+    /*note---------------------------------------MyViewHolder---------------------------------------*/
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
@@ -162,7 +162,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         }
     }
 
-    /*-----------------------------------------getIsCheckArray--------------------------------*/
+    /*note-----------------------------------------getIsCheckArray--------------------------------*/
 
     public void getIsCheckArray() {
         isCheckArray = new boolean[size];
@@ -173,8 +173,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         }
     }
 
-    /*-----------------------------------------dialogs-----------------------------------------*/
-    /*----------------------------------Add Data----------------------------------*/
+    /*note-----------------------------------------dialogs-----------------------------------------*/
+    /*note----------------------------------Add Data----------------------------------*/
     public void showAddDialog() {
         CustomDialog dialog = new CustomDialog(context);
         dialog.create();
@@ -209,10 +209,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     private void moveDataFB(String topicsName, String subTopicsName) {
+        if (!userLevel.doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         firebaseOperation.moveSubTopics(topicsName, subTopicsName);
     }
 
-    /*----------------------------------Delete Data----------------------------------*/
+    /*note----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
         CustomDialog dialog = new CustomDialog(context);
         dialog.create();
@@ -233,6 +237,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     }
 
     private void deleteDataFB(String topicsName, String subTopicsName) {
+        if (!userLevel.doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         firebaseOperation.deleteSubTopics(topicsName, subTopicsName);
     }
 }

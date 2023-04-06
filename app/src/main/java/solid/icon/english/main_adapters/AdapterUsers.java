@@ -207,6 +207,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void getDataFB(String key, String country) {
+        if (!mainActivity.doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         mainActivity.setLoadingVisible(true);
         Toasty.info(context, context.getString(R.string.loading)).show();
         firebaseOperation.getTopicsWithAllData(key, topicModel -> {
@@ -284,6 +288,10 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     }
 
     private void postFB(String topicsName) {
+        if (!mainActivity.doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         if (preferencesOperations.getEmail() == null) {
             Toasty.warning(context, context.getString(R.string.can_post_after_registration)).show();
             return;

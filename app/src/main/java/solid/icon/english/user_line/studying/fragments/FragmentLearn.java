@@ -121,9 +121,7 @@ public class FragmentLearn extends UserFragmentActivity {
         });
     }
 
-    /**
-     * There is ADDING BUTTON
-     */
+    //NOTE: There is ADDING BUTTON
     private void createAddButton() {
         if (!isSubTest) {
             //counting margin
@@ -212,22 +210,32 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void moveDataFB(String englishWord, String russianWord, String definition) {
+        if (!doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         WordFB wordFB = new WordFB(englishWord, russianWord, definition);
         firebaseOperation.moveWord(topic, subTopic, wordFB);
     }
 
     private void updateDataFB(String previousName, String englishWord, String russianWord, String definition) {
+        if (!doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         WordFB wordFB = new WordFB(englishWord, russianWord, definition);
         firebaseOperation.updateWord(previousName, topic, subTopic, wordFB);
     }
 
     private void deleteDataFB(String englishWord) {
+        if (!doesInternetConnectionExist()) {
+            Toasty.error(context, R.string.no_internet_connection).show();
+            return;
+        }
         firebaseOperation.deleteWord(topic, subTopic, englishWord);
     }
 
-    /**
-     * Translation buttons
-     */
+    //NOTE: Translation buttons
     private void addTranslationButtonToScreen() { //todo learn definition
         int dp_15 = getDp(15);
 

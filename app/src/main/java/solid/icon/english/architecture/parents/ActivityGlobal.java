@@ -42,7 +42,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         }
     }
 
-    protected boolean doesInternetConnectionExist() {
+    public boolean doesInternetConnectionExist() {
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 

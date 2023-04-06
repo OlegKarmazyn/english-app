@@ -1,5 +1,8 @@
 package solid.icon.english.architecture.parents;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -54,6 +57,13 @@ public abstract class UserFragmentActivity extends Fragment {
         deleteEmptyDefinition();
         fillMainArrays();
         topicModel = getTopicsModel();
+    }
+
+    public boolean doesInternetConnectionExist() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
     private void deleteEmptyDefinition() {
