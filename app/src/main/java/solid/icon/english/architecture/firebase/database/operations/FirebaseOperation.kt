@@ -25,7 +25,7 @@ class FirebaseOperation {
     private val senderOperation = SenderOperation(this)
     private val preferencesOperations = PreferencesOperations()
 
-    /* --------------get permission to change data if owner of it------------------- */
+    // NOTE: get permission to change data if owner of it
     private fun getPathIfAllowed(topicsName: String, listener: OnGetDataListener) {
         val ref = FirebaseDatabase.getInstance().reference.child("users_topics")
         val topicsQuery = ref.orderByChild("topicsName").equalTo(topicsName)
@@ -50,7 +50,7 @@ class FirebaseOperation {
         return s.map { if (it in ".#\$[]/") "_" else it }.joinToString("")
     }
 
-    /* --------------------------------Get All Data from Firebase DB---------------------------- */
+    // NOTE: Get All Data from Firebase DB
     fun getTopicsWithAllData(key: String, listener: GetTopicsModelListener) {
         getDataSnapshotByKey(key) { dataSnapshot: DataSnapshot ->
             val topicsName = dataSnapshot.child("topicsName").getValue(String::class.java)
@@ -78,7 +78,7 @@ class FirebaseOperation {
         })
     }
 
-    /* --------------------------------Post All Data to Firebase DB--------------------------- */
+    // NOTE: Post All Data to Firebase DB
     fun postData(topicsName: String) {
         senderOperation.postAllData(topicsName)
     }
@@ -91,6 +91,7 @@ class FirebaseOperation {
         }
     }
 
+    // mark
     /* ------------------------------------Topics---------------------------- */
     fun moveTopics(topicsName: String) {
         preferencesOperations.email?.let {
@@ -104,6 +105,7 @@ class FirebaseOperation {
         }
     }
 
+    // mark
     /* ------------------------------------Sub topics---------------------------- */
     fun moveSubTopics(topicsName: String, subTopicsName: String) {
         getPathIfAllowed(topicsName) { dataSnapshot: DataSnapshot ->
@@ -117,6 +119,7 @@ class FirebaseOperation {
         }
     }
 
+    // mark
     /* ------------------------------------Words---------------------------- */
     fun moveWord(topicsName: String, subTopicsName: String, wordFB: WordFB) {
         val subKey = validateKey(subTopicsName)

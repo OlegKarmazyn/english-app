@@ -30,7 +30,7 @@ import solid.icon.english.main_adapters.AdapterUsers;
 
 public class MainActivity extends ActivityGlobal {
 
-    // TODO: 18.03.2023 make viewModel and organize this activity
+    // Optimize: make viewModel and organize this activity
 
     private RecyclerView recyclerView_levels, recyclerView_user;
     RelativeLayout loading_layout;
