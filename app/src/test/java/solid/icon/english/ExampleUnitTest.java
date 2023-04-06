@@ -10,8 +10,18 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    ValidatingTest validatingTest = new ValidatingTest();
+    String[] wordsArray = {"words.words", "words#words", "words$words", "words[words",
+            "words]words", "words/words"};
+    String expectedWords = "words_words";
+
     @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+    public void validation_isCorrect() {
+        for (String s : wordsArray) {
+            assertEquals(expectedWords, validatingTest.validateKey1(s));
+            assertEquals(expectedWords, validatingTest.validateKey2(s));
+        }
+
     }
 }
+

@@ -47,16 +47,7 @@ class FirebaseOperation {
     }
 
     fun validateKey(s: String): String {
-        val arr = s.split("").toTypedArray()
-        var key = ""
-        for (ch in arr) {
-            key += if (ch == "." || ch == "#" || ch == "$" || ch == "[" || ch == "]") {
-                "_"
-            } else {
-                ch
-            }
-        }
-        return key
+        return s.map { if (it in ".#\$[]/") "_" else it }.joinToString("")
     }
 
     /* --------------------------------Get All Data from Firebase DB---------------------------- */
