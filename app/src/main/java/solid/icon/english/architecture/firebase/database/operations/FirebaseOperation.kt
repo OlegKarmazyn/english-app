@@ -91,8 +91,7 @@ class FirebaseOperation {
         }
     }
 
-    // mark
-    /* ------------------------------------Topics---------------------------- */
+    // region Topics
     fun moveTopics(topicsName: String) {
         preferencesOperations.email?.let {
             topicsOperation.moveTopics(topicsName, it, preferencesOperations.uid)
@@ -104,9 +103,9 @@ class FirebaseOperation {
             topicsOperation.deleteTopics(dataSnapshot)
         }
     }
+    //endregion
 
-    // mark
-    /* ------------------------------------Sub topics---------------------------- */
+    // region Sub topics
     fun moveSubTopics(topicsName: String, subTopicsName: String) {
         getPathIfAllowed(topicsName) { dataSnapshot: DataSnapshot ->
             subTopicsOperation.moveSubTopics(subTopicsName, dataSnapshot)
@@ -118,9 +117,9 @@ class FirebaseOperation {
             subTopicsOperation.deleteSubTopics(subTopicsName, dataSnapshot)
         }
     }
+    //endregion
 
-    // mark
-    /* ------------------------------------Words---------------------------- */
+    // region Words
     fun moveWord(topicsName: String, subTopicsName: String, wordFB: WordFB) {
         val subKey = validateKey(subTopicsName)
         val wordKey = validateKey(wordFB.englishWord)
@@ -150,4 +149,5 @@ class FirebaseOperation {
             wordsOperation.deleteWord(subKey, wordKey, dataSnapshot)
         }
     }
+    //endregion
 }
