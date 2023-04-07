@@ -35,7 +35,7 @@
     <string name="do_not_show_again">don\'t show me again</string>
     <string name="okay">Okay</string>
     <string name="gpt_can_help">GPT-bot can help</string>
-    <string name="click_to_get_definition_from_bot">Just click \"DEFINITION\" and bot give it</string>
+    <string name="click_to_get_definition_from_bot">Click \"DEFINITION\" and bot will give it</string>
     <string name="definition">Definition</string>
     <string name="what_do_you_want_to_do">What do you want to do?</string>
     <string name="english_share_key">English VS: share key</string>
