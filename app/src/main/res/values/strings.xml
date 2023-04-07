@@ -147,6 +147,10 @@
     <string name="b1_tema_50">50 Hitting the books</string>
     <string name="our_site_english_vs_web_app">our site: english-vs.web.app</string>
     <string name="no_internet_connection">Error: Internet disconnected</string>
+    <string name="school_waiting">Школа чекає на тебе!</string>
+    <string name="soon_register_for_free">Скоріше реєструйся на безкоштовне індивідуальне заняття</string>
+    <string name="ride">Поїхали</string>
+    <string name="later">Пізніше</string>
 
 
     <string-array name="topics_name_a2">

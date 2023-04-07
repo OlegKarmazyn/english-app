@@ -14,10 +14,10 @@ import androidx.appcompat.app.AppCompatDialog
 import androidx.core.view.isVisible
 import solid.icon.english.R
 
-class CustomDialog(
-    context: Context,
-) :
-    AppCompatDialog(context) {
+class CustomDialog(context: Context) : AppCompatDialog(context) {
+
+    //Optimize: Redone all calls this dialog and create one more dialog with text size
+    // like in adding_dialog. Just with one title and two buttons. For example deleting dialog
 
     lateinit var tvTitle: TextView
     lateinit var etName: EditText

@@ -24,6 +24,7 @@ import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
+import solid.icon.english.dialogs.InfoDialog;
 import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
 
@@ -62,17 +63,15 @@ public class MainActivity extends ActivityGlobal {
     }
 
     private void showSiteDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Школа чекає на тебе!");
-        builder.setMessage("Скоріше реєструйся на безкоштовне індивідуальне заняття");
-        builder.setPositiveButton("Поїхали", (dialog, which) -> {
+        InfoDialog dialog = new InfoDialog(context);
+        dialog.setPositiveButton(R.string.ride, v -> {
             new PreferencesOperations().setIsOpenedSite(true);
             Uri uri = Uri.parse("http://english-vs.web.app");
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             startActivity(intent);
         });
-        builder.setNegativeButton("Пізніше", null);
-        builder.show();
+        dialog.setNegativeButton(R.string.later, null);
+        dialog.show();
     }
 
     public void setLoadingVisible(boolean isLoading) {
