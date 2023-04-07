@@ -1,16 +1,11 @@
 package solid.icon.english.user_line.studying;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +27,7 @@ import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
+import solid.icon.english.dialogs.CheckBoxDialog;
 import solid.icon.english.user_line.studying.fragments.FragmentAdapter;
 
 
@@ -99,43 +95,22 @@ public class StudyActivity extends ActivityGlobal {
         displayGptNotification();
     }
 
-    //------------showing alert dialog to notify about gpt helper---------------///
+    //NOTE: showing alert dialog to notify about gpt helper
     private void displayGptNotification() {
         if (!preferencesOperations.getGptDescription()) {
-            final LinearLayout linearLayout = new LinearLayout(context);
-            linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            linearLayout.setLayoutParams(layoutParams);
-            linearLayout.setPadding(50, 0, 0, 0);
-
-            final CheckBox checkBox = new CheckBox(context);
-            int id = View.generateViewId();
-            checkBox.setId(id);
-            linearLayout.addView(checkBox);
-            final TextView textView = new TextView(context);
-            textView.setText(R.string.do_not_show_again);
-            linearLayout.addView(textView);
-
-            AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle(R.string.gpt_can_help);
-            builder.setMessage(R.string.click_to_get_definition_from_bot);
-
-            builder.setView(linearLayout);
-
-            builder.setPositiveButton(R.string.okay, (dialog, which) -> {
-                if (checkBox.isChecked()) {
+            CheckBoxDialog dialog = new CheckBoxDialog(context);
+            dialog.create();
+            dialog.setPositiveButton(R.string.okay, v -> {
+                dialog.dismiss();
+                if (dialog.checkBox.isChecked()) {
                     preferencesOperations.putGptDescription();
                 }
             });
-
-            builder.show();
+            dialog.show();
         }
     }
 
-    /**
-     * preparation of all data for display to the user
-     */
-
+    //NOTE: preparation of all data for display to the user
     public void setDateToActivity() {
         /*methods before init table*/
         getWordsList();
@@ -154,10 +129,7 @@ public class StudyActivity extends ActivityGlobal {
         new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(1000), 700);
     }
 
-    /**
-     * getting all english and translating words from list in database
-     */
-
+    //region getting all english and translating words from list in database
     private void getWordsList() {
         if (!isSubTest) {
             WordModelDao wordModelDao = App.getInstance().getDatabase().wordModelDao();
@@ -183,6 +155,7 @@ public class StudyActivity extends ActivityGlobal {
             wordModelList = _wordModelList;
         }
     }
+    //endregion
 
     private void getTestingWords() {
         SubTopicDao subTopicDao = App.getInstance().getDatabase().subTopicDao();
