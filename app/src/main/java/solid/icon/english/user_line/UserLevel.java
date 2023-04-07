@@ -107,6 +107,7 @@ public class UserLevel extends ActivityGlobal {
             loading_layout.setVisibility(View.GONE);
     }
 
+    //region down/up-load operations
     private void downloadSubTopics() {
         if (!doesInternetConnectionExist())
             return;
@@ -129,7 +130,9 @@ public class UserLevel extends ActivityGlobal {
             Toasty.success(context, getString(R.string.successfully_uploaded)).show();
         });
     }
+    //endregion
 
+    //region Menu
     private void defineManu(Menu menu){
         //note: hide download and upload buttons
         if (topicsKey == null) {
@@ -141,6 +144,7 @@ public class UserLevel extends ActivityGlobal {
                 if (hashMap == null)
                     return;
                 String checkingEmail = (String) hashMap.get("email");
+                assert checkingEmail != null;
                 if (checkingEmail.equals(new PreferencesOperations().getEmail()))
                     menu.getItem(1).setVisible(false);
                 else
@@ -173,4 +177,5 @@ public class UserLevel extends ActivityGlobal {
                 return super.onOptionsItemSelected(item);
         }
     }
+    //endregion
 }
