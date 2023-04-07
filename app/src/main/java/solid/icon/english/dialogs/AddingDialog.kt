@@ -4,29 +4,23 @@ package solid.icon.english.dialogs
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.view.View.OnClickListener
+import android.view.View
 import android.view.Window
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatDialog
 import androidx.core.view.isVisible
 import solid.icon.english.R
 
 //NOTE: dialog with title, field, spinner and three buttons
-class AddingDialog(context: Context) : AppCompatDialog(context) {
+class AddingDialog(context: Context) : ParentDialog(context) {
 
-    private var tvTitle: TextView
     private var etName: EditText
     private var spinner: Spinner
-    private var positiveButton: TextView
-    private var neutralButton: TextView
-    private var negativeButton: TextView
+    var neutralButton: TextView
+    var neutralButtonListener: View.OnClickListener? = null
 
-    private var positiveButtonListener: OnClickListener? = null
-    private var neutralButtonListener: OnClickListener? = null
-    private var negativeButtonListener: OnClickListener? = null
 
     init {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -56,9 +50,13 @@ class AddingDialog(context: Context) : AppCompatDialog(context) {
             dismiss()
             negativeButtonListener?.onClick(it)
         }
+
+        positiveButton.isVisible = false
+        negativeButton.isVisible = false
+        neutralButton.isVisible = false
     }
 
-    fun setNeutralButton(text: CharSequence, listener: OnClickListener?) {
+    fun setNeutralButton(text: CharSequence, listener: View.OnClickListener?) {
         neutralButton.run {
             setText(text)
             isVisible = true
@@ -66,44 +64,12 @@ class AddingDialog(context: Context) : AppCompatDialog(context) {
         }
     }
 
-    fun setNeutralButton(textId: Int, listener: OnClickListener?) {
+    fun setNeutralButton(textId: Int, listener: View.OnClickListener?) {
         neutralButton.run {
             text = context.getText(textId)
             isVisible = true
             neutralButtonListener = listener
         }
-    }
-
-    fun setPositiveButton(text: CharSequence, listener: OnClickListener?) {
-        positiveButton.run {
-            setText(text)
-            positiveButtonListener = listener
-        }
-    }
-
-    fun setPositiveButton(textId: Int, listener: OnClickListener?) {
-        positiveButton.run {
-            text = context.getText(textId)
-            positiveButtonListener = listener
-        }
-    }
-
-    fun setNegativeButton(text: CharSequence, listener: OnClickListener?) {
-        negativeButton.run {
-            setText(text)
-            negativeButtonListener = listener
-        }
-    }
-
-    fun setNegativeButton(textId: Int, listener: OnClickListener?) {
-        negativeButton.run {
-            text = context.getText(textId)
-            negativeButtonListener = listener
-        }
-    }
-
-    fun setTitle(text: String) {
-        tvTitle.text = text
     }
 
     fun getTextFromField(): String {
@@ -112,10 +78,6 @@ class AddingDialog(context: Context) : AppCompatDialog(context) {
 
     fun getSelectedItem(): String {
         return spinner.selectedItem.toString()
-    }
-
-    override fun setTitle(textId: Int) {
-        tvTitle.text = context.getText(textId)
     }
 
     private fun setUpSpinner() {
@@ -127,19 +89,7 @@ class AddingDialog(context: Context) : AppCompatDialog(context) {
         spinner.adapter = adapter
     }
 
-    override fun onStart() {
-        super.onStart()
-        checkIfClickListener(negativeButton)
-        checkIfClickListener(neutralButton)
-        checkIfClickListener(positiveButton)
-    }
-
-    private fun checkIfClickListener(view: TextView) {
-        if (!view.hasOnClickListeners())
-            view.isVisible = false
-    }
-
-    fun getEditText(): EditText{
+    fun getEditText(): EditText {
         return etName
     }
 }

@@ -62,6 +62,7 @@
             android:layout_marginEnd="20dp"
             android:layout_toStartOf="@+id/tvPositive"
             android:background="@drawable/dialog_button"
+            android:visibility="gone"
             android:text="@string/post"
             android:textColor="@color/ios_blue"
             android:textSize="18sp"
