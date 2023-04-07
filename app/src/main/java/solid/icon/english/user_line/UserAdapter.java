@@ -11,13 +11,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,7 +27,8 @@ import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
-import solid.icon.english.dialogs.CustomDialog;
+import solid.icon.english.dialogs.AddingDialog;
+import solid.icon.english.dialogs.TitleDialog;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> {
@@ -176,14 +175,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
     /*note-----------------------------------------dialogs-----------------------------------------*/
     /*note----------------------------------Add Data----------------------------------*/
     public void showAddDialog() {
-        CustomDialog dialog = new CustomDialog(context);
-        dialog.create();
+        AddingDialog dialog = new AddingDialog(context);
 
         dialog.setTitle(R.string.add_subTopic);
         dialog.setPositiveButton(R.string.add, v -> {
-            dialog.dismiss();
-            String subTopicsName = dialog.etName.getText().toString().trim();
-            if(subTopicsName.isEmpty()){
+            String subTopicsName = dialog.getTextFromField();
+            if (subTopicsName.isEmpty()) {
                 Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
                 return;
             }
@@ -201,10 +198,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             userLevel.setDataToUserAdapter();
         });
 
-        dialog.setNegativeButton(R.string.cancel, v -> {
-            dialog.dismiss();
-        });
-
+        dialog.setNegativeButton(R.string.cancel, null);
         dialog.show();
     }
 
@@ -216,21 +210,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*note----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
-        CustomDialog dialog = new CustomDialog(context);
-        dialog.create();
+        TitleDialog dialog = new TitleDialog(context);
 
         dialog.setTitle(R.string.delete_subTopic);
-        dialog.etName.setVisibility(View.GONE);
 
         dialog.setPositiveButton(R.string.yes, v -> {
-            dialog.dismiss();
             String toastText = "\"" + titlesArray[position] + "\" deleted";
             Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteSubTopic(userLevel.chosenTopics, titlesArray[position]);
             deleteDataFB(userLevel.chosenTopics, titlesArray[position]);
             userLevel.setDataToUserAdapter();
         });
-        dialog.setNegativeButton(R.string.no, v -> dialog.dismiss());
+        dialog.setNegativeButton(R.string.no, null);
         dialog.show();
     }
 

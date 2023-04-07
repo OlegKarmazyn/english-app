@@ -12,13 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,7 +32,7 @@ import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
 import solid.icon.english.architecture.room.TopicModelDao;
-import solid.icon.english.dialogs.CustomDialog;
+import solid.icon.english.dialogs.AddingDialog;
 import solid.icon.english.user_line.UserLevel;
 
 public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder> {
@@ -179,30 +177,27 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
 
     /*----------------------------------Add Data----------------------------------*/
     public void showCustomAddingDialog() {
-        CustomDialog dialog = new CustomDialog(context);
-        dialog.create();
+        AddingDialog dialog = new AddingDialog(context);
 
         dialog.setPositiveButton(R.string.add, v -> {
-            dialog.dismiss();
-
-            String topicsName = dialog.etName.getText().toString().trim();
+            String topicsName = dialog.getTextFromField();
             if (topicsName.isEmpty()) {
                 Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
                 return;
             }
 
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
-                getDataFB(topicsName, dialog.spinner.getSelectedItem().toString());
+                getDataFB(topicsName, dialog.getSelectedItem());
             } else {
                 if (topicModelDao.getByTopicsName(topicsName) == null) {
-                    insertNewTopics(topicsName, dialog.spinner.getSelectedItem().toString());
+                    insertNewTopics(topicsName, dialog.getSelectedItem());
                 } else {
                     Toasty.error(context, "\"" + topicsName + "\"" + " already exists").show();
                 }
                 mainActivity.setDataToUserAdapter();
             }
         });
-        dialog.setNegativeButton(R.string.cancel, v -> dialog.dismiss());
+        dialog.setNegativeButton(R.string.cancel, null);
         dialog.show();
     }
 
@@ -237,16 +232,14 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
     public void showDeleteDialog(int position) {
         TopicModel topicModel = topicModelDao.getByTopicsName(titlesArray[position]);
 
-        CustomDialog dialog = new CustomDialog(context);
-        dialog.create();
+        AddingDialog dialog = new AddingDialog(context);
 
         dialog.setTitle(R.string.what_do_you_want_to_do);
-        dialog.etName.setText(topicModel.topicsKey);
-        dialog.etName.setHint("empty key");
-        dialog.etName.setEnabled(false);
+        dialog.getEditText().setText(topicModel.topicsKey);
+        dialog.getEditText().setHint("empty key");
+        dialog.getEditText().setEnabled(false);
 
         dialog.setNegativeButton("Delete", v -> {
-            dialog.dismiss();
             String toastText = "\"" + topicModel.topicsName + "\" deleted";
             Toast.makeText(context, toastText, Toast.LENGTH_LONG).show();
             localOperation.deleteTopic(topicModel.topicsName);
@@ -258,7 +251,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             Log.e(TAG, "topicModel.topicsKey " + topicModel.topicsKey + ".");
             dialog.setPositiveButton("Share", (v -> sharedKey(topicModel.topicsKey)));
             dialog.setNeutralButton("Copy key", v -> {
-                dialog.dismiss();
                 ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clip = android.content.ClipData.newPlainText("Copied", topicModel.topicsKey);
                 clipboard.setPrimaryClip(clip);
@@ -266,7 +258,6 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             });
         } else {
             dialog.setPositiveButton("Post", (v -> {
-                dialog.dismiss();
                 postFB(topicModel.topicsName);
             }));
         }
