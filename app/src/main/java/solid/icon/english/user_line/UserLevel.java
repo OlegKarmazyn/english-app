@@ -15,6 +15,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.HashMap;
 import java.util.List;
 
 import es.dmoral.toasty.Toasty;
@@ -22,6 +23,7 @@ import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
+import solid.icon.english.architecture.local_data.PreferencesOperations;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
@@ -38,6 +40,7 @@ public class UserLevel extends ActivityGlobal {
     String topicsKey;
     final Context context = this;
     SubTopicDao subTopicDao;
+    FirebaseOperation firebaseOperation = new FirebaseOperation();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +57,7 @@ public class UserLevel extends ActivityGlobal {
         setAdapter();
     }
 
+    //region Recycler Adapter
     private void getNameTopic() {
         List<SubTopicModel> subTopicModels = subTopicDao.getAllByTopicsName(chosenTopics);
 
@@ -85,6 +89,7 @@ public class UserLevel extends ActivityGlobal {
 
         recyclerView.animate().alpha(1f);
     }
+    //endregion
 
     private void goToTestActivity() {
         Intent intent = new Intent(context, StudyActivity.class);
@@ -120,19 +125,34 @@ public class UserLevel extends ActivityGlobal {
     private void uploadSubTopics() {
         if (!doesInternetConnectionExist())
             return;
-        new FirebaseOperation().uploadDate(chosenTopics, () -> {
+        firebaseOperation.uploadDate(chosenTopics, () -> {
             Toasty.success(context, getString(R.string.successfully_uploaded)).show();
         });
+    }
+
+    private void defineManu(Menu menu){
+        //note: hide download and upload buttons
+        if (topicsKey == null) {
+            menu.getItem(1).setVisible(false);
+            menu.getItem(2).setVisible(false);
+        } else { //note: check if owner of this topic
+            firebaseOperation.getDataSnapshotByKey(topicsKey, (dataSnapshot -> {
+                HashMap<?, ?> hashMap = (HashMap<?, ?>) dataSnapshot.getValue();
+                if (hashMap == null)
+                    return;
+                String checkingEmail = (String) hashMap.get("email");
+                if (checkingEmail.equals(new PreferencesOperations().getEmail()))
+                    menu.getItem(1).setVisible(false);
+                else
+                    menu.getItem(2).setVisible(false);
+            }));
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.sub_menu, menu);
-        //hide download and upload buttons
-        if (topicsKey == null){
-            menu.getItem(1).setVisible(false);
-            menu.getItem(2).setVisible(false);
-        }
+        defineManu(menu);
         return true;
     }
 
