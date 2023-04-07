@@ -99,10 +99,8 @@ public class StudyActivity extends ActivityGlobal {
     private void displayGptNotification() {
         if (!preferencesOperations.getGptDescription()) {
             CheckBoxDialog dialog = new CheckBoxDialog(context);
-            dialog.create();
             dialog.setPositiveButton(R.string.okay, v -> {
-                dialog.dismiss();
-                if (dialog.checkBox.isChecked()) {
+                if (dialog.isChecked()) {
                     preferencesOperations.putGptDescription();
                 }
             });
