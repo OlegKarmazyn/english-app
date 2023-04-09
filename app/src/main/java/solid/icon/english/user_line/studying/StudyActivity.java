@@ -60,7 +60,7 @@ public class StudyActivity extends ActivityGlobal {
 
         tabLayout = findViewById(R.id.tab_layout_example);
         pager2 = findViewById(R.id.viewPager);
-
+        pager2.setOffscreenPageLimit(1);
         setDateToActivity();
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -124,7 +124,7 @@ public class StudyActivity extends ActivityGlobal {
             pager2.setCurrentItem(cur);
         }, 550);
 
-        new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(800), 600);
+        new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(650), 600);
     }
 
     //region getting all english and translating words from list in database

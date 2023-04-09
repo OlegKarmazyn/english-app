@@ -145,6 +145,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         super.onPause();
         setVisibleGoneTextView();
         count = 0;
+        hideSoftKeyboard(editText);
     }
 
     private void setVisibleGoneTextView() {
