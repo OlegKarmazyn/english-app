@@ -117,14 +117,14 @@ public class StudyActivity extends ActivityGlobal {
         adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, isSubTest, StudyActivity.this);
         int cur = pager2.getCurrentItem();
 
-        pager2.animate().alpha(0).setDuration(600);
+        pager2.animate().alpha(0).setDuration(500);
 
         new Handler().postDelayed(() -> {
             pager2.setAdapter(adapter);
             pager2.setCurrentItem(cur);
-        }, 650);
+        }, 550);
 
-        new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(1000), 700);
+        new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(800), 600);
     }
 
     //region getting all english and translating words from list in database

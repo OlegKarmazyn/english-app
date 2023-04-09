@@ -139,7 +139,7 @@ public class FragmentTestUser extends UserFragmentActivity {
             editText.setGravity(Gravity.CENTER);
             editText.setTextColor(getActivity().getColor(R.color.ios_black));
             editText.setTextLocale(Locale.ENGLISH); //todo check
-            editText.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS); // Disable suggestions
+            editText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
 
 
             editTextList.add(editText);
