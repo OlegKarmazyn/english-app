@@ -143,26 +143,28 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
     }
 
+    private void animationDrawable() {
+        animationDrawable.start();
+        listen();
+        new CountDownTimer(1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+            }
+
+            public void onFinish() {
+                animationDrawable.stop();
+            }
+        }.start();
+    }
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_listen:
-                animationDrawable.start();
-                listen();
-                new CountDownTimer(1000, 1000) {
-
-                    public void onTick(long millisUntilFinished) {
-                        //mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
-                    }
-
-                    public void onFinish() {
-                        //mTextField.setText("done!");
-                        animationDrawable.stop();
-                    }
-                }.start();
-
+                animationDrawable();
                 break;
+
             case R.id.text_check_listen:
                 lay_write_learn.setVisibility(View.VISIBLE);
 
@@ -191,6 +193,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     editText.setText("");
                     words_get_text();
                     editText.setBackground(f);
+                    animationDrawable();
                 } else {
                     count = 0;
                     for (int c : counter_flip) {

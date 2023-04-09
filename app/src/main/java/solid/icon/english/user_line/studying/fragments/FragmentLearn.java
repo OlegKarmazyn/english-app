@@ -323,8 +323,9 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void setUpEditingMenu(int topicId) {
-        appearMenu();
         WordModel wordModel = wordModelDao.getWordModelByName(englishTranslArr[topicId], subTopic, topic);
+        if (wordModel == null)
+            return;
         String editingText = context.getString(R.string.Enter_info_to_edit);
         menu_title.setText(editingText);
         englishWord.setText(wordModel.englishWord);
@@ -346,6 +347,7 @@ public class FragmentLearn extends UserFragmentActivity {
 
         but_no.setText("Delete");
         but_no.setOnClickListener(v -> showDeleteDialog(topicId));
+        appearMenu();
     }
 
     private void appearMenu() {

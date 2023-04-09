@@ -2,6 +2,7 @@ package solid.icon.english.user_line.studying.fragments;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -138,6 +139,7 @@ public class FragmentTestUser extends UserFragmentActivity {
             editText.setGravity(Gravity.CENTER);
             editText.setTextColor(getActivity().getColor(R.color.ios_black));
             editText.setTextLocale(Locale.ENGLISH); //todo check
+            editText.setInputType(InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS); // Disable suggestions
 
 
             editTextList.add(editText);
