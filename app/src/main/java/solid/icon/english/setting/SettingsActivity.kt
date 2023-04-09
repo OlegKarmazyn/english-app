@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.settings_activity.*
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
 
-
 class SettingsActivity : ActivityGlobal() {
 
     private lateinit var viewModel: SettingViewModel
@@ -52,6 +51,8 @@ class SettingsActivity : ActivityGlobal() {
         }
 
         btnLogIn.setOnClickListener {
+            if (!doesInternetConnectionExist())
+                return@setOnClickListener
             viewModel.logIn(getEmail(), getPassword(),
                 onStart = {
                     loading_layout.isVisible = true
@@ -68,6 +69,8 @@ class SettingsActivity : ActivityGlobal() {
         }
 
         btnLogOut.setOnClickListener {
+            if (!doesInternetConnectionExist())
+                return@setOnClickListener
             viewModel.logOut {
                 isUserExist = false
                 etEmail.setText("")
