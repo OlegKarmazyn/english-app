@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -107,6 +108,19 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         words2.setClickable(false);
 
         setNotVisibleItem(0);
+        firstSettingVisibility();
+    }
+
+    private void firstSettingVisibility() {
+        setVisibility(imageView, true);
+        setVisibility(text_check_listen, true);
+        editText.setOnKeyListener((v, keyCode, event) -> {
+            if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                clickCheckButton();
+                return true;
+            }
+            return false;
+        });
     }
 
     private void listen() {
@@ -143,6 +157,14 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
     }
 
+    private void showSoftKeyboard(EditText editText) {
+        editText.requestFocus(); // set focus to the edit text
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT); // show the keyboard
+        }
+    }
+
     private void animationDrawable() {
         animationDrawable.start();
         listen();
@@ -157,6 +179,25 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         }.start();
     }
 
+    private void clickCheckButton() {
+        lay_write_learn.setVisibility(View.VISIBLE);
+
+        if (isTrueWords()) {
+            setVisibility(imageView, false);
+            if (counter_flip[i] != 0) {
+                counter_flip[i] = 1;
+            }
+
+            editText.setBackgroundResource(R.color.back_true);
+            setVisibility(fab, true);
+            setVisibility(text_check_listen, false);
+            hideSoftKeyboard(editText);
+        } else {
+            counter_flip[i] = 0;
+            editText.setBackgroundResource(R.color.back_false);
+        }
+    }
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
@@ -166,22 +207,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                 break;
 
             case R.id.text_check_listen:
-                lay_write_learn.setVisibility(View.VISIBLE);
-
-                if (isTrueWords()) {
-                    if (counter_flip[i] != 0) {
-                        counter_flip[i] = 1;
-                    }
-
-                    editText.setBackgroundResource(R.color.back_true);
-                    fab.setVisibility(View.VISIBLE);
-                    text_check_listen.setVisibility(View.GONE);
-                    hideSoftKeyboard(editText);
-                } else {
-                    counter_flip[i] = 0;
-                    editText.setBackgroundResource(R.color.back_false);
-                }
-
+                clickCheckButton();
                 break;
 
             case R.id.fab:
@@ -189,11 +215,13 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     i++;
                     lay_write_learn.setVisibility(View.GONE);
                     fab.setVisibility(View.GONE);
-                    text_check_listen.setVisibility(View.VISIBLE);
+                    setVisibility(text_check_listen, true);
                     editText.setText("");
                     words_get_text();
                     editText.setBackground(f);
+                    setVisibility(imageView, true);
                     animationDrawable();
+                    showSoftKeyboard(editText);
                 } else {
                     count = 0;
                     for (int c : counter_flip) {

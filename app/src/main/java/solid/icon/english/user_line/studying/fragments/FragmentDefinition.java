@@ -99,6 +99,8 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
             f = editText.getBackground();
             Arrays.fill(counter_flip, 2); //must be neither 0 nor 1
         }
+
+        setNotVisibleItem(0);
     }
 
     private void words_get_text() {

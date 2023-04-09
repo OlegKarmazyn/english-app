@@ -1,11 +1,14 @@
 package solid.icon.english.architecture.parents;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.View;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -59,6 +62,20 @@ public abstract class UserFragmentActivity extends Fragment {
         deleteEmptyDefinition();
         fillMainArrays();
         topicModel = getTopicsModel();
+    }
+
+    protected void setVisibility(View view, boolean isVisible){
+        if (isVisible){
+            view.setVisibility(View.VISIBLE);
+            view.animate().alpha(1).setListener(null);
+        } else {
+            view.animate().alpha(0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    view.setVisibility(View.GONE);
+                }
+            });
+        }
     }
 
     public boolean doesInternetConnectionExist() {
