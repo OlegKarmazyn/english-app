@@ -27,6 +27,8 @@ import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentDefinition extends UserFragmentActivity implements View.OnClickListener {
 
+    //TODO: make the same as in listen part: animation + keyboard
+
     protected FragmentDefinition(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
         super(wordModelList, topic, subTopic, studyActivity);
     }
