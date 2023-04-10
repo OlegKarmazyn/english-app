@@ -198,6 +198,7 @@ public class FragmentLearn extends UserFragmentActivity {
                     } else {
                         Toasty.error(context, "\"" + englishWord + "\"" + " already exists").show();
                     }
+                    closeMenu();
                     studyActivity.setDateToActivity();
                 }
             });
@@ -351,7 +352,7 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     private void appearMenu() {
-        int duration = 800;
+        int duration = 700;
         relativeLayout_proz.setAlpha(0f);
 
         TranslateAnimation animation = new TranslateAnimation(0, 0, 2000, 0);
@@ -362,10 +363,6 @@ public class FragmentLearn extends UserFragmentActivity {
         relativeLayout_proz.setVisibility(View.VISIBLE);
         relativeLayout_proz.animate().alpha(1f).setDuration(duration);
         bottom_lay.startAnimation(animation);
-    }
-
-    private void closeMenu(View v) {
-        closeMenu();
     }
 
     public void proposeDefinition() {
@@ -392,8 +389,13 @@ public class FragmentLearn extends UserFragmentActivity {
         }
     }
 
+    private void closeMenu(View v) {
+        closeMenu();
+    }
+
     private void closeMenu() {
-        int duration = 700;
+        hideSoftKeyboard(englishWord);
+        int duration = 600;
         TranslateAnimation animation = new TranslateAnimation(0, 0, 0, 2000);
         animation.setDuration(duration);
         animation.setFillAfter(true);
@@ -447,5 +449,6 @@ public class FragmentLearn extends UserFragmentActivity {
     public void onPause() {
         super.onPause();
         text_visible_gone();
+        closeMenu();
     }
 }

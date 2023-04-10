@@ -139,6 +139,8 @@ public class FragmentTestUser extends UserFragmentActivity {
             editText.setGravity(Gravity.CENTER);
             editText.setTextColor(getActivity().getColor(R.color.ios_black));
             editText.setTextLocale(Locale.ENGLISH); //todo check
+            editText.setHint(R.string.answer);
+            editText.setTextSize(16);
             editText.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
 
 

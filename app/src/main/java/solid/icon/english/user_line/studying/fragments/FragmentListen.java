@@ -110,8 +110,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     }
 
     private void firstSettingVisibility() {
-        setVisibility(imageView, true);
-        setVisibility(text_check_listen, true);
+        imageView.setVisibility(View.VISIBLE);
+        text_check_listen.setVisibility(View.VISIBLE);
         editText.setOnKeyListener((v, keyCode, event) -> {
             if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 clickCheckButton();
@@ -149,6 +149,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private void setVisibleGoneTextView() {
         lay_write_learn.setVisibility(View.GONE);
         editText.setBackground(f);
+        fab.setVisibility(View.GONE);
     }
 
     private void animationDrawable() {
