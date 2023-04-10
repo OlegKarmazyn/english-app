@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +27,6 @@ import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentDefinition extends UserFragmentActivity implements View.OnClickListener {
-
-    //TODO: make the same as in listen part: animation + keyboard
 
     protected FragmentDefinition(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
         super(wordModelList, topic, subTopic, studyActivity);
@@ -103,6 +102,14 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         }
 
         setNotVisibleItem(0);
+
+        editText.setOnKeyListener((v, keyCode, event) -> {
+            if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
+                clickCheckButton();
+                return true;
+            }
+            return false;
+        });
     }
 
     private void words_get_text() {
@@ -129,36 +136,40 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         }
     }
 
+    private void clickCheckButton() {
+        setVisibility(lay_definition_transl, true);
+        if (isTrueWords()) {
+            if (counter_flip[i] != 0)
+                counter_flip[i] = 1;
+
+            editText.setBackgroundResource(R.color.back_true);
+            setVisibility(fab, true);
+            setVisibility(text_check, false);
+            hideSoftKeyboard(editText);
+        } else {
+            counter_flip[i] = 0;
+            editText.setBackgroundResource(R.color.back_false);
+        }
+    }
+
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.text_check:
-                lay_definition_transl.setVisibility(View.VISIBLE);
-
-                if (isTrueWords()) {
-                    if (counter_flip[i] != 0)
-                        counter_flip[i] = 1;
-
-                    editText.setBackgroundResource(R.color.back_true);
-                    fab.setVisibility(View.VISIBLE);
-                    text_check.setVisibility(View.GONE);
-                } else {
-                    counter_flip[i] = 0;
-                    editText.setBackgroundResource(R.color.back_false);
-                }
+                clickCheckButton();
                 break;
 
             case R.id.fab:
                 if (i < size - 1) { // todo CHECK
                     i++;
-                    //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_definition_transl.setVisibility(View.GONE);
                     fab.setVisibility(View.GONE);
-                    text_check.setVisibility(View.VISIBLE);
+                    setVisibility(text_check, true);
                     editText.setText("");
                     words_get_text();
                     editText.setBackground(f);
+                    showSoftKeyboard(editText);
                 } else {
                     int count = 0;
                     for (int c : counter_flip) {
@@ -167,12 +178,18 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                         }
                     }
                     Toasty.success(context, "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
-                    fab.setVisibility(View.GONE);
+                    setVisibility(fab, false);
                 }
                 break;
             case R.id.words_by_engl:
                 speak(englishTranslArr[id[i]]);
                 break;
         }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        hideSoftKeyboard(editText);
     }
 }

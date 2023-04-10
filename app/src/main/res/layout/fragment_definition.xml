@@ -81,15 +81,6 @@
 
             </LinearLayout>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:visibility="gone"
-                app:srcCompat="@drawable/ic_next" />
-
             <EditText
                 android:id="@+id/writeEdit"
                 android:layout_width="match_parent"
@@ -103,6 +94,15 @@
                 android:inputType="textVisiblePassword"
                 android:padding="15dp"
                 android:textSize="16sp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_next" />
 
             <TextView
                 android:id="@+id/text_check"
