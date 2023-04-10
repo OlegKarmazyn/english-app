@@ -217,5 +217,6 @@ public class FragmentTestUser extends UserFragmentActivity {
     public void onPause() {
         super.onPause();
         setNaturalDesign();
+        hideSoftKeyboard(editTextList.get(0));
     }
 }

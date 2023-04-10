@@ -68,10 +68,14 @@ public abstract class UserFragmentActivity extends Fragment {
 
     protected void setVisibility(View view, boolean isVisible) {
         if (isVisible) {
+            if (view.getVisibility() == View.VISIBLE)
+                return;
             view.setAlpha(0);
             view.setVisibility(View.VISIBLE);
             view.animate().alpha(1).setListener(null);
         } else {
+            if (view.getVisibility() == View.GONE)
+                return;
             view.animate().alpha(0).setListener(new AnimatorListenerAdapter() {
                 @Override
                 public void onAnimationEnd(Animator animation) {
