@@ -1,7 +1,6 @@
 package solid.icon.english.user_line.studying.fragments;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -12,7 +11,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -151,19 +149,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private void setVisibleGoneTextView() {
         lay_write_learn.setVisibility(View.GONE);
         editText.setBackground(f);
-    }
-
-    private void hideSoftKeyboard(EditText input) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
-    }
-
-    private void showSoftKeyboard(EditText editText) {
-        editText.requestFocus(); // set focus to the edit text
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        if (imm != null) {
-            imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT); // show the keyboard
-        }
     }
 
     private void animationDrawable() {

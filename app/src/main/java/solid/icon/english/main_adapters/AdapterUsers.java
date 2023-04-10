@@ -21,6 +21,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+import java.util.logging.Handler;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
@@ -199,6 +200,9 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
         });
         dialog.setNegativeButton(R.string.cancel, null);
         dialog.show();
+        dialog.getEditText().postDelayed(() -> {
+            mainActivity.showSoftKeyboard(dialog.getEditText());
+        }, 200);
     }
 
     private void getDataFB(String key, String country) {

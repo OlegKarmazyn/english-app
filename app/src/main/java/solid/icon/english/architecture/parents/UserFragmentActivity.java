@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -64,8 +66,8 @@ public abstract class UserFragmentActivity extends Fragment {
         topicModel = getTopicsModel();
     }
 
-    protected void setVisibility(View view, boolean isVisible){
-        if (isVisible){
+    protected void setVisibility(View view, boolean isVisible) {
+        if (isVisible) {
             view.setVisibility(View.VISIBLE);
             view.animate().alpha(1).setListener(null);
         } else {
@@ -75,6 +77,19 @@ public abstract class UserFragmentActivity extends Fragment {
                     view.setVisibility(View.GONE);
                 }
             });
+        }
+    }
+
+    protected void hideSoftKeyboard(EditText input) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+    }
+
+    protected void showSoftKeyboard(EditText editText) {
+        editText.requestFocus(); // set focus to the edit text
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT); // show the keyboard
         }
     }
 

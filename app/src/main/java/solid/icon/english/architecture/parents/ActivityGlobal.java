@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.view.MenuItem;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -50,6 +52,19 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         if (!isConnected)
             Toasty.warning(context, R.string.no_internet_connection).show();
         return isConnected;
+    }
+
+    public void hideSoftKeyboard(EditText input) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(input.getWindowToken(), 0);
+    }
+
+    public void showSoftKeyboard(EditText editText) {
+        editText.requestFocus(); // set focus to the edit text
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (imm != null) {
+            imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT); // show the keyboard
+        }
     }
 
     protected void showActionBar(boolean isShow, String titleText) {

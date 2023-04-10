@@ -200,6 +200,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         dialog.setNegativeButton(R.string.cancel, null);
         dialog.show();
+        dialog.getEditText().postDelayed(() -> {
+            userLevel.showSoftKeyboard(dialog.getEditText());
+        }, 200);
     }
 
     private void moveDataFB(String topicsName, String subTopicsName) {
