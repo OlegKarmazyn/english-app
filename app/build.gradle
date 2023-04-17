@@ -54,6 +54,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.work:work-runtime-ktx:2.8.1'
 
 
     testImplementation 'junit:junit:4.13.2'
@@ -65,14 +66,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
 
-    implementation 'com.google.android.gms:play-services-auth:20.4.1'
+    implementation 'com.google.android.gms:play-services-auth:20.5.0'
 
     implementation 'org.jetbrains:annotations:16.0.2'
 
     //topics animation
     implementation "com.github.skydoves:elasticviews:2.1.0"
-
 
     // Room
     def room_version = "2.5.0-rc01"

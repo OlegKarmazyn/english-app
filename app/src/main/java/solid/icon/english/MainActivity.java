@@ -19,6 +19,7 @@ import java.util.List;
 
 import solid.icon.english.architecture.DividerItemDecorator;
 import solid.icon.english.architecture.local_data.PreferencesOperations;
+import solid.icon.english.architecture.notification.NotificationOperations;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
@@ -52,6 +53,13 @@ public class MainActivity extends ActivityGlobal {
 
         fullRecycleView();
         firstOpen();
+        testNotification();
+    }
+
+    private void testNotification() {
+        NotificationOperations notificationOperations = new NotificationOperations();
+        notificationOperations.pushMessageToken();
+        notificationOperations.sendNotification();
     }
 
     private void firstOpen() {

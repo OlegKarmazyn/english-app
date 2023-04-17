@@ -51,16 +51,16 @@ class PreferencesOperations {
         editor.apply()
     }
 
-    fun setIsOpenedSite(isOpen: Boolean){
+    fun setIsOpenedSite(isOpen: Boolean) {
         editor.putBoolean(Keys.IS_OPENED_SITE.key, isOpen)
         editor.apply()
     }
 
-    fun getIsOpenedSite(): Boolean{
+    fun getIsOpenedSite(): Boolean {
         return preferences.getBoolean(Keys.IS_OPENED_SITE.key, false)
     }
 
-    fun getNumberOfVisits(): Int{
+    fun getNumberOfVisits(): Int {
         return preferences.getInt(Keys.NUMBER_OF_VISITS.key, 0)
     }
 
