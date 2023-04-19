@@ -126,14 +126,13 @@ public class UserLevel extends ActivityGlobal {
     private void uploadSubTopics() {
         if (!doesInternetConnectionExist())
             return;
-        firebaseOperation.uploadDate(chosenTopics, () -> {
-            Toasty.success(context, getString(R.string.successfully_uploaded)).show();
-        });
+        firebaseOperation.uploadDate(chosenTopics, () ->
+                Toasty.success(context, getString(R.string.successfully_uploaded)).show());
     }
     //endregion
 
     //region Menu
-    private void defineManu(Menu menu){
+    private void defineManu(Menu menu) {
         //note: hide download and upload buttons
         if (topicsKey == null) {
             menu.getItem(1).setVisible(false);
