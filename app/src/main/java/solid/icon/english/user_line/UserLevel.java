@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -44,6 +45,7 @@ public class UserLevel extends ActivityGlobal {
     final Context context = this;
     SubTopicDao subTopicDao;
     FirebaseOperation firebaseOperation = new FirebaseOperation();
+    private static boolean isAutoDownloaded = false;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +60,16 @@ public class UserLevel extends ActivityGlobal {
 
         showActionBar(true, chosenTopics);
         setAdapter();
+        autoDownload();
+    }
+
+    private void autoDownload() {
+        new Handler().postDelayed(() -> {
+            if(!isAutoDownloaded){
+                isAutoDownloaded = true;
+                downloadSubTopics();
+            }
+        }, 200);
     }
 
     //region Recycler Adapter
@@ -200,4 +212,11 @@ public class UserLevel extends ActivityGlobal {
         }
     }
     //endregion
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        isAutoDownloaded = false;
+    }
 }

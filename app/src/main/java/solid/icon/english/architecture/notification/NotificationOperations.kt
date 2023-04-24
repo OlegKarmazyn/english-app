@@ -10,7 +10,7 @@ class NotificationOperations {
     private val TAG = "NotificationOperations"
 
     fun sendNotification(key: String, title: String) {
-        sendNotification(key, title, "There is new changes")
+        sendNotification(key, title, "There are new changes")
     }
 
     fun sendNotification(
