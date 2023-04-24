@@ -8,7 +8,7 @@ import android.view.Window
 import android.widget.TextView
 import androidx.core.view.isVisible
 import solid.icon.english.R
-
+//Note: dialog with title and message + 3 buttons
 class InfoDialog(context: Context) : ParentDialog(context) {
 
     private var tvMessage: TextView
@@ -61,5 +61,13 @@ class InfoDialog(context: Context) : ParentDialog(context) {
             isVisible = true
             neutralButtonListener = listener
         }
+    }
+
+    fun setMessage(textId: Int) {
+        tvMessage.text = context.getText(textId)
+    }
+
+    fun setMessage(text: String) {
+        tvMessage.text = text
     }
 }

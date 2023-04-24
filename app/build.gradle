@@ -13,8 +13,8 @@ android {
         applicationId "solid.icon.english"
         minSdkVersion 23
         targetSdkVersion 33
-        versionCode 9
-        versionName "1.3.5"
+        versionCode 10
+        versionName "1.10"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 

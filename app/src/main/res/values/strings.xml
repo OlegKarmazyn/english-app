@@ -153,6 +153,9 @@
     <string name="later">Пізніше</string>
     <string name="answer">your answer</string>
     <string name="send">Send</string>
+    <string name="go">Go</string>
+    <string name="after">Later</string>
+
 
 
     <string-array name="topics_name_a2">

@@ -26,6 +26,7 @@ import solid.icon.english.architecture.room.TopicModelDao;
 import solid.icon.english.dialogs.InfoDialog;
 import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
+import solid.icon.english.main_adapters.MainViewModel;
 
 public class MainActivity extends ActivityGlobal {
 
@@ -43,6 +44,7 @@ public class MainActivity extends ActivityGlobal {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showActionBarWithoutTitle(true);
+        MainViewModel viewModel = new MainViewModel(this);
 
         recyclerView_levels = findViewById(R.id.recycleView_levels);
         recyclerView_user = findViewById(R.id.recycleView_user);
@@ -51,17 +53,12 @@ public class MainActivity extends ActivityGlobal {
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
         fullRecycleView();
-        firstOpen();
+        viewModel.firstOpen();
+        viewModel.checkLatestVersion();
     }
 
-    private void firstOpen() {
-        PreferencesOperations pref = new PreferencesOperations();
-        pref.firstOpen();
-        if (pref.getNumberOfVisits() < 4 && !pref.getIsOpenedSite())
-            showSiteDialog();
-    }
-
-    private void showSiteDialog() {
+    //region shows dialogs
+    public void showSiteDialog() {
         InfoDialog dialog = new InfoDialog(context);
         dialog.setPositiveButton(R.string.ride, v -> {
             new PreferencesOperations().setIsOpenedSite(true);
@@ -72,6 +69,20 @@ public class MainActivity extends ActivityGlobal {
         dialog.setNegativeButton(R.string.later, null);
         dialog.show();
     }
+
+    public void showUpdateDialog() {
+        InfoDialog dialog = new InfoDialog(context);
+        dialog.setTitle("Old app version");
+        dialog.setMessage("Do you want to upgrade now?");
+        dialog.setPositiveButton(R.string.go, v -> {
+            Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=solid.icon.english");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            context.startActivity(intent);
+        });
+        dialog.setNegativeButton(R.string.after, null);
+        dialog.show();
+    }
+    //endregion
 
     public void setLoadingVisible(boolean isLoading) {
         if (isLoading)
