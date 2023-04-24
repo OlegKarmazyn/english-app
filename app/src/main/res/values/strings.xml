@@ -152,6 +152,7 @@
     <string name="ride">Поїхали</string>
     <string name="later">Пізніше</string>
     <string name="answer">your answer</string>
+    <string name="send">Send</string>
 
 
     <string-array name="topics_name_a2">

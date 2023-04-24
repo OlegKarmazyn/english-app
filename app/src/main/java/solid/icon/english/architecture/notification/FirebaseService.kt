@@ -7,31 +7,42 @@ import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_ONE_SHOT
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
+import androidx.preference.PreferenceManager
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import solid.icon.english.R
+import solid.icon.english.architecture.room.App
 import kotlin.random.Random
 
 private const val CHANNEL_ID = "my_channel"
+const val TOPIC = "/topics/" //NOTE: plus key of topic ("-" and 19 chars)
 
 class FirebaseService : FirebaseMessagingService() {
 
     companion object {
-        var sharedPref: SharedPreferences? = null
+        fun subscribeToTopic(key: String) {
+            FirebaseMessaging.getInstance().subscribeToTopic(TOPIC + key) //NOTE: sub-notification
+        }
 
-        var token: String?
-            get() {
-                return sharedPref?.getString("token", "")
-            }
-            set(value) {
-                sharedPref?.edit()?.putString("token", value)?.apply()
-            }
+        fun unsubscribeToTopic(key: String) {
+            FirebaseMessaging.getInstance().subscribeToTopic(TOPIC + key) //NOTE: sub-notification
+        }
     }
+
+    private val sharedPref = PreferenceManager.getDefaultSharedPreferences(App.instance)
+
+    var token: String?
+        get() {
+            return sharedPref?.getString("token", "")
+        }
+        set(value) {
+            sharedPref?.edit()?.putString("token", value)?.apply()
+        }
 
     override fun onNewToken(newToken: String) {
         super.onNewToken(newToken)

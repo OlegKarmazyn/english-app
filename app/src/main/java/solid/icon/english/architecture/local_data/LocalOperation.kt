@@ -1,5 +1,6 @@
 package solid.icon.english.architecture.local_data
 
+import solid.icon.english.architecture.notification.FirebaseService
 import solid.icon.english.architecture.room.App
 
 class LocalOperation {
@@ -17,6 +18,7 @@ class LocalOperation {
 
     fun deleteTopic(topicsName: String) {
         val topicModel = topicModelDao?.getByTopicsName(topicsName)
+        topicModel?.topicsKey?.let { FirebaseService.unsubscribeToTopic(it) } //NOTE: unsubscribe
         wordModelDao?.deleteWhere(topicsName)
         subTopicDao?.deleteWhere(topicsName)
         topicModelDao?.delete(topicModel)

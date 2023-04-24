@@ -4,6 +4,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import solid.icon.english.architecture.notification.FirebaseService
 import solid.icon.english.architecture.room.App
 
 class TopicsOperation {
@@ -18,6 +19,7 @@ class TopicsOperation {
             dbRef.child("topicsName").setValue(topicsName)
             dbRef.child("email").setValue(email)
             dbRef.child("uid").setValue(uid)
+            FirebaseService.subscribeToTopic(topicModel.topicsKey)
         }
     }
 

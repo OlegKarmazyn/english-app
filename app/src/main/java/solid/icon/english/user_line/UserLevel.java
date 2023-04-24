@@ -24,11 +24,14 @@ import solid.icon.english.architecture.DividerItemDecorator;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
 import solid.icon.english.architecture.local_data.PreferencesOperations;
+import solid.icon.english.architecture.notification.FirebaseService;
+import solid.icon.english.architecture.notification.NotificationOperations;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.architecture.room.TopicModel;
+import solid.icon.english.dialogs.AddingDialog;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class UserLevel extends ActivityGlobal {
@@ -81,16 +84,21 @@ public class UserLevel extends ActivityGlobal {
 
     public void setDataToUserAdapter() {
         getNameTopic();
-
         recyclerView.setAlpha(0f);
-
         UserAdapter userAdapter = new UserAdapter(context, name_topic, UserLevel.this);
         recyclerView.setAdapter(userAdapter);
-
         recyclerView.animate().alpha(1f);
     }
     //endregion
 
+    private void setLoadingVisible(boolean isLoading) {
+        if (isLoading)
+            loading_layout.setVisibility(View.VISIBLE);
+        else
+            loading_layout.setVisibility(View.GONE);
+    }
+
+    //region menu button's operations
     private void goToTestActivity() {
         Intent intent = new Intent(context, StudyActivity.class);
         intent.putExtra(ActivityGlobal.KeysExtra.level.name(), chosenTopics); //topics
@@ -100,14 +108,6 @@ public class UserLevel extends ActivityGlobal {
         overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
     }
 
-    private void setLoadingVisible(boolean isLoading) {
-        if (isLoading)
-            loading_layout.setVisibility(View.VISIBLE);
-        else
-            loading_layout.setVisibility(View.GONE);
-    }
-
-    //region down/up-load operations
     private void downloadSubTopics() {
         if (!doesInternetConnectionExist())
             return;
@@ -120,6 +120,7 @@ public class UserLevel extends ActivityGlobal {
             setLoadingVisible(false);
             setDataToUserAdapter();
             Toasty.success(context, getString(R.string.data_uptodata)).show();
+            FirebaseService.Companion.subscribeToTopic(topicsKey);
         });
     }
 
@@ -128,26 +129,45 @@ public class UserLevel extends ActivityGlobal {
             return;
         firebaseOperation.uploadDate(chosenTopics, () ->
                 Toasty.success(context, getString(R.string.successfully_uploaded)).show());
+        FirebaseService.Companion.subscribeToTopic(topicsKey);
+    }
+
+    private void sendNotification() {
+        AddingDialog dialog = new AddingDialog(context);
+        dialog.setTitle("Notify subscribers");
+        dialog.getEditText().setHint("message (optional)");
+        dialog.setPositiveButton(R.string.send, v -> {
+            String message = dialog.getTextFromField();
+            if (message.isEmpty())
+                new NotificationOperations().sendNotification(topicsKey, chosenTopics);
+            else
+                new NotificationOperations().sendNotification(topicsKey, chosenTopics, message);
+        });
+
+        dialog.setNegativeButton(R.string.cancel, null);
+        dialog.show();
+        dialog.getEditText().postDelayed(() -> {
+            showSoftKeyboard(dialog.getEditText());
+        }, 200);
     }
     //endregion
 
-    //region Menu
+    //region Menu settings
     private void defineManu(Menu menu) {
         //note: hide download and upload buttons
-        if (topicsKey == null) {
-            menu.getItem(1).setVisible(false);
-            menu.getItem(2).setVisible(false);
-        } else { //note: check if owner of this topic
+        if (topicsKey != null) { //note: check if owner of this topic
             firebaseOperation.getDataSnapshotByKey(topicsKey, (dataSnapshot -> {
                 HashMap<?, ?> hashMap = (HashMap<?, ?>) dataSnapshot.getValue();
                 if (hashMap == null)
                     return;
                 String checkingEmail = (String) hashMap.get("email");
                 assert checkingEmail != null;
-                if (checkingEmail.equals(new PreferencesOperations().getEmail()))
-                    menu.getItem(1).setVisible(false);
-                else
-                    menu.getItem(2).setVisible(false);
+                if (checkingEmail.equals(new PreferencesOperations().getEmail())) { //owner
+                    menu.getItem(2).setVisible(true); //upload
+                    menu.getItem(3).setVisible(true); //notify
+                } else { //not
+                    menu.getItem(1).setVisible(true); //download
+                }
             }));
         }
     }
@@ -171,6 +191,9 @@ public class UserLevel extends ActivityGlobal {
                 return true;
             case R.id.test_subTopics:
                 goToTestActivity();
+                return true;
+            case R.id.notify:
+                sendNotification();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

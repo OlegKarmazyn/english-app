@@ -21,7 +21,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-import java.util.logging.Handler;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
@@ -29,6 +28,7 @@ import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.local_data.PreferencesOperations;
+import solid.icon.english.architecture.notification.FirebaseService;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.TopicModel;
@@ -188,7 +188,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             }
 
             if (topicsName.charAt(0) == '-' && topicsName.length() == 20) {
-                getDataFB(topicsName, dialog.getSelectedItem());
+                getDataFB(topicsName, dialog.getSelectedItem()); //note: get topic by key
             } else {
                 if (topicModelDao.getByTopicsName(topicsName) == null) {
                     insertNewTopics(topicsName, dialog.getSelectedItem());
@@ -216,6 +216,7 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
             insertNewTopics(topicModel);
             mainActivity.setLoadingVisible(false);
             mainActivity.setDataToUserAdapter();
+            FirebaseService.Companion.subscribeToTopic(key); //note: subscribe
         });
     }
 

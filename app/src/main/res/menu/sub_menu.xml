@@ -15,14 +15,22 @@
         android:icon="@drawable/ic_download_data"
         android:orderInCategory="2"
         android:title="Download"
-        android:visible="true"/>
+        android:visible="false"
+        app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/upload_data"
         android:icon="@drawable/ic_upload_data"
         android:orderInCategory="3"
         android:title="Upload"
-        android:visible="true" />
+        android:visible="false"/>
+
+    <item
+        android:id="@+id/notify"
+        android:icon="@drawable/ic_notification"
+        android:orderInCategory="4"
+        android:title="Notify"
+        android:visible="false"/>
 
 
 </menu>
