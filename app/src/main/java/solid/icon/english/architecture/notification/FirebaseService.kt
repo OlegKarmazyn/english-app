@@ -15,6 +15,7 @@ import androidx.preference.PreferenceManager
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import solid.icon.english.MainActivity
 import solid.icon.english.R
 import solid.icon.english.architecture.room.App
 import kotlin.random.Random
@@ -52,7 +53,7 @@ class FirebaseService : FirebaseMessagingService() {
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        val intent = Intent(this, MainActivity2::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         val notificationID = Random.nextInt()
@@ -66,7 +67,7 @@ class FirebaseService : FirebaseMessagingService() {
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setContentTitle(message.data["title"])
             .setContentText(message.data["message"])
-            .setSmallIcon(R.drawable.ic_person)
+            .setSmallIcon(R.drawable.ic_notification)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
             .build()
@@ -86,13 +87,3 @@ class FirebaseService : FirebaseMessagingService() {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
