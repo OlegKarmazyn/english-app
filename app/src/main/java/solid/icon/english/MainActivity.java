@@ -2,15 +2,18 @@ package solid.icon.english;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,6 +30,7 @@ import solid.icon.english.dialogs.InfoDialog;
 import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
 import solid.icon.english.main_adapters.MainViewModel;
+import solid.icon.english.setting.SettingsActivity;
 
 public class MainActivity extends ActivityGlobal {
 

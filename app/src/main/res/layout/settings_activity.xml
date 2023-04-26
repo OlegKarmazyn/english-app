@@ -59,9 +59,8 @@
     </LinearLayout>
 
     <include
-        android:id="@+id/loading_layout"
-        layout="@layout/loading"
-        android:visibility="gone" />
+        android:id="@+id/loadingLayout"
+        layout="@layout/loading"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

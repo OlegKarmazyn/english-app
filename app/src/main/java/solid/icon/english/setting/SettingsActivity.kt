@@ -6,34 +6,37 @@ import android.os.Bundle
 import androidx.core.view.isVisible
 import com.google.firebase.auth.FirebaseAuth
 import es.dmoral.toasty.Toasty
-import kotlinx.android.synthetic.main.settings_activity.*
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
+import solid.icon.english.databinding.SettingsActivityBinding
 
 class SettingsActivity : ActivityGlobal() {
 
     private lateinit var viewModel: SettingViewModel
     private val auth = FirebaseAuth.getInstance()
+    private lateinit var binding: SettingsActivityBinding
 
     private var isUserExist: Boolean = false
         set(value) {
             if (value) {
-                etEmail.isEnabled = false
-                etPassword.isVisible = false
-                btnLogIn.isVisible = false
-                btnLogOut.isVisible = true
+                binding.etEmail.isEnabled = false
+                binding.etPassword.isVisible = false
+                binding.btnLogIn.isVisible = false
+                binding.btnLogOut.isVisible = true
             } else {
-                etEmail.isEnabled = true
-                etPassword.isVisible = true
-                btnLogIn.isVisible = true
-                btnLogOut.isVisible = false
+                binding.etEmail.isEnabled = true
+                binding.etPassword.isVisible = true
+                binding.btnLogIn.isVisible = true
+                binding.btnLogOut.isVisible = false
             }
             field = value
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.settings_activity)
+        binding = SettingsActivityBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
         showActionBar(true, "Account")
 
         viewModel = SettingViewModel(this)
@@ -43,23 +46,23 @@ class SettingsActivity : ActivityGlobal() {
     private fun initUI() {
         var user = auth.currentUser
         if (user != null) {
-            etEmail.setText(user.email)
+            binding.etEmail.setText(user.email)
             if (user.isEmailVerified)
                 isUserExist = user.isEmailVerified
             else
                 Toasty.warning(context, "Please check ${user.email} for a verification link").show()
         }
 
-        btnLogIn.setOnClickListener {
+        binding.btnLogIn.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
             viewModel.logIn(getEmail(), getPassword(),
                 onStart = {
-                    loading_layout.isVisible = true
+                    binding.loadingLayout.root.isVisible = true
                 },
                 onSuccess = {
                     isUserExist = it
-                    loading_layout.isVisible = false
+                    binding.loadingLayout.root.isVisible = false
                     if (it) {
                         user = auth.currentUser
                         viewModel.saveEmail(user!!.email, user!!.uid)
@@ -68,19 +71,19 @@ class SettingsActivity : ActivityGlobal() {
                 })
         }
 
-        btnLogOut.setOnClickListener {
+        binding.btnLogOut.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
             viewModel.logOut {
                 isUserExist = false
-                etEmail.setText("")
-                etPassword.setText("")
+                binding.etEmail.setText("")
+                binding.etPassword.setText("")
                 viewModel.saveEmail("")
                 Toasty.success(context, getString(R.string.logged_out)).show()
             }
         }
 
-        tvOurSite.setOnClickListener {
+        binding.tvOurSite.setOnClickListener {
             val uri: Uri = Uri.parse("http://english-vs.web.app")
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
@@ -88,7 +91,7 @@ class SettingsActivity : ActivityGlobal() {
     }
 
     private fun getEmail(): String? {
-        val email = etEmail.text.toString().trim()
+        val email = binding.etEmail.text.toString().trim()
         return email.ifBlank {
             Toasty.error(context, getString(R.string.email_field_is_empty)).show()
             null
@@ -96,7 +99,7 @@ class SettingsActivity : ActivityGlobal() {
     }
 
     private fun getPassword(): String? {
-        val email = etPassword.text.toString().trim()
+        val email = binding.etPassword.text.toString().trim()
         return email.ifBlank {
             Toasty.error(context, getString(R.string.password_field_is_empty)).show()
             null
