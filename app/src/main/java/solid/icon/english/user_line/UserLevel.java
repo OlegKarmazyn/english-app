@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +17,18 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DataSnapshot;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.DividerItemDecorator;
+import solid.icon.english.architecture.firebase.database.interfaces.SuccessOrFailureListener;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
 import solid.icon.english.architecture.firebase.database.operations.RecipientOperation;
 import solid.icon.english.architecture.local_data.PreferencesOperations;
@@ -39,7 +46,7 @@ public class UserLevel extends ActivityGlobal {
 
     RecyclerView recyclerView;
     RelativeLayout loading_layout;
-    String[] name_topic;
+    String[] subTopicsNames;
     String chosenTopics;
     String topicsKey;
     final Context context = this;
@@ -63,23 +70,57 @@ public class UserLevel extends ActivityGlobal {
         autoDownload();
     }
 
+    //region checkLatestData and autoDownload
     private void autoDownload() {
-        new Handler().postDelayed(() -> {
-            if(!isAutoDownloaded){
-                isAutoDownloaded = true;
-                downloadSubTopics(false);
+        checkLatestData(new SuccessOrFailureListener() {
+            @Override
+            public void onSuccess() { //if found new data
+                new Handler().postDelayed(() -> {
+                    if (!isAutoDownloaded) {
+                        isAutoDownloaded = true;
+                        downloadSubTopics(false);
+                    }
+                }, 200);
             }
-        }, 200);
+
+            @Override
+            public void onFailure() {
+                Log.e(TAG, "autoDownload - onFailure");
+            }
+        });
     }
+
+    private void checkLatestData(SuccessOrFailureListener listener) {
+        List<String> list = new ArrayList<>();
+        new FirebaseOperation().getDataSnapshotByKey(topicsKey, dataSnapshot -> {
+            for (DataSnapshot dataSnap : dataSnapshot.child("subNames").getChildren()) {
+                String subName = (String) dataSnap.getValue();
+                list.add(subName);
+            }
+            equalizeLists(list, listener);
+        });
+    }
+
+    private void equalizeLists(List<String> fbList, SuccessOrFailureListener listener) {
+        List<String> homeList = new ArrayList<>(Arrays.asList(subTopicsNames));
+        for (String fbItem : fbList) {
+            if (!homeList.contains(fbItem)) {
+                listener.onSuccess();
+                return;
+            }
+        }
+        listener.onFailure();
+    }
+    //endregion
 
     //region Recycler Adapter
     private void getNameTopic() {
         List<SubTopicModel> subTopicModels = subTopicDao.getAllByTopicsName(chosenTopics);
 
-        name_topic = new String[subTopicModels.size()];
+        subTopicsNames = new String[subTopicModels.size()];
         int iterator = 0;
         for (SubTopicModel s : subTopicModels) {
-            name_topic[iterator] = s.subTopicsName;
+            subTopicsNames[iterator] = s.subTopicsName;
             iterator += 1;
         }
     }
@@ -97,18 +138,11 @@ public class UserLevel extends ActivityGlobal {
     public void setDataToUserAdapter() {
         getNameTopic();
         recyclerView.setAlpha(0f);
-        UserAdapter userAdapter = new UserAdapter(context, name_topic, UserLevel.this);
+        UserAdapter userAdapter = new UserAdapter(context, subTopicsNames, UserLevel.this);
         recyclerView.setAdapter(userAdapter);
         recyclerView.animate().alpha(1f);
     }
     //endregion
-
-    private void setLoadingVisible(boolean isLoading) {
-        if (isLoading)
-            loading_layout.setVisibility(View.VISIBLE);
-        else
-            loading_layout.setVisibility(View.GONE);
-    }
 
     //region menu button's operations
     private void goToTestActivity() {
@@ -123,7 +157,8 @@ public class UserLevel extends ActivityGlobal {
     private void downloadSubTopics(boolean isShowToast) {
         if (!doesInternetConnectionExist(isShowToast))
             return;
-        TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
+        TopicModel topicModel = Objects.requireNonNull(App.getInstance().getDatabase()
+                .topicModelDao()).getByTopicsName(chosenTopics);
         if (topicModel.topicsKey == null)
             return;
 
@@ -215,6 +250,12 @@ public class UserLevel extends ActivityGlobal {
     }
     //endregion
 
+    private void setLoadingVisible(boolean isLoading) {
+        if (isLoading)
+            loading_layout.setVisibility(View.VISIBLE);
+        else
+            loading_layout.setVisibility(View.GONE);
+    }
 
     @Override
     protected void onDestroy() {
