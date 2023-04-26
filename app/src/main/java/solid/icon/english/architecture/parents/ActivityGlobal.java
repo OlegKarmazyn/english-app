@@ -15,7 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
-import solid.icon.english.navigation_menu.accont.AccountActivity;
+import solid.icon.english.navigation_menu.account.AccountActivity;
+import solid.icon.english.navigation_menu.settings.SettingsActivity;
 
 public abstract class ActivityGlobal extends AppCompatActivity {
 
@@ -81,6 +82,12 @@ public abstract class ActivityGlobal extends AppCompatActivity {
 
     protected void goToAccount() {
         startActivity(new Intent(context, AccountActivity.class));
+        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+    }
+
+
+    protected void goToSettings() {
+        startActivity(new Intent(context, SettingsActivity.class));
         overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
     }
 

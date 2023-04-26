@@ -184,7 +184,7 @@ public class MainActivity extends ActivityGlobal {
                     goToAccount();
                     break;
                 case 1:
-                    Toast.makeText(getBaseContext(), "Settings", Toast.LENGTH_SHORT).show();
+                    goToSettings();
                     break;
             }
             powerMenu.dismiss();

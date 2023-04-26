@@ -30,7 +30,8 @@
         <activity android:name=".user_line.UserLevel" android:screenOrientation="portrait"/>
         <activity android:name=".user_line.studying.StudyActivity" android:screenOrientation="portrait"/>
 
-        <activity android:name=".navigation_menu.accont.AccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".navigation_menu.account.AccountActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".navigation_menu.settings.SettingsActivity" android:screenOrientation="portrait"/>
 
         <service android:name=".architecture.notification.FirebaseService"
             android:permission="com.google.android.c2dm.permission.SEND"

@@ -1,4 +1,4 @@
-package solid.icon.english.navigation_menu.accont
+package solid.icon.english.navigation_menu.account
 
 import androidx.lifecycle.ViewModel
 import solid.icon.english.architecture.local_data.PreferencesOperations
