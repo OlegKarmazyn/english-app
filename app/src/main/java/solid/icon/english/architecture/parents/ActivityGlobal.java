@@ -55,6 +55,15 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         return isConnected;
     }
 
+    public boolean doesInternetConnectionExist(boolean isShowToast) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        boolean isConnected = activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        if (!isConnected && isShowToast)
+            Toasty.warning(context, R.string.no_internet_connection).show();
+        return isConnected;
+    }
+
     public void hideSoftKeyboard(EditText input) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(input.getWindowToken(), 0);

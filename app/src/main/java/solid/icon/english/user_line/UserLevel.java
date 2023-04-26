@@ -67,7 +67,7 @@ public class UserLevel extends ActivityGlobal {
         new Handler().postDelayed(() -> {
             if(!isAutoDownloaded){
                 isAutoDownloaded = true;
-                downloadSubTopics();
+                downloadSubTopics(false);
             }
         }, 200);
     }
@@ -120,8 +120,8 @@ public class UserLevel extends ActivityGlobal {
         overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
     }
 
-    private void downloadSubTopics() {
-        if (!doesInternetConnectionExist())
+    private void downloadSubTopics(boolean isShowToast) {
+        if (!doesInternetConnectionExist(isShowToast))
             return;
         TopicModel topicModel = App.getInstance().getDatabase().topicModelDao().getByTopicsName(chosenTopics);
         if (topicModel.topicsKey == null)
@@ -145,6 +145,8 @@ public class UserLevel extends ActivityGlobal {
     }
 
     private void sendNotification() {
+        if (!doesInternetConnectionExist())
+            return;
         AddingDialog dialog = new AddingDialog(context);
         dialog.setTitle("Notify subscribers");
         dialog.getEditText().setHint("message (optional)");
@@ -158,9 +160,8 @@ public class UserLevel extends ActivityGlobal {
 
         dialog.setNegativeButton(R.string.cancel, null);
         dialog.show();
-        dialog.getEditText().postDelayed(() -> {
-            showSoftKeyboard(dialog.getEditText());
-        }, 200);
+        dialog.getEditText().postDelayed(() ->
+                showSoftKeyboard(dialog.getEditText()), 200);
     }
     //endregion
 
@@ -177,7 +178,8 @@ public class UserLevel extends ActivityGlobal {
                 if (checkingEmail.equals(new PreferencesOperations().getEmail())) { //owner
                     menu.getItem(2).setVisible(true); //upload
                     menu.getItem(3).setVisible(true); //notify
-                } else { //not
+                    menu.getItem(1).setVisible(false); //download
+                } else { //not owner
                     menu.getItem(1).setVisible(true); //download
                 }
             }));
@@ -196,7 +198,7 @@ public class UserLevel extends ActivityGlobal {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.download_data:
-                downloadSubTopics();
+                downloadSubTopics(true);
                 return true;
             case R.id.upload_data:
                 uploadSubTopics();
