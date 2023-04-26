@@ -1,6 +1,7 @@
 package solid.icon.english.user_line;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -121,9 +122,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
                 intent.putExtra(ActivityGlobal.KeysExtra.level.name(), userLevel.chosenTopics); //topics
                 intent.putExtra(ActivityGlobal.KeysExtra.num_of_topic.name(), position); //position
                 intent.putExtra(ActivityGlobal.KeysExtra.title.name(), holder.title.getText()); //title (subTopics)
-                context.startActivity(intent);
-                userLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-
+                context.startActivity(intent,
+                        ActivityOptions.makeSceneTransitionAnimation(userLevel).toBundle());
             } else {
                 showAddDialog();
             }

@@ -9,8 +9,13 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
+import androidx.lifecycle.lifecycleScope
 import androidx.preference.PreferenceManager
 import es.dmoral.toasty.Toasty
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.SettingsActivityBinding
 import java.util.*
@@ -28,12 +33,17 @@ class SettingsActivity : ActivityGlobal() {
         setContentView(view)
         showActionBar(true, "Settings")
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(context)
-        animationDrawable = binding.imgListen.drawable as AnimationDrawable?
-        initUI()
+        lifecycleScope.launch {
+            delay(800)
+            preferences = PreferenceManager.getDefaultSharedPreferences(context)
+            withContext(Dispatchers.Main) {
+                initUI()
+            }
+        }
     }
 
     private fun initUI() {
+        animationDrawable = binding.imgListen.drawable as AnimationDrawable?
         val pitch = getPitchInt()
         val speech = getSpeechRateInt()
         binding.pitchBar.progress = pitch
@@ -57,6 +67,10 @@ class SettingsActivity : ActivityGlobal() {
 
         binding.imgListen.setOnClickListener {
             animationDrawable()
+        }
+
+        binding.reset.setOnClickListener {
+            resetSettings()
         }
 
         binding.pitchBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
@@ -114,6 +128,20 @@ class SettingsActivity : ActivityGlobal() {
             editor.putFloat("speechRate", speechRate)
             editor.apply()
             Toasty.info(context, "Saved").show()
+        } catch (_: java.lang.Exception) {
+            Toasty.error(context, "Error").show()
+        }
+    }
+
+    private fun resetSettings() {
+        try {
+            val pitch = 0.7f
+            val speechRate = 0.7f
+            val editor = preferences.edit()
+            editor.putFloat("pitch", pitch)
+            editor.putFloat("speechRate", speechRate)
+            editor.apply()
+            initUI()
         } catch (_: java.lang.Exception) {
             Toasty.error(context, "Error").show()
         }

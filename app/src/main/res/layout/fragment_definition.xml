@@ -90,7 +90,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="15dp"
                 android:gravity="center"
-                android:hint="your answer"
+                android:hint="@string/answer"
                 android:inputType="textVisiblePassword"
                 android:padding="15dp"
                 android:textSize="16sp" />
@@ -99,10 +99,13 @@
                 android:id="@+id/fab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="end"
                 android:layout_marginTop="5dp"
+                android:layout_marginEnd="30dp"
+                android:onClick="click_listen"
                 android:visibility="gone"
-                app:srcCompat="@drawable/ic_next" />
+                app:srcCompat="@drawable/ic_next"
+                android:contentDescription="@string/go_next"/>
 
             <TextView
                 android:id="@+id/text_check"

@@ -151,6 +151,7 @@ public class FragmentTestUser extends UserFragmentActivity {
         }
     }
 
+    private Button checkButton;
     private void createCheckButton() {
         //counting margin
         int dp_15 = getDp(15);
@@ -171,15 +172,16 @@ public class FragmentTestUser extends UserFragmentActivity {
         );
 
         //set the properties for check button
-        Button button = new Button(context);
-        button.setLayoutParams(params);
-        button.setText("Check");
-        button.setTextSize(15);
-        button.setBackgroundResource(R.drawable.person_together);
-        button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
-        button.setGravity(Gravity.CENTER);
+        checkButton = new Button(context);
+        checkButton.setLayoutParams(params);
+        checkButton.setText("Check");
+        checkButton.setTextSize(15);
+        checkButton.setBackgroundResource(R.drawable.person_together);
+        checkButton.setPadding(getDp(5), dp_15, getDp(5), dp_15);
+        checkButton.setGravity(Gravity.CENTER);
 
-        button.setOnClickListener(v -> {
+        checkButton.setOnClickListener(v -> {
+            checkButton.setVisibility(View.GONE);
             int counter = 0;
             for (int i = 0; i < size; i++) {
                 int index = id[i];
@@ -197,7 +199,7 @@ public class FragmentTestUser extends UserFragmentActivity {
         });
 
         //adding layout to the layout verticalLinearLayout
-        horizontalLayout.addView(button);
+        horizontalLayout.addView(checkButton);
         verticalLinearLayout.addView(horizontalLayout);
 
     }
@@ -211,6 +213,8 @@ public class FragmentTestUser extends UserFragmentActivity {
         for (TextView t : textViewList) {
             t.setVisibility(View.GONE);
         }
+
+        checkButton.setVisibility(View.VISIBLE);
     }
 
     @Override

@@ -77,7 +77,7 @@
                 android:inputType="textVisiblePassword"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:hint="your answer"
+                android:hint="@string/answer"
                 android:padding="15dp"
                 android:textSize="16sp" />
 
@@ -87,10 +87,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginEnd="30dp"
                 android:onClick="click_listen"
                 android:visibility="gone"
-                app:srcCompat="@drawable/ic_next" />
+                app:srcCompat="@drawable/ic_next"
+                android:contentDescription="@string/go_next" />
 
             <ImageView
                 android:id="@+id/img_listen"

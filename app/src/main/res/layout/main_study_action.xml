@@ -46,6 +46,9 @@
 
     </com.google.android.material.tabs.TabLayout>
 
+    <include
+        android:id="@+id/loadingLayout"
+        layout="@layout/loading" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"

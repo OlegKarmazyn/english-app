@@ -2,6 +2,7 @@ package solid.icon.english.main_adapters;
 
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -121,9 +122,8 @@ public class AdapterUsers extends RecyclerView.Adapter<AdapterUsers.MyViewHolder
                 Intent intent = new Intent(context, UserLevel.class);
                 intent.putExtra(ActivityGlobal.KeysExtra.level.name(), holder.title.getText().toString());
                 intent.putExtra(ActivityGlobal.KeysExtra.topicsKey.name(), topicModel.topicsKey);
-                context.startActivity(intent);
-                mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-
+                context.startActivity(intent,
+                        ActivityOptions.makeSceneTransitionAnimation(mainActivity).toBundle());
             } else {
                 showCustomAddingDialog();
             }

@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,6 +48,8 @@ public class StudyActivity extends ActivityGlobal {
 
     public boolean isReplaced = false;
     public Menu menu;
+    private boolean isFirstInit = true;
+    private RelativeLayout loadingLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +62,16 @@ public class StudyActivity extends ActivityGlobal {
         isSubTest = intent.getBooleanExtra(KeysExtra.isSubTest.name(), false);
         showActionBar(true, subTopic);
 
+        loadingLayout = findViewById(R.id.loadingLayout);
+        loadingLayout.setVisibility(View.VISIBLE);
+        new Handler().postDelayed(() -> {
+            loadingLayout.setVisibility(View.GONE);
+            setUI();
+            displayGptNotification();
+        }, 900);
+    }
+
+    private void setUI() {
         tabLayout = findViewById(R.id.tab_layout_example);
         pager2 = findViewById(R.id.viewPager);
         pager2.setOffscreenPageLimit(1);
@@ -91,8 +105,6 @@ public class StudyActivity extends ActivityGlobal {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
-
-        displayGptNotification();
     }
 
     //NOTE: showing alert dialog to notify about gpt helper
@@ -104,7 +116,7 @@ public class StudyActivity extends ActivityGlobal {
                     preferencesOperations.putGptDescription();
                 }
             });
-            dialog.show();
+            new Handler().postDelayed(dialog::show, 1000);
         }
     }
 
@@ -117,14 +129,20 @@ public class StudyActivity extends ActivityGlobal {
         adapter = new FragmentAdapter(fm, getLifecycle(), wordModelList, topic, subTopic, isSubTest, StudyActivity.this);
         int cur = pager2.getCurrentItem();
 
-        pager2.animate().alpha(0).setDuration(500);
-
-        new Handler().postDelayed(() -> {
+        if (!isFirstInit) {
+            pager2.animate().alpha(0).setDuration(500); //duration hiding animation
+            new Handler().postDelayed(() -> {
+                pager2.setAdapter(adapter);
+                pager2.setCurrentItem(cur);
+            }, 490);
+            new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(650), 550);
+        } else {
+            pager2.setAlpha(0);
             pager2.setAdapter(adapter);
             pager2.setCurrentItem(cur);
-        }, 550);
-
-        new Handler().postDelayed(() -> pager2.animate().alpha(1).setDuration(650), 600);
+            isFirstInit = false;
+            pager2.animate().alpha(1).setDuration(500);
+        }
     }
 
     //region getting all english and translating words from list in database
@@ -182,13 +200,7 @@ public class StudyActivity extends ActivityGlobal {
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
-                return true;
-
             case R.id.replay_mipmap:
                 setDateToActivity();
                 return true;

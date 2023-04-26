@@ -1,10 +1,15 @@
 package solid.icon.english.architecture.parents;
 
+import static solid.icon.english.main_adapters.CustomScaleTransition.enterTransitionSet;
+import static solid.icon.english.main_adapters.CustomScaleTransition.exitTransitionSet;
+
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -44,6 +49,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         } else {
             actionBar.hide();
         }
+        setTransition();
     }
 
     public boolean doesInternetConnectionExist() {
@@ -87,17 +93,25 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         } else {
             actionBar.hide();
         }
+
+        setTransition();
+    }
+
+    private void setTransition() {
+        Log.e(TAG, "setTransition");
+        getWindow().setEnterTransition(enterTransitionSet);
+        getWindow().setExitTransition(exitTransitionSet);
     }
 
     protected void goToAccount() {
-        startActivity(new Intent(context, AccountActivity.class));
-        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+        startActivity(new Intent(context, AccountActivity.class),
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
 
     protected void goToSettings() {
-        startActivity(new Intent(context, SettingsActivity.class));
-        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+        startActivity(new Intent(context, SettingsActivity.class),
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -105,8 +119,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                this.finish();
-                overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
+                finishAfterTransition();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -115,8 +128,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        this.finish();
-        overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
+        finishAfterTransition();
     }
 }
 

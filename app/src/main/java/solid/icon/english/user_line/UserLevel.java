@@ -1,6 +1,7 @@
 package solid.icon.english.user_line;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,12 +67,18 @@ public class UserLevel extends ActivityGlobal {
         loading_layout = findViewById(R.id.loading_layout);
 
         showActionBar(true, chosenTopics);
-        setAdapter();
-        autoDownload();
+
+        new Handler().postDelayed(() -> {
+            setAdapter();
+            autoDownload();
+        }, 800);
     }
 
     //region checkLatestData and autoDownload
     private void autoDownload() {
+        if (topicsKey == null)
+            return;
+
         checkLatestData(new SuccessOrFailureListener() {
             @Override
             public void onSuccess() { //if found new data
@@ -150,8 +157,8 @@ public class UserLevel extends ActivityGlobal {
         intent.putExtra(ActivityGlobal.KeysExtra.level.name(), chosenTopics); //topics
         intent.putExtra(ActivityGlobal.KeysExtra.isSubTest.name(), true);
         intent.putExtra(ActivityGlobal.KeysExtra.title.name(), "Testing"); //title (subTopics)
-        context.startActivity(intent);
-        overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
+        context.startActivity(intent,
+                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     private void downloadSubTopics(boolean isShowToast) {
@@ -218,6 +225,10 @@ public class UserLevel extends ActivityGlobal {
                     menu.getItem(1).setVisible(true); //download
                 }
             }));
+        } else {
+            menu.getItem(1).setVisible(false);
+            menu.getItem(2).setVisible(false);
+            menu.getItem(3).setVisible(false);
         }
     }
 

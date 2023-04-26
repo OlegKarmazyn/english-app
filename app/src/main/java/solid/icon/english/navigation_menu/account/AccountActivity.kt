@@ -4,8 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import es.dmoral.toasty.Toasty
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.AccountActivityBinding
@@ -39,8 +44,14 @@ class AccountActivity : ActivityGlobal() {
         setContentView(view)
         showActionBar(true, "Account")
 
-        viewModel = AccountViewModel(this)
-        initUI()
+        lifecycleScope.launch {
+            delay(800)
+            viewModel = AccountViewModel(this@AccountActivity)
+            withContext(Dispatchers.Main) {
+                initUI()
+                binding.linearLayout.animate().alpha(1f).duration = 500
+            }
+        }
     }
 
     private fun initUI() {
