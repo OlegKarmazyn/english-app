@@ -4,9 +4,12 @@ import static android.widget.Toast.LENGTH_SHORT;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +20,10 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.skydoves.powermenu.MenuAnimation;
+import com.skydoves.powermenu.PowerMenu;
+import com.skydoves.powermenu.PowerMenuItem;
 
 import java.util.List;
 
@@ -30,7 +37,6 @@ import solid.icon.english.dialogs.InfoDialog;
 import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
 import solid.icon.english.main_adapters.MainViewModel;
-import solid.icon.english.setting.SettingsActivity;
 
 public class MainActivity extends ActivityGlobal {
 
@@ -38,21 +44,24 @@ public class MainActivity extends ActivityGlobal {
 
     private RecyclerView recyclerView_levels, recyclerView_user;
     RelativeLayout loading_layout;
+    public RelativeLayout mainLayout;
 
     private String[] levels_titlesArray,
             users_titlesArray = new String[]{"topics"};
-    private long backPressedTime;
+
+    private MainViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         showActionBarWithoutTitle(true);
-        MainViewModel viewModel = new MainViewModel(this);
+        viewModel = new MainViewModel(this);
 
         recyclerView_levels = findViewById(R.id.recycleView_levels);
         recyclerView_user = findViewById(R.id.recycleView_user);
         loading_layout = findViewById(R.id.loading_layout);
+        mainLayout = findViewById(R.id.mainLayout);
 
         levels_titlesArray = getResources().getStringArray(R.array.lessonNames);
 
@@ -153,6 +162,48 @@ public class MainActivity extends ActivityGlobal {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
+    private void showMenu() {
+        PowerMenu powerMenu = new PowerMenu.Builder(context)
+                .addItem(new PowerMenuItem("Account", false))
+                .addItem(new PowerMenuItem("Settings", false))
+                .setAnimation(MenuAnimation.FADE) // Animation start point (TOP | LEFT).
+                .setMenuRadius(10f) // sets the corner radius.
+                .setMenuShadow(10f) // sets the shadow.
+                .setTextColor(ContextCompat.getColor(context, R.color.ios_blue))
+                .setTextGravity(Gravity.CENTER)
+                .setTextTypeface(Typeface.create("sans-serif-medium", Typeface.BOLD))
+                .setSelectedTextColor(Color.WHITE)
+                .setMenuColor(Color.WHITE)
+                .setSelectedMenuColor(ContextCompat.getColor(context, R.color.colorPrimaryDark))
+                .build();
+
+        powerMenu.setOnMenuItemClickListener((position, item) -> {
+            switch (position) {
+                case 0:
+                    goToAccount();
+                    break;
+                case 1:
+                    Toast.makeText(getBaseContext(), "Settings", Toast.LENGTH_SHORT).show();
+                    break;
+            }
+            powerMenu.dismiss();
+        });
+        powerMenu.showAsAnchorRightTop(mainLayout);
+    }
+
+    @SuppressLint("NonConstantResourceId")
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.dropMenu:
+                showMenu();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private long backPressedTime;
 
     @Override
     public void onBackPressed() {

@@ -1,4 +1,4 @@
-package solid.icon.english.setting
+package solid.icon.english.navigation_menu.accont
 
 import android.content.Intent
 import android.net.Uri
@@ -8,13 +8,13 @@ import com.google.firebase.auth.FirebaseAuth
 import es.dmoral.toasty.Toasty
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
-import solid.icon.english.databinding.SettingsActivityBinding
+import solid.icon.english.databinding.AccountActivityBinding
 
-class SettingsActivity : ActivityGlobal() {
+class AccountActivity : ActivityGlobal() {
 
-    private lateinit var viewModel: SettingViewModel
+    private lateinit var viewModel: AccountViewModel
     private val auth = FirebaseAuth.getInstance()
-    private lateinit var binding: SettingsActivityBinding
+    private lateinit var binding: AccountActivityBinding
 
     private var isUserExist: Boolean = false
         set(value) {
@@ -34,12 +34,12 @@ class SettingsActivity : ActivityGlobal() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = SettingsActivityBinding.inflate(layoutInflater)
+        binding = AccountActivityBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         showActionBar(true, "Account")
 
-        viewModel = SettingViewModel(this)
+        viewModel = AccountViewModel(this)
         initUI()
     }
 

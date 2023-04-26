@@ -1,9 +1,9 @@
-package solid.icon.english.setting
+package solid.icon.english.navigation_menu.accont
 
 import androidx.lifecycle.ViewModel
 import solid.icon.english.architecture.local_data.PreferencesOperations
 
-class SettingViewModel(context: SettingsActivity) : ViewModel() {
+class AccountViewModel(context: AccountActivity) : ViewModel() {
 
     private val authModel = AuthModel(context)
     private val preferencesOperations = PreferencesOperations()

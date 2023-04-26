@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
-import solid.icon.english.setting.SettingsActivity;
+import solid.icon.english.navigation_menu.accont.AccountActivity;
 
 public abstract class ActivityGlobal extends AppCompatActivity {
 
@@ -79,24 +79,19 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         }
     }
 
-    private void startUserAcc() {
-        startActivity(new Intent(context, SettingsActivity.class));
+    protected void goToAccount() {
+        startActivity(new Intent(context, AccountActivity.class));
         overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
                 overridePendingTransition(R.anim.move_left_in_activity, R.anim.move_right_out_activity);
                 return true;
-            case R.id.person:
-                startUserAcc();
-                return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }

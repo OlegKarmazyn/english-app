@@ -1,6 +1,5 @@
 package solid.icon.english.main_adapters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
@@ -15,8 +14,7 @@ import solid.icon.english.MainActivity
 import solid.icon.english.architecture.local_data.PreferencesOperations
 import java.lang.ref.WeakReference
 
-@SuppressLint("StaticFieldLeak")
-class MainViewModel(private val activity: MainActivity) : ViewModel() {
+class MainViewModel(activity: MainActivity) : ViewModel() {
 
     companion object {
         const val APPLICATION_VERSION = 10
@@ -24,7 +22,7 @@ class MainViewModel(private val activity: MainActivity) : ViewModel() {
 
     private val activityRef = WeakReference(activity)
     private val context: Context? get() = activityRef.get()?.applicationContext
-    val preferences = PreferenceManager.getDefaultSharedPreferences(context!!)!!
+    val preferences = PreferenceManager.getDefaultSharedPreferences(activity)!!
 
 
     //Optimize: separate this code and make different models
@@ -33,7 +31,8 @@ class MainViewModel(private val activity: MainActivity) : ViewModel() {
     fun firstOpen() {
         val pref = PreferencesOperations()
         pref.firstOpen()
-        if (pref.getNumberOfVisits() < 4 && !pref.getIsOpenedSite()) activity.showSiteDialog()
+        if (pref.getNumberOfVisits() < 4 && !pref.getIsOpenedSite()) activityRef.get()
+            ?.showSiteDialog()
     }
     //endregion
 
@@ -49,7 +48,7 @@ class MainViewModel(private val activity: MainActivity) : ViewModel() {
             Log.e("currentVersion = ", "" + currentVersion)
             if (currentVersion > APPLICATION_VERSION) {
                 withContext(Dispatchers.Main) {
-                    activity.showUpdateDialog()
+                    activityRef.get()?.showUpdateDialog()
                 }
             }
         }
