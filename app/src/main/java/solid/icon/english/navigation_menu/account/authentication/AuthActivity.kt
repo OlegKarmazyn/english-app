@@ -14,7 +14,9 @@ import kotlinx.coroutines.withContext
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.AuthActivityBinding
+import solid.icon.english.dialogs.AddingDialog
 import solid.icon.english.navigation_menu.account.profile.AccountActivity
+import solid.icon.english.navigation_menu.account.registration.RegistrationActivity
 
 class AuthActivity : ActivityGlobal() {
 
@@ -48,6 +50,7 @@ class AuthActivity : ActivityGlobal() {
         binding.btnLogIn.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
+            hideSoftKeyboard(binding.etPassword)
             viewModel.logIn(getEmail(), getPassword(),
                 onStart = {
                     binding.loadingLayout.root.isVisible = true
@@ -61,9 +64,25 @@ class AuthActivity : ActivityGlobal() {
                         lifecycleScope.launch {
                             delay(800)
                             goToActivity(AccountActivity::class.java)
+                            delay(1000)
+                            finish()
                         }
+                    } else {
+                        Toasty.error(context, "email or password is not valid").show()
                     }
                 })
+        }
+
+        binding.btnForgetPassword.setOnClickListener {
+            showForgetPasswordDialog()
+        }
+
+        binding.btnDoNotHaveAccount.setOnClickListener {
+            goToActivity(RegistrationActivity::class.java)
+            lifecycleScope.launch {
+                delay(1000)
+                finish()
+            }
         }
 
 //        binding.btnLogOut.setOnClickListener {
@@ -82,6 +101,27 @@ class AuthActivity : ActivityGlobal() {
             val intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
+    }
+
+    private fun showForgetPasswordDialog() {
+        val dialog = AddingDialog(context)
+        dialog.setTitle("Write your email")
+        val editText = dialog.getEditText()
+        editText.hint = "email"
+
+        dialog.setPositiveButton("Next") {
+            hideSoftKeyboard(editText)
+            val email = editText.text.toString().trim()
+            if (email.isNotBlank()) {
+                viewModel.forgetPassword(email)
+                Toasty.info(context, "Електронний лист для скидання пароля надіслано на $email")
+                    .show()
+            } else
+                Toasty.warning(context, "Email field is empty").show()
+        }
+
+        dialog.setNegativeButton("Cancel") {}
+        dialog.show()
     }
 
     private fun getEmail(): String? {

@@ -29,4 +29,8 @@ class AccountViewModel(context: AuthActivity) : ViewModel() {
         preferencesOperations.email = email
         preferencesOperations.uid = uid
     }
+
+    fun forgetPassword(email: String) {
+        authModel.forgetPassword(email)
+    }
 }

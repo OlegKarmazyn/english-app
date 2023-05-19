@@ -25,9 +25,13 @@ class AuthModel(private val ctx: Activity) {
                             .show()
                         auth.signOut()
                     }
-                    onSuccess(task.isSuccessful)
                 }
+                onSuccess(task.isSuccessful)
             }
+    }
+
+    fun forgetPassword(email: String){
+        auth.sendPasswordResetEmail(email)
     }
 
     fun logOut(onSuccess: () -> Unit) {

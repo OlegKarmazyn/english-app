@@ -56,7 +56,7 @@ class RegistrationActivity : ActivityGlobal() {
     private fun getAllDataFromFields() {
         val userProfileItem = validateField() ?: return
         val password = binding.etPassword.toString().trim()
-        if (password.isBlank()) {
+        if (password.isBlank() || password.length < 10) {
             showToast("password")
             return
         }
@@ -66,12 +66,13 @@ class RegistrationActivity : ActivityGlobal() {
                 binding.loadingLayout.root.isVisible = true
             },
             onSuccess = {
-                if (it)
-                    viewModel.saveEmail(userProfileItem.email, auth.uid!!)
                 binding.loadingLayout.root.isVisible = false
-                lifecycleScope.launch {
-                    delay(500)
-                    goToActivity(AccountActivity::class.java)
+                if (it) {
+                    viewModel.saveEmail(userProfileItem.email, auth.uid!!)
+                    lifecycleScope.launch {
+                        delay(500)
+                        goToActivity(AccountActivity::class.java)
+                    }
                 }
             })
     }

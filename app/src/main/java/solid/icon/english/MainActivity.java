@@ -55,6 +55,7 @@ public class MainActivity extends ActivityGlobal {
             users_titlesArray = new String[]{"topics"};
 
     private MainViewModel viewModel;
+    FirebaseAuth auth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class MainActivity extends ActivityGlobal {
         fullRecycleView();
         viewModel.firstOpen();
         viewModel.checkLatestVersion();
+        auth.signOut();
     }
 
     //region shows dialogs
@@ -186,7 +188,6 @@ public class MainActivity extends ActivityGlobal {
         powerMenu.setOnMenuItemClickListener((position, item) -> {
             switch (position) {
                 case 0:
-                    FirebaseAuth auth = FirebaseAuth.getInstance();
                     if(auth.getCurrentUser() == null)
                         goToActivity(AuthActivity.class);
                     else

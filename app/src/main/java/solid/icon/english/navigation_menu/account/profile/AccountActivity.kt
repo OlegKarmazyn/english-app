@@ -20,7 +20,7 @@ class AccountActivity : ActivityGlobal() {
         binding = AccountActivityBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        showActionBar(true, "Registration")
+        showActionBar(true, "Account")
 
         lifecycleScope.launch {
             delay(800)
