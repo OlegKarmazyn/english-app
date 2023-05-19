@@ -20,7 +20,7 @@ import solid.icon.english.navigation_menu.account.registration.RegistrationActiv
 
 class AuthActivity : ActivityGlobal() {
 
-    private lateinit var viewModel: AccountViewModel
+    private lateinit var viewModel: AuthViewModel
     private val auth = FirebaseAuth.getInstance()
     private lateinit var binding: AuthActivityBinding
 
@@ -33,7 +33,7 @@ class AuthActivity : ActivityGlobal() {
 
         lifecycleScope.launch {
             delay(800)
-            viewModel = AccountViewModel(this@AuthActivity)
+            viewModel = AuthViewModel(this@AuthActivity)
             withContext(Dispatchers.Main) {
                 initUI()
                 binding.linearLayout.animate().alpha(1f).duration = 500

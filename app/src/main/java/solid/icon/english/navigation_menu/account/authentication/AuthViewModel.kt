@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import solid.icon.english.architecture.local_data.PreferencesOperations
 import solid.icon.english.navigation_menu.account.models.AuthModel
 
-class AccountViewModel(context: AuthActivity) : ViewModel() {
+class AuthViewModel(context: AuthActivity) : ViewModel() {
 
     private val authModel = AuthModel(context)
     private val preferencesOperations = PreferencesOperations()
@@ -19,10 +19,6 @@ class AccountViewModel(context: AuthActivity) : ViewModel() {
         if (!email.isNullOrBlank() && !password.isNullOrBlank()) {
             authModel.logIn(email, password, onStart, onSuccess)
         }
-    }
-
-    fun logOut(onSuccess: () -> Unit) {
-        authModel.logOut(onSuccess)
     }
 
     fun saveEmail(email: String?, uid: String = ""){
