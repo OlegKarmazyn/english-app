@@ -3,13 +3,18 @@ package solid.icon.english.navigation_menu.account.registration
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.RegistrationBinding
+import solid.icon.english.navigation_menu.account.AccountActivity
 import solid.icon.english.navigation_menu.account.AccountViewModel
+import solid.icon.english.navigation_menu.account.models.UserProfileItem
+import java.text.SimpleDateFormat
+import java.util.*
 
 class RegistrationActivity : ActivityGlobal() {
 
@@ -40,13 +45,71 @@ class RegistrationActivity : ActivityGlobal() {
         binding.btnRegistration.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
-            //todo
+            getAllDataFromFields()
         }
 
         binding.btnAlreadyHaveAcc.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
-
+            goToActivity(AccountActivity::class.java)
         }
     }
+
+    private fun getAllDataFromFields() {
+        val userProfileItem = validateField() ?: return
+        viewModel.postData(userProfileItem)
+    }
+
+    private fun validateField(): UserProfileItem? {
+        var userName = binding.etName.toString().trim()
+        var surname = binding.etSurname.toString().trim()
+        var phone = binding.etPhone.toString().trim()
+        var birthday = binding.etBirthday.toString().trim()
+        var email = binding.etEmail.toString().trim()
+
+        if (userName.isBlank()) {
+            showToast("userName")
+            return null
+        } else if (surname.isBlank()) {
+            showToast("surname")
+            return null
+        } else if (phone.length < 10) {
+            showToast("phone")
+            return null
+        } else if (birthday.isBlank()) {
+            showToast("birthday")
+            return null
+        } else if (email.isBlank()) {
+            showToast("email")
+            return null
+        }
+
+        return UserProfileItem(
+            userName,
+            surname,
+            phone,
+            birthday,
+            email,
+            false,
+            getCurrentTime(),
+            "empty",
+            "empty"
+        )
+    }
+
+    private fun showToast(whichField: String): String {
+        return when (whichField) {
+            "phone", "email" -> {
+                "$whichField is not valid"
+            }
+            else -> "$whichField is empty"
+        }
+    }
+
+    private fun getCurrentTime(): String {
+        val currentTime = Date()
+        val format = SimpleDateFormat("dd.MM.yyyy, HH:mm:ss", Locale.getDefault())
+        return format.format(currentTime)
+    }
+
 }

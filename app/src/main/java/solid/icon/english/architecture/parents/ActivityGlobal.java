@@ -4,6 +4,7 @@ import static solid.icon.english.main_adapters.CustomScaleTransition.enterTransi
 import static solid.icon.english.main_adapters.CustomScaleTransition.exitTransitionSet;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
@@ -112,6 +113,12 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     protected void goToSettings() {
         startActivity(new Intent(context, SettingsActivity.class),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+    }
+
+    protected void goToActivity(Class<?> toActivity) {
+        Intent intent = new Intent(context, toActivity);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context);
+        context.startActivity(intent, options.toBundle());
     }
 
     @SuppressLint("NonConstantResourceId")

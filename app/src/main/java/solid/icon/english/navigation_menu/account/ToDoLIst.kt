@@ -11,12 +11,12 @@ package solid.icon.english.navigation_menu.account
 // ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 3. create activity with title reg
 //    and home button
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 4. create func which gets data
 //    from fields (with validation)
 //    when click button
 //    then call future post func
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 5. on already have acc button set
 //    onClick and move to auth
 // ----------------------------------
