@@ -30,7 +30,7 @@ class RegistrationActivity : ActivityGlobal() {
 
         lifecycleScope.launch {
             delay(800)
-            //viewModel = AccountViewModel(this@RegistrationActivity)
+            viewModel = RegistrationViewModel(this@RegistrationActivity)
             withContext(Dispatchers.Main) {
                 initUI()
                 binding.linearLayout.animate().alpha(1f).duration = 500

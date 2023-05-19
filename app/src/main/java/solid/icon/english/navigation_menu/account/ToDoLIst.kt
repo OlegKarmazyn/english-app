@@ -24,7 +24,7 @@ package solid.icon.english.navigation_menu.account
 // ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 7. create func which post users'
 //    data to database
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 8. create in viewModel:
 //    • initialization two models:
 //      Registration Model
@@ -37,7 +37,7 @@ package solid.icon.english.navigation_menu.account
 // 9.2 create and set up
 //     forgetPassword button
 //     maybe showDialog with editText
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 10. after auth move to the new
 //     AccountActivity
 // ==================================
