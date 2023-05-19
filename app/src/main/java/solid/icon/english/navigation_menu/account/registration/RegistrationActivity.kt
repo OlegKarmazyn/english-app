@@ -1,9 +1,11 @@
 package solid.icon.english.navigation_menu.account.registration
 
 import android.os.Bundle
+import android.util.Log
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -47,17 +49,15 @@ class RegistrationActivity : ActivityGlobal() {
         }
 
         binding.btnAlreadyHaveAcc.setOnClickListener {
-            if (!doesInternetConnectionExist())
-                return@setOnClickListener
             goToActivity(AuthActivity::class.java)
         }
     }
 
     private fun getAllDataFromFields() {
         val userProfileItem = validateField() ?: return
-        val password = binding.etPassword.toString().trim()
-        if (password.isBlank() || password.length < 10) {
-            showToast("password")
+        val password = binding.etPassword.text.toString().trim()
+        if (password.isBlank()) {
+            Toasty.warning(context, getToastText("password")).show()
             return
         }
         viewModel.register(
@@ -69,37 +69,36 @@ class RegistrationActivity : ActivityGlobal() {
                 binding.loadingLayout.root.isVisible = false
                 if (it) {
                     viewModel.saveEmail(userProfileItem.email, auth.uid!!)
-                    lifecycleScope.launch {
-                        delay(500)
-                        goToActivity(AccountActivity::class.java)
-                    }
+                    goToActivity(AccountActivity::class.java)
                 }
             })
     }
 
     private fun validateField(): UserProfileItem? {
-        val userName = binding.etName.toString().trim()
-        val surname = binding.etSurname.toString().trim()
-        val phone = binding.etPhone.toString().trim()
-        val birthday = binding.etBirthday.toString().trim()
-        val email = binding.etEmail.toString().trim()
+        val userName = binding.etName.text.toString().trim()
+        val surname = binding.etSurname.text.toString().trim()
+        val phone = binding.etPhone.text.toString().trim()
+        val birthday = binding.etBirthday.text.toString().trim()
+        val email = binding.etEmail.text.toString().trim()
 
         if (userName.isBlank()) {
-            showToast("userName")
+            Toasty.warning(context, getToastText("userName")).show()
             return null
         } else if (surname.isBlank()) {
-            showToast("surname")
+            Toasty.warning(context, getToastText("surname")).show()
             return null
         } else if (phone.length < 10) {
-            showToast("phone")
+            Toasty.warning(context, getToastText("phone")).show()
             return null
         } else if (birthday.isBlank()) {
-            showToast("birthday")
+            Toasty.warning(context, getToastText("birthday")).show()
             return null
         } else if (email.isBlank()) {
-            showToast("email")
+            Toasty.warning(context, getToastText("email")).show()
             return null
         }
+
+        Log.e(TAG, "validateField: $userName")
 
         return UserProfileItem(
             userName,
@@ -114,7 +113,7 @@ class RegistrationActivity : ActivityGlobal() {
         )
     }
 
-    private fun showToast(whichField: String): String {
+    private fun getToastText(whichField: String): String {
         return when (whichField) {
             "phone", "email" -> {
                 "$whichField is not valid"
@@ -129,4 +128,11 @@ class RegistrationActivity : ActivityGlobal() {
         return format.format(currentTime)
     }
 
+    override fun goToActivity(toActivity: Class<*>?) {
+        lifecycleScope.launch {
+            super.goToActivity(toActivity)
+            delay(1000)
+            finish()
+        }
+    }
 }

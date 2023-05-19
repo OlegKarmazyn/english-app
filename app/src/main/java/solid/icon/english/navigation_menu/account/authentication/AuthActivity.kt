@@ -61,12 +61,7 @@ class AuthActivity : ActivityGlobal() {
                         user = auth.currentUser
                         viewModel.saveEmail(user!!.email, user!!.uid)
                         Toasty.success(context, getString(R.string.logged_in)).show()
-                        lifecycleScope.launch {
-                            delay(800)
-                            goToActivity(AccountActivity::class.java)
-                            delay(1000)
-                            finish()
-                        }
+                        goToActivity(AccountActivity::class.java) //go to the next page
                     } else {
                         Toasty.error(context, "email or password is not valid").show()
                     }
@@ -79,10 +74,6 @@ class AuthActivity : ActivityGlobal() {
 
         binding.btnDoNotHaveAccount.setOnClickListener {
             goToActivity(RegistrationActivity::class.java)
-            lifecycleScope.launch {
-                delay(1000)
-                finish()
-            }
         }
 
 //        binding.btnLogOut.setOnClickListener {
@@ -137,6 +128,14 @@ class AuthActivity : ActivityGlobal() {
         return email.ifBlank {
             Toasty.error(context, getString(R.string.password_field_is_empty)).show()
             null
+        }
+    }
+
+    override fun goToActivity(toActivity: Class<*>?) {
+        lifecycleScope.launch {
+            super.goToActivity(toActivity)
+            delay(1000)
+            finish()
         }
     }
 }
