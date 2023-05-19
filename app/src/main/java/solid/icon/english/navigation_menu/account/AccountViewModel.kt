@@ -2,6 +2,7 @@ package solid.icon.english.navigation_menu.account
 
 import androidx.lifecycle.ViewModel
 import solid.icon.english.architecture.local_data.PreferencesOperations
+import solid.icon.english.navigation_menu.account.models.AuthModel
 
 class AccountViewModel(context: AccountActivity) : ViewModel() {
 

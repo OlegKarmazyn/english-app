@@ -1,4 +1,4 @@
-package solid.icon.english.navigation_menu.account
+package solid.icon.english.navigation_menu.account.models
 
 import android.app.Activity
 import android.util.Log
