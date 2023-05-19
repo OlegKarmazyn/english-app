@@ -13,33 +13,18 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
-import solid.icon.english.databinding.AccountActivityBinding
+import solid.icon.english.databinding.AuthActivityBinding
+import solid.icon.english.navigation_menu.account.profile.AccountActivity
 
 class AuthActivity : ActivityGlobal() {
 
     private lateinit var viewModel: AccountViewModel
     private val auth = FirebaseAuth.getInstance()
-    private lateinit var binding: AccountActivityBinding
-
-    private var isUserExist: Boolean = false
-        set(value) {
-            if (value) {
-                binding.etEmail.isEnabled = false
-                binding.etPassword.isVisible = false
-                binding.btnLogIn.isVisible = false
-                binding.btnLogOut.isVisible = true
-            } else {
-                binding.etEmail.isEnabled = true
-                binding.etPassword.isVisible = true
-                binding.btnLogIn.isVisible = true
-                binding.btnLogOut.isVisible = false
-            }
-            field = value
-        }
+    private lateinit var binding: AuthActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = AccountActivityBinding.inflate(layoutInflater)
+        binding = AuthActivityBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         showActionBar(true, "Account")
@@ -58,7 +43,6 @@ class AuthActivity : ActivityGlobal() {
         var user = auth.currentUser
         if (user != null) {
             binding.etEmail.setText(user.email)
-            isUserExist = true
         }
 
         binding.btnLogIn.setOnClickListener {
@@ -69,27 +53,29 @@ class AuthActivity : ActivityGlobal() {
                     binding.loadingLayout.root.isVisible = true
                 },
                 onSuccess = {
-                    isUserExist = it
                     binding.loadingLayout.root.isVisible = false
                     if (it) {
                         user = auth.currentUser
                         viewModel.saveEmail(user!!.email, user!!.uid)
                         Toasty.success(context, getString(R.string.logged_in)).show()
+                        lifecycleScope.launch {
+                            delay(800)
+                            goToActivity(AccountActivity::class.java)
+                        }
                     }
                 })
         }
 
-        binding.btnLogOut.setOnClickListener {
-            if (!doesInternetConnectionExist())
-                return@setOnClickListener
-            viewModel.logOut {
-                isUserExist = false
-                binding.etEmail.setText("")
-                binding.etPassword.setText("")
-                viewModel.saveEmail("")
-                Toasty.success(context, getString(R.string.logged_out)).show()
-            }
-        }
+//        binding.btnLogOut.setOnClickListener {
+//            if (!doesInternetConnectionExist())
+//                return@setOnClickListener
+//            viewModel.logOut {
+//                binding.etEmail.setText("")
+//                binding.etPassword.setText("")
+//                viewModel.saveEmail("")
+//                Toasty.success(context, getString(R.string.logged_out)).show()
+//            }
+//        }
 
         binding.tvOurSite.setOnClickListener {
             val uri: Uri = Uri.parse("http://english-vs.web.app")

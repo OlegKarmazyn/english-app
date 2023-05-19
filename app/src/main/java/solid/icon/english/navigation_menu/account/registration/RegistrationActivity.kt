@@ -9,9 +9,10 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
-import solid.icon.english.databinding.RegistrationBinding
+import solid.icon.english.databinding.RegistrationActivityBinding
 import solid.icon.english.navigation_menu.account.authentication.AuthActivity
 import solid.icon.english.navigation_menu.account.models.UserProfileItem
+import solid.icon.english.navigation_menu.account.profile.AccountActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,11 +20,11 @@ class RegistrationActivity : ActivityGlobal() {
 
     private lateinit var viewModel: RegistrationViewModel
     private val auth = FirebaseAuth.getInstance()
-    private lateinit var binding: RegistrationBinding
+    private lateinit var binding: RegistrationActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = RegistrationBinding.inflate(layoutInflater)
+        binding = RegistrationActivityBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         showActionBar(true, "Registration")
@@ -70,7 +71,7 @@ class RegistrationActivity : ActivityGlobal() {
                 binding.loadingLayout.root.isVisible = false
                 lifecycleScope.launch {
                     delay(500)
-                    goToActivity(AccounActivity::class)
+                    goToActivity(AccountActivity::class.java)
                 }
             })
     }

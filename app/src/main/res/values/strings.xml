@@ -12,8 +12,8 @@
     </string-array>
 
     <string name="registration_allows_you_to">Registration allows you to:</string>
-    <string name="share_three_topics">- share three topics</string>
-    <string name="call_gpt_helper_20_times_per_day">- call gpt-helper 20 times per day</string>
+    <string name="share_three_topics">✓ share three topics</string>
+    <string name="call_gpt_helper_20_times_per_day">✓ call gpt-helper 20 times per day</string>
     <string name="words_by_level">Words by level</string>
     <string name="your_words">Your words</string>
     <string name="cancel">Cancel</string>

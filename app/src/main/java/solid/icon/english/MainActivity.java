@@ -21,6 +21,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.ktx.Firebase;
 import com.skydoves.powermenu.MenuAnimation;
 import com.skydoves.powermenu.PowerMenu;
 import com.skydoves.powermenu.PowerMenuItem;
@@ -37,6 +39,9 @@ import solid.icon.english.dialogs.InfoDialog;
 import solid.icon.english.main_adapters.AdapterLevels;
 import solid.icon.english.main_adapters.AdapterUsers;
 import solid.icon.english.main_adapters.MainViewModel;
+import solid.icon.english.navigation_menu.account.authentication.AuthActivity;
+import solid.icon.english.navigation_menu.account.profile.AccountActivity;
+import solid.icon.english.navigation_menu.settings.SettingsActivity;
 
 public class MainActivity extends ActivityGlobal {
 
@@ -181,10 +186,14 @@ public class MainActivity extends ActivityGlobal {
         powerMenu.setOnMenuItemClickListener((position, item) -> {
             switch (position) {
                 case 0:
-                    goToAccount();
+                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                    if(auth.getCurrentUser() == null)
+                        goToActivity(AuthActivity.class);
+                    else
+                        goToActivity(AccountActivity.class);
                     break;
                 case 1:
-                    goToSettings();
+                    goToActivity(SettingsActivity.class);
                     break;
             }
             powerMenu.dismiss();

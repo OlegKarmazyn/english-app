@@ -104,16 +104,16 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         getWindow().setExitTransition(exitTransitionSet);
     }
 
-    protected void goToAccount() {
-        startActivity(new Intent(context, AuthActivity.class),
-                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-    }
-
-
-    protected void goToSettings() {
-        startActivity(new Intent(context, SettingsActivity.class),
-                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-    }
+//    protected void goToAccount() {
+//        startActivity(new Intent(context, AuthActivity.class),
+//                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+//    }
+//
+//
+//    protected void goToSettings() {
+//        startActivity(new Intent(context, SettingsActivity.class),
+//                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+//    }
 
     protected void goToActivity(Class<?> toActivity) {
         Intent intent = new Intent(context, toActivity);
