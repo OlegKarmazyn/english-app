@@ -18,29 +18,14 @@ class AuthModel(private val ctx: Activity) {
                 if (task.isSuccessful) {
                     val currentUser = auth.currentUser
                     if (currentUser != null) {
-                        Log.e("AuthModel", "user.isEmailVerified")
-                        onSuccess(true)
+                        Log.e("AuthModel", "signInWithEmailAndPassword")
                     } else {
                         // User has not verified their email
                         Toasty.warning(ctx, "Error: please re-auth")
                             .show()
                         auth.signOut()
-                        onSuccess(false)
                     }
-                } else {
-                    auth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(ctx) { createTask ->
-                            //note: create user
-                            if (createTask.isSuccessful) {
-                                Toasty.info(
-                                    ctx,
-                                    "Created $email successfully"
-                                ).show()
-                            } else {
-                                Toasty.error(ctx, "Sign up failed").show()
-                            }
-                            onSuccess(createTask.isSuccessful)
-                        }
+                    onSuccess(task.isSuccessful)
                 }
             }
     }

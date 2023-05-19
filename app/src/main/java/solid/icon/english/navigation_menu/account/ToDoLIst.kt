@@ -19,15 +19,15 @@ package solid.icon.english.navigation_menu.account
 // ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 5. on already have acc button set
 //    onClick and move to auth
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 6. create viewModel and model
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 7. create func which post users'
 //    data to database
 // ----------------------------------
 // 8. create in viewModel:
 //    • initialization two models:
-//      Auth and Registration Model
+//      Registration Model
 //    • func registerUser with param
 //      of all fields then call two
 //      models func (post and reg)

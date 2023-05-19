@@ -1,4 +1,4 @@
-package solid.icon.english.navigation_menu.account
+package solid.icon.english.navigation_menu.account.authentication
 
 import android.content.Intent
 import android.net.Uri

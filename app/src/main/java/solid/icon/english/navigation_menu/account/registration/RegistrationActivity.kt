@@ -1,6 +1,7 @@
 package solid.icon.english.navigation_menu.account.registration
 
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.Dispatchers
@@ -9,15 +10,14 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.RegistrationBinding
-import solid.icon.english.navigation_menu.account.AuthActivity
-import solid.icon.english.navigation_menu.account.AccountViewModel
+import solid.icon.english.navigation_menu.account.authentication.AuthActivity
 import solid.icon.english.navigation_menu.account.models.UserProfileItem
 import java.text.SimpleDateFormat
 import java.util.*
 
 class RegistrationActivity : ActivityGlobal() {
 
-    private lateinit var viewModel: AccountViewModel
+    private lateinit var viewModel: RegistrationViewModel
     private val auth = FirebaseAuth.getInstance()
     private lateinit var binding: RegistrationBinding
 
@@ -39,8 +39,6 @@ class RegistrationActivity : ActivityGlobal() {
     }
 
     private fun initUI() {
-        val user = auth.currentUser
-
         binding.btnRegistration.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
@@ -56,15 +54,33 @@ class RegistrationActivity : ActivityGlobal() {
 
     private fun getAllDataFromFields() {
         val userProfileItem = validateField() ?: return
-        viewModel.postData(userProfileItem)
+        val password = binding.etPassword.toString().trim()
+        if (password.isBlank()) {
+            showToast("password")
+            return
+        }
+        viewModel.register(
+            userProfileItem, password,
+            onStart = {
+                binding.loadingLayout.root.isVisible = true
+            },
+            onSuccess = {
+                if (it)
+                    viewModel.saveEmail(userProfileItem.email, auth.uid!!)
+                binding.loadingLayout.root.isVisible = false
+                lifecycleScope.launch {
+                    delay(500)
+                    goToActivity(AccounActivity::class)
+                }
+            })
     }
 
     private fun validateField(): UserProfileItem? {
-        var userName = binding.etName.toString().trim()
-        var surname = binding.etSurname.toString().trim()
-        var phone = binding.etPhone.toString().trim()
-        var birthday = binding.etBirthday.toString().trim()
-        var email = binding.etEmail.toString().trim()
+        val userName = binding.etName.toString().trim()
+        val surname = binding.etSurname.toString().trim()
+        val phone = binding.etPhone.toString().trim()
+        val birthday = binding.etBirthday.toString().trim()
+        val email = binding.etEmail.toString().trim()
 
         if (userName.isBlank()) {
             showToast("userName")

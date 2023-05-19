@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
-import solid.icon.english.navigation_menu.account.AuthActivity;
+import solid.icon.english.navigation_menu.account.authentication.AuthActivity;
 import solid.icon.english.navigation_menu.settings.SettingsActivity;
 
 public abstract class ActivityGlobal extends AppCompatActivity {

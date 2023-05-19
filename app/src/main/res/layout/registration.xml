@@ -128,4 +128,8 @@
         </LinearLayout>
     </LinearLayout>
 
+    <include
+        android:id="@+id/loadingLayout"
+        layout="@layout/loading" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
