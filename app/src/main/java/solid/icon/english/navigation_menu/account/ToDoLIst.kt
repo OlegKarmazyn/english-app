@@ -2,7 +2,7 @@ package solid.icon.english.navigation_menu.account
 
 //todo:
 // ----------------------------------
-// 1 redone verification email
+// 1 delete verification email
 // 1.1 change rules in firebase db
 // ----------------------------------
 // 2. crete registration layout

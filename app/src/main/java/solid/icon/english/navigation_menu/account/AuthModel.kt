@@ -14,43 +14,32 @@ class AuthModel(private val ctx: Activity) {
         Log.e("logIn -", "signInWithEmailAndPassword")
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(ctx) { task ->
+                //note: login user
                 if (task.isSuccessful) {
                     val currentUser = auth.currentUser
-                    if (currentUser != null && currentUser.isEmailVerified) {
+                    if (currentUser != null) {
                         Log.e("AuthModel", "user.isEmailVerified")
                         onSuccess(true)
                     } else {
                         // User has not verified their email
-                        Toasty.warning(ctx, "Please check your email for a verification link")
+                        Toasty.warning(ctx, "Error: please re-auth")
                             .show()
                         auth.signOut()
                         onSuccess(false)
                     }
                 } else {
-                    Log.e("logIn -", "createUserWithEmailAndPassword")
                     auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(ctx) { createTask ->
+                            //note: create user
                             if (createTask.isSuccessful) {
-                                val newUser = auth.currentUser
-                                // Send verification email
-                                newUser?.sendEmailVerification()
-                                    ?.addOnCompleteListener { emailTask ->
-                                        if (emailTask.isSuccessful) {
-                                            Toasty.info(
-                                                ctx,
-                                                "Verification email sent to $email"
-                                            ).show()
-                                        } else {
-                                            Toasty.error(
-                                                ctx,
-                                                "Failed to send verification email"
-                                            ).show()
-                                        }
-                                    }
+                                Toasty.info(
+                                    ctx,
+                                    "Created $email successfully"
+                                ).show()
                             } else {
                                 Toasty.error(ctx, "Sign up failed").show()
                             }
-                            onSuccess(false)
+                            onSuccess(createTask.isSuccessful)
                         }
                 }
             }

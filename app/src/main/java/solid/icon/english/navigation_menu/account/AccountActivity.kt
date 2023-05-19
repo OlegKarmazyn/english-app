@@ -58,10 +58,7 @@ class AccountActivity : ActivityGlobal() {
         var user = auth.currentUser
         if (user != null) {
             binding.etEmail.setText(user.email)
-            if (user.isEmailVerified)
-                isUserExist = user.isEmailVerified
-            else
-                Toasty.warning(context, "Please check ${user.email} for a verification link").show()
+            isUserExist = true
         }
 
         binding.btnLogIn.setOnClickListener {
