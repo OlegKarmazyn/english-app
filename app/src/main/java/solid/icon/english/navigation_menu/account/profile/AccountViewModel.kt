@@ -12,8 +12,8 @@ class AccountViewModel(context: AccountActivity) : ViewModel() {
 
 
     fun logOut(onSuccess: () -> Unit) {
-        authModel.logOut(onSuccess)
         preferencesOperations.email = ""
         preferencesOperations.uid = ""
+        authModel.logOut(onSuccess)
     }
 }

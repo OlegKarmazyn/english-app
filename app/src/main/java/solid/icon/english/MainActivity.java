@@ -74,7 +74,6 @@ public class MainActivity extends ActivityGlobal {
         fullRecycleView();
         viewModel.firstOpen();
         viewModel.checkLatestVersion();
-        auth.signOut();
     }
 
     //region shows dialogs
