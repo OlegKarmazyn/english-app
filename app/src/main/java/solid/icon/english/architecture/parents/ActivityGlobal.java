@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
-import solid.icon.english.navigation_menu.account.AccountActivity;
+import solid.icon.english.navigation_menu.account.AuthActivity;
 import solid.icon.english.navigation_menu.settings.SettingsActivity;
 
 public abstract class ActivityGlobal extends AppCompatActivity {
@@ -105,7 +105,7 @@ public abstract class ActivityGlobal extends AppCompatActivity {
     }
 
     protected void goToAccount() {
-        startActivity(new Intent(context, AccountActivity.class),
+        startActivity(new Intent(context, AuthActivity.class),
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 

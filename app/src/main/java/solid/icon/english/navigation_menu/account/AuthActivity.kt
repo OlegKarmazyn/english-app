@@ -15,7 +15,7 @@ import solid.icon.english.R
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.AccountActivityBinding
 
-class AccountActivity : ActivityGlobal() {
+class AuthActivity : ActivityGlobal() {
 
     private lateinit var viewModel: AccountViewModel
     private val auth = FirebaseAuth.getInstance()
@@ -46,7 +46,7 @@ class AccountActivity : ActivityGlobal() {
 
         lifecycleScope.launch {
             delay(800)
-            viewModel = AccountViewModel(this@AccountActivity)
+            viewModel = AccountViewModel(this@AuthActivity)
             withContext(Dispatchers.Main) {
                 initUI()
                 binding.linearLayout.animate().alpha(1f).duration = 500

@@ -3,14 +3,13 @@ package solid.icon.english.navigation_menu.account.registration
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
-import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.RegistrationBinding
-import solid.icon.english.navigation_menu.account.AccountActivity
+import solid.icon.english.navigation_menu.account.AuthActivity
 import solid.icon.english.navigation_menu.account.AccountViewModel
 import solid.icon.english.navigation_menu.account.models.UserProfileItem
 import java.text.SimpleDateFormat
@@ -51,7 +50,7 @@ class RegistrationActivity : ActivityGlobal() {
         binding.btnAlreadyHaveAcc.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
-            goToActivity(AccountActivity::class.java)
+            goToActivity(AuthActivity::class.java)
         }
     }
 
