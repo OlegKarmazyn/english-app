@@ -1,14 +1,14 @@
 package solid.icon.english.navigation_menu.account
 
 //todo:
-// ----------------------------------
+// ==================================
 // 1 delete verification email
 // 1.1 change rules in firebase db
-// ----------------------------------
-// 2. crete registration layout
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+// 2. create registration layout
 //    with fields like in web
 //    with button + already have acc
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 3. create activity with title reg
 //    and home button
 // ----------------------------------
