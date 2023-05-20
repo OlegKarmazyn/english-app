@@ -10,6 +10,7 @@ import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.AccountActivityBinding
 import solid.icon.english.navigation_menu.account.authentication.AuthActivity
+import solid.icon.english.navigation_menu.account.timetable.TimetableActivity
 
 
 class AccountActivity : ActivityGlobal() {
@@ -41,7 +42,7 @@ class AccountActivity : ActivityGlobal() {
         binding.btnShowTimetable.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
-
+            goToActivity(TimetableActivity::class.java)
         }
 
         binding.btnShowBudget.setOnClickListener {
@@ -53,20 +54,20 @@ class AccountActivity : ActivityGlobal() {
         binding.btnChangePassword.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
-
+            auth.sendPasswordResetEmail(auth.currentUser!!.email!!)
         }
 
         binding.btnSignOut.setOnClickListener {
             if (!doesInternetConnectionExist())
                 return@setOnClickListener
-                viewModel.logOut {
-                    lifecycleScope.launch {
-                        goToActivity(AuthActivity::class.java)
-                        delay(1000)
-                        finish()
-                    }
-
+            viewModel.logOut {
+                lifecycleScope.launch {
+                    goToActivity(AuthActivity::class.java)
+                    delay(1000)
+                    finish()
                 }
+
+            }
         }
     }
 }
