@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
+import es.dmoral.toasty.Toasty
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -11,6 +12,7 @@ import kotlinx.coroutines.withContext
 import solid.icon.english.architecture.parents.ActivityGlobal
 import solid.icon.english.databinding.AccountActivityBinding
 import solid.icon.english.navigation_menu.account.authentication.AuthActivity
+import solid.icon.english.navigation_menu.account.profile.budget.BudgetActivity
 import solid.icon.english.navigation_menu.account.timetable.TimetableActivity
 
 
@@ -49,12 +51,17 @@ class AccountActivity : ActivityGlobal() {
             goToActivity(TimetableActivity::class.java)
         }
 
-        viewModel.getBudgetKey(auth.currentUser!!.uid, onGetKey = {
+        viewModel.getBudgetKey(auth.currentUser!!.uid, onGetKey = { budgetKey ->
             binding.btnShowBudget.setOnClickListener {
                 if (!doesInternetConnectionExist())
                     return@setOnClickListener
-                val budgetIntent = Intent(context, BudgetActivity::class.java)
-                goToActivity(budgetIntent)
+                if (budgetKey != "empty") {
+                    val budgetIntent = Intent(context, BudgetActivity::class.java)
+                    budgetIntent.putExtra("budgetKey", budgetKey)
+                    goToActivity(budgetIntent)
+                } else {
+                    Toasty.warning(context, "You didn't have lessons yet.").show()
+                }
             }
         })
 

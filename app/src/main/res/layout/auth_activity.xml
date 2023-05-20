@@ -9,8 +9,8 @@
         android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/dialog_button"
-            android:text="Forget password"
+            android:text="Forgot password"
             android:textColor="@color/ios_blue"
             android:textSize="12sp" />
 
