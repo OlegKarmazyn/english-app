@@ -46,18 +46,18 @@ package solid.icon.english.navigation_menu.account
 //     in web with buttons without
 //     chat button
 //     • home button
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 12. create ViewModel
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 13. create AccountModel which can:
 //     get users' data -> related to
 //     create UserProfileItem with
 //     variables of personal data
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 14. create in ViewModel:
 //     • func getProfile() which
 //       returns UserProfileItem
-// ----------------------------------
+// ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 // 15. define in View func:
 //     • setProfile() which calls
 //       getProfile form ViewModel

@@ -9,8 +9,6 @@ class AccountViewModel(context: AccountActivity) : ViewModel() {
     private val authModel = AuthModel(context)
     private val preferencesOperations = PreferencesOperations()
 
-
-
     fun logOut(onSuccess: () -> Unit) {
         preferencesOperations.email = ""
         preferencesOperations.uid = ""
