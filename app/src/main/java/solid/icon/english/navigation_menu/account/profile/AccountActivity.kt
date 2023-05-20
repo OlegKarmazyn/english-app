@@ -1,5 +1,6 @@
 package solid.icon.english.navigation_menu.account.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
@@ -37,6 +38,9 @@ class AccountActivity : ActivityGlobal() {
     }
 
     private fun initUI() {
+        if (auth.currentUser == null)
+            return
+
         binding.tvEmail.text = auth.currentUser?.email
 
         binding.btnShowTimetable.setOnClickListener {
@@ -45,11 +49,14 @@ class AccountActivity : ActivityGlobal() {
             goToActivity(TimetableActivity::class.java)
         }
 
-        binding.btnShowBudget.setOnClickListener {
-            if (!doesInternetConnectionExist())
-                return@setOnClickListener
-
-        }
+        viewModel.getBudgetKey(auth.currentUser!!.uid, onGetKey = {
+            binding.btnShowBudget.setOnClickListener {
+                if (!doesInternetConnectionExist())
+                    return@setOnClickListener
+                val budgetIntent = Intent(context, BudgetActivity::class.java)
+                goToActivity(budgetIntent)
+            }
+        })
 
         binding.btnChangePassword.setOnClickListener {
             if (!doesInternetConnectionExist())
@@ -66,7 +73,6 @@ class AccountActivity : ActivityGlobal() {
                     delay(1000)
                     finish()
                 }
-
             }
         }
     }

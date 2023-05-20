@@ -108,12 +108,12 @@ public abstract class ActivityGlobal extends AppCompatActivity {
 //        startActivity(new Intent(context, AuthActivity.class),
 //                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
 //    }
-//
-//
-//    protected void goToSettings() {
-//        startActivity(new Intent(context, SettingsActivity.class),
-//                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-//    }
+
+
+    protected void goToActivity(Intent intent) {
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context);
+        context.startActivity(intent, options.toBundle());
+    }
 
     protected void goToActivity(Class<?> toActivity) {
         Intent intent = new Intent(context, toActivity);
