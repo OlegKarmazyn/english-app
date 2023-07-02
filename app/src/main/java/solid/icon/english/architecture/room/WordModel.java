@@ -26,5 +26,8 @@ public class WordModel {
     @ColumnInfo
     public String definition;
 
+    @ColumnInfo
+    public String sentence;
+
 }
 
