@@ -1,20 +1,19 @@
 package solid.icon.english.architecture.room
 
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.migration.AutoMigrationSpec
 
 @Database(
     entities = [WordModel::class, TopicModel::class, SubTopicModel::class],
-    version = 1,
+    version = 2,
+    autoMigrations = [
+        AutoMigration(
+            from = 1,
+            to = 2
+        )
+    ],
     exportSchema = true
-//    autoMigrations = [
-//        AutoMigration(
-//            from = 1,
-//            to = 3,
-//            DeleteOldColumn::class
-//        )
-//    ]
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun wordModelDao(): WordModelDao?
@@ -22,4 +21,4 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun subTopicDao(): SubTopicDao?
 }
 
-class DeleteOldColumn : AutoMigrationSpec
+//class DeleteOldColumn : AutoMigrationSpec
