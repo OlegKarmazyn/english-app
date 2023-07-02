@@ -26,10 +26,11 @@
     <string name="delete_subTopic">Do you want to delete this subtopic?</string>
     <string name="delete_word">Do you want to delete this word?</string>
     <string name="yes">Yes</string>
-    <string name="enter_info_to_create_new_word">Enter info to create new word</string>
+    <string name="enter_info_to_create_new_word">Enter info to create a new word</string>
     <string name="word_or_phrase">word or phrase</string>
     <string name="translation">translation</string>
     <string name="definition_meaning">definition (meaning)</string>
+    <string name="sentence">sentence (example of usage)</string>
     <string name="create">Create</string>
     <string name="Enter_info_to_edit">Enter info to edit the word</string>
     <string name="do_not_show_again">don\'t show me again</string>
@@ -157,6 +158,7 @@
     <string name="after">Later</string>
     <string name="go_next">go next</string>
     <string name="reset">Reset</string>
+    <string name="gpt_icon">Gpt Icon</string>
 
 
     <string-array name="topics_name_a2">
