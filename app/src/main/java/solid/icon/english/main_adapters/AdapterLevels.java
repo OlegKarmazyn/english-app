@@ -3,9 +3,11 @@ package solid.icon.english.main_adapters;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +18,10 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
+import solid.icon.english.words_by_levels.universal_topic_level.EnglishLevel;
 
 public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHolder> {
 
@@ -89,16 +91,12 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         });
 
         holder.constraintLayout.setOnClickListener(v -> {
-            Toasty.info(context, context.getString(R.string.this_part_in_developing)).show();
-            /*
+            //Toasty.info(context, context.getString(R.string.this_part_in_developing)).show();
             Intent intent = new Intent(context, EnglishLevel.class);
-            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), lessonsNames[position].name());
+            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), lessonsNames[position]);
             Log.e("lessonsNames", lessonsNames[position].name());
             context.startActivity(intent);
-            mainActivity.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
-            */
         });
-
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -46,7 +47,6 @@ public class FragmentLearn extends UserFragmentActivity {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.user_fragment_learn, container, false);
     }
 
@@ -66,6 +66,7 @@ public class FragmentLearn extends UserFragmentActivity {
 
     private TextView but_yes, but_no, menu_title;
     private EditText englishWord, russianWord, definition;
+    private ImageView callGptDefinition;
 
 
     //____________________onResume____________________//
@@ -74,8 +75,8 @@ public class FragmentLearn extends UserFragmentActivity {
         super.onResume();
 
         context = getActivity();
-        assert context != null;
 
+        assert context != null;
         init();
 
         /* methods after init */
@@ -101,6 +102,7 @@ public class FragmentLearn extends UserFragmentActivity {
         englishWord = context.findViewById(R.id.english_word);
         russianWord = context.findViewById(R.id.russian_word);
         definition = context.findViewById(R.id.definition);
+        callGptDefinition = context.findViewById(R.id.callGptDefinition);
 
         wordModelDao = App.instance.getDatabase().wordModelDao();
 
@@ -144,7 +146,7 @@ public class FragmentLearn extends UserFragmentActivity {
             //set the properties for Translation button
             Button button = new Button(context);
             button.setLayoutParams(params);
-            button.setText("Adding button");
+            button.setText(R.string.adding_button);
             button.setTextSize(15);
             button.setBackgroundResource(R.drawable.person_together);
             button.setPadding(getDp(5), dp_15, getDp(5), dp_15);
@@ -155,15 +157,16 @@ public class FragmentLearn extends UserFragmentActivity {
 
                 @Override
                 public void onClick(View v) {
-                    appearMenu();
                     setUpAddingMenu();
+                    appearMenu();
                 }
 
                 private void setUpAddingMenu() {
                     menu_title.setText(R.string.enter_info_to_create_new_word);
-                    but_no.setText(R.string.definition);
+                    but_no.setText(R.string.cancel);
                     but_yes.setText(R.string.create);
-                    but_no.setOnClickListener(v1 -> proposeDefinition());
+                    but_no.setOnClickListener(v1 -> closeMenu());
+                    callGptDefinition.setOnClickListener(v1 -> proposeDefinition());
                     but_yes.setOnClickListener(v1 -> combineData());
                 }
 
@@ -230,7 +233,7 @@ public class FragmentLearn extends UserFragmentActivity {
     }
 
     //NOTE: Translation buttons
-    private void addTranslationButtonToScreen() { //todo learn definition
+    private void addTranslationButtonToScreen() {
         int dp_15 = getDp(15);
 
         for (int i = 0; i < size; i++) {
@@ -334,7 +337,7 @@ public class FragmentLearn extends UserFragmentActivity {
         definition.setText(wordModel.definition);
         String previousName = wordModel.englishWord;
 
-        but_yes.setText("Edit");
+        but_yes.setText(R.string.edit);
         but_yes.setOnClickListener(v -> {
 
             wordModel.englishWord = englishWord.getText().toString().trim();
@@ -346,7 +349,7 @@ public class FragmentLearn extends UserFragmentActivity {
             studyActivity.setDateToActivity();
         });
 
-        but_no.setText("Delete");
+        but_no.setText(R.string.delete);
         but_no.setOnClickListener(v -> showDeleteDialog(topicId));
         appearMenu();
     }

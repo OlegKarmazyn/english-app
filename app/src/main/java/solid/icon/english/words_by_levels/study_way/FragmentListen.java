@@ -1,5 +1,6 @@
 package solid.icon.english.words_by_levels.study_way;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -34,15 +35,6 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -53,8 +45,6 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
     private ImageView imageView = null;
 
     private int i = 0;
-
-    private TextToSpeech mTTS;
 
     private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
@@ -133,19 +123,11 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         editText.setBackground(f);
     }
 
-    private void speak(String text) {
-        float pitch = 0.5f;
-        float speed = 0.5f;
-        Log.e("TTS", "123");
-        //mTTS.setPitch(pitch);
-        //mTTS.setSpeechRate(speed);
-
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
     @Override
     public void onResume() {
         super.onResume();
+
+        context = getActivity();
 
         for (int i = 0; i < 15; i++) {
             id[i] = i * -1;
@@ -155,34 +137,35 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
             counter_true[i] = 5;
         }
 
-        imageView = getActivity().findViewById(R.id.img_listen);
+        assert context != null;
+        imageView = context.findViewById(R.id.img_listen);
         animationDrawable = (AnimationDrawable) imageView.getDrawable();
 
 
-        editText = getActivity().findViewById(R.id.wrileEdit);
+        editText = context.findViewById(R.id.wrileEdit);
         editText.setText("");
 
-        lay_write_learn = getActivity().findViewById(R.id.lay_write_learn);
+        lay_write_learn = context.findViewById(R.id.lay_write_learn);
 
-        words1 = getActivity().findViewById(R.id.words_by_engl);
-        words2 = getActivity().findViewById(R.id.words_by_transl);
+        words1 = context.findViewById(R.id.words_by_engl);
+        words2 = context.findViewById(R.id.words_by_transl);
 
-        fab = getActivity().findViewById(R.id.fab);
+        fab = context.findViewById(R.id.fab);
 
         full_array();
 
         f = editText.getBackground();
 
-        el_next = getActivity().findViewById(R.id.el_next);
+        el_next = context.findViewById(R.id.el_next);
 
-        text_check_listen = getActivity().findViewById(R.id.text_check_listen);
+        text_check_listen = context.findViewById(R.id.text_check_listen);
 
         imageView.setOnClickListener(this);
         fab.setOnClickListener(this);
         el_next.setOnClickListener(this);
         text_check_listen.setOnClickListener(this);
 
-        mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+        mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
@@ -200,15 +183,6 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
             }
         });
 
-//        if (PreIntermediate.lev.equals("a2")){
-//            num_of_topic = PreIntermediate.abs;
-//            level_a2 = new Level_A2();
-//            main_1 = level_a2.main_1.clone();
-//            main_2 = level_a2.main_2.clone();
-//            //actionBar.setTitle(topic_by_a2[tem]);
-//        } else if (Intermediate.lev.equals("b1")){
-        //actionBar.setTitle(topic_by_b1[tem]);
-//        }
         words_get_text();
 
         words1.setClickable(false);
@@ -216,6 +190,7 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -267,7 +242,7 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
+                    Toast mess = Toast.makeText(context, "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
                     mess.show();
 //                    el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
@@ -277,20 +252,6 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
                     i = 0;
                 }
                 break;
-//            case R.id.el_next:
-//                Intent intent = null;
-//                if (PreIntermediate.lev.equals("a2")){
-//                    TestOrLearn.doing = "test";
-//                    intent = new Intent(getActivity(), Level_A2.class);
-//
-//                } else if (Intermediate.lev.equals("b1")){
-//                    TestOrLearn.doing = "test";
-//                    intent = new Intent(getActivity(), Level_B1.class);
-//
-//                }
-//                startActivity(intent);
-//                getActivity().finish();
-//                break;
         }
     }
 }

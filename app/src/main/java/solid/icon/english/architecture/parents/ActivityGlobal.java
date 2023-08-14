@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
+
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 

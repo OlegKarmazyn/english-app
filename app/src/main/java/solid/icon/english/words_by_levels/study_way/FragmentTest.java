@@ -2,7 +2,6 @@ package solid.icon.english.words_by_levels.study_way;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -21,7 +20,9 @@ import androidx.fragment.app.FragmentActivity;
 
 import java.io.Serializable;
 import java.util.Locale;
+import java.util.Objects;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.MyFragmentActivity;
 
@@ -35,96 +36,30 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-
         return inflater.inflate(R.layout.fragment_test, container, false);
     }
 
     private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
     private int counter_true = 0;
-    private Toast mess;
-
-    private TextToSpeech mTTS;
 
     private final String TAG = "FragmentLearn";
     private Drawable LinDraw;
     private int i = 0;
 
-    TextView words1;
-    TextView words2;
-    TextView words3;
-    TextView words4;
-    TextView words5;
-    TextView words6;
-    TextView words7;
-    TextView words8;
-    TextView words9;
-    TextView words10;
-    TextView words11;
-    TextView words12;
-    TextView words13;
-    TextView words14;
-    TextView words15;
+    TextView words1, words2, words3, words4, words5, words6, words7, words8, words9,
+            words10, words11, words12, words13, words14, words15;
 
-    TextView words1_1;
-    TextView words2_1;
-    TextView words3_1;
-    TextView words4_1;
-    TextView words5_1;
-    TextView words6_1;
-    TextView words7_1;
-    TextView words8_1;
-    TextView words9_1;
-    TextView words10_1;
-    TextView words11_1;
-    TextView words12_1;
-    TextView words13_1;
-    TextView words14_1;
-    TextView words15_1;
+    TextView words1_1, words2_1, words3_1, words4_1, words5_1, words6_1, words7_1, words8_1, words9_1,
+            words10_1, words11_1, words12_1, words13_1, words14_1, words15_1;
 
-    EditText editText1;
-    EditText editText2;
-    EditText editText3;
-    EditText editText4;
-    EditText editText5;
-    EditText editText6;
-    EditText editText7;
-    EditText editText8;
-    EditText editText9;
-    EditText editText10;
-    EditText editText11;
-    EditText editText12;
-    EditText editText13;
-    EditText editText14;
-    EditText editText15;
+    EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9,
+            editText10, editText11, editText12, editText13, editText14, editText15;
 
-    LinearLayout lin_1;
-    LinearLayout lin_2;
-    LinearLayout lin_3;
-    LinearLayout lin_4;
-    LinearLayout lin_5;
-    LinearLayout lin_6;
-    LinearLayout lin_7;
-    LinearLayout lin_8;
-    LinearLayout lin_9;
-    LinearLayout lin_10;
-    LinearLayout lin_11;
-    LinearLayout lin_12;
-    LinearLayout lin_13;
-    LinearLayout lin_14;
-    LinearLayout lin_15;
+    LinearLayout lin_1, lin_2, lin_3, lin_4, lin_5, lin_6, lin_7, lin_8, lin_9,
+            lin_10, lin_11, lin_12, lin_13, lin_14, lin_15;
 
     private TextView check;
 
@@ -136,76 +71,78 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
     public void onResume() {
         super.onResume();
 
+        context = getActivity();
+
         for (int i = 0; i < 15; i++) {
             id[i] = i * -1;
         }
-        FragmentActivity fragmentActivity = getActivity();
 
-        words1 = fragmentActivity.findViewById(R.id.words1);
-        words2 = fragmentActivity.findViewById(R.id.words2);
-        words3 = fragmentActivity.findViewById(R.id.words3);
-        words4 = fragmentActivity.findViewById(R.id.words4);
-        words5 = fragmentActivity.findViewById(R.id.words5);
-        words6 = fragmentActivity.findViewById(R.id.words6);
-        words7 = fragmentActivity.findViewById(R.id.words7);
-        words8 = fragmentActivity.findViewById(R.id.words8);
-        words9 = fragmentActivity.findViewById(R.id.words9);
-        words10 = fragmentActivity.findViewById(R.id.words10);
-        words11 = fragmentActivity.findViewById(R.id.words11);
-        words12 = fragmentActivity.findViewById(R.id.words12);
-        words13 = fragmentActivity.findViewById(R.id.words13);
-        words14 = fragmentActivity.findViewById(R.id.words14);
-        words15 = fragmentActivity.findViewById(R.id.words15);
+        assert context != null;
+        words1 = context.findViewById(R.id.words1);
+        words2 = context.findViewById(R.id.words2);
+        words3 = context.findViewById(R.id.words3);
+        words4 = context.findViewById(R.id.words4);
+        words5 = context.findViewById(R.id.words5);
+        words6 = context.findViewById(R.id.words6);
+        words7 = context.findViewById(R.id.words7);
+        words8 = context.findViewById(R.id.words8);
+        words9 = context.findViewById(R.id.words9);
+        words10 = context.findViewById(R.id.words10);
+        words11 = context.findViewById(R.id.words11);
+        words12 = context.findViewById(R.id.words12);
+        words13 = context.findViewById(R.id.words13);
+        words14 = context.findViewById(R.id.words14);
+        words15 = context.findViewById(R.id.words15);
 
-        words1_1 = fragmentActivity.findViewById(R.id.words1_1);
-        words2_1 = fragmentActivity.findViewById(R.id.words2_1);
-        words3_1 = fragmentActivity.findViewById(R.id.words3_1);
-        words4_1 = fragmentActivity.findViewById(R.id.words4_1);
-        words5_1 = fragmentActivity.findViewById(R.id.words5_1);
-        words6_1 = fragmentActivity.findViewById(R.id.words6_1);
-        words7_1 = fragmentActivity.findViewById(R.id.words7_1);
-        words8_1 = fragmentActivity.findViewById(R.id.words8_1);
-        words9_1 = fragmentActivity.findViewById(R.id.words9_1);
-        words10_1 = fragmentActivity.findViewById(R.id.words10_1);
-        words11_1 = fragmentActivity.findViewById(R.id.words11_1);
-        words12_1 = fragmentActivity.findViewById(R.id.words12_1);
-        words13_1 = fragmentActivity.findViewById(R.id.words13_1);
-        words14_1 = fragmentActivity.findViewById(R.id.words14_1);
-        words15_1 = fragmentActivity.findViewById(R.id.words15_1);
+        words1_1 = context.findViewById(R.id.words1_1);
+        words2_1 = context.findViewById(R.id.words2_1);
+        words3_1 = context.findViewById(R.id.words3_1);
+        words4_1 = context.findViewById(R.id.words4_1);
+        words5_1 = context.findViewById(R.id.words5_1);
+        words6_1 = context.findViewById(R.id.words6_1);
+        words7_1 = context.findViewById(R.id.words7_1);
+        words8_1 = context.findViewById(R.id.words8_1);
+        words9_1 = context.findViewById(R.id.words9_1);
+        words10_1 = context.findViewById(R.id.words10_1);
+        words11_1 = context.findViewById(R.id.words11_1);
+        words12_1 = context.findViewById(R.id.words12_1);
+        words13_1 = context.findViewById(R.id.words13_1);
+        words14_1 = context.findViewById(R.id.words14_1);
+        words15_1 = context.findViewById(R.id.words15_1);
 
-        editText1 = fragmentActivity.findViewById(R.id.editText1);
-        editText2 = fragmentActivity.findViewById(R.id.editText2);
-        editText3 = fragmentActivity.findViewById(R.id.editText3);
-        editText4 = fragmentActivity.findViewById(R.id.editText4);
-        editText5 = fragmentActivity.findViewById(R.id.editText5);
-        editText6 = fragmentActivity.findViewById(R.id.editText6);
-        editText7 = fragmentActivity.findViewById(R.id.editText7);
-        editText8 = fragmentActivity.findViewById(R.id.editText8);
-        editText9 = fragmentActivity.findViewById(R.id.editText9);
-        editText10 = fragmentActivity.findViewById(R.id.editText10);
-        editText11 = fragmentActivity.findViewById(R.id.editText11);
-        editText12 = fragmentActivity.findViewById(R.id.editText12);
-        editText13 = fragmentActivity.findViewById(R.id.editText13);
-        editText14 = fragmentActivity.findViewById(R.id.editText14);
-        editText15 = fragmentActivity.findViewById(R.id.editText15);
+        editText1 = context.findViewById(R.id.editText1);
+        editText2 = context.findViewById(R.id.editText2);
+        editText3 = context.findViewById(R.id.editText3);
+        editText4 = context.findViewById(R.id.editText4);
+        editText5 = context.findViewById(R.id.editText5);
+        editText6 = context.findViewById(R.id.editText6);
+        editText7 = context.findViewById(R.id.editText7);
+        editText8 = context.findViewById(R.id.editText8);
+        editText9 = context.findViewById(R.id.editText9);
+        editText10 = context.findViewById(R.id.editText10);
+        editText11 = context.findViewById(R.id.editText11);
+        editText12 = context.findViewById(R.id.editText12);
+        editText13 = context.findViewById(R.id.editText13);
+        editText14 = context.findViewById(R.id.editText14);
+        editText15 = context.findViewById(R.id.editText15);
 
-        lin_1 = fragmentActivity.findViewById(R.id.lin_1);
-        lin_2 = fragmentActivity.findViewById(R.id.lin_2);
-        lin_3 = fragmentActivity.findViewById(R.id.lin_3);
-        lin_4 = fragmentActivity.findViewById(R.id.lin_4);
-        lin_5 = fragmentActivity.findViewById(R.id.lin_5);
-        lin_6 = fragmentActivity.findViewById(R.id.lin_6);
-        lin_7 = fragmentActivity.findViewById(R.id.lin_7);
-        lin_8 = fragmentActivity.findViewById(R.id.lin_8);
-        lin_9 = fragmentActivity.findViewById(R.id.lin_9);
-        lin_10 = fragmentActivity.findViewById(R.id.lin_10);
-        lin_11 = fragmentActivity.findViewById(R.id.lin_11);
-        lin_12 = fragmentActivity.findViewById(R.id.lin_12);
-        lin_13 = fragmentActivity.findViewById(R.id.lin_13);
-        lin_14 = fragmentActivity.findViewById(R.id.lin_14);
-        lin_15 = fragmentActivity.findViewById(R.id.lin_15);
+        lin_1 = context.findViewById(R.id.lin_1);
+        lin_2 = context.findViewById(R.id.lin_2);
+        lin_3 = context.findViewById(R.id.lin_3);
+        lin_4 = context.findViewById(R.id.lin_4);
+        lin_5 = context.findViewById(R.id.lin_5);
+        lin_6 = context.findViewById(R.id.lin_6);
+        lin_7 = context.findViewById(R.id.lin_7);
+        lin_8 = context.findViewById(R.id.lin_8);
+        lin_9 = context.findViewById(R.id.lin_9);
+        lin_10 = context.findViewById(R.id.lin_10);
+        lin_11 = context.findViewById(R.id.lin_11);
+        lin_12 = context.findViewById(R.id.lin_12);
+        lin_13 = context.findViewById(R.id.lin_13);
+        lin_14 = context.findViewById(R.id.lin_14);
+        lin_15 = context.findViewById(R.id.lin_15);
 
-        check = fragmentActivity.findViewById(R.id.check);
+        check = context.findViewById(R.id.check);
 
         LinDraw = lin_1.getBackground();
 
@@ -226,27 +163,23 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         words15.setOnClickListener(this);
         check.setOnClickListener(this);
 
-        mTTS = new TextToSpeech(fragmentActivity, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    int result = mTTS.setLanguage(Locale.US);
+        mTTS = new TextToSpeech(context, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                int result = mTTS.setLanguage(Locale.US);
 
-                    if (result == TextToSpeech.LANG_MISSING_DATA
-                            || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                        Log.e("TTS", "Language not supported");
-                    } else {
+                if (result == TextToSpeech.LANG_MISSING_DATA
+                        || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Language not supported");
+                } else {/*empty*/}
 
-                    }
-                } else {
-                    Log.e("TTS", "Initializator failef");
-                }
+            } else {
+                Log.e("TTS", "Initialization failed");
             }
         });
 
         check.setVisibility(View.VISIBLE);
-        text1_1_visibel_vis();
-        text1_visibel_gone();
+        text1_1_visible_vis();
+        text1_visible_gone();
         full_array();
         change_test();
 
@@ -274,13 +207,28 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         lin_13.setBackground(LinDraw);
         lin_14.setBackground(LinDraw);
         lin_15.setBackground(LinDraw);
+
+        editText1.setText("");
+        editText2.setText("");
+        editText3.setText("");
+        editText4.setText("");
+        editText5.setText("");
+        editText6.setText("");
+        editText7.setText("");
+        editText8.setText("");
+        editText9.setText("");
+        editText10.setText("");
+        editText11.setText("");
+        editText12.setText("");
+        editText13.setText("");
+        editText14.setText("");
+        editText15.setText("");
     }
 
     private void full_array() {
-        int rand = 0;
+        int rand;
         boolean isTrue = false;
-        int k = 0;
-
+        int k;
 
         for (int iter = 0; iter < 15; iter++) {
             do {
@@ -343,7 +291,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         check.setVisibility(View.GONE);
     }
 
-    private void text1_1_visibel_vis() {
+    private void text1_1_visible_vis() {
 
         words1_1.setVisibility(View.VISIBLE);
         words2_1.setVisibility(View.VISIBLE);
@@ -362,7 +310,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         words15_1.setVisibility(View.VISIBLE);
     }
 
-    private void text1_visibel_gone() {
+    private void text1_visible_gone() {
 
         words1.setVisibility(View.GONE);
         words2.setVisibility(View.GONE);
@@ -412,36 +360,31 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         setBackground_to_lin(lin_14, k);
         k++;
         setBackground_to_lin(lin_15, k);
-        k++;
     }
 
     @SuppressLint("ResourceAsColor")
     private void setBackground_to_lin(LinearLayout lin, int k) {
-        //System.out.println(k + " " + " " +isRight[k]);
         if (isRight[k]) {
             lin.setBackgroundResource(R.color.back_true);
             counter_true++;
-            //System.out.println("true");
         } else {
             lin.setBackgroundResource(R.color.back_false);
-            //System.out.println("false");
         }
 
     }
 
     private void equals_back_with_true() {
-        String word = "";
+        String word;
         for (int j = 0; j < 15; j++) {
             word = getResources().getString((main_1[num_of_topic][id[j]]));
             back_words[j] = back_words[j].trim();
             isRight[j] = back_words[j].equals(word);
-            //System.out.println("что " + back_words[j] + " с чем " + word + " " + isRight[j]);
         }
     }
 
     private void back_inf_from_editText() {
         int t = 0;
-        back_words[t++] = editText1.getText().toString(); // приводим к типу String
+        back_words[t++] = editText1.getText().toString();
         back_words[t++] = editText2.getText().toString();
         back_words[t++] = editText3.getText().toString();
         back_words[t++] = editText4.getText().toString();
@@ -455,12 +398,10 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         back_words[t++] = editText12.getText().toString();
         back_words[t++] = editText13.getText().toString();
         back_words[t++] = editText14.getText().toString();
-        back_words[t++] = editText15.getText().toString();
-        t = 0;
+        back_words[t] = editText15.getText().toString();
     }
 
-    private void text1_visibel_vis() {
-
+    private void text1_visible_vis() {
         words1.setVisibility(View.VISIBLE);
         words2.setVisibility(View.VISIBLE);
         words3.setVisibility(View.VISIBLE);
@@ -476,23 +417,11 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         words13.setVisibility(View.VISIBLE);
         words14.setVisibility(View.VISIBLE);
         words15.setVisibility(View.VISIBLE);
-
-    }
-
-    private void speak(String text) {
-        float pitch = 0.5f;
-        float speed = 0.5f;
-        Log.e("TTS", "123");
-        //mTTS.setPitch(pitch);
-        //mTTS.setSpeechRate(speed);
-
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     public void calculate_flip() {
         int ma = 0;
-        for (int g :
-                counter_flip) {
+        for (int g : counter_flip) {
             if (g == 1) {
                 ma++;
             }
@@ -502,6 +431,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         }
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -641,29 +571,24 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                 break;
 
             case R.id.check:
-                text1_visibel_vis();
+                text1_visible_vis();
                 back_inf_from_editText();
                 equals_back_with_true();
                 set_all_back_to_lin();
                 check_visible_gone();
-                mess = Toast.makeText(getActivity(), "Correct answers " + counter_true + " of " + 15, Toast.LENGTH_LONG);
-                mess.show();
+                Toasty.info(context, "Correct answers " + counter_true + " of " + 15, Toast.LENGTH_LONG).show();
                 for (int i = 0; i < 15; i++) {
                     isRight[i] = false;
                 }
                 if (counter_true > 12) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
                     builder.setMessage("Do you want to mark this topic as done?");
-                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            // User clicked OK button
-                            mark_topic_as_done();
-                        }
+                    builder.setPositiveButton("OK", (dialog, id) -> {
+                        // User clicked OK button
+                        mark_topic_as_done();
                     });
-                    builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            // User cancelled the dialog
-                        }
+                    builder.setNegativeButton("cancel", (dialog, id) -> {
+                        // User cancelled the dialog
                     });
                     AlertDialog dialog = builder.create();
                     dialog.show();
@@ -674,7 +599,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
     }
 
     private void mark_topic_as_done() {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = preferences.edit();
         String mod_key = String.valueOf(what_level) + num_of_topic;
         editor.putBoolean(mod_key, true);

@@ -1,6 +1,5 @@
 package solid.icon.english.words_by_levels.universal_topic_level;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -19,12 +18,11 @@ import solid.icon.english.architecture.parents.ActivityGlobal;
 public class EnglishLevel extends ActivityGlobal {
 
     RecyclerView recyclerView;
-    String name_topic[];
+    String[] name_topic;
     LessonsName level;
     boolean[] key_topics = new boolean[51];
     final Context context = this;
 
-    @SuppressLint("RestrictedApi")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,14 +61,12 @@ public class EnglishLevel extends ActivityGlobal {
         recyclerView.setNestedScrollingEnabled(false);
     }
 
-    public boolean[] goDateBack() {
+    public void goDateBack() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         for (int i = 0; i < key_topics.length; i++) {
             String mod_key = level.name() + i;
             key_topics[i] = preferences.getBoolean(mod_key, false);
             Log.d("goDateBack", "key_topics[" + i + "]" + key_topics[i]);
         }
-
-        return key_topics;
     }
 }

@@ -180,7 +180,7 @@ public abstract class UserFragmentActivity extends Fragment {
     }
 
     protected void speak(String text) {
-        getSpeedAndPitch();
+        getSpeedAndPitch(); //todo redone calling this (at once - and after do test)
         outLog("TTS - is speaking");
         mTTS.setPitch(pitch);
         mTTS.setSpeechRate(speechRate);

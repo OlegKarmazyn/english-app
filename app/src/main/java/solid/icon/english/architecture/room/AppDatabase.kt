@@ -16,9 +16,9 @@ import androidx.room.RoomDatabase
     exportSchema = true
 )
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun wordModelDao(): WordModelDao?
-    abstract fun topicModelDao(): TopicModelDao?
-    abstract fun subTopicDao(): SubTopicDao?
+    abstract fun wordModelDao(): WordModelDao
+    abstract fun topicModelDao(): TopicModelDao
+    abstract fun subTopicDao(): SubTopicDao
 }
 
 //class DeleteOldColumn : AutoMigrationSpec

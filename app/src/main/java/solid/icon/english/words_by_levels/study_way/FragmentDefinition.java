@@ -1,5 +1,6 @@
 package solid.icon.english.words_by_levels.study_way;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
@@ -29,31 +30,17 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
         defineArrays();
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_definition, container, false);
     }
 
     private int i = 0;
 
-    private TextToSpeech mTTS;
-
     public int[][] main_meaning = new int[][]{};
-
 
     private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
@@ -98,25 +85,29 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     public void onResume() {
         super.onResume();
 
+        context = getActivity();
+
         if (isNotTranslating) {
 
             for (int i = 0; i < 15; i++) {
                 id[i] = i * -1;
             }
-            editText = getActivity().findViewById(R.id.writeEdit);
-            meaning = getActivity().findViewById(R.id.meaning);
+
+            assert context != null;
+            editText = context.findViewById(R.id.writeEdit);
+            meaning = context.findViewById(R.id.meaning);
             meaning.setClickable(false);
 
-            words1 = getActivity().findViewById(R.id.words_by_engl);
-            words2 = getActivity().findViewById(R.id.words_by_transl);
+            words1 = context.findViewById(R.id.words_by_engl);
+            words2 = context.findViewById(R.id.words_by_transl);
 
-            lay_definition_transl = getActivity().findViewById(R.id.lay_definition_transl);
+            lay_definition_transl = context.findViewById(R.id.lay_definition_transl);
 
-            fab = getActivity().findViewById(R.id.fab);
+            fab = context.findViewById(R.id.fab);
 
-            text_check = getActivity().findViewById(R.id.text_check);
+            text_check = context.findViewById(R.id.text_check);
 
-            el_next = getActivity().findViewById(R.id.el_next);
+            el_next = context.findViewById(R.id.el_next);
 
             full_array();
 
@@ -126,7 +117,7 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
             text_check.setOnClickListener(this);
             words1.setOnClickListener(this);
 
-            mTTS = new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+            mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
                 @Override
                 public void onInit(int status) {
                     if (status == TextToSpeech.SUCCESS) {
@@ -191,16 +182,6 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
         speak(getResources().getString((main_1[num_of_topic][id[i]])));
     }
 
-    private void speak(String text) {
-        float pitch = 0.5f;
-        float speed = 0.5f;
-        Log.e("TTS", "123");
-        //mTTS.setPitch(pitch);
-        //mTTS.setSpeechRate(speed);
-
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
-    }
-
     private void words_get_text() {
         meaning.setText(main_meaning[num_of_topic][id[i]]);
         words1.setText(main_1[num_of_topic][id[i]]);
@@ -211,13 +192,10 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
         String eT = editText.getText().toString();
         eT = eT.trim();
         String res = (getResources().getString((main_1[num_of_topic][id[i]])));
-        if ((eT.equals(res))) {
-            return true;
-        } else {
-            return false;
-        }
+        return eT.equals(res);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -253,16 +231,16 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(getActivity(), "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
+                    Toast mess = Toast.makeText(context, "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
                     mess.show();
                     el_next.setVisibility(View.VISIBLE);
                     fab.setVisibility(View.GONE);
                 }
                 break;
 //            case R.id.el_next:
-//                Intent intent = new Intent(getActivity(), ListenWrite.class);
+//                Intent intent = new Intent(context, ListenWrite.class);
 //                startActivity(intent);
-//                getActivity().finish();
+//                context.finish();
 //                break;
             case R.id.words_by_engl:
                 listen();

@@ -29,7 +29,6 @@ import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.architecture.room.WordModel;
 import solid.icon.english.architecture.room.WordModelDao;
-import solid.icon.english.dialogs.CheckBoxDialog;
 import solid.icon.english.user_line.studying.fragments.FragmentAdapter;
 
 
@@ -67,7 +66,6 @@ public class StudyActivity extends ActivityGlobal {
         new Handler().postDelayed(() -> {
             loadingLayout.setVisibility(View.GONE);
             setUI();
-            displayGptNotification();
         }, 900);
     }
 
@@ -105,19 +103,6 @@ public class StudyActivity extends ActivityGlobal {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
-    }
-
-    //NOTE: showing alert dialog to notify about gpt helper
-    private void displayGptNotification() {
-        if (!preferencesOperations.getGptDescription()) {
-            CheckBoxDialog dialog = new CheckBoxDialog(context);
-            dialog.setPositiveButton(R.string.okay, v -> {
-                if (dialog.isChecked()) {
-                    preferencesOperations.putGptDescription();
-                }
-            });
-            new Handler().postDelayed(dialog::show, 1000);
-        }
     }
 
     //NOTE: preparation of all data for display to the user

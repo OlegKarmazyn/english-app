@@ -9,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.fragment.app.FragmentActivity;
-
 import java.io.Serializable;
 import java.util.Locale;
 
@@ -20,25 +18,15 @@ import solid.icon.english.architecture.parents.MyFragmentActivity;
 public class FragmentLearn extends MyFragmentActivity implements View.OnClickListener {
 
     public FragmentLearn(Serializable what_level, int num_of_topic) {
+        super();
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
         defineArrays();
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-//            mParam1 = getArguments().getString(ARG_PARAM1);
-//            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_learn, container, false);
     }
 
@@ -46,42 +34,14 @@ public class FragmentLearn extends MyFragmentActivity implements View.OnClickLis
 
     private int isException = 0;
 
-    private TextToSpeech mTTS;
-
     private final String TAG = "FragmentLearn";
     private int i = 0;
 
-    TextView words1;
-    TextView words2;
-    TextView words3;
-    TextView words4;
-    TextView words5;
-    TextView words6;
-    TextView words7;
-    TextView words8;
-    TextView words9;
-    TextView words10;
-    TextView words11;
-    TextView words12;
-    TextView words13;
-    TextView words14;
-    TextView words15;
+    TextView words1, words2, words3, words4, words5, words6, words7, words8, words9,
+            words10, words11, words12, words13, words14, words15;
 
-    TextView words1_1;
-    TextView words2_1;
-    TextView words3_1;
-    TextView words4_1;
-    TextView words5_1;
-    TextView words6_1;
-    TextView words7_1;
-    TextView words8_1;
-    TextView words9_1;
-    TextView words10_1;
-    TextView words11_1;
-    TextView words12_1;
-    TextView words13_1;
-    TextView words14_1;
-    TextView words15_1;
+    TextView words1_1, words2_1, words3_1, words4_1, words5_1, words6_1, words7_1, words8_1, words9_1,
+            words10_1, words11_1, words12_1, words13_1, words14_1, words15_1;
 
     ScrollView learn_ScrollView;
 
@@ -91,46 +51,46 @@ public class FragmentLearn extends MyFragmentActivity implements View.OnClickLis
     public void onResume() {
         super.onResume();
 
+        context = getActivity();
+
         for (int i = 0; i < 15; i++) {
             id[i] = i * -1;
         }
 
-        FragmentActivity fragmentActivity = getActivity();
+        assert context != null;
+        words1 = context.findViewById(R.id.words1);
+        words2 = context.findViewById(R.id.words2);
+        words3 = context.findViewById(R.id.words3);
+        words4 = context.findViewById(R.id.words4);
+        words5 = context.findViewById(R.id.words5);
+        words6 = context.findViewById(R.id.words6);
+        words7 = context.findViewById(R.id.words7);
+        words8 = context.findViewById(R.id.words8);
+        words9 = context.findViewById(R.id.words9);
+        words10 = context.findViewById(R.id.words10);
+        words11 = context.findViewById(R.id.words11);
+        words12 = context.findViewById(R.id.words12);
+        words13 = context.findViewById(R.id.words13);
+        words14 = context.findViewById(R.id.words14);
+        words15 = context.findViewById(R.id.words15);
 
-        assert fragmentActivity != null;
-        words1 = fragmentActivity.findViewById(R.id.words1);
-        words2 = fragmentActivity.findViewById(R.id.words2);
-        words3 = fragmentActivity.findViewById(R.id.words3);
-        words4 = fragmentActivity.findViewById(R.id.words4);
-        words5 = fragmentActivity.findViewById(R.id.words5);
-        words6 = fragmentActivity.findViewById(R.id.words6);
-        words7 = fragmentActivity.findViewById(R.id.words7);
-        words8 = fragmentActivity.findViewById(R.id.words8);
-        words9 = fragmentActivity.findViewById(R.id.words9);
-        words10 = fragmentActivity.findViewById(R.id.words10);
-        words11 = fragmentActivity.findViewById(R.id.words11);
-        words12 = fragmentActivity.findViewById(R.id.words12);
-        words13 = fragmentActivity.findViewById(R.id.words13);
-        words14 = fragmentActivity.findViewById(R.id.words14);
-        words15 = fragmentActivity.findViewById(R.id.words15);
+        words1_1 = context.findViewById(R.id.words1_1);
+        words2_1 = context.findViewById(R.id.words2_1);
+        words3_1 = context.findViewById(R.id.words3_1);
+        words4_1 = context.findViewById(R.id.words4_1);
+        words5_1 = context.findViewById(R.id.words5_1);
+        words6_1 = context.findViewById(R.id.words6_1);
+        words7_1 = context.findViewById(R.id.words7_1);
+        words8_1 = context.findViewById(R.id.words8_1);
+        words9_1 = context.findViewById(R.id.words9_1);
+        words10_1 = context.findViewById(R.id.words10_1);
+        words11_1 = context.findViewById(R.id.words11_1);
+        words12_1 = context.findViewById(R.id.words12_1);
+        words13_1 = context.findViewById(R.id.words13_1);
+        words14_1 = context.findViewById(R.id.words14_1);
+        words15_1 = context.findViewById(R.id.words15_1);
 
-        words1_1 = fragmentActivity.findViewById(R.id.words1_1);
-        words2_1 = fragmentActivity.findViewById(R.id.words2_1);
-        words3_1 = fragmentActivity.findViewById(R.id.words3_1);
-        words4_1 = fragmentActivity.findViewById(R.id.words4_1);
-        words5_1 = fragmentActivity.findViewById(R.id.words5_1);
-        words6_1 = fragmentActivity.findViewById(R.id.words6_1);
-        words7_1 = fragmentActivity.findViewById(R.id.words7_1);
-        words8_1 = fragmentActivity.findViewById(R.id.words8_1);
-        words9_1 = fragmentActivity.findViewById(R.id.words9_1);
-        words10_1 = fragmentActivity.findViewById(R.id.words10_1);
-        words11_1 = fragmentActivity.findViewById(R.id.words11_1);
-        words12_1 = fragmentActivity.findViewById(R.id.words12_1);
-        words13_1 = fragmentActivity.findViewById(R.id.words13_1);
-        words14_1 = fragmentActivity.findViewById(R.id.words14_1);
-        words15_1 = fragmentActivity.findViewById(R.id.words15_1);
-
-        learn_ScrollView = fragmentActivity.findViewById(R.id.learn_ScrollView);
+        learn_ScrollView = context.findViewById(R.id.learn_ScrollView);
 
         words1.setOnClickListener(this);
         words2.setOnClickListener(this);
@@ -148,7 +108,7 @@ public class FragmentLearn extends MyFragmentActivity implements View.OnClickLis
         words14.setOnClickListener(this);
         words15.setOnClickListener(this);
 
-        mTTS = new TextToSpeech(fragmentActivity, new TextToSpeech.OnInitListener() {
+        mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
@@ -260,16 +220,6 @@ public class FragmentLearn extends MyFragmentActivity implements View.OnClickLis
         words14_1.setText(main_2[num_of_topic][id[i++]]);
         words15_1.setText(main_2[num_of_topic][id[i]]);
         i = 0;
-    }
-
-    private void speak(String text) {
-        float pitch = 0.5f;
-        float speed = 0.5f;
-        Log.e("TTS", "123");
-        //mTTS.setPitch(pitch);
-        //mTTS.setSpeechRate(speed);
-
-        mTTS.speak(text, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     public void calculate_flip() {
