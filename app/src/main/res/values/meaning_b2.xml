@@ -357,540 +357,566 @@
     <string name="b2_mea20_15">to take or move out or back, or to remove:</string>
 
 
-    <string name="b2_mea21_1"></string>
-    <string name="b2_mea21_2"></string>
-    <string name="b2_mea21_3"></string>
-    <string name="b2_mea21_4"></string>
-    <string name="b2_mea21_5"></string>
-    <string name="b2_mea21_6"></string>
-    <string name="b2_mea21_7"></string>
-    <string name="b2_mea21_8"></string>
-    <string name="b2_mea21_9"></string>
-    <string name="b2_mea21_10"></string>
-    <string name="b2_mea21_11"></string>
-    <string name="b2_mea21_12"></string>
-    <string name="b2_mea21_13"></string>
-    <string name="b2_mea21_14"></string>
-    <string name="b2_mea21_15"></string>
-
-
-    <string name="b2_mea22_1"></string>
-    <string name="b2_mea22_2"></string>
-    <string name="b2_mea22_3"></string>
-    <string name="b2_mea22_4"></string>
-    <string name="b2_mea22_5"></string>
-    <string name="b2_mea22_6"></string>
-    <string name="b2_mea22_7"></string>
-    <string name="b2_mea22_8"></string>
-    <string name="b2_mea22_9"></string>
-    <string name="b2_mea22_10"></string>
-    <string name="b2_mea22_11"></string>
-    <string name="b2_mea22_12"></string>
-    <string name="b2_mea22_13"></string>
-    <string name="b2_mea22_14"></string>
-    <string name="b2_mea22_15"></string>
-
-
-
-    <string name="b2_mea23_1"></string>
-    <string name="b2_mea23_2"></string>
-    <string name="b2_mea23_3"></string>
-    <string name="b2_mea23_4"></string>
-    <string name="b2_mea23_5"></string>
-    <string name="b2_mea23_6"></string>
-    <string name="b2_mea23_7"></string>
-    <string name="b2_mea23_8"></string>
-    <string name="b2_mea23_9"></string>
-    <string name="b2_mea23_10"></string>
-    <string name="b2_mea23_11"></string>
-    <string name="b2_mea23_12"></string>
-    <string name="b2_mea23_13"></string>
-    <string name="b2_mea23_14"></string>
-    <string name="b2_mea23_15"></string>
-
-
-
-    <string name="b2_mea24_1"></string>
-    <string name="b2_mea24_2"></string>
-    <string name="b2_mea24_3"></string>
-    <string name="b2_mea24_4"></string>
-    <string name="b2_mea24_5"></string>
-    <string name="b2_mea24_6"></string>
-    <string name="b2_mea24_7"></string>
-    <string name="b2_mea24_8"></string>
-    <string name="b2_mea24_9"></string>
-    <string name="b2_mea24_10"></string>
-    <string name="b2_mea24_11"></string>
-    <string name="b2_mea24_12"></string>
-    <string name="b2_mea24_13"></string>
-    <string name="b2_mea24_14"></string>
-    <string name="b2_mea24_15"></string>
-
-
-
-    <string name="b2_mea25_1"></string>
-    <string name="b2_mea25_2"></string>
-    <string name="b2_mea25_3"></string>
-    <string name="b2_mea25_4"></string>
-    <string name="b2_mea25_5"></string>
-    <string name="b2_mea25_6"></string>
-    <string name="b2_mea25_7"></string>
-    <string name="b2_mea25_8"></string>
-    <string name="b2_mea25_9"></string>
-    <string name="b2_mea25_10"></string>
-    <string name="b2_mea25_11"></string>
-    <string name="b2_mea25_12"></string>
-    <string name="b2_mea25_13"></string>
-    <string name="b2_mea25_14"></string>
-    <string name="b2_mea25_15"></string>
-
-
-
-    <string name="b2_mea26_1"></string>
-    <string name="b2_mea26_2"></string>
-    <string name="b2_mea26_3"></string>
-    <string name="b2_mea26_4"></string>
-    <string name="b2_mea26_5"></string>
-    <string name="b2_mea26_6"></string>
-    <string name="b2_mea26_7"></string>
-    <string name="b2_mea26_8"></string>
-    <string name="b2_mea26_9"></string>
-    <string name="b2_mea26_10"></string>
-    <string name="b2_mea26_11"></string>
-    <string name="b2_mea26_12"></string>
-    <string name="b2_mea26_13"></string>
-    <string name="b2_mea26_14"></string>
-    <string name="b2_mea26_15"></string>
-
-
-
-    <string name="b2_mea27_1"></string>
-    <string name="b2_mea27_2"></string>
-    <string name="b2_mea27_3"></string>
-    <string name="b2_mea27_4"></string>
-    <string name="b2_mea27_5"></string>
-    <string name="b2_mea27_6"></string>
-    <string name="b2_mea27_7"></string>
-    <string name="b2_mea27_8"></string>
-    <string name="b2_mea27_9"></string>
-    <string name="b2_mea27_10"></string>
-    <string name="b2_mea27_11"></string>
-    <string name="b2_mea27_12"></string>
-    <string name="b2_mea27_13"></string>
-    <string name="b2_mea27_14"></string>
-    <string name="b2_mea27_15"></string>
-
-
-
-    <string name="b2_mea28_1"></string>
-    <string name="b2_mea28_2"></string>
-    <string name="b2_mea28_3"></string>
-    <string name="b2_mea28_4"></string>
-    <string name="b2_mea28_5"></string>
-    <string name="b2_mea28_6"></string>
-    <string name="b2_mea28_7"></string>
-    <string name="b2_mea28_8"></string>
-    <string name="b2_mea28_9"></string>
-    <string name="b2_mea28_10"></string>
-    <string name="b2_mea28_11"></string>
-    <string name="b2_mea28_12"></string>
-    <string name="b2_mea28_13"></string>
-    <string name="b2_mea28_14"></string>
-    <string name="b2_mea28_15"></string>
-
-
-
-    <string name="b2_mea29_1"></string>
-    <string name="b2_mea29_2"></string>
-    <string name="b2_mea29_3"></string>
-    <string name="b2_mea29_4"></string>
-    <string name="b2_mea29_5"></string>
-    <string name="b2_mea29_6"></string>
-    <string name="b2_mea29_7"></string>
-    <string name="b2_mea29_8"></string>
-    <string name="b2_mea29_9"></string>
-    <string name="b2_mea29_10"></string>
-    <string name="b2_mea29_11"></string>
-    <string name="b2_mea29_12"></string>
-    <string name="b2_mea29_13"></string>
-    <string name="b2_mea29_14"></string>
-    <string name="b2_mea29_15"></string>
-
-
-
-    <string name="b2_mea30_1"></string>
-    <string name="b2_mea30_2"></string>
-    <string name="b2_mea30_3"></string>
-    <string name="b2_mea30_4"></string>
-    <string name="b2_mea30_5"></string>
-    <string name="b2_mea30_6"></string>
-    <string name="b2_mea30_7"></string>
-    <string name="b2_mea30_8"></string>
-    <string name="b2_mea30_9"></string>
-    <string name="b2_mea30_10"></string>
-    <string name="b2_mea30_11"></string>
-    <string name="b2_mea30_12"></string>
-    <string name="b2_mea30_13"></string>
-    <string name="b2_mea30_14"></string>
-    <string name="b2_mea30_15"></string>
-
-
-
-    <string name="b2_mea31_1"></string>
-    <string name="b2_mea31_2"></string>
-    <string name="b2_mea31_3"></string>
-    <string name="b2_mea31_4"></string>
-    <string name="b2_mea31_5"></string>
-    <string name="b2_mea31_6"></string>
-    <string name="b2_mea31_7"></string>
-    <string name="b2_mea31_8"></string>
-    <string name="b2_mea31_9"></string>
-    <string name="b2_mea31_10"></string>
-    <string name="b2_mea31_11"></string>
-    <string name="b2_mea31_12"></string>
-    <string name="b2_mea31_13"></string>
-    <string name="b2_mea31_14"></string>
-    <string name="b2_mea31_15"></string>
-
-
-
-    <string name="b2_mea32_1"></string>
-    <string name="b2_mea32_2"></string>
-    <string name="b2_mea32_3"></string>
-    <string name="b2_mea32_4"></string>
-    <string name="b2_mea32_5"></string>
-    <string name="b2_mea32_6"></string>
-    <string name="b2_mea32_7"></string>
-    <string name="b2_mea32_8"></string>
-    <string name="b2_mea32_9"></string>
-    <string name="b2_mea32_10"></string>
-    <string name="b2_mea32_11"></string>
-    <string name="b2_mea32_12"></string>
-    <string name="b2_mea32_13"></string>
-    <string name="b2_mea32_14"></string>
-    <string name="b2_mea32_15"></string>
-
-
-
-    <string name="b2_mea33_1"></string>
-    <string name="b2_mea33_2"></string>
-    <string name="b2_mea33_3"></string>
-    <string name="b2_mea33_4"></string>
-    <string name="b2_mea33_5"></string>
-    <string name="b2_mea33_6"></string>
-    <string name="b2_mea33_7"></string>
-    <string name="b2_mea33_8"></string>
-    <string name="b2_mea33_9"></string>
-    <string name="b2_mea33_10"></string>
-    <string name="b2_mea33_11"></string>
-    <string name="b2_mea33_12"></string>
-    <string name="b2_mea33_13"></string>
-    <string name="b2_mea33_14"></string>
-    <string name="b2_mea33_15"></string>
-
-
-
-    <string name="b2_mea34_1"></string>
-    <string name="b2_mea34_2"></string>
-    <string name="b2_mea34_3"></string>
-    <string name="b2_mea34_4"></string>
-    <string name="b2_mea34_5"></string>
-    <string name="b2_mea34_6"></string>
-    <string name="b2_mea34_7"></string>
-    <string name="b2_mea34_8"></string>
-    <string name="b2_mea34_9"></string>
-    <string name="b2_mea34_10"></string>
-    <string name="b2_mea34_11"></string>
-    <string name="b2_mea34_12"></string>
-    <string name="b2_mea34_13"></string>
-    <string name="b2_mea34_14"></string>
-    <string name="b2_mea34_15"></string>
-
-
-
-    <string name="b2_mea35_1"></string>
-    <string name="b2_mea35_2"></string>
-    <string name="b2_mea35_3"></string>
-    <string name="b2_mea35_4"></string>
-    <string name="b2_mea35_5"></string>
-    <string name="b2_mea35_6"></string>
-    <string name="b2_mea35_7"></string>
-    <string name="b2_mea35_8"></string>
-    <string name="b2_mea35_9"></string>
-    <string name="b2_mea35_10"></string>
-    <string name="b2_mea35_11"></string>
-    <string name="b2_mea35_12"></string>
-    <string name="b2_mea35_13"></string>
-    <string name="b2_mea35_14"></string>
-    <string name="b2_mea35_15"></string>
-
-
-
-    <string name="b2_mea36_1"></string>
-    <string name="b2_mea36_2"></string>
-    <string name="b2_mea36_3"></string>
-    <string name="b2_mea36_4"></string>
-    <string name="b2_mea36_5"></string>
-    <string name="b2_mea36_6"></string>
-    <string name="b2_mea36_7"></string>
-    <string name="b2_mea36_8"></string>
-    <string name="b2_mea36_9"></string>
-    <string name="b2_mea36_10"></string>
-    <string name="b2_mea36_11"></string>
-    <string name="b2_mea36_12"></string>
-    <string name="b2_mea36_13"></string>
-    <string name="b2_mea36_14"></string>
-    <string name="b2_mea36_15"></string>
-
-
-
-    <string name="b2_mea37_1"></string>
-    <string name="b2_mea37_2"></string>
-    <string name="b2_mea37_3"></string>
-    <string name="b2_mea37_4"></string>
-    <string name="b2_mea37_5"></string>
-    <string name="b2_mea37_6"></string>
-    <string name="b2_mea37_7"></string>
-    <string name="b2_mea37_8"></string>
-    <string name="b2_mea37_9"></string>
-    <string name="b2_mea37_10"></string>
-    <string name="b2_mea37_11"></string>
-    <string name="b2_mea37_12"></string>
-    <string name="b2_mea37_13"></string>
-    <string name="b2_mea37_14"></string>
-    <string name="b2_mea37_15"></string>
-
-
-
-    <string name="b2_mea38_1"></string>
-    <string name="b2_mea38_2"></string>
-    <string name="b2_mea38_3"></string>
-    <string name="b2_mea38_4"></string>
-    <string name="b2_mea38_5"></string>
-    <string name="b2_mea38_6"></string>
-    <string name="b2_mea38_7"></string>
-    <string name="b2_mea38_8"></string>
-    <string name="b2_mea38_9"></string>
-    <string name="b2_mea38_10"></string>
-    <string name="b2_mea38_11"></string>
-    <string name="b2_mea38_12"></string>
-    <string name="b2_mea38_13"></string>
-    <string name="b2_mea38_14"></string>
-    <string name="b2_mea38_15"></string>
-
-
-
-    <string name="b2_mea39_1"></string>
-    <string name="b2_mea39_2"></string>
-    <string name="b2_mea39_3"></string>
-    <string name="b2_mea39_4"></string>
-    <string name="b2_mea39_5"></string>
-    <string name="b2_mea39_6"></string>
-    <string name="b2_mea39_7"></string>
-    <string name="b2_mea39_8"></string>
-    <string name="b2_mea39_9"></string>
-    <string name="b2_mea39_10"></string>
-    <string name="b2_mea39_11"></string>
-    <string name="b2_mea39_12"></string>
-    <string name="b2_mea39_13"></string>
-    <string name="b2_mea39_14"></string>
-    <string name="b2_mea39_15"></string>
-
-
-
-    <string name="b2_mea40_1"></string>
-    <string name="b2_mea40_2"></string>
-    <string name="b2_mea40_3"></string>
-    <string name="b2_mea40_4"></string>
-    <string name="b2_mea40_5"></string>
-    <string name="b2_mea40_6"></string>
-    <string name="b2_mea40_7"></string>
-    <string name="b2_mea40_8"></string>
-    <string name="b2_mea40_9"></string>
-    <string name="b2_mea40_10"></string>
-    <string name="b2_mea40_11"></string>
-    <string name="b2_mea40_12"></string>
-    <string name="b2_mea40_13"></string>
-    <string name="b2_mea40_14"></string>
-    <string name="b2_mea40_15"></string>
-
-
-
-    <string name="b2_mea41_1"></string>
-    <string name="b2_mea41_2"></string>
-    <string name="b2_mea41_3"></string>
-    <string name="b2_mea41_4"></string>
-    <string name="b2_mea41_5"></string>
-    <string name="b2_mea41_6"></string>
-    <string name="b2_mea41_7"></string>
-    <string name="b2_mea41_8"></string>
-    <string name="b2_mea41_9"></string>
-    <string name="b2_mea41_10"></string>
-    <string name="b2_mea41_11"></string>
-    <string name="b2_mea41_12"></string>
-    <string name="b2_mea41_13"></string>
-    <string name="b2_mea41_14"></string>
-    <string name="b2_mea41_15"></string>
-
-
-
-    <string name="b2_mea42_1"></string>
-    <string name="b2_mea42_2"></string>
-    <string name="b2_mea42_3"></string>
-    <string name="b2_mea42_4"></string>
-    <string name="b2_mea42_5"></string>
-    <string name="b2_mea42_6"></string>
-    <string name="b2_mea42_7"></string>
-    <string name="b2_mea42_8"></string>
-    <string name="b2_mea42_9"></string>
-    <string name="b2_mea42_10"></string>
-    <string name="b2_mea42_11"></string>
-    <string name="b2_mea42_12"></string>
-    <string name="b2_mea42_13"></string>
-    <string name="b2_mea42_14"></string>
-    <string name="b2_mea42_15"></string>
-
-
-
-    <string name="b2_mea43_1"></string>
-    <string name="b2_mea43_2"></string>
-    <string name="b2_mea43_3"></string>
-    <string name="b2_mea43_4"></string>
-    <string name="b2_mea43_5"></string>
-    <string name="b2_mea43_6"></string>
-    <string name="b2_mea43_7"></string>
-    <string name="b2_mea43_8"></string>
-    <string name="b2_mea43_9"></string>
-    <string name="b2_mea43_10"></string>
-    <string name="b2_mea43_11"></string>
-    <string name="b2_mea43_12"></string>
-    <string name="b2_mea43_13"></string>
-    <string name="b2_mea43_14"></string>
-    <string name="b2_mea43_15"></string>
-
-
-
-    <string name="b2_mea44_1"></string>
-    <string name="b2_mea44_2"></string>
-    <string name="b2_mea44_3"></string>
-    <string name="b2_mea44_4"></string>
-    <string name="b2_mea44_5"></string>
-    <string name="b2_mea44_6"></string>
-    <string name="b2_mea44_7"></string>
-    <string name="b2_mea44_8"></string>
-    <string name="b2_mea44_9"></string>
-    <string name="b2_mea44_10"></string>
-    <string name="b2_mea44_11"></string>
-    <string name="b2_mea44_12"></string>
-    <string name="b2_mea44_13"></string>
-    <string name="b2_mea44_14"></string>
-    <string name="b2_mea44_15"></string>
-
-
-
-    <string name="b2_mea45_1"></string>
-    <string name="b2_mea45_2"></string>
-    <string name="b2_mea45_3"></string>
-    <string name="b2_mea45_4"></string>
-    <string name="b2_mea45_5"></string>
-    <string name="b2_mea45_6"></string>
-    <string name="b2_mea45_7"></string>
-    <string name="b2_mea45_8"></string>
-    <string name="b2_mea45_9"></string>
-    <string name="b2_mea45_10"></string>
-    <string name="b2_mea45_11"></string>
-    <string name="b2_mea45_12"></string>
-    <string name="b2_mea45_13"></string>
-    <string name="b2_mea45_14"></string>
-    <string name="b2_mea45_15"></string>
-
-
-
-    <string name="b2_mea46_1"></string>
-    <string name="b2_mea46_2"></string>
-    <string name="b2_mea46_3"></string>
-    <string name="b2_mea46_4"></string>
-    <string name="b2_mea46_5"></string>
-    <string name="b2_mea46_6"></string>
-    <string name="b2_mea46_7"></string>
-    <string name="b2_mea46_8"></string>
-    <string name="b2_mea46_9"></string>
-    <string name="b2_mea46_10"></string>
-    <string name="b2_mea46_11"></string>
-    <string name="b2_mea46_12"></string>
-    <string name="b2_mea46_13"></string>
-    <string name="b2_mea46_14"></string>
-    <string name="b2_mea46_15"></string>
-
-
-    <string name="b2_mea47_1"></string>
-    <string name="b2_mea47_2"></string>
-    <string name="b2_mea47_3"></string>
-    <string name="b2_mea47_4"></string>
-    <string name="b2_mea47_5"></string>
-    <string name="b2_mea47_6"></string>
-    <string name="b2_mea47_7"></string>
-    <string name="b2_mea47_8"></string>
-    <string name="b2_mea47_9"></string>
-    <string name="b2_mea47_10"></string>
-    <string name="b2_mea47_11"></string>
-    <string name="b2_mea47_12"></string>
-    <string name="b2_mea47_13"></string>
-    <string name="b2_mea47_14"></string>
-    <string name="b2_mea47_15"></string>
-
-
-
-    <string name="b2_mea48_1"></string>
-    <string name="b2_mea48_2"></string>
-    <string name="b2_mea48_3"></string>
-    <string name="b2_mea48_4"></string>
-    <string name="b2_mea48_5"></string>
-    <string name="b2_mea48_6"></string>
-    <string name="b2_mea48_7"></string>
-    <string name="b2_mea48_8"></string>
-    <string name="b2_mea48_9"></string>
-    <string name="b2_mea48_10"></string>
-    <string name="b2_mea48_11"></string>
-    <string name="b2_mea48_12"></string>
-    <string name="b2_mea48_13"></string>
-    <string name="b2_mea48_14"></string>
-    <string name="b2_mea48_15"></string>
-
-
-
-    <string name="b2_mea49_1"></string>
-    <string name="b2_mea49_2"></string>
-    <string name="b2_mea49_3"></string>
-    <string name="b2_mea49_4"></string>
-    <string name="b2_mea49_5"></string>
-    <string name="b2_mea49_6"></string>
-    <string name="b2_mea49_7"></string>
-    <string name="b2_mea49_8"></string>
-    <string name="b2_mea49_9"></string>
-    <string name="b2_mea49_10"></string>
-    <string name="b2_mea49_11"></string>
-    <string name="b2_mea49_12"></string>
-    <string name="b2_mea49_13"></string>
-    <string name="b2_mea49_14"></string>
-    <string name="b2_mea49_15"></string>
-
-
-    <string name="b2_mea50_1"></string>
-    <string name="b2_mea50_2"></string>
-    <string name="b2_mea50_3"></string>
-    <string name="b2_mea50_4"></string>
-    <string name="b2_mea50_5"></string>
-    <string name="b2_mea50_6"></string>
-    <string name="b2_mea50_7"></string>
-    <string name="b2_mea50_8"></string>
-    <string name="b2_mea50_9"></string>
-    <string name="b2_mea50_10"></string>
-    <string name="b2_mea50_11"></string>
-    <string name="b2_mea50_12"></string>
-    <string name="b2_mea50_13"></string>
-    <string name="b2_mea50_14"></string>
-    <string name="b2_mea50_15"></string>
+    <string name="b2_mea21_1">To behave in a troublesome or unruly manner.</string>
+    <string name="b2_mea21_2">To have an influence on something or someone.</string>
+    <string name="b2_mea21_3">The way in which someone conducts themselves.</string>
+    <string name="b2_mea21_4">Hostile or aggressive, eager to fight.</string>
+    <string name="b2_mea21_5">An error or fault in a system or program.</string>
+    <string name="b2_mea21_6">Someone who lacks courage in facing danger or pain.</string>
+    <string name="b2_mea21_7">Dishonest or deceitful in behavior or intentions.</string>
+    <string name="b2_mea21_8">Not truthful or honest, likely to deceive others.</string>
+    <string name="b2_mea21_9">Easily excited or aroused, prone to strong reactions.</string>
+    <string name="b2_mea21_10">To begin or start doing something.</string>
+    <string name="b2_mea21_11">To proceed or undertake a task or activity.</string>
+    <string name="b2_mea21_12">To oppose or resist, often in disagreement.</string>
+    <string name="b2_mea21_13">Lacking politeness or good manners, rude.</string>
+    <string name="b2_mea21_14">Having refined taste and manners, cultured.</string>
+    <string name="b2_mea21_15">Considerate and reflective, showing careful thought.</string>
+
+
+    <string name="b2_mea22_1">unwilling or unable to interact with others in a normal or friendly way</string>
+    <string name="b2_mea22_2">to behave in a way that attracts attention and creates a disturbance</string>
+    <string name="b2_mea22_3">nervous and unable to relax</string>
+    <string name="b2_mea22_4">a clever and efficient solution or technique for everyday problems</string>
+    <string name="b2_mea22_5">to behave badly or inappropriately</string>
+    <string name="b2_mea22_6">having unpredictable changes in mood and temperament</string>
+    <string name="b2_mea22_7">preoccupied with a particular thought, feeling, or activity to an extreme extent</string>
+    <string name="b2_mea22_8">to respond to a situation with excessive or exaggerated emotion</string>
+    <string name="b2_mea22_9">excessively suspicious and distrustful of others</string>
+    <string name="b2_mea22_10">selective and choosy, often to an excessive degree</string>
+    <string name="b2_mea22_11">to delay or postpone something</string>
+    <string name="b2_mea22_12">having sharp judgment and practical understanding; astute</string>
+    <string name="b2_mea22_13">showing a desire to harm, annoy, or hurt someone</string>
+    <string name="b2_mea22_14">to relieve or free from a burden or something troubling</string>
+    <string name="b2_mea22_15">to consider and evaluate the pros and cons of a situation before making a decision</string>
+
+
+
+    <string name="b2_mea23_1">excessive and harmful use of alcohol</string>
+    <string name="b2_mea23_2">without shoes or socks</string>
+    <string name="b2_mea23_3">the release of gas from the stomach through the mouth, often accompanied by a sound</string>
+    <string name="b2_mea23_4">a contagious viral infection that causes an itchy rash</string>
+    <string name="b2_mea23_5">a person who has an uncontrollable urge to gamble</string>
+    <string name="b2_mea23_6">an intense and persistent desire or urge, often for something specific like a substance</string>
+    <string name="b2_mea23_7">to interrupt or cause disorder in a process or event</string>
+    <string name="b2_mea23_8">to make small movements, especially of the hands and feet, due to restlessness or nervousness</string>
+    <string name="b2_mea23_9">to become heavier, often due to an increase in body fat</string>
+    <string name="b2_mea23_10">to become intoxicated or drunk from consuming alcohol</string>
+    <string name="b2_mea23_11">to become addicted or strongly attached to something</string>
+    <string name="b2_mea23_12">the unpleasant physical and mental effects that follow excessive alcohol consumption</string>
+    <string name="b2_mea23_13">a person who is addicted to drugs</string>
+    <string name="b2_mea23_14">to expel the contents of the stomach through the mouth; to vomit</string>
+    <string name="b2_mea23_15">unpleasant physical or mental symptoms experienced when a substance or activity is stopped</string>
+
+
+
+
+    <string name="b2_mea24_1">to become intoxicated by drugs or alcohol</string>
+    <string name="b2_mea24_2">food that provides comfort or emotional satisfaction</string>
+    <string name="b2_mea24_3">to express dissatisfaction or annoyance about something</string>
+    <string name="b2_mea24_4">meat that is low in fat</string>
+    <string name="b2_mea24_5">a severe mental or emotional collapse</string>
+    <string name="b2_mea24_6">to lose feeling or sensation; to become numb</string>
+    <string name="b2_mea24_7">to exceed what is normal or appropriate; to do too much</string>
+    <string name="b2_mea24_8">something that annoys or irritates a person</string>
+    <string name="b2_mea24_9">to eat or touch something with small movements; to pick at food</string>
+    <string name="b2_mea24_10">to eat excessively, especially unhealthy foods</string>
+    <string name="b2_mea24_11">to return to a previous undesirable condition or behavior</string>
+    <string name="b2_mea24_12">an unintended or secondary effect of a treatment or action</string>
+    <string name="b2_mea24_13">a person who walks while asleep</string>
+    <string name="b2_mea24_14">a strong preference or craving for sweet-tasting foods</string>
+    <string name="b2_mea24_15">to engage in physical exercise or training</string>
+
+
+
+
+    <string name="b2_mea25_1">empty; without any marks or writing</string>
+    <string name="b2_mea25_2">to communicate or make known; to transmit</string>
+    <string name="b2_mea25_3">to represent or portray in a particular way</string>
+    <string name="b2_mea25_4">impressively great; heroic; like an epic poem</string>
+    <string name="b2_mea25_5">literary works created from the imagination; not based on real events</string>
+    <string name="b2_mea25_6">remarkably famous or well-known</string>
+    <string name="b2_mea25_7">a deliberate and harmful false statement</string>
+    <string name="b2_mea25_8">related to the Middle Ages, a period in history</string>
+    <string name="b2_mea25_9">a traditional story or belief; often involves gods or supernatural events</string>
+    <string name="b2_mea25_10">excessively; too much; overly</string>
+    <string name="b2_mea25_11">to become more cheerful or lively</string>
+    <string name="b2_mea25_12">likely to experience or have a particular condition or characteristic</string>
+    <string name="b2_mea25_13">the act of reenacting or recreating past events</string>
+    <string name="b2_mea25_14">to present or describe something in a particular way, often with a biased perspective</string>
+    <string name="b2_mea25_15">a character in a story or play who opposes the hero</string>
+
+
+
+
+    <string name="b2_mea26_1">distant or uninvolved, usually due to lack of interest</string>
+    <string name="b2_mea26_2">easily deceived or tricked because of being too trusting</string>
+    <string name="b2_mea26_3">traditional stories or beliefs, often passed down through generations</string>
+    <string name="b2_mea26_4">a play on words, often using words with similar sounds but different meanings</string>
+    <string name="b2_mea26_5">the final part of a joke or story that provides the humorous or unexpected element</string>
+    <string name="b2_mea26_6">innocence in its purest form</string>
+    <string name="b2_mea26_7">to criticize or belittle; to dismiss or reject</string>
+    <string name="b2_mea26_8">an initial version of a piece of writing, often with many changes still to be made</string>
+    <string name="b2_mea26_9">able to provide for oneself without relying on others</string>
+    <string name="b2_mea26_10">having a strong focus on a single goal or purpose</string>
+    <string name="b2_mea26_11">to take action when needed; to increase one\'s efforts</string>
+    <string name="b2_mea26_12">having a dreamlike or unreal quality</string>
+    <string name="b2_mea26_13">an exaggerated or wildly improbable story</string>
+    <string name="b2_mea26_14">to distort or change the original meaning or concept</string>
+    <string name="b2_mea26_15">a minor or harmless lie, usually told to protect someone\'s feelings</string>
+
+
+
+
+    <string name="b2_mea27_1">a person or thing that is emotionally or mentally unstable</string>
+    <string name="b2_mea27_2">a disappointing or unpleasant situation</string>
+    <string name="b2_mea27_3">a burden or something that slows down progress</string>
+    <string name="b2_mea27_4">an amount that exceeds what is necessary or normal</string>
+    <string name="b2_mea27_5">to experience a failure or setback</string>
+    <string name="b2_mea27_6">to decrease in quality or performance</string>
+    <string name="b2_mea27_7">a minor car accident with only slight damage</string>
+    <string name="b2_mea27_8">an unlikely stroke of luck or chance occurrence</string>
+    <string name="b2_mea27_9">to become blocked or obstructed</string>
+    <string name="b2_mea27_10">to get into a difficult or problematic situation</string>
+    <string name="b2_mea27_11">to receive stitches as a medical treatment</string>
+    <string name="b2_mea27_12">providing assistance or aid</string>
+    <string name="b2_mea27_13">in a difficult or tricky situation</string>
+    <string name="b2_mea27_14">to compensate for something lacking or to make amends</string>
+    <string name="b2_mea27_15">a sudden and intense episode of fear or anxiety</string>
+
+
+
+
+    <string name="b2_mea28_1">towards the direction behind you</string>
+    <string name="b2_mea28_2">ignite or start burning</string>
+    <string name="b2_mea28_3">a disadvantage or drawback</string>
+    <string name="b2_mea28_4">to grasp or seize something suddenly</string>
+    <string name="b2_mea28_5">unfortunate or destined to fail</string>
+    <string name="b2_mea28_6">a superstition or curse that brings bad luck</string>
+    <string name="b2_mea28_7">a sudden, strong shake or jerk</string>
+    <string name="b2_mea28_8">to lose track of the main plot or story</string>
+    <string name="b2_mea28_9">an unfortunate accident or misfortune</string>
+    <string name="b2_mea28_10">to run a vehicle over someone or something</string>
+    <string name="b2_mea28_11">a setback or obstacle that hinders progress</string>
+    <string name="b2_mea28_12">to break into pieces with a loud noise</string>
+    <string name="b2_mea28_13">a steep slope or hill</string>
+    <string name="b2_mea28_14">the final result or outcome</string>
+    <string name="b2_mea28_15">physically or mentally exhausted</string>
+
+
+
+
+    <string name="b2_mea29_1">to decorate or complement with accessories</string>
+    <string name="b2_mea29_2">to decorate or embellish</string>
+    <string name="b2_mea29_3">the hollow beneath the arm at the shoulder</string>
+    <string name="b2_mea29_4">the soft, fleshy part of the lower ear</string>
+    <string name="b2_mea29_5">the thin fold of skin covering the eye</string>
+    <string name="b2_mea29_6">a covering for the face to protect or conceal</string>
+    <string name="b2_mea29_7">a surgical procedure to lift and tighten facial skin</string>
+    <string name="b2_mea29_8">to have holes made in the ears for wearing earrings</string>
+    <string name="b2_mea29_9">a healthy and attractive condition of the skin</string>
+    <string name="b2_mea29_10">eyelashes that are long and prominent</string>
+    <string name="b2_mea29_11">to make a low sound of pain, discomfort, or unhappiness</string>
+    <string name="b2_mea29_12">to squeeze or press tightly between the fingers</string>
+    <string name="b2_mea29_13">to remove something, such as hair, by plucking</string>
+    <string name="b2_mea29_14">to make someone or something look or feel younger or fresher</string>
+    <string name="b2_mea29_15">a surgical procedure involving the transplantation of skin</string>
+
+
+
+
+    <string name="b2_mea30_1">the instant something is seen or encountered</string>
+    <string name="b2_mea30_2">a person who works in the cosmetic treatment of skin</string>
+    <string name="b2_mea30_3">the process of giving birth to children</string>
+    <string name="b2_mea30_4">a curvy and shapely body form</string>
+    <string name="b2_mea30_5">to touch with the tongue</string>
+    <string name="b2_mea30_6">a long, curved, flat bone that surrounds the chest</string>
+    <string name="b2_mea30_7">to apply pressure on a surface using a back-and-forth motion</string>
+    <string name="b2_mea30_8">a cream used to improve the condition or appearance of the skin</string>
+    <string name="b2_mea30_9">to expel saliva or liquid from the mouth</string>
+    <string name="b2_mea30_10">a sudden interruption in the blood supply to the brain</string>
+    <string name="b2_mea30_11">to draw in a liquid or substance through the mouth</string>
+    <string name="b2_mea30_12">the flat area on the side of the head, above the eyes</string>
+    <string name="b2_mea30_13">the upper leg area between the knee and hip</string>
+    <string name="b2_mea30_14">to touch or move a part of the body lightly so as to cause laughter</string>
+    <string name="b2_mea30_15">to close one eye briefly as a signal or expression</string>
+
+
+
+
+    <string name="b2_mea31_1">a way of doing or thinking about something</string>
+    <string name="b2_mea31_2">to fully understand and take in new information</string>
+    <string name="b2_mea31_3">an idea or plan that is the result of someone\'s thinking</string>
+    <string name="b2_mea31_4">to form an idea or plan in the mind</string>
+    <string name="b2_mea31_5">likely to cause disagreement or argument</string>
+    <string name="b2_mea31_6">to avoid something, especially through cleverness or trickery</string>
+    <string name="b2_mea31_7">to look at something for a long time, especially with surprise or admiration</string>
+    <string name="b2_mea31_8">a firm hold or understanding of something</string>
+    <string name="b2_mea31_9">sly or cunning intelligence</string>
+    <string name="b2_mea31_10">the ability to make considered decisions or form opinions</string>
+    <string name="b2_mea31_11">a lazy or idle person</string>
+    <string name="b2_mea31_12">relaxed and easygoing</string>
+    <string name="b2_mea31_13">covered with mold, a furry growth of minute fungal hyphae</string>
+    <string name="b2_mea31_14">decayed or putrid, having undergone decomposition</string>
+    <string name="b2_mea31_15">in accordance with the latest fashion</string>
+
+
+
+
+    <string name="b2_mea32_1">crunchy or brittle in texture</string>
+    <string name="b2_mea32_2">to make something more attractive or decorative</string>
+    <string name="b2_mea32_3">to gain a deeper understanding or insight</string>
+    <string name="b2_mea32_4">to become aware of something through the senses</string>
+    <string name="b2_mea32_5">a person who is excessively concerned with propriety and modesty</string>
+    <string name="b2_mea32_6">concerning or regarding</string>
+    <string name="b2_mea32_7">to enjoy or take pleasure in something</string>
+    <string name="b2_mea32_8">having an uneven or irregular surface; not smooth</string>
+    <string name="b2_mea32_9">having a strong, pleasant, or spicy flavor</string>
+    <string name="b2_mea32_10">a figure made to resemble a human and often used to scare birds away from crops</string>
+    <string name="b2_mea32_11">having a flat, even surface; free from irregularities</string>
+    <string name="b2_mea32_12">soaked with liquid; heavy, wet, and soggy</string>
+    <string name="b2_mea32_13">having an acidic taste; having a sharp or biting quality</string>
+    <string name="b2_mea32_14">a particular way of thinking about or looking at something</string>
+    <string name="b2_mea32_15">showing quick and inventive verbal humor</string>
+
+
+
+
+    <string name="b2_mea33_1">to become clear or improve</string>
+    <string name="b2_mea33_2">a remarkable concurrence of events or circumstances without apparent causal connection</string>
+    <string name="b2_mea33_3">a word puzzle in which you fill in a grid with words that cross each other</string>
+    <string name="b2_mea33_4">a situation in which no progress can be made; a point of conclusion or resolution that leaves no further options</string>
+    <string name="b2_mea33_5">to expose the falseness or exaggerations of a claim, belief, or pretense</string>
+    <string name="b2_mea33_6">to become less intense, loud, or active</string>
+    <string name="b2_mea33_7">mysterious and difficult to understand</string>
+    <string name="b2_mea33_8">a house believed to be inhabited by spirits or ghosts</string>
+    <string name="b2_mea33_9">a game in which one player hides and others try to find them</string>
+    <string name="b2_mea33_10">a deliberately fabricated falsehood made to masquerade as truth</string>
+    <string name="b2_mea33_11">difficult or intricate; full of knots</string>
+    <string name="b2_mea33_12">to overcome a negative reputation or memory</string>
+    <string name="b2_mea33_13">to rely on someone else\'s resources or efforts for sustenance</string>
+    <string name="b2_mea33_14">a person who plans or schemes secretly</string>
+    <string name="b2_mea33_15">not solved or resolved</string>
+
+
+
+
+    <string name="b2_mea34_1">the life believed to follow death</string>
+    <string name="b2_mea34_2">a secret plan by a group of people to do something harmful or illegal</string>
+    <string name="b2_mea34_3">to hide or keep something secret</string>
+    <string name="b2_mea34_4">clever and secretive in an underhanded way</string>
+    <string name="b2_mea34_5">to discover a piece of information that helps solve a problem or mystery</string>
+    <string name="b2_mea34_6">to leave behind evidence or clues</string>
+    <string name="b2_mea34_7">to fulfill expectations or match standards</string>
+    <string name="b2_mea34_8">a complex network of paths or passages, especially one with high walls or hedges</string>
+    <string name="b2_mea34_9">extremely confusing or puzzling</string>
+    <string name="b2_mea34_10">a game played on a grid, also known as "tic-tac-toe"</string>
+    <string name="b2_mea34_11">a person new to or inexperienced in a field or situation</string>
+    <string name="b2_mea34_12">a problem or game designed to test ingenuity or knowledge</string>
+    <string name="b2_mea34_13">able to think and react quickly</string>
+    <string name="b2_mea34_14">a question or statement that requires thought to solve or understand</string>
+    <string name="b2_mea34_15">to reveal or bring to light</string>
+
+
+
+
+    <string name="b2_mea35_1">shockingly bad; dreadful</string>
+    <string name="b2_mea35_2">a mass of snow, ice, and rocks falling rapidly down a mountainside</string>
+    <string name="b2_mea35_3">the experiences, knowledge, and education that someone has</string>
+    <string name="b2_mea35_4">to become stuck or delayed, as in a difficult situation</string>
+    <string name="b2_mea35_5">to show something publicly for people to see</string>
+    <string name="b2_mea35_6">in a fluent or persuasive manner</string>
+    <string name="b2_mea35_7">effervescent; containing bubbles</string>
+    <string name="b2_mea35_8">to pass quickly</string>
+    <string name="b2_mea35_9">great honor or prestige; magnificence</string>
+    <string name="b2_mea35_10">not having the necessary skills or equipment to do something</string>
+    <string name="b2_mea35_11">to make someone or something poor</string>
+    <string name="b2_mea35_12">relating to the inside or most private part</string>
+    <string name="b2_mea35_13">to advance or develop towards a better or more complete condition</string>
+    <string name="b2_mea35_14">to update or bring up to date; to make more modern</string>
+    <string name="b2_mea35_15">to restore to good condition; to make like new again</string>
+
+
+
+
+    <string name="b2_mea36_1">to pursue or run after someone or something in order to catch them</string>
+    <string name="b2_mea36_2">the poorer parts of the central area of a city</string>
+    <string name="b2_mea36_3">a jump or movement from one place to another</string>
+    <string name="b2_mea36_4">a risky step or action taken with no certainty of success</string>
+    <string name="b2_mea36_5">to treat someone or something badly or unfairly</string>
+    <string name="b2_mea36_6">to use something for a wrong purpose</string>
+    <string name="b2_mea36_7">without clothes</string>
+    <string name="b2_mea36_8">to choose or decide on something</string>
+    <string name="b2_mea36_9">more important or significant than anything else</string>
+    <string name="b2_mea36_10">to mix or move with a particular intention</string>
+    <string name="b2_mea36_11">an area on the body that is larger and rounder than usual</string>
+    <string name="b2_mea36_12">contaminated or spoiled</string>
+    <string name="b2_mea36_13">undeniable; cannot be denied or disputed</string>
+    <string name="b2_mea36_14">the state of being healthy, happy, and comfortable</string>
+    <string name="b2_mea36_15">with complete sincerity or enthusiasm</string>
+
+
+
+
+    <string name="b2_mea37_1">a liquid in which meat, fish, or vegetables have been boiled and which is used as a basis for making soup or gravy.</string>
+    <string name="b2_mea37_2">to cut food, such as meat or vegetables, into small pieces using a knife.</string>
+    <string name="b2_mea37_3">a type of fish that is often used for cooking and is known for its mild flavor.</string>
+    <string name="b2_mea37_4">a bowl-shaped kitchen utensil with holes in it used for draining water from food, such as pasta or vegetables.</string>
+    <string name="b2_mea37_5">to shrink back or react in an uncomfortable or embarrassed way due to fear or disgust.</string>
+    <string name="b2_mea37_6">having a texture that produces a sound like the sound of something being crushed; crisp and firm.</string>
+    <string name="b2_mea37_7">to remove excess liquid, such as water or fat, from food by allowing it to flow away.</string>
+    <string name="b2_mea37_8">to reduce food into small shreds by rubbing it against a grater.</string>
+    <string name="b2_mea37_9">food that contains a significant amount of oil or fat.</string>
+    <string name="b2_mea37_10">plants used for flavoring, garnishing, or medicinal purposes.</string>
+    <string name="b2_mea37_11">to add flavors or qualities to a liquid or food item by steeping it with ingredients.</string>
+    <string name="b2_mea37_12">the components that make up a dish, recipe, or food item.</string>
+    <string name="b2_mea37_13">describing food that looks or smells so delicious that it causes saliva to form in the mouth.</string>
+    <string name="b2_mea37_14">aquatic animals with shells, often referring to mollusks (like clams, mussels) and crustaceans (like shrimp, lobster).</string>
+    <string name="b2_mea37_15">a cooking technique where ingredients are quickly cooked in a pan over high heat, often while being stirred continuously.</string>
+
+
+
+    <string name="b2_mea38_1">a kitchen appliance used to blend, mix, or puree ingredients into a smooth consistency.</string>
+    <string name="b2_mea38_2">a gentle or subtle flavor that is not overpowering or strong.</string>
+    <string name="b2_mea38_3">the sense of taste; the ability to recognize and appreciate different flavors.</string>
+    <string name="b2_mea38_4">a sealed pot used for cooking food quickly under steam pressure, which raises the boiling point.</string>
+    <string name="b2_mea38_5">to cook food, usually meat, by dry heat in an oven or over an open flame.</string>
+    <string name="b2_mea38_6">to cook food quickly in a small amount of oil or fat over high heat, stirring frequently.</string>
+    <string name="b2_mea38_7">to add spices, herbs, or other seasonings to enhance the flavor of food.</string>
+    <string name="b2_mea38_8">to cut food into thin, flat pieces using a knife or other cutting tool.</string>
+    <string name="b2_mea38_9">aromatic substances obtained from plants, used to flavor or season food.</string>
+    <string name="b2_mea38_10">a utensil with holes used to separate liquids from solids, often used to drain pasta or wash vegetables.</string>
+    <string name="b2_mea38_11">a taste that is intense, bold, and powerful, often leaving a lasting impression on the palate.</string>
+    <string name="b2_mea38_12">a mixture of ingredients used to fill poultry, meat, or vegetables before cooking.</string>
+    <string name="b2_mea38_13">a flexible, elongated, and often sucker-bearing arm of some marine animals, such as squids or octopuses.</string>
+    <string name="b2_mea38_14">a root vegetable with a round shape and white or purple flesh, often used in cooking and salads.</string>
+    <string name="b2_mea38_15">a poisonous substance produced by certain animals, often delivered through bites or stings.</string>
+
+
+
+
+    <string name="b2_mea39_1">existing or available in large quantities; plentiful.</string>
+    <string name="b2_mea39_2">having a light, open, or spacious quality; well-ventilated.</string>
+    <string name="b2_mea39_3">bedding, such as sheets and pillowcases, used on a bed for sleeping.</string>
+    <string name="b2_mea39_4">full of energetic and lively activity; busy and vibrant.</string>
+    <string name="b2_mea39_5">uncomfortably small or restricted in space; confining.</string>
+    <string name="b2_mea39_6">a small bed with high, usually slatted sides, especially for a baby or infant.</string>
+    <string name="b2_mea39_7">dishes and other items made of ceramic, porcelain, or china used for eating and serving food.</string>
+    <string name="b2_mea39_8">eating and serving utensils, such as knives, forks, and spoons.</string>
+    <string name="b2_mea39_9">slightly wet, often due to moisture in the air or surroundings.</string>
+    <string name="b2_mea39_10">a building, typically made of glass, used to cultivate and protect delicate or exotic plants.</string>
+    <string name="b2_mea39_11">a suspended bed, typically made of fabric or netting, used for resting or sleeping outdoors.</string>
+    <string name="b2_mea39_12">a structure where bees live and store honey; a place of bustling activity.</string>
+    <string name="b2_mea39_13">comfortably and pleasantly cozy; having a warm and inviting atmosphere.</string>
+    <string name="b2_mea39_14">a small, simple house, usually made of logs, often located in a rustic or remote area.</string>
+    <string name="b2_mea39_15">having ample space or roominess; not crowded or cramped.</string>
+
+
+
+
+    <string name="b2_mea40_1">uppermost space in a house, often used for storage.</string>
+    <string name="b2_mea40_2">coverings for windows, usually adjustable to block light or provide privacy.</string>
+    <string name="b2_mea40_3">small building in a garden used for storage or as a workshop.</string>
+    <string name="b2_mea40_4">shelter or small structure for housing dogs or other animals.</string>
+    <string name="b2_mea40_5">basin used for washing dishes in the kitchen.</string>
+    <string name="b2_mea40_6">structure created by birds for laying eggs and raising young.</string>
+    <string name="b2_mea40_7">covering for a pillow, often decorative and removable for washing.</string>
+    <string name="b2_mea40_8">small body of still water, often found in gardens or parks.</string>
+    <string name="b2_mea40_9">in a poor or neglected condition; showing signs of deterioration.</string>
+    <string name="b2_mea40_10">isolated or hidden from view; private and secluded.</string>
+    <string name="b2_mea40_11">movable panels or louvers used to cover windows.</string>
+    <string name="b2_mea40_12">furniture with drawers and storage, used for serving dishes and storing items.</string>
+    <string name="b2_mea40_13">thin flat piece, often made of clay or ceramic, used for covering surfaces.</string>
+    <string name="b2_mea40_14">services such as water, electricity, and gas provided to a building.</string>
+    <string name="b2_mea40_15">uncultivated or unused land, typically devoid of vegetation.</string>
+
+
+
+
+    <string name="b2_mea41_1">not clear or sharply defined; indistinct.</string>
+    <string name="b2_mea41_2">an appealing and easy-to-remember melody or song.</string>
+    <string name="b2_mea41_3">have a disagreement or argument; stop being friends or in a relationship.</string>
+    <string name="b2_mea41_4">having a strong liking or affection for someone or something.</string>
+    <string name="b2_mea41_5">to escape or leave a place, often to avoid something or someone.</string>
+    <string name="b2_mea41_6">to recover from or move past a difficult or upsetting situation.</string>
+    <string name="b2_mea41_7">to reluctantly accept or agree to something.</string>
+    <string name="b2_mea41_8">to have a strong romantic attraction or infatuation for someone.</string>
+    <string name="b2_mea41_9">a romantic relationship that occurs during a vacation or holiday.</string>
+    <string name="b2_mea41_10">to reconcile or resolve differences after an argument or disagreement.</string>
+    <string name="b2_mea41_11">a figurative expression referring to memories of the past.</string>
+    <string name="b2_mea41_12">a person who enjoys attending and participating in parties and social events.</string>
+    <string name="b2_mea41_13">a person who brings down the mood or ruins the enjoyment of others at a party or event.</string>
+    <string name="b2_mea41_14">something that serves to jog your memory or remind you of something.</string>
+    <string name="b2_mea41_15">a keepsake or memento taken as a reminder of a place or event.</string>
+
+
+
+
+    <string name="b2_mea42_1">to serve a prison sentence.</string>
+    <string name="b2_mea42_2">to receive a monetary penalty as punishment for a violation.</string>
+    <string name="b2_mea42_3">to spend time in a relaxed and casual manner with friends or others.</string>
+    <string name="b2_mea42_4">a form of expression that involves saying one thing but meaning the opposite.</string>
+    <string name="b2_mea42_5">to playfully make fun of or mock someone.</string>
+    <string name="b2_mea42_6">to allow someone to enter or gain access to a place.</string>
+    <string name="b2_mea42_7">having a strong feeling of longing or affection for the past.</string>
+    <string name="b2_mea42_8">to lose consciousness, often temporarily.</string>
+    <string name="b2_mea42_9">a humorous play on words that often relies on different meanings of the same word.</string>
+    <string name="b2_mea42_10">the tendency to remember certain facts while forgetting others, usually to support one\'s beliefs or viewpoints.</string>
+    <string name="b2_mea42_11">to display one\'s abilities, possessions, or achievements in order to impress others.</string>
+    <string name="b2_mea42_12">to spend the night at someone else\'s home, typically for social reasons.</string>
+    <string name="b2_mea42_13">to express contempt or ridicule through facial expressions, often involving a scornful smile.</string>
+    <string name="b2_mea42_14">to remain outside of one\'s usual place of residence for the night.</string>
+    <string name="b2_mea42_15">to playfully mock or provoke someone in a lighthearted and teasing manner.</string>
+
+
+
+
+    <string name="b2_mea43_1">important or significant.</string>
+    <string name="b2_mea43_2">to catch up to someone or something by moving faster or making progress.</string>
+    <string name="b2_mea43_3">to encounter or find something unexpectedly.</string>
+    <string name="b2_mea43_4">to generate or produce an idea, plan, or solution.</string>
+    <string name="b2_mea43_5">extremely upset or emotionally destroyed.</string>
+    <string name="b2_mea43_6">overjoyed or extremely happy.</string>
+    <string name="b2_mea43_7">outstandingly good or remarkable.</string>
+    <string name="b2_mea43_8">to not meet expectations or goals.</string>
+    <string name="b2_mea43_9">to escape punishment or consequences for something.</string>
+    <string name="b2_mea43_10">carefully chosen or selected.</string>
+    <string name="b2_mea43_11">to give something a try or attempt.</string>
+    <string name="b2_mea43_12">having a stubborn or strong-willed personality.</string>
+    <string name="b2_mea43_13">a person who achieves high levels of success or accomplishment.</string>
+    <string name="b2_mea43_14">to keep pace or stay current with someone or something.</string>
+    <string name="b2_mea43_15">a person or thing that breaks a previous record or achievement.</string>
+
+
+
+
+    <string name="b2_mea44_1">someone who doesn\'t handle losing well or graciously.</string>
+    <string name="b2_mea44_2">overconfident or arrogant.</string>
+    <string name="b2_mea44_3">to start being effective or valid.</string>
+    <string name="b2_mea44_4">an important or successful person, often in a competitive context.</string>
+    <string name="b2_mea44_5">sumptuously rich, extravagant, or abundant.</string>
+    <string name="b2_mea44_6">to view someone or something with condescension or superiority.</string>
+    <string name="b2_mea44_7">to anticipate something eagerly or with excitement.</string>
+    <string name="b2_mea44_8">to admire or respect someone greatly.</string>
+    <string name="b2_mea44_9">to run faster or farther than someone or something.</string>
+    <string name="b2_mea44_10">to pass or surpass someone or something, usually in a race or competition.</string>
+    <string name="b2_mea44_11">to eliminate as a possibility or option.</string>
+    <string name="b2_mea44_12">to discard or dispose of something as no longer useful.</string>
+    <string name="b2_mea44_13">a person who holds a particular title, especially a championship.</string>
+    <string name="b2_mea44_14">to deplete or exhaust a resource or supply.</string>
+    <string name="b2_mea44_15">a person or thing that wins a competition or contest.</string>
+
+
+
+
+    <string name="b2_mea45_1">a feeling of deep anxiety or dread.</string>
+    <string name="b2_mea45_2">behind the scenes, typically in a theater or similar setting.</string>
+    <string name="b2_mea45_3">the place where tickets are sold for events, especially theaters or films.</string>
+    <string name="b2_mea45_4">a set of clothes in a style typical of a particular country or historical period.</string>
+    <string name="b2_mea45_5">an intense enthusiasm or interest for something that is short-lived.</string>
+    <string name="b2_mea45_6">showing courage or willingness to take risks.</string>
+    <string name="b2_mea45_7">extremely loud to the point of being overwhelming to the senses.</string>
+    <string name="b2_mea45_8">captivating, interesting, or charming in a way that holds attention.</string>
+    <string name="b2_mea45_9">to make someone feel very happy, animated, or elated.</string>
+    <string name="b2_mea45_10">unlikely or unrealistic; difficult to believe.</string>
+    <string name="b2_mea45_11">performing consistently well or effectively.</string>
+    <string name="b2_mea45_12">a person who is very interested in and knowledgeable about movies.</string>
+    <string name="b2_mea45_13">a practice session in preparation for a public performance.</string>
+    <string name="b2_mea45_14">to adhere or hold steadfastly to something.</string>
+    <string name="b2_mea45_15">the art or act of narrating or telling stories.</string>
+
+
+
+
+    <string name="b2_mea46_1">to put on special clothes in order to change your appearance.</string>
+    <string name="b2_mea46_2">a stand or frame for supporting or displaying an artist\'s work.</string>
+    <string name="b2_mea46_3">an atmosphere that is so enjoyable or exciting that it seems to have a strong effect on your feelings.</string>
+    <string name="b2_mea46_4">to continuously toss and catch objects, typically for entertainment.</string>
+    <string name="b2_mea46_5">to create paintings of people, especially their faces.</string>
+    <string name="b2_mea46_6">musical instruments that are played by being struck or shaken.</string>
+    <string name="b2_mea46_7">a person who is indifferent or hostile to artistic and cultural values.</string>
+    <string name="b2_mea46_8">to express enthusiastic approval, often for music or dancing.</string>
+    <string name="b2_mea46_9">to overcome personal inhibitions or self-consciousness.</string>
+    <string name="b2_mea46_10">seats, often in an open area, where goods are sold or displayed.</string>
+    <string name="b2_mea46_11">a painting of a group of objects arranged together in a balanced composition.</string>
+    <string name="b2_mea46_12">an actor who learns another actor\'s part so they can replace them if necessary.</string>
+    <string name="b2_mea46_13">feeling tense, rigid, or constrained due to stress or anxiety.</string>
+    <string name="b2_mea46_14">a type of paint that is mixed with water and used for creating delicate colors and effects.</string>
+    <string name="b2_mea46_15">worth the effort, time, or money spent; valuable or rewarding.</string>
+
+
+
+    <string name="b2_mea47_1">dry and barren, lacking water or rainfall</string>
+    <string name="b2_mea47_2">mild and pleasantly warm</string>
+    <string name="b2_mea47_3">a worn-out or dilapidated vehicle</string>
+    <string name="b2_mea47_4">a route taken to avoid a blocked or closed road</string>
+    <string name="b2_mea47_5">moisture that forms on surfaces during the night</string>
+    <string name="b2_mea47_6">a trench or channel dug alongside a road or field</string>
+    <string name="b2_mea47_7">a sudden and intense burst of activity or emotion</string>
+    <string name="b2_mea47_8">damage caused to skin and tissues due to freezing</string>
+    <string name="b2_mea47_9">to move smoothly and effortlessly</string>
+    <string name="b2_mea47_10">small balls of ice that fall as precipitation</string>
+    <string name="b2_mea47_11">to head towards a particular direction or destination</string>
+    <string name="b2_mea47_12">white frost that forms on surfaces during cold weather</string>
+    <string name="b2_mea47_13">a person skilled in working with locks and keys</string>
+    <string name="b2_mea47_14">the boundary or edge of a country, region, or area</string>
+    <string name="b2_mea47_15">a large motor vehicle used for transporting goods</string>
+
+
+
+    <string name="b2_mea48_1">a secluded and hidden place</string>
+    <string name="b2_mea48_2">cloudy or covered by clouds</string>
+    <string name="b2_mea48_3">a person walking on foot, typically along a road or in a public area</string>
+    <string name="b2_mea48_4">a small pool of water on the ground</string>
+    <string name="b2_mea48_5">to withdraw or retire to a quiet and secluded place</string>
+    <string name="b2_mea48_6">an extremely hot day</string>
+    <string name="b2_mea48_7">to leave quickly or secretly, often to avoid paying or fulfilling obligations</string>
+    <string name="b2_mea48_8">precipitation consisting of a mixture of rain and snow</string>
+    <string name="b2_mea48_9">partly melted snow or ice on the ground</string>
+    <string name="b2_mea48_10">a darkening of the skin due to exposure to sunlight</string>
+    <string name="b2_mea48_11">the process of ice or snow melting and becoming liquid</string>
+    <string name="b2_mea48_12">a road for which a toll or fee is charged for use</string>
+    <string name="b2_mea48_13">to flip or invert something</string>
+    <string name="b2_mea48_14">the period of time just before nightfall or after sunrise, when the sky is partially illuminated</string>
+    <string name="b2_mea48_15">a rapidly rotating column of air, often associated with tornadoes</string>
+
+
+
+
+    <string name="b2_mea49_1">a blatant and obvious falsehood</string>
+    <string name="b2_mea49_2">able to be believed or accepted as true</string>
+    <string name="b2_mea49_3">to make someone or something seem unimportant</string>
+    <string name="b2_mea49_4">to deceive or mislead by pretending to have a stronger hand than one actually does</string>
+    <string name="b2_mea49_5">a harsh or unvarnished truth that is difficult to accept</string>
+    <string name="b2_mea49_6">nonsensical or false statements</string>
+    <string name="b2_mea49_7">impudently bold or disrespectful</string>
+    <string name="b2_mea49_8">a polite expression of praise or admiration</string>
+    <string name="b2_mea49_9">someone who habitually tells lies</string>
+    <string name="b2_mea49_10">to hide or keep something secret</string>
+    <string name="b2_mea49_11">willing to believe or trust too readily, easily deceived</string>
+    <string name="b2_mea49_12">to raise a false alarm or give a false indication of danger</string>
+    <string name="b2_mea49_13">to have the courage to do something</string>
+    <string name="b2_mea49_14">intending to mislead or trick</string>
+    <string name="b2_mea49_15">a hidden motive or purpose that is not immediately apparent</string>
+
+
+
+    <string name="b2_mea50_1">to plan and work together secretly, often for a harmful or unlawful purpose</string>
+    <string name="b2_mea50_2">showing kindness and respect; socially acceptable and proper</string>
+    <string name="b2_mea50_3">a small lie that is not considered very serious</string>
+    <string name="b2_mea50_4">excessive or insincere praise, often to manipulate or gain favor</string>
+    <string name="b2_mea50_5">a statement that contains some truth but omits or distorts other key information</string>
+    <string name="b2_mea50_6">someone who cannot be corrected, reformed, or improved</string>
+    <string name="b2_mea50_7">honesty and moral principles; the quality of being whole and undivided</string>
+    <string name="b2_mea50_8">to cause someone to believe something that is not true</string>
+    <string name="b2_mea50_9">infamous and well-known for something bad</string>
+    <string name="b2_mea50_10">evidence or facts that prove something is true</string>
+    <string name="b2_mea50_11">a person who is easily manipulated or controlled</string>
+    <string name="b2_mea50_12">to deceive or mislead someone, often by keeping them engaged in a false idea or situation</string>
+    <string name="b2_mea50_13">to make a solemn declaration, often invoking a higher power, to affirm the truth of a statement</string>
+    <string name="b2_mea50_14">unscrupulous and morally unacceptable, often used to describe actions or behavior</string>
+    <string name="b2_mea50_15">to reveal or disclose something that was previously hidden or secret</string>
+
 
 
 </resources>

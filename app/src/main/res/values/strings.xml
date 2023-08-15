@@ -59,7 +59,7 @@
 
 
     <string name="app_name">English VS</string>
-    <string name="a2_tema_0">00 Вводный урок</string>
+    <string name="a2_tema_0">00 Zero lesson</string>
     <string name="a2_tema_1">01 Friends</string>
     <string name="a2_tema_2">02 Mates</string>
     <string name="a2_tema_3">03 Modern devices and appliances</string>
@@ -111,12 +111,12 @@
     <string name="a2_tema_49">49 Ideal World</string>
     <string name="a2_tema_50">50 Your universe</string>
 
-    <string name="b1_tema_0">00 Вводный урок</string>
+    <string name="b1_tema_0">00 Zero lesson</string>
     <string name="b1_tema_1">01 Likes and Dislikes</string>
     <string name="b1_tema_2">02 Loves &amp; hates</string>
     <string name="b1_tema_3">03 The world around you</string>
     <string name="b1_tema_4">04 Ou surroundings</string>
-    <string name="b1_tema_5">05 Keping up-to-date</string>
+    <string name="b1_tema_5">05 Keeping up-to-date</string>
     <string name="b1_tema_6">06 Staying modern</string>
     <string name="b1_tema_7">07 Dating</string>
     <string name="b1_tema_8">08 Romances</string>
@@ -164,7 +164,7 @@
     <string name="b1_tema_50">50 Hitting the books</string>
 
     <string-array name="topics_name_a2">
-        <item>00 Вводный урок</item>
+        <item>00 Zero lesson</item>
         <item>01 Friends</item>
         <item>02 Mates</item>
         <item>03 Modern devices and appliances</item>
@@ -218,12 +218,12 @@
     </string-array>
 
     <string-array name="topics_name_b1">
-        <item>00 Вводный урок</item>
+        <item>00 Zero lesson</item>
         <item>01 Likes and Dislikes</item>
         <item>02 Loves &amp; hates</item>
         <item>03 The world around you</item>
         <item>04 Ou surroundings</item>
-        <item>05 Keping up-to-date</item>
+        <item>05 Keeping up-to-date</item>
         <item>06 Staying modern</item>
         <item>07 Dating</item>
         <item>08 Romances</item>
@@ -272,7 +272,7 @@
     </string-array>
 
     <string-array name="topics_name_b2">
-        <item>00 Вводный урок</item>
+        <item>00 Zero lesson</item>
         <item>01 Impression</item>
         <item>02 Impressions and opinions</item>
         <item>03 Communication</item>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="a2_mea0_1">to cause someone to be extremely surprised:</string>
+    <string name="a2_mea0_1">to astonish or surprise greatly:</string>
     <string name="a2_mea0_2">to make someone angry:</string>
     <string name="a2_mea0_3">to recognize how good someone or something is and to value him, her, or it:</string>
     <string name="a2_mea0_4">loyal and willing to give your time and energy to something that you believe in:</string>
@@ -51,845 +51,859 @@
     <string name="a2_mea2_15">a person who works a lot of the time and finds it difficult not to work:</string>
 
 
-    <string name="a2_mea3_1"></string>
-    <string name="a2_mea3_2"></string>
-    <string name="a2_mea3_3"></string>
-    <string name="a2_mea3_4"></string>
-    <string name="a2_mea3_5"></string>
-    <string name="a2_mea3_6"></string>
-    <string name="a2_mea3_7"></string>
-    <string name="a2_mea3_8"></string>
-    <string name="a2_mea3_9"></string>
-    <string name="a2_mea3_10"></string>
-    <string name="a2_mea3_11"></string>
-    <string name="a2_mea3_12"></string>
-    <string name="a2_mea3_13"></string>
-    <string name="a2_mea3_14"></string>
-    <string name="a2_mea3_15"></string>
-
-
-    <string name="a2_mea4_1"></string>
-    <string name="a2_mea4_2"></string>
-    <string name="a2_mea4_3"></string>
-    <string name="a2_mea4_4"></string>
-    <string name="a2_mea4_5"></string>
-    <string name="a2_mea4_6"></string>
-    <string name="a2_mea4_7"></string>
-    <string name="a2_mea4_8"></string>
-    <string name="a2_mea4_9"></string>
-    <string name="a2_mea4_10"></string>
-    <string name="a2_mea4_11"></string>
-    <string name="a2_mea4_12"></string>
-    <string name="a2_mea4_13"></string>
-    <string name="a2_mea4_14"></string>
-    <string name="a2_mea4_15"></string>
-
-
-    <string name="a2_mea5_1"></string>
-    <string name="a2_mea5_2"></string>
-    <string name="a2_mea5_3"></string>
-    <string name="a2_mea5_4"></string>
-    <string name="a2_mea5_5"></string>
-    <string name="a2_mea5_6"></string>
-    <string name="a2_mea5_7"></string>
-    <string name="a2_mea5_8"></string>
-    <string name="a2_mea5_9"></string>
-    <string name="a2_mea5_10"></string>
-    <string name="a2_mea5_11"></string>
-    <string name="a2_mea5_12"></string>
-    <string name="a2_mea5_13"></string>
-    <string name="a2_mea5_14"></string>
-    <string name="a2_mea5_15"></string>
-
-
-    <string name="a2_mea6_1"></string>
-    <string name="a2_mea6_2"></string>
-    <string name="a2_mea6_3"></string>
-    <string name="a2_mea6_4"></string>
-    <string name="a2_mea6_5"></string>
-    <string name="a2_mea6_6"></string>
-    <string name="a2_mea6_7"></string>
-    <string name="a2_mea6_8"></string>
-    <string name="a2_mea6_9"></string>
-    <string name="a2_mea6_10"></string>
-    <string name="a2_mea6_11"></string>
-    <string name="a2_mea6_12"></string>
-    <string name="a2_mea6_13"></string>
-    <string name="a2_mea6_14"></string>
-    <string name="a2_mea6_15"></string>
-
-
-    <string name="a2_mea7_1"></string>
-    <string name="a2_mea7_2"></string>
-    <string name="a2_mea7_3"></string>
-    <string name="a2_mea7_4"></string>
-    <string name="a2_mea7_5"></string>
-    <string name="a2_mea7_6"></string>
-    <string name="a2_mea7_7"></string>
-    <string name="a2_mea7_8"></string>
-    <string name="a2_mea7_9"></string>
-    <string name="a2_mea7_10"></string>
-    <string name="a2_mea7_11"></string>
-    <string name="a2_mea7_12"></string>
-    <string name="a2_mea7_13"></string>
-    <string name="a2_mea7_14"></string>
-    <string name="a2_mea7_15"></string>
-
-
-    <string name="a2_mea8_1"></string>
-    <string name="a2_mea8_2"></string>
-    <string name="a2_mea8_3"></string>
-    <string name="a2_mea8_4"></string>
-    <string name="a2_mea8_5"></string>
-    <string name="a2_mea8_6"></string>
-    <string name="a2_mea8_7"></string>
-    <string name="a2_mea8_8"></string>
-    <string name="a2_mea8_9"></string>
-    <string name="a2_mea8_10"></string>
-    <string name="a2_mea8_11"></string>
-    <string name="a2_mea8_12"></string>
-    <string name="a2_mea8_13"></string>
-    <string name="a2_mea8_14"></string>
-    <string name="a2_mea8_15"></string>
-
+    <string name="a2_mea3_1">a device used to cool the air in a room or building</string>
+    <string name="a2_mea3_2">a clock that makes a loud noise to wake you up</string>
+    <string name="a2_mea3_3">an object or machine that has been invented for a particular purpose</string>
+    <string name="a2_mea3_4">a bell that you press to make a noise outside a house to announce your presence</string>
+    <string name="a2_mea3_5">a container that you use to heat water for making tea, coffee, etc.</string>
+    <string name="a2_mea3_6">tools or machines needed for a particular purpose or activity</string>
+    <string name="a2_mea3_7">a machine with blades that turn around quickly, used to move air and make a room cooler</string>
+    <string name="a2_mea3_8">a small electrical device with blades that mix, chop, and cut food</string>
+    <string name="a2_mea3_9">a large piece of electrical equipment that is used for freezing food</string>
+    <string name="a2_mea3_10">a small, useful machine or device</string>
+    <string name="a2_mea3_11">a machine that blows out hot air, used to dry your hair</string>
+    <string name="a2_mea3_12">a device used to store and read large amounts of information</string>
+    <string name="a2_mea3_13">to stay in bed later than usual in the morning</string>
+    <string name="a2_mea3_14">to have a short sleep, especially during the day</string>
+    <string name="a2_mea3_15">an instrument for measuring weight</string>
+
+
+    <string name="a2_mea4_1">to get food from a restaurant to eat elsewhere</string>
+    <string name="a2_mea4_2">a device that produces heat, especially to warm a room</string>
+    <string name="a2_mea4_3">a machine that adds moisture to the air in a room</string>
+    <string name="a2_mea4_4">a small appliance with a flat metal base that gets hot and is used for pressing clothes</string>
+    <string name="a2_mea4_5">an individual object or unit</string>
+    <string name="a2_mea4_6">a machine used to extract juice from fruits and vegetables</string>
+    <string name="a2_mea4_7">a machine used to cut the grass on a lawn</string>
+    <string name="a2_mea4_8">a portable storage device for data</string>
+    <string name="a2_mea4_9">a device designed to catch mice or rats</string>
+    <string name="a2_mea4_10">a device that uses steam to remove wrinkles from clothes</string>
+    <string name="a2_mea4_11">an appliance used to toast bread</string>
+    <string name="a2_mea4_12">a portable source of light produced by burning with a flame</string>
+    <string name="a2_mea4_13">a handheld communication device with both a transmitter and a receiver</string>
+    <string name="a2_mea4_14">a camera used for transmitting images over the internet</string>
+    <string name="a2_mea4_15">strange or unusual in a way that is hard to explain</string>
+
+
+    <string name="a2_mea5_1">a sandy or pebbly area by the sea or a lake</string>
+    <string name="a2_mea5_2">the activity of visiting places of interest in a particular location</string>
+    <string name="a2_mea5_3">a lotion or cream that helps protect the skin from the sun</string>
+    <string name="a2_mea5_4">to suddenly burst or break open due to pressure or heat</string>
+    <string name="a2_mea5_5">a traditional way of doing something that is common within a particular society or group</string>
+    <string name="a2_mea5_6">a live performance, especially of music</string>
+    <string name="a2_mea5_7">to greet someone means to say hello to them or to welcome them</string>
+    <string name="a2_mea5_8">to put or keep something in a place where it cannot be seen or easily found</string>
+    <string name="a2_mea5_9">the friendly and generous reception and entertainment of guests, visitors, or strangers</string>
+    <string name="a2_mea5_10">to become a member of a group or community</string>
+    <string name="a2_mea5_11">the ability to remember things, events, or experiences</string>
+    <string name="a2_mea5_12">a particular event, time, or opportunity</string>
+    <string name="a2_mea5_13">a request for something to be made, supplied, or served</string>
+    <string name="a2_mea5_14">to remember something from the past</string>
+    <string name="a2_mea5_15">to search for or try to find something</string>
+
+
+    <string name="a2_mea6_1">to say that you will not do or accept something</string>
+    <string name="a2_mea6_2">a thin strip of fabric used for decoration or tying things</string>
+    <string name="a2_mea6_3">a small item that is kept to remind you of a person, place, or event</string>
+    <string name="a2_mea6_4">to shine with small points of light</string>
+    <string name="a2_mea6_5">a visually striking performance or display</string>
+    <string name="a2_mea6_6">to give assistance, encouragement, or approval to someone or something</string>
+    <string name="a2_mea6_7">to participate in an activity or event</string>
+    <string name="a2_mea6_8">to express gratitude or appreciation to someone</string>
+    <string name="a2_mea6_9">a practice, belief, or custom that is passed down within a culture</string>
+    <string name="a2_mea6_10">difficult to believe or imagine</string>
+    <string name="a2_mea6_11">to bring together or combine into a single unit</string>
+    <string name="a2_mea6_12">the worth, importance, or usefulness of something</string>
+    <string name="a2_mea6_13">the ability to make sound judgments and decisions based on knowledge and experience</string>
+    <string name="a2_mea6_14">occurring or found all over the world</string>
+    <string name="a2_mea6_15">the period of being young, especially the time before reaching adulthood</string>
+
+
+    <string name="a2_mea7_1">to have enough money to pay for something</string>
+    <string name="a2_mea7_2">to organize or plan something in a particular way</string>
+    <string name="a2_mea7_3">a group of flowers that are tied together</string>
+    <string name="a2_mea7_4">a formal event or ritual with a specific purpose or significance</string>
+    <string name="a2_mea7_5">to make someone feel happier and more positive</string>
+    <string name="a2_mea7_6">in a way that is thorough and without exceptions</string>
+    <string name="a2_mea7_7">to bring something into existence</string>
+    <string name="a2_mea7_8">to go on a romantic or social outing with someone</string>
+    <string name="a2_mea7_9">a strong feeling of wanting something</string>
+    <string name="a2_mea7_10">to wear special clothing or costumes, often for an event</string>
+    <string name="a2_mea7_11">a flat paper container used for sending letters or documents</string>
+    <string name="a2_mea7_12">particularly or especially</string>
+    <string name="a2_mea7_13">the evening or day before a significant event</string>
+    <string name="a2_mea7_14">to give something and receive something in return</string>
+    <string name="a2_mea7_15">a large and special meal, typically for a celebration</string>
+
+
+    <string name="a2_mea8_1">to spend time in a relaxed or aimless manner</string>
+    <string name="a2_mea8_2">to occur or take place</string>
+    <string name="a2_mea8_3">existing only in the mind, not real</string>
+    <string name="a2_mea8_4">to guide or direct a group of people</string>
+    <string name="a2_mea8_5">the act of celebrating with enjoyment and laughter</string>
+    <string name="a2_mea8_6">to arrange and coordinate activities or events</string>
+    <string name="a2_mea8_7">characterized by a sense of playfulness and fun</string>
+    <string name="a2_mea8_8">to substitute or put something in the place of another</string>
+    <string name="a2_mea8_9">to hold someone or something in high regard</string>
+    <string name="a2_mea8_10">to go back to a previous place or condition</string>
+    <string name="a2_mea8_11">a plan that lists events and activities in order</string>
+    <string name="a2_mea8_12">to stay awake later than usual</string>
+    <string name="a2_mea8_13">to shock or amaze someone</string>
+    <string name="a2_mea8_14">a concept, idea, or opinion produced by thinking</string>
+    <string name="a2_mea8_15">a range of different things</string>
+
 
-    <string name="a2_mea9_1"></string>
-    <string name="a2_mea9_2"></string>
-    <string name="a2_mea9_3"></string>
-    <string name="a2_mea9_4"></string>
-    <string name="a2_mea9_5"></string>
-    <string name="a2_mea9_6"></string>
-    <string name="a2_mea9_7"></string>
-    <string name="a2_mea9_8"></string>
-    <string name="a2_mea9_9"></string>
-    <string name="a2_mea9_10"></string>
-    <string name="a2_mea9_11"></string>
-    <string name="a2_mea9_12"></string>
-    <string name="a2_mea9_13"></string>
-    <string name="a2_mea9_14"></string>
-    <string name="a2_mea9_15"></string>
-
-
-    <string name="a2_mea10_1"></string>
-    <string name="a2_mea10_2"></string>
-    <string name="a2_mea10_3"></string>
-    <string name="a2_mea10_4"></string>
-    <string name="a2_mea10_5"></string>
-    <string name="a2_mea10_6"></string>
-    <string name="a2_mea10_7"></string>
-    <string name="a2_mea10_8"></string>
-    <string name="a2_mea10_9"></string>
-    <string name="a2_mea10_10"></string>
-    <string name="a2_mea10_11"></string>
-    <string name="a2_mea10_12"></string>
-    <string name="a2_mea10_13"></string>
-    <string name="a2_mea10_14"></string>
-    <string name="a2_mea10_15"></string>
-
-
-    <string name="a2_mea11_1"></string>
-    <string name="a2_mea11_2"></string>
-    <string name="a2_mea11_3"></string>
-    <string name="a2_mea11_4"></string>
-    <string name="a2_mea11_5"></string>
-    <string name="a2_mea11_6"></string>
-    <string name="a2_mea11_7"></string>
-    <string name="a2_mea11_8"></string>
-    <string name="a2_mea11_9"></string>
-    <string name="a2_mea11_10"></string>
-    <string name="a2_mea11_11"></string>
-    <string name="a2_mea11_12"></string>
-    <string name="a2_mea11_13"></string>
-    <string name="a2_mea11_14"></string>
-    <string name="a2_mea11_15"></string>
-
-
-    <string name="a2_mea12_1"></string>
-    <string name="a2_mea12_2"></string>
-    <string name="a2_mea12_3"></string>
-    <string name="a2_mea12_4"></string>
-    <string name="a2_mea12_5"></string>
-    <string name="a2_mea12_6"></string>
-    <string name="a2_mea12_7"></string>
-    <string name="a2_mea12_8"></string>
-    <string name="a2_mea12_9"></string>
-    <string name="a2_mea12_10"></string>
-    <string name="a2_mea12_11"></string>
-    <string name="a2_mea12_12"></string>
-    <string name="a2_mea12_13"></string>
-    <string name="a2_mea12_14"></string>
-    <string name="a2_mea12_15"></string>
-
-
-    <string name="a2_mea13_1"></string>
-    <string name="a2_mea13_2"></string>
-    <string name="a2_mea13_3"></string>
-    <string name="a2_mea13_4"></string>
-    <string name="a2_mea13_5"></string>
-    <string name="a2_mea13_6"></string>
-    <string name="a2_mea13_7"></string>
-    <string name="a2_mea13_8"></string>
-    <string name="a2_mea13_9"></string>
-    <string name="a2_mea13_10"></string>
-    <string name="a2_mea13_11"></string>
-    <string name="a2_mea13_12"></string>
-    <string name="a2_mea13_13"></string>
-    <string name="a2_mea13_14"></string>
-    <string name="a2_mea13_15"></string>
-
-
-    <string name="a2_mea14_1"></string>
-    <string name="a2_mea14_2"></string>
-    <string name="a2_mea14_3"></string>
-    <string name="a2_mea14_4"></string>
-    <string name="a2_mea14_5"></string>
-    <string name="a2_mea14_6"></string>
-    <string name="a2_mea14_7"></string>
-    <string name="a2_mea14_8"></string>
-    <string name="a2_mea14_9"></string>
-    <string name="a2_mea14_10"></string>
-    <string name="a2_mea14_11"></string>
-    <string name="a2_mea14_12"></string>
-    <string name="a2_mea14_13"></string>
-    <string name="a2_mea14_14"></string>
-    <string name="a2_mea14_15"></string>
-
-
-    <string name="a2_mea15_1"></string>
-    <string name="a2_mea15_2"></string>
-    <string name="a2_mea15_3"></string>
-    <string name="a2_mea15_4"></string>
-    <string name="a2_mea15_5"></string>
-    <string name="a2_mea15_6"></string>
-    <string name="a2_mea15_7"></string>
-    <string name="a2_mea15_8"></string>
-    <string name="a2_mea15_9"></string>
-    <string name="a2_mea15_10"></string>
-    <string name="a2_mea15_11"></string>
-    <string name="a2_mea15_12"></string>
-    <string name="a2_mea15_13"></string>
-    <string name="a2_mea15_14"></string>
-    <string name="a2_mea15_15"></string>
-
-
-    <string name="a2_mea16_1"></string>
-    <string name="a2_mea16_2"></string>
-    <string name="a2_mea16_3"></string>
-    <string name="a2_mea16_4"></string>
-    <string name="a2_mea16_5"></string>
-    <string name="a2_mea16_6"></string>
-    <string name="a2_mea16_7"></string>
-    <string name="a2_mea16_8"></string>
-    <string name="a2_mea16_9"></string>
-    <string name="a2_mea16_10"></string>
-    <string name="a2_mea16_11"></string>
-    <string name="a2_mea16_12"></string>
-    <string name="a2_mea16_13"></string>
-    <string name="a2_mea16_14"></string>
-    <string name="a2_mea16_15"></string>
-
-
-    <string name="a2_mea17_1"></string>
-    <string name="a2_mea17_2"></string>
-    <string name="a2_mea17_3"></string>
-    <string name="a2_mea17_4"></string>
-    <string name="a2_mea17_5"></string>
-    <string name="a2_mea17_6"></string>
-    <string name="a2_mea17_7"></string>
-    <string name="a2_mea17_8"></string>
-    <string name="a2_mea17_9"></string>
-    <string name="a2_mea17_10"></string>
-    <string name="a2_mea17_11"></string>
-    <string name="a2_mea17_12"></string>
-    <string name="a2_mea17_13"></string>
-    <string name="a2_mea17_14"></string>
-    <string name="a2_mea17_15"></string>
-
-
-    <string name="a2_mea18_1"></string>
-    <string name="a2_mea18_2"></string>
-    <string name="a2_mea18_3"></string>
-    <string name="a2_mea18_4"></string>
-    <string name="a2_mea18_5"></string>
-    <string name="a2_mea18_6"></string>
-    <string name="a2_mea18_7"></string>
-    <string name="a2_mea18_8"></string>
-    <string name="a2_mea18_9"></string>
-    <string name="a2_mea18_10"></string>
-    <string name="a2_mea18_11"></string>
-    <string name="a2_mea18_12"></string>
-    <string name="a2_mea18_13"></string>
-    <string name="a2_mea18_14"></string>
-    <string name="a2_mea18_15"></string>
-
-
-    <string name="a2_mea19_1"></string>
-    <string name="a2_mea19_2"></string>
-    <string name="a2_mea19_3"></string>
-    <string name="a2_mea19_4"></string>
-    <string name="a2_mea19_5"></string>
-    <string name="a2_mea19_6"></string>
-    <string name="a2_mea19_7"></string>
-    <string name="a2_mea19_8"></string>
-    <string name="a2_mea19_9"></string>
-    <string name="a2_mea19_10"></string>
-    <string name="a2_mea19_11"></string>
-    <string name="a2_mea19_12"></string>
-    <string name="a2_mea19_13"></string>
-    <string name="a2_mea19_14"></string>
-    <string name="a2_mea19_15"></string>
-
-
-    <string name="a2_mea20_1"></string>
-    <string name="a2_mea20_2"></string>
-    <string name="a2_mea20_3"></string>
-    <string name="a2_mea20_4"></string>
-    <string name="a2_mea20_5"></string>
-    <string name="a2_mea20_6"></string>
-    <string name="a2_mea20_7"></string>
-    <string name="a2_mea20_8"></string>
-    <string name="a2_mea20_9"></string>
-    <string name="a2_mea20_10"></string>
-    <string name="a2_mea20_11"></string>
-    <string name="a2_mea20_12"></string>
-    <string name="a2_mea20_13"></string>
-    <string name="a2_mea20_14"></string>
-    <string name="a2_mea20_15"></string>
-
-
-    <string name="a2_mea21_1"></string>
-    <string name="a2_mea21_2"></string>
-    <string name="a2_mea21_3"></string>
-    <string name="a2_mea21_4"></string>
-    <string name="a2_mea21_5"></string>
-    <string name="a2_mea21_6"></string>
-    <string name="a2_mea21_7"></string>
-    <string name="a2_mea21_8"></string>
-    <string name="a2_mea21_9"></string>
-    <string name="a2_mea21_10"></string>
-    <string name="a2_mea21_11"></string>
-    <string name="a2_mea21_12"></string>
-    <string name="a2_mea21_13"></string>
-    <string name="a2_mea21_14"></string>
-    <string name="a2_mea21_15"></string>
-
-
-    <string name="a2_mea22_1"></string>
-    <string name="a2_mea22_2"></string>
-    <string name="a2_mea22_3"></string>
-    <string name="a2_mea22_4"></string>
-    <string name="a2_mea22_5"></string>
-    <string name="a2_mea22_6"></string>
-    <string name="a2_mea22_7"></string>
-    <string name="a2_mea22_8"></string>
-    <string name="a2_mea22_9"></string>
-    <string name="a2_mea22_10"></string>
-    <string name="a2_mea22_11"></string>
-    <string name="a2_mea22_12"></string>
-    <string name="a2_mea22_13"></string>
-    <string name="a2_mea22_14"></string>
-    <string name="a2_mea22_15"></string>
-
-
-
-    <string name="a2_mea23_1"></string>
-    <string name="a2_mea23_2"></string>
-    <string name="a2_mea23_3"></string>
-    <string name="a2_mea23_4"></string>
-    <string name="a2_mea23_5"></string>
-    <string name="a2_mea23_6"></string>
-    <string name="a2_mea23_7"></string>
-    <string name="a2_mea23_8"></string>
-    <string name="a2_mea23_9"></string>
-    <string name="a2_mea23_10"></string>
-    <string name="a2_mea23_11"></string>
-    <string name="a2_mea23_12"></string>
-    <string name="a2_mea23_13"></string>
-    <string name="a2_mea23_14"></string>
-    <string name="a2_mea23_15"></string>
-
-
-
-    <string name="a2_mea24_1"></string>
-    <string name="a2_mea24_2"></string>
-    <string name="a2_mea24_3"></string>
-    <string name="a2_mea24_4"></string>
-    <string name="a2_mea24_5"></string>
-    <string name="a2_mea24_6"></string>
-    <string name="a2_mea24_7"></string>
-    <string name="a2_mea24_8"></string>
-    <string name="a2_mea24_9"></string>
-    <string name="a2_mea24_10"></string>
-    <string name="a2_mea24_11"></string>
-    <string name="a2_mea24_12"></string>
-    <string name="a2_mea24_13"></string>
-    <string name="a2_mea24_14"></string>
-    <string name="a2_mea24_15"></string>
-
-
-
-    <string name="a2_mea25_1"></string>
-    <string name="a2_mea25_2"></string>
-    <string name="a2_mea25_3"></string>
-    <string name="a2_mea25_4"></string>
-    <string name="a2_mea25_5"></string>
-    <string name="a2_mea25_6"></string>
-    <string name="a2_mea25_7"></string>
-    <string name="a2_mea25_8"></string>
-    <string name="a2_mea25_9"></string>
-    <string name="a2_mea25_10"></string>
-    <string name="a2_mea25_11"></string>
-    <string name="a2_mea25_12"></string>
-    <string name="a2_mea25_13"></string>
-    <string name="a2_mea25_14"></string>
-    <string name="a2_mea25_15"></string>
-
-
-
-    <string name="a2_mea26_1"></string>
-    <string name="a2_mea26_2"></string>
-    <string name="a2_mea26_3"></string>
-    <string name="a2_mea26_4"></string>
-    <string name="a2_mea26_5"></string>
-    <string name="a2_mea26_6"></string>
-    <string name="a2_mea26_7"></string>
-    <string name="a2_mea26_8"></string>
-    <string name="a2_mea26_9"></string>
-    <string name="a2_mea26_10"></string>
-    <string name="a2_mea26_11"></string>
-    <string name="a2_mea26_12"></string>
-    <string name="a2_mea26_13"></string>
-    <string name="a2_mea26_14"></string>
-    <string name="a2_mea26_15"></string>
-
-
-
-    <string name="a2_mea27_1"></string>
-    <string name="a2_mea27_2"></string>
-    <string name="a2_mea27_3"></string>
-    <string name="a2_mea27_4"></string>
-    <string name="a2_mea27_5"></string>
-    <string name="a2_mea27_6"></string>
-    <string name="a2_mea27_7"></string>
-    <string name="a2_mea27_8"></string>
-    <string name="a2_mea27_9"></string>
-    <string name="a2_mea27_10"></string>
-    <string name="a2_mea27_11"></string>
-    <string name="a2_mea27_12"></string>
-    <string name="a2_mea27_13"></string>
-    <string name="a2_mea27_14"></string>
-    <string name="a2_mea27_15"></string>
-
-
-
-    <string name="a2_mea28_1"></string>
-    <string name="a2_mea28_2"></string>
-    <string name="a2_mea28_3"></string>
-    <string name="a2_mea28_4"></string>
-    <string name="a2_mea28_5"></string>
-    <string name="a2_mea28_6"></string>
-    <string name="a2_mea28_7"></string>
-    <string name="a2_mea28_8"></string>
-    <string name="a2_mea28_9"></string>
-    <string name="a2_mea28_10"></string>
-    <string name="a2_mea28_11"></string>
-    <string name="a2_mea28_12"></string>
-    <string name="a2_mea28_13"></string>
-    <string name="a2_mea28_14"></string>
-    <string name="a2_mea28_15"></string>
-
-
-
-    <string name="a2_mea29_1"></string>
-    <string name="a2_mea29_2"></string>
-    <string name="a2_mea29_3"></string>
-    <string name="a2_mea29_4"></string>
-    <string name="a2_mea29_5"></string>
-    <string name="a2_mea29_6"></string>
-    <string name="a2_mea29_7"></string>
-    <string name="a2_mea29_8"></string>
-    <string name="a2_mea29_9"></string>
-    <string name="a2_mea29_10"></string>
-    <string name="a2_mea29_11"></string>
-    <string name="a2_mea29_12"></string>
-    <string name="a2_mea29_13"></string>
-    <string name="a2_mea29_14"></string>
-    <string name="a2_mea29_15"></string>
-
-
-
-    <string name="a2_mea30_1"></string>
-    <string name="a2_mea30_2"></string>
-    <string name="a2_mea30_3"></string>
-    <string name="a2_mea30_4"></string>
-    <string name="a2_mea30_5"></string>
-    <string name="a2_mea30_6"></string>
-    <string name="a2_mea30_7"></string>
-    <string name="a2_mea30_8"></string>
-    <string name="a2_mea30_9"></string>
-    <string name="a2_mea30_10"></string>
-    <string name="a2_mea30_11"></string>
-    <string name="a2_mea30_12"></string>
-    <string name="a2_mea30_13"></string>
-    <string name="a2_mea30_14"></string>
-    <string name="a2_mea30_15"></string>
-
-
-
-    <string name="a2_mea31_1"></string>
-    <string name="a2_mea31_2"></string>
-    <string name="a2_mea31_3"></string>
-    <string name="a2_mea31_4"></string>
-    <string name="a2_mea31_5"></string>
-    <string name="a2_mea31_6"></string>
-    <string name="a2_mea31_7"></string>
-    <string name="a2_mea31_8"></string>
-    <string name="a2_mea31_9"></string>
-    <string name="a2_mea31_10"></string>
-    <string name="a2_mea31_11"></string>
-    <string name="a2_mea31_12"></string>
-    <string name="a2_mea31_13"></string>
-    <string name="a2_mea31_14"></string>
-    <string name="a2_mea31_15"></string>
-
-
-
-    <string name="a2_mea32_1"></string>
-    <string name="a2_mea32_2"></string>
-    <string name="a2_mea32_3"></string>
-    <string name="a2_mea32_4"></string>
-    <string name="a2_mea32_5"></string>
-    <string name="a2_mea32_6"></string>
-    <string name="a2_mea32_7"></string>
-    <string name="a2_mea32_8"></string>
-    <string name="a2_mea32_9"></string>
-    <string name="a2_mea32_10"></string>
-    <string name="a2_mea32_11"></string>
-    <string name="a2_mea32_12"></string>
-    <string name="a2_mea32_13"></string>
-    <string name="a2_mea32_14"></string>
-    <string name="a2_mea32_15"></string>
-
-
-
-    <string name="a2_mea33_1"></string>
-    <string name="a2_mea33_2"></string>
-    <string name="a2_mea33_3"></string>
-    <string name="a2_mea33_4"></string>
-    <string name="a2_mea33_5"></string>
-    <string name="a2_mea33_6"></string>
-    <string name="a2_mea33_7"></string>
-    <string name="a2_mea33_8"></string>
-    <string name="a2_mea33_9"></string>
-    <string name="a2_mea33_10"></string>
-    <string name="a2_mea33_11"></string>
-    <string name="a2_mea33_12"></string>
-    <string name="a2_mea33_13"></string>
-    <string name="a2_mea33_14"></string>
-    <string name="a2_mea33_15"></string>
-
-
-
-    <string name="a2_mea34_1"></string>
-    <string name="a2_mea34_2"></string>
-    <string name="a2_mea34_3"></string>
-    <string name="a2_mea34_4"></string>
-    <string name="a2_mea34_5"></string>
-    <string name="a2_mea34_6"></string>
-    <string name="a2_mea34_7"></string>
-    <string name="a2_mea34_8"></string>
-    <string name="a2_mea34_9"></string>
-    <string name="a2_mea34_10"></string>
-    <string name="a2_mea34_11"></string>
-    <string name="a2_mea34_12"></string>
-    <string name="a2_mea34_13"></string>
-    <string name="a2_mea34_14"></string>
-    <string name="a2_mea34_15"></string>
-
-
-
-    <string name="a2_mea35_1"></string>
-    <string name="a2_mea35_2"></string>
-    <string name="a2_mea35_3"></string>
-    <string name="a2_mea35_4"></string>
-    <string name="a2_mea35_5"></string>
-    <string name="a2_mea35_6"></string>
-    <string name="a2_mea35_7"></string>
-    <string name="a2_mea35_8"></string>
-    <string name="a2_mea35_9"></string>
-    <string name="a2_mea35_10"></string>
-    <string name="a2_mea35_11"></string>
-    <string name="a2_mea35_12"></string>
-    <string name="a2_mea35_13"></string>
-    <string name="a2_mea35_14"></string>
-    <string name="a2_mea35_15"></string>
-
-
-
-    <string name="a2_mea36_1"></string>
-    <string name="a2_mea36_2"></string>
-    <string name="a2_mea36_3"></string>
-    <string name="a2_mea36_4"></string>
-    <string name="a2_mea36_5"></string>
-    <string name="a2_mea36_6"></string>
-    <string name="a2_mea36_7"></string>
-    <string name="a2_mea36_8"></string>
-    <string name="a2_mea36_9"></string>
-    <string name="a2_mea36_10"></string>
-    <string name="a2_mea36_11"></string>
-    <string name="a2_mea36_12"></string>
-    <string name="a2_mea36_13"></string>
-    <string name="a2_mea36_14"></string>
-    <string name="a2_mea36_15"></string>
-
-
-
-    <string name="a2_mea37_1"></string>
-    <string name="a2_mea37_2"></string>
-    <string name="a2_mea37_3"></string>
-    <string name="a2_mea37_4"></string>
-    <string name="a2_mea37_5"></string>
-    <string name="a2_mea37_6"></string>
-    <string name="a2_mea37_7"></string>
-    <string name="a2_mea37_8"></string>
-    <string name="a2_mea37_9"></string>
-    <string name="a2_mea37_10"></string>
-    <string name="a2_mea37_11"></string>
-    <string name="a2_mea37_12"></string>
-    <string name="a2_mea37_13"></string>
-    <string name="a2_mea37_14"></string>
-    <string name="a2_mea37_15"></string>
-
-
-
-    <string name="a2_mea38_1"></string>
-    <string name="a2_mea38_2"></string>
-    <string name="a2_mea38_3"></string>
-    <string name="a2_mea38_4"></string>
-    <string name="a2_mea38_5"></string>
-    <string name="a2_mea38_6"></string>
-    <string name="a2_mea38_7"></string>
-    <string name="a2_mea38_8"></string>
-    <string name="a2_mea38_9"></string>
-    <string name="a2_mea38_10"></string>
-    <string name="a2_mea38_11"></string>
-    <string name="a2_mea38_12"></string>
-    <string name="a2_mea38_13"></string>
-    <string name="a2_mea38_14"></string>
-    <string name="a2_mea38_15"></string>
-
-
-
-    <string name="a2_mea39_1"></string>
-    <string name="a2_mea39_2"></string>
-    <string name="a2_mea39_3"></string>
-    <string name="a2_mea39_4"></string>
-    <string name="a2_mea39_5"></string>
-    <string name="a2_mea39_6"></string>
-    <string name="a2_mea39_7"></string>
-    <string name="a2_mea39_8"></string>
-    <string name="a2_mea39_9"></string>
-    <string name="a2_mea39_10"></string>
-    <string name="a2_mea39_11"></string>
-    <string name="a2_mea39_12"></string>
-    <string name="a2_mea39_13"></string>
-    <string name="a2_mea39_14"></string>
-    <string name="a2_mea39_15"></string>
-
-
-
-    <string name="a2_mea40_1"></string>
-    <string name="a2_mea40_2"></string>
-    <string name="a2_mea40_3"></string>
-    <string name="a2_mea40_4"></string>
-    <string name="a2_mea40_5"></string>
-    <string name="a2_mea40_6"></string>
-    <string name="a2_mea40_7"></string>
-    <string name="a2_mea40_8"></string>
-    <string name="a2_mea40_9"></string>
-    <string name="a2_mea40_10"></string>
-    <string name="a2_mea40_11"></string>
-    <string name="a2_mea40_12"></string>
-    <string name="a2_mea40_13"></string>
-    <string name="a2_mea40_14"></string>
-    <string name="a2_mea40_15"></string>
-
-
-
-    <string name="a2_mea41_1"></string>
-    <string name="a2_mea41_2"></string>
-    <string name="a2_mea41_3"></string>
-    <string name="a2_mea41_4"></string>
-    <string name="a2_mea41_5"></string>
-    <string name="a2_mea41_6"></string>
-    <string name="a2_mea41_7"></string>
-    <string name="a2_mea41_8"></string>
-    <string name="a2_mea41_9"></string>
-    <string name="a2_mea41_10"></string>
-    <string name="a2_mea41_11"></string>
-    <string name="a2_mea41_12"></string>
-    <string name="a2_mea41_13"></string>
-    <string name="a2_mea41_14"></string>
-    <string name="a2_mea41_15"></string>
-
-
-
-    <string name="a2_mea42_1"></string>
-    <string name="a2_mea42_2"></string>
-    <string name="a2_mea42_3"></string>
-    <string name="a2_mea42_4"></string>
-    <string name="a2_mea42_5"></string>
-    <string name="a2_mea42_6"></string>
-    <string name="a2_mea42_7"></string>
-    <string name="a2_mea42_8"></string>
-    <string name="a2_mea42_9"></string>
-    <string name="a2_mea42_10"></string>
-    <string name="a2_mea42_11"></string>
-    <string name="a2_mea42_12"></string>
-    <string name="a2_mea42_13"></string>
-    <string name="a2_mea42_14"></string>
-    <string name="a2_mea42_15"></string>
-
-
-
-    <string name="a2_mea43_1"></string>
-    <string name="a2_mea43_2"></string>
-    <string name="a2_mea43_3"></string>
-    <string name="a2_mea43_4"></string>
-    <string name="a2_mea43_5"></string>
-    <string name="a2_mea43_6"></string>
-    <string name="a2_mea43_7"></string>
-    <string name="a2_mea43_8"></string>
-    <string name="a2_mea43_9"></string>
-    <string name="a2_mea43_10"></string>
-    <string name="a2_mea43_11"></string>
-    <string name="a2_mea43_12"></string>
-    <string name="a2_mea43_13"></string>
-    <string name="a2_mea43_14"></string>
-    <string name="a2_mea43_15"></string>
-
-
-
-    <string name="a2_mea44_1"></string>
-    <string name="a2_mea44_2"></string>
-    <string name="a2_mea44_3"></string>
-    <string name="a2_mea44_4"></string>
-    <string name="a2_mea44_5"></string>
-    <string name="a2_mea44_6"></string>
-    <string name="a2_mea44_7"></string>
-    <string name="a2_mea44_8"></string>
-    <string name="a2_mea44_9"></string>
-    <string name="a2_mea44_10"></string>
-    <string name="a2_mea44_11"></string>
-    <string name="a2_mea44_12"></string>
-    <string name="a2_mea44_13"></string>
-    <string name="a2_mea44_14"></string>
-    <string name="a2_mea44_15"></string>
-
-
-
-    <string name="a2_mea45_1"></string>
-    <string name="a2_mea45_2"></string>
-    <string name="a2_mea45_3"></string>
-    <string name="a2_mea45_4"></string>
-    <string name="a2_mea45_5"></string>
-    <string name="a2_mea45_6"></string>
-    <string name="a2_mea45_7"></string>
-    <string name="a2_mea45_8"></string>
-    <string name="a2_mea45_9"></string>
-    <string name="a2_mea45_10"></string>
-    <string name="a2_mea45_11"></string>
-    <string name="a2_mea45_12"></string>
-    <string name="a2_mea45_13"></string>
-    <string name="a2_mea45_14"></string>
-    <string name="a2_mea45_15"></string>
-
-
-
-    <string name="a2_mea46_1"></string>
-    <string name="a2_mea46_2"></string>
-    <string name="a2_mea46_3"></string>
-    <string name="a2_mea46_4"></string>
-    <string name="a2_mea46_5"></string>
-    <string name="a2_mea46_6"></string>
-    <string name="a2_mea46_7"></string>
-    <string name="a2_mea46_8"></string>
-    <string name="a2_mea46_9"></string>
-    <string name="a2_mea46_10"></string>
-    <string name="a2_mea46_11"></string>
-    <string name="a2_mea46_12"></string>
-    <string name="a2_mea46_13"></string>
-    <string name="a2_mea46_14"></string>
-    <string name="a2_mea46_15"></string>
-
-
-    <string name="a2_mea47_1"></string>
-    <string name="a2_mea47_2"></string>
-    <string name="a2_mea47_3"></string>
-    <string name="a2_mea47_4"></string>
-    <string name="a2_mea47_5"></string>
-    <string name="a2_mea47_6"></string>
-    <string name="a2_mea47_7"></string>
-    <string name="a2_mea47_8"></string>
-    <string name="a2_mea47_9"></string>
-    <string name="a2_mea47_10"></string>
-    <string name="a2_mea47_11"></string>
-    <string name="a2_mea47_12"></string>
-    <string name="a2_mea47_13"></string>
-    <string name="a2_mea47_14"></string>
-    <string name="a2_mea47_15"></string>
-
-
-
-    <string name="a2_mea48_1"></string>
-    <string name="a2_mea48_2"></string>
-    <string name="a2_mea48_3"></string>
-    <string name="a2_mea48_4"></string>
-    <string name="a2_mea48_5"></string>
-    <string name="a2_mea48_6"></string>
-    <string name="a2_mea48_7"></string>
-    <string name="a2_mea48_8"></string>
-    <string name="a2_mea48_9"></string>
-    <string name="a2_mea48_10"></string>
-    <string name="a2_mea48_11"></string>
-    <string name="a2_mea48_12"></string>
-    <string name="a2_mea48_13"></string>
-    <string name="a2_mea48_14"></string>
-    <string name="a2_mea48_15"></string>
-
-
-
-    <string name="a2_mea49_1"></string>
-    <string name="a2_mea49_2"></string>
-    <string name="a2_mea49_3"></string>
-    <string name="a2_mea49_4"></string>
-    <string name="a2_mea49_5"></string>
-    <string name="a2_mea49_6"></string>
-    <string name="a2_mea49_7"></string>
-    <string name="a2_mea49_8"></string>
-    <string name="a2_mea49_9"></string>
-    <string name="a2_mea49_10"></string>
-    <string name="a2_mea49_11"></string>
-    <string name="a2_mea49_12"></string>
-    <string name="a2_mea49_13"></string>
-    <string name="a2_mea49_14"></string>
-    <string name="a2_mea49_15"></string>
-
-
-    <string name="a2_mea50_1"></string>
-    <string name="a2_mea50_2"></string>
-    <string name="a2_mea50_3"></string>
-    <string name="a2_mea50_4"></string>
-    <string name="a2_mea50_5"></string>
-    <string name="a2_mea50_6"></string>
-    <string name="a2_mea50_7"></string>
-    <string name="a2_mea50_8"></string>
-    <string name="a2_mea50_9"></string>
-    <string name="a2_mea50_10"></string>
-    <string name="a2_mea50_11"></string>
-    <string name="a2_mea50_12"></string>
-    <string name="a2_mea50_13"></string>
-    <string name="a2_mea50_14"></string>
-    <string name="a2_mea50_15"></string>
+    <string name="a2_mea9_1">to put something with another object</string>
+    <string name="a2_mea9_2">to officially agree or accept something</string>
+    <string name="a2_mea9_3">a file sent with an email</string>
+    <string name="a2_mea9_4">to press a button on a computer mouse</string>
+    <string name="a2_mea9_5">a display of important information and controls</string>
+    <string name="a2_mea9_6">to remove or erase something</string>
+    <string name="a2_mea9_7">to save a copy of a file from the internet to a computer</string>
+    <string name="a2_mea9_8">a small image used to convey emotions in digital communication</string>
+    <string name="a2_mea9_9">to input information or data</string>
+    <string name="a2_mea9_10">a mistake or problem in a program or system</string>
+    <string name="a2_mea9_11">a folder where new emails are received</string>
+    <string name="a2_mea9_12">the visual part of a software or system that users interact with</string>
+    <string name="a2_mea9_13">a clickable element that takes you to another location</string>
+    <string name="a2_mea9_14">to access a computer system using credentials</string>
+    <string name="a2_mea9_15">a group of interconnected computers or devices</string>
+
+
+    <string name="a2_mea10_1">a choice or alternative</string>
+    <string name="a2_mea10_2">a secret combination used to access something</string>
+    <string name="a2_mea10_3">to produce a physical copy using a printer</string>
+    <string name="a2_mea10_4">a location where deleted files are temporarily stored</string>
+    <string name="a2_mea10_5">to bring something back to its previous state</string>
+    <string name="a2_mea10_6">to log into a system or account</string>
+    <string name="a2_mea10_7">to log out of a system or account</string>
+    <string name="a2_mea10_8">a specific location or webpage on the internet</string>
+    <string name="a2_mea10_9">a captured image of a computer screen</string>
+    <string name="a2_mea10_10">an online platform for connecting and sharing with others</string>
+    <string name="a2_mea10_11">a pre-designed format for creating something</string>
+    <string name="a2_mea10_12">a device or software used to perform specific tasks</string>
+    <string name="a2_mea10_13">to bring something up to date or current</string>
+    <string name="a2_mea10_14">to transfer data or files from a device to a computer or server</string>
+    <string name="a2_mea10_15">pertaining to technology that uses radio waves to transmit data</string>
+
+
+    <string name="a2_mea11_1">a period of relaxation or inactivity</string>
+    <string name="a2_mea11_2">creative expression through various mediums</string>
+    <string name="a2_mea11_3">to be present at an event or location</string>
+    <string name="a2_mea11_4">to cause annoyance or inconvenience</string>
+    <string name="a2_mea11_5">outdoor recreational activity involving staying in tents</string>
+    <string name="a2_mea11_6">to persuade or make someone believe something</string>
+    <string name="a2_mea11_7">to talk about a topic with others</string>
+    <string name="a2_mea11_8">to plunge into water headfirst</string>
+    <string name="a2_mea11_9">to decorate fabric with needle and thread</string>
+    <string name="a2_mea11_10">a sport involving swordplay</string>
+    <string name="a2_mea11_11">activity of catching fish, usually for sport or food</string>
+    <string name="a2_mea11_12">betting or wagering on games of chance</string>
+    <string name="a2_mea11_13">a children\'s game where one hides while others search</string>
+    <string name="a2_mea11_14">hiking or walking in natural areas</string>
+    <string name="a2_mea11_15">within the confines of a building</string>
+
+
+    <string name="a2_mea12_1">a journey or travel from one place to another</string>
+    <string name="a2_mea12_2">to create fabric by interlocking loops of yarn</string>
+    <string name="a2_mea12_3">to search for something</string>
+    <string name="a2_mea12_4">outside, in the open air</string>
+    <string name="a2_mea12_5">to indulge or treat with special care</string>
+    <string name="a2_mea12_6">to take part in an activity or event</string>
+    <string name="a2_mea12_7">to supply or make available</string>
+    <string name="a2_mea12_8">a contest of speed</string>
+    <string name="a2_mea12_9">to temporarily use and pay for something</string>
+    <string name="a2_mea12_10">to begin a journey or trip</string>
+    <string name="a2_mea12_11">to sew or join together with a needle and thread</string>
+    <string name="a2_mea12_12">a vehicle for traveling over snow or ice</string>
+    <string name="a2_mea12_13">to gaze at something for a prolonged period</string>
+    <string name="a2_mea12_14">to show reverence and adoration</string>
+    <string name="a2_mea12_15">a competitive sport involving grappling and holds</string>
+
+
+    <string name="a2_mea13_1">a place to stay or live in</string>
+    <string name="a2_mea13_2">an exciting or daring experience</string>
+    <string name="a2_mea13_3">to reach a place</string>
+    <string name="a2_mea13_4">able to be used or obtained</string>
+    <string name="a2_mea13_5">a bag with shoulder straps, carried on the back</string>
+    <string name="a2_mea13_6">a body of water partly enclosed by land</string>
+    <string name="a2_mea13_7">to make a reservation for a service or accommodation</string>
+    <string name="a2_mea13_8">a place for camping</string>
+    <string name="a2_mea13_9">a vehicle equipped for living in, typically towed by a car</string>
+    <string name="a2_mea13_10">the price or amount paid for something</string>
+    <string name="a2_mea13_11">the official procedures and regulations for entering a country</string>
+    <string name="a2_mea13_12">to leave a place</string>
+    <string name="a2_mea13_13">the place where someone is going or something is being sent</string>
+    <string name="a2_mea13_14">tools or items needed for a particular purpose or activity</string>
+    <string name="a2_mea13_15">a boat used to transport people and goods across water</string>
+
+
+    <string name="a2_mea14_1">a private house where visitors can stay</string>
+    <string name="a2_mea14_2">an inexpensive hotel-like accommodation</string>
+    <string name="a2_mea14_3">an establishment providing lodging and often meals</string>
+    <string name="a2_mea14_4">before a particular time or event</string>
+    <string name="a2_mea14_5">financial protection against loss or harm</string>
+    <string name="a2_mea14_6">a piece of land surrounded by water</string>
+    <string name="a2_mea14_7">a trip or excursion, typically for pleasure</string>
+    <string name="a2_mea14_8">to continue doing something</string>
+    <string name="a2_mea14_9">a powered flying vehicle with fixed wings and engines</string>
+    <string name="a2_mea14_10">to arrive at a destination</string>
+    <string name="a2_mea14_11">a large piece of stone</string>
+    <string name="a2_mea14_12">a portable insulated bag for sleeping outdoors</string>
+    <string name="a2_mea14_13">a rectangular container with a handle for carrying belongings</string>
+    <string name="a2_mea14_14">a long vehicle on tracks that carries people or goods</string>
+    <string name="a2_mea14_15">a journey for a specific purpose</string>
+
+
+    <string name="a2_mea15_1">rain containing high levels of nitric and sulfuric acids</string>
+    <string name="a2_mea15_2">the invisible gaseous substance surrounding the Earth</string>
+    <string name="a2_mea15_3">to inhale and exhale air</string>
+    <string name="a2_mea15_4">long-term weather patterns in a particular area</string>
+    <string name="a2_mea15_5">to make impure or harmful by adding something harmful</string>
+    <string name="a2_mea15_6">to fell trees for various purposes</string>
+    <string name="a2_mea15_7">to cause serious damage or ruin</string>
+    <string name="a2_mea15_8">to grow or cause to grow and become more advanced</string>
+    <string name="a2_mea15_9">to die out or cease to exist</string>
+    <string name="a2_mea15_10">waste produced by households and individuals</string>
+    <string name="a2_mea15_11">the third planet from the Sun, our home</string>
+    <string name="a2_mea15_12">the act of sending out gas, heat, light, etc.</string>
+    <string name="a2_mea15_13">to put someone or something at risk or in danger</string>
+    <string name="a2_mea15_14">the surroundings or conditions in which a person, animal, or plant lives</string>
+    <string name="a2_mea15_15">no longer in existence; no longer alive</string>
+
+
+    <string name="a2_mea16_1">a building or group of buildings where goods are manufactured or assembled</string>
+    <string name="a2_mea16_2">financial support or resources provided for a particular purpose</string>
+    <string name="a2_mea16_3">all of the people born and living at about the same time</string>
+    <string name="a2_mea16_4">the trapping of heat in the Earth\'s atmosphere due to the presence of certain gases</string>
+    <string name="a2_mea16_5">to make something become larger in amount, size, or degree</string>
+    <string name="a2_mea16_6">of considerable or relatively great size</string>
+    <string name="a2_mea16_7">a place where an industrial or manufacturing process takes place</string>
+    <string name="a2_mea16_8">the introduction of harmful substances into the environment</string>
+    <string name="a2_mea16_9">all the inhabitants of a particular place</string>
+    <string name="a2_mea16_10">to treat or process waste materials to make them suitable for reuse</string>
+    <string name="a2_mea16_11">having a surface that is wet and slippery</string>
+    <string name="a2_mea16_12">the upper layer of earth in which plants grow, a black or dark brown material</string>
+    <string name="a2_mea16_13">to arrange or separate things according to type, quality, etc.</string>
+    <string name="a2_mea16_14">to mention briefly or casually</string>
+    <string name="a2_mea16_15">to give someone a warning about a possible danger</string>
+
+
+    <string name="a2_mea17_1">the quality that gives pleasure to the mind or senses</string>
+    <string name="a2_mea17_2">the physical structure and form of a person or animal</string>
+    <string name="a2_mea17_3">any of the hard parts inside a human or animal that make up its frame</string>
+    <string name="a2_mea17_4">the process of taking air into and expelling it from the lungs</string>
+    <string name="a2_mea17_5">a person who teaches and trains someone in sports or other activities</string>
+    <string name="a2_mea17_6">physical activity done to stay healthy or become stronger</string>
+    <string name="a2_mea17_7">in good physical condition; healthy and strong</string>
+    <string name="a2_mea17_8">to get something, especially something positive or useful</string>
+    <string name="a2_mea17_9">to start a specific diet to lose or gain weight</string>
+    <string name="a2_mea17_10">the way in which a person or group lives</string>
+    <string name="a2_mea17_11">to watch and check something over a period of time</string>
+    <string name="a2_mea17_12">to provide someone with a reason to do something</string>
+    <string name="a2_mea17_13">a body tissue that can contract and produce movement</string>
+    <string name="a2_mea17_14">the process of providing or obtaining the food necessary for health and growth</string>
+    <string name="a2_mea17_15">a thing that blocks your way so that movement or progress is difficult</string>
+
+
+    <string name="a2_mea18_1">to stop something from happening or someone from doing something</string>
+    <string name="a2_mea18_2">to refuse to accept or be changed by something</string>
+    <string name="a2_mea18_3">pleased because you have got what you wanted</string>
+    <string name="a2_mea18_4">a movement made by lifting your foot and putting it down in a different place</string>
+    <string name="a2_mea18_5">the physical power and energy that makes your body work</string>
+    <string name="a2_mea18_6">to make something longer or wider by pulling it</string>
+    <string name="a2_mea18_7">to experience physical or mental pain</string>
+    <string name="a2_mea18_8">suitable or right for a particular purpose or occasion</string>
+    <string name="a2_mea18_9">medical treatment in which a person\'s body is cut open so that a doctor can repair, remove, or replace something</string>
+    <string name="a2_mea18_10">paying close attention to something</string>
+    <string name="a2_mea18_11">the amount that someone or something weighs</string>
+    <string name="a2_mea18_12">the health, happiness, and safety of a person or a group</string>
+    <string name="a2_mea18_13">the state of being healthy, especially when referring to the condition of your body</string>
+    <string name="a2_mea18_14">a bath with jets of water that massage your body</string>
+    <string name="a2_mea18_15">to do physical exercises to keep healthy or become stronger</string>
+
+
+    <string name="a2_mea19_1">to agree that something is true, especially unwillingly</string>
+    <string name="a2_mea19_2">to take someone else\'s child into your family and become its legal parent(s)</string>
+    <string name="a2_mea19_3">a person who is related to you and who lived a long time ago</string>
+    <string name="a2_mea19_4">to speak angrily to someone, telling them that you disagree with them</string>
+    <string name="a2_mea19_5">to tell someone that something is definitely true or is definitely going to happen, especially when they have doubts about it</string>
+    <string name="a2_mea19_6">to say or think that someone or something is responsible for a fault or for something bad that has happened</string>
+    <string name="a2_mea19_7">a record of a person\'s family history</string>
+    <string name="a2_mea19_8">a woman who is about to get married or has just got married</string>
+    <string name="a2_mea19_9">closely united and working effectively</string>
+    <string name="a2_mea19_10">a promise to give yourself, your money, your time, etc. to support or do something</string>
+    <string name="a2_mea19_11">a person, team, or company that is competing with others</string>
+    <string name="a2_mea19_12">correct and moral</string>
+    <string name="a2_mea19_13">to have earned or to be given something because of the way you have behaved or the qualities you have</string>
+    <string name="a2_mea19_14">the quality of being able to bend or be bent easily</string>
+    <string name="a2_mea19_15">to order someone not to do something, or to say that something must not happen</string>
+
+
+    <string name="a2_mea20_1">a boy who is looked after by a person or family that is not his real family</string>
+    <string name="a2_mea20_2">a woman who promises to help and support parents at the baptism of their child</string>
+    <string name="a2_mea20_3">feeling or showing thanks</string>
+    <string name="a2_mea20_4">a man who is getting married</string>
+    <string name="a2_mea20_5">a holiday taken by a couple immediately after their marriage</string>
+    <string name="a2_mea20_6">very close</string>
+    <string name="a2_mea20_7">family and relations</string>
+    <string name="a2_mea20_8">to understand something wrongly</string>
+    <string name="a2_mea20_9">a place where children without parents live and are taken care of</string>
+    <string name="a2_mea20_10">a strong feeling of enthusiasm or excitement for something</string>
+    <string name="a2_mea20_11">the way in which two or more people or things are connected</string>
+    <string name="a2_mea20_12">a person who you have a deep affinity with</string>
+    <string name="a2_mea20_13">a son of your step-parent who is not your parent</string>
+    <string name="a2_mea20_14">a woman who is married to your father but who is not your real mother</string>
+    <string name="a2_mea20_15">to use rude and offensive language, usually to insult someone or to shout at them</string>
+
+
+    <string name="a2_mea21_1">a man or boy</string>
+    <string name="a2_mea21_2">a person who is fully grown and mature</string>
+    <string name="a2_mea21_3">having come into existence through birth</string>
+    <string name="a2_mea21_4">to raise and care for a child until they are an adult</string>
+    <string name="a2_mea21_5">the period of time when you are a child</string>
+    <string name="a2_mea21_6">a person who is in the same class as you at school</string>
+    <string name="a2_mea21_7">the end of life; the state of being dead</string>
+    <string name="a2_mea21_8">used to describe old people</string>
+    <string name="a2_mea21_9">to go into a place</string>
+    <string name="a2_mea21_10">to start to have romantic feelings towards someone</string>
+    <string name="a2_mea21_11">the state of being male or female</string>
+    <string name="a2_mea21_12">the difference in attitudes, opinions, and behaviors between different generations</string>
+    <string name="a2_mea21_13">to legally end your marriage</string>
+    <string name="a2_mea21_14">to formally agree to marry someone</string>
+    <string name="a2_mea21_15">to become husband and wife in official or religious ceremonies</string>
+
+
+    <string name="a2_mea22_1">to spend time with friends socially</string>
+    <string name="a2_mea22_2">a person who has completed a course of study at a school or college</string>
+    <string name="a2_mea22_3">to become an adult</string>
+    <string name="a2_mea22_4">to take care of or be responsible for someone or something</string>
+    <string name="a2_mea22_5">to admire and respect someone</string>
+    <string name="a2_mea22_6">being in the middle period of life, usually between 40 and 60 years old</string>
+    <string name="a2_mea22_7">the time spent in the armed forces</string>
+    <string name="a2_mea22_8">a newly born child</string>
+    <string name="a2_mea22_9">expecting a baby</string>
+    <string name="a2_mea22_10">to stop working at the usual age and leave your job</string>
+    <string name="a2_mea22_11">a particular period in a process or development</string>
+    <string name="a2_mea22_12">to provide the things that a person or thing needs to be healthy</string>
+    <string name="a2_mea22_13">a young person between the ages of 13 and 19</string>
+    <string name="a2_mea22_14">a young child who is just learning to walk</string>
+    <string name="a2_mea22_15">a colleague; a person who works with you</string>
+
+
+
+    <string name="a2_mea23_1">to perform in a play, movie, or television show</string>
+    <string name="a2_mea23_2">having an artistic or pretentious quality</string>
+    <string name="a2_mea23_3">a prize or honor given for an achievement</string>
+    <string name="a2_mea23_4">the part of a picture or scene that is farthest from the viewer</string>
+    <string name="a2_mea23_5">a person who operates a camera for filming</string>
+    <string name="a2_mea23_6">a fictional person in a book, play, or movie</string>
+    <string name="a2_mea23_7">a camera shot taken from a close distance</string>
+    <string name="a2_mea23_8">belonging to the same time period</string>
+    <string name="a2_mea23_9">a story focused on solving a crime</string>
+    <string name="a2_mea23_10">a scene in a film with a large number of people</string>
+    <string name="a2_mea23_11">causing great fear, shock, or unhappiness</string>
+    <string name="a2_mea23_12">replacing the original voices of a film with dubbed ones</string>
+    <string name="a2_mea23_13">a motion picture or movie</string>
+    <string name="a2_mea23_14">a person who directs the making of a film</string>
+    <string name="a2_mea23_15">holding attention; exciting</string>
+
+
+
+
+    <string name="a2_mea24_1">a film genre that aims to evoke fear or terror in the audience</string>
+    <string name="a2_mea24_2">cosmetics applied to a person\'s face for theatrical or special effects</string>
+    <string name="a2_mea24_3">express approval or admiration for someone or something</string>
+    <string name="a2_mea24_4">to act as if something is true when it is not</string>
+    <string name="a2_mea24_5">to save sounds or information on a medium for playback or reference</string>
+    <string name="a2_mea24_6">to practice or repeat a performance or activity before performing it for an audience</string>
+    <string name="a2_mea24_7">a genre of speculative fiction dealing with imaginative concepts such as futuristic technology and space travel</string>
+    <string name="a2_mea24_8">a written document that serves as the basis for a film or television program</string>
+    <string name="a2_mea24_9">a work that continues the story of a previous work or expands upon its themes</string>
+    <string name="a2_mea24_10">causing intense surprise, disgust, or outrage</string>
+    <string name="a2_mea24_11">without sound; lacking sound or noise</string>
+    <string name="a2_mea24_12">remarkably impressive or eye-catching</string>
+    <string name="a2_mea24_13">a daring or dangerous action performed for dramatic effect</string>
+    <string name="a2_mea24_14">text displayed at the bottom of a movie or TV screen that provides a translation of spoken dialogue</string>
+    <string name="a2_mea24_15">involving the use of physical force to harm or damage</string>
+
+
+
+
+    <string name="a2_mea25_1">a short piece of writing or content designed to promote a product, service, or event</string>
+    <string name="a2_mea25_2">entertaining or funny</string>
+    <string name="a2_mea25_3">causing irritation or displeasure</string>
+    <string name="a2_mea25_4">a written composition on a particular theme or subject</string>
+    <string name="a2_mea25_5">to transmit or distribute audio or visual content over the airwaves</string>
+    <string name="a2_mea25_6">a specific frequency or medium for transmitting television or radio programs</string>
+    <string name="a2_mea25_7">making or intended to make a profit</string>
+    <string name="a2_mea25_8">a television program that focuses on cooking and culinary techniques</string>
+    <string name="a2_mea25_9">existing or occurring at the present time</string>
+    <string name="a2_mea25_10">to find out or ascertain something with certainty</string>
+    <string name="a2_mea25_11">a version of a newspaper, magazine, or book</string>
+    <string name="a2_mea25_12">to quickly look through the pages of a book, magazine, or other written material</string>
+    <string name="a2_mea25_13">a television program in which contestants compete to answer questions or complete challenges</string>
+    <string name="a2_mea25_14">casual or idle conversation, often about other people\'s private affairs</string>
+    <string name="a2_mea25_15">a brief summary or report of the latest news events</string>
+
+
+
+
+    <string name="a2_mea26_1">a title or caption at the top of a page, article, or section</string>
+    <string name="a2_mea26_2">the effect or influence of one thing on another</string>
+    <string name="a2_mea26_3">a formal suit suitable for wearing to work</string>
+    <string name="a2_mea26_4">a periodical publication containing articles, stories, and advertisements</string>
+    <string name="a2_mea26_5">a printed publication containing news, information, and feature articles</string>
+    <string name="a2_mea26_6">currently broadcasting on television or radio</string>
+    <string name="a2_mea26_7">the sequence of events in a story or movie</string>
+    <string name="a2_mea26_8">a particular way of thinking or seeing things</string>
+    <string name="a2_mea26_9">a person who presents or hosts a television or radio program</string>
+    <string name="a2_mea26_10">pertaining to the general public or community</string>
+    <string name="a2_mea26_11">remarkably noticeable or impressive</string>
+    <string name="a2_mea26_12">to change or exchange something with another</string>
+    <string name="a2_mea26_13">newspapers characterized by sensationalism and gossip</string>
+    <string name="a2_mea26_14">of little importance or significance</string>
+    <string name="a2_mea26_15">a person who watches or views television or other media content</string>
+
+
+
+    <string name="a2_mea27_1">to successfully complete or achieve something</string>
+    <string name="a2_mea27_2">a person responsible for financial record-keeping and analysis</string>
+    <string name="a2_mea27_3">a strong desire or goal</string>
+    <string name="a2_mea27_4">to make a formal request or application for something</string>
+    <string name="a2_mea27_5">a pause or interruption in an activity</string>
+    <string name="a2_mea27_6">the person in charge of a meeting or organization</string>
+    <string name="a2_mea27_7">to handle, manage, or cope with something</string>
+    <string name="a2_mea27_8">a person who designs clothing and accessories</string>
+    <string name="a2_mea27_9">to dismiss an employee from their job</string>
+    <string name="a2_mea27_10">a work schedule that allows for varying hours</string>
+    <string name="a2_mea27_11">a person who sells insurance policies</string>
+    <string name="a2_mea27_12">a formal meeting to assess a person\'s suitability for a job</string>
+    <string name="a2_mea27_13">a person who presides over a court and makes legal judgments</string>
+    <string name="a2_mea27_14">information and understanding acquired through learning or experience</string>
+    <string name="a2_mea27_15">to engage in discussions to reach an agreement</string>
+
+
+
+
+    <string name="a2_mea28_1">to successfully overcome a challenge or obstacle</string>
+    <string name="a2_mea28_2">to estimate or judge something to be greater than it actually is</string>
+    <string name="a2_mea28_3">an increase in salary or wages</string>
+    <string name="a2_mea28_4">the act of advancing to a higher position at work</string>
+    <string name="a2_mea28_5">a professional who studies and treats the human mind and behavior</string>
+    <string name="a2_mea28_6">to voluntarily stop or resign from a job or activity</string>
+    <string name="a2_mea28_7">the state of being accountable or having a duty to fulfill</string>
+    <string name="a2_mea28_8">a person responsible for selling products or services</string>
+    <string name="a2_mea28_9">having the ability to control oneself and maintain focus</string>
+    <string name="a2_mea28_10">a work schedule that involves different shifts or hours</string>
+    <string name="a2_mea28_11">time away from work due to illness</string>
+    <string name="a2_mea28_12">to be easily noticeable or distinct</string>
+    <string name="a2_mea28_13">an available job or position that needs to be filled</string>
+    <string name="a2_mea28_14">a person trained to provide medical care to animals</string>
+    <string name="a2_mea28_15">the amount of money paid to a worker for their labor</string>
+
+
+
+    <string name="a2_mea29_1">the ability or right to use, enter, or approach something</string>
+    <string name="a2_mea29_2">a saved marker or link to a specific webpage for easy access</string>
+    <string name="a2_mea29_3">to increase or improve something</string>
+    <string name="a2_mea29_4">the maximum amount that something can hold or produce</string>
+    <string name="a2_mea29_5">a contribution is something that someone gives or does to help a cause</string>
+    <string name="a2_mea29_6">to make changes to something to improve or update it</string>
+    <string name="a2_mea29_7">to assess or judge the value, importance, or quality of something</string>
+    <string name="a2_mea29_8">capable of producing abundant vegetation or crops</string>
+    <string name="a2_mea29_9">a mass of small bubbles formed on the surface of a liquid</string>
+    <string name="a2_mea29_10">to protect or watch over something to prevent harm or damage</string>
+    <string name="a2_mea29_11">to handle, control, or direct something successfully</string>
+    <string name="a2_mea29_12">an excessive preoccupation or obsession with something</string>
+    <string name="a2_mea29_13">considering or including everything</string>
+    <string name="a2_mea29_14">a statement about what will happen or might happen in the future</string>
+    <string name="a2_mea29_15">to encourage or support the growth, development, or popularity of something</string>
+
+
+
+
+    <string name="a2_mea30_1">a narrow beam of light or energy</string>
+    <string name="a2_mea30_2">to withstand the force or effect of something</string>
+    <string name="a2_mea30_3">to protect or defend against potential danger or loss</string>
+    <string name="a2_mea30_4">a device that captures sunlight and converts it into electricity</string>
+    <string name="a2_mea30_5">a distinct type of plant or animal</string>
+    <string name="a2_mea30_6">necessary materials or items</string>
+    <string name="a2_mea30_7">the outer or topmost layer of something</string>
+    <string name="a2_mea30_8">to continue to live or exist despite challenges or difficulties</string>
+    <string name="a2_mea30_9">the most extreme or final of a series of actions or events</string>
+    <string name="a2_mea30_10">located or occurring underwater</string>
+    <string name="a2_mea30_11">to improve or enhance something, usually by adding new features</string>
+    <string name="a2_mea30_12">easy to use or understand</string>
+    <string name="a2_mea30_13">a low area of land between hills or mountains</string>
+    <string name="a2_mea30_14">the gaseous state of a substance, typically at a lower temperature</string>
+    <string name="a2_mea30_15">a written promise that a product will be repaired or replaced if necessary</string>
+
+
+
+    <string name="a2_mea31_1">having life; not dead</string>
+    <string name="a2_mea31_2">a period of time when a person stays in bed to rest and recover</string>
+    <string name="a2_mea31_3">the force of blood against the walls of the arteries</string>
+    <string name="a2_mea31_4">involving the shedding or presence of blood</string>
+    <string name="a2_mea31_5">able to be broken or damaged</string>
+    <string name="a2_mea31_6">a mark on the skin caused by an injury that doesn\'t break the skin</string>
+    <string name="a2_mea31_7">injury to the skin or flesh caused by heat, flames, or friction</string>
+    <string name="a2_mea31_8">able to be transmitted from one person to another</string>
+    <string name="a2_mea31_9">a support used by a person with difficulty walking</string>
+    <string name="a2_mea31_10">causing uncertainty or skepticism</string>
+    <string name="a2_mea31_11">extremely tired or drained of energy</string>
+    <string name="a2_mea31_12">to lose consciousness, often temporarily</string>
+    <string name="a2_mea31_13">to experience a spinning sensation, often leading to unsteadiness</string>
+    <string name="a2_mea31_14">a break or crack in a bone</string>
+    <string name="a2_mea31_15">a minor scrape or injury to the skin</string>
+
+
+
+
+    <string name="a2_mea32_1">discomfort or pain in the stomach, often associated with digestion</string>
+    <string name="a2_mea32_2">to harm or damage physically</string>
+    <string name="a2_mea32_3">causing an uncomfortable sensation that makes you want to scratch</string>
+    <string name="a2_mea32_4">to recline or rest in a horizontal position</string>
+    <string name="a2_mea32_5">a trained professional who assists women during childbirth</string>
+    <string name="a2_mea32_6">to perform a medical procedure or surgery</string>
+    <string name="a2_mea32_7">weighing more than is considered healthy or normal</string>
+    <string name="a2_mea32_8">a medication used to relieve pain</string>
+    <string name="a2_mea32_9">the condition of being poisoned or exposed to harmful substances</string>
+    <string name="a2_mea32_10">to officially recommend a treatment or medication</string>
+    <string name="a2_mea32_11">a dose of a medication administered by injection</string>
+    <string name="a2_mea32_12">a small, distinct area or mark on the skin</string>
+    <string name="a2_mea32_13">to provide medical care or attention</string>
+    <string name="a2_mea32_14">to expel the contents of the stomach through the mouth</string>
+    <string name="a2_mea32_15">an injury to the body that typically involves breaking the skin</string>
+
+
+
+
+    <string name="a2_mea33_1">a settled way of thinking or feeling about something</string>
+    <string name="a2_mea33_2">the way in which one acts or conducts oneself</string>
+    <string name="a2_mea33_3">a fact or condition connected with or relevant to an event</string>
+    <string name="a2_mea33_4">a legally recognized subject or national of a state or commonwealth</string>
+    <string name="a2_mea33_5">a tribunal presided over by a judge</string>
+    <string name="a2_mea33_6">to be influenced or determined by something</string>
+    <string name="a2_mea33_7">to provide knowledge or training</string>
+    <string name="a2_mea33_8">in accordance with the rules or standards</string>
+    <string name="a2_mea33_9">the money a passenger on public transportation has to pay</string>
+    <string name="a2_mea33_10">a barrier, railing, or other upright structure</string>
+    <string name="a2_mea33_11">a sum of money imposed as a penalty for an offense</string>
+    <string name="a2_mea33_12">contrary to or forbidden by law</string>
+    <string name="a2_mea33_13">a system of rules recognized and enforced by a community</string>
+    <string name="a2_mea33_14">permitted by law</string>
+    <string name="a2_mea33_15">to comply with or follow the commands or restrictions of someone or something</string>
+
+
+
+    <string name="a2_mea34_1">to cause to feel upset or insulted</string>
+    <string name="a2_mea34_2">to give an authoritative direction or instruction</string>
+    <string name="a2_mea34_3">a punishment imposed for breaking a law, rule, or contract</string>
+    <string name="a2_mea34_4">a place where gasoline and other fuels are sold</string>
+    <string name="a2_mea34_5">something owned, especially land or buildings</string>
+    <string name="a2_mea34_6">a moral or legal entitlement to have or do something</string>
+    <string name="a2_mea34_7">a wide way leading from one place to another, especially one with a specially prepared surface</string>
+    <string name="a2_mea34_8">a statement of what to do or not to do</string>
+    <string name="a2_mea34_9">an act of assistance or benefit to someone</string>
+    <string name="a2_mea34_10">a paved path for pedestrians at the side of a road</string>
+    <string name="a2_mea34_11">a very tall building with many stories</string>
+    <string name="a2_mea34_12">not just or fair</string>
+    <string name="a2_mea34_13">to break or fail to comply with a rule or formal agreement</string>
+    <string name="a2_mea34_14">a large building for storing goods</string>
+    <string name="a2_mea34_15">a place where live animals are kept for public display</string>
+
+
+
+
+    <string name="a2_mea35_1">someone you know, but who is not a close friend</string>
+    <string name="a2_mea35_2">to express regret or saying sorry for something wrong</string>
+    <string name="a2_mea35_3">a disagreement or conflict between people</string>
+    <string name="a2_mea35_4">to betray someone is to deceive or cheat them</string>
+    <string name="a2_mea35_5">a social or romantic meeting arranged between two people who have not met before</string>
+    <string name="a2_mea35_6">to express dissatisfaction or annoyance about something</string>
+    <string name="a2_mea35_7">two people who are in a romantic or sexual relationship</string>
+    <string name="a2_mea35_8">to cause someone to believe something that is not true</string>
+    <string name="a2_mea35_9">the predetermined course of events in one\'s life</string>
+    <string name="a2_mea35_10">to come to a conclusion or stop</string>
+    <string name="a2_mea35_11">lasting forever or for a very long time</string>
+    <string name="a2_mea35_12">complete trust or confidence in someone or something</string>
+    <string name="a2_mea35_13">to have a disagreement or argument with someone</string>
+    <string name="a2_mea35_14">an unpleasant emotion caused by the belief that someone or something is dangerous, likely to cause pain, or a threat</string>
+    <string name="a2_mea35_15">a man who is engaged to be married</string>
+
+
+
+
+    <string name="a2_mea36_1">to stop feeling angry towards someone who has done something wrong</string>
+    <string name="a2_mea36_2">a close and trusting relationship between two people</string>
+    <string name="a2_mea36_3">to have a good relationship with someone</string>
+    <string name="a2_mea36_4">to hold someone tightly in one\'s arms, usually as an expression of affection</string>
+    <string name="a2_mea36_5">to touch someone\'s lips with one\'s own as a sign of love or greeting</string>
+    <string name="a2_mea36_6">a romantic or sexual relationship</string>
+    <string name="a2_mea36_7">a legally recognized union between two people</string>
+    <string name="a2_mea36_8">fully developed physically and emotionally</string>
+    <string name="a2_mea36_9">felt or done in return</string>
+    <string name="a2_mea36_10">the ability to remain calm and endure difficult situations</string>
+    <string name="a2_mea36_11">to tolerate or accept a difficult or unpleasant situation</string>
+    <string name="a2_mea36_12">to end a relationship, partnership, or marriage</string>
+    <string name="a2_mea36_13">to be unfaithful in a relationship</string>
+    <string name="a2_mea36_14">a woman whose spouse has died and who has not remarried</string>
+    <string name="a2_mea36_15">to feel anxious or troubled about actual or potential problems</string>
+
+
+
+
+    <string name="a2_mea37_1">the group of people who gather to watch and listen to a performance</string>
+    <string name="a2_mea37_2">a singer who provides backup vocals to the lead singer or main performer</string>
+    <string name="a2_mea37_3">a group of musicians who perform together, often playing different instruments</string>
+    <string name="a2_mea37_4">the basic unit of time in a piece of music, typically consisting of a regular pulse or rhythm</string>
+    <string name="a2_mea37_5">a repeated part of a song or music piece that is typically sung by a group of people</string>
+    <string name="a2_mea37_6">a person who writes and creates music</string>
+    <string name="a2_mea37_7">a series of performances by a musician or musical group in various locations</string>
+    <string name="a2_mea37_8">a person who directs a musical performance, usually an orchestra or choir</string>
+    <string name="a2_mea37_9">a percussion instrument that is played by striking it with sticks or hands</string>
+    <string name="a2_mea37_10">a devoted admirer or enthusiast of a particular musical artist or group</string>
+    <string name="a2_mea37_11">a failure, especially in a performance or artistic work</string>
+    <string name="a2_mea37_12">a musical instrument in the woodwind family, typically made of metal or wood</string>
+    <string name="a2_mea37_13">music that is traditional to a particular community or culture, often passed down through generations</string>
+    <string name="a2_mea37_14">a stringed musical instrument with a flat body and typically six strings</string>
+    <string name="a2_mea37_15">the main singer in a musical group or performance</string>
+
+
+
+    <string name="a2_mea38_1">the words of a song</string>
+    <string name="a2_mea38_2">a device used to amplify and transmit sound, especially for vocals</string>
+    <string name="a2_mea38_3">a large ensemble of musicians playing various instruments together</string>
+    <string name="a2_mea38_4">a person who performs, such as a singer, musician, or actor</string>
+    <string name="a2_mea38_5">a musical instrument with keys that produces sound when struck by hammers</string>
+    <string name="a2_mea38_6">to be able to interpret and play music from written notation</string>
+    <string name="a2_mea38_7">to make an audio recording of music or sound</string>
+    <string name="a2_mea38_8">a repeated phrase or line in a song</string>
+    <string name="a2_mea38_9">a pattern of beats or sounds that create a musical flow</string>
+    <string name="a2_mea38_10">written music in the form of a score that shows the arrangement of parts for different instruments</string>
+    <string name="a2_mea38_11">having a calming or comforting effect</string>
+    <string name="a2_mea38_12">a group of musical instruments that are played by plucking or bowing strings</string>
+    <string name="a2_mea38_13">showing deep consideration or reflection</string>
+    <string name="a2_mea38_14">a brass musical instrument with valves that produces sound through the player\'s lips</string>
+    <string name="a2_mea38_15">a musical instrument with strings that are played by drawing a bow across them</string>
+
+
+
+    <string name="a2_mea39_1">the way of life in a city or urban area</string>
+    <string name="a2_mea39_2">the act of sharing information or ideas between individuals or groups</string>
+    <string name="a2_mea39_3">the organized provision of medical care and services to maintain health</string>
+    <string name="a2_mea39_4">the movement of information from one place to another</string>
+    <string name="a2_mea39_5">measures taken to protect computer systems and networks from cyber threats</string>
+    <string name="a2_mea39_6">a live transmission of an event or program through media</string>
+    <string name="a2_mea39_7">the psychological and emotional well-being of an individual</string>
+    <string name="a2_mea39_8">assistance or advice provided via the internet or digital platforms</string>
+    <string name="a2_mea39_9">a person who regularly writes or shares content online through a blog</string>
+    <string name="a2_mea39_10">belonging to or concerning an individual person</string>
+    <string name="a2_mea39_11">working from a location that is not the traditional workplace</string>
+    <string name="a2_mea39_12">the simulation of human intelligence processes by computer systems</string>
+    <string name="a2_mea39_13">to distribute or provide access to something with others</string>
+    <string name="a2_mea39_14">information that relates to an identifiable person</string>
+    <string name="a2_mea39_15">accepted standards of behavior within a society or community</string>
+
+
+
+    <string name="a2_mea40_1">economic activity related to producing goods and services</string>
+    <string name="a2_mea40_2">an organization, establishment, or society for a specific purpose</string>
+    <string name="a2_mea40_3">a realm or domain ruled by a king or queen</string>
+    <string name="a2_mea40_4">to investigate or examine closely</string>
+    <string name="a2_mea40_5">energy generated from atomic reactions</string>
+    <string name="a2_mea40_6">a cause or explanation for an action, behavior, or event</string>
+    <string name="a2_mea40_7">to resist or defy authority or control</string>
+    <string name="a2_mea40_8">financial aid provided for academic study</string>
+    <string name="a2_mea40_9">a temporary work stoppage by a group of employees to demand changes</string>
+    <string name="a2_mea40_10">a strong and fast-moving stream of something</string>
+    <string name="a2_mea40_11">a test of the performance, qualities, or suitability of someone or something</string>
+    <string name="a2_mea40_12">a person who has been harmed, injured, or killed</string>
+    <string name="a2_mea40_13">to express a choice or opinion by marking a ballot</string>
+    <string name="a2_mea40_14">use or expend carelessly, extravagantly, or to no purpose</string>
+    <string name="a2_mea40_15">a lack of strength or firmness</string>
+
+
+
+    <string name="a2_mea41_1">a space or room at the top of a building, often under the roof</string>
+    <string name="a2_mea41_2">the lowest floor of a building, often partially below ground level</string>
+    <string name="a2_mea41_3">a large building containing many separate apartments or flats</string>
+    <string name="a2_mea41_4">a piece of furniture with multiple drawers for storing clothes</string>
+    <string name="a2_mea41_5">comfortable and pleasant, creating a feeling of warmth</string>
+    <string name="a2_mea41_6">to add furnishings or decorative details to a room or space</string>
+    <string name="a2_mea41_7">not physically connected to another structure or building</string>
+    <string name="a2_mea41_8">a short road that leads from the street to a building or house</string>
+    <string name="a2_mea41_9">characterized by refined beauty and sophistication</string>
+    <string name="a2_mea41_10">extremely large in size</string>
+    <string name="a2_mea41_11">the main entrance door of a house or building</string>
+    <string name="a2_mea41_12">a corridor or passageway that leads from the entrance to other rooms</string>
+    <string name="a2_mea41_13">a fence or boundary formed by a line of closely planted shrubs or bushes</string>
+    <string name="a2_mea41_14">a large area with multiple buildings, often containing many homes</string>
+    <string name="a2_mea41_15">a woman who owns and rents out property to tenants</string>
+
+
+
+    <string name="a2_mea42_1">an area of grass that is kept mowed and maintained</string>
+    <string name="a2_mea42_2">a device that is used to fasten or secure something</string>
+    <string name="a2_mea42_3">to change one\'s place of residence or position</string>
+    <string name="a2_mea42_4">a community or district where people live</string>
+    <string name="a2_mea42_5">to apply paint to a surface to give it color or protection</string>
+    <string name="a2_mea42_6">a covered area at the entrance of a building</string>
+    <string name="a2_mea42_7">to pay money to use someone else\'s property temporarily</string>
+    <string name="a2_mea42_8">having a lot of space or room</string>
+    <string name="a2_mea42_9">a window in a roof that allows natural light to enter</string>
+    <string name="a2_mea42_10">a series of steps that allows passage between different levels</string>
+    <string name="a2_mea42_11">to clean an area by brushing away dirt or debris</string>
+    <string name="a2_mea42_12">showing good taste or style</string>
+    <string name="a2_mea42_13">lacking good taste or style</string>
+    <string name="a2_mea42_14">extremely small in size</string>
+    <string name="a2_mea42_15">causing discomfort or unease</string>
+
+
+
+    <string name="a2_mea43_1">a type of nut with a hard shell and a seed inside</string>
+    <string name="a2_mea43_2">cooked in an oven, usually referring to bread or pastries</string>
+    <string name="a2_mea43_3">a container made of woven material, used for carrying or storing things</string>
+    <string name="a2_mea43_4">a type of edible seed that grows in pods on plants</string>
+    <string name="a2_mea43_5">cooked by boiling in liquid</string>
+    <string name="a2_mea43_6">a store that sells books</string>
+    <string name="a2_mea43_7">a small, sweet, baked bread roll</string>
+    <string name="a2_mea43_8">a vegetable with a compact head of white flowers</string>
+    <string name="a2_mea43_9">a room in a store where customers can try on clothes</string>
+    <string name="a2_mea43_10">a person who makes and sells sweets and desserts</string>
+    <string name="a2_mea43_11">a type of cereal plant with kernels on the cob</string>
+    <string name="a2_mea43_12">thin slices of potato that are fried until they become crisp</string>
+    <string name="a2_mea43_13">cooked by frying in oil or fat</string>
+    <string name="a2_mea43_14">a strong-smelling bulb used as a seasoning</string>
+    <string name="a2_mea43_15">a spicy root used as a flavoring in cooking</string>
+
+
+
+    <string name="a2_mea44_1">a large round fruit with sweet flesh and seeds in the middle</string>
+    <string name="a2_mea44_2">a store that sells pets and pet supplies</string>
+    <string name="a2_mea44_3">a type of bread or pastry that is rolled into a spiral shape</string>
+    <string name="a2_mea44_4">a type of fish that is often pink in color</string>
+    <string name="a2_mea44_5">a large glass window in a store where products are displayed</string>
+    <string name="a2_mea44_6">a small shellfish with a long tail and a sweet flavor</string>
+    <string name="a2_mea44_7">a small open-air market or booth</string>
+    <string name="a2_mea44_8">cooked by exposing to steam or hot vapor</string>
+    <string name="a2_mea44_9">cooked by simmering slowly in liquid</string>
+    <string name="a2_mea44_10">a store that sells toys</string>
+    <string name="a2_mea44_11">a wheeled cart or basket used for transporting goods</string>
+    <string name="a2_mea44_12">a type of freshwater fish</string>
+    <string name="a2_mea44_13">a type of fish often used for canning and sushi</string>
+    <string name="a2_mea44_14">a storage area for wine bottles</string>
+    <string name="a2_mea44_15">the yellow part of an egg</string>
+
+
+
+
+    <string name="a2_mea45_1">Product identification code.</string>
+    <string name="a2_mea45_2">Favorable deal on goods or services.</string>
+    <string name="a2_mea45_3">Statement of owed money.</string>
+    <string name="a2_mea45_4">Temporarily receive, usually money.</string>
+    <string name="a2_mea45_5">Money returned after purchase.</string>
+    <string name="a2_mea45_6">Converting one currency into another.</string>
+    <string name="a2_mea45_7">Reduced price for items.</string>
+    <string name="a2_mea45_8">Secure storage for valuables.</string>
+    <string name="a2_mea45_9">Price reduction to encourage buying.</string>
+    <string name="a2_mea45_10">Money spent on various purposes.</string>
+    <string name="a2_mea45_11">Payment for service or privilege.</string>
+    <string name="a2_mea45_12">Reserved sum of money for a purpose.</string>
+    <string name="a2_mea45_13">Item offered at low cost.</string>
+    <string name="a2_mea45_14">To a large extent or degree.</string>
+    <string name="a2_mea45_15">Earnings from various sources.</string>
+
+
+
+
+    <string name="a2_mea46_1">Tag indicating information or identity.</string>
+    <string name="a2_mea46_2">Provide something temporarily.</string>
+    <string name="a2_mea46_3">Survey one\'s surroundings.</string>
+    <string name="a2_mea46_4">Portion out of a hundred.</string>
+    <string name="a2_mea46_5">Positive financial gain.</string>
+    <string name="a2_mea46_6">Proof of purchase.</string>
+    <string name="a2_mea46_7">Decrease in size, amount, or value.</string>
+    <string name="a2_mea46_8">Funds set aside for future use.</string>
+    <string name="a2_mea46_9">Ownership portion in a company.</string>
+    <string name="a2_mea46_10">Steal items from a store.</string>
+    <string name="a2_mea46_11">Quickly buy up all available stock.</string>
+    <string name="a2_mea46_12">Accumulate a supply of something.</string>
+    <string name="a2_mea46_13">Government-imposed financial charge.</string>
+    <string name="a2_mea46_14">Exchange of goods or services.</string>
+    <string name="a2_mea46_15">Subtle pattern to prevent counterfeiting.</string>
+
+
+
+    <string name="a2_mea47_1">Accomplishment or success.</string>
+    <string name="a2_mea47_2">Evade or prevent something.</string>
+    <string name="a2_mea47_3">Recognition or prize.</string>
+    <string name="a2_mea47_4">Financially destitute.</string>
+    <string name="a2_mea47_5">Well-known person.</string>
+    <string name="a2_mea47_6">Pursue or follow closely.</string>
+    <string name="a2_mea47_7">Skill in creating things by hand.</string>
+    <string name="a2_mea47_8">Handle or manage.</string>
+    <string name="a2_mea47_9">Substance used for medical purposes.</string>
+    <string name="a2_mea47_10">Lack of success or achievement.</string>
+    <string name="a2_mea47_11">Public recognition and attention.</string>
+    <string name="a2_mea47_12">Wealth or prosperity.</string>
+    <string name="a2_mea47_13">Accomplish or complete a task.</string>
+    <string name="a2_mea47_14">Obtain or acquire.</string>
+    <string name="a2_mea47_15">Section of a publication with rumors and stories about people.</string>
+
+
+
+    <string name="a2_mea48_1">An obstacle or barrier to overcome.</string>
+    <string name="a2_mea48_2">Significant or of great importance.</string>
+    <string name="a2_mea48_3">Someone who experiences frequent failures or defeats.</string>
+    <string name="a2_mea48_4">Make a mistake or fail at something.</string>
+    <string name="a2_mea48_5">Exceptional or excellent, standing out from the rest.</string>
+    <string name="a2_mea48_6">Engage in a performance or activity.</string>
+    <string name="a2_mea48_7">Noteworthy or extraordinary.</string>
+    <string name="a2_mea48_8">Omit or pass over something intentionally.</string>
+    <string name="a2_mea48_9">Fame and recognition in the entertainment industry.</string>
+    <string name="a2_mea48_10">Achieve a desired goal or outcome.</string>
+    <string name="a2_mea48_11">Positive outcome or achievement.</string>
+    <string name="a2_mea48_12">Taking one\'s own life intentionally.</string>
+    <string name="a2_mea48_13">Inherent skill or aptitude in a particular field.</string>
+    <string name="a2_mea48_14">Familiar or recognized by many people.</string>
+    <string name="a2_mea48_15">Having substantial wealth or financial stability.</string>
+
+
+
+    <string name="a2_mea49_1">In reality; in fact.</string>
+    <string name="a2_mea49_2">Nearly; not quite.</string>
+    <string name="a2_mea49_3">Almost certainly or definitely.</string>
+    <string name="a2_mea49_4">Extremely important or vital.</string>
+    <string name="a2_mea49_5">Causing strong aversion or disgust.</string>
+    <string name="a2_mea49_6">Boring or lacking interest.</string>
+    <string name="a2_mea49_7">Particularly or notably.</string>
+    <string name="a2_mea49_8">Exquisitely beautiful or well-crafted.</string>
+    <string name="a2_mea49_9">Dark or gloomy in appearance or mood.</string>
+    <string name="a2_mea49_10">Extremely beautiful or attractive.</string>
+    <string name="a2_mea49_11">Elegantly and smoothly moving or performing.</string>
+    <string name="a2_mea49_12">Nevertheless; on the other hand.</string>
+    <string name="a2_mea49_13">As an alternative or substitution.</string>
+    <string name="a2_mea49_14">Impressively grand or splendid.</string>
+    <string name="a2_mea49_15">Related to the sea or ocean.</string>
+
+
+
+    <string name="a2_mea50_1">Difficult to understand or explain; enigmatic.</string>
+    <string name="a2_mea50_2">Belonging to one\'s place of birth or origin.</string>
+    <string name="a2_mea50_3">Distinguished by high moral qualities or character.</string>
+    <string name="a2_mea50_4">Being the first form; not derived from something else.</string>
+    <string name="a2_mea50_5">Likely to be the case or true; most likely.</string>
+    <string name="a2_mea50_6">Appropriate or suitable in the given context.</string>
+    <string name="a2_mea50_7">Having an unusual or eccentric quality.</string>
+    <string name="a2_mea50_8">Exceptionally good or excellent in quality.</string>
+    <string name="a2_mea50_9">As a result or consequence of that.</string>
+    <string name="a2_mea50_10">In this way; consequently.</string>
+    <string name="a2_mea50_11">Completely or entirely.</string>
+    <string name="a2_mea50_12">Related to tourism; appealing to tourists.</string>
+    <string name="a2_mea50_13">Able to be seen or perceived.</string>
+    <string name="a2_mea50_14">Friendly and receptive to guests or newcomers.</string>
+    <string name="a2_mea50_15">Lacking strong opinions or character; indecisive.</string>
 
 </resources>

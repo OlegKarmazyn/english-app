@@ -238,7 +238,7 @@
     <string name="b1_les_7_04">desperate</string>
     <string name="b1_les_7_05">doubt</string>
     <string name="b1_les_7_06">enraged</string>
-    <string name="b1_les_7_07">eye to eye</string>
+    <string name="b1_les_7_07">see eye to eye</string>
     <string name="b1_les_7_08">fed up</string>
     <string name="b1_les_7_09">forever</string>
     <string name="b1_les_7_10">hassle</string>
@@ -254,7 +254,7 @@
     <string name="b1_les_7_04_1">отчаянный</string>
     <string name="b1_les_7_05_1">сомневаться</string>
     <string name="b1_les_7_06_1">разъяренный</string>
-    <string name="b1_les_7_07_1">глаза в глаза</string>
+    <string name="b1_les_7_07_1">c глазу на глаз</string>
     <string name="b1_les_7_08_1">пресытившийся</string>
     <string name="b1_les_7_09_1">навсегда</string>
     <string name="b1_les_7_10_1">преграда</string>
@@ -700,7 +700,7 @@
     <string name="b1_les_21_04">channel hopping</string>
     <string name="b1_les_21_05">classified ad</string>
     <string name="b1_les_21_06">cue card</string>
-    <string name="b1_les_21_07">docu-drama</string>
+    <string name="b1_les_21_07">docudrama</string>
     <string name="b1_les_21_08">entertaining</string>
     <string name="b1_les_21_09">entitle</string>
     <string name="b1_les_21_10">initiate</string>
@@ -1554,7 +1554,7 @@
     <string name="b1_les_46_15_1">утомлять</string>
 
 
-    <string name="b1_les_47_01">advertize</string>
+    <string name="b1_les_47_01">advertise</string>
     <string name="b1_les_47_02">brand equity</string>
     <string name="b1_les_47_03">brand identity</string>
     <string name="b1_les_47_04">brand loyalty</string>
