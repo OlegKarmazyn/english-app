@@ -25,7 +25,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words1"
+                    android:id="@+id/englishWord1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -44,7 +44,7 @@
                     android:visibility="visible" />
 
                 <TextView
-                    android:id="@+id/words1_1"
+                    android:id="@+id/translateWord1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -72,7 +72,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words2"
+                    android:id="@+id/englishWord2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -90,7 +90,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words2_1"
+                    android:id="@+id/translateWord2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -102,7 +102,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -117,7 +117,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words3"
+                    android:id="@+id/englishWord3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -135,7 +135,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words3_1"
+                    android:id="@+id/translateWord3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -147,7 +147,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -162,7 +162,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words4"
+                    android:id="@+id/englishWord4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -180,7 +180,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words4_1"
+                    android:id="@+id/translateWord4"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -192,7 +192,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -207,7 +207,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words5"
+                    android:id="@+id/englishWord5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -225,7 +225,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words5_1"
+                    android:id="@+id/translateWord5"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -237,7 +237,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -252,7 +252,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words6"
+                    android:id="@+id/englishWord6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -270,7 +270,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words6_1"
+                    android:id="@+id/translateWord6"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -282,7 +282,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -297,7 +297,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words7"
+                    android:id="@+id/englishWord7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -315,7 +315,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words7_1"
+                    android:id="@+id/translateWord7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -327,7 +327,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -342,7 +342,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words8"
+                    android:id="@+id/englishWord8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -360,7 +360,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words8_1"
+                    android:id="@+id/translateWord8"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -372,7 +372,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -387,7 +387,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words9"
+                    android:id="@+id/englishWord9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -405,7 +405,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words9_1"
+                    android:id="@+id/translateWord9"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -417,7 +417,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -432,7 +432,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words10"
+                    android:id="@+id/englishWord10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -450,7 +450,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words10_1"
+                    android:id="@+id/translateWord10"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -462,7 +462,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -477,7 +477,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words11"
+                    android:id="@+id/englishWord11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -495,7 +495,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words11_1"
+                    android:id="@+id/translateWord11"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -507,7 +507,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -522,7 +522,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words12"
+                    android:id="@+id/englishWord12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -540,7 +540,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words12_1"
+                    android:id="@+id/translateWord12"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -552,7 +552,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -567,7 +567,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words13"
+                    android:id="@+id/englishWord13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -585,7 +585,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words13_1"
+                    android:id="@+id/translateWord13"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -597,7 +597,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -612,7 +612,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words14"
+                    android:id="@+id/englishWord14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -630,7 +630,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words14_1"
+                    android:id="@+id/translateWord14"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -642,7 +642,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -657,7 +657,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/words15"
+                    android:id="@+id/englishWord15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -675,7 +675,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/words15_1"
+                    android:id="@+id/translateWord15"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -687,7 +687,7 @@
                     android:paddingTop="15dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="15dp"
-                    android:text="1"
+                    android:text=""
                     android:textColor="@android:color/black"
                     android:textSize="15sp"
                     android:textStyle="bold"
@@ -705,6 +705,7 @@
         android:onClick="next_learn"
         android:visibility="gone"
         app:srcCompat="@android:drawable/ic_media_next"
-        tools:ignore="OnClick" />
+        tools:ignore="OnClick"
+        android:contentDescription="next level" />
 
 </FrameLayout>

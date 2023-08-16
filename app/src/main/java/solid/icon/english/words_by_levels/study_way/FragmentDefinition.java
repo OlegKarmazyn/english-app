@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
-import java.util.Locale;
 
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
@@ -121,7 +120,7 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
                 @Override
                 public void onInit(int status) {
                     if (status == TextToSpeech.SUCCESS) {
-                        int result = mTTS.setLanguage(Locale.US);
+                        int result = mTTS.setLanguage(locale);
 
                         if (result == TextToSpeech.LANG_MISSING_DATA
                                 || result == TextToSpeech.LANG_NOT_SUPPORTED) {

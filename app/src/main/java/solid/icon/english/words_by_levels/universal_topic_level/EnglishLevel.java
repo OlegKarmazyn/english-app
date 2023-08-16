@@ -45,11 +45,14 @@ public class EnglishLevel extends ActivityGlobal {
                 showActionBar(true, lessonNames[2]);
             }
         } catch (Exception e) {/*empty*/}
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         goDateBack();
         setAdapter();
     }
-
 
     private void setAdapter() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);

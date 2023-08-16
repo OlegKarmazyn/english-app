@@ -1,7 +1,6 @@
 package solid.icon.english.words_by_levels.study_way;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -16,15 +15,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.fragment.app.FragmentActivity;
-
 import java.io.Serializable;
-import java.util.Locale;
-import java.util.Objects;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.MyFragmentActivity;
+import solid.icon.english.dialogs.TitleDialog;
 
 public class FragmentTest extends MyFragmentActivity implements View.OnClickListener {
 
@@ -32,7 +28,6 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
         defineArrays();
-        // Required empty public constructor
     }
 
     @Override
@@ -165,7 +160,7 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
 
         mTTS = new TextToSpeech(context, status -> {
             if (status == TextToSpeech.SUCCESS) {
-                int result = mTTS.setLanguage(Locale.US);
+                int result = mTTS.setLanguage(locale);
 
                 if (result == TextToSpeech.LANG_MISSING_DATA
                         || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -182,7 +177,6 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
         text1_visible_gone();
         full_array();
         change_test();
-
     }
 
     @Override
@@ -581,16 +575,14 @@ public class FragmentTest extends MyFragmentActivity implements View.OnClickList
                     isRight[i] = false;
                 }
                 if (counter_true > 12) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                    builder.setMessage("Do you want to mark this topic as done?");
-                    builder.setPositiveButton("OK", (dialog, id) -> {
-                        // User clicked OK button
+                    TitleDialog dialog = new TitleDialog(context);
+                    dialog.setTitle("Do you want to mark this topic as done?");
+                    dialog.setPositiveButton("OK", pos -> {
                         mark_topic_as_done();
                     });
-                    builder.setNegativeButton("cancel", (dialog, id) -> {
-                        // User cancelled the dialog
+
+                    dialog.setNegativeButton("cancel", (neg) -> {
                     });
-                    AlertDialog dialog = builder.create();
                     dialog.show();
                 }
                 counter_true = 0;

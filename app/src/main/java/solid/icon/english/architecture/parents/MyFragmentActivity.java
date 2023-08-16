@@ -1,7 +1,10 @@
 package solid.icon.english.architecture.parents;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
@@ -10,6 +13,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.preference.PreferenceManager;
 
 import java.io.Serializable;
+import java.util.Locale;
 
 import solid.icon.english.architecture.res.Res_array;
 
@@ -22,6 +26,7 @@ public abstract class MyFragmentActivity extends Fragment {
     protected float pitch = 0, //tone
             speechRate = 0; //speed
     protected TextToSpeech mTTS;
+    protected Locale locale = Locale.UK;
 
     protected FragmentActivity context;
 
@@ -33,6 +38,26 @@ public abstract class MyFragmentActivity extends Fragment {
         if (pitch == 0) {
             pitch = PreferenceManager.getDefaultSharedPreferences(context).getFloat("pitch", 0.7f);
             speechRate = PreferenceManager.getDefaultSharedPreferences(context).getFloat("speechRate", 0.7f);
+        }
+    }
+
+    protected void setVisibility(View view, boolean isVisible) {
+        if (isVisible) {
+            if (view.getVisibility() == View.VISIBLE)
+                return;
+            view.setAlpha(0);
+            view.setVisibility(View.VISIBLE);
+            view.animate().alpha(1).setListener(null);
+        } else {
+            if (view.getVisibility() == View.GONE)
+                return;
+            view.animate().alpha(0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    view.setVisibility(View.GONE);
+                    view.setAlpha(1);
+                }
+            });
         }
     }
 

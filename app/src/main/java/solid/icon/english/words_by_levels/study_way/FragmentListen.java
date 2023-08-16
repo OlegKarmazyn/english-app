@@ -19,8 +19,8 @@ import android.widget.Toast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
-import java.util.Locale;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.MyFragmentActivity;
 
@@ -31,13 +31,11 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         this.what_level = what_level;
         this.num_of_topic = num_of_topic;
         defineArrays();
-        // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_listen, container, false);
     }
 
@@ -62,8 +60,6 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
 
     private int[] counter_true = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
     private int count = 0;
-
-    private FloatingActionButton el_next;
 
     private void listen() {
         speak(getResources().getString((main_1[num_of_topic][id[i]])));
@@ -116,6 +112,7 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         super.onPause();
         setVisibleGoneTextView();
         count = 0;
+        hideSoftKeyboard(editText);
     }
 
     private void setVisibleGoneTextView() {
@@ -141,7 +138,6 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         imageView = context.findViewById(R.id.img_listen);
         animationDrawable = (AnimationDrawable) imageView.getDrawable();
 
-
         editText = context.findViewById(R.id.wrileEdit);
         editText.setText("");
 
@@ -151,25 +147,23 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         words2 = context.findViewById(R.id.words_by_transl);
 
         fab = context.findViewById(R.id.fab);
+        fab.setVisibility(View.GONE);
 
         full_array();
 
         f = editText.getBackground();
 
-        el_next = context.findViewById(R.id.el_next);
-
         text_check_listen = context.findViewById(R.id.text_check_listen);
 
         imageView.setOnClickListener(this);
         fab.setOnClickListener(this);
-        el_next.setOnClickListener(this);
         text_check_listen.setOnClickListener(this);
 
         mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if (status == TextToSpeech.SUCCESS) {
-                    int result = mTTS.setLanguage(Locale.US);
+                    int result = mTTS.setLanguage(locale);
 
                     if (result == TextToSpeech.LANG_MISSING_DATA
                             || result == TextToSpeech.LANG_NOT_SUPPORTED) {
@@ -187,7 +181,20 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
 
         words1.setClickable(false);
         words2.setClickable(false);
+    }
 
+    private void animationDrawable() {
+        animationDrawable.start();
+        listen();
+        new CountDownTimer(1000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+            }
+
+            public void onFinish() {
+                animationDrawable.stop();
+            }
+        }.start();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -229,12 +236,15 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
             case R.id.fab:
                 if (i < main_1[num_of_topic].length - 1) {
                     i++;
-                    //editText.setBackgroundResource(R.color.colorPrimary);
                     lay_write_learn.setVisibility(View.GONE);
                     fab.setVisibility(View.GONE);
+                    setVisibility(text_check_listen, true);
                     editText.setText("");
                     words_get_text();
                     editText.setBackground(f);
+                    setVisibility(imageView, true);
+                    animationDrawable();
+                    showSoftKeyboard(editText);
                 } else {
                     count = 0;
                     for (int c : counter_true) {
@@ -242,12 +252,11 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
                             count++;
                         }
                     }
-                    Toast mess = Toast.makeText(context, "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
-                    mess.show();
-//                    el_next.setVisibility(View.VISIBLE);
+                    Toasty.success(context, "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG).show();
+
                     fab.setVisibility(View.GONE);
                     for (int i = 0; i < 15; i++) {
-                        counter_true[i] = 5;
+                        counter_true[i] = -1;
                     }
                     i = 0;
                 }
