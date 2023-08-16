@@ -1,6 +1,7 @@
 package solid.icon.english.words_by_levels.universal_topic_level;
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -26,14 +26,14 @@ import solid.icon.english.words_by_levels.study_way.MainStudyAction;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
 
-    private Context context;
-    private String[] name_topic;
-    private boolean[] key_topics;
-    private EnglishLevel englishLevel;
+    private final Context context;
+    private final String[] name_topic;
+    private final boolean[] key_topics;
+    private final EnglishLevel englishLevel;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
 
-    public RecycleAdapter(Context context, String[] name_topic, boolean [] key_topics, EnglishLevel englishLevel) {
+    public RecycleAdapter(Context context, String[] name_topic, boolean[] key_topics, EnglishLevel englishLevel) {
         this.context = context;
         this.name_topic = name_topic;
         this.key_topics = key_topics;
@@ -47,8 +47,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
-        return new MyViewHolder(view);
+        return new MyViewHolder(inflater.inflate(R.layout.my_row, parent, false));
     }
 
     ConstraintLayout last_layout;
@@ -60,62 +59,55 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         holder.title.setText(name_topic[position]);
         holder.checkBox.setChecked(key_topics[position]);
 
-        if (key_topics[position]){
+        if (key_topics[position]) {
             holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        }else{
+        } else {
             holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
         }
 
-        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String mod_key = String.valueOf(englishLevel.level) + position;
-                Log.e("onBindViewHolder", mod_key + " - " + isChecked);
-                if(isChecked) {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-                    editor.putBoolean(mod_key, isChecked);
-                    editor.apply();
-                }
-                else {
-                    holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
-                    editor.putBoolean(mod_key, isChecked);
-                    editor.apply();
-                }
+        holder.checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            String mod_key = String.valueOf(englishLevel.level) + position;
+            Log.e("onBindViewHolder", mod_key + " - " + isChecked);
+            if (isChecked) {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+                editor.putBoolean(mod_key, isChecked);
+                editor.apply();
+            } else {
+                holder.title.setPaintFlags(holder.title.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+                editor.putBoolean(mod_key, isChecked);
+                editor.apply();
             }
         });
 
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(isLast) {
-                    if(last_position == 0){
-                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row_no));
-                    }else if(last_position == name_topic.length - 1){
-                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row_no));
-                    }else{
-                        last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row_no));
-                    }
+        holder.constraintLayout.setOnClickListener(v -> {
+            if (isLast) {
+                if (last_position == 0) {
+                    last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row_no));
+                } else if (last_position == name_topic.length - 1) {
+                    last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row_no));
+                } else {
+                    last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row_no));
                 }
-                isLast = true;
-                last_layout = holder.constraintLayout;
-                last_position = position;
-
-                Intent intent = new Intent(context, MainStudyAction.class);
-                intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
-                intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
-                intent.putExtra("title", name_topic[position]);
-
-                if(position == 0){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row));
-                }else if(position == name_topic.length - 1){
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row));
-                }else{
-                    holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row));
-                }
-
-                context.startActivity(intent);
-                englishLevel.overridePendingTransition(R.anim.move_right_in_activity, R.anim.move_left_out_activity);
             }
+            isLast = true;
+            last_layout = holder.constraintLayout;
+            last_position = position;
+
+            Intent intent = new Intent(context, MainStudyAction.class);
+            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.num_of_topic), position);
+            intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), englishLevel.level);
+            intent.putExtra("title", name_topic[position]);
+
+            if (position == 0) {
+                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row));
+            } else if (position == name_topic.length - 1) {
+                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_bottom_row));
+            } else {
+                holder.constraintLayout.setBackground(context.getResources().getDrawable(R.drawable.clicked_middle_row));
+            }
+
+            context.startActivity(intent,
+                    ActivityOptions.makeSceneTransitionAnimation(englishLevel).toBundle());
         });
 
     }
@@ -125,9 +117,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         return name_topic.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView title; CheckBox checkBox; ConstraintLayout constraintLayout;
+        TextView title;
+        CheckBox checkBox;
+        ConstraintLayout constraintLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

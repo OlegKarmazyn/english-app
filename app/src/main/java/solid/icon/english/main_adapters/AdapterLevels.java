@@ -2,6 +2,7 @@ package solid.icon.english.main_adapters;
 
 
 import android.annotation.SuppressLint;
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.MainActivity;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
@@ -91,11 +93,13 @@ public class AdapterLevels extends RecyclerView.Adapter<AdapterLevels.MyViewHold
         });
 
         holder.constraintLayout.setOnClickListener(v -> {
-            //Toasty.info(context, context.getString(R.string.this_part_in_developing)).show();
+            if (position == 2)
+                Toasty.info(context, context.getString(R.string.this_part_in_developing)).show();
             Intent intent = new Intent(context, EnglishLevel.class);
             intent.putExtra(String.valueOf(ActivityGlobal.KeysExtra.level), lessonsNames[position]);
             Log.e("lessonsNames", lessonsNames[position].name());
-            context.startActivity(intent);
+            context.startActivity(intent,
+                    ActivityOptions.makeSceneTransitionAnimation(mainActivity).toBundle());
         });
     }
 

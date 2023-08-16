@@ -87,7 +87,7 @@ public class MainStudyAction extends ActivityGlobal {
 
         switch (item.getItemId()) {
             case android.R.id.home:
-                this.finish();
+                this.finishAfterTransition();
                 return true;
 
             case R.id.replay_mipmap:

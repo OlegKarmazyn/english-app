@@ -19,8 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.Serializable;
-
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 
@@ -103,12 +101,6 @@ public abstract class ActivityGlobal extends AppCompatActivity {
         getWindow().setEnterTransition(enterTransitionSet);
         getWindow().setExitTransition(exitTransitionSet);
     }
-
-//    protected void goToAccount() {
-//        startActivity(new Intent(context, AuthActivity.class),
-//                ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-//    }
-
 
     protected void goToActivity(Intent intent) {
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation((Activity) context);
