@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/lin_1"
+                android:id="@+id/linearLay1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -29,7 +29,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words1"
+                        android:id="@+id/englishWord1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -48,7 +48,7 @@
                         android:visibility="visible" />
 
                     <TextView
-                        android:id="@+id/words1_1"
+                        android:id="@+id/translateWord1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -82,7 +82,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_2"
+                android:id="@+id/linearLay2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -94,7 +94,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words2"
+                        android:id="@+id/englishWord2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -112,7 +112,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words2_1"
+                        android:id="@+id/translateWord2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -145,7 +145,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_3"
+                android:id="@+id/linearLay3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -157,7 +157,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words3"
+                        android:id="@+id/englishWord3"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -175,7 +175,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words3_1"
+                        android:id="@+id/translateWord3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -208,7 +208,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_4"
+                android:id="@+id/linearLay4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -220,7 +220,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words4"
+                        android:id="@+id/englishWord4"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -238,7 +238,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words4_1"
+                        android:id="@+id/translateWord4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -271,7 +271,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_5"
+                android:id="@+id/linearLay5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -283,7 +283,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words5"
+                        android:id="@+id/englishWord5"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -301,7 +301,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words5_1"
+                        android:id="@+id/translateWord5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -334,7 +334,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_6"
+                android:id="@+id/linearLay6"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -346,7 +346,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words6"
+                        android:id="@+id/englishWord6"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -364,7 +364,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words6_1"
+                        android:id="@+id/translateWord6"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -397,7 +397,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_7"
+                android:id="@+id/linearLay7"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -409,7 +409,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words7"
+                        android:id="@+id/englishWord7"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -427,7 +427,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words7_1"
+                        android:id="@+id/translateWord7"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -460,7 +460,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_8"
+                android:id="@+id/linearLay8"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -472,7 +472,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words8"
+                        android:id="@+id/englishWord8"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -490,7 +490,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words8_1"
+                        android:id="@+id/translateWord8"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -523,7 +523,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_9"
+                android:id="@+id/linearLay9"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -535,7 +535,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words9"
+                        android:id="@+id/englishWord9"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -553,7 +553,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words9_1"
+                        android:id="@+id/translateWord9"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -586,7 +586,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_10"
+                android:id="@+id/linearLay10"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -598,7 +598,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words10"
+                        android:id="@+id/englishWord10"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -616,7 +616,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words10_1"
+                        android:id="@+id/translateWord10"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -649,7 +649,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_11"
+                android:id="@+id/linearLay11"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -661,7 +661,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words11"
+                        android:id="@+id/englishWord11"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -679,7 +679,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words11_1"
+                        android:id="@+id/translateWord11"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -712,7 +712,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_12"
+                android:id="@+id/linearLay12"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -724,7 +724,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words12"
+                        android:id="@+id/englishWord12"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -742,7 +742,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words12_1"
+                        android:id="@+id/translateWord12"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -775,7 +775,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_13"
+                android:id="@+id/linearLay13"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -787,7 +787,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words13"
+                        android:id="@+id/englishWord13"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -805,7 +805,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words13_1"
+                        android:id="@+id/translateWord13"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -838,7 +838,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_14"
+                android:id="@+id/linearLay14"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -850,7 +850,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words14"
+                        android:id="@+id/englishWord14"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -868,7 +868,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words14_1"
+                        android:id="@+id/translateWord14"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -901,7 +901,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/lin_15"
+                android:id="@+id/linearLay15"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -914,7 +914,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/words15"
+                        android:id="@+id/englishWord15"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
@@ -932,7 +932,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/words15_1"
+                        android:id="@+id/translateWord15"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

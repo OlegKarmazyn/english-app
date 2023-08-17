@@ -10,19 +10,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.MyFragmentActivity;
+import solid.icon.english.databinding.FragmentListenBinding;
 
 
 public class FragmentListen extends MyFragmentActivity implements View.OnClickListener {
@@ -34,28 +31,21 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_listen, container, false);
+        binding = FragmentListenBinding.inflate(inflater);
+        return binding.getRoot();
     }
 
+    private FragmentListenBinding binding;
+
     private AnimationDrawable animationDrawable = null;
-    private ImageView imageView = null;
 
     private int i = 0;
 
     private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
-    private EditText editText;
-
-    private LinearLayout lay_write_learn = null;
-
-    private TextView words1, words2;
-
-    private FloatingActionButton fab;
     Drawable f;
-
-    TextView text_check_listen;
 
 
     private int[] counter_true = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
@@ -66,19 +56,15 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
     }
 
     private boolean isTrueWords() {
-        String eT = editText.getText().toString();
+        String eT = binding.writeEdit.getText().toString();
         eT = eT.trim();
         String res = (getResources().getString((main_1[num_of_topic][id[i]])));
-        if ((eT.equals(res))) {
-            return true;
-        } else {
-            return false;
-        }
+        return eT.equals(res);
     }
 
     private void words_get_text() {
-        words1.setText(main_1[num_of_topic][id[i]]);
-        words2.setText(main_2[num_of_topic][id[i]]);
+        binding.englishWord.setText(main_1[num_of_topic][id[i]]);
+        binding.translationWord.setText(main_2[num_of_topic][id[i]]);
     }
 
     private void full_array() {
@@ -112,12 +98,12 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         super.onPause();
         setVisibleGoneTextView();
         count = 0;
-        hideSoftKeyboard(editText);
+        hideSoftKeyboard(binding.writeEdit);
     }
 
     private void setVisibleGoneTextView() {
-        lay_write_learn.setVisibility(View.GONE);
-        editText.setBackground(f);
+        binding.layoutWrite.setVisibility(View.GONE);
+        binding.writeEdit.setBackground(f);
     }
 
     @Override
@@ -135,29 +121,20 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
         }
 
         assert context != null;
-        imageView = context.findViewById(R.id.img_listen);
-        animationDrawable = (AnimationDrawable) imageView.getDrawable();
+        animationDrawable = (AnimationDrawable) binding.imgListen.getDrawable();
 
-        editText = context.findViewById(R.id.wrileEdit);
-        editText.setText("");
+        binding.writeEdit.setText("");
 
-        lay_write_learn = context.findViewById(R.id.lay_write_learn);
-
-        words1 = context.findViewById(R.id.words_by_engl);
-        words2 = context.findViewById(R.id.words_by_transl);
-
-        fab = context.findViewById(R.id.fab);
-        fab.setVisibility(View.GONE);
+        binding.fab.setVisibility(View.GONE);
 
         full_array();
 
-        f = editText.getBackground();
+        f = binding.writeEdit.getBackground();
 
-        text_check_listen = context.findViewById(R.id.text_check_listen);
 
-        imageView.setOnClickListener(this);
-        fab.setOnClickListener(this);
-        text_check_listen.setOnClickListener(this);
+        binding.imgListen.setOnClickListener(this);
+        binding.fab.setOnClickListener(this);
+        binding.checkButton.setOnClickListener(this);
 
         mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
             @Override
@@ -179,8 +156,8 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
 
         words_get_text();
 
-        words1.setClickable(false);
-        words2.setClickable(false);
+        binding.englishWord.setClickable(false);
+        binding.translationWord.setClickable(false);
     }
 
     private void animationDrawable() {
@@ -201,7 +178,7 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_listen:
+            case R.id.imgListen:
                 animationDrawable.start();
                 listen();
                 new CountDownTimer(1000, 1000) {
@@ -217,34 +194,34 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
                 }.start();
 
                 break;
-            case R.id.text_check_listen:
-                lay_write_learn.setVisibility(View.VISIBLE);
+            case R.id.checkButton:
+                binding.layoutWrite.setVisibility(View.VISIBLE);
 
                 if (isTrueWords()) {
                     if (counter_true[i] != 0) {
                         counter_true[i] = 1;
                     }
 
-                    editText.setBackgroundResource(R.color.back_true);
-                    fab.setVisibility(View.VISIBLE);
+                    binding.writeEdit.setBackgroundResource(R.color.back_true);
+                    binding.fab.setVisibility(View.VISIBLE);
                 } else {
                     counter_true[i] = 0;
-                    editText.setBackgroundResource(R.color.back_false);
+                    binding.writeEdit.setBackgroundResource(R.color.back_false);
                 }
                 break;
 
             case R.id.fab:
                 if (i < main_1[num_of_topic].length - 1) {
                     i++;
-                    lay_write_learn.setVisibility(View.GONE);
-                    fab.setVisibility(View.GONE);
-                    setVisibility(text_check_listen, true);
-                    editText.setText("");
+                    binding.layoutWrite.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
+                    setVisibility(binding.checkButton, true);
+                    binding.writeEdit.setText("");
                     words_get_text();
-                    editText.setBackground(f);
-                    setVisibility(imageView, true);
+                    binding.writeEdit.setBackground(f);
+                    setVisibility(binding.imgListen, true);
                     animationDrawable();
-                    showSoftKeyboard(editText);
+                    showSoftKeyboard(binding.writeEdit);
                 } else {
                     count = 0;
                     for (int c : counter_true) {
@@ -254,7 +231,7 @@ public class FragmentListen extends MyFragmentActivity implements View.OnClickLi
                     }
                     Toasty.success(context, "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG).show();
 
-                    fab.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
                     for (int i = 0; i < 15; i++) {
                         counter_true[i] = -1;
                     }

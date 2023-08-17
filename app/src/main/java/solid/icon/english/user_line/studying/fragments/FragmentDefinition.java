@@ -9,12 +9,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +19,7 @@ import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.databinding.FragmentDefinitionBinding;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 public class FragmentDefinition extends UserFragmentActivity implements View.OnClickListener {
@@ -35,20 +31,13 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_definition, container, false);
+        binding = FragmentDefinitionBinding.inflate(inflater);
+        return binding.getRoot();
     }
 
-    private EditText editText = null;
+    FragmentDefinitionBinding binding;
 
-    private LinearLayout lay_definition_transl = null;
-
-    private TextView words1, words2, meaning;
-
-    private FloatingActionButton fab;
     Drawable f;
-
-    private TextView text_check;
 
     private int i = 0;
 
@@ -60,22 +49,13 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
         context = getActivity();
 
         assert context != null;
-        editText = context.findViewById(R.id.writeEdit);
-        meaning = getActivity().findViewById(R.id.meaning);
-        meaning.setClickable(false);
+        binding.meaning.setClickable(false);
 
-        words1 = getActivity().findViewById(R.id.words_by_engl);
-        words2 = getActivity().findViewById(R.id.words_by_transl);
+        f = binding.writeEdit.getBackground();
 
-        lay_definition_transl = getActivity().findViewById(R.id.lay_definition_transl);
-
-        fab = getActivity().findViewById(R.id.fab);
-
-        text_check = getActivity().findViewById(R.id.text_check);
-
-        fab.setOnClickListener(this);
-        text_check.setOnClickListener(this);
-        words1.setOnClickListener(this);
+        binding.fab.setOnClickListener(this);
+        binding.checkButton.setOnClickListener(this);
+        binding.englishWord.setOnClickListener(this);
 
         mTTS = new TextToSpeech(getActivity(), status -> {
             if (status == TextToSpeech.SUCCESS) {
@@ -92,18 +72,18 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
             }
         });
 
-        words2.setClickable(false);
+        binding.englishWord.setClickable(false);
         words_get_text();
 
         if (!isCreate) {
             isCreate = true;
-            f = editText.getBackground();
+            f = binding.writeEdit.getBackground();
             Arrays.fill(counter_flip, 2); //must be neither 0 nor 1
         }
 
         setNotVisibleItem(0);
 
-        editText.setOnKeyListener((v, keyCode, event) -> {
+        binding.writeEdit.setOnKeyListener((v, keyCode, event) -> {
             if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 clickCheckButton();
                 return true;
@@ -114,20 +94,20 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
 
     private void words_get_text() {
         try {
-            words1.setText(englishTranslArr[id[i]]);
-            words2.setText(rusTranslArr[id[i]]);
-            meaning.setText(definitionArr[id[i]]);
+            binding.englishWord.setText(englishTranslArr[id[i]]);
+            binding.translateWord.setText(rusTranslArr[id[i]]);
+            binding.meaning.setText(definitionArr[id[i]]);
         } catch (ArrayIndexOutOfBoundsException e) {
-            words1.setClickable(false);
-            words2.setClickable(false);
-            text_check.setClickable(false);
+            binding.englishWord.setClickable(false);
+            binding.translateWord.setClickable(false);
+            binding.checkButton.setClickable(false);
             Toasty.warning(context, getString(R.string.list_definition_is_empty)).show();
         }
     }
 
     private boolean isTrueWords() {
         try {
-            String eT = editText.getText().toString();
+            String eT = binding.writeEdit.getText().toString();
             eT = eT.trim();
             String res = englishTranslArr[id[i]];
             return eT.equals(res);
@@ -137,18 +117,18 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
     }
 
     private void clickCheckButton() {
-        setVisibility(lay_definition_transl, true);
+        setVisibility(binding.definitionLayout, true);
         if (isTrueWords()) {
             if (counter_flip[i] != 0)
                 counter_flip[i] = 1;
 
-            editText.setBackgroundResource(R.color.back_true);
-            setVisibility(fab, true);
-            setVisibility(text_check, false);
-            hideSoftKeyboard(editText);
+            binding.writeEdit.setBackgroundResource(R.color.back_true);
+            setVisibility(binding.fab, true);
+            setVisibility(binding.checkButton, false);
+            hideSoftKeyboard(binding.writeEdit);
         } else {
             counter_flip[i] = 0;
-            editText.setBackgroundResource(R.color.back_false);
+            binding.writeEdit.setBackgroundResource(R.color.back_false);
         }
     }
 
@@ -156,20 +136,20 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.text_check:
+            case R.id.checkButton:
                 clickCheckButton();
                 break;
 
             case R.id.fab:
                 if (i < size - 1) { // todo CHECK
                     i++;
-                    lay_definition_transl.setVisibility(View.GONE);
-                    fab.setVisibility(View.GONE);
-                    setVisibility(text_check, true);
-                    editText.setText("");
+                    binding.definitionLayout.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
+                    setVisibility(binding.checkButton, true);
+                    binding.writeEdit.setText("");
                     words_get_text();
-                    editText.setBackground(f);
-                    showSoftKeyboard(editText);
+                    binding.writeEdit.setBackground(f);
+                    showSoftKeyboard(binding.writeEdit);
                 } else {
                     int count = 0;
                     for (int c : counter_flip) {
@@ -178,10 +158,10 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
                         }
                     }
                     Toasty.success(context, "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
-                    setVisibility(fab, false);
+                    setVisibility(binding.fab, false);
                 }
                 break;
-            case R.id.words_by_engl:
+            case R.id.englishWord:
                 speak(englishTranslArr[id[i]]);
                 break;
         }
@@ -190,6 +170,6 @@ public class FragmentDefinition extends UserFragmentActivity implements View.OnC
     @Override
     public void onPause() {
         super.onPause();
-        hideSoftKeyboard(editText);
+        hideSoftKeyboard(binding.writeEdit);
     }
 }

@@ -11,13 +11,10 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import androidx.annotation.NonNull;
 
 import java.util.List;
 import java.util.Locale;
@@ -26,6 +23,7 @@ import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.UserFragmentActivity;
 import solid.icon.english.architecture.room.WordModel;
+import solid.icon.english.databinding.FragmentListenBinding;
 import solid.icon.english.user_line.studying.StudyActivity;
 
 
@@ -33,16 +31,16 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
     public FragmentListen(List<WordModel> wordModelList, String topic, String subTopic, StudyActivity studyActivity) {
         super(wordModelList, topic, subTopic, studyActivity);
-
-        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_listen, container, false);
+        binding = FragmentListenBinding.inflate(inflater);
+        return binding.getRoot();
     }
+
+    private FragmentListenBinding binding;
 
     private AnimationDrawable animationDrawable = null;
     private ImageView imageView = null;
@@ -50,12 +48,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private int i = 0;
     private int count = 0;
 
-    private LinearLayout lay_write_learn = null;
-    private EditText editText;
-    private TextView words1, words2;
-    private TextView text_check_listen;
-
-    private FloatingActionButton fab;
     Drawable f;
 
     @Override
@@ -63,27 +55,15 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         super.onResume();
         context = getActivity();
 
-        imageView = getActivity().findViewById(R.id.img_listen);
         animationDrawable = (AnimationDrawable) imageView.getDrawable();
 
+        binding.writeEdit.setText("");
 
-        editText = getActivity().findViewById(R.id.wrileEdit);
-        editText.setText("");
-
-        lay_write_learn = getActivity().findViewById(R.id.lay_write_learn);
-
-        words1 = getActivity().findViewById(R.id.words_by_engl);
-        words2 = getActivity().findViewById(R.id.words_by_transl);
-
-        fab = getActivity().findViewById(R.id.fab);
-
-        f = editText.getBackground();
-
-        text_check_listen = getActivity().findViewById(R.id.text_check_listen);
+        f = binding.writeEdit.getBackground();
 
         imageView.setOnClickListener(this);
-        fab.setOnClickListener(this);
-        text_check_listen.setOnClickListener(this);
+        binding.fab.setOnClickListener(this);
+        binding.checkButton.setOnClickListener(this);
 
         mTTS = new TextToSpeech(getActivity(), status -> {
             if (status == TextToSpeech.SUCCESS) {
@@ -102,8 +82,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
         words_get_text();
 
-        words1.setClickable(false);
-        words2.setClickable(false);
+        binding.englishWord.setClickable(false);
+        binding.translationWord.setClickable(false);
 
         setNotVisibleItem(0);
         firstSettingVisibility();
@@ -111,8 +91,8 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
 
     private void firstSettingVisibility() {
         imageView.setVisibility(View.VISIBLE);
-        text_check_listen.setVisibility(View.VISIBLE);
-        editText.setOnKeyListener((v, keyCode, event) -> {
+        binding.checkButton.setVisibility(View.VISIBLE);
+        binding.writeEdit.setOnKeyListener((v, keyCode, event) -> {
             if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
                 clickCheckButton();
                 return true;
@@ -127,15 +107,15 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     }
 
     private boolean isTrueWords() {
-        String eT = editText.getText().toString();
+        String eT = binding.writeEdit.getText().toString();
         eT = eT.trim();
         String res = (englishTranslArr[id[i]]);
         return eT.equals(res);
     }
 
     private void words_get_text() {
-        words1.setText(englishTranslArr[id[i]]);
-        words2.setText(rusTranslArr[id[i]]);
+        binding.englishWord.setText(englishTranslArr[id[i]]);
+        binding.translationWord.setText(rusTranslArr[id[i]]);
     }
 
     @Override
@@ -143,13 +123,13 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         super.onPause();
         setVisibleGoneTextView();
         count = 0;
-        hideSoftKeyboard(editText);
+        hideSoftKeyboard(binding.writeEdit);
     }
 
     private void setVisibleGoneTextView() {
-        lay_write_learn.setVisibility(View.GONE);
-        editText.setBackground(f);
-        fab.setVisibility(View.GONE);
+        binding.layoutWrite.setVisibility(View.GONE);
+        binding.writeEdit.setBackground(f);
+        binding.fab.setVisibility(View.GONE);
     }
 
     private void animationDrawable() {
@@ -167,7 +147,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     }
 
     private void clickCheckButton() {
-        lay_write_learn.setVisibility(View.VISIBLE);
+        binding.layoutWrite.setVisibility(View.VISIBLE);
 
         if (isTrueWords()) {
             setVisibility(imageView, false);
@@ -175,13 +155,13 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                 counter_flip[i] = 1;
             }
 
-            editText.setBackgroundResource(R.color.back_true);
-            setVisibility(fab, true);
-            setVisibility(text_check_listen, false);
-            hideSoftKeyboard(editText);
+            binding.writeEdit.setBackgroundResource(R.color.back_true);
+            setVisibility(binding.fab, true);
+            setVisibility(binding.checkButton, false);
+            hideSoftKeyboard(binding.writeEdit);
         } else {
             counter_flip[i] = 0;
-            editText.setBackgroundResource(R.color.back_false);
+            binding.writeEdit.setBackgroundResource(R.color.back_false);
         }
     }
 
@@ -189,26 +169,26 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_listen:
+            case R.id.imgListen:
                 animationDrawable();
                 break;
 
-            case R.id.text_check_listen:
+            case R.id.checkButton:
                 clickCheckButton();
                 break;
 
             case R.id.fab:
                 if (i < englishTranslArr.length - 1) {
                     i++;
-                    lay_write_learn.setVisibility(View.GONE);
-                    fab.setVisibility(View.GONE);
-                    setVisibility(text_check_listen, true);
-                    editText.setText("");
+                    binding.layoutWrite.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
+                    setVisibility(binding.checkButton, true);
+                    binding.writeEdit.setText("");
                     words_get_text();
-                    editText.setBackground(f);
+                    binding.writeEdit.setBackground(f);
                     setVisibility(imageView, true);
                     animationDrawable();
-                    showSoftKeyboard(editText);
+                    showSoftKeyboard(binding.writeEdit);
                 } else {
                     count = 0;
                     for (int c : counter_flip) {
@@ -218,7 +198,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     }
                     Toasty.success(context, "Correct answers " + count + " of " + englishTranslArr.length, Toast.LENGTH_LONG).show();
 
-                    fab.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
                     for (int i = 0; i < size; i++) {
                         counter_flip[i] = -1;
                     }

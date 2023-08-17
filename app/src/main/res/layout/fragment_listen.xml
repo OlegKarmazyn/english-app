@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/lay_write_learn"
+                android:id="@+id/layoutWrite"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="15dp"
@@ -25,7 +25,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/words_by_engl"
+                    android:id="@+id/englishWord"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -45,7 +45,7 @@
                     android:visibility="visible" />
 
                 <TextView
-                    android:id="@+id/words_by_transl"
+                    android:id="@+id/translationWord"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
@@ -66,7 +66,7 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/wrileEdit"
+                android:id="@+id/writeEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -94,7 +94,7 @@
                 android:contentDescription="@string/go_next" />
 
             <ImageView
-                android:id="@+id/img_listen"
+                android:id="@+id/imgListen"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
@@ -104,7 +104,7 @@
                 android:src="@drawable/frame_anim" />
 
             <TextView
-                android:id="@+id/text_check_listen"
+                android:id="@+id/checkButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

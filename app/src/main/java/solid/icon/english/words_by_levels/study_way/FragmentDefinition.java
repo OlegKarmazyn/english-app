@@ -8,12 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 
@@ -21,6 +16,7 @@ import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.parents.MyFragmentActivity;
 import solid.icon.english.architecture.res.Res_array;
+import solid.icon.english.databinding.FragmentDefinitionBinding;
 
 
 public class FragmentDefinition extends MyFragmentActivity implements View.OnClickListener {
@@ -34,8 +30,11 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_definition, container, false);
+        binding = FragmentDefinitionBinding.inflate(inflater);
+        return binding.getRoot();
     }
+
+    FragmentDefinitionBinding binding;
 
     private int i = 0;
 
@@ -43,23 +42,11 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
 
     private int[] id = new int[]{55, 66, 77, 88, 99, 100, 110, 112, 114, 124, 1234, 124, 768, 345, 98};
 
-    private EditText editText = null;
+    private Drawable f;
 
-    private LinearLayout lay_definition_transl = null;
-
-    private TextView words1, words2;
-
-    private FloatingActionButton fab;
-    Drawable f;
-
-    private TextView text_check;
 
     private int[] counter_true = new int[]{5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
     private int count = 0;
-
-    private TextView meaning = null;
-
-    private FloatingActionButton el_next;
 
     private static boolean isNotTranslating = true;
 
@@ -93,28 +80,15 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
             }
 
             assert context != null;
-            editText = context.findViewById(R.id.writeEdit);
-            meaning = context.findViewById(R.id.meaning);
-            meaning.setClickable(false);
-
-            words1 = context.findViewById(R.id.words_by_engl);
-            words2 = context.findViewById(R.id.words_by_transl);
-
-            lay_definition_transl = context.findViewById(R.id.lay_definition_transl);
-
-            fab = context.findViewById(R.id.fab);
-
-            text_check = context.findViewById(R.id.text_check);
-
-            el_next = context.findViewById(R.id.el_next);
+            binding.meaning.setClickable(false);
 
             full_array();
 
-            f = editText.getBackground();
+            f = binding.writeEdit.getBackground();
 
-            fab.setOnClickListener(this);
-            text_check.setOnClickListener(this);
-            words1.setOnClickListener(this);
+            binding.fab.setOnClickListener(this);
+            binding.checkButton.setOnClickListener(this);
+            binding.englishWord.setOnClickListener(this);
 
             mTTS = new TextToSpeech(context, new TextToSpeech.OnInitListener() {
                 @Override
@@ -134,7 +108,7 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
                 }
             });
 
-            words2.setClickable(false);
+            binding.translateWord.setClickable(false);
             words_get_text();
         }
     }
@@ -182,13 +156,13 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     }
 
     private void words_get_text() {
-        meaning.setText(main_meaning[num_of_topic][id[i]]);
-        words1.setText(main_1[num_of_topic][id[i]]);
-        words2.setText(main_2[num_of_topic][id[i]]);
+        binding.meaning.setText(main_meaning[num_of_topic][id[i]]);
+        binding.englishWord.setText(main_1[num_of_topic][id[i]]);
+        binding.translateWord.setText(main_2[num_of_topic][id[i]]);
     }
 
     private boolean isTrueWords() {
-        String eT = editText.getText().toString();
+        String eT = binding.writeEdit.getText().toString();
         eT = eT.trim();
         String res = (getResources().getString((main_1[num_of_topic][id[i]])));
         return eT.equals(res);
@@ -198,50 +172,42 @@ public class FragmentDefinition extends MyFragmentActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.text_check:
-                lay_definition_transl.setVisibility(View.VISIBLE);
+            case R.id.checkButton:
+                binding.definitionLayout.setVisibility(View.VISIBLE);
 
                 if (isTrueWords()) {
                     if (counter_true[i] != 0) {
                         counter_true[i] = 1;
                     }
 
-                    editText.setBackgroundResource(R.color.back_true);
-                    fab.setVisibility(View.VISIBLE);
+                    binding.writeEdit.setBackgroundResource(R.color.back_true);
+                    binding.fab.setVisibility(View.VISIBLE);
                 } else {
                     counter_true[i] = 0;
-                    editText.setBackgroundResource(R.color.back_false);
+                    binding.writeEdit.setBackgroundResource(R.color.back_false);
                 }
                 break;
 
             case R.id.fab:
                 if (i < main_1[num_of_topic].length - 1) {
                     i++;
-                    //editText.setBackgroundResource(R.color.colorPrimary);
-                    lay_definition_transl.setVisibility(View.GONE);
-                    fab.setVisibility(View.GONE);
-                    editText.setText("");
+                    binding.definitionLayout.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
+                    binding.writeEdit.setText("");
                     words_get_text();
-                    editText.setBackground(f);
+                    binding.writeEdit.setBackground(f);
                 } else {
                     count = 0;
-                    for (int c : counter_true) {
-                        if (c == 1) {
+                    for (int c : counter_true)
+                        if (c == 1)
                             count++;
-                        }
-                    }
+
                     Toast mess = Toast.makeText(context, "Correct answers " + count + " of " + main_1[num_of_topic].length, Toast.LENGTH_LONG);
                     mess.show();
-                    el_next.setVisibility(View.VISIBLE);
-                    fab.setVisibility(View.GONE);
+                    binding.fab.setVisibility(View.GONE);
                 }
                 break;
-//            case R.id.el_next:
-//                Intent intent = new Intent(context, ListenWrite.class);
-//                startActivity(intent);
-//                context.finish();
-//                break;
-            case R.id.words_by_engl:
+            case R.id.englishWord:
                 listen();
                 break;
         }

@@ -56,7 +56,7 @@ class SettingsActivity : ActivityGlobal() {
                 val locale = Locale.ENGLISH
                 val result: Int = mTTS.setLanguage(locale)
                 if (result == TextToSpeech.LANG_MISSING_DATA
-                    || result == TextToSpeech.LANG_NOT_SUPPORTED
+                        || result == TextToSpeech.LANG_NOT_SUPPORTED
                 ) {
                     Log.e("TTS", "Language not supported")
                 } //empty else
