@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
+import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.words_by_levels.study_way.MainStudyAction;
@@ -80,6 +81,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         });
 
         holder.constraintLayout.setOnClickListener(v -> {
+            if (englishLevel.level == ActivityGlobal.LessonsName.B2) { //fix - update it after adding translation for B2 words
+                if (position > 9) {
+                    Toasty.warning(context, "This part - in developing").show();
+                    return;
+                }
+            }
             if (isLast) {
                 if (last_position == 0) {
                     last_layout.setBackground(context.getResources().getDrawable(R.drawable.clicked_top_row_no));
@@ -108,6 +115,7 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
             context.startActivity(intent,
                     ActivityOptions.makeSceneTransitionAnimation(englishLevel).toBundle());
+
         });
 
     }
