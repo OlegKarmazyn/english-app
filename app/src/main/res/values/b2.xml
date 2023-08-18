@@ -17,21 +17,21 @@
     <string name="b2_les_0_14">wander around</string>
     <string name="b2_les_0_15">well-dressed</string>
 
-    <string name="b2_les_0_01_1">обвинять кого-то в чем-то</string>
-    <string name="b2_les_0_02_1">болтун</string>
-    <string name="b2_les_0_03_1">классный</string>
-    <string name="b2_les_0_04_1">безразличный</string>
-    <string name="b2_les_0_05_1">добродушный</string>
-    <string name="b2_les_0_06_1">тоскующий по дому</string>
-    <string name="b2_les_0_07_1">бессмертный</string>
-    <string name="b2_les_0_08_1">неуверенный</string>
-    <string name="b2_les_0_09_1">необратимый</string>
-    <string name="b2_les_0_10_1">сверхъестественный</string>
-    <string name="b2_les_0_11_1">пренебрегать</string>
-    <string name="b2_les_0_12_1">прикидываться</string>
-    <string name="b2_les_0_13_1">тщеславный</string>
-    <string name="b2_les_0_14_1">бродить</string>
-    <string name="b2_les_0_15_1">хорошо одетый</string>
+    <string name="b2_les_0_01_1">обвинувачувати когось в чомусь</string>
+    <string name="b2_les_0_02_1">балакучий</string>
+    <string name="b2_les_0_03_1">стильний</string>
+    <string name="b2_les_0_04_1">байдужий</string>
+    <string name="b2_les_0_05_1">доброзичливий</string>
+    <string name="b2_les_0_06_1">сумуючий за дому</string>
+    <string name="b2_les_0_07_1">безсмертний</string>
+    <string name="b2_les_0_08_1">ненадійний</string>
+    <string name="b2_les_0_09_1">незворотний</string>
+    <string name="b2_les_0_10_1">дивовижний</string>
+    <string name="b2_les_0_11_1">нехтувати</string>
+    <string name="b2_les_0_12_1">прикидаючись</string>
+    <string name="b2_les_0_13_1">тщеславний</string>
+    <string name="b2_les_0_14_1">блукати навколо</string>
+    <string name="b2_les_0_15_1">добре вдягнутий</string>
 
 
 
@@ -51,20 +51,20 @@
     <string name="b2_les_1_14">shake hands</string>
     <string name="b2_les_1_15">couch potato</string>
 
-    <string name="b2_les_1_01_1">разразиться</string>
-    <string name="b2_les_1_02_1">болтун</string>
-    <string name="b2_les_1_03_1">бросающий в дрожь</string>
-    <string name="b2_les_1_04_1">хитрый</string>
-    <string name="b2_les_1_05_1">льстивый</string>
-    <string name="b2_les_1_06_1">болтающийся</string>
-    <string name="b2_les_1_07_1">любитель повеселиться</string>
-    <string name="b2_les_1_08_1">добродушный</string>
-    <string name="b2_les_1_09_1">лихорадочный</string>
-    <string name="b2_les_1_10_1">спокойный</string>
-    <string name="b2_les_1_11_1">хромать</string>
-    <string name="b2_les_1_12_1">коммуникабельный</string>
-    <string name="b2_les_1_13_1">безрассудный</string>
-    <string name="b2_les_1_14_1">обменяться рукопожатием</string>
+    <string name="b2_les_1_01_1">виплиснути/вибухнути емоційно</string>
+    <string name="b2_les_1_02_1">балакучий</string>
+    <string name="b2_les_1_03_1">кидаючий у тремтіння</string>
+    <string name="b2_les_1_04_1">хитрий</string>
+    <string name="b2_les_1_05_1">льстивий</string>
+    <string name="b2_les_1_06_1">той що бовтається(висить)</string>
+    <string name="b2_les_1_07_1">любитель розваг</string>
+    <string name="b2_les_1_08_1">добродушний</string>
+    <string name="b2_les_1_09_1">метушливий</string>
+    <string name="b2_les_1_10_1">розслаблений</string>
+    <string name="b2_les_1_11_1">млявий</string>
+    <string name="b2_les_1_12_1">комунікабельний</string>
+    <string name="b2_les_1_13_1">безрозсудний</string>
+    <string name="b2_les_1_14_1">потиснути руки</string>
     <string name="b2_les_1_15_1">лежебока</string>
 
 
@@ -85,21 +85,21 @@
     <string name="b2_les_2_14">well-dressed</string>
     <string name="b2_les_2_15">wimp</string>
 
-    <string name="b2_les_2_01_1">шикарный</string>
-    <string name="b2_les_2_02_1">враждебный</string>
-    <string name="b2_les_2_03_1">неуверенный</string>
-    <string name="b2_les_2_04_1">беспорядочный</string>
-    <string name="b2_les_2_05_1">простой</string>
-    <string name="b2_les_2_06_1">замкнутый</string>
-    <string name="b2_les_2_07_1">рисковый</string>
-    <string name="b2_les_2_08_1">неряшливый</string>
-    <string name="b2_les_2_09_1">небрежный</string>
-    <string name="b2_les_2_10_1">спортивного вида</string>
-    <string name="b2_les_2_11_1">обсуждать</string>
-    <string name="b2_les_2_12_1">экстремал</string>
-    <string name="b2_les_2_13_1">тщеславный</string>
-    <string name="b2_les_2_14_1">хорошо одетый</string>
-    <string name="b2_les_2_15_1">бесхарактерный человек</string>
+    <string name="b2_les_2_01_1">стильний</string>
+    <string name="b2_les_2_02_1">ворожий</string>
+    <string name="b2_les_2_03_1">невпевнений</string>
+    <string name="b2_les_2_04_1">безладний</string>
+    <string name="b2_les_2_05_1">простий</string>
+    <string name="b2_les_2_06_1">замкнутий</string>
+    <string name="b2_les_2_07_1">ризикуючий</string>
+    <string name="b2_les_2_08_1">недбалий</string>
+    <string name="b2_les_2_09_1">неохайний</string>
+    <string name="b2_les_2_10_1">спортивний</string>
+    <string name="b2_les_2_11_1">обговорювати</string>
+    <string name="b2_les_2_12_1">шукач гострих відчуттів</string>
+    <string name="b2_les_2_13_1">пихатий</string>
+    <string name="b2_les_2_14_1">добре одягнений</string>
+    <string name="b2_les_2_15_1">слабак</string>
 
 
 
@@ -119,21 +119,21 @@
     <string name="b2_les_3_14">surrender</string>
     <string name="b2_les_3_15">tell off</string>
 
-    <string name="b2_les_3_01_1">обвинять кого-то в</string>
-    <string name="b2_les_3_02_1">одобрять что-либо</string>
-    <string name="b2_les_3_03_1">запугивать</string>
-    <string name="b2_les_3_04_1">признаваться</string>
-    <string name="b2_les_3_05_1">завестись</string>
-    <string name="b2_les_3_06_1">сплетничать</string>
-    <string name="b2_les_3_07_1">в центре внимания</string>
-    <string name="b2_les_3_08_1">влияние</string>
-    <string name="b2_les_3_09_1">возражать</string>
-    <string name="b2_les_3_10_1">вздыхать</string>
-    <string name="b2_les_3_11_1">язык жестов</string>
-    <string name="b2_les_3_12_1">уставиться на</string>
-    <string name="b2_les_3_13_1">заикаться</string>
-    <string name="b2_les_3_14_1">сдаваться</string>
-    <string name="b2_les_3_15_1">отчитывать</string>
+    <string name="b2_les_3_01_1">звинувачувати когось у</string>
+    <string name="b2_les_3_02_1">затверджувати щось</string>
+    <string name="b2_les_3_03_1">запугувати</string>
+    <string name="b2_les_3_04_1">зізнаватися</string>
+    <string name="b2_les_3_05_1">напружуватися</string>
+    <string name="b2_les_3_06_1">ляси точити</string>
+    <string name="b2_les_3_07_1">на першому плані</string>
+    <string name="b2_les_3_08_1">вплив</string>
+    <string name="b2_les_3_09_1">заперечувати проти</string>
+    <string name="b2_les_3_10_1">зітхати</string>
+    <string name="b2_les_3_11_1">мова жестів</string>
+    <string name="b2_les_3_12_1">дивитися(влупитися) на</string>
+    <string name="b2_les_3_13_1">заїкатися</string>
+    <string name="b2_les_3_14_1">здаватися</string>
+    <string name="b2_les_3_15_1">лаяти</string>
 
 
 
@@ -153,21 +153,21 @@
     <string name="b2_les_4_14">yawn</string>
     <string name="b2_les_4_15">yell at</string>
 
-    <string name="b2_les_4_01_1">предчувствующий недоброе</string>
-    <string name="b2_les_4_02_1">возражать</string>
-    <string name="b2_les_4_03_1">отрицать</string>
-    <string name="b2_les_4_04_1">четко изложить</string>
-    <string name="b2_les_4_05_1">объясниться</string>
-    <string name="b2_les_4_06_1">стонать</string>
-    <string name="b2_les_4_07_1">бормотать</string>
-    <string name="b2_les_4_08_1">прикидываться</string>
-    <string name="b2_les_4_09_1">пересматривать</string>
-    <string name="b2_les_4_10_1">переписанный</string>
-    <string name="b2_les_4_11_1">резкий и остроумный ответ</string>
-    <string name="b2_les_4_12_1">клеветать</string>
-    <string name="b2_les_4_13_1">выражать сочувствие</string>
-    <string name="b2_les_4_14_1">зевать</string>
-    <string name="b2_les_4_15_1">вопить на</string>
+    <string name="b2_les_4_01_1">переймаючийся</string>
+    <string name="b2_les_4_02_1">суперечити</string>
+    <string name="b2_les_4_03_1">заперечувати</string>
+    <string name="b2_les_4_04_1">донести</string>
+    <string name="b2_les_4_05_1">пояснити</string>
+    <string name="b2_les_4_06_1">стогнати</string>
+    <string name="b2_les_4_07_1">бурмотіти</string>
+    <string name="b2_les_4_08_1">прикидатися</string>
+    <string name="b2_les_4_09_1">переосмислювати</string>
+    <string name="b2_les_4_10_1">переписаний</string>
+    <string name="b2_les_4_11_1">різко відповісти</string>
+    <string name="b2_les_4_12_1">клевета</string>
+    <string name="b2_les_4_13_1">співчувати</string>
+    <string name="b2_les_4_14_1">позіхати</string>
+    <string name="b2_les_4_15_1">кричати на</string>
 
 
 
@@ -187,21 +187,21 @@
     <string name="b2_les_5_14">oversleep</string>
     <string name="b2_les_5_15">terrify</string>
 
-    <string name="b2_les_5_01_1">стремление</string>
-    <string name="b2_les_5_02_1">уходить</string>
-    <string name="b2_les_5_03_1">многообещающий</string>
-    <string name="b2_les_5_04_1">обескураживающий</string>
-    <string name="b2_les_5_05_1">сонный</string>
-    <string name="b2_les_5_06_1">фантазировать</string>
-    <string name="b2_les_5_07_1">прощальный обед</string>
-    <string name="b2_les_5_08_1">одолжение</string>
-    <string name="b2_les_5_09_1">вымысел</string>
-    <string name="b2_les_5_10_1">избавиться от</string>
-    <string name="b2_les_5_11_1">тоскующий по дому</string>
-    <string name="b2_les_5_12_1">необходимый</string>
-    <string name="b2_les_5_13_1">понимание чего-либо</string>
-    <string name="b2_les_5_14_1">проспать</string>
-    <string name="b2_les_5_15_1">ужасать</string>
+    <string name="b2_les_5_01_1">прагнення</string>
+    <string name="b2_les_5_02_1">піти геть</string>
+    <string name="b2_les_5_03_1">викликаючий</string>
+    <string name="b2_les_5_04_1">лякаючий</string>
+    <string name="b2_les_5_05_1">сонний</string>
+    <string name="b2_les_5_06_1">фантазувати</string>
+    <string name="b2_les_5_07_1">прощальний обід</string>
+    <string name="b2_les_5_08_1">послуга</string>
+    <string name="b2_les_5_09_1">вигадка</string>
+    <string name="b2_les_5_10_1">позбутися від</string>
+    <string name="b2_les_5_11_1">тоскуючий за домом</string>
+    <string name="b2_les_5_12_1">незамінний</string>
+    <string name="b2_les_5_13_1">розуміння чогось</string>
+    <string name="b2_les_5_14_1">проспати</string>
+    <string name="b2_les_5_15_1">жахати</string>
 
 
 
@@ -221,21 +221,21 @@
     <string name="b2_les_6_14">wander around</string>
     <string name="b2_les_6_15">worst-case scenario</string>
 
-    <string name="b2_les_6_01_1">мечта всей жизни</string>
+    <string name="b2_les_6_01_1">мрія на все життя</string>
     <string name="b2_les_6_02_1">кошмар</string>
-    <string name="b2_les_6_03_1">рухнуть</string>
-    <string name="b2_les_6_04_1">восторжествовать</string>
-    <string name="b2_les_6_05_1">пророческий</string>
-    <string name="b2_les_6_06_1">повторяющийся сон</string>
-    <string name="b2_les_6_07_1">напоминающий</string>
-    <string name="b2_les_6_08_1">знойный</string>
-    <string name="b2_les_6_09_1">подавлять</string>
-    <string name="b2_les_6_10_1">снимать</string>
-    <string name="b2_les_6_11_1">правдивый</string>
-    <string name="b2_les_6_12_1">недостижимый</string>
-    <string name="b2_les_6_13_1">уязвимый</string>
-    <string name="b2_les_6_14_1">скитаться</string>
-    <string name="b2_les_6_15_1">худший вариант развития событий</string>
+    <string name="b2_les_6_03_1">різко впасти</string>
+    <string name="b2_les_6_04_1">зрадіти перемозі</string>
+    <string name="b2_les_6_05_1">пророчий</string>
+    <string name="b2_les_6_06_1">повторюваний сон</string>
+    <string name="b2_les_6_07_1">нагадуючий</string>
+    <string name="b2_les_6_08_1">спекотний</string>
+    <string name="b2_les_6_09_1">пригнічувати</string>
+    <string name="b2_les_6_10_1">знімати</string>
+    <string name="b2_les_6_11_1">правдивий</string>
+    <string name="b2_les_6_12_1">недосяжний</string>
+    <string name="b2_les_6_13_1">вразливий</string>
+    <string name="b2_les_6_14_1">блукати</string>
+    <string name="b2_les_6_15_1">найгірший варіант розвитку подій</string>
 
 
 
@@ -255,21 +255,21 @@
     <string name="b2_les_7_14">ponder</string>
     <string name="b2_les_7_15">upbringing</string>
 
-    <string name="b2_les_7_01_1">неблагоприятные условия</string>
-    <string name="b2_les_7_02_1">предполагать</string>
-    <string name="b2_les_7_03_1">карьерная лестница</string>
-    <string name="b2_les_7_04_1">заговор</string>
-    <string name="b2_les_7_05_1">осудить</string>
-    <string name="b2_les_7_06_1">собачья жизнь</string>
-    <string name="b2_les_7_07_1">докатиться</string>
-    <string name="b2_les_7_08_1">вера в</string>
-    <string name="b2_les_7_09_1">родить</string>
-    <string name="b2_les_7_10_1">беглый взгляд</string>
-    <string name="b2_les_7_11_1">неработающий</string>
-    <string name="b2_les_7_12_1">бессмертный</string>
-    <string name="b2_les_7_13_1">немедленно</string>
-    <string name="b2_les_7_14_1">размышлять</string>
-    <string name="b2_les_7_15_1">воспитание</string>
+    <string name="b2_les_7_01_1">невгідні умови</string>
+    <string name="b2_les_7_02_1">припускати</string>
+    <string name="b2_les_7_03_1">кар\'єрні сходи</string>
+    <string name="b2_les_7_04_1">змова</string>
+    <string name="b2_les_7_05_1">засудити</string>
+    <string name="b2_les_7_06_1">собаче життя</string>
+    <string name="b2_les_7_07_1">докотитися (закінчити)</string>
+    <string name="b2_les_7_08_1">віра в</string>
+    <string name="b2_les_7_09_1">народити</string>
+    <string name="b2_les_7_10_1">швидкий погляд</string>
+    <string name="b2_les_7_11_1">непрацюючий</string>
+    <string name="b2_les_7_12_1">безсмертний</string>
+    <string name="b2_les_7_13_1">миттєво</string>
+    <string name="b2_les_7_14_1">роздумувати</string>
+    <string name="b2_les_7_15_1">виховання</string>
 
 
 
@@ -289,21 +289,22 @@
     <string name="b2_les_8_14">stuck</string>
     <string name="b2_les_8_15">upbeat</string>
 
-    <string name="b2_les_8_01_1">зрелый возраст</string>
-    <string name="b2_les_8_02_1">воспитывать</string>
-    <string name="b2_les_8_03_1">полный энтузиазма</string>
-    <string name="b2_les_8_04_1">необратимый</string>
-    <string name="b2_les_8_05_1">наследие</string>
-    <string name="b2_les_8_06_1">сострадание</string>
-    <string name="b2_les_8_07_1">сверхъестественный</string>
-    <string name="b2_les_8_08_1">смертность</string>
-    <string name="b2_les_8_09_1">дом престарелых</string>
-    <string name="b2_les_8_10_1">безболезненный</string>
-    <string name="b2_les_8_11_1">умирать</string>
-    <string name="b2_les_8_12_1">уход на пенсию</string>
-    <string name="b2_les_8_13_1">священный</string>
-    <string name="b2_les_8_14_1">застрявший</string>
-    <string name="b2_les_8_15_1">оптимистичный</string>
+
+    <string name="b2_les_8_01_1">дорослий вік</string>
+    <string name="b2_les_8_02_1">виховувати</string>
+    <string name="b2_les_8_03_1">зашкалювати</string>
+    <string name="b2_les_8_04_1">незворотній</string>
+    <string name="b2_les_8_05_1">спадок</string>
+    <string name="b2_les_8_06_1">милосердя</string>
+    <string name="b2_les_8_07_1">дивовижний</string>
+    <string name="b2_les_8_08_1">смертність</string>
+    <string name="b2_les_8_09_1">дом престарілих</string>
+    <string name="b2_les_8_10_1">безболісний</string>
+    <string name="b2_les_8_11_1">померти</string>
+    <string name="b2_les_8_12_1">вихід на пенсію</string>
+    <string name="b2_les_8_13_1">священний</string>
+    <string name="b2_les_8_14_1">застряглий</string>
+    <string name="b2_les_8_15_1">позитивний</string>
 
 
 
@@ -323,21 +324,22 @@
     <string name="b2_les_9_14">know-it-all</string>
     <string name="b2_les_9_15">snobbish</string>
 
-    <string name="b2_les_9_01_1">невоспитанный</string>
-    <string name="b2_les_9_02_1">фанатичный</string>
-    <string name="b2_les_9_03_1">сломя голову</string>
-    <string name="b2_les_9_04_1">круглолицый</string>
-    <string name="b2_les_9_05_1">безразличный</string>
-    <string name="b2_les_9_06_1">домосед</string>
-    <string name="b2_les_9_07_1">растрепанный</string>
-    <string name="b2_les_9_08_1">послушный</string>
-    <string name="b2_les_9_09_1">приземленный</string>
-    <string name="b2_les_9_10_1">забывчивый</string>
-    <string name="b2_les_9_11_1">веснушки</string>
-    <string name="b2_les_9_12_1">сероватый</string>
-    <string name="b2_les_9_13_1">беспристрастный</string>
-    <string name="b2_les_9_14_1">всезнайка</string>
-    <string name="b2_les_9_15_1">высокомерный</string>
+
+    <string name="b2_les_9_01_1">невихований</string>
+    <string name="b2_les_9_02_1">фанатичний</string>
+    <string name="b2_les_9_03_1">шалений темп</string>
+    <string name="b2_les_9_04_1">повненький</string>
+    <string name="b2_les_9_05_1">байдужий</string>
+    <string name="b2_les_9_06_1">лежебока</string>
+    <string name="b2_les_9_07_1">розпатланий</string>
+    <string name="b2_les_9_08_1">слухняний</string>
+    <string name="b2_les_9_09_1">приземлений</string>
+    <string name="b2_les_9_10_1">забудькуватий</string>
+    <string name="b2_les_9_11_1">веснянка</string>
+    <string name="b2_les_9_12_1">сіруватий</string>
+    <string name="b2_les_9_13_1">безпристрастний</string>
+    <string name="b2_les_9_14_1">всезнаючий</string>
+    <string name="b2_les_9_15_1">зазнаваний</string>
 
 
 
@@ -357,24 +359,25 @@
     <string name="b2_les_10_14">whiz kid</string>
     <string name="b2_les_10_15">womanizer</string>
 
-    <string name="b2_les_10_01_1">скромный</string>
-    <string name="b2_les_10_02_1">пренебрегать</string>
-    <string name="b2_les_10_03_1">чудак</string>
-    <string name="b2_les_10_04_1">прыщавый</string>
-    <string name="b2_les_10_05_1">бесцеремонный</string>
+
+    <string name="b2_les_10_01_1">скромний</string>
+    <string name="b2_les_10_02_1">нехтувати</string>
+    <string name="b2_les_10_03_1">дивак</string>
+    <string name="b2_les_10_04_1">прищавий</string>
+    <string name="b2_les_10_05_1">настирливий</string>
     <string name="b2_les_10_06_1">простак</string>
-    <string name="b2_les_10_07_1">самодовольный</string>
-    <string name="b2_les_10_08_1">подлый</string>
-    <string name="b2_les_10_09_1">колючие волосы</string>
-    <string name="b2_les_10_10_1">бесчувственный</string>
-    <string name="b2_les_10_11_1">обидчивый</string>
-    <string name="b2_les_10_12_1">заслуживающий доверия</string>
-    <string name="b2_les_10_13_1">двуличный</string>
-    <string name="b2_les_10_14_1">вундеркинд</string>
+    <string name="b2_les_10_07_1">задоволений собою</string>
+    <string name="b2_les_10_08_1">підступний</string>
+    <string name="b2_les_10_09_1">колюче волосся</string>
+    <string name="b2_les_10_10_1">товстошкірий</string>
+    <string name="b2_les_10_11_1">схильний до образ</string>
+    <string name="b2_les_10_12_1">надійний</string>
+    <string name="b2_les_10_13_1">дволикий</string>
+    <string name="b2_les_10_14_1">чудо-дитина</string>
     <string name="b2_les_10_15_1">бабник</string>
 
 
-
+<!--*************************************************-->
     <string name="b2_les_11_01">bizarre</string>
     <string name="b2_les_11_02">brainless</string>
     <string name="b2_les_11_03">brainstorming</string>
@@ -391,21 +394,22 @@
     <string name="b2_les_11_14">rely on</string>
     <string name="b2_les_11_15">unexpectedly</string>
 
-    <string name="b2_les_11_01_1">причудливый</string>
-    <string name="b2_les_11_02_1">безмозглый</string>
-    <string name="b2_les_11_03_1">мозговой штурм</string>
-    <string name="b2_les_11_04_1">с промытыми мозгами</string>
-    <string name="b2_les_11_05_1">блестящая идея</string>
-    <string name="b2_les_11_06_1">мозговитый</string>
-    <string name="b2_les_11_07_1">вызывать тревогу</string>
-    <string name="b2_les_11_08_1">облегчать</string>
-    <string name="b2_les_11_09_1">взволнованно</string>
-    <string name="b2_les_11_10_1">разобраться</string>
-    <string name="b2_les_11_11_1">распахнуться</string>
-    <string name="b2_les_11_12_1">неистово</string>
-    <string name="b2_les_11_13_1">героически</string>
-    <string name="b2_les_11_14_1">полагаться на</string>
-    <string name="b2_les_11_15_1">неожиданно</string>
+
+    <string name="b2_les_11_01_1">дивний</string>
+    <string name="b2_les_11_02_1">безмозковий</string>
+    <string name="b2_les_11_03_1">мозковий штурм</string>
+    <string name="b2_les_11_04_1">промитий мізками</string>
+    <string name="b2_les_11_05_1">відмінна думка</string>
+    <string name="b2_les_11_06_1">розумний</string>
+    <string name="b2_les_11_07_1">спричиняти обурення</string>
+    <string name="b2_les_11_08_1">полегшувати</string>
+    <string name="b2_les_11_09_1">з відчайдушною радістю</string>
+    <string name="b2_les_11_10_1">зрозуміти</string>
+    <string name="b2_les_11_11_1">відчинитися</string>
+    <string name="b2_les_11_12_1">безрозсудно</string>
+    <string name="b2_les_11_13_1">героїчно</string>
+    <string name="b2_les_11_14_1">покладатися на</string>
+    <string name="b2_les_11_15_1">неочікувано</string>
 
 
 
@@ -425,21 +429,22 @@
     <string name="b2_les_12_14">turn over</string>
     <string name="b2_les_12_15">turn up</string>
 
-    <string name="b2_les_12_01_1">резко</string>
-    <string name="b2_les_12_02_1">рассчитывать на</string>
-    <string name="b2_les_12_03_1">ладить</string>
-    <string name="b2_les_12_04_1">терпеливо</string>
-    <string name="b2_les_12_05_1">облегчение</string>
-    <string name="b2_les_12_06_1">неохотно</string>
-    <string name="b2_les_12_07_1">захлопнуть</string>
-    <string name="b2_les_12_08_1">возникнуть</string>
-    <string name="b2_les_12_09_1">поддерживать</string>
-    <string name="b2_les_12_10_1">обдумать</string>
-    <string name="b2_les_12_11_1">переговорить</string>
-    <string name="b2_les_12_12_1">поворачиваться</string>
-    <string name="b2_les_12_13_1">превращаться</string>
-    <string name="b2_les_12_14_1">переворачивать</string>
-    <string name="b2_les_12_15_1">появляться</string>
+
+    <string name="b2_les_12_01_1">різко</string>
+    <string name="b2_les_12_02_1">рахувати на</string>
+    <string name="b2_les_12_03_1">ладнати</string>
+    <string name="b2_les_12_04_1">терпляче</string>
+    <string name="b2_les_12_05_1">полегшення</string>
+    <string name="b2_les_12_06_1">неохоче</string>
+    <string name="b2_les_12_07_1">хлопнути</string>
+    <string name="b2_les_12_08_1">з\'явитися</string>
+    <string name="b2_les_12_09_1">стояти поруч</string>
+    <string name="b2_les_12_10_1">обдумати</string>
+    <string name="b2_les_12_11_1">зв\'язатися</string>
+    <string name="b2_les_12_12_1">повернутися</string>
+    <string name="b2_les_12_13_1">перетворити</string>
+    <string name="b2_les_12_14_1">перекинути</string>
+    <string name="b2_les_12_15_1">з\'явитися</string> ++
 
 
 
@@ -459,21 +464,22 @@
     <string name="b2_les_13_14">get laid off</string>
     <string name="b2_les_13_15">make a killing</string>
 
-    <string name="b2_les_13_01_1">выбиваться из графика</string>
-    <string name="b2_les_13_02_1">идти по плану</string>
-    <string name="b2_les_13_03_1">получать пособие</string>
-    <string name="b2_les_13_04_1">важная персона</string>
-    <string name="b2_les_13_05_1">обязательное для всех сторон соглашение</string>
-    <string name="b2_les_13_06_1">выйти из-под контроля</string>
-    <string name="b2_les_13_07_1">нарушение контракта</string>
-    <string name="b2_les_13_08_1">руководить</string>
-    <string name="b2_les_13_09_1">конечный срок</string>
-    <string name="b2_les_13_10_1">раскрывать</string>
-    <string name="b2_les_13_11_1">составлять</string>
-    <string name="b2_les_13_12_1">конечный потребитель</string>
-    <string name="b2_les_13_13_1">быть уволенным</string>
-    <string name="b2_les_13_14_1">попасть под сокращение</string>
-    <string name="b2_les_13_15_1">сорвать куш</string>
+
+    <string name="b2_les_13_01_1">відставати від графіку</string>
+    <string name="b2_les_13_02_1">йти за графіком</string>
+    <string name="b2_les_13_03_1">отримувати соціальну допомогу</string>
+    <string name="b2_les_13_04_1">важлива постать</string>
+    <string name="b2_les_13_05_1">зобов\'язальна угода</string>
+    <string name="b2_les_13_06_1">перекипати</string>
+    <string name="b2_les_13_07_1">порушення контракту</string>
+    <string name="b2_les_13_08_1">здійснювати</string>
+    <string name="b2_les_13_09_1">термін</string>
+    <string name="b2_les_13_10_1">розкривати</string>
+    <string name="b2_les_13_11_1">складати</string>
+    <string name="b2_les_13_12_1">кінцевий користувач</string>
+    <string name="b2_les_13_13_1">бути звільненим</string>
+    <string name="b2_les_13_14_1">бути звільненим у зв\'язку з реструктуризацією</string>
+    <string name="b2_les_13_15_1">заробити купу грошей</string>
 
 
 
@@ -493,21 +499,21 @@
     <string name="b2_les_14_14">subsidy</string>
     <string name="b2_les_14_15">working conditions</string>
 
-    <string name="b2_les_14_01_1">делегировать</string>
-    <string name="b2_les_14_02_1">справляться</string>
-    <string name="b2_les_14_03_1">выручить</string>
-    <string name="b2_les_14_04_1">приводить в исполнение</string>
-    <string name="b2_les_14_05_1">выкроить время</string>
-    <string name="b2_les_14_06_1">посредник</string>
-    <string name="b2_les_14_07_1">прибыльное дело</string>
-    <string name="b2_les_14_08_1">съезжать</string>
-    <string name="b2_les_14_09_1">душа компании</string>
-    <string name="b2_les_14_10_1">привилегия</string>
-    <string name="b2_les_14_11_1">указывать</string>
-    <string name="b2_les_14_12_1">разбираться</string>
-    <string name="b2_les_14_13_1">подавать</string>
-    <string name="b2_les_14_14_1">субсидия</string>
-    <string name="b2_les_14_15_1">условия труда</string>
+    <string name="b2_les_14_01_1">делегувати</string>
+    <string name="b2_les_14_02_1">впоратися</string>
+    <string name="b2_les_14_03_1">допомагати</string>
+    <string name="b2_les_14_04_1">впроваджувати</string>
+    <string name="b2_les_14_05_1">знайти час</string>
+    <string name="b2_les_14_06_1">посередник</string>
+    <string name="b2_les_14_07_1">джерело прибутку</string>
+    <string name="b2_les_14_08_1">виселятися</string>
+    <string name="b2_les_14_09_1">людина, що легко ладнає з людьми</string>
+    <string name="b2_les_14_10_1">перевага</string>
+    <string name="b2_les_14_11_1">вказувати</string>
+    <string name="b2_les_14_12_1">вирішувати</string>
+    <string name="b2_les_14_13_1">подавати</string>
+    <string name="b2_les_14_14_1">субсидія</string>
+    <string name="b2_les_14_15_1">умови праці</string>
 
 
 
@@ -527,21 +533,21 @@
     <string name="b2_les_15_14">rule out</string>
     <string name="b2_les_15_15">run into</string>
 
-    <string name="b2_les_15_01_1">заветное желание</string>
-    <string name="b2_les_15_02_1">преданный идее</string>
-    <string name="b2_les_15_03_1">страстно желающий</string>
-    <string name="b2_les_15_04_1">подходить</string>
-    <string name="b2_les_15_05_1">заставлять</string>
-    <string name="b2_les_15_06_1">добиваться продвижения по службе</string>
-    <string name="b2_les_15_07_1">предприимчивый</string>
-    <string name="b2_les_15_08_1">целенаправленный</string>
-    <string name="b2_les_15_09_1">терять контроль</string>
-    <string name="b2_les_15_10_1">строить планы</string>
-    <string name="b2_les_15_11_1">продвигаться</string>
-    <string name="b2_les_15_12_1">поднимать</string>
-    <string name="b2_les_15_13_1">откладывать</string>
-    <string name="b2_les_15_14_1">исключать</string>
-    <string name="b2_les_15_15_1">столкнуться</string>
+    <string name="b2_les_15_01_1">завзяте прагнення</string>
+    <string name="b2_les_15_02_1">закомічений</string>
+    <string name="b2_les_15_03_1">наполегливо прагнучий</string>
+    <string name="b2_les_15_04_1">вписуватися</string>
+    <string name="b2_les_15_05_1">змушувати</string>
+    <string name="b2_les_15_06_1">отримувати підвищення</string>
+    <string name="b2_les_15_07_1">активний сприяльник успіху</string>
+    <string name="b2_les_15_08_1">орієнтований на досягнення цілей</string>
+    <string name="b2_les_15_09_1">втрачати контроль</string>
+    <string name="b2_les_15_10_1">розробляти плани</string>
+    <string name="b2_les_15_11_1">підніматися</string>
+    <string name="b2_les_15_12_1">забирати</string>
+    <string name="b2_les_15_13_1">відкладати</string>
+    <string name="b2_les_15_14_1">виключати</string>
+    <string name="b2_les_15_15_1">наражатися</string>
 
 
 
@@ -561,21 +567,21 @@
     <string name="b2_les_16_14">struggle</string>
     <string name="b2_les_16_15">take after</string>
 
-    <string name="b2_les_16_01_1">принятие желаемого за действительное</string>
-    <string name="b2_les_16_02_1">прерывать</string>
-    <string name="b2_les_16_03_1">добиться своей цели</string>
-    <string name="b2_les_16_04_1">занимающий второе место</string>
-    <string name="b2_les_16_05_1">самооценка</string>
-    <string name="b2_les_16_06_1">самоуверенный</string>
-    <string name="b2_les_16_07_1">уверенность в себе</string>
-    <string name="b2_les_16_08_1">самоуважение</string>
-    <string name="b2_les_16_09_1">самообладание</string>
-    <string name="b2_les_16_10_1">избавляться</string>
-    <string name="b2_les_16_11_1">парящий</string>
-    <string name="b2_les_16_12_1">расширять</string>
-    <string name="b2_les_16_13_1">выделяться</string>
-    <string name="b2_les_16_14_1">пробиваться</string>
-    <string name="b2_les_16_15_1">быть похожим</string>
+    <string name="b2_les_16_01_1">сподіване мислення</string>
+    <string name="b2_les_16_02_1">переривати</string>
+    <string name="b2_les_16_03_1">досягати успіху</string>
+    <string name="b2_les_16_04_1">друге місце</string>
+    <string name="b2_les_16_05_1">самооцінка</string>
+    <string name="b2_les_16_06_1">самовпевнений</string>
+    <string name="b2_les_16_07_1">віра в себе</string>
+    <string name="b2_les_16_08_1">самоповага</string>
+    <string name="b2_les_16_09_1">самозахист</string>
+    <string name="b2_les_16_10_1">позбавляти</string>
+    <string name="b2_les_16_11_1">високий</string>
+    <string name="b2_les_16_12_1">розгортати</string>
+    <string name="b2_les_16_13_1">виділятися</string>
+    <string name="b2_les_16_14_1">боротися</string>
+    <string name="b2_les_16_15_1">бути схожим</string>
 
 
 
@@ -595,21 +601,21 @@
     <string name="b2_les_17_14">mountain trail</string>
     <string name="b2_les_17_15">widen</string>
 
-    <string name="b2_les_17_01_1">любитель острых ощущений</string>
-    <string name="b2_les_17_02_1">случайно</string>
-    <string name="b2_les_17_03_1">углубляться</string>
-    <string name="b2_les_17_04_1">выносливость</string>
-    <string name="b2_les_17_05_1">защитные очки</string>
-    <string name="b2_les_17_06_1">упряжь</string>
-    <string name="b2_les_17_07_1">опасность</string>
-    <string name="b2_les_17_08_1">опасный</string>
-    <string name="b2_les_17_09_1">повышаться</string>
-    <string name="b2_les_17_10_1">подвергать опасности</string>
-    <string name="b2_les_17_11_1">удлиняться</string>
-    <string name="b2_les_17_12_1">спасательный жилет</string>
-    <string name="b2_les_17_13_1">спасательный круг</string>
-    <string name="b2_les_17_14_1">горная тропа</string>
-    <string name="b2_les_17_15_1">расширяться</string>
+    <string name="b2_les_17_01_1">адреналіновий наркоман</string>
+    <string name="b2_les_17_02_1">випадково</string>
+    <string name="b2_les_17_03_1">зглиблювати</string> ++
+    <string name="b2_les_17_04_1">витривалість</string>
+    <string name="b2_les_17_05_1">окуляри</string>
+    <string name="b2_les_17_06_1">упряж</string>
+    <string name="b2_les_17_07_1">ризик</string>
+    <string name="b2_les_17_08_1">ризикований</string>
+    <string name="b2_les_17_09_1">підвищувати</string>
+    <string name="b2_les_17_10_1">поставити під загрозу</string>
+    <string name="b2_les_17_11_1">продовжувати</string>
+    <string name="b2_les_17_12_1">спасательний жилет</string>
+    <string name="b2_les_17_13_1">спасательний кільце</string>
+    <string name="b2_les_17_14_1">гірський шлях</string>
+    <string name="b2_les_17_15_1">розширювати</string>
 
 
 
@@ -629,21 +635,21 @@
     <string name="b2_les_18_14">triumph</string>
     <string name="b2_les_18_15">venture</string>
 
-    <string name="b2_les_18_01_1">присваивать</string>
-    <string name="b2_les_18_02_1">ослаблять(ся)</string>
-    <string name="b2_les_18_03_1">уменьшать</string>
-    <string name="b2_les_18_04_1">несчастье</string>
+    <string name="b2_les_18_01_1">розкрадати</string>
+    <string name="b2_les_18_02_1">ослаблювати(ся)</string>
+    <string name="b2_les_18_03_1">зменшувати</string>
+    <string name="b2_les_18_04_1">нещастя</string>
     <string name="b2_les_18_05_1">капа</string>
-    <string name="b2_les_18_06_1">быстро падать</string>
-    <string name="b2_les_18_07_1">нырять</string>
-    <string name="b2_les_18_08_1">безопасность</string>
-    <string name="b2_les_18_09_1">мелкий</string>
-    <string name="b2_les_18_10_1">сокращаться</string>
-    <string name="b2_les_18_11_1">наносить удар ножом</string>
-    <string name="b2_les_18_12_1">устойчивый</string>
-    <string name="b2_les_18_13_1">затянуть</string>
-    <string name="b2_les_18_14_1">триумф</string>
-    <string name="b2_les_18_15_1">рисковать</string>
+    <string name="b2_les_18_06_1">швидко падати</string>
+    <string name="b2_les_18_07_1">занурюватися</string>
+    <string name="b2_les_18_08_1">безпека</string>
+    <string name="b2_les_18_09_1">мілкий</string>
+    <string name="b2_les_18_10_1">скорочувати</string>
+    <string name="b2_les_18_11_1">задавати удар ножем</string>
+    <string name="b2_les_18_12_1">стійкий</string>
+    <string name="b2_les_18_13_1">затягувати</string>
+    <string name="b2_les_18_14_1">тріумф</string>
+    <string name="b2_les_18_15_1">ризикувати</string>
 
 
 
@@ -663,21 +669,21 @@
     <string name="b2_les_19_14">make a profit</string>
     <string name="b2_les_19_15">supply and demand</string>
 
-    <string name="b2_les_19_01_1">поддерживать</string>
-    <string name="b2_les_19_02_1">финансовая помощь</string>
-    <string name="b2_les_19_03_1">покрывать расходы</string>
-    <string name="b2_les_19_04_1">бедный</string>
-    <string name="b2_les_19_05_1">денежный поток</string>
-    <string name="b2_les_19_06_1">фальшивка</string>
-    <string name="b2_les_19_07_1">кредиторы</string>
-    <string name="b2_les_19_08_1">безмерный</string>
-    <string name="b2_les_19_09_1">сводить концы с концами</string>
-    <string name="b2_les_19_10_1">обанкротиться</string>
-    <string name="b2_les_19_11_1">нуждающийся</string>
-    <string name="b2_les_19_12_1">процентная ставка</string>
-    <string name="b2_les_19_13_1">нести убытки</string>
-    <string name="b2_les_19_14_1">извлекать прибыль</string>
-    <string name="b2_les_19_15_1">предложение и спрос</string>
+    <string name="b2_les_19_01_1">резервне копіювання</string>
+    <string name="b2_les_19_02_1">фінансова допомога</string>
+    <string name="b2_les_19_03_1">вийти в нуль</string>
+    <string name="b2_les_19_04_1">спустошений</string>
+    <string name="b2_les_19_05_1">грошовий потік</string>
+    <string name="b2_les_19_06_1">підробка</string>
+    <string name="b2_les_19_07_1">кредитори</string>
+    <string name="b2_les_19_08_1">завищений</string>
+    <string name="b2_les_19_09_1">жити, виживати</string>
+    <string name="b2_les_19_10_1">спустошуватися</string>
+    <string name="b2_les_19_11_1">потребуючий</string>
+    <string name="b2_les_19_12_1">відсоткова ставка</string>
+    <string name="b2_les_19_13_1">зазнавати збитків</string>
+    <string name="b2_les_19_14_1">отримувати прибуток</string>
+    <string name="b2_les_19_15_1">попит та пропозиція</string>
 
 
 
@@ -697,24 +703,25 @@
     <string name="b2_les_20_14">well off</string>
     <string name="b2_les_20_15">withdraw</string>
 
-    <string name="b2_les_20_01_1">итоговая строка счета прибылей и убытков</string>
-    <string name="b2_les_20_02_1">активы и пассивы</string>
-    <string name="b2_les_20_03_1">подрядчик</string>
-    <string name="b2_les_20_04_1">вносить вклад</string>
-    <string name="b2_les_20_05_1">финансирование</string>
-    <string name="b2_les_20_06_1">быть обворованным</string>
-    <string name="b2_les_20_07_1">наследовать</string>
-    <string name="b2_les_20_08_1">рекламный трюк</string>
-    <string name="b2_les_20_09_1">погашать</string>
-    <string name="b2_les_20_10_1">ограниченный бюджет</string>
-    <string name="b2_les_20_11_1">растранжиривание</string>
-    <string name="b2_les_20_12_1">сорить деньгами</string>
-    <string name="b2_les_20_13_1">разбазаривать</string>
-    <string name="b2_les_20_14_1">состоятельный</string>
-    <string name="b2_les_20_15_1">изымать</string>
+    <string name="b2_les_20_01_1">остаточна лінія</string>
+    <string name="b2_les_20_02_1">активи та зобов\'язання</string>
+    <string name="b2_les_20_03_1">підрядник</string>
+    <string name="b2_les_20_04_1">вклад</string>
+    <string name="b2_les_20_05_1">фінансування</string>
+    <string name="b2_les_20_06_1">бути обдуреним</string>
+    <string name="b2_les_20_07_1">спадковість</string>
+    <string name="b2_les_20_08_1">публічний трюк</string>
+    <string name="b2_les_20_09_1">повертати</string>
+    <string name="b2_les_20_10_1">бюджет на грані</string>
+    <string name="b2_les_20_11_1">безумство витрат</string>
+    <string name="b2_les_20_12_1">побутова розкош</string>
+    <string name="b2_les_20_13_1">розтріскувати</string>
+    <string name="b2_les_20_14_1">заможний</string>
+    <string name="b2_les_20_15_1">вилучати</string>
 
 
 
+<!--    -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
     <string name="b2_les_21_01">act up</string>
     <string name="b2_les_21_02">affect</string>
     <string name="b2_les_21_03">bearing</string>
@@ -731,21 +738,21 @@
     <string name="b2_les_21_14">sophisticated</string>
     <string name="b2_les_21_15">thoughtful</string>
 
-    <string name="b2_les_21_01_1">капризничать</string>
-    <string name="b2_les_21_02_1">влиять</string>
-    <string name="b2_les_21_03_1">поведение</string>
-    <string name="b2_les_21_04_1">воинственный</string>
-    <string name="b2_les_21_05_1">раздражать</string>
-    <string name="b2_les_21_06_1">трус</string>
-    <string name="b2_les_21_07_1">коварный</string>
-    <string name="b2_les_21_08_1">нечестный</string>
-    <string name="b2_les_21_09_1">возбудимый</string>
-    <string name="b2_les_21_10_1">приниматься за что-либо</string>
-    <string name="b2_les_21_11_1">заняться</string>
-    <string name="b2_les_21_12_1">возражать</string>
-    <string name="b2_les_21_13_1">невежливый</string>
-    <string name="b2_les_21_14_1">утонченный</string>
-    <string name="b2_les_21_15_1">вдумчивый</string>
+    <string name="b2_les_21_01_1">примхливо поводитися</string>
+    <string name="b2_les_21_02_1">впливати</string>
+    <string name="b2_les_21_03_1">ставлення</string>
+    <string name="b2_les_21_04_1">загрозливий</string>
+    <string name="b2_les_21_05_1">напрямляти</string>
+    <string name="b2_les_21_06_1">боягуз</string>
+    <string name="b2_les_21_07_1">коварний</string>
+    <string name="b2_les_21_08_1">нечесний</string>
+    <string name="b2_les_21_09_1">збудливий</string>
+    <string name="b2_les_21_10_1">займатися чимось</string>
+    <string name="b2_les_21_11_1">прийматися за щось</string>
+    <string name="b2_les_21_12_1">йти проти</string>
+    <string name="b2_les_21_13_1">неолітний</string>
+    <string name="b2_les_21_14_1">складний</string>
+    <string name="b2_les_21_15_1">роздумливий</string>
 
 
 
@@ -765,21 +772,21 @@
     <string name="b2_les_22_14">unburden</string>
     <string name="b2_les_22_15">weigh up</string>
 
-    <string name="b2_les_22_01_1">асоциальный</string>
-    <string name="b2_les_22_02_1">устроить сцену</string>
-    <string name="b2_les_22_03_1">пугливый</string>
+    <string name="b2_les_22_01_1">антисоціальний</string>
+    <string name="b2_les_22_02_1">створити сцену</string>
+    <string name="b2_les_22_03_1">нервовий</string>
     <string name="b2_les_22_04_1">лайфхак</string>
-    <string name="b2_les_22_05_1">плохо себя вести</string>
-    <string name="b2_les_22_06_1">капризный</string>
-    <string name="b2_les_22_07_1">одержимый</string>
-    <string name="b2_les_22_08_1">слишком остро реагировать</string>
-    <string name="b2_les_22_09_1">параноидальный</string>
-    <string name="b2_les_22_10_1">придирчивый</string>
-    <string name="b2_les_22_11_1">откладывать</string>
-    <string name="b2_les_22_12_1">сообразительный</string>
-    <string name="b2_les_22_13_1">злобный</string>
-    <string name="b2_les_22_14_1">высказать</string>
-    <string name="b2_les_22_15_1">оценивать</string>
+    <string name="b2_les_22_05_1">погано себе вести</string>
+    <string name="b2_les_22_06_1">капризний</string>
+    <string name="b2_les_22_07_1">захоплений</string>
+    <string name="b2_les_22_08_1">занадто реагувати</string>
+    <string name="b2_les_22_09_1">параноїдальний</string>
+    <string name="b2_les_22_10_1">вибагливий</string>
+    <string name="b2_les_22_11_1">відкладати</string>
+    <string name="b2_les_22_12_1">гострий</string>
+    <string name="b2_les_22_13_1">злобний</string>
+    <string name="b2_les_22_14_1">позбавити ваги</string>
+    <string name="b2_les_22_15_1">зважувати</string>
 
 
 
@@ -799,21 +806,21 @@
     <string name="b2_les_23_14">throw up</string>
     <string name="b2_les_23_15">withdrawal symptoms</string>
 
-    <string name="b2_les_23_01_1">злоупотребление алкоголем</string>
-    <string name="b2_les_23_02_1">босиком</string>
-    <string name="b2_les_23_03_1">отрыжка</string>
-    <string name="b2_les_23_04_1">ветрянка</string>
-    <string name="b2_les_23_05_1">игроман</string>
-    <string name="b2_les_23_06_1">страстное желание</string>
-    <string name="b2_les_23_07_1">нарушать</string>
-    <string name="b2_les_23_08_1">беспокойство</string>
-    <string name="b2_les_23_09_1">полнеть</string>
-    <string name="b2_les_23_10_1">напиваться</string>
-    <string name="b2_les_23_11_1">подсесть</string>
-    <string name="b2_les_23_12_1">похмелье</string>
+    <string name="b2_les_23_01_1">зловживання алкоголем</string>
+    <string name="b2_les_23_02_1">босоніж</string>
+    <string name="b2_les_23_03_1">ротове виділення</string>
+    <string name="b2_les_23_04_1">водянка</string>
+    <string name="b2_les_23_05_1">компульсивний гравець</string>
+    <string name="b2_les_23_06_1">потяг</string>
+    <string name="b2_les_23_07_1">порушувати</string>
+    <string name="b2_les_23_08_1">ворожіння</string>
+    <string name="b2_les_23_09_1">набирати вагу</string>
+    <string name="b2_les_23_10_1">напитися</string>
+    <string name="b2_les_23_11_1">підсісти</string>
+    <string name="b2_les_23_12_1">похмільний стан</string>
     <string name="b2_les_23_13_1">наркоман</string>
-    <string name="b2_les_23_14_1">вырвать</string>
-    <string name="b2_les_23_15_1">ломка</string>
+    <string name="b2_les_23_14_1">викинути</string>
+    <string name="b2_les_23_15_1">симптоми відмови</string>
 
 
 
@@ -833,21 +840,21 @@
     <string name="b2_les_24_14">sweet tooth</string>
     <string name="b2_les_24_15">work out</string>
 
-    <string name="b2_les_24_01_1">погрузиться в состояние наркотического опьянения</string>
-    <string name="b2_les_24_02_1">еда для поднятия настроения</string>
-    <string name="b2_les_24_03_1">жаловаться</string>
-    <string name="b2_les_24_04_1">постное мясо</string>
-    <string name="b2_les_24_05_1">нервный срыв</string>
-    <string name="b2_les_24_06_1">онеметь</string>
-    <string name="b2_les_24_07_1">переусердствовать</string>
-    <string name="b2_les_24_08_1">источник раздражения</string>
-    <string name="b2_les_24_09_1">придираться</string>
-    <string name="b2_les_24_10_1">обьедаться</string>
-    <string name="b2_les_24_11_1">снова впадать в какое-л. состояние</string>
-    <string name="b2_les_24_12_1">побочный эффект</string>
+    <string name="b2_les_24_01_1">наркотичне сп\'яніння</string>
+    <string name="b2_les_24_02_1">звична/приємна їжа</string>
+    <string name="b2_les_24_03_1">скаржитися на</string>
+    <string name="b2_les_24_04_1">постна м\'ясна їжа</string>
+    <string name="b2_les_24_05_1">нервовий злом</string>
+    <string name="b2_les_24_06_1">утратити чутливість</string>
+    <string name="b2_les_24_07_1">перестаратися</string>
+    <string name="b2_les_24_08_1">дратуючий</string>
+    <string name="b2_les_24_09_1">щось підцікавити</string>
+    <string name="b2_les_24_10_1">об\'їдати все підряд</string>
+    <string name="b2_les_24_11_1">повернення до старої звички</string>
+    <string name="b2_les_24_12_1">побічний ефект</string>
     <string name="b2_les_24_13_1">лунатик</string>
-    <string name="b2_les_24_14_1">пристрастие к сладкому</string>
-    <string name="b2_les_24_15_1">тренироваться</string>
+    <string name="b2_les_24_14_1">сладкоїжка</string>
+    <string name="b2_les_24_15_1">тренуватися</string>
 
 
 
@@ -867,21 +874,21 @@
     <string name="b2_les_25_14">spin</string>
     <string name="b2_les_25_15">villain</string>
 
-    <string name="b2_les_25_01_1">пустой</string>
-    <string name="b2_les_25_02_1">передавать</string>
-    <string name="b2_les_25_03_1">изображать</string>
-    <string name="b2_les_25_04_1">эпический</string>
-    <string name="b2_les_25_05_1">выдумка</string>
-    <string name="b2_les_25_06_1">легендарный</string>
-    <string name="b2_les_25_07_1">злонамеренная ложь</string>
-    <string name="b2_les_25_08_1">средневековый</string>
-    <string name="b2_les_25_09_1">миф</string>
-    <string name="b2_les_25_10_1">чрезмерно</string>
-    <string name="b2_les_25_11_1">воспрянуть духом</string>
-    <string name="b2_les_25_12_1">склонный</string>
-    <string name="b2_les_25_13_1">воссоздание реальных событий прошлого</string>
-    <string name="b2_les_25_14_1">плести (небылицу)</string>
-    <string name="b2_les_25_15_1">злодей</string>
+    <string name="b2_les_25_01_1">порожній</string>
+    <string name="b2_les_25_02_1">передавати</string>
+    <string name="b2_les_25_03_1">зображувати</string>
+    <string name="b2_les_25_04_1">епічний</string>
+    <string name="b2_les_25_05_1">вигадка</string>
+    <string name="b2_les_25_06_1">легендарний</string>
+    <string name="b2_les_25_07_1">зловісна брехня</string>
+    <string name="b2_les_25_08_1">середньовічний</string>
+    <string name="b2_les_25_09_1">міф</string>
+    <string name="b2_les_25_10_1">надто</string>
+    <string name="b2_les_25_11_1">підбадьоритися</string>
+    <string name="b2_les_25_12_1">схильний</string>
+    <string name="b2_les_25_13_1">відтворення</string>
+    <string name="b2_les_25_14_1">виговорювати (небистрі правди)</string>
+    <string name="b2_les_25_15_1">злочинець</string>
 
 
 
@@ -901,21 +908,21 @@
     <string name="b2_les_26_14">twist</string>
     <string name="b2_les_26_15">white lie</string>
 
-    <string name="b2_les_26_01_1">отчужденный</string>
-    <string name="b2_les_26_02_1">доверчивый</string>
-    <string name="b2_les_26_03_1">россказни</string>
-    <string name="b2_les_26_04_1">каламбур</string>
-    <string name="b2_les_26_05_1">развязка</string>
-    <string name="b2_les_26_06_1">воплощение невинности</string>
-    <string name="b2_les_26_07_1">откладывать</string>
-    <string name="b2_les_26_08_1">набросок</string>
-    <string name="b2_les_26_09_1">самостоятельный</string>
-    <string name="b2_les_26_10_1">целеустремленный</string>
-    <string name="b2_les_26_11_1">усиливать</string>
-    <string name="b2_les_26_12_1">нереальный</string>
-    <string name="b2_les_26_13_1">выдумка</string>
-    <string name="b2_les_26_14_1">перекручивать</string>
-    <string name="b2_les_26_15_1">невинная ложь</string>
+    <string name="b2_les_26_01_1">за себецінням</string>
+    <string name="b2_les_26_02_1">довірливий</string>
+    <string name="b2_les_26_03_1">бабусині казки</string>
+    <string name="b2_les_26_04_1">гра слів</string>
+    <string name="b2_les_26_05_1">розв\'язка</string>
+    <string name="b2_les_26_06_1">чиста невинність</string>
+    <string name="b2_les_26_07_1">відкинути</string>
+    <string name="b2_les_26_08_1">грубий нарис</string>
+    <string name="b2_les_26_09_1">самодостатній</string>
+    <string name="b2_les_26_10_1">одноманітний</string>
+    <string name="b2_les_26_11_1">підвищувати</string>
+    <string name="b2_les_26_12_1">сюрреалістичний</string>
+    <string name="b2_les_26_13_1">неправдива історія</string>
+    <string name="b2_les_26_14_1">перекручувати</string>
+    <string name="b2_les_26_15_1">невинна брехня</string>
 
 
 
@@ -935,21 +942,21 @@
     <string name="b2_les_27_14">make up for</string>
     <string name="b2_les_27_15">panic attack</string>
 
-    <string name="b2_les_27_01_1">недотепа</string>
-    <string name="b2_les_27_02_1">облом</string>
-    <string name="b2_les_27_03_1">бремя</string>
-    <string name="b2_les_27_04_1">избыточный</string>
-    <string name="b2_les_27_05_1">терпеть неудачу</string>
-    <string name="b2_les_27_06_1">ухудшаться</string>
-    <string name="b2_les_27_07_1">мелкая авария</string>
-    <string name="b2_les_27_08_1">везение</string>
-    <string name="b2_les_27_09_1">засориться</string>
-    <string name="b2_les_27_10_1">попасть в неприятности</string>
-    <string name="b2_les_27_11_1">наложить швы</string>
-    <string name="b2_les_27_12_1">отзывчивый</string>
-    <string name="b2_les_27_13_1">в тупике</string>
-    <string name="b2_les_27_14_1">компенсировать</string>
-    <string name="b2_les_27_15_1">приступ паники</string>
+    <string name="b2_les_27_01_1">бідолаха</string>
+    <string name="b2_les_27_02_1">погана новина</string>
+    <string name="b2_les_27_03_1">мертва вага</string>
+    <string name="b2_les_27_04_1">надмір</string>
+    <string name="b2_les_27_05_1">падати</string>
+    <string name="b2_les_27_06_1">зникати</string>
+    <string name="b2_les_27_07_1">міні-аварія</string>
+    <string name="b2_les_27_08_1">випадок</string>
+    <string name="b2_les_27_09_1">засмічуватися</string>
+    <string name="b2_les_27_10_1">попасти в біду</string>
+    <string name="b2_les_27_11_1">потрапити під шви</string>
+    <string name="b2_les_27_12_1">корисний</string>
+    <string name="b2_les_27_13_1">у скрутному положенні</string>
+    <string name="b2_les_27_14_1">компенсувати</string>
+    <string name="b2_les_27_15_1">прояв паніки</string>
 
 
 
@@ -969,21 +976,21 @@
     <string name="b2_les_28_14">upshot</string>
     <string name="b2_les_28_15">weary</string>
 
-    <string name="b2_les_28_01_1">в обратном направлении</string>
-    <string name="b2_les_28_02_1">воспламеняться</string>
-    <string name="b2_les_28_03_1">недостаток</string>
-    <string name="b2_les_28_04_1">хватать</string>
-    <string name="b2_les_28_05_1">злополучный</string>
-    <string name="b2_les_28_06_1">сглазить</string>
-    <string name="b2_les_28_07_1">тряска</string>
-    <string name="b2_les_28_08_1">потерять нить</string>
-    <string name="b2_les_28_09_1">несчастье</string>
-    <string name="b2_les_28_10_1">задавить</string>
-    <string name="b2_les_28_11_1">рецидив</string>
-    <string name="b2_les_28_12_1">крушить</string>
-    <string name="b2_les_28_13_1">крутой склон</string>
-    <string name="b2_les_28_14_1">результат</string>
-    <string name="b2_les_28_15_1">изнуренный</string>
+    <string name="b2_les_28_01_1">назад</string>
+    <string name="b2_les_28_02_1">взтигати вогонь</string>
+    <string name="b2_les_28_03_1">недолік</string>
+    <string name="b2_les_28_04_1">схопити</string>
+    <string name="b2_les_28_05_1">несчасний</string>
+    <string name="b2_les_28_06_1">проклясть</string>
+    <string name="b2_les_28_07_1">ривок</string>
+    <string name="b2_les_28_08_1">втратити нитку</string>
+    <string name="b2_les_28_09_1">несподівана подія</string>
+    <string name="b2_les_28_10_1">завалити машину</string>
+    <string name="b2_les_28_11_1">рецедив</string>
+    <string name="b2_les_28_12_1">розбити</string>
+    <string name="b2_les_28_13_1">крутий пагорб</string>
+    <string name="b2_les_28_14_1">висновок</string>
+    <string name="b2_les_28_15_1">втомлений</string>
 
 
 
@@ -1003,22 +1010,21 @@
     <string name="b2_les_29_14">rejuvenate</string>
     <string name="b2_les_29_15">skin graft</string>
 
-    <string name="b2_les_29_01_1">снабжать аксессуарами</string>
-    <string name="b2_les_29_02_1">украшать</string>
-    <string name="b2_les_29_03_1">подмышка</string>
-    <string name="b2_les_29_04_1">мочка</string>
-    <string name="b2_les_29_05_1">веко</string>
-    <string name="b2_les_29_06_1">маска для лица</string>
-    <string name="b2_les_29_07_1">подтяжка лица</string>
-    <string name="b2_les_29_08_1">проколоть уши</string>
-    <string name="b2_les_29_09_1">хороший цвет лица</string>
-    <string name="b2_les_29_10_1">длинные ресницы</string>
-    <string name="b2_les_29_11_1">жаловаться</string>
-    <string name="b2_les_29_12_1">щипать</string>
-    <string name="b2_les_29_13_1">выщипывать</string>
-    <string name="b2_les_29_14_1">омолаживать</string>
-    <string name="b2_les_29_15_1">пересадка кожи</string>
-
+    <string name="b2_les_29_01_1">доповнювати аксесуарами</string>
+    <string name="b2_les_29_02_1">прикрашати</string>
+    <string name="b2_les_29_03_1">пахва</string>
+    <string name="b2_les_29_04_1">мочка вуха</string>
+    <string name="b2_les_29_05_1">повіка</string>
+    <string name="b2_les_29_06_1">маска для обличчя</string>
+    <string name="b2_les_29_07_1">пластична операція на обличчі</string>
+    <string name="b2_les_29_08_1">проколоти вуха</string>
+    <string name="b2_les_29_09_1">гарний тон обличчя</string>
+    <string name="b2_les_29_10_1">довгі вії</string>
+    <string name="b2_les_29_11_1">стогнати</string>
+    <string name="b2_les_29_12_1">щипати</string>
+    <string name="b2_les_29_13_1">виплісувати</string>
+    <string name="b2_les_29_14_1">омолоджувати</string>
+    <string name="b2_les_29_15_1">шкірний пересадок</string>
 
 
     <string name="b2_les_30_01">at first sight</string>
@@ -1037,21 +1043,21 @@
     <string name="b2_les_30_14">tickle</string>
     <string name="b2_les_30_15">wink at</string>
 
-    <string name="b2_les_30_01_1">с первого взгляда</string>
+    <string name="b2_les_30_01_1">з першого погляду</string>
     <string name="b2_les_30_02_1">косметолог</string>
-    <string name="b2_les_30_03_1">беременность</string>
-    <string name="b2_les_30_04_1">соблазнительная фигура</string>
-    <string name="b2_les_30_05_1">облизывать</string>
+    <string name="b2_les_30_03_1">вагітність</string>
+    <string name="b2_les_30_04_1">соблазнювальна фігура</string>
+    <string name="b2_les_30_05_1">облизувати</string>
     <string name="b2_les_30_06_1">ребро</string>
-    <string name="b2_les_30_07_1">оттирать</string>
-    <string name="b2_les_30_08_1">крем для кожи</string>
-    <string name="b2_les_30_09_1">плевать</string>
-    <string name="b2_les_30_10_1">инсульт</string>
-    <string name="b2_les_30_11_1">высасывать</string>
-    <string name="b2_les_30_12_1">висок</string>
-    <string name="b2_les_30_13_1">бедро</string>
-    <string name="b2_les_30_14_1">щекотать</string>
-    <string name="b2_les_30_15_1">подмигивать</string>
+    <string name="b2_les_30_07_1">терти</string>
+    <string name="b2_les_30_08_1">крем для шкіри</string>
+    <string name="b2_les_30_09_1">плювати</string>
+    <string name="b2_les_30_10_1">інсульт</string>
+    <string name="b2_les_30_11_1">висмоктувати</string>
+    <string name="b2_les_30_12_1">скроня</string>
+    <string name="b2_les_30_13_1">стегно</string>
+    <string name="b2_les_30_14_1">щипати (в щиках)</string>
+    <string name="b2_les_30_15_1">підморгувати</string>
 
 
 
@@ -1071,21 +1077,21 @@
     <string name="b2_les_31_14">rotten</string>
     <string name="b2_les_31_15">trendy</string>
 
-    <string name="b2_les_31_01_1">подход</string>
-    <string name="b2_les_31_02_1">усвоить</string>
-    <string name="b2_les_31_03_1">замысел</string>
-    <string name="b2_les_31_04_1">постигать</string>
-    <string name="b2_les_31_05_1">спорный</string>
-    <string name="b2_les_31_06_1">уклоняться</string>
-    <string name="b2_les_31_07_1">вглядываться</string>
-    <string name="b2_les_31_08_1">понимание</string>
-    <string name="b2_les_31_09_1">коварство</string>
-    <string name="b2_les_31_10_1">суждение</string>
-    <string name="b2_les_31_11_1">лентяй</string>
-    <string name="b2_les_31_12_1">сочный</string>
-    <string name="b2_les_31_13_1">заплесневелый</string>
-    <string name="b2_les_31_14_1">гнилой</string>
-    <string name="b2_les_31_15_1">модный</string>
+    <string name="b2_les_31_01_1">підхід</string>
+    <string name="b2_les_31_02_1">асимілювати</string>
+    <string name="b2_les_31_03_1">дитя мозку</string>
+    <string name="b2_les_31_04_1">законсептуалізувати</string>
+    <string name="b2_les_31_05_1">суперечливий</string>
+    <string name="b2_les_31_06_1">уникати</string>
+    <string name="b2_les_31_07_1">пильнути</string>
+    <string name="b2_les_31_08_1">сприйняття</string>
+    <string name="b2_les_31_09_1">хитрість</string>
+    <string name="b2_les_31_10_1">судження</string>
+    <string name="b2_les_31_11_1">ледачий</string>
+    <string name="b2_les_31_12_1">зрілий</string>
+    <string name="b2_les_31_13_1">пліснявілий</string>
+    <string name="b2_les_31_14_1">гнилий</string>
+    <string name="b2_les_31_15_1">модний</string>
 
 
 
@@ -1105,21 +1111,21 @@
     <string name="b2_les_32_14">viewpoint</string>
     <string name="b2_les_32_15">witty</string>
 
-    <string name="b2_les_32_01_1">хрустящий</string>
-    <string name="b2_les_32_02_1">украшать</string>
-    <string name="b2_les_32_03_1">разобраться</string>
-    <string name="b2_les_32_04_1">воспринимать</string>
-    <string name="b2_les_32_05_1">ханжа</string>
-    <string name="b2_les_32_06_1">касательно</string>
-    <string name="b2_les_32_07_1">удовольствие</string>
-    <string name="b2_les_32_08_1">шершавый</string>
-    <string name="b2_les_32_09_1">пряный</string>
+    <string name="b2_les_32_01_1">хрусткий</string>
+    <string name="b2_les_32_02_1">прикрашати</string>
+    <string name="b2_les_32_03_1">отримати інсайт</string>
+    <string name="b2_les_32_04_1">сприймати</string>
+    <string name="b2_les_32_05_1">стрийка</string>
+    <string name="b2_les_32_06_1">щодо</string>
+    <string name="b2_les_32_07_1">смак</string>
+    <string name="b2_les_32_08_1">грубий</string>
+    <string name="b2_les_32_09_1">смачний</string>
     <string name="b2_les_32_10_1">пугало</string>
     <string name="b2_les_32_11_1">гладкий</string>
-    <string name="b2_les_32_12_1">сырой</string>
-    <string name="b2_les_32_13_1">кислый</string>
-    <string name="b2_les_32_14_1">точка зрения</string>
-    <string name="b2_les_32_15_1">остроумный</string>
+    <string name="b2_les_32_12_1">мокрий</string>
+    <string name="b2_les_32_13_1">кислий</string>
+    <string name="b2_les_32_14_1">погляд</string>
+    <string name="b2_les_32_15_1">винахідливий</string>
 
 
 
@@ -1139,21 +1145,21 @@
     <string name="b2_les_33_14">plotter</string>
     <string name="b2_les_33_15">unsolved</string>
 
-    <string name="b2_les_33_01_1">проясняться</string>
-    <string name="b2_les_33_02_1">совпадение</string>
-    <string name="b2_les_33_03_1">кроссворд</string>
-    <string name="b2_les_33_04_1">тупик</string>
-    <string name="b2_les_33_05_1">развенчивать</string>
-    <string name="b2_les_33_06_1">утихать</string>
-    <string name="b2_les_33_07_1">загадочный</string>
-    <string name="b2_les_33_08_1">дом с привидениями</string>
-    <string name="b2_les_33_09_1">прятки</string>
-    <string name="b2_les_33_10_1">разыграть</string>
-    <string name="b2_les_33_11_1">запутанный</string>
-    <string name="b2_les_33_12_1">искупить</string>
-    <string name="b2_les_33_13_1">жить за счет</string>
-    <string name="b2_les_33_14_1">заговорщик</string>
-    <string name="b2_les_33_15_1">нерешенный</string>
+    <string name="b2_les_33_01_1">розчищувати</string>
+    <string name="b2_les_33_02_1">випадок</string>
+    <string name="b2_les_33_03_1">кросворд</string>
+    <string name="b2_les_33_04_1">тупиковий шлях</string>
+    <string name="b2_les_33_05_1">розвінчувати</string>
+    <string name="b2_les_33_06_1">затихати</string>
+    <string name="b2_les_33_07_1">загадковий</string>
+    <string name="b2_les_33_08_1">оселя привидів</string>
+    <string name="b2_les_33_09_1">хованки</string>
+    <string name="b2_les_33_10_1">жарт</string>
+    <string name="b2_les_33_11_1">складний</string>
+    <string name="b2_les_33_12_1">забути</string>
+    <string name="b2_les_33_13_1">жити за рахунок</string>
+    <string name="b2_les_33_14_1">змовник</string>
+    <string name="b2_les_33_15_1">нерозгаданий</string>
 
 
 
@@ -1173,21 +1179,21 @@
     <string name="b2_les_34_14">riddle</string>
     <string name="b2_les_34_15">uncover</string>
 
-    <string name="b2_les_34_01_1">жизнь после смерти</string>
-    <string name="b2_les_34_02_1">заговор</string>
-    <string name="b2_les_34_03_1">скрывать</string>
-    <string name="b2_les_34_04_1">хитрый</string>
-    <string name="b2_les_34_05_1">находить подсказку</string>
-    <string name="b2_les_34_06_1">оставлять улики</string>
-    <string name="b2_les_34_07_1">оправдывать</string>
-    <string name="b2_les_34_08_1">лабиринт</string>
-    <string name="b2_les_34_09_1">ошеломляющий</string>
-    <string name="b2_les_34_10_1">крестики-нолики</string>
-    <string name="b2_les_34_11_1">новичок</string>
+    <string name="b2_les_34_01_1">післясмертя</string>
+    <string name="b2_les_34_02_1">змова</string>
+    <string name="b2_les_34_03_1">приховування</string>
+    <string name="b2_les_34_04_1">хитрий</string>
+    <string name="b2_les_34_05_1">знаходити підказку</string>
+    <string name="b2_les_34_06_1">залишати докази</string>
+    <string name="b2_les_34_07_1">відповідати</string>
+    <string name="b2_les_34_08_1">лабіринт</string>
+    <string name="b2_les_34_09_1">неймовірний</string>
+    <string name="b2_les_34_10_1">нулики і хрестики</string>
+    <string name="b2_les_34_11_1">новачок</string>
     <string name="b2_les_34_12_1">головоломка</string>
-    <string name="b2_les_34_13_1">находчивый</string>
+    <string name="b2_les_34_13_1">гострий на розум</string>
     <string name="b2_les_34_14_1">загадка</string>
-    <string name="b2_les_34_15_1">обнаруживать</string>
+    <string name="b2_les_34_15_1">розкривати</string>
 
 
 
@@ -1207,21 +1213,21 @@
     <string name="b2_les_35_14">modernize</string>
     <string name="b2_les_35_15">renovate</string>
 
-    <string name="b2_les_35_01_1">ужасный</string>
+    <string name="b2_les_35_01_1">жахливий</string>
     <string name="b2_les_35_02_1">лавина</string>
-    <string name="b2_les_35_03_1">прошлое</string>
-    <string name="b2_les_35_04_1">увязнуть</string>
-    <string name="b2_les_35_05_1">демонстрировать</string>
-    <string name="b2_les_35_06_1">красноречиво</string>
-    <string name="b2_les_35_07_1">газированный</string>
-    <string name="b2_les_35_08_1">проноситься</string>
+    <string name="b2_les_35_03_1">фон</string>
+    <string name="b2_les_35_04_1">заторфувати</string>
+    <string name="b2_les_35_05_1">відображення</string>
+    <string name="b2_les_35_06_1">красномовно</string>
+    <string name="b2_les_35_07_1">газований</string>
+    <string name="b2_les_35_08_1">минати</string>
     <string name="b2_les_35_09_1">слава</string>
-    <string name="b2_les_35_10_1">некомпетентный</string>
-    <string name="b2_les_35_11_1">обеднять</string>
-    <string name="b2_les_35_12_1">внутренний</string>
-    <string name="b2_les_35_13_1">продвигаться</string>
-    <string name="b2_les_35_14_1">усовершенствовать</string>
-    <string name="b2_les_35_15_1">обновлять</string>
+    <string name="b2_les_35_10_1">неоснащений</string>
+    <string name="b2_les_35_11_1">збіднювати</string>
+    <string name="b2_les_35_12_1">внутрішній</string>
+    <string name="b2_les_35_13_1">робити прогрес</string>
+    <string name="b2_les_35_14_1">модернізувати</string>
+    <string name="b2_les_35_15_1">реновувати</string>
 
 
 
@@ -1241,21 +1247,21 @@
     <string name="b2_les_36_14">well-being</string>
     <string name="b2_les_36_15">wholeheartedly</string>
 
-    <string name="b2_les_36_01_1">преследовать</string>
-    <string name="b2_les_36_02_1">бедные районы в центре города</string>
-    <string name="b2_les_36_03_1">скачок</string>
-    <string name="b2_les_36_04_1">смелый шаг</string>
-    <string name="b2_les_36_05_1">плохо обращаться</string>
-    <string name="b2_les_36_06_1">злоупотреблять</string>
-    <string name="b2_les_36_07_1">обнаженный</string>
-    <string name="b2_les_36_08_1">выбирать</string>
-    <string name="b2_les_36_09_1">важнейший</string>
-    <string name="b2_les_36_10_1">шевелить</string>
-    <string name="b2_les_36_11_1">опухоль</string>
-    <string name="b2_les_36_12_1">испорченный</string>
-    <string name="b2_les_36_13_1">неоспоримый</string>
-    <string name="b2_les_36_14_1">процветание</string>
-    <string name="b2_les_36_15_1">от всего сердца</string>
+    <string name="b2_les_36_01_1">переслідувати</string>
+    <string name="b2_les_36_02_1">внутрішнє місто</string>
+    <string name="b2_les_36_03_1">стрибок</string>
+    <string name="b2_les_36_04_1">скок віри</string>
+    <string name="b2_les_36_05_1">погано поводитися</string>
+    <string name="b2_les_36_06_1">зловживати</string>
+    <string name="b2_les_36_07_1">голий</string>
+    <string name="b2_les_36_08_1">вибирати</string>
+    <string name="b2_les_36_09_1">переважний</string>
+    <string name="b2_les_36_10_1">збуджувати</string>
+    <string name="b2_les_36_11_1">набряк</string>
+    <string name="b2_les_36_12_1">заплямований</string>
+    <string name="b2_les_36_13_1">незаперечний</string>
+    <string name="b2_les_36_14_1">благополуччя</string>
+    <string name="b2_les_36_15_1">зо всього серця</string>
 
 
 
@@ -1275,21 +1281,21 @@
     <string name="b2_les_37_14">shellfish</string>
     <string name="b2_les_37_15">stir-fry</string>
 
-    <string name="b2_les_37_01_1">бульон</string>
-    <string name="b2_les_37_02_1">рубить</string>
-    <string name="b2_les_37_03_1">треска</string>
+    <string name="b2_les_37_01_1">бульйон</string>
+    <string name="b2_les_37_02_1">різати</string>
+    <string name="b2_les_37_03_1">тріска</string>
     <string name="b2_les_37_04_1">дуршлаг</string>
-    <string name="b2_les_37_05_1">съеживаться</string>
-    <string name="b2_les_37_06_1">хрустящий</string>
-    <string name="b2_les_37_07_1">осушать</string>
-    <string name="b2_les_37_08_1">тереть</string>
-    <string name="b2_les_37_09_1">жирная пища</string>
-    <string name="b2_les_37_10_1">травы</string>
-    <string name="b2_les_37_11_1">настоянный на</string>
-    <string name="b2_les_37_12_1">ингредиенты</string>
-    <string name="b2_les_37_13_1">аппетитный</string>
-    <string name="b2_les_37_14_1">моллюск</string>
-    <string name="b2_les_37_15_1">жарить в раскалённом масле</string>
+    <string name="b2_les_37_05_1">змиріться</string>
+    <string name="b2_les_37_06_1">хрусткий</string>
+    <string name="b2_les_37_07_1">осушувати</string>
+    <string name="b2_les_37_08_1">терти</string>
+    <string name="b2_les_37_09_1">жирна їжа</string>
+    <string name="b2_les_37_10_1">трави</string>
+    <string name="b2_les_37_11_1">настояний на</string>
+    <string name="b2_les_37_12_1">інгредієнти</string>
+    <string name="b2_les_37_13_1">апетитний</string>
+    <string name="b2_les_37_14_1">молюск</string>
+    <string name="b2_les_37_15_1">смажити на розігрітому маслі</string>
 
 
 
@@ -1309,21 +1315,21 @@
     <string name="b2_les_38_14">turnip</string>
     <string name="b2_les_38_15">venom</string>
 
-    <string name="b2_les_38_01_1">миксер</string>
-    <string name="b2_les_38_02_1">мягкий вкус</string>
-    <string name="b2_les_38_03_1">вкус</string>
-    <string name="b2_les_38_04_1">скороварка</string>
-    <string name="b2_les_38_05_1">жарить</string>
-    <string name="b2_les_38_06_1">пассеровать</string>
-    <string name="b2_les_38_07_1">приправлять</string>
-    <string name="b2_les_38_08_1">нарезать</string>
-    <string name="b2_les_38_09_1">специи</string>
+    <string name="b2_les_38_01_1">блендер</string>
+    <string name="b2_les_38_02_1">ніжний смак</string>
+    <string name="b2_les_38_03_1">смак</string>
+    <string name="b2_les_38_04_1">швидкодіюча каструля</string>
+    <string name="b2_les_38_05_1">смажити</string>
+    <string name="b2_les_38_06_1">пасерувати</string>
+    <string name="b2_les_38_07_1">приправляти</string>
+    <string name="b2_les_38_08_1">нарізати</string>
+    <string name="b2_les_38_09_1">спеції</string>
     <string name="b2_les_38_10_1">сито</string>
-    <string name="b2_les_38_11_1">насыщенный вкус</string>
+    <string name="b2_les_38_11_1">насичений смак</string>
     <string name="b2_les_38_12_1">начинка</string>
-    <string name="b2_les_38_13_1">щупальце</string>
-    <string name="b2_les_38_14_1">репа</string>
-    <string name="b2_les_38_15_1">животный яд</string>
+    <string name="b2_les_38_13_1">восьминіг</string>
+    <string name="b2_les_38_14_1">ріпа</string>
+    <string name="b2_les_38_15_1">отрута</string>
 
 
 
@@ -1343,21 +1349,21 @@
     <string name="b2_les_39_14">log cabin</string>
     <string name="b2_les_39_15">spacious</string>
 
-    <string name="b2_les_39_01_1">обильный</string>
-    <string name="b2_les_39_02_1">воздушный</string>
-    <string name="b2_les_39_03_1">постельное белье</string>
-    <string name="b2_les_39_04_1">суетливый</string>
-    <string name="b2_les_39_05_1">стесненный</string>
-    <string name="b2_les_39_06_1">детская кроватка</string>
-    <string name="b2_les_39_07_1">посуда</string>
-    <string name="b2_les_39_08_1">столовые приборы</string>
-    <string name="b2_les_39_09_1">влажный</string>
-    <string name="b2_les_39_10_1">оранжерея</string>
+    <string name="b2_les_39_01_1">об\'ємний</string>
+    <string name="b2_les_39_02_1">повітряний</string>
+    <string name="b2_les_39_03_1">посільна білизна</string>
+    <string name="b2_les_39_04_1">жвавий</string>
+    <string name="b2_les_39_05_1">стіснений</string>
+    <string name="b2_les_39_06_1">дитяче ліжечко</string>
+    <string name="b2_les_39_07_1">посуд</string>
+    <string name="b2_les_39_08_1">столові прибори</string>
+    <string name="b2_les_39_09_1">вологий</string>
+    <string name="b2_les_39_10_1">теплиця</string>
     <string name="b2_les_39_11_1">гамак</string>
-    <string name="b2_les_39_12_1">улей</string>
-    <string name="b2_les_39_13_1">уютный</string>
-    <string name="b2_les_39_14_1">бревенчатая хижина</string>
-    <string name="b2_les_39_15_1">просторный</string>
+    <string name="b2_les_39_12_1">вулик</string>
+    <string name="b2_les_39_13_1">затишний</string>
+    <string name="b2_les_39_14_1">брусовий будиночок</string>
+    <string name="b2_les_39_15_1">просторий</string>
 
 
 
@@ -1377,21 +1383,21 @@
     <string name="b2_les_40_14">utilities</string>
     <string name="b2_les_40_15">wasteland</string>
 
-    <string name="b2_les_40_01_1">чердак</string>
-    <string name="b2_les_40_02_1">шторы</string>
-    <string name="b2_les_40_03_1">сарай</string>
-    <string name="b2_les_40_04_1">конура</string>
-    <string name="b2_les_40_05_1">кухонная раковина</string>
-    <string name="b2_les_40_06_1">гнездо</string>
+    <string name="b2_les_40_01_1">горище</string>
+    <string name="b2_les_40_02_1">жалюзі</string>
+    <string name="b2_les_40_03_1">гараж</string>
+    <string name="b2_les_40_04_1">песколіз</string>
+    <string name="b2_les_40_05_1">кухонна раковина</string>
+    <string name="b2_les_40_06_1">гніздо</string>
     <string name="b2_les_40_07_1">наволочка</string>
-    <string name="b2_les_40_08_1">пруд</string>
-    <string name="b2_les_40_09_1">обветшалый</string>
-    <string name="b2_les_40_10_1">укромный</string>
-    <string name="b2_les_40_11_1">жалюзи</string>
+    <string name="b2_les_40_08_1">студінь</string>
+    <string name="b2_les_40_09_1">занедбаний</string>
+    <string name="b2_les_40_10_1">успокоєний</string>
+    <string name="b2_les_40_11_1">жалюзі</string>
     <string name="b2_les_40_12_1">буфет</string>
-    <string name="b2_les_40_13_1">кафель</string>
-    <string name="b2_les_40_14_1">коммунальные услуги</string>
-    <string name="b2_les_40_15_1">пустырь</string>
+    <string name="b2_les_40_13_1">плитка</string>
+    <string name="b2_les_40_14_1">комунальні послуги</string>
+    <string name="b2_les_40_15_1">незабудка</string>
 
 
 
@@ -1411,21 +1417,21 @@
     <string name="b2_les_41_14">reminder</string>
     <string name="b2_les_41_15">souvenir</string>
 
-    <string name="b2_les_41_01_1">расплывчатый</string>
-    <string name="b2_les_41_02_1">легко запоминающаяся мелодия</string>
-    <string name="b2_les_41_03_1">ссориться</string>
-    <string name="b2_les_41_04_1">любящий</string>
-    <string name="b2_les_41_05_1">уходить</string>
-    <string name="b2_les_41_06_1">преодолевать</string>
-    <string name="b2_les_41_07_1">уступать</string>
-    <string name="b2_les_41_08_1">сходить с ума по</string>
-    <string name="b2_les_41_09_1">курортный роман</string>
-    <string name="b2_les_41_10_1">помириться</string>
-    <string name="b2_les_41_11_1">закоулки памяти</string>
+    <string name="b2_les_41_01_1">розмитий</string>
+    <string name="b2_les_41_02_1">заразна мелодія</string>
+    <string name="b2_les_41_03_1">перемиритися</string>
+    <string name="b2_les_41_04_1">ласкавий</string>
+    <string name="b2_les_41_05_1">втекти</string>
+    <string name="b2_les_41_06_1">подолати</string>
+    <string name="b2_les_41_07_1">піддатися</string>
+    <string name="b2_les_41_08_1">вкрити жменею</string>
+    <string name="b2_les_41_09_1">курортний роман</string>
+    <string name="b2_les_41_10_1">вирішити сварку</string>
+    <string name="b2_les_41_11_1">місце спогадів</string>
     <string name="b2_les_41_12_1">тусовщик</string>
-    <string name="b2_les_41_13_1">человек, портящий другим веселье</string>
-    <string name="b2_les_41_14_1">напоминание</string>
-    <string name="b2_les_41_15_1">сувенир</string>
+    <string name="b2_les_41_13_1">завгодник</string>
+    <string name="b2_les_41_14_1">нагадування</string>
+    <string name="b2_les_41_15_1">сувенір</string>
 
 
 
@@ -1445,21 +1451,21 @@
     <string name="b2_les_42_14">stay out</string>
     <string name="b2_les_42_15">tease</string>
 
-    <string name="b2_les_42_01_1">отбывать срок в тюрьме</string>
-    <string name="b2_les_42_02_1">быть оштрафованным</string>
-    <string name="b2_les_42_03_1">тусоваться</string>
-    <string name="b2_les_42_04_1">ирония</string>
-    <string name="b2_les_42_05_1">подшучивать</string>
-    <string name="b2_les_42_06_1">впускать</string>
-    <string name="b2_les_42_07_1">ностальгический</string>
-    <string name="b2_les_42_08_1">терять сознание</string>
-    <string name="b2_les_42_09_1">каламбур</string>
-    <string name="b2_les_42_10_1">избирательная память</string>
-    <string name="b2_les_42_11_1">хвастать</string>
-    <string name="b2_les_42_12_1">ночевать</string>
-    <string name="b2_les_42_13_1">насмехаться</string>
-    <string name="b2_les_42_14_1">переждать</string>
-    <string name="b2_les_42_15_1">дразнить</string>
+    <string name="b2_les_42_01_1">відбувати термін</string>
+    <string name="b2_les_42_02_1">отримати штраф</string>
+    <string name="b2_les_42_03_1">проводити час</string>
+    <string name="b2_les_42_04_1">іронія</string>
+    <string name="b2_les_42_05_1">дитина</string>
+    <string name="b2_les_42_06_1">пустити</string>
+    <string name="b2_les_42_07_1">ностальгічний</string>
+    <string name="b2_les_42_08_1">втратити свідомість</string>
+    <string name="b2_les_42_09_1">гра слів</string>
+    <string name="b2_les_42_10_1">селективна пам\'ять</string>
+    <string name="b2_les_42_11_1">показуватися</string>
+    <string name="b2_les_42_12_1">залишитися на ніч</string>
+    <string name="b2_les_42_13_1">насміхатися</string>
+    <string name="b2_les_42_14_1">не заходити додому</string>
+    <string name="b2_les_42_15_1">дражнити</string>
 
 
 
@@ -1479,21 +1485,21 @@
     <string name="b2_les_43_14">keep up with</string>
     <string name="b2_les_43_15">record breaker</string>
 
-    <string name="b2_les_43_01_1">важный</string>
-    <string name="b2_les_43_02_1">догонять</string>
-    <string name="b2_les_43_03_1">столкнуться</string>
-    <string name="b2_les_43_04_1">придумать</string>
-    <string name="b2_les_43_05_1">опустошенный</string>
-    <string name="b2_les_43_06_1">восторженный</string>
-    <string name="b2_les_43_07_1">исключительный</string>
-    <string name="b2_les_43_08_1">терпеть неудачу</string>
-    <string name="b2_les_43_09_1">сходить с рук</string>
-    <string name="b2_les_43_10_1">отборный</string>
-    <string name="b2_les_43_11_1">сделать попытку</string>
-    <string name="b2_les_43_12_1">упрямый</string>
-    <string name="b2_les_43_13_1">отличник</string>
-    <string name="b2_les_43_14_1">идти в ногу с</string>
-    <string name="b2_les_43_15_1">хит</string>
+    <string name="b2_les_43_01_1">важливий</string>
+    <string name="b2_les_43_02_1">доганяти</string>
+    <string name="b2_les_43_03_1">натрапити</string>
+    <string name="b2_les_43_04_1">вигадати</string>
+    <string name="b2_les_43_05_1">розгублений</string>
+    <string name="b2_les_43_06_1">зачарований</string>
+    <string name="b2_les_43_07_1">винятковий</string>
+    <string name="b2_les_43_08_1">не вистачати</string>
+    <string name="b2_les_43_09_1">втечі</string>
+    <string name="b2_les_43_10_1">обраний вручну</string>
+    <string name="b2_les_43_11_1">спробувати</string>
+    <string name="b2_les_43_12_1">завзятий</string>
+    <string name="b2_les_43_13_1">успішник</string>
+    <string name="b2_les_43_14_1">втримуватися на плаву</string>
+    <string name="b2_les_43_15_1">рекордсмен</string>
 
 
 
@@ -1513,21 +1519,21 @@
     <string name="b2_les_44_14">use up</string>
     <string name="b2_les_44_15">winner</string>
 
-    <string name="b2_les_44_01_1">не умеющий проигрывать достойно</string>
-    <string name="b2_les_44_02_1">дерзкий</string>
-    <string name="b2_les_44_03_1">входить в силу</string>
-    <string name="b2_les_44_04_1">ас</string>
-    <string name="b2_les_44_05_1">щедрый</string>
-    <string name="b2_les_44_06_1">смотреть свысока на</string>
-    <string name="b2_les_44_07_1">с нетерпением ждать</string>
-    <string name="b2_les_44_08_1">уважать</string>
-    <string name="b2_les_44_09_1">опережать</string>
-    <string name="b2_les_44_10_1">обгонять</string>
-    <string name="b2_les_44_11_1">исключать</string>
-    <string name="b2_les_44_12_1">упускать</string>
-    <string name="b2_les_44_13_1">чемпион</string>
-    <string name="b2_les_44_14_1">израсходовать</string>
-    <string name="b2_les_44_15_1">победитель</string>
+    <string name="b2_les_44_01_1">недостойний програвач</string>
+    <string name="b2_les_44_02_1">зарозумілий</string>
+    <string name="b2_les_44_03_1">набувати чинності</string>
+    <string name="b2_les_44_04_1">гарячий стрілець</string>
+    <string name="b2_les_44_05_1">розкішний</string>
+    <string name="b2_les_44_06_1">дивитися зверху вниз на</string>
+    <string name="b2_les_44_07_1">з нетерпінням чекати</string>
+    <string name="b2_les_44_08_1">заглядати до</string>
+    <string name="b2_les_44_09_1">випереджати</string>
+    <string name="b2_les_44_10_1">обігнати</string>
+    <string name="b2_les_44_11_1">виключати</string>
+    <string name="b2_les_44_12_1">викидати</string>
+    <string name="b2_les_44_13_1">титулодержець</string>
+    <string name="b2_les_44_14_1">витрачати</string>
+    <string name="b2_les_44_15_1">переможець</string>
 
 
 
@@ -1547,21 +1553,21 @@
     <string name="b2_les_45_14">stick to</string>
     <string name="b2_les_45_15">storytelling</string>
 
-    <string name="b2_les_45_01_1">тревога</string>
-    <string name="b2_les_45_02_1">за кулисами</string>
-    <string name="b2_les_45_03_1">театральная касса</string>
+    <string name="b2_les_45_01_1">тривожність</string>
+    <string name="b2_les_45_02_1">за лаштунками</string>
+    <string name="b2_les_45_03_1">білетна каса</string>
     <string name="b2_les_45_04_1">костюм</string>
-    <string name="b2_les_45_05_1">сводить с ума</string>
-    <string name="b2_les_45_06_1">смелый</string>
-    <string name="b2_les_45_07_1">оглушительный</string>
-    <string name="b2_les_45_08_1">притягательный</string>
-    <string name="b2_les_45_09_1">развлекать</string>
-    <string name="b2_les_45_10_1">неестественный</string>
-    <string name="b2_les_45_11_1">в ударе</string>
-    <string name="b2_les_45_12_1">киноман</string>
-    <string name="b2_les_45_13_1">репетиция</string>
-    <string name="b2_les_45_14_1">придерживаться</string>
-    <string name="b2_les_45_15_1">рассказывание историй</string>
+    <string name="b2_les_45_05_1">манія</string>
+    <string name="b2_les_45_06_1">сміливість</string>
+    <string name="b2_les_45_07_1">оглушливий</string>
+    <string name="b2_les_45_08_1">захоплюючий</string>
+    <string name="b2_les_45_09_1">підбадьорювати</string>
+    <string name="b2_les_45_10_1">фантастичний</string>
+    <string name="b2_les_45_11_1">в ритмі</string>
+    <string name="b2_les_45_12_1">киноспоживач</string>
+    <string name="b2_les_45_13_1">репетиція</string>
+    <string name="b2_les_45_14_1">триматися</string>
+    <string name="b2_les_45_15_1">розповідання історій</string>
 
 
 
@@ -1581,21 +1587,21 @@
     <string name="b2_les_46_14">watercolor</string>
     <string name="b2_les_46_15">worthwhile</string>
 
-    <string name="b2_les_46_01_1">наряжаться</string>
+    <string name="b2_les_46_01_1">одягатися вишукано</string>
     <string name="b2_les_46_02_1">мольберт</string>
-    <string name="b2_les_46_03_1">пьянящая атмосфера</string>
-    <string name="b2_les_46_04_1">жонглировать</string>
-    <string name="b2_les_46_05_1">писать портреты</string>
-    <string name="b2_les_46_06_1">ударные инструменты</string>
-    <string name="b2_les_46_07_1">обыватель</string>
-    <string name="b2_les_46_08_1">бредить</string>
-    <string name="b2_les_46_09_1">избавиться от комплексов</string>
+    <string name="b2_les_46_03_1">зачаровуюча атмосфера</string>
+    <string name="b2_les_46_04_1">жонглювати</string>
+    <string name="b2_les_46_05_1">малювати портрети</string>
+    <string name="b2_les_46_06_1">ударні інструменти</string>
+    <string name="b2_les_46_07_1">філістер</string>
+    <string name="b2_les_46_08_1">екстаз</string>
+    <string name="b2_les_46_09_1">позбутися стриманості</string>
     <string name="b2_les_46_10_1">партер</string>
     <string name="b2_les_46_11_1">натюрморт</string>
-    <string name="b2_les_46_12_1">дублировать</string>
-    <string name="b2_les_46_13_1">напряженный</string>
+    <string name="b2_les_46_12_1">дублер</string>
+    <string name="b2_les_46_13_1">напружений</string>
     <string name="b2_les_46_14_1">акварель</string>
-    <string name="b2_les_46_15_1">стоящий</string>
+    <string name="b2_les_46_15_1">цінний</string>
 
 
 
@@ -1615,21 +1621,21 @@
     <string name="b2_les_47_14">march</string>
     <string name="b2_les_47_15">truck</string>
 
-    <string name="b2_les_47_01_1">засушливый</string>
-    <string name="b2_les_47_02_1">приятный</string>
-    <string name="b2_les_47_03_1">драндулет</string>
-    <string name="b2_les_47_04_1">объезд</string>
+    <string name="b2_les_47_01_1">сухий</string>
+    <string name="b2_les_47_02_1">теплий</string>
+    <string name="b2_les_47_03_1">гіркуша</string>
+    <string name="b2_les_47_04_1">обхід</string>
     <string name="b2_les_47_05_1">роса</string>
     <string name="b2_les_47_06_1">канава</string>
-    <string name="b2_les_47_07_1">шквал</string>
-    <string name="b2_les_47_08_1">обморозить</string>
-    <string name="b2_les_47_09_1">скользить</string>
+    <string name="b2_les_47_07_1">хвиля</string>
+    <string name="b2_les_47_08_1">обмороження</string>
+    <string name="b2_les_47_09_1">ковзання</string>
     <string name="b2_les_47_10_1">град</string>
-    <string name="b2_les_47_11_1">направляться</string>
-    <string name="b2_les_47_12_1">иней</string>
-    <string name="b2_les_47_13_1">слесарь</string>
-    <string name="b2_les_47_14_1">граница</string>
-    <string name="b2_les_47_15_1">грузовик</string>
+    <string name="b2_les_47_11_1">направлятися до</string>
+    <string name="b2_les_47_12_1">іній</string>
+    <string name="b2_les_47_13_1">слюсар</string>
+    <string name="b2_les_47_14_1">марш</string>
+    <string name="b2_les_47_15_1">вантажівка</string>
 
 
 
@@ -1649,21 +1655,21 @@
     <string name="b2_les_48_14">twilight</string>
     <string name="b2_les_48_15">whirlwind</string>
 
-    <string name="b2_les_48_01_1">укрытие</string>
-    <string name="b2_les_48_02_1">пасмурный</string>
-    <string name="b2_les_48_03_1">пешеход</string>
-    <string name="b2_les_48_04_1">лужа</string>
-    <string name="b2_les_48_05_1">отступать</string>
-    <string name="b2_les_48_06_1">знойный день</string>
-    <string name="b2_les_48_07_1">улизнуть</string>
-    <string name="b2_les_48_08_1">дождь со снегом</string>
-    <string name="b2_les_48_09_1">слякоть</string>
-    <string name="b2_les_48_10_1">загар</string>
-    <string name="b2_les_48_11_1">оттепель</string>
-    <string name="b2_les_48_12_1">платная дорога</string>
-    <string name="b2_les_48_13_1">опрокидывать</string>
-    <string name="b2_les_48_14_1">сумерки</string>
-    <string name="b2_les_48_15_1">смерч</string>
+    <string name="b2_les_48_01_1">сховище</string>
+    <string name="b2_les_48_02_1">хмарно</string>
+    <string name="b2_les_48_03_1">пішохід</string>
+    <string name="b2_les_48_04_1">калюжа</string>
+    <string name="b2_les_48_05_1">відступ</string>
+    <string name="b2_les_48_06_1">спека</string>
+    <string name="b2_les_48_07_1">втекти</string>
+    <string name="b2_les_48_08_1">дощ із снігом</string>
+    <string name="b2_les_48_09_1">бруд</string>
+    <string name="b2_les_48_10_1">засмага</string>
+    <string name="b2_les_48_11_1">розтання</string>
+    <string name="b2_les_48_12_1">платна дорога</string>
+    <string name="b2_les_48_13_1">поворот</string>
+    <string name="b2_les_48_14_1">сутінки</string>
+    <string name="b2_les_48_15_1">вихор</string>
 
 
 
@@ -1683,21 +1689,21 @@
     <string name="b2_les_49_14">deceptive</string>
     <string name="b2_les_49_15">hidden agenda</string>
 
-    <string name="b2_les_49_01_1">наглая ложь</string>
-    <string name="b2_les_49_02_1">правдоподобный</string>
-    <string name="b2_les_49_03_1">недооценивать</string>
-    <string name="b2_les_49_04_1">блефовать</string>
-    <string name="b2_les_49_05_1">жестокая правда</string>
-    <string name="b2_les_49_06_1">нести чушь</string>
-    <string name="b2_les_49_07_1">наглый</string>
-    <string name="b2_les_49_08_1">комплимент</string>
-    <string name="b2_les_49_09_1">патологический лгун</string>
-    <string name="b2_les_49_10_1">умалчивать</string>
-    <string name="b2_les_49_11_1">легковерный</string>
-    <string name="b2_les_49_12_1">поднять ложную тревогу</string>
-    <string name="b2_les_49_13_1">осмелиться</string>
-    <string name="b2_les_49_14_1">обманчивый</string>
-    <string name="b2_les_49_15_1">скрытые мотивы</string>
+    <string name="b2_les_49_01_1">нагла брехня</string>
+    <string name="b2_les_49_02_1">правдоподібний</string>
+    <string name="b2_les_49_03_1">знижувати</string>
+    <string name="b2_les_49_04_1">блефувати</string>
+    <string name="b2_les_49_05_1">жорстока правда</string>
+    <string name="b2_les_49_06_1">вздор</string>
+    <string name="b2_les_49_07_1">нахабний</string>
+    <string name="b2_les_49_08_1">комплімент</string>
+    <string name="b2_les_49_09_1">компульсивний брехун</string>
+    <string name="b2_les_49_10_1">приховувати</string>
+    <string name="b2_les_49_11_1">легковірний</string>
+    <string name="b2_les_49_12_1">кричати «вовк»</string>
+    <string name="b2_les_49_13_1">осмілився</string>
+    <string name="b2_les_49_14_1">обманливий</string>
+    <string name="b2_les_49_15_1">прихована мета</string>
 
 
 
@@ -1717,21 +1723,21 @@
     <string name="b2_les_50_14">unconscionable</string>
     <string name="b2_les_50_15">unveil</string>
 
-    <string name="b2_les_50_01_1">сговариваться</string>
-    <string name="b2_les_50_02_1">приличный</string>
-    <string name="b2_les_50_03_1">выдумка</string>
-    <string name="b2_les_50_04_1">лесть</string>
-    <string name="b2_les_50_05_1">полу-правда</string>
-    <string name="b2_les_50_06_1">безнадежный</string>
-    <string name="b2_les_50_07_1">порядочность</string>
-    <string name="b2_les_50_08_1">ввести в заблуждение</string>
-    <string name="b2_les_50_09_1">печально известный</string>
-    <string name="b2_les_50_10_1">доказательство</string>
-    <string name="b2_les_50_11_1">бесхарактерный человек</string>
-    <string name="b2_les_50_12_1">обманывать</string>
-    <string name="b2_les_50_13_1">клясться</string>
-    <string name="b2_les_50_14_1">бессовестный</string>
-    <string name="b2_les_50_15_1">разоблачать</string>
+    <string name="b2_les_50_01_1">змовлятися</string>
+    <string name="b2_les_50_02_1">порядний</string>
+    <string name="b2_les_50_03_1">брехня</string>
+    <string name="b2_les_50_04_1">похвала</string>
+    <string name="b2_les_50_05_1">півправда</string>
+    <string name="b2_les_50_06_1">некоригований</string>
+    <string name="b2_les_50_07_1">цілісність</string>
+    <string name="b2_les_50_08_1">ввести в оману</string>
+    <string name="b2_les_50_09_1">відомий негативно</string>
+    <string name="b2_les_50_10_1">доказ</string>
+    <string name="b2_les_50_11_1">людина, яку легко вплисти</string>
+    <string name="b2_les_50_12_1">вести за носом</string>
+    <string name="b2_les_50_13_1">клятися</string>
+    <string name="b2_les_50_14_1">несумлінний</string>
+    <string name="b2_les_50_15_1">відкривати</string>
 
 
 </resources>
