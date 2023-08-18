@@ -339,7 +339,6 @@ public class FragmentLearn extends UserFragmentActivity {
 
         but_yes.setText(R.string.edit);
         but_yes.setOnClickListener(v -> {
-
             wordModel.englishWord = englishWord.getText().toString().trim();
             wordModel.rusWord = russianWord.getText().toString().trim();
             wordModel.definition = definition.getText().toString().trim();
@@ -348,6 +347,8 @@ public class FragmentLearn extends UserFragmentActivity {
             updateDataFB(previousName, wordModel.englishWord, wordModel.rusWord, wordModel.definition);
             studyActivity.setDateToActivity();
         });
+
+        callGptDefinition.setOnClickListener(v1 -> proposeDefinition());
 
         but_no.setText(R.string.delete);
         but_no.setOnClickListener(v -> showDeleteDialog(topicId));
@@ -379,6 +380,9 @@ public class FragmentLearn extends UserFragmentActivity {
             Toasty.warning(context, getString(R.string.your_free_daily_limit)).show();
             return;
         }
+
+        if (!doesInternetConnectionExist())
+            return;
 
         if (!eng.isEmpty() && !trl.isEmpty()) {
             Toasty.info(context, getString(R.string.loading)).show();
@@ -430,22 +434,17 @@ public class FragmentLearn extends UserFragmentActivity {
             closeMenu();
             studyActivity.setDateToActivity();
         });
-        dialog.setNegativeButton("No", (v -> {
-            closeMenu();
-        }));
+        dialog.setNegativeButton("No", (v -> closeMenu()));
         dialog.show();
     }
 
     private void text_visible_gone() {
-        if (!studyActivity.isReplaced) {
-            for (TextView t : buttonListOfRus) {
+        if (!studyActivity.isReplaced)
+            for (TextView t : buttonListOfRus)
                 t.setVisibility(View.GONE);
-            }
-        } else {
-            for (TextView t : buttonListOfEnglish) {
+        else
+            for (TextView t : buttonListOfEnglish)
                 t.setVisibility(View.GONE);
-            }
-        }
     }
 
     @Override

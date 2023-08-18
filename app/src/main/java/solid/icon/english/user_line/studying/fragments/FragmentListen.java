@@ -43,7 +43,6 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     private FragmentListenBinding binding;
 
     private AnimationDrawable animationDrawable = null;
-    private ImageView imageView = null;
 
     private int i = 0;
     private int count = 0;
@@ -55,13 +54,13 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         super.onResume();
         context = getActivity();
 
-        animationDrawable = (AnimationDrawable) imageView.getDrawable();
+        animationDrawable = (AnimationDrawable) binding.imgListen.getDrawable();
 
         binding.writeEdit.setText("");
 
         f = binding.writeEdit.getBackground();
 
-        imageView.setOnClickListener(this);
+        binding.imgListen.setOnClickListener(this);
         binding.fab.setOnClickListener(this);
         binding.checkButton.setOnClickListener(this);
 
@@ -90,7 +89,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
     }
 
     private void firstSettingVisibility() {
-        imageView.setVisibility(View.VISIBLE);
+        binding.imgListen.setVisibility(View.VISIBLE);
         binding.checkButton.setVisibility(View.VISIBLE);
         binding.writeEdit.setOnKeyListener((v, keyCode, event) -> {
             if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
@@ -150,7 +149,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
         binding.layoutWrite.setVisibility(View.VISIBLE);
 
         if (isTrueWords()) {
-            setVisibility(imageView, false);
+            setVisibility(binding.imgListen, false);
             if (counter_flip[i] != 0) {
                 counter_flip[i] = 1;
             }
@@ -186,7 +185,7 @@ public class FragmentListen extends UserFragmentActivity implements View.OnClick
                     binding.writeEdit.setText("");
                     words_get_text();
                     binding.writeEdit.setBackground(f);
-                    setVisibility(imageView, true);
+                    setVisibility(binding.imgListen, true);
                     animationDrawable();
                     showSoftKeyboard(binding.writeEdit);
                 } else {

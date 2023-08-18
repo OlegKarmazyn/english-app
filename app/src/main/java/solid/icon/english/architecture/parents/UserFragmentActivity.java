@@ -99,6 +99,10 @@ public abstract class UserFragmentActivity extends Fragment {
         }
     }
 
+
+    /**
+     * @return value does internet exists or nor: true - exists; false - not.
+     */
     public boolean doesInternetConnectionExist() {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();

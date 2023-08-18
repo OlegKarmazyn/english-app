@@ -27,7 +27,7 @@ class TimetableActivity : ActivityGlobal() {
             delay(800)
             withContext(Dispatchers.Main) {
                 binding.calendarWebView.settings.javaScriptEnabled = true
-                binding.calendarWebView.loadUrl("https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23f8f8ff&ctz=Europe%2FKiev&mode=WEEK&showCalendars=0&showTabs=1&title=English%20VS&src=ZW5nbGlzaC52aWt0b3JpaWEuc2Nob29sQGdtYWlsLmNvbQ")
+                binding.calendarWebView.loadUrl("https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23f8f8ff&ctz=Europe%2FWarsaw&mode=WEEK&showCalendars=0&showTabs=1&title=English%20VS&src=ZW5nbGlzaC52aWt0b3JpaWEuc2Nob29sQGdtYWlsLmNvbQ")
             }
         }
     }
