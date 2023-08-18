@@ -38,6 +38,17 @@
                 android:background="@drawable/rounded_table" />
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/recycleView_levels"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="-10dp"
+                android:text="@string/now_available"
+                android:textColor="@color/ios_blue"
+                android:textSize="14sp" />
+
+            <TextView
                 android:id="@+id/your_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

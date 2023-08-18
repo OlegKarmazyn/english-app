@@ -10,6 +10,7 @@
         android:id="@+id/learn_ScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingBottom="3dp"
         tools:ignore="OnClick">
 
         <LinearLayout
@@ -702,10 +703,10 @@
         android:layout_width="85dp"
         android:layout_height="67dp"
         android:layout_margin="40dp"
+        android:contentDescription="next level"
         android:onClick="next_learn"
         android:visibility="gone"
         app:srcCompat="@android:drawable/ic_media_next"
-        tools:ignore="OnClick"
-        android:contentDescription="next level" />
+        tools:ignore="OnClick" />
 
 </FrameLayout>

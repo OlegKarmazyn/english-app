@@ -13,8 +13,8 @@ android {
         applicationId "solid.icon.english"
         minSdkVersion 23 //6.0 Marshmallow
         targetSdkVersion 33
-        versionCode 12
-        versionName "2.0"
+        versionCode 13
+        versionName "2.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
