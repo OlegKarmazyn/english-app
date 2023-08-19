@@ -40,7 +40,7 @@ public class FragmentLearn extends MyFragmentActivity {
     private View.OnClickListener listener(TextView view) {
         return v -> {
             view.setVisibility(View.VISIBLE);
-            speak(((TextView) view).getText().toString());
+            speak(((TextView) v).getText().toString());
         };
     }
 

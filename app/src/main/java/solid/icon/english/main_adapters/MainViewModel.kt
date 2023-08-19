@@ -17,7 +17,7 @@ import java.lang.ref.WeakReference
 class MainViewModel(activity: MainActivity) : ViewModel() {
 
     companion object {
-        const val APPLICATION_VERSION = 13
+        const val APPLICATION_VERSION = 14
     }
 
     private val activityRef = WeakReference(activity)
