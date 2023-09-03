@@ -2,6 +2,8 @@ package solid.icon.english.user_line;
 
 import android.annotation.SuppressLint;
 import android.app.ActivityOptions;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -33,6 +35,7 @@ import solid.icon.english.architecture.room.App;
 import solid.icon.english.architecture.room.SubTopicDao;
 import solid.icon.english.architecture.room.SubTopicModel;
 import solid.icon.english.dialogs.AddingDialog;
+import solid.icon.english.dialogs.InfoDialog;
 import solid.icon.english.dialogs.TitleDialog;
 import solid.icon.english.user_line.studying.StudyActivity;
 
@@ -243,9 +246,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
     /*note----------------------------------Delete Data----------------------------------*/
     public void showDeleteDialog(int position) {
-        TitleDialog dialog = new TitleDialog(context);
+        InfoDialog dialog = new InfoDialog(context);
 
         dialog.setTitle(R.string.delete_subTopic);
+        dialog.setMessage("");
 
         dialog.setPositiveButton(R.string.yes, v -> {
             String toastText = "\"" + titlesArray[position] + "\" deleted";
@@ -255,6 +259,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
             userLevel.setDataToUserAdapter();
         });
         dialog.setNegativeButton(R.string.no, null);
+        dialog.setNeutralButton("Copy", v -> {
+            String key = "~~~" + userLevel.chosenTopics + "$" + titlesArray[position] + "~~~";
+            ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = android.content.ClipData.newPlainText("Copied", key);
+            clipboard.setPrimaryClip(clip);
+            Toasty.success(context, context.getString(R.string.successfully_copied)).show();
+        });
         dialog.show();
     }
 

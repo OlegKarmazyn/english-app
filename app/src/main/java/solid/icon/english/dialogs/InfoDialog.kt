@@ -67,7 +67,9 @@ class InfoDialog(context: Context) : ParentDialog(context) {
         tvMessage.text = context.getText(textId)
     }
 
-    fun setMessage(text: String) {
+    fun setMessage(text: String?) {
+        if (text.isNullOrBlank())
+            tvMessage.isVisible = false
         tvMessage.text = text
     }
 }
