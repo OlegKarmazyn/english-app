@@ -161,7 +161,7 @@ public class UserLevel extends ActivityGlobal {
                 ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
-    private void downloadSubTopics(boolean isShowToast) {
+    public void downloadSubTopics(boolean isShowToast) {
         if (!doesInternetConnectionExist(isShowToast))
             return;
         TopicModel topicModel = Objects.requireNonNull(App.getInstance().getDatabase()

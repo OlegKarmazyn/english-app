@@ -20,9 +20,13 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import es.dmoral.toasty.Toasty;
 import solid.icon.english.R;
 import solid.icon.english.architecture.firebase.database.operations.FirebaseOperation;
+import solid.icon.english.architecture.firebase.database.operations.SenderOperation;
 import solid.icon.english.architecture.local_data.LocalOperation;
 import solid.icon.english.architecture.parents.ActivityGlobal;
 import solid.icon.english.architecture.room.App;
@@ -179,11 +183,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
 
         dialog.setTitle(R.string.add_subTopic);
         dialog.setPositiveButton(R.string.add, v -> {
-            String subTopicsName = dialog.getTextFromField();
-            if (subTopicsName.isEmpty()) {
+            String editText = dialog.getTextFromField();
+            if (editText.isEmpty()) {
                 Toasty.error(context, context.getString(R.string.name_filed_is_empty)).show();
                 return;
             }
+
+            String subTopicsName = postOneSubTopic(editText);
+
+            if (!subTopicsName.equals(editText)) // that means that it is not new subTopics but copy.
+                return;                          // And we don't need to create double subTopic
 
             SubTopicModel subTopicModel = subTopicDao.getByNames(userLevel.chosenTopics, subTopicsName);
             if (subTopicModel == null) {
@@ -203,6 +212,27 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyViewHolder> 
         dialog.getEditText().postDelayed(() -> {
             userLevel.showSoftKeyboard(dialog.getEditText());
         }, 200);
+    }
+
+    // note: copping subTopic
+    private String postOneSubTopic(String key) {
+        String regexPattern = "~~~(.*?)\\$(.*?)~~~";
+        Pattern pattern = Pattern.compile(regexPattern);
+        Matcher matcher = pattern.matcher(key);
+
+        if (matcher.matches()) {
+            String topicsName = matcher.group(1);
+            String subTopicsName = matcher.group(2);
+
+            if (topicsName != null && subTopicsName != null)
+                new SenderOperation(firebaseOperation).postOneSubTopic(userLevel.chosenTopics, topicsName, subTopicsName);
+
+            userLevel.downloadSubTopics(true);
+            return subTopicsName;
+        } else {
+            System.out.println("Input does not match the expected format.");
+            return key;
+        }
     }
 
     private void moveDataFB(String topicsName, String subTopicsName) {

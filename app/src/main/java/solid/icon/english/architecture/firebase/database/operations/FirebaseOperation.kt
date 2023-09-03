@@ -5,13 +5,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.google.firebase.messaging.FirebaseMessaging
 import solid.icon.english.architecture.firebase.database.WordFB
 import solid.icon.english.architecture.firebase.database.interfaces.GetTopicsModelListener
 import solid.icon.english.architecture.firebase.database.interfaces.OnGetDataListener
 import solid.icon.english.architecture.firebase.database.interfaces.OnSuccessListener
 import solid.icon.english.architecture.local_data.PreferencesOperations
-import solid.icon.english.architecture.notification.Constants
 import solid.icon.english.architecture.room.TopicModel
 
 class FirebaseOperation {
