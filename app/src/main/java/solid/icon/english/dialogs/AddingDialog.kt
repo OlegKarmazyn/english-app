@@ -64,9 +64,9 @@ class AddingDialog(context: Context) : ParentDialog(context) {
         }
     }
 
-    fun setNeutralButton(textId: Int, listener: View.OnClickListener?) {
+    fun setNeutralButton(textResId: Int, listener: View.OnClickListener?) {
         neutralButton.run {
-            text = context.getText(textId)
+            text = context.getText(textResId)
             isVisible = true
             neutralButtonListener = listener
         }
