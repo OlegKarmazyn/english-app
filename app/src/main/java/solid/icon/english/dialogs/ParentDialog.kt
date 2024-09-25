@@ -23,9 +23,9 @@ open class ParentDialog(context: Context) : AppCompatDialog(context) {
         }
     }
 
-    fun setPositiveButton(textId: Int, listener: View.OnClickListener?) {
+    fun setPositiveButton(textResId: Int, listener: View.OnClickListener?) {
         positiveButton.run {
-            text = context.getText(textId)
+            text = context.getText(textResId)
             isVisible = true
             positiveButtonListener = listener
         }
@@ -39,16 +39,16 @@ open class ParentDialog(context: Context) : AppCompatDialog(context) {
         }
     }
 
-    fun setNegativeButton(textId: Int, listener: View.OnClickListener?) {
+    fun setNegativeButton(textResId: Int, listener: View.OnClickListener?) {
         negativeButton.run {
-            text = context.getText(textId)
+            text = context.getText(textResId)
             isVisible = true
             negativeButtonListener = listener
         }
     }
 
-    override fun setTitle(textId: Int) {
-        tvTitle.text = context.getText(textId)
+    override fun setTitle(textResId: Int) {
+        tvTitle.text = context.getText(textResId)
     }
 
     fun setTitle(text: String) {

@@ -55,16 +55,16 @@ class InfoDialog(context: Context) : ParentDialog(context) {
         }
     }
 
-    fun setNeutralButton(textId: Int, listener: OnClickListener?) {
+    fun setNeutralButton(textResId: Int, listener: OnClickListener?) {
         neutralButton.run {
-            text = context.getText(textId)
+            text = context.getText(textResId)
             isVisible = true
             neutralButtonListener = listener
         }
     }
 
-    fun setMessage(textId: Int) {
-        tvMessage.text = context.getText(textId)
+    fun setMessage(textResId: Int) {
+        tvMessage.text = context.getText(textResId)
     }
 
     fun setMessage(text: String?) {

@@ -31,8 +31,8 @@ class CheckBoxDialog(context: Context) : AppCompatDialog(context) {
 
     private var listener: OnClickListener? = null
 
-    fun setPositiveButton(textId: Int, listener: OnClickListener) {
-        positiveButton.text = context.getText(textId)
+    fun setPositiveButton(textResId: Int, listener: OnClickListener) {
+        positiveButton.text = context.getText(textResId)
         this.listener = listener
     }
 
