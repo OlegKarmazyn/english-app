@@ -76,17 +76,6 @@ class AuthActivity : ActivityGlobal() {
             goToActivity(RegistrationActivity::class.java)
         }
 
-//        binding.btnLogOut.setOnClickListener {
-//            if (!doesInternetConnectionExist())
-//                return@setOnClickListener
-//            viewModel.logOut {
-//                binding.etEmail.setText("")
-//                binding.etPassword.setText("")
-//                viewModel.saveEmail("")
-//                Toasty.success(context, getString(R.string.logged_out)).show()
-//            }
-//        }
-
         binding.tvOurSite.setOnClickListener {
             val uri: Uri = Uri.parse("http://english-vs.web.app")
             val intent = Intent(Intent.ACTION_VIEW, uri)
